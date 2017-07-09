@@ -1,0 +1,89 @@
+/*columns*/
+.thi-columns{
+    -webkit-columns: 350px 2; /* Chrome, Safari, Opera */
+    -moz-columns: 350px 2; /* Firefox */
+    columns: 350px 2;
+}
+
+/*tựa trang*/
+.hero_search h1{
+	font-weight: bold;
+}
+
+/*numering headings*/
+.tutorial-content body {
+    counter-reset: h2counter;
+}
+.tutorial-content h1 {
+    counter-reset: h2counter;
+    font-weight: bold;
+    color: #bc2eb5;
+    text-align: center;
+}
+.tutorial-content h2{
+	font-weight: bold;
+	counter-reset: h3counter;
+}
+.tutorial-content h3 {
+	counter-reset: h4counter;
+}
+.tutorial-content h2:before {
+    content: counter(h2counter) ".\0000a0\0000a0";
+    counter-increment: h2counter;
+}
+.tutorial-content h3:before {
+    content: counter(h2counter) "." counter(h3counter) ".\0000a0\0000a0";
+    counter-increment: h3counter;
+}
+.tutorial-content h4:before {
+    content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) ".\0000a0\0000a0";
+    counter-increment: h4counter;
+}
+
+/* search*/
+
+#search-results li h4{
+	font-weight: bold;
+}
+
+/* */
+
+.tutorial-content h2{
+	margin-bottom: 20px;
+}
+
+/*-----*/
+
+.opact50{
+	opacity: .5;
+}
+
+.category h3{
+	font-weight: bold;
+}
+
+.hero_search a{
+	color: white;
+	&:hover {
+		color: yellow;
+	}
+}
+
+.hero_search p{
+	margin: 0 0 .75em 0;
+}
+
+.hero_search .deconon:hover{
+	color: white;
+}
+
+.tutorial-share{
+	border-top: 1px solid #ddd;
+}
+
+.tutorial a{
+	color: #0c92f1;
+	&:hover{
+		color: #1c6090;
+	}
+}

@@ -1,0 +1,91 @@
+---
+title: Bibliography (Tài liệu tham khảo)
+categories:
+  - maths
+type: Document
+use_math: true
+---
+
+Chú ý rằng những **id** trong đây cũng là những id được dùng trong các file tex.
+
+## Maths
+
+- **Carraro2016** On the implementation of the eXtended Finite Element Method ( XFEM ) for interface problems
+- **Capatina2017** Extension of NXFEM to nonconforming finite elements
+- **Areias2006** A comment on the article "*A finite element method for simulation of strong and weak discontinuities in solid mechanics*" by A. Hansbo and P. Hansbo [Comput. Methods Appl. Mech. Engrg. 193 (2004) 3523-3540]
+- **Capatina2015** Nonconforming ﬁnite element approximation of an elliptic interface problem with NXFEM
+- **Burman2014** CutFEM: Discretizing geometry and partial differential equations
+- **Burman2009** Fictitious domain ﬁnite element methods using cut elements: II. A stabilized Nitsche method
+- **Eymard2010** Discretization of heterogeneous and anisotropic diffusion problems on general nonconforming meshes
+- **DiPietro2010** Discrete functional analysis tools for Discontinuous Galerkin methods with application to the incompressible Navier–Stokes equations
+- **Ainsworth1997** A posteriori error estimation in finite element analysis
+- **Debnath2005** Hilbert spaces with applications
+- **Leoni2009** A first course in Sobolev spaces
+- **Baratchart2016** Uniqueness results for inverse Robin problems with bounded coefficient
+- **Duddu2006** A combined extended finite element and level set method for biofilm growth
+- **El-Otmany2015** : [thesis] Approximation by NXFEM method of interphase and interface problems in fluid mechanics
+- **Duddu2008** A two-dimensional continuum model of biofilm growth incorporating fluid flow and shear stress based detachment
+- **Mah2001** Mechanisms of biofilm resistance to antimicrobial agents
+- **Chopp2002** A mathematical model of quorum sensing in a growing bacterial biofilm
+- **Thomee2006** Galerkin Finite Element Methods for Parabolic Problems
+- **Knabner2002** Numerical Methods for Elliptic and Parabolic Partial Differential Equations
+- **Hysing2007** : THESIS Numerical Simulation of Immiscible Fluids with FEM Level Set Techniques 
+- **Picioreanu2000** Effect of diffusive and convective substrate transport on biofilm structure formation: a two-dimensional modeling study
+- **Rittma1982** The Effect of Shear Stress on Bioflm Loss Rate
+- **Cogan2006** Effects of persister formation on bacterial response to dosing
+- **Cogan2005** Modeling physiological resistance in bacterial biofilms
+- **Picioreanu1999** Discrete-differential modelling of biofilm structure
+- **Chopp2007** Simulating Bacterial Biofilms
+- **Roberts2005** Modelling protection from antimicrobial agents in biofilms through the formation of persister cells
+- **Davies2003** Understanding biofilm resistance to antibacterial agents
+- **Chen1998** Finite element methods and their convergence for elliptic and parabolic interface problems
+- **Bramble1996** A finite element method for interface problems in domains with smooth boundaries and interfaces
+- **Babuska1970** The finite element method for elliptic equations with discontinuous coefficients
+- **Ladyzhenskaya1966** The solvability of diffraction problems
+- **Li2003** New Cartesian grid methods for interface problems using the finite element formulation
+- **Sinha** An unfitted finite-element method for elliptic and parabolic interface problems
+- **Wu** An unfitted hp -interface penalty finite element method for elliptic interface problems
+- **Hansbo2002** An unfitted finite element method, based on Nitsche's method, for elliptic interface problems
+- **Barrau2012** A robust variant of NXFEM for the interface problem
+- **Wang2014** An Unfitted Discontinuous Galerkin Method for Elliptic Interface Problems
+- **Smith2007** The extended finite element method for boundary layer problems in biofilm grown 
+- **Engwer2009** An Unfitted Discontinuous Galerkin Scheme for Micro-scale Simulations and Numerical Upscaling
+- **nitscheIdea** What is the general idea of Nitsche's method in numerical analysis
+- **Barrau2013** Généralisation de la méthode Nitsche XFEM pour la discétisation de problèmes d'interface elliptiques
+- **LeDret2013** Équations Aux Dé}rivées Partielles Elliptiques Non Liné}aires
+- **Ishihara1982** Finite Element Approximations Applied to the Nonlinear Boundary Value Problem $\Delta u=bu^2$
+- **Ern2004** Theory and Practice of Finite Elements
+- **Rudin** Real and complex analysis
+- **Vasile2007** Iterative Approximation of Fixed Points, Lecture Notes in Mathematics 
+- **Bui2011** A coupling strategy based on anisotropic mesh adaptation for solving two-fluid flows
+- **Bui2009** Simulation des écoulements bifluides, une stratégie de couplage basée sur l'adaptation de maillage anisotrope
+- **Hesthaven2008** Nodal Discontinuous Galerkin Methods
+- **ArnoldBook** Numerical methods for two-phase incompressible flows
+- **Li2003** An overview of the immersed interface method and its applications
+- **Osher1988** Fronts propagating with curvature-dependent speed: Algorithms based on Hamilton-Jacobi formulations
+- **Tornberg2000** A finite element based level-set method for multiphase flow applications
+- **Sussman1994** A Level Set Approach for Computing Solutions to Incompressible Two-Phase Flow
+- **Lehrenfeld2015** Extended finite element methods for interface problems
+- **Lehrenfeld2012** Nitsche-XFEM with Streamline Diffusion Stabilization for a Two-Phase Mass Transport Problem
+- **Arnold2008** Analysis of an extended pressure finite element space for two-phase incompressible flows
+- **Lehrenfeld2014** Optimal preconditioners for Nitsche-XFEM discretizations of interface problems
+- **DeVuyst2013** Numerical modeling of transport problems using freefem++ software -- with examples in biology, CFD, traffic flow and energy transfer
+- **Loch2013** The level set method for capturing interfaces with applications in two-phase flow problems
+- **Hieu2009** Nitsche's method for a transport problem in two phase incompressible flow
+- **Lehrenfeld2011** Nitsche-XFEM for a transport problem in two-phase incompressible flows
+- **HieuThesis** Numerical methods for mass transport equations in two-phase incompressible flows
+- **Burman2010** Ghost penalty
+- **Sethian1999** The Fast Construction of Extension Velocities in Level Set Methods
+- **Sethian2003** Level set methods for fluid interface
+- **Hou1996** Eulerian Capturing Methods Based on a Level Set Formulation for Incompressible Fluid Interfaces
+- **Dolejsi2015** Discontinuous Galerkin Method
+- **Arnold2001** Unified Analysis of Discontinuous Galerkin Methods for Elliptic Problems
+- **Chopp2003** The dependence of quorum sensing on the depth of a growing biofilm
+- **Brezzi2004** Discontinuous Galerkin Methods for First-Order Hyperbolic Problems
+- **ErnDiscont** Mathematical Aspects of Discontinuous Galerkin methods
+- **Nitsche1971** Uber ein Variationsprinzip zur Losung von Dirichlet-Problemen bei Verwendung von Teilraumen, die keinen Randbedingungen unterworfen sind
+- **Kubinska2005** Approximation of Carathéodory functions and multifunctions
+
+## Information technology
+
+- **LongChen** : Programming of finite element methods in Matlab ([link](https://www.math.uci.edu/~chenlong/226/Ch3FEMCode.pdf)).

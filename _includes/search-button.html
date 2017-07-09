@@ -1,0 +1,34 @@
+<style type="text/css">
+#search-abc {
+    width: 30px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('/images/searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    /*padding: 12px 20px 12px 40px;*/
+    padding: 10px 10px 10px 32px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+#search-abc:focus {
+    width: 80%;
+    padding: 10px 10px 10px 40px;
+}
+
+#search-button{
+	position: fixed;
+	bottom: 2%;
+  	left: 2%;
+}
+</style>
+<!-- <input id="search-button" type="search" name="q" placeholder=""> -->
+
+<form id="search-button" action="{{ site.baseurl }}/search/" method="get">
+	<input id="search-abc" type="search" name="q" placeholder="" autofocus>
+	<input type="submit" value="Search" style="display: none;">
+</form>

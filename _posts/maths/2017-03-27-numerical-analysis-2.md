@@ -1,0 +1,26 @@
+---
+title: Numerical analysis 2
+categories:
+  - maths
+type: Document
+use_math: true
+date: 2017-06-26
+---
+
+## Some definitions
+
+### Machine epsilon
+
+Đang tìm cái liên quan đến condition number cũng như bao nhiêu condition number thì hợp lý. Có thể xem bài viết về condition number và 1 chút về machine epsilon trên Math2IT [tại đây](math2it.com/tinh-hop-ly-nghiem-he-phuong-trinh-va-khai-niem-condition-number-cua-mot-ma-tran-ky-3/).
+
+**Machine epsilon** `eps` trong matlab xấp xỉ $2\times 10^{-16}$. It roughly means that numbers are stored with about 15-16 digits of precision. If a number is approximately 1, then that means it can be stored with an error of around 10^(-16) or so. If the number is approximately 1000, then it is stored with an error around 10^(-13) or so.
+
+**Tự hiểu**: cái machine epsilon này có nghĩa là khi tính toán trên các con số thì bản thân cái máy đó (ví dụ matlab) nó sẽ dùng các phương pháp xấp xỉ, làm tròn,... ra được 1 kết quả, kết quả này sẽ sai lệch so với kết quả lý thuyết 1 con số `eps` với số chữ số là $16$ ví dụ như trong matlab. 
+
+## Basis function
+
+### Basis function của Crouzeix-Raviart
+
+Xem [tại đây](http://www.mgnet.org/~douglas/Classes/na-sc/notes/ncfem.pdf) (trang 26), 3 nodes nằm ở trung điểm của các cạnh tam giác. Khi ấy $\varphi\_i(x\_j)=\delta\_{ij}$ trong đó $x\_i$ là trung điểm 3 cạnh.
+
+Cái basis này được nhắc đến trong bài báo của El-Otmany **Capatina2017**.

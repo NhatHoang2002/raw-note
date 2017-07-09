@@ -1,0 +1,24 @@
+#search-results {
+	margin: 0;
+	padding: 0;
+
+	li {
+		list-style: none;
+		margin: 10px 0;
+		padding: 15px;
+		border: 2px solid #ddd;
+		h4 {
+			margin: 0 0 10px 0;
+		}
+
+		p {
+			line-height: 1.5;
+			padding: 0;
+			margin: 0;
+		}
+	}
+}
+
+#search-query {
+	font-weight: bold;
+}
