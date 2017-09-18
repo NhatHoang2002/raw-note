@@ -9,7 +9,7 @@ date: 2017-06-08
 
 ## Giải quyết lỗi convergence rate
 
-Convergence rate tính theo $L^2$ và $H^1$ trong code luôn ra kết quả bằng $\frac{1}{2}$ so với thực tế. Tuy nhiên khi lấy các hệ số và chọn form của $\kapp\_i$ giống trong thèse của Barrau (**Barrau2013**) thì lại có $L^2$ đúng (order 2), chỉ có $H^1$ là vẫn còn sai mà thôi.
+Convergence rate tính theo $L^2$ và $H^1$ trong code luôn ra kết quả bằng $\frac{1}{2}$ so với thực tế. Tuy nhiên khi lấy các hệ số và chọn form của $\kappa\_i$ giống trong thèse của Barrau (**Barrau2013**) thì lại có $L^2$ đúng (order 2), chỉ có $H^1$ là vẫn còn sai mà thôi.
 
 Bị cái nữa là thêm ghost penalty vào rồi như vẫn sai.
 
