@@ -24,6 +24,8 @@ How to choose $\lambda$?
 - Nếu $\eta\_1 \gg \lambda\eta\_2$ (tức lượng chứa $\lambda$ không ảnh hưởng đến vế phải cho lắm) thì $\lambda$ đó hợp lý.
 - Nếu $\eta\_1 < \lambda\eta\_2$ thì ta giảm giá trị của $\lambda$ để trở về trường hợp trên.
 
+Do đó, sau khi đã có được $u\_h$ rồi, hãy tính thử mấy lượng $\eta\_1, \eta\_2$ để điều chỉnh giá trị của $\lambda$.
+
 ## Nitsche's method idea
 
 This idea is given in **nitscheIdea**. Suppose that we have a problem,
