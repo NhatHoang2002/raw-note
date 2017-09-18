@@ -51,7 +51,7 @@ Chú ý rằng những **id** trong đây cũng là những id được dùng tr
 - **Smith2007** The extended finite element method for boundary layer problems in biofilm grown 
 - **Engwer2009** An Unfitted Discontinuous Galerkin Scheme for Micro-scale Simulations and Numerical Upscaling
 - **nitscheIdea** What is the general idea of Nitsche's method in numerical analysis
-- **Barrau2013** Généralisation de la méthode Nitsche XFEM pour la discétisation de problèmes d'interface elliptiques
+- **Barrau2013** [Thesis] Généralisation de la méthode Nitsche XFEM pour la discétisation de problèmes d'interface elliptiques
 - **LeDret2013** Équations Aux Dé}rivées Partielles Elliptiques Non Liné}aires
 - **Ishihara1982** Finite Element Approximations Applied to the Nonlinear Boundary Value Problem $\Delta u=bu^2$
 - **Ern2004** Theory and Practice of Finite Elements

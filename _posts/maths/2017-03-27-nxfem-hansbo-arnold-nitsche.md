@@ -7,6 +7,23 @@ use_math: true
 date: 2017-06-08
 ---
 
+## Giải quyết lỗi convergence rate
+
+Convergence rate tính theo $L^2$ và $H^1$ trong code luôn ra kết quả bằng $\frac{1}{2}$ so với thực tế. Tuy nhiên khi lấy các hệ số và chọn form của $\kapp\_i$ giống trong thèse của Barrau (**Barrau2013**) thì lại có $L^2$ đúng (order 2), chỉ có $H^1$ là vẫn còn sai mà thôi.
+
+Bị cái nữa là thêm ghost penalty vào rồi như vẫn sai.
+
+Dự đoán là do cách chọn giá trị của $\lambda$ (penalty coefficient). Cô mới nảy ra 1 ý tưởng để chọn lượng $\lambda$ này (meeting 18/9/2017), dựa vào posteriori error estimate (xem trang 33, 34 của thèse Barrau, **Barrau2013**). Đại khái ý tưởng đó như sau
+
+$$
+erreur \le \eta_1 + \lambda\eta_2.
+$$
+
+How to choose $\lambda$?
+
+- Nếu $\eta\_1 \gg \lambda\eta\_2$ (tức lượng chứa $\lambda$ không ảnh hưởng đến vế phải cho lắm) thì $\lambda$ đó hợp lý.
+- Nếu $\eta\_1 < \lambda\eta\_2$ thì ta giảm giá trị của $\lambda$ để trở về trường hợp trên.
+
 ## Nitsche's method idea
 
 This idea is given in **nitscheIdea**. Suppose that we have a problem,
@@ -245,3 +262,21 @@ A_h(u,v) = - \sum_{i=1}^2 \sum_{e\in E^{i,cut}_h} \int_e \{ k\nabla u \cdot n \}
 $$
 
 Được cái bài báo **Capatina2015** nếu khá chi tiết các thông số cụ thể cho các parameters.
+
+## Nonconforming NXFEM with ghost penalty
+
+Có nói ở phần trước rồi. Cái nonconforming này nói trong bài báo **Capatina2015 ** (của El-Otmany), đại ý thế này
+
+- nonconfotming là có thể không liên tục qua các edges, có thêm lượng $\int\_e[v]=0$ qua các edge trong cách định nghĩa không gian $V\_h$.
+- Còn của Hansbo là không liên tục qua $\Gamma$ chứ vẫn liên tục qua các edges (conforming).
+- discrete form khác, cái này có cộng thêm lượng $A\_h$ (bên dưới) vào bilinear nữa, ngoài cái penalty và ghost penalty. Tức là 
+
+$$
+a_h(u_h,v_h)+A_h(u_h,v_h)+j(u_h,v_h) = (f,v_h).
+$$
+
+trong đó,
+
+$$
+A_h(u,v) = - \sum_{i=1}^2 \sum_{e\in E^{i,cut}_h} \int_e \{ k\nabla u \cdot n \}_e [v]_e + \{ k\nabla v\cdot n \}_e[u]_e\, ds
+$$
