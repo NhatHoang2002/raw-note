@@ -1,5 +1,5 @@
 ---
-title: NXFEM: idea and description
+title: NXFEM - idea and description
 description: detail descriptions
 categories:
   - it-learning

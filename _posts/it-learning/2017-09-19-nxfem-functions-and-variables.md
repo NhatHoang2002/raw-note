@@ -1,5 +1,5 @@
 ---
-title: NXFEM: functions and variables
+title: NXFEM - functions and variables
 description: quick description
 categories:
   - it-learning
