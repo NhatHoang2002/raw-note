@@ -16,20 +16,22 @@ Làm sao từ bilinear form (dạng $a(u,v)=(f,v)$) cho đến `AU=F`? Có thể
 $$
 a(u,v)=(f,v) 
 \Leftrightarrow 
-\int_{\Omega}uv=\int_{Omega}fv
+\int_{\Omega}uv=\int_{\Omega}fv
 $$
 
 Mà $u=\sum\_iu\_i\varphi\_i$ nên
 
 $$
-\int_{\Omega}(\sigma u_i\varphi_i)\varphi_j=\int_{Omega}f\varphi_j, \quad \text{for} j=1,\ldots,N. \\
+\begin{align}
+\int_{\Omega}(\Sigma u_i\varphi_i)\varphi_j&=\int_{\Omega}f\varphi_j, \quad \text{for } j=1,\ldots,N. \\
 \Leftrightarrow
-\sigma u_i\int_{\Omega}(\varphi_i)\varphi_j=\int_{Omega}f\varphi_j \\
+\sum_i u_i\int_{\Omega}(\varphi_i)\varphi_j &=\int_{\Omega}f\varphi_j \\
 \Leftrightarrow
-AU=F
+AU&=F
+\end{align}
 $$
 
-Trong đó $A\_{ij}=\int\_{\Omega}\varphi\_i\varphi\_j = \sigma\_K\int\_K\varphi\_i\varphi\_j$ và $F\_j=\int\_{\Omega}f\varphi\_j = \sigma\_K\int\_Kf\varphi\_j$.
+Trong đó $A\_{ij}=\int\_{\Omega}\varphi\_i\varphi\_j = \Sigma\_K\int\_K\varphi\_i\varphi\_j$ và $F\_j=\int\_{\Omega}f\varphi\_j = \Sigma\_K\int\_Kf\varphi\_j$.
 
 The main idea to implement FEM is that we will find the value of matrix A at nodes of each triangle and then take a sum of all triangles in the domain. Values at nodes with the same number will be added together.
 
