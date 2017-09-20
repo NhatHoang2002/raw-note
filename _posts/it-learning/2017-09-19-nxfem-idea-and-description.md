@@ -38,3 +38,20 @@ The main idea to implement FEM is that we will find the value of matrix A at nod
 ## Ý tưởng code của NXFEM
 
 If we are working on the standard FEM, we can consider at the same time all of triangles in the mesh because, basically, they are "he same". However, it’s more difficult in NXFEM because it’s different in the cut triangles. We need to add "more nodes" (more basic functions) to the standard mesh.
+
+## Ý tưởng code $L^2$ norm
+
+Có đoạn nói là áp dụng ý tưởng khi tính load vector. Xem lại ý tưởng tìm load vector. Để tính cái này chủ yếu cần tính từng lượng 
+
+$$
+F_j 
+= \int_{\Omega}f\varphi_j 
+= \sum_K\int_Kf\varphi_j 
+= \sum_{CTs}\int_Kf\varphi_j + \sum_{NCTs}\int_Kf\varphi_j.
+$$
+
+Với `NCTs` (not cut triangles), ta tính bình thường, chỉ cẩn trọng tại những node around interface vì những node đó có thể là `k(i)`.
+
+Với `CTs` thì khó hơn do mỗi đỉnh có tới 2 basic functin (`i` và `k(i)`) nên trong file `getLoadCTs` có tính `FCT1, FCT2` tại mỗi đỉnh. Chủ yếu là dùng quadrature rule cho tam giác (`getLoadPartTri`), tứ giác thì lấy cái lớn trừ cái nhỏ (`getLoadWholeTri-getLoadPartTri`).
+
+Còn $L^2$ có chút khác biệt ở `CTs`. Chúng ta chỉ có dạng $\varphi\_i\varphi\_j$ hoặc $\varphi\_i\varphi\_j$. Đúng là ý tưởng cũng tương tự cái load vector, có điều nếu load vector tính cho 1 cái `j` thì cái này tính cho 2 cái `i,j`.
