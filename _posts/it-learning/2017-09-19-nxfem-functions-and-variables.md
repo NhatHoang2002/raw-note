@@ -38,6 +38,19 @@ mL2grad = getMatrixL2Grad(omg1NCTs,omg2NCTs,nodesCTsInOmg2OnGam,...
 
 ---
 
+~~~ matlab
+valG = getGij_PartTri(triangle,areaT,ii,jj,kk,iP1,iP2,remainVertex,dim,deg)
+~~~
+
+Tìm giá trị của $\int\_{K^1}g(\varphi\_i,\varphi\_j)$ trên 1 phần của triangle (phần hình tam giác). Xuất ra giá trị.
+
+Còn để tính toàn bộ tam giác thì dùng hàm
+
+~~~
+valGij = getGij_WholeTri(areaT,ii,jj,typeG,dim,deg)
+~~~
+
+Phần tứ giác thì lấy cái whole - part.
 
 ## Variables
 

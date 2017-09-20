@@ -54,6 +54,6 @@ Với `NCTs` (not cut triangles), ta tính bình thường, chỉ cẩn trọng 
 
 Với `CTs` thì khó hơn do mỗi đỉnh có tới 2 basic functin (`i` và `k(i)`) nên trong file `getLoadCTs` có tính `FCT1, FCT2` tại mỗi đỉnh. Chủ yếu là dùng quadrature rule cho tam giác (`getLoadPartTri`), tứ giác thì lấy cái lớn trừ cái nhỏ (`getLoadWholeTri-getLoadPartTri`).
 
-Còn $L^2$ có chút khác biệt ở `CTs`. Chúng ta chỉ có dạng $\varphi\_i\varphi\_j$ hoặc $\varphi\_i\varphi\_j$. Đúng là ý tưởng cũng tương tự cái load vector, có điều nếu load vector tính cho 1 cái `j` thì cái này tính cho 2 cái `i,j`.
+Còn $L^2$ có chút khác biệt ở `CTs`. Chúng ta chỉ có dạng $\varphi\_i\varphi\_j$ hoặc $\varphi\_{k(i)}\varphi\_{k(j)}$. Đúng là ý tưởng cũng tương tự cái load vector, có điều nếu load vector tính cho 1 cái `j` thì cái này tính cho 2 cái `i,j`.
 
 (cần bổ sung thêm trong file pdf)
