@@ -8,6 +8,9 @@ use_math: true
 date: 2017-06-14
 ---
 
+*  Auto generated table of contents
+  {:toc}
+
 ## Linh tinh
 
 - Dùng dấu ngoặc kép đôi khi không được, phải dùng dấu ngoặc đơn.
@@ -337,6 +340,16 @@ strmatch(x,A); % ra ngay 4
 ~~~
 
 Lưu ý là `[x y]` khác với `[y x]`.
+
+### structure variable
+
+Để có thể khai báo biến dạng `s.1, s.2`. Xem thêm [ở đây](https://fr.mathworks.com/help/matlab/ref/struct.html). Ở đây lưu ý cách tạo multiple dimension structure variable. Ví dụ muốn khai báo trước 1 biến structure đa chiều 2x5 thì làm sao?
+
+~~~ matlab
+n=5;
+err = struct('L2',cell(n,1),'Vh',cell(n,1));
+% Sẽ ra kq nx1 struct array with fields L2, Vh
+~~~
 
 ### Some operators with array and matrix
 
