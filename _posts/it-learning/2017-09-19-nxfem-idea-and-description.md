@@ -35,6 +35,13 @@ Trong đó $A\_{ij}=\int\_{\Omega}\varphi\_i\varphi\_j = \Sigma\_K\int\_K\varphi
 
 The main idea to implement FEM is that we will find the value of matrix A at nodes of each triangle and then take a sum of all triangles in the domain. Values at nodes with the same number will be added together.
 
+## Mesh trong matlab
+
+- Tam giác đánh số `i-j-k` theo thứ tự ngược chiều kim đồng hồ. Xem thêm [mesh data](https://fr.mathworks.com/help/pde/ug/mesh-data.html).
+- Cái cut triangles `CTs` giống cấu trúc của `msh.t` nhưng thêm hàng thứ 5 chứa index trong `msh.t`
+
+
+
 ## Ý tưởng code của NXFEM
 
 If we are working on the standard FEM, we can consider at the same time all of triangles in the mesh because, basically, they are "he same". However, it’s more difficult in NXFEM because it’s different in the cut triangles. We need to add "more nodes" (more basic functions) to the standard mesh.
@@ -57,3 +64,32 @@ Với `CTs` thì khó hơn do mỗi đỉnh có tới 2 basic functin (`i` và `
 Còn $L^2$ có chút khác biệt ở `CTs`. Chúng ta chỉ có dạng $\varphi\_i\varphi\_j$ hoặc $\varphi\_{k(i)}\varphi\_{k(j)}$. Đúng là ý tưởng cũng tương tự cái load vector, có điều nếu load vector tính cho 1 cái `j` thì cái này tính cho 2 cái `i,j`.
 
 (cần bổ sung thêm trong file pdf)
+
+## Ý tưởng của Ghost penalty
+
+Xem thêm trong file coding node (`nxfem_matlab_algorithm.pdf`) và [note này](/maths/nxfem-hansbo-arnold-nitsche/#ghost-penalty), ở đây muốn nói thêm vài ý chính.
+
+**Ghost penalty không có xét các cạnh biên**. Cái này được nói đến trong file `stabilized nistche method Hansbo Burman 2009.pdf`. Trong code của mình cũng không xét các cạnh biên này, điều này làm được bằng cách lúc lấy `eGP` từ `eNBCTs`, chỉ xét các cạnh mà có sự xuất hiện hai lần, tức là các cạnh đó là cạnh chung của hai tam giác trong khi các cạnh biên thì chỉ có 1 lần xuất hiện thôi. Cụ thể là ở dòng code
+
+~~~ matlab
+eGP = eNBCTs(:,posF); % contain triangle K
+~~~
+
+## Normal vector & GradnPhi ($\nabla\_n \varphi$)
+
+Normal vector của đoạn $\overrightarrow{AB}$ là vector luôn nằm bên **trái**!
+
+Mong muốn code 1 hàm `GradnPhi` để khi nhập cái đỉnh, tam giác, đoạn là nó cho ra kết quả!
+
+Cần lưu ý là có sự khác nhau lớn giữa hai cái sau đây
+$$
+\int \nabla_n\varphi_i \nabla_n \varphi_j\,dx \qquad \int \nabla\varphi_i\cdot \varphi_j\, dx
+$$
+
+
+
+
+
+
+
+

@@ -52,6 +52,48 @@ valGij = getGij_WholeTri(areaT,ii,jj,typeG,dim,deg)
 
 Phần tứ giác thì lấy cái whole - part.
 
+---
+
+~~~ matlab
+gradPhi = getGradPhi(tris,msh)
+~~~
+
+Cái này tính Grad cho cái $\varphi$ gốc luôn. Giống như cái công thức bên dưới (tính thông qua các cạnh tam giác)
+$$
+\begin{align}
+    \nabla \varphi_i (x,y) 
+    &= \dfrac{1}{2\vert \tau\vert}  \mathbf{n}_i   
+    = \dfrac{1}{2\vert \tau\vert} \begin{bmatrix} y_j-y_k \\ x_k -x_j \end{bmatrix},
+\end{align}
+$$
+Đây chính là **inward normal vector** của cạnh đối diện với đỉnh đó (quay vào trong tam giác). Có thể tham khảo thêm công thức này ở file matlab của Long Chen và file 50 lines.
+
+Có hai cách để tính xoay vòng, trong đoạn code là dùng hàm bậc hai
+
+~~~ matlab
+j = -3/2*i^2+11/2*i-2 % vertex j
+k = 3/2*i^2-13/2*i+8 % vertex k
+~~~
+
+Tuy nhiên cũng có thể dùng hàm `floor` và `mod` như sau
+
+~~~ matlab
+j=mod(i+1,3)+3*floor((3-mod(i+1,3))/3); % vertex j
+k=mod(i+2,3)+3*floor((3-mod(i+2,3))/3); % vertex k
+~~~
+
+---
+
+~~~ matlab
+gnp = getGradnPhi(i,t,pA,pB,msh)
+~~~
+
+Find $\nabla_n \varphi\_i$ of triangle `t` at vertex `i` on the segment `AB` (from A to B).
+
+---
+
+
+
 ## Variables
 
 - Xem [Mesh data](https://fr.mathworks.com/help/pde/ug/mesh-data.html) để biết ý nghĩa của `points, edges, triangles` (p,e,t) trong mesh.
