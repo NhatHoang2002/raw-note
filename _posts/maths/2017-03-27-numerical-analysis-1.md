@@ -171,6 +171,13 @@ The basic idea of our immersed interface method is to discretize the Navier-Stok
 
 $\Rightarrow$ Bài báo về IIM và its applications. [tại đây](http://journal.tms.org.tw/index.php/TJM/article/viewFile/1112/940)
 
+---
+
+Trong bài báo so sánh XFEM và IIM của Chopp (`chopp 2006 comparison xfem iim elliptic.pdf`), ông nói
+
+- The Immersed Interface Method is a finite difference method for approximating the solution to (1). The method solves (1) with singular sources and discontinuous coefficients as well as jump conditions given on the interface by using a regular Cartesian grid that does not conform to the interface. For grid points away from the interface, the standard five-point finite difference stencil is used. As a result, the method
+  is second order away from the interface. For grid points near the interface, a six-point stencil and correction terms are added to the right hand side in order to maintain global second order accuracy.
+
 ### NXFEM & Nitsche & interface
 
 Ý tưởng về một **basis functions mới** (hơi khác tí cái của mình vì trong $\Omega_2$ nó chổng ngược xuống dưới) nằm trong mục 7.9.2 của **ArnoldBook**

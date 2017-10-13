@@ -282,3 +282,6 @@ trong đó,
 $$
 A_h(u,v) = - \sum_{i=1}^2 \sum_{e\in E^{i,cut}_h} \int_e \{ k\nabla u \cdot n \}_e [v]_e + \{ k\nabla v\cdot n \}_e[u]_e\, ds
 $$
+
+## So sánh XFEM và IIM
+
