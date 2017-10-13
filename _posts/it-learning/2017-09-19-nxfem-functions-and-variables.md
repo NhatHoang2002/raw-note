@@ -92,6 +92,18 @@ Find $\nabla_n \varphi\_i$ of triangle `t` at vertex `i` on the segment `AB` (fr
 
 ---
 
+~~~ matlab
+[eGP,neighborCTs] = getGPEdges(CTs,phi,msh)
+~~~
+
+- Hàm này để lấy thông tin của một cạnh để tính jump trên cạnh đó.  Có thể thay thế `CTs` bởi những `tris` khác cũng được.
+- `neighborCTs` vector chứa chỉ số (trong `msh.t`) của các tam giác "lân cận" của `CTs`
+- Nói về `eGP`  (5 x number of edges cần tính)
+  - `eGP(1:2,:)`: 2 endpoints of the edge (chỉ số trong `msh.p`)
+  - `eGP(3:4,:)`: 2 tam giác hai bên cạnh đó. Chỉ số của hai tam giác này là chỉ số của 
+
+
+
 
 
 ## Variables

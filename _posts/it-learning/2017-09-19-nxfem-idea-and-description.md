@@ -82,13 +82,28 @@ Normal vector của đoạn $\overrightarrow{AB}$ là vector luôn nằm bên **
 Mong muốn code 1 hàm `GradnPhi` để khi nhập cái đỉnh, tam giác, đoạn là nó cho ra kết quả!
 
 Cần lưu ý là có sự khác nhau lớn giữa hai cái sau đây
+
 $$
 \int \nabla_n\varphi_i \nabla_n \varphi_j\,dx \qquad \int \nabla\varphi_i\cdot \varphi_j\, dx
 $$
 
+## Ý tưởng tính 3 cái $\eta_K, \eta_S, \zeta_S$
 
+Ba cái này là dùng để  dự đoán giá trị của $\gamma$ trong thesis của Barrau, trang 33. Cái ý tưởng này có nói ở trong bài NXFEM rồi, search để xem.
 
+- Hai cái $\eta_K, \eta_S$ đều phải xây dựng một ma trận riêng để tính giá trị của chúng.
 
+- Riêng cái $\zeta_S$ do trùng dạng với chuẩn 
+
+  $$
+  \Vert u-u_h \Vert^2_{h,\Gamma} = \sum_{S\in S^{\Gamma}_h}\gamma \Vert [u-u_h]\Vert^2
+  $$
+
+  chỉ khác cái hệ số $\gamma$ thôi nên có thể viết về cùng 1 form tính chuẩn của jump được. Còn cái hệ số đi kèm thì tính riêng giống như file `getLambda` vậy, cái đó cũng tính riêng.
+
+- Ý tưởng tính cái $\zeta_S$ là tính cái ma trận, tính cái này cũng giống như tính trong hàm `getMatrixOnGamCTs`, đó chính là file `getMatNormJumpU`.
+
+- ​
 
 
 
