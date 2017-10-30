@@ -65,16 +65,6 @@ Còn $L^2$ có chút khác biệt ở `CTs`. Chúng ta chỉ có dạng $\varphi
 
 (cần bổ sung thêm trong file pdf)
 
-## Ý tưởng của Ghost penalty
-
-Xem thêm trong file coding node (`nxfem_matlab_algorithm.pdf`) và [note này](/maths/nxfem-hansbo-arnold-nitsche/#ghost-penalty), ở đây muốn nói thêm vài ý chính.
-
-**Ghost penalty không có xét các cạnh biên**. Cái này được nói đến trong file `stabilized nistche method Hansbo Burman 2009.pdf`. Trong code của mình cũng không xét các cạnh biên này, điều này làm được bằng cách lúc lấy `eGP` từ `eNBCTs`, chỉ xét các cạnh mà có sự xuất hiện hai lần, tức là các cạnh đó là cạnh chung của hai tam giác trong khi các cạnh biên thì chỉ có 1 lần xuất hiện thôi. Cụ thể là ở dòng code
-
-~~~ matlab
-eGP = eNBCTs(:,posF); % contain triangle K
-~~~
-
 ## Normal vector & GradnPhi ($\nabla\_n \varphi$)
 
 Normal vector của đoạn $\overrightarrow{AB}$ là vector luôn nằm bên **trái**!
