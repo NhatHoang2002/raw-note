@@ -482,16 +482,16 @@ Trong lý thuyết, kết quả có thể là $\Vert u-u\_h\Vert \le Ch^{\alpha}
 
 $$
 \begin{align}
-\Vert e\_1 \Vert &= \Vert u-u\_{h\_1}\Vert \le Ch\_1^{\alpha} \Vert u \Vert \\
-\Vert e\_2 \Vert &= \Vert u-u\_{h\_2}\Vert \le Ch\_2^{\alpha} \Vert u \Vert
+\Vert e_1 \Vert &= \Vert u-u_{h_1}\Vert \le Ch_1^{\alpha} \Vert u \Vert \\
+\Vert e_2 \Vert &= \Vert u-u_{h_2}\Vert \le Ch_2^{\alpha} \Vert u \Vert
 \end{align}
 $$
 
 Suy ra
 
 $$
-\dfrac{\Vert e\_1 \Vert}{\Vert e\_2 \Vert} = \left( \dfrac{h\_1}{h\_2} \right)^{\alpha}\\
-\log \dfrac{\Vert e\_1 \Vert}{\Vert e\_2 \Vert} = \alpha \log \dfrac{h\_1}{h\_2}
+\dfrac{\Vert e_1 \Vert}{\Vert e_2 \Vert} = \left( \dfrac{h_1}{h_2} \right)^{\alpha}\\
+\log \dfrac{\Vert e_1 \Vert}{\Vert e_2 \Vert} = \alpha \log \dfrac{h_1}{h_2}
 $$
 
 Lưu ý, $u$ không phụ thuộc vào $h$.
