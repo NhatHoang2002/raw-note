@@ -3,7 +3,7 @@ title: Numerical analysis 1
 categories:
   - maths
 type: Document
-use_math: true
+maths: 1
 date: 2017-06-01
 ---
 

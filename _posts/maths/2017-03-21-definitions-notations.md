@@ -3,7 +3,7 @@ title: Quick definitions + notations
 categories:
   - maths
 type: Document
-use_math: true
+maths: 1
 ---
 
 ## Definitions

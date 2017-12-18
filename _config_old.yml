@@ -1,0 +1,83 @@
+title: Thi's notes
+url: "http://note.dinhanhthi.com"
+baseurl:
+google_analytics_key:
+
+logo: /avatar-icon.png
+description: You cannot remember everything!
+author:
+  name: Dinh Anh Thi
+  email: dinhanhthimail@gmail.com
+  twitter: # twitter username without the @ symbol
+social:
+  name: 
+  links:
+    - 
+
+permalink: /:categories/:title/
+
+gems:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-archives
+  - jekyll-extract-element
+  - jekyll-pandoc
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENCE
+
+collections:
+  sets:
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  parse_block_html: true
+
+jekyll-archives:
+  enabled: ['categories']
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+  -
+    scope:
+      type: "posts"
+    values:
+      layout: "post"
+  -
+    scope:
+      type: "sets"
+    values:
+      _hide_content: true
+  -
+    scope:
+      path: "index.html"
+    values:
+      body_class: "show_hero_search"
+
+social_icons:
+  - Facebook
+  - Google Plus
+  - Instagram
+  - LinkedIn
+  - Pinterest
+  - Tumblr
+  - Twitter
+  - YouTube
+  - Email
+  - RSS
+
+types:
+  - Document
+  - Video
+
+_comments:

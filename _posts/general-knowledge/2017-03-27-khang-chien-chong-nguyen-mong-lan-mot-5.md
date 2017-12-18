@@ -1,10 +1,6 @@
 ---
 title: Kháng chiến chống Nguyên Mông lần 1 (kỳ 5)
-categories:
-  - general-knowledge
-type: Document
-set: nguyen-mong-1
-set_order: 5
+categories: articles
 ---
 
 > Series này đã được post trên motthegioi.vn nhưng do ở đấy post không tiện theo dõi, khó tìm kiếm và khó lưu trữ nên tôi quyết định copy về lại đây để dành xem và tham khảo sau này.

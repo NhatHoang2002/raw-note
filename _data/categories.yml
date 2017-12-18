@@ -1,0 +1,18 @@
+- slug: maths
+  name: Toán
+- slug: matlab
+  name: Matlab
+- slug: phd
+  name: PhD
+- slug: french
+  name: French
+- slug: python
+  name: Python
+- slug: latex
+  name: LaTeX
+- slug: freefempp
+  name: FreeFEM++
+- slug: gnuplot
+  name: Gnuplot
+- slug: articles
+  name: Bài viết hay

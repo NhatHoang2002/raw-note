@@ -1,14 +1,19 @@
 ---
+layout: post
 title: Ghost penalty
-categories:
-  - maths
-type: Document
-use_math: true
+categories: maths
+tags: ["ghost penalty","robust","interface"]
+maths: 1
+toc: 1
 ---
 
 *Đem từ mấy cái file khác sang hẳn đây vì nó nhiều thứ để nói*
 
+{% include toc.html %}
+
 ## Tại sao phải cần ghost penalty?
+
+### Thử nghiệm h3
 
 Cái này được nói trong file `burman2010-ghost penalty.pdf`.
 
@@ -18,6 +23,8 @@ In fictitious domain methods (see [5] or for more recent work [2,7,8]) one is of
 - only integrate within the physical domain. 
 
 **In the first case** the method is robust, but inaccurate due to the lack of consistency. 
+
+### Thử nghiệm h3
 
 Methods using **the second approach**, on the other hand, are accurate, but the condition number of the finite element matrix depends on how the domain boundary cuts the mesh. If the cut results in elements with very small intersections with the physical domain, the system matrix may be very ill-conditioned, as we show below.
 

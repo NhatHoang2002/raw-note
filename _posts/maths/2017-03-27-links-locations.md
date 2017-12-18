@@ -3,7 +3,7 @@ title: Links and locations
 categories:
   - maths
 type: Document
-use_math: true
+maths: 1
 ---
 
 ## Questions on StackExchange
