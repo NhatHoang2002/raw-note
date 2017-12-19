@@ -2,6 +2,10 @@ p ~ ul, p ~ ol{
 	margin-top: -5px;
 }
 
+nav ul a{
+	line-height: 80px;
+}
+
 /*tom tat*/
 .tomtat{
 	margin: 10px!important;
