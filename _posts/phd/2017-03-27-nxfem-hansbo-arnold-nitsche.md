@@ -212,23 +212,6 @@ Tuy nhiên hai cái phương pháp này có liên quan với nhau, xem bài báo
 - Trong **Lehrenfeld2014**, ông ta cũng thừa nhận rằng cái basis functions (trong đó gọi là characterization) là khác so với cái của Hansbo. Có thể dựa vào các chứng minh và kiểm định stability của cái functions này để kiểm định lại cái ý tưởng của Hansbo.
 - Cái khác giữa TRUNG HIEU và Hansbo nằm ở điều kiện $[\beta u]\vert_{\Gamma}=0$. Hansbo thì $\beta_1=\beta_2$ trong khi TRUNG HIEU thì $\beta_1 \ne \beta_2$
 
-## Nonconforming NXFEM with ghost penalty
-
-Có nói ở phần trước rồi. Cái nonconforming này nói trong bài báo **Capatina2015 ** (của El-Otmany), đại ý thế này
-
-- nonconfotming là có thể không liên tục qua các edges, có thêm lượng $\int\_e[v]=0$ qua các edge trong cách định nghĩa không gian $V\_h$.
-- Còn của Hansbo là không liên tục qua $\Gamma$ chứ vẫn liên tục qua các edges (conforming).
-- discrete form khác, cái này có cộng thêm lượng $A\_h$ (bên dưới) vào bilinear nữa, ngoài cái penalty và ghost penalty. Tức là 
-
-$$
-a_h(u_h,v_h)+A_h(u_h,v_h)+j(u_h,v_h) = (f,v_h).
-$$
-
-trong đó,
-
-$$
-A_h(u,v) = - \sum_{i=1}^2 \sum_{e\in E^{i,cut}_h} \int_e \{ k\nabla u \cdot n \}_e [v]_e + \{ k\nabla v\cdot n \}_e[u]_e\, ds
-$$
-
 ## So sánh XFEM và IIM
 
+Bổ sung sau

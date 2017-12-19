@@ -206,7 +206,3 @@ $$
 **ill conditioned system of Nitsche method**
 
 In classical Nitsche based methods, the condition number of the resulting system depends on the interface position, and at times it leads to ill-conditioned system matrices [11,12]. To overcome this issue, in [12,13] the classical Nitsche type approach for weak boundary conditions has been extended to a fictitious domain type formulation by adding an additional ghost-penalty term acting on the jumps of the gradients over element faces adjacent to cut elements. (phần 4 [ở đây](http://www.lacan.upc.edu/sites/default/files/RSP4_FinalReport.pdf))
-
----
-
- **ghost penalty term** (trang 8, [ở đây](https://hal.inria.fr/hal-01149225/file/RR-8723.pdf))

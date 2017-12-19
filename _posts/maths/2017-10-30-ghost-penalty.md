@@ -13,8 +13,6 @@ toc: 1
 
 ## Tại sao phải cần ghost penalty?
 
-### Thử nghiệm h3
-
 Cái này được nói trong file `burman2010-ghost penalty.pdf`.
 
 In fictitious domain methods (see [5] or for more recent work [2,7,8]) one is often faced with the choice of either 
@@ -23,8 +21,6 @@ In fictitious domain methods (see [5] or for more recent work [2,7,8]) one is of
 - only integrate within the physical domain. 
 
 **In the first case** the method is robust, but inaccurate due to the lack of consistency. 
-
-### Thử nghiệm h3
 
 Methods using **the second approach**, on the other hand, are accurate, but the condition number of the finite element matrix depends on how the domain boundary cuts the mesh. If the cut results in elements with very small intersections with the physical domain, the system matrix may be very ill-conditioned, as we show below.
 
@@ -35,6 +31,7 @@ Methods using **the second approach**, on the other hand, are accurate, but the 
 - **Lehrenfeld2015** (3.4.2) : a small introduction and some comments on this
 - There is an example in detail with **Capatina2015**
 - **Burman2010** Note ghi chú chủ đề chính là ghost penalty luôn!
+-  **ghost penalty term** (trang 8, [ở đây](https://hal.inria.fr/hal-01149225/file/RR-8723.pdf))
 
 ## Ý tưởng chính
 
@@ -59,7 +56,13 @@ Cần chứng minh $a\_h(u,u) + j(u,u) \ge C \Vert u \Vert\_h^2$, trong đó $a_
 
 ---
 
-**Ý tưởng code**
+Trong Note của Lehrenfeld có giải thích ý tưởng cho **ghost penalty** của Burman khá hay, trang 48.
+
+> **Remark 3.5 (Ghost penalty for Nitsche-XFEM)**. In the context of interface problem the “ghost penalty” stabilization is interesting in cases where the weights of the averaging operator should be signiﬁcantly diﬀerent from the hansbo -choice, for instance for large contrast problems (see [BZ12]). In this case the Nitsche-XFEM discretization lacks stability (and suﬀers from arising ill-conditioned linear systems). By adding the “ghost penalty” stabilization the averaging operator is freed from the constraint that has been necessary to ensure stability (essentially (3.27)).
+
+> **Remark 3.7 (Conditioning)**. The Ghost penalty method ensures that conditioning of the resulting system matrix is well-behaved. This holds true for boundary and interface problems. Note that even for the interface problem with the hansbo -averaging (where stability is not a problem) the resulting system matrix is ill-conditioned. In contrast to the boundary problem this can however be easily ﬁxed by suitable preconditioning strategies which is discussed in the next section.
+
+### Ý tưởng code
 
 Xem thêm trong file coding node (`nxfem_matlab_algorithm.pdf`) và [note này](/maths/nxfem-hansbo-arnold-nitsche/#ghost-penalty), ở đây muốn nói thêm vài ý chính.
 
@@ -92,3 +95,21 @@ A_h(u,v) = - \sum_{i=1}^2 \sum_{e\in E^{i,cut}_h} \int_e \{ k\nabla u \cdot n \}
 $$
 
 Được cái bài báo **Capatina2015** nếu khá chi tiết các thông số cụ thể cho các parameters.
+
+## Nonconforming NXFEM with ghost penalty
+
+Có nói ở phần trước rồi. Cái nonconforming này nói trong bài báo **Capatina2015 ** (của El-Otmany), đại ý thế này
+
+- nonconfotming là có thể không liên tục qua các edges, có thêm lượng $\int\_e[v]=0$ qua các edge trong cách định nghĩa không gian $V\_h$.
+- Còn của Hansbo là không liên tục qua $\Gamma$ chứ vẫn liên tục qua các edges (conforming).
+- discrete form khác, cái này có cộng thêm lượng $A\_h$ (bên dưới) vào bilinear nữa, ngoài cái penalty và ghost penalty. Tức là 
+
+$$
+a_h(u_h,v_h)+A_h(u_h,v_h)+j(u_h,v_h) = (f,v_h).
+$$
+
+trong đó,
+
+$$
+A_h(u,v) = - \sum_{i=1}^2 \sum_{e\in E^{i,cut}_h} \int_e \{ k\nabla u \cdot n \}_e [v]_e + \{ k\nabla v\cdot n \}_e[u]_e\, ds
+$$
