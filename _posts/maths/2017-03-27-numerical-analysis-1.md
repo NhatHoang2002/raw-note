@@ -1,10 +1,10 @@
 ---
 title: Numerical analysis 1
-categories:
-  - maths
-type: Document
+categories: maths
+tags: ["numerical analysis","solver","eigenvalue & eigenvector","boundary condition","shape function","quadrature","matrix","preconditioner","condition number","mesh","scheme","level set method","discontinuous","galerkin method","finite element method","conforming","nxfem","nitsche method","interface","newton method","streamline diffusion method","a priori","posteriori"]
 maths: 1
 date: 2017-06-01
+toc: 1
 ---
 
 **Xem phần 2 [tại đây](/maths/numerical-analysis-2).**
@@ -694,7 +694,7 @@ $$
 
 **Newmann BC** = natural bc (not really correct for all cases) see more on the link above.
 
-## Eigenvalues and eigenvectors | Singular values and singular vectors
+## Eigenvalues and eigenvectors & Singular values and singular vectors
 
 ### Eigenvalues and eigenvectors
 
@@ -822,7 +822,9 @@ for k from 1 to n do
 od od;
 ~~~
 
-$ A = LL^T $
+$$
+A = LL^T
+$$
 
 ### UMFPACK Solver
 
@@ -837,7 +839,7 @@ load "UMFPACK64"
 //không có dấu ; phía sau
 ~~~
 
-## CG Solver
+### CG Solver
 
 ### GMRES solver
 

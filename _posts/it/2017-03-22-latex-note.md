@@ -1,8 +1,9 @@
 ---
 title: LaTeX notes
-categories:
-  - it
+categories: it
+tags: ["latex"]
 maths: 1
+toc: 1
 ---
 
 This is the list of quick latex notes before I write clearly and completely on the site [Math2IT](http://math2it.com). 

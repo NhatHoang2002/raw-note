@@ -2,7 +2,8 @@
 title: Links and locations
 categories:
   - maths
-type: Document
+  - phd
+toc: 1
 maths: 1
 ---
 

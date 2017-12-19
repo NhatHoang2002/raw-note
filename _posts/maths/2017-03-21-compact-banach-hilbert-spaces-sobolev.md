@@ -2,7 +2,8 @@
 title: Compact, Banach, Hibert, Sobolev spaces
 categories:
   - maths
-type: Document
+toc: 1
+tags: ["compact","banach","hibert","sobolev"]
 maths: 1
 ---
 

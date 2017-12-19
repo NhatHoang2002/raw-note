@@ -2,7 +2,10 @@
 title: Matlab note
 categories:
   - it
+  - phd
+tags: ["matlab"]
 maths: 1
+toc: 1
 ---
 
 {% include toc.html %}

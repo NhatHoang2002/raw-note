@@ -2,7 +2,7 @@
 title: Numerical analysis 2
 categories:
   - maths
-type: Document
+toc: 1
 maths: 1
 date: 2017-06-26
 ---
@@ -27,8 +27,9 @@ Cái basis này được nhắc đến trong bài báo của El-Otmany **Capatin
 
 ## Interface vs Boundary
 
-From 
-http://scicomp.stackexchange.com/questions/10820/boundary-vs-interface
+From [http://scicomp.stackexchange.com/questions/10820/boundary-vs-interface
+](http://scicomp.stackexchange.com/questions/10820/boundary-vs-interface
+)
 
 I'm not particularly familiar with biofilm literature. But in most computational literature, the border of the entire domain of a problem are usually referred to as the boundary. Outside of a boundary, there are no nodes, elements, or anything else under consideration.
 
@@ -38,4 +39,4 @@ The entire domain may also be subdivided into smaller regions. Some of these reg
 
 In multiphase flow, the boundary between phases is usually referred to as an "interface" to distinguish it from the actual physical boundaries surrounding the system. 
 
-In some literatures, I found that the authors use the term "interfaces" to indicate the geometry position/properties between 2 fluids/phases/something else... However, when they need to use a boundary condition on these interfaces, they call them boundary in term "boundary condition" (not "interface condition" ^^). So, generally, 2 terms are only different about their meaning, is that right? 
+In some literatures, I found that the authors use the term "interfaces" to indicate the geometry position/properties between 2 fluids/phases/something else... However, when they need to use a boundary condition on these interfaces, they call them boundary in term "boundary condition" (not "interface condition"). So, generally, 2 terms are only different about their meaning, is that right? 

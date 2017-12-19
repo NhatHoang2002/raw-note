@@ -1,12 +1,8 @@
 ---
-layout: page2
+layout: page
 title: "Liên hệ"
 css: ["contact.css"]
 ---
-
-<div id="page-info">
-  <h2><i class="material-icons font-inherit mat-icon">perm_contact_calendar</i> {{page.title}}</h2>
-</div>
 
 Mọi đóng góp hay có ý kiến, bạn vui lòng liên hệ Đinh Anh Thi,
 

@@ -2,13 +2,14 @@
 title: Quick definitions + notations
 categories:
   - maths
-type: Document
 maths: 1
+toc: 1
 ---
 
 ## Definitions
 
 **Self adjoint matrix** ([https://en.wikipedia.org/wiki/Hermitian_matrix](https://en.wikipedia.org/wiki/Hermitian_matrix))  is a [complex square matrix](https://en.wikipedia.org/wiki/Complex_square_matrix) that is equal to its own [conjugate transpose](https://en.wikipedia.org/wiki/Conjugate_transpose)—that is, the element in the i-th row and j-th column is equal to the [complex conjugate](https://en.wikipedia.org/wiki/Complex_conjugate) of the element in the j-th row and i-th column, for all indices i and j.
+
 $$
 a_{ij} = \overline{a_{ji}} \quad \text{or } A=\overline{A^T}
 $$
@@ -40,6 +41,5 @@ $$
 - $f$ is **smooth** or $f\in C^{\infty}$ : a function that has derivatives of all orders everywhere in its domain.
 - Sobolev space from Ishihara1982[^Ishihara1982]: Nói rõ về định nghĩa $W^{r,p}(\Omega)$ và norms cũng như không gian $H^1(\Omega),H^1_0(\Omega)$.
 
----
 
 

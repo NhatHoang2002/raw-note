@@ -1,5 +1,5 @@
 p ~ ul, p ~ ol{
-	margin-top: -10px;
+	margin-top: -5px;
 }
 
 /*tom tat*/
@@ -272,6 +272,12 @@ body {
 	display: none;
 }
 
+.thi-post h4{
+	font-size: 1.05rem;
+	font-weight: 500;
+	color: darkgreen;
+}
+
 /* footnote */
 .footnote{
 	opacity: initial;
@@ -301,8 +307,9 @@ pre.highlight{
 	/*overflow: scroll;*/
 }
 
-.highlighter-rouge{
-	margin: -10px 0 1em 0!important
+p + div.highlighter-rouge{
+	margin: -10px 0 1em 0!important;
+	overflow: auto;
 }
 
 .highlight{
@@ -330,6 +337,7 @@ pre code{
 
 .highlighter-rouge pre{
 	padding: 8px 10px!important;
+	overflow: auto;
 }
 
 /* search */
@@ -459,7 +467,7 @@ li>img{
 /* boxes */
 .thi-box{
 	margin: 20px 0;
-	overflow: hidden;
+	overflow: auto;
 }
 .thi-box .box-title{
 	background-color: #2874cf;

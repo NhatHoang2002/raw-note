@@ -1,6 +1,8 @@
 ---
 title: Kháng chiến chống Nguyên Mông lần 1 (kỳ 2)
 categories: articles
+tags: ["lịch sử"]
+toc: 1
 ---
 
 > Series này đã được post trên motthegioi.vn nhưng do ở đấy post không tiện theo dõi, khó tìm kiếm và khó lưu trữ nên tôi quyết định copy về lại đây để dành xem và tham khảo sau này.

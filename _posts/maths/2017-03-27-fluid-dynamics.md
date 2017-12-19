@@ -2,7 +2,6 @@
 title: Fluid dynamics
 categories:
   - maths
-type: Document
 maths: 1
 ---
 

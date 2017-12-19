@@ -5,6 +5,7 @@ categories:
   - it 
   - phd
 maths: 1
+toc: 1
 ---
 
 Cái này là phiên bản khác của cái ghi chú file `nxfem_matlab_algorithm.pdf` trong thư mục `\matlab\readme`.

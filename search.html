@@ -1,36 +1,32 @@
 ---
-layout: default
+layout: page
 title: Tìm kiếm
-js: ["lunr.min.js", "search.js"]
+js: ["lunr.min.js","search.js"]
 css: ["page.css","search.css"]
 ---
-
-
-<div class="row">
 	
-	{% include search_form.html %}
+{% include search_form.html %}
 
-	<p style="opacity: 0.6; color: darkmagenta; font-size: 1.2rem;" ><span id="search-process">Đang tải</span> kết quả <span id="search-query-container" style="display: none;">cho từ khóa "<strong id="search-query"></strong>"</span></p>
-	<ul id="search-results"></ul>
+<p style="opacity: 0.6; color: darkmagenta; font-size: 1.2rem;margin-bottom: 20px;" ><span id="search-process">Đang tải</span> kết quả <span id="search-query-container" style="display: none;">cho từ khóa "<strong id="search-query"></strong>"</span></p>
+<ul id="search-results"></ul>
 
-	<script>
-		window.data = {
-			{% for post in site.posts %}
-				{% if post.title %}
-					{% unless post.excluded_in_search %}
-						{% if added %},{% endif %}
-						{% assign added = false %}
-						"{{ post.url | slugify }}": {
-							"id": "{{ post.url | slugify }}",
-							"title": "{{ post.title | xml_escape }}",
-							"categories": "{{ post.categories | join: ", " | xml_escape }}",
-							"url": " {{ post.url | xml_escape }}",
-							"content": {{ post.content | strip_html | replace_regex: "[\s/\n]+"," " | strip | jsonify }}
-						}
-						{% assign added = true %}
-					{% endunless %}
-				{% endif %}
-			{% endfor %}
-		};
-	</script>
-</div>
+<script>
+	window.data = {
+		{% for post in site.posts %}
+			{% if post.title %}
+				{% unless post.excluded_in_search %}
+					{% if added %},{% endif %}
+					{% assign added = false %}
+					"{{ post.url | slugify }}": {
+						"id": "{{ post.url | slugify }}",
+						"title": "{{ post.title | xml_escape }}",
+						"categories": "{{ post.categories | join: ", " | xml_escape }}",
+						"url": " {{ post.url | xml_escape }}",
+						"content": {{ post.content | strip_html | replace_regex: "[\s/\n]+"," " | strip | jsonify }}
+					}
+					{% assign added = true %}
+				{% endunless %}
+			{% endif %}
+		{% endfor %}
+	};
+</script>
