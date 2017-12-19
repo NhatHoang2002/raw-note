@@ -331,7 +331,7 @@ Identity from **Arnold2001** which holds for vectors $\mathbf{\tau}$ and scalars
 
 $$
 \begin{align*}
-{{\displaystyle\Sigma}}_{T\in \mathcal{T}_h}\int_{\partial T}(\mathbf{\tau}\cdot \mathbf{n})\varphi ds = {{\Sigma}}_{e\in \mathcal{E}_h}\int_e\{\tau\}\cdot [\varphi]ds + {{\Sigma}}_{e\in \mathcal{E}^0_h}\int_e [\tau]\{\varphi\}ds.
+\sum_{T\in \mathcal{T}_h}\int_{\partial T}(\mathbf{\tau}\cdot \mathbf{n})\varphi ds = {\Sigma}_{e\in \mathcal{E}_h}\int_e\{\tau\}\cdot [\varphi]ds + {\Sigma}_{e\in \mathcal{E}^0_h}\int_e [\tau]\{\varphi\}ds.
 \end{align*}
 $$
 
