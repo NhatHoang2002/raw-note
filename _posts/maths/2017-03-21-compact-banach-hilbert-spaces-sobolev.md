@@ -156,8 +156,6 @@ $$
 \left<{x,z}\right>_{H(\text{div};\Omega)} := \left<{x,z}\right>_{L^2(\Omega)^n} + \left<{\text{div} x, \text{div} z}\right>_{L^2(\Omega)}
 $$
 
-------
-
 ## Other spaces
 
 **Metric space** : là cặp ==$(M,d)$== thỏa $d:M\times M\to \mathbb{R}$ is a metric on $M$ thỏa 3 điều kiện

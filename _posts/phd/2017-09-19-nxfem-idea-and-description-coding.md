@@ -1,5 +1,5 @@
 ---
-title: NXFEM - idea and description
+title: NXFEM - idea and description (coding)
 categories:
   - maths 
   - it 
