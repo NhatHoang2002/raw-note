@@ -96,7 +96,19 @@ Ba cái này là dùng để  dự đoán giá trị của $\gamma$ trong thesis
 
 ## Cái quadrature
 
-Hàm số `intGradnPhi`,
+Hàm số `intGradnPhi`, nếu xét $P^1$ thì có ngay công thức sau (từ thầy và cô), không cần dùng quadrature
+
+$$
+\int_A^B \varphi_i(x,y)ds = \vert AB\vert \varphi_i(x_M,y_M) = \vert AB\vert N_i(\hat{x}_M,\hat{y}_M).
+$$
+
+Trong đó $M$ là trung điểm của đoạn $AB$ và $\varphi\_i(x\_0,y\_0)=N\_i(\hat{x}\_0,\hat{y}\_0)$, chứng minh như bên dưới
+
+$$
+x=Q_x(\hat{x},\hat{y}), y=Q_y(\hat{x},\hat{y}).
+$$
+
+Theo đó $Q\_x,Q\_y$ được xác định theo sự tương ứng $i-(0,0),j-(1,0),k-(0,1)$. Ta sẽ đi chứng minh sự tương đồng giữa $\varphi\_i$ và $N\_i$ tại các node này, sau đó tương tự cho $j,k$. Có ghi chú trong viết bảng. **Đã kiểm chứng bằng matlab là hai cách tính này GIỐNG NHAU!**
 
 
 

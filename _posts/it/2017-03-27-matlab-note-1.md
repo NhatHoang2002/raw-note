@@ -342,13 +342,31 @@ Lưu ý là `[x y]` khác với `[y x]`.
 
 ### structure variable
 
-Để có thể khai báo biến dạng `s.1, s.2`. Xem thêm [ở đây](https://fr.mathworks.com/help/matlab/ref/struct.html). Ở đây lưu ý cách tạo multiple dimension structure variable. Ví dụ muốn khai báo trước 1 biến structure đa chiều 2x5 thì làm sao?
+Để có thể khai báo biến dạng `s.1, s.2`. Xem thêm [ở đây](https://fr.mathworks.com/help/matlab/ref/struct.html). Ở đây lưu ý cách tạo multiple dimension structure variable. Ví dụ muốn khai báo trước 1 biến structure đa chiều thì làm sao?
 
 ~~~ matlab
-n=5;
+n=3;
 err = struct('L2',cell(n,1),'Vh',cell(n,1));
 % Sẽ ra kq nx1 struct array with fields L2, Vh
 ~~~
+
+Cách trên **dài dòng** và có nhược điểm là phải gõ luôn cái "fields". Cách dưới đây nhanh hơn nhiều
+
+~~~ matlab
+s(1:3) = struct();
+~~~
+
+Khi khai báo như trên, thì cho `s` vào vòng lặp `for` để nhận giá trị, nó sẽ không bị warning "*The variable s appears to change size on every loop iteration*". Tuy nhiên nó sẽ gặp lỗi nếu mỗi vòng lặp mình cho `s(k)=t` với `t` là 1 biến structure khác.
+
+**Cách hay nhất**, đó là không cần khai báo trước gì cả và trong vòng lặp, ta đi từ N tới 1 chứ không phải từ 1 tới N (ý tưởng [từ đây](https://fr.mathworks.com/matlabcentral/answers/65613-subscripted-assignment-between-dissimilar-structures-thrown-on-empty-struct))
+
+~~~ matlab
+% t is a struct var
+for i=N:-1:1
+  s(i) = t;
+end
+~~~
+
 
 ### Some operators with array and matrix
 
@@ -670,7 +688,7 @@ pdeplot(p,e,t,'XYData',u); % in 2D with iso values
 ~~~
 
 - `PDESURF` expects input of the form `pdesurf(p,t,u)`. `u` must either be a column vector and the same length as `p`, or a row vector and the same length as `t`.
-- pdesurf không thể dùng title được! Đây là một hàm định nghĩa lại từ hàm pdeplot.
+- pdesurf không thể dùng title được! Đây là một hàm định nghĩa lại từ hàm pde
 
 ## Solvers in matlab 
 
@@ -695,6 +713,8 @@ solution = gmres(A,b,tol);
 ~~~
 
 ## Plot
+
+Lưu ý rằng có thể sử dụng nhiều câu lệnh plot cùng với nhau (`line`,`quiver`,`pdemesh`,...), ngay cả với các lệnh plot PDE vì nó chỉ toàn vẽ trên hệ trục tọa độ thôi hà, vì thế cứ dùng tọa độ mà vẽ là được.
 
 ~~~ matlab
 plot(x,y); % very simple plot of y=y(x)

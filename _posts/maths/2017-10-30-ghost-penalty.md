@@ -98,7 +98,7 @@ $$
 
 ## Nonconforming NXFEM with ghost penalty
 
-Có nói ở phần trước rồi. Cái nonconforming này nói trong bài báo **Capatina2015** (của El-Otmany), đại ý thế này
+Có nói ở phần trước rồi. Cái nonconforming này nói trong bài báo **Capatina2015 ** (của El-Otmany), đại ý thế này
 
 - nonconfotming là có thể không liên tục qua các edges, có thêm lượng $\int\_e[v]=0$ qua các edge trong cách định nghĩa không gian $V\_h$.
 - Còn của Hansbo là không liên tục qua $\Gamma$ chứ vẫn liên tục qua các edges (conforming).
