@@ -4,9 +4,16 @@ categories: it
 tags: ["latex"]
 maths: 1
 toc: 1
+date: 2017-12-27
 ---
 
 This is the list of quick latex notes before I write clearly and completely on the site [Math2IT](http://math2it.com). 
+
+## LaTeX errors
+
+*Underfull \hbox (badness 10000) message* (xem thêm [ở đây](https://tex.stackexchange.com/questions/199635/underfull-hbox-badness-10000-message))
+
+Cách giải quyết đơn giản chỉ cần xóa đi `\\` ở cuối mỗi hàng được báo lỗi.
 
 ## Maths LaTeX editors
 
