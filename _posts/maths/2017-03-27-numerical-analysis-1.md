@@ -544,7 +544,40 @@ Cái này giống như direct method, từ cái ma trận ban đầu $A$, nó bi
 
 ### Condition number
 
-Thật ra xem [trên wikipedia](https://en.wikipedia.org/wiki/Condition_number) dễ hiểu hơn. Nó có động cơ + giải thích luôn.
+Thật ra xem [trên wikipedia](https://en.wikipedia.org/wiki/Condition_number) dễ hiểu hơn. Nó có động cơ + giải thích luôn. Dưới đây là tóm tắt đôi chút. Cái chính là ta muốn **xem sự thay đổi nhỏ của $A$ hoặc $F$ sẽ ảnh hưởng thế nào đến kết quả nghiệm?**. Đầu tiên, ta xét,
+
+$$
+Ax=F
+$$
+
+Sẽ thế nào nếu $F$ thay đổi 1 tí thành $F+e$? Khi ấy giá trị của $\delta x$ có lớn quá không? $\delta x$ là gì? Đó chính là $x\_2-x\_1$, trong đó,
+
+$$
+\begin{align}
+Ax_2 &= F+e \\
+x_2 &= A^{-1}F + A^{-1}e = x_1 + A^{-1}e \\
+\delta x &= A^{-1}e
+\end{align}
+$$
+
+Bây giờ ta muốn khảo sát,
+
+$$
+\begin{align}
+\dfrac{\frac{\Vert \delta x\Vert}{\Vert x\Vert}}{\frac{\Vert e\Vert}{\Vert F\Vert}} 
+&= \dfrac{\frac{\Vert A^{-1}e\Vert}{\Vert A^{-1}F\Vert}}{\frac{\Vert e\Vert}{\Vert F\Vert}} 
+= \left( \dfrac{\Vert A^{-1}e \Vert}{\Vert e\Vert} \right) \left( \dfrac{\Vert F \Vert}{ \Vert A^{-1}F \Vert} \right)\\
+&= \left( \dfrac{\Vert A^{-1}e \Vert}{\Vert e\Vert} \right) \left( \dfrac{\Vert Ax \Vert}{ \Vert x \Vert} \right)
+\end{align}
+$$
+
+Nhớ lại định nghĩa chuẩn của ma trận là 
+
+$$
+\Vert A \Vert = \max_{x\ne 0}\dfrac{\Vert Ax \Vert}{\Vert x\Vert}
+$$
+
+Do đó ta cố gắng đưa cái **max** vào để được cái $\Vert A^{-1}\Vert \Vert A\Vert = \kappa(A)$.
 
 ---
 
@@ -562,17 +595,17 @@ $$
 \dfrac{\Vert\delta U\Vert}{\Vert U\Vert} \le \kappa(A) \dfrac{\Vert \delta F\Vert}{\Vert F\Vert}
 $$
 
+$\Rightarrow$ Sự thay đổi nhỏ ở $F$ phụ thuộc nhiều vào $\kappa(A)$ để dẫn đến sự thay đổi nhỏ/lớn ở kết quả nghiệm!
+
 If $U+\delta U$ is the solution to the pertubed system $(A+\delta A)(U+\delta U)=F$ with $F\ne 0$ then 
 
 $$
 \dfrac{\Vert\delta U\Vert}{\Vert U+\delta U\Vert} \le \kappa(A) \dfrac{\Vert \delta A\Vert}{\Vert A\Vert}
 $$
 
+$\Rightarrow$ Sự thay đổi nhỏ ở $A$ phụ thuộc nhiều vào $\kappa(A)$ để dẫn đến sự thay đổi nhỏ/lớn ở kết quả nghiệm!
+
 ### Preconditioner
-
-**Preconditioner** : The general idea underlying any preconditioning procedure for iterative solvers is to modify the (ill-conditioned) system $Ax = b$ in such a way that we obtain an equivalent system $\bar{A}\bar{x}=\bar{b}$ for which the iterative method converges faster.
-
----
 
 **Preconditioner** : The general idea underlying any preconditioning procedure for iterative solvers is to modify the (ill-conditioned) system $Ax = b$ in such a way that we obtain an equivalent system $\bar{A}\bar{x}=\bar{b}$ for which the iterative method converges faster.
 
@@ -614,6 +647,8 @@ Thường người ta test thử với Hilbert matrix để xem thử condition 
 $$
 H_{{ij}}={\frac  {1}{i+j-1}}.
 $$
+
+Trong matlab, để tạo một Hilbert matrix $n\times n$ thì dùng câu lệnh `hilb(n)`.
 
 ### Positive definite matrix
 

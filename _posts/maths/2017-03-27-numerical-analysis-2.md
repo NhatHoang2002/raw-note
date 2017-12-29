@@ -40,3 +40,13 @@ The entire domain may also be subdivided into smaller regions. Some of these reg
 In multiphase flow, the boundary between phases is usually referred to as an "interface" to distinguish it from the actual physical boundaries surrounding the system. 
 
 In some literatures, I found that the authors use the term "interfaces" to indicate the geometry position/properties between 2 fluids/phases/something else... However, when they need to use a boundary condition on these interfaces, they call them boundary in term "boundary condition" (not "interface condition"). So, generally, 2 terms are only different about their meaning, is that right? 
+
+## Mass matrix vs stiffness matrix
+
+In FEM, **stiffness matrix** represents the system of linear equations that must be solved. $AU+F$.
+
+$$
+A_{ij} = a(\varphi_j,\varphi_i).
+$$
+
+Stiffness matrix is symmetric, i.e., all its eigenvalues are real!
