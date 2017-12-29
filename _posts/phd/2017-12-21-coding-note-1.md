@@ -35,3 +35,10 @@ Trong đó $l=0,1$ đại diện cho $L^2$ và $H^1$ xét trên part của trian
 $$
 \Vert \varphi_k\Vert_{L^2(T\cap\Omega_i)} \le \hat{c}h_T^{\frac{5}{2}}
 $$
+
+## Preconditioner, ill-conditioned problem!!!
+
+Có bao nhiêu cách tất cả?
+
+- Hansbo & Burman: dùng ghost penalty.
+- Lehrenfeld: 

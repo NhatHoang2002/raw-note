@@ -8,8 +8,6 @@ maths: 1
 
 Chú ý rằng những **id** trong đây cũng là những id được dùng trong các file tex.
 
-## Maths
-
 - **Carraro2016** On the implementation of the eXtended Finite Element Method ( XFEM ) for interface problems
 - **Capatina2017** Extension of NXFEM to nonconforming finite elements
 - **Areias2006** A comment on the article "*A finite element method for simulation of strong and weak discontinuities in solid mechanics*" by A. Hansbo and P. Hansbo [Comput. Methods Appl. Mech. Engrg. 193 (2004) 3523-3540]
@@ -85,7 +83,4 @@ Chú ý rằng những **id** trong đây cũng là những id được dùng tr
 - **ErnDiscont** Mathematical Aspects of Discontinuous Galerkin methods
 - **Nitsche1971** Uber ein Variationsprinzip zur Losung von Dirichlet-Problemen bei Verwendung von Teilraumen, die keinen Randbedingungen unterworfen sind
 - **Kubinska2005** Approximation of Carathéodory functions and multifunctions
-
-## Information technology
-
 - **LongChen** : Programming of finite element methods in Matlab ([link](https://www.math.uci.edu/~chenlong/226/Ch3FEMCode.pdf)).
