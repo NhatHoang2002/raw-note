@@ -3,7 +3,7 @@ title: Numerical analysis 1
 categories: maths
 tags: ["numerical analysis","solver","eigenvalue & eigenvector","boundary condition","shape function","quadrature","matrix","preconditioner","condition number","mesh","scheme","level set method","discontinuous","galerkin method","finite element method","conforming","nxfem","nitsche method","interface","newton method","streamline diffusion method","a priori","posteriori"]
 maths: 1
-date: 2017-06-01
+date: 2018-01-02
 toc: 1
 ---
 
@@ -605,6 +605,12 @@ $$
 
 $\Rightarrow$ Sự thay đổi nhỏ ở $A$ phụ thuộc nhiều vào $\kappa(A)$ để dẫn đến sự thay đổi nhỏ/lớn ở kết quả nghiệm!
 
+---
+
+Condition number of a matrix $M$ = ratio between its **largest and smallest eigenvalue**. Có thể đọc chứng minh ở Proposiition 9.2 Arnold Book. Lý do tại sao thì có 1 ý tưởng nho nhỏ có thể xem xét. Dựa vào định nghĩa của $\Vert A\Vert$ rồi định nghĩa của eigenvalues và eigenvectors của $A$ là $Av=\lambda v$, ta thay công thức của $\Vert A\Vert$ bởi các eigenvalues và eigenvector này, sau đó lấy max là ra kết quả. Điều còn lại chưa rõ là tại sao lại có min?
+
+Cũng có thể tham khảo 1 tí ở [tài liệu này](https://cs.nyu.edu/courses/fall06/G22.2112-001/linearAlgebra1.pdf).
+
 ### Preconditioner
 
 **Preconditioner** : The general idea underlying any preconditioning procedure for iterative solvers is to modify the (ill-conditioned) system $Ax = b$ in such a way that we obtain an equivalent system $\bar{A}\bar{x}=\bar{b}$ for which the iterative method converges faster.
@@ -628,7 +634,6 @@ Còn **well-conditioned matrix** có nghĩa là khi thay đổi nhỏ các hệ 
 
 Cần phải biết về cái **preconditioner**. Xem ở mục khác có ghi cụ thể hơn.
 
-**Preconditioner** : The general idea underlying any preconditioning procedure for iterative solvers is to modify the (ill-conditioned) system $Ax = b$ in such a way that we obtain an equivalent system $\bar{A}\bar{x}=\bar{b}$ for which the iterative method converges faster.
 
 In linear algebra and numerical analysis, a **preconditioner** $P$ of a matrix $A$ is a matrix such that $P^{-1}A$ has a smaller **condition number** than $A$ (smaller condition number implies more **well-conditioned** matrix).
 
@@ -745,11 +750,11 @@ If the vector space $V$ is **finite-dimensional**, then the linear transformatio
 
 $${\displaystyle A\mathbf {v} =\lambda \mathbf {v} .}$$
 
-Xem định nghĩa **Positive definite matrix** và hiểu rõ nó hơn ở file này - [positive definite.pdf](quiver-file-url/2DCBA056260F6B696F38822893637F10.pdf). 
+Xem định nghĩa **Positive definite matrix** và hiểu rõ nó hơn ở file `positive definite.pdf`. 
 
 ### Singular values and singular vectors
 
-Xem thêm [tại đây](https://www.mathworks.com/moler/eigs.pdf) (docs của mathworks). Cái **eigenvalue decomposition** cũng được giải thích trong này. Nếu link die ,có thể xem [eigenvalue and singular value.pdf](quiver-file-url/408E443E0AA205C68E1E68CC6F6E806C.pdf).
+Xem thêm [tại đây](https://www.mathworks.com/moler/eigs.pdf) (docs của mathworks). Cái **eigenvalue decomposition** cũng được giải thích trong này. Nếu link die, có thể xem  ở `eigenvalue and singular value.pdf`.
 
 A singular value and pair of singular vectors of a square or rectangular matrix $A$ are a nonnegative scalar σ and two nonzero vectors $u$ and $v$ so that
 
@@ -770,9 +775,9 @@ Given a matrix $A$, if the eigenvalues of $A^TA$ are $\lambda\_i \geq 0$, then $
 
 $$A = \begin{pmatrix}1&0&1\\0&1&1\\0&0&0\end{pmatrix},$$
 
-the eigenvalues of $A$ are $1,1,0$ while the singular values of $A$ are $\sqrt{3},1,0$.
+the eigenvalues of $A$ are $(1,1,0)$ while the singular values of $A$ are $(\sqrt{3},1,0)$.
 
-Cái này là trên [stackexchange](http://math.stackexchange.com/posts/606516/edit).
+Cái này là trên [stackexchange](https://math.stackexchange.com/questions/127500/what-is-the-difference-between-singular-value-and-eigenvalue/606516#606516).
 
 ### matrix and eigenvalue
 

@@ -41,12 +41,28 @@ In multiphase flow, the boundary between phases is usually referred to as an "in
 
 In some literatures, I found that the authors use the term "interfaces" to indicate the geometry position/properties between 2 fluids/phases/something else... However, when they need to use a boundary condition on these interfaces, they call them boundary in term "boundary condition" (not "interface condition"). So, generally, 2 terms are only different about their meaning, is that right? 
 
-## Mass matrix vs stiffness matrix
+## Matrix
 
-In FEM, **stiffness matrix** represents the system of linear equations that must be solved. $AU+F$.
+In FEM, **stiffness matrix** represents the system of linear equations that must be solved. $AU=F$.
 
 $$
 A_{ij} = a(\varphi_j,\varphi_i).
 $$
 
-Stiffness matrix is symmetric, i.e., all its eigenvalues are real!
+Stiffness matrix is symmetric, i.e., all its eigenvalues are real! Thứ tự trước sau của $i,j$ là khác nhau, cái này có được "nói" ở [cuối bài này của wiki](https://en.wikipedia.org/wiki/Stiffness_matrix).
+
+---
+
+In linear algebra, a **diagonal matrix** is a matrix in which the entries outside the main diagonal are all zero.
+
+---
+
+A matrix, or other problem, is "**badly scaled**" when some numbers in the problem are so much larger than the other that they cannot be kept in memory to the same accuracy, causing some information to be lost.
+
+Reference https://www.physicsforums.com/threads/badly-scaled-matrix.637148/
+
+## Lagrangian Finite Elements (Pk)
+
+Cùng tìm hiểu $P^k$ finite element là gì? Cái này xem trong mục 6.3 của freefem++doc. Có thể hiểu sơ sơ, $P^k$ là tập hợp những đa thức bậc cao nhất là $k$.
+
+Có thể đọc thêm ở chương 3 file **aide-memoire element finis - alex ern BOOK.pdf**.
