@@ -609,7 +609,7 @@ $\Rightarrow$ Sự thay đổi nhỏ ở $A$ phụ thuộc nhiều vào $\kappa(
 
 Condition number of a matrix $M$ = ratio between its **largest and smallest eigenvalue**. Có thể đọc chứng minh ở Proposiition 9.2 Arnold Book. Lý do tại sao thì có 1 ý tưởng nho nhỏ có thể xem xét. Dựa vào định nghĩa của $\Vert A\Vert$ rồi định nghĩa của eigenvalues và eigenvectors của $A$ là $Av=\lambda v$, ta thay công thức của $\Vert A\Vert$ bởi các eigenvalues và eigenvector này, sau đó lấy max là ra kết quả. Điều còn lại chưa rõ là tại sao lại có min?
 
-Cũng có thể tham khảo 1 tí ở [tài liệu này](https://cs.nyu.edu/courses/fall06/G22.2112-001/linearAlgebra1.pdf).
+Cũng có thể tham khảo 1 tí ở [tài liệu này](https://cs.nyu.edu/courses/fall06/G22.2112-001/linearAlgebra1.pdf) và file **eigenvalue and singular value.pdf**.
 
 ### Preconditioner
 

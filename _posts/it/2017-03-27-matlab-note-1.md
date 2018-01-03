@@ -748,6 +748,12 @@ figure(1); plot(x,e);
 figure(2); plot(x,u);
 ~~~
 
+Biết số hình hiện có (dùng để plot các hình khác)
+
+~~~ matlab
+size(get(0,'Children'),1);
+~~~
+
 ### contour  vs surface
 
 Có thể vẽ `contour` (đường viền) của hình thay vì là `surface`
