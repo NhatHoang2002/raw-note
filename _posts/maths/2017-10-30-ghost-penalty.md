@@ -62,6 +62,10 @@ Trong Note của Lehrenfeld có giải thích ý tưởng cho **ghost penalty** 
 
 > **Remark 3.7 (Conditioning)**. The Ghost penalty method ensures that conditioning of the resulting system matrix is well-behaved. This holds true for boundary and interface problems. Note that even for the interface problem with the hansbo -averaging (where stability is not a problem) the resulting system matrix is ill-conditioned. In contrast to the boundary problem this can however be easily ﬁxed by suitable preconditioning strategies which is discussed in the next section.
 
+---
+
+[Burman 2011] The idea of such stabilisation methods is to introduce in the discrete formulation a minimum of artiﬁcial diffusion to ensure the positivity of the discrete bilinear form for any conﬁguration of the boundary or interface.
+
 ### Ý tưởng code
 
 Xem thêm trong file coding node (`nxfem_matlab_algorithm.pdf`) và [note này](/maths/nxfem-hansbo-arnold-nitsche/#ghost-penalty), ở đây muốn nói thêm vài ý chính.
@@ -71,6 +75,8 @@ Xem thêm trong file coding node (`nxfem_matlab_algorithm.pdf`) và [note này](
 ~~~ matlab
 eGP = eNBCTs(:,posF); % contain triangle K
 ~~~
+
+Thật ra ý tưởng **không xét cạnh biên** nó là xét các cạnh thỏa nó là giao của hai tam giác. Các cạnh biên chỉ thuộc 1 tam giác nên không lấy. Cái ý này đọc ở note của Lehrenfeld trang 48 pdf.
 
 ## Fictitious domain
 

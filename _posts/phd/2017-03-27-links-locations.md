@@ -23,8 +23,6 @@ maths: 1
 10. [Find the differential of this function.](http://goo.gl/9d5V3o) 13/4/14
 11. [What are differences between 'a priori' and 'posteriori' error estimate in numerical analysis?](http://scicomp.stackexchange.com/questions/23202/what-are-differences-between-a-priori-and-posteriori-error-estimate-in-numer/23209) 24/2/16
 
----
-
 ### Other questions on Stack exchange
 
 1. [Weak formulation for Laplace equation and Robin condition (blog wordpress)](https://mathproblems123.wordpress.com/2012/10/22/weak-formulation-for-laplace-equation-with-robin-boundary-conditions/)
@@ -32,7 +30,6 @@ maths: 1
 3. [Weak form of Robin BC problem - Shuhao Cao](http://math.stackexchange.com/questions/361423/variational-formulation-of-robin-boundary-value-problem-for-poisson-equation-in)
 4. [Galerkin for Neumann BC, Shuhao Cao, có cách biến đổi ngược từ weak về strong.](http://math.stackexchange.com/questions/357170/using-galerkin-method-for-pde-with-neumann-boundary-condition)
 5. Câu hỏi về support compact $C^{\infty}_c$ : [here](http://math.stackexchange.com/questions/446884/differences-between-c-c-infty0-t-and-c-c-infty0-t) (cái này có thể gợi ý cho vụ extend zero outside $\Omega$)
-
 
 
 ## Quick notes
@@ -54,15 +51,11 @@ maths: 1
 
 ### Books and websites hay
 
-Nói khá rõ về FEM, có nói về nodes, degree of freedom, extended finite element method,... : file **fem hans peter NOTE.pdf**
-
----
-
-Sách về FEM cơ bản nhất nên đọc quyển của **Claes**
-
----
-
-Trang web của Wenqiang feng (có mấy cái notes về PDE, Numerical, code matlab,...) khá là hay : [http://web.utk.edu/~wfeng1/note.html#sec5](http://web.utk.edu/~wfeng1/note.html#sec5)
+- Nói khá rõ về FEM, có nói về nodes, degree of freedom, extended finite element method,... : file **fem hans peter NOTE.pdf**
+- Sách về FEM cơ bản nhất nên đọc quyển của **Claes**
+- Trang web của Wenqiang feng (có mấy cái notes về PDE, Numerical, code matlab,...) khá là hay : [http://web.utk.edu/~wfeng1/note.html#sec5](http://web.utk.edu/~wfeng1/note.html#sec5)
+- Tài liệu **gentle fem sayas.pdf** nói về FEM với giải thích đơn giản, gần gũi.
+- Sách về numerical analysis nói chung: **numerical analysis Richard-Douglas BOOK.pdf**
 
 ### Other definitions and notes on Maths
 

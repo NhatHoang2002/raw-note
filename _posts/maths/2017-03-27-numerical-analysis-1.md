@@ -163,7 +163,11 @@ Vì ở trên có đại lượng $(c\cdot\nabla u_h, c\cdot\nabla v_h)$, which 
 
 ### Immersed interface method (IIM)
 
-(cái ý này lấy trong bài báo **Li2003** page 3) : To solve an interface problem numerically, usually we need to choose a grid first. In general, there are two kinds of grids: (i) a body fitted grid that is usally combined with a finite element (FE) method, see for example, [7,12]; (ii) a Cartesian grid that is usually assocuated with a finite difference (FD) discretization. The immersed interface method is often based on a Cartesian grid and is often associated with a finite difference method. However, it has been also combined with finite element methods [43,45]. $\Rightarrow$ Rốt cuộc cũng chưa biết IIM là cái gì?
+(cái ý này lấy trong bài báo **Li2003** page 3) : To solve an interface problem numerically, usually we need to choose a grid first. In general, there are two kinds of grids: 
+- (i) a body fitted grid that is usally combined with a finite element (FE) method, see for example, [7,12]; 
+- (ii) a [Cartesian grid](https://en.wikipedia.org/wiki/Cartesian_coordinate_system) (lưới vuông) that is usually assocuated with a finite difference (FD) discretization. 
+
+The immersed interface method is often based on a Cartesian grid and is often associated with a finite difference method. However, it has been also combined with finite element methods [43,45]. $\Rightarrow$ **Rốt cuộc cũng chưa biết IIM là cái gì?**
 
 Có cái thesis của Li làm nhiều về cái IIM này. [xem ở đây](http://faculty.washington.edu/rjl/students/li/liphd.pdf)
 
@@ -461,7 +465,7 @@ $$
 \begin{align}
 \int_{\Omega}f \varphi_i &= \int_{\Omega}\nabla u_h\cdot\nabla \varphi_i \\ 
 &= \int_{\Omega}\nabla \left( \sum_j u_j\varphi_j \right) \cdot\nabla \varphi_i \\ 
-&= \sum_j u_j \int_{\Omega} \nabla varphi_j\cdot \nabla \varphi_i, \quad i=1,\ldots,n.
+&= \sum_j u_j \int_{\Omega} \nabla \varphi_j\cdot \nabla \varphi_i, \quad i=1,\ldots,n.
 \end{align}
 $$
 

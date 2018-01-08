@@ -53,16 +53,49 @@ Stiffness matrix is symmetric, i.e., all its eigenvalues are real! Thứ tự tr
 
 ---
 
+**Mass vs stiffness matrix** có thể xem ở hai file **mass vs stiffness matrix (suji).pdf** và **mass vs stiffness matrix (sayas).pdf**.
+
+- Stiffness matrix: $W_{ij}= \int_{\Omega} \nabla \varphi_j \cdot \nabla \varphi_i dx $
+- Mass matrix: $M_{ij} = \int_{\Omega} \varphi_j\varphi_i dx$
+
+Both matrices are symmetric. The mass matrix M is positive deﬁnite. The stiﬀness matrix is positive semideﬁnite and in fact almost positive deﬁnite: if we eliminate take any index i and erase the i−th row and the i−th column of W, the resulting matrix is positive deﬁnite.
+
+The original equation is the Poisson equation $−\Delta u = f$ and no reaction term appears, only the stiﬀness matrix appears. Therefore, *stiﬀness comes from diﬀusion*, *mass proceeds from reaction*.
+
+---
+
 In linear algebra, a **diagonal matrix** is a matrix in which the entries outside the main diagonal are all zero.
 
 ---
 
 A matrix, or other problem, is "**badly scaled**" when some numbers in the problem are so much larger than the other that they cannot be kept in memory to the same accuracy, causing some information to be lost.
 
-Reference https://www.physicsforums.com/threads/badly-scaled-matrix.637148/
+Reference [https://www.physicsforums.com/threads/badly-scaled-matrix.637148/](https://www.physicsforums.com/threads/badly-scaled-matrix.637148/)
 
 ## Lagrangian Finite Elements (Pk)
 
 Cùng tìm hiểu $P^k$ finite element là gì? Cái này xem trong mục 6.3 của freefem++doc. Có thể hiểu sơ sơ, $P^k$ là tập hợp những đa thức bậc cao nhất là $k$.
 
 Có thể đọc thêm ở chương 3 file **aide-memoire element finis - alex ern BOOK.pdf**.
+
+## The Forward/Bakward Euler scheme
+
+Xem thêm ở file **mass vs stiffness matrix (suji).pdf**.
+
+- **The forward Euler scheme**: $\dfrac{\partial u}{\partial t} \simeq \dfrac{u^{m+1}-u^m}{\Delta t}$, tất cả các cái $u$ khác đều là $u^m$. Cho trước $u^m$, tìm $u^{m+1}$.
+- **The backward Euler scheme**: $\dfrac{\partial u}{\partial t} \simeq \dfrac{u^{m+1}-u^m}{\Delta t}$, tất cả các cái $u$ khác đều là $u^{m+1}$.
+
+## Stabilization vs Preconditioning
+
+Về định nghĩa và thế nào là **preconditioning**, có thể xem [ở note này](/numerical-analysis-1#preconditioner-condition-number-matrix).
+
+Còn định nghĩa về **stability**, có thể xem ở 
+
+- [Wikipedia](https://en.wikipedia.org/wiki/Numerical_stability): 
+  - the growth of round-off errors and/or initially small fluctuations in initial data which might cause a large deviation of final answer from the exact solution
+  - **robust** – that is to say, do not produce a wildly different result for very small change in the input data.
+  - convergence đòi hỏi phải có stability.
+- methods are stable, in the sense that small changes or perturbations in the initial conditions produce correspondingly small changes in the subsequent approximations. *numerical douglas Book* (p.340)
+- Cũng trong sách của Douglas, có thể xem về **preconditioning** ở trang 486.
+- stability is a property of the discrete problems and depends on the particular choice of norms, but it does not depend on the true solution u in any way. [*numerical lecture note - arnold*] p.11
+- 
