@@ -33,7 +33,7 @@ Trong đó $l=0,1$ đại diện cho $L^2$ và $H^1$ xét trên part của trian
 **Tóm lại**, 
 
 $$
-\Vert \varphi_k\Vert_{L^2(T\cap\Omega_i)} \le \hat{c}h_T^{\frac{5}{2}}
+\Vert \varphi_k\Vert_{L^2(T\cap\Omega_i)} \le \hat{c}h_T^{\frac{7}{2}}
 $$
 
 ## Preconditioner, ill-conditioned problem!!!

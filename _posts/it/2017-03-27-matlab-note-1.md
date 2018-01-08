@@ -18,6 +18,9 @@ toc: 1
 - Một trang giải thích về matlab khá hay : [matlabtips.com](http://www.matlabtips.com)
 - Một trang khác về matlab : [tutorialspoint](https://www.tutorialspoint.com/matlab/index.htm)
 - Trang matlab online : [đây](https://www.tutorialspoint.com/execute_matlab_online.php)
+- Không muốn hiển thị kết quả dạng mũ (1.81e+03 chẳng hạn) thì dùng `format short g`
+- Muốn hiển thị nhiều chữ số sau dấu phẩy hơn trong kết quả (mặc định 4) thì dùng `format long`
+- Kết hợp hai cái trên, vừa dài vừa bỏ dạng mũ `format long g`
 
 ### Phân biệt add to path và change folder
 
