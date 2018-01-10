@@ -40,11 +40,11 @@ Có bao nhiêu cách tất cả?
 
 - **Hansbo & Burman**: dùng ghost penalty.
 - **Lehrenfeld**: cái này ổng cũng nói về mấy bài báo của Arnold và Burman mà thôi. Từ đây phát hiện ra **không phải Burman và Arnold là hai cách khác nhau** mà mỗi cái có một mục đích riêng
-  - *Delete small support basis của Arnold* (Arnold2008) là để:
+  - ***Delete small support basis của Arnold* (Arnold2008) là để**:
     - This modiﬁed space has the same approximation quality as the original XFEM space but *better stability properties*. Arnold2008
     - Avoiding very small supports has advantages, for example if the contributions are dominated by rounding errors. *Arnold2008*
     - [Burman 2011] For interface problems, the need to introduce additional ﬁnite element basis functions lying on sub-elements to restore optimal convergence represents a second source of instability.
-  - *Ghost penalty của Burman* là để: 
+  - ***Ghost penalty của Burman* là để**: 
     - [Burman 2011] However, the application of Nitsche’s method for the treatment of boundary or interface conditions may give rise to numerical instabilities in presence of small element cuts. More precisely, it has been observed in [12,15,16,43] that the stability and the condition number of the ﬁnite element scheme depend on how the interface cuts the computational mesh. To cure them, the application of interior penalty stabilisation techniques has been  uccessfully considered in a sequel of papers [12, 15, 16]. The idea of such stabilisation methods is to introduce in the discrete formulation a minimum of artiﬁcial diffusion to ensure the positivity of the discrete bilinear form for any conﬁguration of the boundary or interface.
 
 **Tại sao Hansbo gợi ý dùng stabilization thay vì preconditioning?** Stabilization của Hansbo/Burman chính là Ghost penalty, còn preconditioning thì có nhiều cách (chưa biết cụ thể có phải delete basis small support có phải là preconditioning hay ko)
@@ -53,13 +53,13 @@ Có bao nhiêu cách tất cả?
 
 $\Rightarrow$ Có vẻ việc delete small support chỉ làm giảm khả năng bị lỗi round-off thôi chứ nó ko phải là preconditioning hay stabilisation!
 
-PHẢI DÙNG CẢ HAI PHƯƠNG PHÁP!!!!
+**PHẢI DÙNG CẢ HAI PHƯƠNG PHÁP!!!!**
 
 ## Big condition number problem
 
 Thảo luận cách giải quyết vấn đề về condition number quá lớn.
 
-However, in the methods above, the conditioning of the problem is sensitive to the position of the interface. The condition number of the system matrix blows up for cases when the interface approaches element boundaries. For unsteady problems, it is not unusual that such situations occur, and some precaution is needed to prevent problems such as breakdown of direct or iterative linear solvers. Reusken [22] addresses this problem by deleting basis functions in the XFEM space that have very small support and may cause ill-conditioning. ***wadbro 2013 unifomly well-conditioned unfitted Nitsche interface.pdf***
+However, in the methods above, the conditioning of the problem is **sensitive to the position of the interface**. The condition number of the system matrix blows up for cases when the interface approaches element boundaries. For unsteady problems, it is not unusual that such situations occur, and some precaution is needed to prevent problems such as breakdown of direct or iterative linear solvers. Reusken [22] addresses this problem by deleting basis functions in the XFEM space that have very small support and may cause ill-conditioning. ***wadbro 2013 unifomly well-conditioned unfitted Nitsche interface.pdf***
 
 - Bài báo **zunino 2011 unfitted interface penalty contrast.pdf** nói về 
   - Việc trị ill-conditioning by using preconditioning method.
@@ -68,3 +68,36 @@ However, in the methods above, the conditioning of the problem is sensitive to t
   - This analysis of the XFEM space is closed by the proof of discrete inequalities that will be useful to address the stability and conditioning of the scheme proposed in Hansbo 2002
   -  because for such technique both large contrast of diffusion coeﬃcients and small sub-elements negatively affect the condition number of the discrete problem.
 
+### Preconditioning method of Zunino
+
+Phần này nói về ý tưởng preconditioning trong bài báo **Zunino 2011** (có nói tí chút ở trên). 
+
+Thật sự trùng hợp là ý tưởng của Zunino về việc xây dựng 1 ma trận $P$ (trang 1072) cũng giống với ý tưởng trong sách của Arnold trang 274. Có sự khác nhau nhẹ là ở Zunino có nhân thêm các hệ số diff và reaction.
+
+$$
+P:= 
+\begin{bmatrix}
+M^{\Omega}_{\mu} & 0 & 0 \\
+0 & \mu_1\text{diag}(M^{\Gamma}_1) &0 \\
+0 & 0 & \mu_2\text{diag}(M^{\Gamma}_2)
+\end{bmatrix}
++
+\begin{bmatrix}
+L^{\Omega}_{h,\epsilon} & 0 & 0 \\
+0 & \epsilon_1\text{diag}(L^{\Gamma}_1) &0 \\
+0 & 0 & \epsilon_2\text{diag}(L^{\Gamma}_2)
+\end{bmatrix}
+$$
+
+trong đó $v=v^{\Omega} + v^{\Gamma}\_1 + v^{\Gamma}\_2$, $\mu=$ diffusion coefficient, $\epsilon=$ reaction coefficient, $M,L$ lần lượt là mass và stiffness matrix và
+
+$$
+\begin{align}
+M^{\Omega} \to (v^{\Omega},w^{\Omega})_0, \quad
+M_i^{\Gamma} \to (v_i^{\Gamma},w_i^{\Gamma})_0, \\
+L^{\Omega} \to (\nabla v^{\Omega},\nabla w^{\Omega})_0, \quad
+L_i^{\Gamma} \to (\nabla v_i^{\Gamma},w_i^{\Gamma})_0
+\end{align}
+$$
+
+Sau đó ta sẽ có ma trận mới $P^{-1}A$ có condition number nhỏ hơn $A$ nhiều.

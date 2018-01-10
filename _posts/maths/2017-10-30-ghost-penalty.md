@@ -119,3 +119,31 @@ trong đó,
 $$
 A_h(u,v) = - \sum_{i=1}^2 \sum_{e\in E^{i,cut}_h} \int_e \{ k\nabla u \cdot n \}_e [v]_e + \{ k\nabla v\cdot n \}_e[u]_e\, ds
 $$
+
+## Note about parameters
+
+Được nói đến ở cuối mục 3.1 bài báo **cutfem discretizing geometry and pde hansbo burman 2014 .pdf**. 
+
+Another important observation is that for the discretization using ghost penalty and weights depending only on the diffusion, preconditioning the system matrix using diagonal scaling with $\alpha\_1, \alpha\_2$ leads to a system whose condition number is independent of both the mesh/boundary intersection and the contrast in the diffusion (for details, see [35]). *Note that the use of the weights (4) and the penalty parameters (6) or (7) do not allow a similar robust limit formulation.*
+
+**Hiểu là**: Với ghost penalty terms thì lựa chọn $\kappa\_i$ chỉ ở dạng đơn giản thôi cũng được. Còn ở dạng phức tạp (có cả $K\_i$) thì không có tác dụng về mặt condition number!!! Trong bài báo này cũng giải thích thêm là cai1 dạng phức tạp chỉ có tác dụng "trị" large contrast problem mà thôi, ko có tác dụng về mặt small cut. Đây cũng là motivation của ghost penalty!!!
+
+- Ghost penalty thì nên dùng với choice
+
+$$
+\begin{align}
+\kappa_1=\dfrac{\alpha_2}{\alpha_1+\alpha_2}, \kappa_2=\dfrac{\alpha_1}{\alpha_1+\alpha_2} \\
+\gamma = 4\dfrac{\alpha_1\alpha_2}{\alpha_1+\alpha_2}C_T^2 C_G^{-1}.
+\end{align}
+$$
+
+- KHÔNG NÊN dùng với choice (chỉ giải quyết được vấn đề large contrast - $\alpha\_2$ quá khác so với $\alpha\_2$ mà không giải quyết được cái small support)
+
+$$
+\begin{align}
+\kappa_1 &= \dfrac{\alpha_2 \vert K_1 \vert}{\alpha_2\vert K_1 \vert + \alpha_1\vert K_2\vert}, 
+\kappa_2 = \dfrac{\alpha_1 \vert K_2 \vert}{\alpha_2\vert K_1 \vert + \alpha_1\vert K_2\vert}, \\
+\gamma &= \hat{\gamma}h_K \dfrac{\vert \Gamma_K \vert}{\frac{\vert K_1\vert}{\alpha_1} + \frac{\vert K_2\vert}{\alpha_2}}
+\text{ or } \gamma = \hat{\gamma}h_K \max\{ \alpha_1\frac{\vert K_1\vert}{\vert K\vert}, \alpha_2\frac{\vert K_2\vert}{\vert K\vert} \}\dfrac{\vert \Gamma_K\vert}{\vert K\vert}.
+\end{align}
+$$
