@@ -59,6 +59,13 @@ $\Rightarrow$ Có vẻ việc delete small support chỉ làm giảm khả năng
 
 Thảo luận cách giải quyết vấn đề về condition number quá lớn.
 
+- Bỏ small support basis : Arnold.
+- Ghost penalty : Burman
+- Preconditioner của Zunino 2011
+- Stability theo cách của Zahedi 2013.
+
+---
+
 However, in the methods above, the conditioning of the problem is **sensitive to the position of the interface**. The condition number of the system matrix blows up for cases when the interface approaches element boundaries. For unsteady problems, it is not unusual that such situations occur, and some precaution is needed to prevent problems such as breakdown of direct or iterative linear solvers. Reusken [22] addresses this problem by deleting basis functions in the XFEM space that have very small support and may cause ill-conditioning. ***wadbro 2013 unifomly well-conditioned unfitted Nitsche interface.pdf***
 
 - Bài báo **zunino 2011 unfitted interface penalty contrast.pdf** nói về 
