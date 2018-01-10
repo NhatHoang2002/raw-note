@@ -48,3 +48,23 @@ Có bao nhiêu cách tất cả?
     - [Burman 2011] However, the application of Nitsche’s method for the treatment of boundary or interface conditions may give rise to numerical instabilities in presence of small element cuts. More precisely, it has been observed in [12,15,16,43] that the stability and the condition number of the ﬁnite element scheme depend on how the interface cuts the computational mesh. To cure them, the application of interior penalty stabilisation techniques has been  uccessfully considered in a sequel of papers [12, 15, 16]. The idea of such stabilisation methods is to introduce in the discrete formulation a minimum of artiﬁcial diffusion to ensure the positivity of the discrete bilinear form for any conﬁguration of the boundary or interface.
 
 **Tại sao Hansbo gợi ý dùng stabilization thay vì preconditioning?** Stabilization của Hansbo/Burman chính là Ghost penalty, còn preconditioning thì có nhiều cách (chưa biết cụ thể có phải delete basis small support có phải là preconditioning hay ko)
+
+- Lehrenfeld có nhận xét là ví dụ trong Hansbo với Hansbo-averaging thì không gặp vấn đề với stability nhưng vẫn có vấn đề với matrix ill conditioned. Điều này suy ra stabilisation và preconditioning là hai cái khác nhau rất nhiều, ảnh hưởng nhiều đến vấn đề đang gặp. Phải làm riêng!!!!
+
+$\Rightarrow$ Có vẻ việc delete small support chỉ làm giảm khả năng bị lỗi round-off thôi chứ nó ko phải là preconditioning hay stabilisation!
+
+PHẢI DÙNG CẢ HAI PHƯƠNG PHÁP!!!!
+
+## Big condition number problem
+
+Thảo luận cách giải quyết vấn đề về condition number quá lớn.
+
+However, in the methods above, the conditioning of the problem is sensitive to the position of the interface. The condition number of the system matrix blows up for cases when the interface approaches element boundaries. For unsteady problems, it is not unusual that such situations occur, and some precaution is needed to prevent problems such as breakdown of direct or iterative linear solvers. Reusken [22] addresses this problem by deleting basis functions in the XFEM space that have very small support and may cause ill-conditioning. ***wadbro 2013 unifomly well-conditioned unfitted Nitsche interface.pdf***
+
+- Bài báo **zunino 2011 unfitted interface penalty contrast.pdf** nói về 
+  - Việc trị ill-conditioning by using preconditioning method.
+  - cũng dựa trên fictitious domain method
+  - Mở rộng ra $H^1$ stability thay vì $L^2$ như trong bài báo của Arnold 2008
+  - This analysis of the XFEM space is closed by the proof of discrete inequalities that will be useful to address the stability and conditioning of the scheme proposed in Hansbo 2002
+  -  because for such technique both large contrast of diffusion coeﬃcients and small sub-elements negatively affect the condition number of the discrete problem.
+

@@ -171,9 +171,9 @@ The immersed interface method is often based on a Cartesian grid and is often as
 
 Có cái thesis của Li làm nhiều về cái IIM này. [xem ở đây](http://faculty.washington.edu/rjl/students/li/liphd.pdf)
 
-The basic idea of our immersed interface method is to discretize the Navier-Stokes equations on a uniform Cartesian grid and to account for the singular forces by explicitly incorporating the jumps in the solutions and their derivatives into the difference equations.
+**The basic idea of our immersed interface method** is to discretize the Navier-Stokes equations on a uniform Cartesian grid and to account for the singular forces by explicitly incorporating the jumps in the solutions and their derivatives into the difference equations.
 
-$\Rightarrow$ Bài báo về IIM và its applications. [tại đây](http://journal.tms.org.tw/index.php/TJM/article/viewFile/1112/940)
+$\Rightarrow$ Bài báo về IIM và its applications tại **immersed fem_li 2003.pdf**
 
 ---
 
@@ -181,6 +181,10 @@ Trong bài báo so sánh XFEM và IIM của Chopp (`chopp 2006 comparison xfem i
 
 - The Immersed Interface Method is a finite difference method for approximating the solution to (1). The method solves (1) with singular sources and discontinuous coefficients as well as jump conditions given on the interface by using a regular Cartesian grid that does not conform to the interface. For grid points away from the interface, the standard five-point finite difference stencil is used. As a result, the method
   is second order away from the interface. For grid points near the interface, a six-point stencil and correction terms are added to the right hand side in order to maintain global second order accuracy.
+
+----
+
+[wadbro 2013 unifomly well-conditioned unfitted Nitsche interface.pdf] In the immersed ﬁnite element method, special basis functions are constructed for the elements that are intersected by the interface; these basis functions are piecewise polynomials and satisfy the jump conditions on the interface.
 
 ### NXFEM & Nitsche & interface
 

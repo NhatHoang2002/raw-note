@@ -87,6 +87,24 @@ Xem thêm ở file **mass vs stiffness matrix (suji).pdf**.
 
 ## Stabilization vs Preconditioning
 
+Tham khảo: **stability vs conditioning MIT.pdf** và **stability vs conditioning.pdf**
+
+The terms stability and conditioning are used with a variety of meanings in Numerical Analysis. They have in common the general concept of the response of a set of computations to perturbations arising from
+
+- the data
+- the specific arithmetic used on computers.
+
+**They are not synonymous!!** A numerical algorithm is not only perturbed by the errors in the data, but also with respect to the errors arising in the process of computations.
+
+The most fundamental is the distinction between instability in the underlying mathematical problem and instability in an
+algorithm for the (exact or approximate) treatment of the problem.
+
+<ul class="collapsible" data-collapsible="accordion">
+<li>
+<div class="collapsible-header" markdown="1"><i class="material-icons">face</i>
+Đọc thêm
+</div>
+<div class="collapsible-body" markdown="1">
 Về định nghĩa và thế nào là **preconditioning**, có thể xem [ở note này](/numerical-analysis-1#preconditioner-condition-number-matrix).
 
 Còn định nghĩa về **stability**, có thể xem ở 
@@ -97,5 +115,11 @@ Còn định nghĩa về **stability**, có thể xem ở
   - convergence đòi hỏi phải có stability.
 - methods are stable, in the sense that small changes or perturbations in the initial conditions produce correspondingly small changes in the subsequent approximations. *numerical douglas Book* (p.340)
 - Cũng trong sách của Douglas, có thể xem về **preconditioning** ở trang 486.
-- stability is a property of the discrete problems and depends on the particular choice of norms, but it does not depend on the true solution u in any way. [*numerical lecture note - arnold*] p.11
-- 
+- stability is a property of the discrete problems and depends on the particular choice of norms, but it does not depend on the true solution $u$ in any way. [*numerical lecture note - arnold*] p.11
+
+Lehrenfeld có nhận xét là ví dụ trong Hansbo với Hansbo-averaging thì không gặp vấn đề với stability nhưng vẫn có vấn đề với matrix ill conditioned. Điều này suy ra stabilisation và preconditioning là hai cái khác nhau rất nhiều, ảnh hưởng nhiều đến vấn đề đang gặp. Phải làm riêng!!!!
+</div>
+</li>
+</ul>
+
+
