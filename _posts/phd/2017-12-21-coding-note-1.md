@@ -12,7 +12,7 @@ Loạt bài này chủ yếu dùng để *ghi chú* trong quá trình hoàn thà
 
 ## Small intersection
 
-Bài báo `analysis of xfem 2008.pdf` nói về cách xử lý các cái cut quá nhỏ. Còn bài báo `burman2010-ghost penalty.pdf` thì có nhắc đến nếu các cái cut quá nhỏ có thể dẫn đến matrix is ill-conditioned. Tuy nhiên bài báo của Burman chủ yếu làm việc trên fictitious domain.
+Bài báo `arnold analysis of extended pressure xfem 2008.pdf` nói về cách xử lý các cái cut quá nhỏ. Còn bài báo `burman2010-ghost penalty.pdf` thì có nhắc đến nếu các cái cut quá nhỏ có thể dẫn đến matrix is ill-conditioned. Tuy nhiên bài báo của Burman chủ yếu làm việc trên fictitious domain.
 
 Nhỏ là như thế nào? Nghĩa là
 
@@ -33,6 +33,20 @@ Trong đó $l=0,1$ đại diện cho $L^2$ và $H^1$ xét trên part của trian
 $$
 \Vert \varphi_k\Vert_{L^2(T\cap\Omega_i)} \le \hat{c}h_T^{\frac{7}{2}}
 $$
+
+{% include warning.html content="Nên dùng **relative errors** hơn là absolute errors như ở trên!" %}
+
+Vì cái ở trên nó rất sensitive với $h$ nên tốt hơn là nên dùng relative errors (tức $\frac{\Vert \varphi_k\Vert_{L^2(T\cap\Omega_i)} }{\Vert \varphi_k\Vert_{L^2(T)} }$) vì nếu dùng cái abs errors thì kết quả vế trái "nhỏ" nhưng chưa nói lên được điều gì, phải là "nhỏ so với gì" thì mới chính xác hơn!
+
+Thật ra cái Remark 2 trong bài báo có nói là $\Vert \varphi_k\Vert_{L^2(T)} \sim ch^{1\frac{1}{2}-l}$ nên mới không có cái này ở dưới mẫu, thành ra nhìn giống absolute errors. **Hãy thử cái điều kiện đầu tiên xem!!**
+
+$$
+\dfrac{\Vert \varphi_k\Vert_{L^2(T\cap\Omega_i)} }{\Vert \varphi_k\Vert_{L^2(T)}}
+\le 
+\tilde{c}h^{\alpha}_T
+$$
+
+Lưu ý là $\tilde{c}$ và $\hat{c}$ khác nhau! Nếu $l=1$ thì thường $\alpha=1$.
 
 ## Preconditioner, ill-conditioned problem!!!
 
@@ -108,3 +122,60 @@ L_i^{\Gamma} \to (\nabla v_i^{\Gamma},w_i^{\Gamma})_0
 $$
 
 Sau đó ta sẽ có ma trận mới $P^{-1}A$ có condition number nhỏ hơn $A$ nhiều.
+
+### Stabilization của Burman và Zunino 2011 cho small cut và large contrast
+
+Vấn đề tóm tắt
+
+$$
+a_h(u_h,v_h)=F_h(v_h), \forall v_h\in V_h
+$$
+
+Trong đó,
+
+$$
+\begin{align}
+a_h(u_h,v_h) := 
+& \sum_{i=1,2} (\epsilon_i \nabla u_{h,i},\nabla v_{h,i})_{\Omega_i}
++ \gamma \xi(\epsilon)h^{-1} ([u_h],[v_h])_{\Gamma} \\
+& - (\{\epsilon \nabla_n u_h\},[v_h])_{\Gamma}
+- (\{\epsilon \nabla_n v_h\},[u_h])_{\Gamma} \\
+F_h(v_h) :=
+& (f,v_h)_{\Omega}
+\end{align}
+$$
+
+Cái này khẳng định phải sử dụng choice of weight là (p.274)
+
+$$
+\begin{align}
+w_1=\dfrac{\epsilon_2}{\epsilon_1+\epsilon_2},
+w_2=\dfrac{\epsilon_1}{\epsilon_1+\epsilon_2},
+\xi(\epsilon) = \dfrac{2\epsilon_1\epsilon_2}{\epsilon_1+\epsilon_2}.
+\end{align}
+$$
+
+Sau khi áp dụng ghost penalty vào thì là (p.275)
+
+$$
+a_h(u_h,v_h) + g_h(u_h,v_h) = F_h(v_h), \forall v_h\in V_h
+$$
+
+trong đó,
+
+$$
+g_h(u_h,v_h):= \sum_{i=1}^2 \sum_{E\in \mathcal{E}_{B_i}} ( \gamma_g \epsilon_i h_E [\nabla_n u_{h,i}],[\nabla_n v_{h,i}] )_E
+$$
+
+với 
+
+$$
+\mathcal{E}_{B_i}:= \{ E=K\cap K': K\in \mathcal{T}_{hi}, K' \in \mathcal{T}_{hi} \text{ where either } K\cap \Gamma \ne \emptyset \text{ or } K'\cap \Gamma \ne \emptyset \}
+$$
+
+Stability có được bao gồm các thứ
+
+- Choice of weight
+- ghost penalty term
+- diagonal scaling
+
