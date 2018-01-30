@@ -740,7 +740,11 @@ quiver(x,y,u,v); % plot u,v at x,y
 
 ### Plot line
 
+Chỉ có thể plot được hàm 1 biến với công thức sau
 
+~~~ matlab
+fplot(@(x) x^2);
+~~~
 
 ### figure
 

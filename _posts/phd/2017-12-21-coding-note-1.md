@@ -14,6 +14,8 @@ Loạt bài này chủ yếu dùng để *ghi chú* trong quá trình hoàn thà
 
 Bài báo `arnold analysis of extended pressure xfem 2008.pdf` nói về cách xử lý các cái cut quá nhỏ. Còn bài báo `burman2010-ghost penalty.pdf` thì có nhắc đến nếu các cái cut quá nhỏ có thể dẫn đến matrix is ill-conditioned. Tuy nhiên bài báo của Burman chủ yếu làm việc trên fictitious domain.
 
+> Such basis functions may lead to instability, for example if their contributions are dominated by rounding errors.
+
 Nhỏ là như thế nào? Nghĩa là
 
 $$
@@ -47,6 +49,10 @@ $$
 $$
 
 Lưu ý là $\tilde{c}$ và $\hat{c}$ khác nhau! Nếu $l=1$ thì thường $\alpha=1$.
+
+---
+
+Đã tính thử $c$ trong $\Vert \varphi_k\Vert_{L^2(T)} \sim ch^{1\frac{1}{2}-l}$ với nhiều giá trị $h_T$ khác nhau (`nSeg` từ 15 đến 125), ra kết quả cũng rất khác nhau, dao động từ $0.8$ đến $2.5$.
 
 ## Preconditioner, ill-conditioned problem!!!
 
