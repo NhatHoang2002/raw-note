@@ -37,6 +37,7 @@ maths: 1
 - [https://fr.mathworks.com/help/simulink/ug/types-of-solvers.html](https://fr.mathworks.com/help/simulink/ug/types-of-solvers.html)
 - [https://fr.mathworks.com/help/dsp/ref/lusolver.html](https://fr.mathworks.com/help/dsp/ref/lusolver.html)
 - Học linear algebra rất hay : [http://linear.ups.edu/html/fcla.html](http://linear.ups.edu/html/fcla.html)
+- FEM algorithm code, deal.II library: [Videos](http://www.math.colostate.edu/~bangerth/videos.html)
 
 ## Souce codes
 
