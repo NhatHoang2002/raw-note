@@ -110,11 +110,8 @@ $$
 
 Theo đó $Q\_x,Q\_y$ được xác định theo sự tương ứng $i-(0,0),j-(1,0),k-(0,1)$. Ta sẽ đi chứng minh sự tương đồng giữa $\varphi\_i$ và $N\_i$ tại các node này, sau đó tương tự cho $j,k$. Có ghi chú trong viết bảng. **Đã kiểm chứng bằng matlab là hai cách tính này GIỐNG NHAU!**
 
-## Boundary condition
 
-- Homogenous Dirichlet boundary conditions: [https://www.youtube.com/watch?v=lvPj1vdXgAk](https://www.youtube.com/watch?v=lvPj1vdXgAk)
-- Inhomogenous Dirichlet boundary conditions: [https://www.youtube.com/watch?v=i5RnvxIQrz4](https://www.youtube.com/watch?v=i5RnvxIQrz4)
-- Trọn bộ code FEM: [http://www.math.colostate.edu/~bangerth/videos.html](http://www.math.colostate.edu/~bangerth/videos.html)
+
 
 
 
