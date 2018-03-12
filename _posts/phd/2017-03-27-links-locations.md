@@ -148,51 +148,8 @@ Thắc mắc rằng **Lax Milgram theorem** và các định lý chứng minh ex
 - Thesis trên nhắc đến bài báo "Improved implementation and robustness study of the X-FEMfor stress analysis around cracks"
 
 ---
+
 **Quadrature** : xem bài note của ông Shaodeng, có trong folder background or xem lecture 10, 16 tại [đây](http://math2.uncc.edu/~shaodeng/TEACHING/math5172/2010Spring/announcement.html).
-
----
-
-**System of semilinear equations**
-
-Đã được chứng minh tồn tại và duy nhất ở các dạng sau (của Chen, [chen.pdf](quiver-file-url/311C2F8C74A03F5FB81A057856ED423B.pdf))
-
-$$
-\begin{align*}
-\begin{cases}
--\Delta u &=\lambda p(x)f_1(x) \quad (\Omega)\\
--\Delta v &= \lambda q(x) g_1(x) \quad (\Omega)\\
-u=v&=0 \quad (\partial\Omega)
-\end{cases}
-\end{align*}
-$$
-
-Trong bài báo trên cũng có nói một số bài báo với các pp giải khác nhau cho loại phương trình sau
-
-$$
-\begin{align*}
-\begin{cases}
--\Delta u &=\lambda f(v) \quad (\Omega)\\
--\Delta v &= \lambda g(u) \quad (\Omega)\\
-u=v&=0 \quad (\partial\Omega)
-\end{cases}
-\end{align*}
-$$
-
----
-
-**Semilinear elliptic inteface problem**
-
-Của Sinha ([fem semilinear elliptic interface problem - sinha.pdf](quiver-file-url/EDA3CE2E50426EEB8573A540A8B00D28.pdf)) 
-
-$$
-\begin{align*}
-\begin{cases}
--\nabla\cdot(\beta\nabla u) + u &= f(u) \quad (\Omega)\\
-u&=0 \quad (\partial\Omega)\\
-[u]=[\beta\nabla_n u]&=0 \quad (\Gamma)
-\end{cases}
-\end{align*}
-$$
 
 ---
 
