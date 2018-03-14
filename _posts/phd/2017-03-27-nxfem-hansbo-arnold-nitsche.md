@@ -50,7 +50,7 @@ Normally,
 
 $$
 \begin{align*}
-    (\nabla u\cdot\nabla v) - \int_{\partial\Omega}\nabla_nuv = (f,v).
+    (\nabla u,\nabla v) - \int_{\partial\Omega}\nabla_nuv = (f,v).
 \end{align*}
 $$
 
@@ -58,8 +58,8 @@ We need the symetric,
 
 $$
 \begin{align*}
-    (\nabla u\cdot\nabla v) - \int_{\partial\Omega}\nabla_nuv - \int_{\partial\Omega}(u-g)\nabla_nv &= (f,v).\\
-    (\nabla u\cdot\nabla v) - \int_{\partial\Omega}\nabla_nuv - \int_{\partial\Omega}u\nabla_nv &= (f,v) - \int_{\partial\Omega}g\nabla_nv.
+    (\nabla u,\nabla v) - \int_{\partial\Omega}\nabla_nuv - \int_{\partial\Omega}(u-g)\nabla_nv &= (f,v).\\
+    (\nabla u,\nabla v) - \int_{\partial\Omega}\nabla_nuv - \int_{\partial\Omega}u\nabla_nv &= (f,v) - \int_{\partial\Omega}g\nabla_nv.
 \end{align*}
 $$
 
