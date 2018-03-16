@@ -13,6 +13,10 @@ maths: 1
 
 **Compact space** : A subset $K$ of a metric space $X$ is said to be compact if every open cover of $K$ contains finite subcovers. *understand the idea* (cf [this link.](http://mathoverflow.net/questions/25977/how-to-understand-the-concept-of-compact-space)) $\Rightarrow$ *prevent "escape" to infinity*
 
+---
+
+**[15/3/18]**: [Bài báo](https://blogs.scientificamerican.com/roots-of-unity/what-does-compactness-really-mean/) tuyết vời. Nói cơ bản, compact có nghĩa là "small", "chặt" nhưng là small rất đặc biệt của toán học. Ví dụ (0,1) không compact nhưng lại "lớn" hơn cái [0,1]. Cái [0,1] "compact" (nhỏ) hơn nhưng lại có thêm 2 điểm 0 và 1. Vì thế nhỏ ở đây ko có nghĩa là nhỏ thông thường mà là nhỏ theo kiểu có thể phủ bởi số "hữu hạn" những phủ con. Một tập compact (nhỏ) thì ta dễ điều khiển hơn, dễ lèo lái hơn, các tính chất cũng "chặt" hơn và khó sai hơn. Đó là lý do vì sao đa phần các định lý đều cần có sự "compact" của set.
+
 ------
 
 **Non-compactness** is about being able to "move off to infinity" in some way in a space. On the real line you can do that to the left, or right: but bend the line round to fill all but one point on a circle (which is compact) and you see the difference having the "other point" near which you end up. This example of real line versus circle is too simple, really. Another way you can "go off to infinity" in a space is by having paths branching out infinitely (as in König's lemma, which supplies another kind of intuition).

@@ -4,7 +4,30 @@ categories:
   - maths
 maths: 1
 date: 2017-06-08
+toc: 1
 ---
+
+{:#jump-average}
+## Jump and average
+
+Thông thường, nếu $\kappa\_1 + \kappa\_2 = 1, \kappa\_i >0$ thì
+
+$$
+\begin{align*}
+    \{uv\} &= \{u\}\{v\} + \kappa_1\kappa_2[u][v] ,\\
+     [uv] &= [u]\{v\} + \{u\}[v] + (\kappa_1-\kappa_2)[u][v],
+\end{align*}
+$$
+
+Tuy nhiên, nếu làm theo giống như trong Becker (xem chứng minh ở trang 23 *barrau THESIS 2013.pdf*)
+
+$$
+\begin{align*}
+[uv] = \{u\}_{\kappa}[v] + [u]\{v\}_{\hat{\kappa}}
+\end{align*}
+$$
+
+trong đó $\hat{\kappa} = (\kappa\_2,\kappa\_1)$ (ngược lại).
 
 ## Tại sao dùng XFEM thay vì FEM
 
@@ -30,6 +53,8 @@ How to choose $\lambda$?
 Do đó, sau khi đã có được $u\_h$ rồi, hãy tính thử mấy lượng $\eta\_1, \eta\_2$ để điều chỉnh giá trị của $\lambda$.
 
 ## Nitsche's method idea
+
+**[14/3/18]** Có thể xem Nistche method cho interface problem trong bài báo của Hansbo *hansbo 2005 nitsche method interface.pdf*.
 
 This idea is given in **nitscheIdea**. Suppose that we have a problem,
 
@@ -174,7 +199,7 @@ Recall again,
 $$
 \begin{align*}
     \{uv\} &= \{u\}\{v\} + \kappa_1\kappa_2[u][v] ,\\
-     [uv] &= [u]\{v\} + \{u\}[v] - (\kappa_1-\kappa_2)[u][v],
+     [uv] &= [u]\{v\} + \{u\}[v] + (\kappa_1-\kappa_2)[u][v],
 \end{align*}
 $$
 
