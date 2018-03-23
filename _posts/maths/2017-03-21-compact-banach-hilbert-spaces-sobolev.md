@@ -7,6 +7,69 @@ tags: ["compact","banach","hibert","sobolev"]
 maths: 1
 ---
 
+## Metric space & Vector space & norm space & complete
+
+[[s](http://infohost.nmt.edu/~iavramid/notes/hilbert.pdf)] A **metric space** is a set $X$ and a mapping $d: X\times X \to R$, called a **metric**, which satisfies,
+
+1. $d(x,y)\ge 0$
+2. $d(x,y)=0 \Leftrightarrow x=y=0$
+3. $d(x,y)=d(y,x)$
+4. $d(x,y) \le d(x,z)+d(z,y)$
+
+---
+
+A **complex vector space** is a nonempty set $V$ with 2 operations "$+: V\times V \to V$" and "$\cdot: C\times V\to V$" satisfies
+
+1. $x+y=y+x$
+2. $(x+y)+z=x+(y+z)$
+3. $\exists 0\in V, \forall x\in V: x+0=x$
+4. $\forall x\in V, \exists -x\in V: x+(-x)=0$
+5. $\alpha(\beta x) = (\alpha \beta)x$
+6. $(\alpha+\beta)x = \alpha x + \beta x$
+7. $\alpha (x+y) = \alpha x + \alpha y$
+8. $1\cdot x = x$
+
+---
+
+A **norm linear space** is a vector space $V$ over $C$ or $R$ and a mapping $\Vert \cdot \Vert: V\to R$, called a **norm**, that satisfies
+
+1. $\Vert x \Vert \ge 0$
+2. $\Vert x\Vert =0 \Leftrightarrow x=0$
+3. $\Vert \alpha x\Vert = \vert \alpha\vert \Vert x\Vert$
+4. $\Vert x+y\Vert \le \Vert x\Vert \Vert y\Vert$
+
+---
+
+[[wiki](https://en.wikipedia.org/wiki/Cauchy_sequence)] In mathematics, a **Cauchy sequence** is a sequence whose elements become arbitrarily close to each other as the sequence progresses. More precisely, given any small positive distance, all but a finite number of elements of the sequence are less than that given distance from each other.
+
+---
+
+A metric space in which all Cauchy sequences converge is called **complete space** or **Cauchy space** (converge to a point also in this space).
+
+[[wiki](https://en.wikipedia.org/wiki/Complete_metric_space)] Intuitively, a space is complete if there are no "points missing" from it (inside or at the boundary). For instance, the set of rational numbers is not complete, because e.g. $\sqrt{2}$ is "missing" from it, even though one can construct a Cauchy sequence of rational numbers that converges to it.
+
+---
+
+[[s](https://math.stackexchange.com/questions/670159/why-do-we-need-dual-space)] The dual space is always complete (regardless of whether X is complete or not)
+
+---
+
+A complete normed linear space is called the **Banach space**.
+
+---
+
+A complex vector space $V$ is called an **inner product space** (or a **pre-Hilbert space** if there is a mapping $(\cdot,\cdot): V\times V\to C$, called **inner product** satisfies
+
+1. $(x,x)\ge 0$
+2. $(x,x)=0 \Leftrightarrow x=0$
+3. $(x,y+z)=(x,y)+(x,z)$
+4. $(x,\alpha y)=\alpha (x,y)$
+5. $(x,y)=(y,x)^{\ast}$
+
+---
+
+A complete inner product space is called a **Hilbert space**.
+
 ## Compact
 
 **Compact set** : A set $S$ of real numbers is called compact if every sequence in $S$ has a subsequence that converges to an element again contained in $S$.
@@ -15,10 +78,14 @@ maths: 1
 
 ---
 
-**[15/3/18]**: [Bài báo](https://blogs.scientificamerican.com/roots-of-unity/what-does-compactness-really-mean/) tuyết vời. Nói cơ bản, compact có nghĩa là "small", "chặt" nhưng là small rất đặc biệt của toán học. Ví dụ (0,1) không compact nhưng lại "lớn" hơn cái [0,1]. Cái [0,1] "compact" (nhỏ) hơn nhưng lại có thêm 2 điểm 0 và 1. Vì thế nhỏ ở đây ko có nghĩa là nhỏ thông thường mà là nhỏ theo kiểu có thể phủ bởi số "hữu hạn" những phủ con. Một tập compact (nhỏ) thì ta dễ điều khiển hơn, dễ lèo lái hơn, các tính chất cũng "chặt" hơn và khó sai hơn. Đó là lý do vì sao đa phần các định lý đều cần có sự "compact" của set.
+**[15/3/18]**: [Bài báo](https://blogs.scientificamerican.com/roots-of-unity/what-does-compactness-really-mean/) tuyệt vời. Nói cơ bản, compact có nghĩa là "small", "chặt" nhưng là small rất đặc biệt của toán học. Ví dụ (0,1) không compact nhưng lại "lớn" hơn cái [0,1]. Cái [0,1] "compact" (nhỏ) hơn nhưng lại có thêm 2 điểm 0 và 1. Vì thế nhỏ ở đây ko có nghĩa là nhỏ thông thường mà là nhỏ theo kiểu có thể phủ bởi số "hữu hạn" những phủ con. Một tập compact (nhỏ) thì ta dễ điều khiển hơn, dễ lèo lái hơn, các tính chất cũng "chặt" hơn và khó sai hơn. Đó là lý do vì sao đa phần các định lý đều cần có sự "compact" của set.
 
-------
-
+<ul class="collapsible" data-collapsible="accordion">
+<li>
+<div class="collapsible-header" markdown="1"><i class="material-icons">face</i>
+Đọc thêm
+</div>
+<div class="collapsible-body" markdown="1">
 **Non-compactness** is about being able to "move off to infinity" in some way in a space. On the real line you can do that to the left, or right: but bend the line round to fill all but one point on a circle (which is compact) and you see the difference having the "other point" near which you end up. This example of real line versus circle is too simple, really. Another way you can "go off to infinity" in a space is by having paths branching out infinitely (as in König's lemma, which supplies another kind of intuition).
 
 Compactness is a major topological concept because the various ways you might try to "trap" movement within a space to prevent "escape" to infinity can be summed up in a single idea (for metric spaces, let's say). The definition by open sets is cleaner, but the definition by sequences having to accumulate on themselves (not necessarily to converge, but to have at least one convergent subsequence) is somewhat quicker to say. If you restrict attention to spaces that are manifolds, you can think of continuous paths and whether they have to wind back close to themselves or not.
@@ -42,13 +109,28 @@ H is **relatively compact** iff every sequence in H has a convergent subsequence
 ------
 
 In **finite dimension** all continuous operators are compact, while in infinite dimension you can have continuous operators which are not compact (xem thêm phản ví dụ [ở đây](http://math.stackexchange.com/questions/1390379/clarification-on-the-difference-between-brouwer-fixed-point-theorem-and-schauder))
+</div>
+</li>
+</ul>
 
 ## Banach
 
-**Banach space** : a Banach space is a **complete normed vector space**. Thus, a Banach space is a vector with a metric that allows the computation of vector length and distance between vectors and is complete in the sense that a Cauchy sequence of vectors always convergences to a well defined limit that is within the space.
+**Banach space** = vector space + normed space + complete space
 
-------
+---
 
+[[source](https://math.stackexchange.com/questions/37508/vector-hilbert-banach-sobolev-spaces)] Every Hilbert space is a Banach space and every Banach space is a normed vector space.
+
+---
+
+**Banach space** : a Banach space is a "**complete**" + "**normed" vector space**. Thus, a Banach space is a vector with a metric that allows the computation of vector length and distance between vectors and is complete in the sense that a Cauchy sequence of vectors always convergences to a well defined limit that is within the space.
+
+<ul class="collapsible" data-collapsible="accordion">
+<li>
+<div class="collapsible-header" markdown="1"><i class="material-icons">face</i>
+Đọc thêm
+</div>
+<div class="collapsible-body" markdown="1">
 A linear operator between **Banach spaces** is continuous if and only if it is bounded.
 
 ------
@@ -65,12 +147,15 @@ Y **closed** in X Banach $\Leftrightarrow$ Y **Banach** in X Banach with norm of
 ------
 
 Finite dimensional space of $\mathbb{C}^n$ is a Banach space.
-
----
-
-**Banach space** = vector space + normed space + complete space
+</div>
+</li>
+</ul>
 
 ## Hilbert
+
+**Hilbert space** = Banach space + norm=inner product = vector space + complete + norm=inner product.
+
+---
 
 **Hilbert space** :  A Hilbert space is a vector space H with an inner product $\langle f,g\rangle$ such that the norm defined by $\Vert f\Vert=\sqrt{\langle f,f\rangle}$ turns $H$ into a **complete metric space**. If the metric defined by the norm is not complete, then $H$ is instead known as an **inner product space**. $\Rightarrow$ *Vẫn còn thắc mắc là tại sao $H$ này là complete space, liên quan đến cái dãy Cauchy?*
 
@@ -160,34 +245,7 @@ $$
 \left<{x,z}\right>_{H(\text{div};\Omega)} := \left<{x,z}\right>_{L^2(\Omega)^n} + \left<{\text{div} x, \text{div} z}\right>_{L^2(\Omega)}
 $$
 
-------
-
 ## Other spaces
-
-**Metric space** : là cặp ==$(M,d)$== thỏa $d:M\times M\to \mathbb{R}$ is a metric on $M$ thỏa 3 điều kiện
-
-1. $d(x,y)\ge 0$, $d(x,y)=0 \Leftrightarrow x=y=0$
-2. $d(x,y)=d(y,x)$
-3. $d(x,z)\le d(x,y)+d(y,z)$
-
-**Complete space** : if every Cauchy sequence of points in $M$ has a limit that is also in $M$ or, alternatively, if every Cauchy sequence in $M$ converges in $M$. Intuitively, a space is **complete** if there are no "points missing" from it (inside or at the boundary). **Ngắn gọn** : *Mọi dãy Cauchy đều hội tụ*
-
-**Normed vector space** : A vector space on which a norm is defined is then called a **normed space** or **normed vector space**. Khi đó phải ký hiệu là $(V,\Vert\cdot\Vert)$ ý là vector space phải đi kèm với một norm. Norm phải thỏa 3 điều kiện:
-
-1. ${\Vert x\Vert >0}  \text{ if } { x\neq 0}$, ${ \Vert x\Vert =0}  \text{ if } { x= 0}$
-2. ${\Vert \alpha x\Vert =\vert \alpha \vert \Vert x\Vert },  \forall \alpha \in \mathbb{K}$
-3. ${\Vert x+y\Vert \leq \Vert x\Vert +\Vert y\Vert }, \forall x,y$
-
-**Vector space** : Để $V$ có thể là một vector space thì các phần tử trong $V$ phải thỏa đủ **8 điều kiện** (xem [mathworld wolfram](http://mathworld.wolfram.com/VectorSpace.html)), for all $x,y,z\in V$ and for all $r,s\in \mathbb{K}$
-
-1. $x+y=y+x$
-2. $(x+y)+z=x+(y+z)$
-3. $0+x=x+0=x$
-4. $\exists (-x)$ of $x$ s.t. $x+(-x)=0$
-5. $r(sx)=(rs)x$
-6. $(r+s)x=rx+sx$
-7. $r(x+y)=rx+ry$
-8. $1x=x$
 
 **Function space** of functions $f:\Omega \to \mathbb{F}$ also forms a vector space.
 
@@ -197,7 +255,7 @@ $$
 
 ---
 
-**Complete space** = every Cauchy sequence is convergent.
+**Complete space** = every Cauchy sequence is convergent to a point in this space.
 
 ---
 
