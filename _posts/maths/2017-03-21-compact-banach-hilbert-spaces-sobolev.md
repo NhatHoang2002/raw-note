@@ -109,6 +109,10 @@ H is **relatively compact** iff every sequence in H has a convergent subsequence
 ------
 
 In **finite dimension** all continuous operators are compact, while in infinite dimension you can have continuous operators which are not compact (xem thêm phản ví dụ [ở đây](http://math.stackexchange.com/questions/1390379/clarification-on-the-difference-between-brouwer-fixed-point-theorem-and-schauder))
+
+---
+
+[[s](https://math.stackexchange.com/questions/1390379/clarification-on-the-difference-between-brouwer-fixed-point-theorem-and-schauder)] Finite dimension all continuous operators are compact, so Brouwer = Schauder fixed point theorem.
 </div>
 </li>
 </ul>

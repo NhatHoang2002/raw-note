@@ -130,7 +130,7 @@ Chứng minh Hilbert Space H1xH2 là **Hilbert space** : [https://proofwiki.org/
 
 **Schauder** fixed point theorem : 3 phiên bản có thể đọc ở đây [fixed point nonlinear pde.pdf](quiver-file-url/9E44F269CC3B4E873F10CBD24670BE0B.pdf).
 
-Sự khác nhau giữa Brouwer và Schauder fixed point theorem : http://math.stackexchange.com/questions/1390379/clarification-on-the-difference-between-brouwer-fixed-point-theorem-and-schauder
+Sự khác nhau giữa Brouwer và Schauder fixed point theorem : [stack exchange](http://math.stackexchange.com/questions/1390379/clarification-on-the-difference-between-brouwer-fixed-point-theorem-and-schauder).
 
 **Brouwer**’s Fixed Point Theorem is false in inﬁnite-dimensional spaces. The reason behind this is that a closed ball is not compact.
 

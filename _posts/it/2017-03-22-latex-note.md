@@ -15,20 +15,174 @@ This is the list of quick latex notes before I write clearly and completely on t
 
 Cách giải quyết đơn giản chỉ cần xóa đi `\\` ở cuối mỗi hàng được báo lỗi.
 
-## Maths LaTeX editors
-
-Me and some of my friends (work on Maths) have a need that we want to type equations faster in the form of LaTeX codes. We wanna type WYSWYG the maths equations and some software will automatically change them to Latex codes. We also want the vice versa. In this post, I have found some apps which are available on all operator systems.
-
-- **On Mac** : [Latexit ](https://pierre.chachatelier.fr/latexit/latexit-downloads.php?lang=en)(free)
-- **On Windows** : [MathType ](http://www.dessci.com/en/products/mathtype/)(paid), [equalx ](http://equalx.sourceforge.net/)(free),
-- **On Linux** : [equalx ](http://equalx.sourceforge.net/)(free),
-- **Online** : [simple](http://www.codecogs.com/latex/eqneditor.php), [hostmath](http://www.hostmath.com/),
-
-This list is automatically updated under my personal experience. If you have some better apps, don’t hestitate to comment in the form below this post, thanks.
-
 ## Special characters
 
-Phân số đặc biệt: `\sfrac{1}{2}` , phải dùng gói `xfrac`.
+- Phân số đặc biệt: `\sfrac{1}{2}` , phải dùng gói `xfrac`.
+- $\Vert \cdot \Vert$: `\Vert \Vert`
+- $\vert \cdot \vert$: `\vert \vert`
+- $\langle \cdot \rangle$: `\langle \rangle`
+- $\left< \cdot \right>$: `\left< \right>` (fix to content and add some extra space sometime)
+- $u^{\ast}$: `\ast`
+- $\backslash$: `\backslash`
+- [[]]: `\llbracket \rrbracket`
+- $\ell$: `\ell`
+
+---
+
+**Double brace bracket \{\{\}\}**
+
+~~~ latex
+\usepackage{xparse}
+\NewDocumentCommand{\doubleaccolade}{sO{}m}{
+  \IfBooleanTF{#1}
+    {\dgalext{#3}}
+    {\dgalx[#2]{#3}}%
+}
+\NewDocumentCommand{\dgalext}{m}{
+  \sbox0{
+    \mathsurround=0pt % just for safety
+    $\left\{\vphantom{#1}\right.\kern-\nulldelimiterspace$%
+  }%
+  \sbox2{\{}%
+  \ifdim\ht0=\ht2
+    \{\kern-.625\wd2 \{#1\}\kern-.625\wd2 \}%
+  \else
+    \left\{\kern-.7\wd0\left\{#1\right\}\kern-.7\wd0\right\}%
+  \fi
+}
+\NewDocumentCommand{\dgalx}{om}{
+  \sbox0{\mathsurround=0pt$#1\{$}%
+  \sbox2{\{}%
+  \ifdim\ht0=\ht2
+    \{\kern-.625\wd2 \{#2\}\kern-.625\wd2 \}%
+  \else
+    \mathopen{#1\{\kern-.7\wd0 #1\{}
+    #2
+    \mathclose{#1\}\kern-.7\wd0 #1\}}
+  \fi
+}
+~~~
+
+Using: `\doubleaccolade{}`
+
+---
+
+**Triple norm**
+
+~~~ latex
+\usepackage{mathtools}
+\newcommand{\mynegspace}{\hspace{-0.12em}}
+\newcommand{\lvvvert}{\rvert\mynegspace\rvert\mynegspace\rvert}
+\newcommand{\rvvvert}{\rvert\mynegspace\rvert\mynegspace\rvert}
+\DeclarePairedDelimiter{\vvvert}{\lvvvert}{\rvvvert}
+~~~
+
+Using: `\vvvert{}`
+
+## Toán học
+
+Gói lệnh cơ bản phải có
+
+~~~ latex
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+~~~
+
+---
+
+Định nghĩa, định lý
+
+~~~ latex
+\ProvidesPackage{thi_theorem}  
+\usepackage{amsthm} %theorem/definition/...
+%\theoremstyle{definition} %bỏ italic sang thẳng đứng
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+~~~
+
+## Chia cột
+
+Có hai cách, [cách 1](https://www.sharelatex.com/learn/Multiple_columns) tự động hoàn toàn
+
+~~~ latex
+\usepackage{multicol}
+\setlength{\columnseprule}{1pt}
+\usepackage{color}
+\def\columnseprulecolor{\color{blue}}
+~~~
+
+~~~ latex
+\begin{multicols}{3}
+[
+Những thứ ngoài cột
+]
+inside cột
+\columnbreak
+inside cột
+\end{multicols}
+~~~
+
+---
+
+Cách 2 chỉnh được độ rộng các cột, `\usepackage{parcolumns}`
+
+~~~ latex
+\begin{parcolumns}[colwidths={1=.48\textwidth},rulebetween=false]{2}
+  \colchunk{ %left
+    content column 1
+  }
+  \colchunk{ % right
+    content column 2
+  }
+\end{parcolumns}
+~~~
+
+## Inser code
+
+~~~ latex
+\usepackage{listings} %insert codes
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tb,
+  language=C++,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+~~~
+
+Có các ngôn ngữ
+
+~~~
+C++, Java, HTML, Fortran, Gnuplot, Matlab, Pascal, PHP, PSTricks, R, Python, Scilab, TeX, XML, Mathematica, SQL, VBScript.
+~~~
+
+Using
+
+~~~ matlab
+\code{abc} % without listings
+
+\lstinline{abc} % inline
+
+\begin{lstlisting}
+abc
+\end{lstlisting}
+~~~
 
 ## Bibliography
 
@@ -72,6 +226,12 @@ Use biber/bibtex to make a bibliography as usual, just add this line before `\be
 ``` latex
 \usepackage[backref=true]{hyperref}
 ```
+
+### Thêm thông tin kèm cite
+
+~~~ latex
+\cite[Chapter~3]{somebook}
+~~~
 
 ## Tables and Figures
 
