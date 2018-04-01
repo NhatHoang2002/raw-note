@@ -11,7 +11,7 @@ maths: 1
 
 ### My questions
 
-1. [What's the general idea of Nische's method in numerical analysis?](http://goo.gl/L6F0qZ) 11/6/15
+1. [What's the general idea of Nitsche's method in numerical analysis?](http://goo.gl/L6F0qZ) 11/6/15
 2. [Boundary vs Interface.](http://scicomp.stackexchange.com/questions/10820/boundary-vs-interface) 14/2/14
 3. [Extended FEM vs $P_k$-bubble element.](http://goo.gl/iOM2vz) 15/2/14
 4. [Finite Element Method vs Extended Finite Element Method (FEM vs XFEM).](http://goo.gl/6r9QFj) 12/2/14

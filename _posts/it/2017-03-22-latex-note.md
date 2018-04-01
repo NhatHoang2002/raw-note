@@ -7,9 +7,20 @@ toc: 1
 date: 2018-03-31
 ---
 
-This is the list of quick latex notes before I write clearly and completely on the site [Math2IT](http://math2it.com). 
+**Thêm space môi trường align**
 
-## LaTeX errors
+~~~ latex
+\begin{align}
+a+b=c \\[10pt]
+x+y=z
+\end{align}
+~~~
+
+---
+
+Bỏ in nghiêng italic chỉ một cụm từ trong môi trường theorem latex: dùng `\normalfont` trước cái muốn bỏ.
+
+---
 
 *Underfull \hbox (badness 10000) message* (xem thêm [ở đây](https://tex.stackexchange.com/questions/199635/underfull-hbox-badness-10000-message))
 
@@ -23,7 +34,7 @@ Cách giải quyết đơn giản chỉ cần xóa đi `\\` ở cuối mỗi hà
 - Chạy lualatex > biblatex (thật ra là biber)
 - Quay lại VSC và chạy bình thường (Ctrl+F1)
 
-## Special characters
+---
 
 - Phân số đặc biệt: `\sfrac{1}{2}` , phải dùng gói `xfrac`.
 - $\Vert \cdot \Vert$: `\Vert \Vert`
@@ -88,7 +99,7 @@ Using: `\doubleaccolade{}`
 
 Using: `\vvvert{}`
 
-## Toán học
+---
 
 Điều chỉnh khoảng cách trước/sau/trong `align`
 
@@ -125,7 +136,9 @@ Gói lệnh cơ bản phải có
 \newtheorem{proposition}{Proposition}
 ~~~
 
-## Chia cột
+---
+
+**Chia cột**
 
 Có hai cách, [cách 1](https://www.sharelatex.com/learn/Multiple_columns) tự động hoàn toàn
 
@@ -162,7 +175,9 @@ Cách 2 chỉnh được độ rộng các cột, `\usepackage{parcolumns}`
 \end{parcolumns}
 ~~~
 
-## Inser code
+---
+
+**Inser code**
 
 ~~~ latex
 \usepackage{listings} %insert codes
@@ -206,9 +221,9 @@ abc
 \end{lstlisting}
 ~~~
 
-## Bibliography
+---
 
-### Biber in Latex to make bibliography
+**Biber in Latex to make bibliography**
 
 Before doing that, you need to change bibtex.exe into biber.exe before compiling. 
 
@@ -241,7 +256,9 @@ If you want your bibliography showed in the same page with other fields on your 
 \endgroup
 ```
 
-### Add link into bibtex reference
+---
+
+**Add link into bibtex reference**
 
 Use biber/bibtex to make a bibliography as usual, just add this line before `\begin{codument}`
 
@@ -249,15 +266,17 @@ Use biber/bibtex to make a bibliography as usual, just add this line before `\be
 \usepackage[backref=true]{hyperref}
 ```
 
-### Thêm thông tin kèm cite
+---
+
+Thêm thông tin kèm cite
 
 ~~~ latex
 \cite[Chapter~3]{somebook}
 ~~~
 
-## Tables and Figures
+---
 
-### Change caption's position of table in latex
+**Change caption's position of table in latex**
 
 If you want caption appears above the table (but it's in center), put these lines before `\begin{document}`
 
@@ -291,7 +310,9 @@ NOTE that, you need to put `\label{}` before `\tabular`, for example
 \end{table
 ```
 
-### Continuous numbering (without per chapter) for figures and tables
+---
+
+**Continuous numbering (without per chapter) for figures and tables**
 
 Use below before `\begin{document}`
 
@@ -329,7 +350,9 @@ Especially, you can apply this trick to the numbering of the chapter.
 
 Just play with them and read more on the [package document](http://distrib-coffee.ipsl.jussieu.fr/pub/mirrors/ctan/macros/latex/contrib/chngcntr/chngcntr.pdf).
 
-## Tikz & vẽ vời
+---
+
+**Tikz & vẽ vời**
 
 Đoạn code cho 1 hình gọn nhẹ
 
@@ -426,7 +449,9 @@ Vẽ **hệ trục tọa độ (axes)**
     \draw (1pt,\y cm) -- (-1pt,\y cm) node[anchor=east] {$\y$};
 ```
 
-### Matlab và tikz
+---
+
+**Matlab và tikz**
 
 Sau khi vẽ bằng matlab và xuất ra file tex.
 
