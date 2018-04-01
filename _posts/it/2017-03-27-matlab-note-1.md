@@ -6,6 +6,7 @@ categories:
 tags: ["matlab"]
 maths: 1
 toc: 1
+date: 2018-03-31
 ---
 
 {% include toc.html %}
@@ -145,7 +146,6 @@ end
 ~~~
 
 
-
 ## Matrix and array
 
 `end` is used as in an indexing expression
@@ -154,14 +154,18 @@ end
 B = A(end,2:end); % hàng cuối của i, cột thứ 2 tới cuối
 ~~~
 
-### create a matrix
+---
+
+create a matrix
 
 ~~~ matlab
 A=[ [1,5];[2,3] ]
 X = [1 0 2; 0 1 1; 0 0 4]
 ~~~
 
-### vector
+---
+
+vector
 
 ~~~ matlab
 thi = 0:0.5:10; % start:step:end
@@ -180,7 +184,9 @@ y = linspace(x1,x2) %returns a row vector of 100 evenly spaced points between x1
 y = linspace(x1,x2,n) % with n points
 ~~~
 
-### rand
+---
+
+rand
 
 ~~~ matlab
 rand(2,4); % tạo matrix 2x3 với hệ số random
@@ -188,7 +194,9 @@ rand(2,4,3); % tạo matrix 2x3x4
 rand(2); % tạo matrix 2x2 
 ~~~
 
-### sparse matrix
+---
+
+sparse matrix
 
 ~~~ matlab
 A = sparse(i,j,s,m,n) % i,j,s have the same lenght, mxn matrix
@@ -238,7 +246,9 @@ A=sparse(i,j,v)
 B=sparse(ii,jj,vv) % B is the same with A
 ~~~
 
-### accumarray
+---
+
+accumarray
 
 ~~~ matlab
 subs = [1; 3; 4; 3; 4]; % must be column-array
@@ -283,7 +293,9 @@ $$
 
 Trong matlab, có thể thử `hilb(n)`.
 
-### The order operator in the array or matrix
+---
+
+The order operator in the array or matrix
 
 ~~~ matlab
 a=[1 2 3 4;
@@ -293,7 +305,9 @@ b=[1 2 3 4;
 c(1:4) = dot(a(:,:),b(:,:)); % result c = [5 10 15 20]
 ~~~
 
-### Positive definite matrix
+---
+
+**Positive definite matrix**
 
 Một cách để kiểm tra xem matrix có positive definite hay không là chạy `chol(A)`, nếu kết quả ra giống như sau thì nó không có PD.
 

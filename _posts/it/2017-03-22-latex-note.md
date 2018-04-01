@@ -4,7 +4,7 @@ categories: it
 tags: ["latex"]
 maths: 1
 toc: 1
-date: 2017-12-27
+date: 2018-03-31
 ---
 
 This is the list of quick latex notes before I write clearly and completely on the site [Math2IT](http://math2it.com). 
@@ -14,6 +14,14 @@ This is the list of quick latex notes before I write clearly and completely on t
 *Underfull \hbox (badness 10000) message* (xem thêm [ở đây](https://tex.stackexchange.com/questions/199635/underfull-hbox-badness-10000-message))
 
 Cách giải quyết đơn giản chỉ cần xóa đi `\\` ở cuối mỗi hàng được báo lỗi.
+
+---
+
+**Visual studio bibtex**: Có thể chạy lỗi (đoán là sai đường dẫn).
+
+- Mở file bằng texmaker (lưu ý là texmaker ko tự load các thay đổi trên VSC, chỉ có VSC mới load thay đổi trên texmaker)
+- Chạy lualatex > biblatex (thật ra là biber)
+- Quay lại VSC và chạy bình thường (Ctrl+F1)
 
 ## Special characters
 
@@ -26,6 +34,7 @@ Cách giải quyết đơn giản chỉ cần xóa đi `\\` ở cuối mỗi hà
 - $\backslash$: `\backslash`
 - [[]]: `\llbracket \rrbracket`
 - $\ell$: `\ell`
+- Chữ Holder: `H{\"o}lder`
 
 ---
 
@@ -80,6 +89,19 @@ Using: `\doubleaccolade{}`
 Using: `\vvvert{}`
 
 ## Toán học
+
+Điều chỉnh khoảng cách trước/sau/trong `align`
+
+~~~ latex
+\setlength{\abovedisplayskip}{0pt} % nếu trước [align] là khoảng dài
+\setlength{\belowdisplayskip}{0pt} % nếu sau [align] là khoảng dài
+\setlength{\abovedisplayshortskip}{0pt} % nếu trước [align] là khoảng ngắn
+\setlength{\belowdisplayshortskip}{0pt} % nếu sau [align] là khoảng ngắn
+
+\setlength{\jot}{0pt} % nếu em muốn tăng khoảng cách giữa các dòng bên trong align
+~~~
+
+---
 
 Gói lệnh cơ bản phải có
 

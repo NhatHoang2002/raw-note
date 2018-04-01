@@ -14,8 +14,7 @@ Loạt bài này chủ yếu dùng để *ghi chú* trong quá trình hoàn thà
 
 ## System of equations
 
-
-
+Khi tìm $u=w-\dfrac{\beta}{\lambda\alpha}v$ thì tại những node trên $\Gamma$, ta không biết nên lấy $\beta\_1$ hay là $\beta\_2$. Cách giải quyết là cho $v=0$ tại các node này vì thực tế ta cũng cần điều này!
 
 ## Small intersection
 
