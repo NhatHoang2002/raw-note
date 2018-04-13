@@ -136,6 +136,36 @@ Gói lệnh cơ bản phải có
 \newtheorem{proposition}{Proposition}
 ~~~
 
+**matlab2latex (hình matlab vào latex)** ([tham khảo thêm](https://tex.stackexchange.com/questions/329308/how-to-convert-a-matlab-figure-to-a-latex-code-not-to-a-graphic))
+
+1. Download file [tại đây](https://fr.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz)
+2. Giải nén và lưu tại một thư mục nào đó (sau khi giải nén thì chọn thư mục **src**)
+3. **Set path** trong matlab (để sau này dùng ở đâu cũng được)
+4. Mỗi lần chạy xong code matlab và vẽ được hình rồi thì chạy lệnh `matlab2tikz('aaa.tex','standalone',true)` thì nó sẽ lưu **cửa sổ hình cuối cùng** vào file tex tên **aaa.tex**. Option `'standalone',true` là để xóa hết khoảng trắng trong hình.
+5. Để sử dụng, thêm `% !TEX program = lualatex` vào đầu file .tex tạo thành và biên dịch bình thường bằgn Visual Studio code hoặc không cần để thêm dòng đó nhưng phải biên dịch bằng Lualatex.
+6. Nếu bạn **không dùng standalone** thì cần tạo thêm một file .tex khác có nội dung như sau
+~~~ latex
+% !TEX program = lualatex
+\documentclass{article}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+%% the following commands are sometimes needed
+\usetikzlibrary{plotmarks}
+\usepackage{grffile}
+\usepackage{amsmath}
+%% you may also want the following commands
+%\pgfplotsset{plot coordinates/math parser=false}
+%\newlength\figureheight
+%\newlength\figurewidth
+
+\begin{document}
+\input{aaa.tex}
+\end{document}
+~~~
+
+Nếu gặp lỗi *TeX capacity exceeded, sorry* phát sinh, có thể tham khảo [cái này](https://github.com/matlab2tikz/matlab2tikz/wiki/TeX-capacity-exceeded,-sorry). Đã thử 1 lần thành công, biên dịch bằng **lualatex**.
+
 ---
 
 **Chia cột**
@@ -350,9 +380,8 @@ Especially, you can apply this trick to the numbering of the chapter.
 
 Just play with them and read more on the [package document](http://distrib-coffee.ipsl.jussieu.fr/pub/mirrors/ctan/macros/latex/contrib/chngcntr/chngcntr.pdf).
 
----
 
-**Tikz & vẽ vời**
+## Tikz & vẽ vời
 
 Đoạn code cho 1 hình gọn nhẹ
 

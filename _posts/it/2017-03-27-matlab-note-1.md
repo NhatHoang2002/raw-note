@@ -6,7 +6,7 @@ categories:
 tags: ["matlab"]
 maths: 1
 toc: 1
-date: 2018-03-31
+date: 2018-04-09
 ---
 
 {% include toc.html %}
@@ -22,6 +22,7 @@ date: 2018-03-31
 - Không muốn hiển thị kết quả dạng mũ (1.81e+03 chẳng hạn) thì dùng `format short g`
 - Muốn hiển thị nhiều chữ số sau dấu phẩy hơn trong kết quả (mặc định 4) thì dùng `format long`
 - Kết hợp hai cái trên, vừa dài vừa bỏ dạng mũ `format long g`
+- [[s](https://fr.mathworks.com/help/matlab/ref/inv.html)] `x = A\b` is computed differently than `x = inv(A)*b` and is recommended for solving systems of linear equations.
 
 ### Phân biệt add to path và change folder
 
