@@ -9,6 +9,14 @@ maths: 1
 
 ## Ghi chú mới
 
+**Method of lines** giải thích rõ trong quyển *knabner BOOK*.
+
+**Arnold** chỉ dùng streamline diffusion FEM (SDFEM) để giải hyperbolic equation vì nếu dùng FEM bình thường thì nó sẽ unstable (xem 7.2). Ổng cũng dùng method of line để giải level set equations.
+
+
+
+---
+
 Câu hỏi đặt ra là
 
 1. Giải level set equations trên $V^{\Gamma}\_h$ luôn hay là phải giải riêng trên 1 mesh khác?
