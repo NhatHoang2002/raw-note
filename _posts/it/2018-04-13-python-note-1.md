@@ -9,6 +9,38 @@ toc: 1
 
 {% include toc.html %}
 
+## Linh tinh
+
+- index start in python 0 (mảng, table,...)
+- Documentation for python: [devdocs](http://devdocs.io/python~3.6/)
+- Chú ý `x[1:3]` là lấy thằng thứ 2 và thứ 3 chứ ko có lấy thằng thứ 4. Kiểu nó sẽ lấy $1\le i < 3$.
+- Chọn command, sau đó nhấn **Ctrl+I** để xem help về command đó trong Spyder.
+- Chọn lệnh xong nhấn **Ctrl+Enter** để chạy code trong **Spyder**
+
+
+## [Pandas](http://pandas.pydata.org/) package
+
+- `iloc`: select rows and columns by number (integer-location based indexing) [[xem thêm](https://www.shanelynn.ie/select-pandas-dataframe-rows-and-columns-using-iloc-loc-and-ix/)]
+  ~~~ python
+  # Rows:
+  data.iloc[0] # first row of data frame (Aleshia Tomkiewicz) - Note a Series data type output.
+  data.iloc[1] # second row of data frame (Evan Zigomalas)
+  data.iloc[-1] # last row of data frame (Mi Richan)
+  
+  # Columns:
+  data.iloc[:,0] # first column of data frame (first_name)
+  data.iloc[:,1] # second column of data frame (last_name)
+  data.iloc[:,-1] # last column of data frame (id)
+  
+  # Multiple row and column selections using iloc and DataFrame
+  data.iloc[0:5] # first five rows of dataframe
+  data.iloc[:, 0:2] # first two columns of data frame with all rows
+  data.iloc[[0,3,6,24], [0,5,6]] # 1st, 4th, 7th, 25th row + 1st 6th 7th columns.
+  data.iloc[0:5, 5:8] # first 5 rows and 5th, 6th, 7th columns of data frame (county -> phone1).
+  ~~~
+- `dataset.iloc[:,:-1].values`: chọn `values` của tất cả dòng (`:`) và tất cả cột trừ cột cuối (`:-1`)
+- 
+
 ## Import libraries
 
 Ba hàm cơ bản khi học course ML A-Z
