@@ -4,6 +4,7 @@ categories: it
 tags: ["machine learning"]
 maths: 1
 toc: 1
+date: 2018-04-18
 ---
 
 Series này note từ đầu lúc học [machine learning trên Udemy](https://www.udemy.com/machinelearning).
@@ -28,7 +29,7 @@ Trên Course người ta bảo nên cài **[Anaconda](https://www.anaconda.com/d
 
 - **Spyder** : 1 IDE để lập trình Python. [Trang web riêng](https://pythonhosted.org/spyder/).
 
-## Dataset
+## Dataset & Các bước
 
 | Country | Age | Salary | Purchased |
 |---------|-----|--------|-----------|
@@ -43,6 +44,13 @@ Trên Course người ta bảo nên cài **[Anaconda](https://www.anaconda.com/d
 | Germany | 50  | 83000  | No        |
 | France  | 37  | 67000  | Yes       |
 
+Các bước sẽ học với mỗi ML model
+
+1. **Data Pre-processing & Importing Dataset**: import các libraries, packages cần thiết + import dataset có sẵn để chuẩn bị processing nó.
+2. **Missing Data**: sẽ có trường hợp nhiều fields trong data bị missing, chúng ta cần trám hết mấy chỗ missing này lại bằng quá trình missing data này. Cách trám có nhiều cách, ví dụ lấy giá trị trung bình của mấy cái có sẵn.
+3. **Categorical data**: tới bước phân loại data, nghĩa là chia các cột có những thành phần giống nhau thành 1 nhóm riêng để xử lý và label cho chúng. Trong Python thì nên dùng **Dummy Endcoding** để chia thành dạng 0,1 thay vì chia thành 1,2,3 sẽ dễ làm cho ML hiểu lầm có sự ưu tiên. Trong R thì không cần làm thế vì chúng xét thành các factors riêng biệt.
+4. **Splitting dataset into training set and test set**: Bây giờ là split dataset thành training và test, training là để dạy cho ML học cách phân loại, test là để kiểm tra lại xem chúng có học tốt chưa để đối chiếu.
+
 ## Data Pre-processing & Importing Dataset
 
 - Có những **indepedent variable** và **dependent variables**. Chúng ta dùng IV để dự đoán DV.
@@ -52,12 +60,14 @@ Trên Course người ta bảo nên cài **[Anaconda](https://www.anaconda.com/d
 Python (cần phân biệt cột dependent vars và independent vars)
 
 ~~~ python
+# Importing the libraries
+# -----------------------------
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
 # Importing the dataset
-
+# -----------------------------
 dataset = pd.read_csv('Data.csv')
 x = dataset.iloc[:, :-1].values
 y = dataset.iloc[:,-1].values
@@ -66,6 +76,8 @@ y = dataset.iloc[:,-1].values
 R (không cần phân biệt depden and indepdend vars trong dataset)
 
 ~~~ R
+# Importing the dataset
+# -----------------------------------------------
 dataset = read.csv('Data.csv')
 ~~~
 
@@ -105,6 +117,8 @@ Chuẩn bị data để ML works correctly và phát hiện ra bị thiếu data
 **Python**
 
 ~~~ python
+# Taking care of missing data
+# -----------------------------
 from sklearn.preprocessing import Imputer
 # Imputer is a class
 imputer = Imputer(missing_values = 'NaN', strategy = 'mean', axis = 0)
@@ -122,6 +136,7 @@ Các `strategy`:
 
 ~~~ R
 # Taking care of missing data
+# -----------------------------------------------
 dataset$Age = ifelse(is.na(dataset$Age), # conditional
                      ave(dataset$Age, FUN = function(x) mean(x, na.rm = TRUE)), # if true
                      dataset$Age)  # if false
@@ -143,6 +158,8 @@ Tuy nhiên khi chuyển text thành number thì sẽ xảy ra tình trạng **ML
 **Python**
 
 ~~~ python
+# Encoding categorical data
+# -----------------------------
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 
 labelencoder_X = LabelEncoder()
@@ -158,10 +175,44 @@ y = labelencoder_Y.fit_transform(y) # purchased
 **R**: không cần phải chia thành từng cột (OneHotEncoder như trên) mà chia các thành phần của cat thành các factors riêng.
 
 ~~~ R
+# Encoding categorical data
+# -----------------------------------------------
 dataset$Country = factor(dataset$Country,
                          levels = c('France','Spain', 'Germany'), # 'c' is a vector in R
                          labels = c(1, 2, 3)) # khong quan trong no ordered related
 dataset$Purchased = factor(dataset$Purchased,
                          levels = c('No','Yes'), # 'c' is a vector in R
                          labels = c(0, 1)) # khong quan trong no ordered related
+~~~
+
+## Splitting dataset into training set and test set
+
+- **training set**: set để train machine learning model (những gì được học)
+- **test set**: để test performance của ML model (những gì được kiểm tra)
+
+**Python**
+
+~~~ python
+# Splitting the dataset into the training set and test set
+# ----------------------------------------------------------
+from sklearn.cross_validation import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
+# X: part of matrix of feature, y: part of dependent variable that associated to X
+# test_size=0.2: 20% of data go to test set, 80% go to train set
+# random_state: mốc để set mấy thành phần random, một số int
+~~~
+
+**R**
+
+~~~ R
+# Splitting dataset into training and test sets
+# -----------------------------------------------
+# install.packages('caTools') # install library in R, just do it 1 time
+library(caTools) # select library
+set.seed(123) # choose a seed to make random choice for data
+split = sample.split(dataset$Purchased, SplitRatio = .8) 
+# in python we choose .2 for test set but in R, we choose .8 for training set
+# TRUE => observations go to training set, FALSE => observations go to test set
+training_set = subset(dataset, split == TRUE)
+test_set = subset(dataset, split == FALSE)
 ~~~
