@@ -4,7 +4,7 @@ categories: it
 tags: ["machine learning"]
 maths: 1
 toc: 1
-date: 2018-04-18
+date: 2018-04-19
 ---
 
 Series này note từ đầu lúc học [machine learning trên Udemy](https://www.udemy.com/machinelearning).
@@ -31,6 +31,13 @@ Trên Course người ta bảo nên cài **[Anaconda](https://www.anaconda.com/d
 
 ## Dataset & Các bước
 
+<ul class="collapsible" data-collapsible="accordion">
+<li>
+<div class="collapsible-header" markdown="1"><i class="material-icons">face</i>
+Bảng dataset
+</div>
+<div class="collapsible-body" markdown="1">
+
 | Country | Age | Salary | Purchased |
 |---------|-----|--------|-----------|
 | France  | 44  | 72000  | No        |
@@ -44,12 +51,17 @@ Trên Course người ta bảo nên cài **[Anaconda](https://www.anaconda.com/d
 | Germany | 50  | 83000  | No        |
 | France  | 37  | 67000  | Yes       |
 
+</div>
+</li>
+</ul>
+
 Các bước sẽ học với mỗi ML model
 
 1. **Data Pre-processing & Importing Dataset**: import các libraries, packages cần thiết + import dataset có sẵn để chuẩn bị processing nó.
 2. **Missing Data**: sẽ có trường hợp nhiều fields trong data bị missing, chúng ta cần trám hết mấy chỗ missing này lại bằng quá trình missing data này. Cách trám có nhiều cách, ví dụ lấy giá trị trung bình của mấy cái có sẵn.
 3. **Categorical data**: tới bước phân loại data, nghĩa là chia các cột có những thành phần giống nhau thành 1 nhóm riêng để xử lý và label cho chúng. Trong Python thì nên dùng **Dummy Endcoding** để chia thành dạng 0,1 thay vì chia thành 1,2,3 sẽ dễ làm cho ML hiểu lầm có sự ưu tiên. Trong R thì không cần làm thế vì chúng xét thành các factors riêng biệt.
 4. **Splitting dataset into training set and test set**: Bây giờ là split dataset thành training và test, training là để dạy cho ML học cách phân loại, test là để kiểm tra lại xem chúng có học tốt chưa để đối chiếu.
+5. **Feature scaling**: giúp cho scale dữ liệu giữa các cột cân bằng.
 
 ## Data Pre-processing & Importing Dataset
 
@@ -104,6 +116,7 @@ Sự khác nhau
 - FP tạo ra 1 biến trung gian để lưu trạng thái sau khi chỉnh sửa trong khi OPP khi chỉnh sửa thì nó sửa luôn cái obj gốc, do đó mỗi lần muốn biết giá trị của 1 obj tại 1 thời điểm thì phải chạy từ đầu.
 - OOP giúp quản lý code tốt hơn, thay đổi từng obj riêng lẽ cũng tốt hơn.
 - *when he deals with data about people, FP works well, but when he tries to simulate people, OOP works well.*
+
 </div>
 </li>
 </ul>
@@ -216,3 +229,71 @@ split = sample.split(dataset$Purchased, SplitRatio = .8)
 training_set = subset(dataset, split == TRUE)
 test_set = subset(dataset, split == FALSE)
 ~~~
+
+## Feature scaling
+
+Ví dụ tuổi trong khoảng 35 đến 50 nhưng salary tính theo chục ngàn nên khi chia tọa độ, 1 cái là x, 1 cái là y thì scale của 2 trục nó sẽ rất khác. Vì ML sử dụng khoảng cách giữa 2 observation nhiều (cần đến khoảng cách Eucliendian)
+
+- **Standardisation**:
+  $$
+  x_{std} = \dfrac{x-mean(x)}{\text{standard deviation (x)}}
+  $$
+- **Normalisation**: 
+  $$
+  x_{norm = \dfrac{x-\min(x)}{\max(x)-\min(x)}
+  $$
+
+<ul class="collapsible" data-collapsible="accordion">
+<li>
+<div class="collapsible-header" markdown="1"><i class="material-icons">face</i>
+Standard deviation (độ lệch chuẩn)
+</div>
+<div class="collapsible-body" markdown="1">
+
+A low standard deviation indicates that the data points tend to be close to the mean (also called the expected value) of the set, while a high standard deviation indicates that the data points are spread out over a wider range of values.
+
+![Độ lệch chuẩn của normal distribution](/images/posts/sd.png){:.w-600 .no-border}
+
+Let $X$ be a random variable with mean value $\mu$:
+
+$$\operatorname {E} [X]=\mu$$
+
+Here the operator E denotes the average or expected value of $X$. Then the **standard deviation** of $X$ is the quantity
+
+$$
+{\displaystyle {\begin{aligned}\sigma &={\sqrt {\operatorname {E} [(X-\mu )^{2}]}}\\&={\sqrt {\operatorname {E} [X^{2}]+\operatorname {E} [-2\mu X]+\operatorname {E} [\mu ^{2}]}}\\&={\sqrt {\operatorname {E} [X^{2}]-2\mu \operatorname {E} [X]+\mu ^{2}}}\\&={\sqrt {\operatorname {E} [X^{2}]-2\mu ^{2}+\mu ^{2}}}\\&={\sqrt {\operatorname {E} [X^{2}]-\mu ^{2}}}\\&={\sqrt {\operatorname {E} [X^{2}]-(\operatorname {E} [X])^{2}}}\end{aligned}}}
+$$
+
+**Discrete random variable**
+
+In the case where $X$ takes random values from a finite data set $x\_1, x\_2, ..., x\_N$ with each value having the same probability, the standard deviation is
+
+$$
+\sigma ={\sqrt {{\frac {1}{N}}\left[(x_{1}-\mu )^{2}+(x_{2}-\mu )^{2}+\cdots +(x_{N}-\mu )^{2}\right]}},{\rm {\ \ where\ \ }}\mu ={\frac {1}{N}}(x_{1}+\cdots +x_{N}),
+$$
+
+or, using summation notation,
+
+$$
+\sigma ={\sqrt {{\frac {1}{N}}\sum _{i=1}^{N}(x_{i}-\mu )^{2}}},{\rm {\ \ where\ \ }}\mu ={\frac {1}{N}}\sum _{i=1}^{N}x_{i}.
+$$
+
+If, instead of having equal probabilities, the values have different probabilities, let $x\_1$ have probability $p\_1, x\_2$ have probability $p\_2,\ldots, x\_N$ have probability pN. In this case, the standard deviation will be
+
+$$
+\sigma ={\sqrt {\sum _{i=1}^{N}p_{i}(x_{i}-\mu )^{2}}},{\rm {\ \ where\ \ }}\mu =\sum _{i=1}^{N}p_{i}x_{i}.
+$$
+
+**Continuous random variable**
+
+The standard deviation of a continuous real-valued random variable $X$ with probability density function $\rho(x)$ is
+
+$$
+{\displaystyle \sigma ={\sqrt {\int _{\mathbf {X} }(x-\mu )^{2}\,p(x)\,{\rm {d}}x}},{\rm {\ \ where\ \ }}\mu =\int _{\mathbf {X} }x\,p(x)\,{\rm {d}}x,}
+$$
+
+and where the integrals are definite integrals taken for $x$ ranging over the set of possible values of the random variable $X$.
+
+</div>
+</li>
+</ul>
