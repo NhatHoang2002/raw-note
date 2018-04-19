@@ -1,5 +1,5 @@
 ---
-title: Titanic: Machine Learning from Disaster 1
+title: Titanic - Machine Learning from Disaster 1
 categories: it
 tags: ["machine learning"]
 maths: 1
