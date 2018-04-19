@@ -16,6 +16,19 @@ Series này note từ đầu lúc học [machine learning trên Udemy](https://w
 - [Coursera vs Udacity for Machine Learning](https://hackernoon.com/coursera-vs-udacity-for-machine-learning-f9c0d464a0eb) by Hacker Moon : so sánh hai courses học ML. Cẩn thận, cái này hơi **out of date**!
 - Take this course trên **Udemy**: [https://www.udemy.com/machinelearning](https://www.udemy.com/machinelearning) (dùng Python hoặc R)
 - Đọc bài này: [Machine Learning for Humans](https://medium.com/machine-learning-for-humans/why-machine-learning-matters-6164faf1df12)
+- [Open Source Data Science masters Degree](https://medium.com/@clarecorthell/the-open-source-data-science-masters-degree-975ba5dc1d80) của Clare Corthell: tự học master DS.
+- [Machine learning for humans](https://medium.com/machine-learning-for-humans/why-machine-learning-matters-6164faf1df12) của Vishal Maini: tự biết về ML với thời gian ngắn nhất. [Best ML resources](https://medium.com/machine-learning-for-humans/how-to-learn-machine-learning-24d53bb64aa1).
+- [AI with Google](https://ai.google/education/#?modal_active=none).
+- [Deep Learning Book Series](https://hadrienj.github.io/posts/Deep-Learning-Book-Series-Introduction/) của Ian Goodfellow, Yoshua Bengio, Aaron Courville
+
+## Site reference
+
+- [Data Science on Stack Exchange](https://datascience.stackexchange.com).
+- [Scikit learn](http://scikit-learn.org/stable/index.html) : documentation about scikit.
+- [Series bài giảng ML](https://www.youtube.com/watch?v=PPLop4L2eGk) của Andrew Ng trên Youtube.
+- [Machine Learning Mastery](https://machinelearningmastery.com/start-here/) của Jason.
+- [Titanic: Machine learning from disaster](https://www.kaggle.com/c/titanic) trên kaggle: học ML thông qua giải quyết vấn đề Titanic, dự đoán xem ai có khả năng sống sót, còn ai thì không.
+- 
 
 ## Install Python & R & Anaconda 13.4
 
@@ -240,7 +253,7 @@ Ví dụ tuổi trong khoảng 35 đến 50 nhưng salary tính theo chục ngà
   $$
 - **Normalisation**: 
   $$
-  x_{norm = \dfrac{x-\min(x)}{\max(x)-\min(x)}
+  x_{\text{norm}} = \dfrac{x-\min(x)}{\max(x)-\min(x)}
   $$
 
 <ul class="collapsible" data-collapsible="accordion">
@@ -260,3 +273,40 @@ A low standard deviation indicates that the data points tend to be close to the 
 </li>
 </ul>
 
+We don't need to fit the test set because test set will occur in the future and we cannot do anything on them like the train set which is what we already have.
+
+Sự khác nhau giữa **fit_transform** và **transform**: cái đầu là làm 2 bước 1 lượt fit() rồi đến transform(). Theo như [đây](https://datascience.stackexchange.com/questions/12321/difference-between-fit-and-fit-transform-in-scikit-learn-models?newreg=b097dbfcf1be421f9f9bcb485afd8ba8) thì training set cần phải xác định
+
+$$
+x' = \dfrac{x-\mu}{\sigma}
+$$
+
+trên test set, chúng ta cũng cần phải dùng cùng một cái $\sigma,\mu$ như trên nhưng không cần phải tìm chúng nữa (câu lệnh fit giúp tìm chúng), thế nên ta chỉ cần transform dữ liệu trong test set mà thôi, tức chỉ cần dùng transform thôi mà ko cần fit.
+
+**Có cần phải transform dummy vars và dependent vars không?** Trong bài này thì không vì chúng chỉ có giá trị 0,1 hoặc scale rất gần với scale mà chúng ta đang làm. Trong các trường hợp khác thì chúng ta nên transform chúng luôn, cũng tương tự như với train và test set.
+
+**Python**
+
+~~~ python
+# Feature scaling
+# ---------------------------------------------
+from sklearn.preprocessing import StandardScaler
+sc_X = StandardScaler()
+X_train = sc_X.fit_transform(X_train)
+X_test = sc_X.transform(X_test) 
+# we don't need to fit the test set because test set will occur in the future 
+# and we cannot do anything on them like the train set which is what we already have
+~~~
+
+**R**
+
+Ở bước *Encoding categorical data*, chúng ta chuyển cột country và purchased thành các factor có vẻ giống số (numeric) nhưng thật ra chỉ là text. Do đó khi scale thì sẽ bị lội do `scale` chỉ áp dụng được cho các số numeric. Đó là lý do vì sao chúng ta sẽ ignore các cột text này.
+
+~~~ R
+# Feature scaling
+# ---------------------------------------------------
+training_set[,2,3] = scale(training_set[,2,3])
+test_set[,2,3] = scale(test_set[,2,3])
+~~~
+
+Chúng ta scale vì chúng ta muốn **ML model converge rapidly**.
