@@ -254,45 +254,7 @@ A low standard deviation indicates that the data points tend to be close to the 
 
 ![Độ lệch chuẩn của normal distribution](/images/posts/sd.png){:.w-600 .no-border}
 
-Let $X$ be a random variable with mean value $\mu$:
-
-$$\operatorname {E} [X]=\mu$$
-
-Here the operator E denotes the average or expected value of $X$. Then the **standard deviation** of $X$ is the quantity
-
-$$
-{\displaystyle {\begin{aligned}\sigma &={\sqrt {\operatorname {E} [(X-\mu )^{2}]}}\\&={\sqrt {\operatorname {E} [X^{2}]+\operatorname {E} [-2\mu X]+\operatorname {E} [\mu ^{2}]}}\\&={\sqrt {\operatorname {E} [X^{2}]-2\mu \operatorname {E} [X]+\mu ^{2}}}\\&={\sqrt {\operatorname {E} [X^{2}]-2\mu ^{2}+\mu ^{2}}}\\&={\sqrt {\operatorname {E} [X^{2}]-\mu ^{2}}}\\&={\sqrt {\operatorname {E} [X^{2}]-(\operatorname {E} [X])^{2}}}\end{aligned}}}
-$$
-
-**Discrete random variable**
-
-In the case where $X$ takes random values from a finite data set $x\_1, x\_2, ..., x\_N$ with each value having the same probability, the standard deviation is
-
-$$
-\sigma ={\sqrt {{\frac {1}{N}}\left[(x_{1}-\mu )^{2}+(x_{2}-\mu )^{2}+\cdots +(x_{N}-\mu )^{2}\right]}},{\rm {\ \ where\ \ }}\mu ={\frac {1}{N}}(x_{1}+\cdots +x_{N}),
-$$
-
-or, using summation notation,
-
-$$
-\sigma ={\sqrt {{\frac {1}{N}}\sum _{i=1}^{N}(x_{i}-\mu )^{2}}},{\rm {\ \ where\ \ }}\mu ={\frac {1}{N}}\sum _{i=1}^{N}x_{i}.
-$$
-
-If, instead of having equal probabilities, the values have different probabilities, let $x\_1$ have probability $p\_1, x\_2$ have probability $p\_2,\ldots, x\_N$ have probability pN. In this case, the standard deviation will be
-
-$$
-\sigma ={\sqrt {\sum _{i=1}^{N}p_{i}(x_{i}-\mu )^{2}}},{\rm {\ \ where\ \ }}\mu =\sum _{i=1}^{N}p_{i}x_{i}.
-$$
-
-**Continuous random variable**
-
-The standard deviation of a continuous real-valued random variable $X$ with probability density function $\rho(x)$ is
-
-$$
-{\displaystyle \sigma ={\sqrt {\int _{\mathbf {X} }(x-\mu )^{2}\,p(x)\,{\rm {d}}x}},{\rm {\ \ where\ \ }}\mu =\int _{\mathbf {X} }x\,p(x)\,{\rm {d}}x,}
-$$
-
-and where the integrals are definite integrals taken for $x$ ranging over the set of possible values of the random variable $X$.
+[Xem thêm ở đây](https://en.wikipedia.org/wiki/Standard_deviation#Definition_of_population_values).
 
 </div>
 </li>
