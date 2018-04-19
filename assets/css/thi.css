@@ -353,7 +353,7 @@ pre code{
 /* material icon */
 .mat-icon{
 	float: left;
-	line-height: inherit;
+	line-height: initial;
 	margin-right: 10px;
 }
 
