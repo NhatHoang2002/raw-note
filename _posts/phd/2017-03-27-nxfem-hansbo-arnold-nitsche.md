@@ -15,7 +15,7 @@ Thông thường, nếu $\kappa\_1 + \kappa\_2 = 1, \kappa\_i >0$ thì
 $$
 \begin{align*}
     \{uv\} &= \{u\}\{v\} + \kappa_1\kappa_2[u][v] ,\\
-     [uv] &= [u]\{v\} + \{u\}[v] + (\kappa_1-\kappa_2)[u][v],
+     [uv] &= [u]\{v\} + \{u\}[v] + (\kappa_2-\kappa_1)[u][v],
 \end{align*}
 $$
 

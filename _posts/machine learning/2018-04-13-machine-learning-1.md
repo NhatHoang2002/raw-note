@@ -1,10 +1,10 @@
 ---
-title: Machine Learning 1
+title: Machine Learning 1: data preprocessing
 categories: it
 tags: ["machine learning"]
 maths: 1
 toc: 1
-date: 2018-04-19
+date: 2018-04-23
 ---
 
 Series này note từ đầu lúc học [machine learning trên Udemy](https://www.udemy.com/machinelearning).
@@ -28,7 +28,6 @@ Series này note từ đầu lúc học [machine learning trên Udemy](https://w
 - [Series bài giảng ML](https://www.youtube.com/watch?v=PPLop4L2eGk) của Andrew Ng trên Youtube.
 - [Machine Learning Mastery](https://machinelearningmastery.com/start-here/) của Jason.
 - [Titanic: Machine learning from disaster](https://www.kaggle.com/c/titanic) trên kaggle: học ML thông qua giải quyết vấn đề Titanic, dự đoán xem ai có khả năng sống sót, còn ai thì không.
-- 
 
 ## Install Python & R & Anaconda 13.4
 
@@ -42,6 +41,7 @@ Trên Course người ta bảo nên cài **[Anaconda](https://www.anaconda.com/d
 
 - **Spyder** : 1 IDE để lập trình Python. [Trang web riêng](https://pythonhosted.org/spyder/).
 
+{:#cac-buoc}
 ## Dataset & Các bước
 
 <ul class="collapsible" data-collapsible="accordion">
@@ -82,7 +82,7 @@ Các bước sẽ học với mỗi ML model
 - Trước khi làm một model nào đều phải cần đến bước pre-processing này, rất quan trọng.
 - There are 3 **libraries essentials** thường được sử dụng trong course : Xem note về [python](/python-note-1) để biết.
 
-Python (cần phân biệt cột dependent vars và independent vars)
+**Python** (cần phân biệt cột dependent vars và independent vars)
 
 ~~~ python
 # Importing the libraries
@@ -94,11 +94,17 @@ import pandas as pd
 # Importing the dataset
 # -----------------------------
 dataset = pd.read_csv('Data.csv')
-x = dataset.iloc[:, :-1].values
-y = dataset.iloc[:,-1].values
+X = dataset.iloc[:, :-1].values # independent variables
+y = dataset.iloc[:,-1].values # depdent variables
 ~~~
 
-R (không cần phân biệt depden and indepdend vars trong dataset)
+Nếu nhấn vào biến X,y để hiện table xem mà có lỗi *object arrays are currently not supported* thì co thể dùng lệnh sau để chuyển array về dataframe để xem
+
+~~~ python
+df = pd.DataFrame(X) # xong nhấn double vào biến df để xem
+~~~
+
+**R**(không cần phân biệt depden and indepdend vars trong dataset)
 
 ~~~ R
 # Importing the dataset
@@ -135,6 +141,8 @@ Sự khác nhau
 </ul>
 
 ## Missing Data
+
+**Note:** thường thì cũng ko focus on this.
 
 Chuẩn bị data để ML works correctly và phát hiện ra bị thiếu data ở một số chỗ thì phải làm sao? $\Rightarrow$ Điền vào bằng cách tính **mean** (trung bình) của những cái khác.
 
@@ -198,6 +206,9 @@ labelencoder_y = LabelEncoder()
 y = labelencoder_Y.fit_transform(y) # purchased
 ~~~
 
+{% include more.html content="[What is One Hot Encoding? Why And When do you have to use it?
+](https://hackernoon.com/what-is-one-hot-encoding-why-and-when-do-you-have-to-use-it-e3c6186d008f)." %}
+
 **R**: không cần phải chia thành từng cột (OneHotEncoder như trên) mà chia các thành phần của cat thành các factors riêng.
 
 ~~~ R
@@ -244,6 +255,8 @@ test_set = subset(dataset, split == FALSE)
 ~~~
 
 ## Feature scaling
+
+**Note**: hầu hết model sẽ take care cái này giúp mình, chúng ta không cần phải làm chúng manually (but, just "most of them")
 
 Ví dụ tuổi trong khoảng 35 đến 50 nhưng salary tính theo chục ngàn nên khi chia tọa độ, 1 cái là x, 1 cái là y thì scale của 2 trục nó sẽ rất khác. Vì ML sử dụng khoảng cách giữa 2 observation nhiều (cần đến khoảng cách Eucliendian)
 
@@ -310,3 +323,61 @@ test_set[,2,3] = scale(test_set[,2,3])
 ~~~
 
 Chúng ta scale vì chúng ta muốn **ML model converge rapidly**.
+
+## Data Preprocessing template
+
+Trong các bước đã nói ở phần [các bước](#cac-buoc), thì chỉ nên focus vào các phần sau (quan trọng) vì các phần kia đa phần sẽ được tự động hoặc dataset đã được well-prepared trước đó rồi.
+
+- Import libraries
+- Import dataset
+- Splitting the dataset into the training set and test set.
+
+Chúng ta sẽ dùng template sau đây cho hầu hết các models
+
+**Python template**
+
+~~~ python
+# Importing the libraries
+# -----------------------------
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Importing the dataset
+# -----------------------------
+dataset = pd.read_csv('Data.csv')
+X = dataset.iloc[:, :-1].values # independent variables
+y = dataset.iloc[:,-1].values # depdent variables
+
+# Splitting the dataset into the training set and test set
+# ----------------------------------------------------------
+from sklearn.cross_validation import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
+
+"""from sklearn.preprocessing import StandardScaler
+sc_X = StandardScaler()
+X_train = sc_X.fit_transform(X_train)
+X_test = sc_X.transform(X_test)"""
+~~~
+
+**R template**
+
+~~~ R
+# Importing the dataset
+# -----------------------------------------------
+dataset = read.csv('Data.csv')
+# dataset = dataset[, 2:3]
+
+# Splitting dataset into training and test sets
+# -----------------------------------------------
+library(caTools) # select library
+set.seed(123) # choose a seed to make random choice for data
+split = sample.split(dataset$Purchased, SplitRatio = .8) 
+training_set = subset(dataset, split == TRUE)
+test_set = subset(dataset, split == FALSE)
+
+# Feature scaling
+# ---------------------------------------------------
+# training_set[,2,3] = scale(training_set[,2,3])
+# test_set[,2,3] = scale(test_set[,2,3])
+~~~
