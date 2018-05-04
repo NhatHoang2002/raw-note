@@ -9,6 +9,11 @@ toc: 1
 
 {% include toc.html %}
 
+## Tài liệu
+
+- Python documentation: [http://devdocs.io/python~3.6/](http://devdocs.io/python~3.6/)
+- 
+
 ## Linh tinh
 
 - index start in python 0 (mảng, table,...)
@@ -16,6 +21,19 @@ toc: 1
 - Chú ý `x[1:3]` là lấy thằng thứ 2 và thứ 3 chứ ko có lấy thằng thứ 4. Kiểu nó sẽ lấy $1\le i < 3$.
 - Chọn command, sau đó nhấn **Ctrl+I** để xem help về command đó trong Spyder.
 - Chọn lệnh xong nhấn **Ctrl+Enter** để chạy code trong **Spyder**
+- - `"abc" + "xyz" = "abcxyz"`
+- không dùng `;` chỉ dùng thụt đầu dòng. Nếu muốn 2 lệnh trên 1 dòng thì cách nhau bởi `;`
+- comment dùng `#`, multi lines dùng `'''` ở đầu và cuối.
+- `y=x`, nếu `y` change thì `x` cũng change luôn. Thay vào đó, dùng `y=list(x)` hoặc `y=x[:]`
+- Có thể break lines bình thường trong python, không cần dùng thêm ký hiệu gì (nhớ thụt đầu dòng vao) HOẶC dùng dấu `\`
+
+~~~ python
+a = '1' + '2' + '3' + \
+    '4' + '5'
+# or
+a = ('1' + '2' + '3' +
+    '4' + '5')
+~~~
 
 
 ## [Pandas](http://pandas.pydata.org/) package
