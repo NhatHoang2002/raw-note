@@ -1,5 +1,5 @@
 ---
-title: Machine Learning 2: Regression
+title: Machine Learning 2-Regression
 categories: it
 tags: ["machine learning"]
 maths: 1

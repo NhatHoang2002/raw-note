@@ -1,5 +1,5 @@
 ---
-title: Machine Learning 1: data preprocessing
+title: Machine Learning 1-data preprocessing
 categories: it
 tags: ["machine learning"]
 maths: 1
