@@ -5,36 +5,54 @@ categories:
   - phd
 toc: 1
 maths: 1
+date: 2018-06-10
 ---
 
-## Ghi chú mới
+## 11/6/18
 
-**Method of lines** giải thích rõ trong quyển *knabner BOOK*.
+- Xem **hw level set workflow 6-2018.pdf**
+- Phải dùng Fast Marching Method vì nếu dung cách giải phương trình kia thì không biết chọn tham số như thế nào.
+- Trong **Trung Hieu thesis**, 2.3, anh ấy có nói lý do tại sao **không cần xét boundary condition** cho level set, trong thèse của chị Cúc cũng có nói, chương 3.1.
+- Chứng minh zero level solution of phương trình Hyperbolic (Cauchy problem) describes the position of the interface. $\Rightarrow$ xem Exercise 4.1 của **Lehrenfeld NOTE 2015.pdf**, có solution luôn!
+- Giới thiệu về Level Set method có thể bắt chước của chị Cúc. Trong thèse, chương 3.1, chương 1.3 cũng có nói tí tí, giới thiệu ở 2.2.
+- Giải level set phải thông qua 2 bước quan trọng
+	- Dùng SDFEM để giải tìm phi (7.2 Arnold book). Dùng Method of lines (giải thích về method này trong knabner book).
+	- Dùng FMM để reinitialization.
+- Giải tìm trên standard FEM chứ không phải $V_h^{\Gamma}$
+- Giải thích tại sao cần $\Vert \nabla\phi\Vert = 1$: 9.3 thesis Eva Loch, trong đó có PDE way (9.3.1), FMM way.
+- Giải thích từ ý tưởng $\phi(x,t)=0$ đến phương trình level set: 2.2 jury thesis.
+- Ý tưởng về (signed) distance function được giới thiệu trong bài báo *sethian osher 1988*
+- Mass conservation: *level set 1996 - Hou et Chang*
+- [Trang này](https://profs.etsmtl.ca/hlombaert/levelset/) giải thích ý tưởng về level set khá hay.
 
-**Arnold** chỉ dùng streamline diffusion FEM (SDFEM) để giải hyperbolic equation vì nếu dùng FEM bình thường thì nó sẽ unstable (xem 7.2). Ổng cũng dùng method of line để giải level set equations.
+## Fast Marching Method
 
-
+- Đã hỏi ý kiến của thầy Pascal Frey, ổng bảo đã có code viết về cái này rùi: 
+	- [Toolbox FMM (matlab)](https://fr.mathworks.com/matlabcentral/fileexchange/6110-toolbox-fast-marching) của Gabriel Peyré (tham khảo thêm [trang này](http://www.numerical-tours.com/matlab/fastmarching_0_implementing/)).
+	- FMM có trong [Charles's ISCDToolbox](https://github.com/ISCDtoolbox), in C, ông này làm chung equip với Pascal.
+- **Idea**: Ra một cái $\phi$ mới (sau khi áp dụng cách giải SDFEM): chỉ có zero-level set thôi, chưa có sign distance function. Áp dụng FMM để tìm một cái $\tilde{\phi}$ mới có cả 2 tính chất kia.
+- [Trang này](https://math.berkeley.edu/~sethian/2006/Explanations/fast_marching_explain.html) giải thích về FMM khá hay + [video này](https://www.youtube.com/watch?v=Ebi5juth-LE) giải thích ý tưởng FMM (ngôn ngữ lạ + simple problem).
+- [Trang này](https://math.berkeley.edu/~sethian/2006/Explanations/fast_marching_explain.html) cũng nói là FMM chỉ thích hợp nếu có giả sử lực $F$ luôn không đổi dấu, tức interface chỉ "nở ra" hoặc "co lại" trong suốt quá trình mà thôi. Mình nghĩ thêm, thật ra mình áp dụng FMM cho mỗi lần reinitialize nên vấn đề dấu của $F$ này có thể bỏ qua được. **Trang này cũng giải thích khá rõ ý tưởng của FMM**.
 
 ---
 
-Câu hỏi đặt ra là
+Sign distance function:
 
-1. Giải level set equations trên $V^{\Gamma}\_h$ luôn hay là phải giải riêng trên 1 mesh khác?
-2. Áp dụng Characteristic luôn không? (giống trong `convect` của ff++ và của chị Cúc)
-
----
-
-Giới thiệu về Level Set method có thể bắt chước của chị Cúc. Trong thèse, chương 3.1, chương 1.3 cũng có nói tí tí.
+$$
+d(x_0,\Gamma_h) := \min_{x\in \Gamma_h} d(x_0,x).
+$$
 
 ---
 
-Chứng minh zero level solution of phương trình Hyperbolic (Cauchy problem) describes the position of the interface. $\Rightarrow$ xem Exercise 4.1 của **Lehrenfeld NOTE 2015.pdf**, có solution luôn!
+Khi tính khoảng cách (bằng cách geometry) giữa node và segment $\Gamma_h$ thì không có kéo dài đoạn ra: nếu hình chiếu (đường vuông góc từ node đó đến $\Gamma_h$) nằm ngoài đoạn $\Gamma_h^T$ thì khoảng cách sẽ là tính tới hai điểm đầu mút của đoạn, ngược lại (hình chiếu nằm giữa 2 đầu đoạn) thì sẽ tính là đoạn chiếu. cái này nói trong Arnold book p.214.
 
 ---
 
-Trong **Trung Hieu thesis**, 2.3, anh ấy có nói lý do tại sao **không cần xét boundary condition** cho level set, trong thèse của chị Cúc cũng có nói, chương 3.1.
+**Tại sao lại phải chia ra thành 3 nhóm nodes?** (như giải thích ở [wiki](https://en.wikipedia.org/wiki/Fast_marching_method#Algorithm))
 
-Trong Trung Hieu có nói thêm 
+- 3 nhóm nodes đó là: Accepted, Considered và Far.
+- Ta không thể tính trực tiếp khoảng cách từ nodes đến $\Gamma_h$ được vì có nhiều đoạn, ta không biết phải tính khoảng cách từ node đó đến đoạn trong element nào? (Theo như Arnold Book, công thức (7.35) thì lấy min của tất cả các cái)
+- Theo như thuật toán thì có vẻ khoản cách từ các nodes *Considered* sẽ được tính thông qua các nodes *Accepted* (why?)
 
 ## Ghi chú cũ
 
@@ -47,14 +65,6 @@ Trong Trung Hieu có nói thêm
 ---
 
 The level sets of $f(x,y)$ are the sets on which the function is constant. A fundamental fact of calculus: The gradient of $f(x,y)$ is perpendicular to its level sets.
-
----
-
-Đoạn sau đây miêu tả giới thiệu về level set method được nói trong bài báo của chị Cúc **Bui2011** (xem mục 2.2)
-
----
-
-Ý tưởng về (signed) distance function được giới thiệu trong bài báo **Osher1988**
 
 ---
 
