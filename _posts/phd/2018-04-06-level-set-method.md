@@ -5,10 +5,10 @@ categories:
   - phd
 toc: 1
 maths: 1
-date: 2018-06-10
+date: 2018-06-22
 ---
 
-## 11/6/18
+## Quick note (rewrite 11/6.18)
 
 - Xem **hw level set workflow 6-2018.pdf**
 - Phải dùng Fast Marching Method vì nếu dung cách giải phương trình kia thì không biết chọn tham số như thế nào.
@@ -24,15 +24,40 @@ date: 2018-06-10
 - Ý tưởng về (signed) distance function được giới thiệu trong bài báo *sethian osher 1988*
 - Mass conservation: *level set 1996 - Hou et Chang*
 - [Trang này](https://profs.etsmtl.ca/hlombaert/levelset/) giải thích ý tưởng về level set khá hay.
+- **Narrow node**s: Chopp 1993 (chưa rõ tên bài báo)
+	- Cái giải local này có thể xem *pde based fast local level set method - peng 99.pdf*, cái này tối ưu hơn cả cái của Sethian (theo như nó nói). Cái này họ xét nodes trong 1 tube cụ thể chứ ko phải trên toàn domain.
+- **Test case**:
+	- 3.5.5 trong thesis của Christoph WINKELMANN.
+	- file *4.1 level set numerical test case#  #*
+- If a time step causes the change in distance of a pixel to be greater than the grid size, will make the level set unstable, it is necessary to make a prediction on the maximum time step.
+	- Cf: *implement level set narrow band - larsen 2005.pdf*
+- 
 
 ## Fast Marching Method
 
+- **Tóm lại**: có 2 cách reinitialization
+	- Cách của Arnold
+	- Cách của chị Cúc (p.100 thesis), khác ở chỗ tìm $\sum_{i=1}^3\vert \phi\_i \nabla \lambda_i\vert^2=1$ cho từng element.
+- Mục FMM 9.3.2 của Eva Loch thesis khá giống với Arnold.
+- Xem ý tưởng trong slide *BEST EXPLAIN fast marching method - Luis Moreno SLIDE 2016.pdf*.
+	- Giải thích RẤT HAY và tại sao $T_3$ lại phải được tính theo $T_1,T_2$ có trong *BEST SLIDE fast marching method - Anastasia Dubrovina.pdf*
 - Đã hỏi ý kiến của thầy Pascal Frey, ổng bảo đã có code viết về cái này rùi: 
 	- [Toolbox FMM (matlab)](https://fr.mathworks.com/matlabcentral/fileexchange/6110-toolbox-fast-marching) của Gabriel Peyré (tham khảo thêm [trang này](http://www.numerical-tours.com/matlab/fastmarching_0_implementing/)).
 	- FMM có trong [Charles's ISCDToolbox](https://github.com/ISCDtoolbox), in C, ông này làm chung equip với Pascal.
 - **Idea**: Ra một cái $\phi$ mới (sau khi áp dụng cách giải SDFEM): chỉ có zero-level set thôi, chưa có sign distance function. Áp dụng FMM để tìm một cái $\tilde{\phi}$ mới có cả 2 tính chất kia.
 - [Trang này](https://math.berkeley.edu/~sethian/2006/Explanations/fast_marching_explain.html) giải thích về FMM khá hay + [video này](https://www.youtube.com/watch?v=Ebi5juth-LE) giải thích ý tưởng FMM (ngôn ngữ lạ + simple problem).
 - [Trang này](https://math.berkeley.edu/~sethian/2006/Explanations/fast_marching_explain.html) cũng nói là FMM chỉ thích hợp nếu có giả sử lực $F$ luôn không đổi dấu, tức interface chỉ "nở ra" hoặc "co lại" trong suốt quá trình mà thôi. Mình nghĩ thêm, thật ra mình áp dụng FMM cho mỗi lần reinitialize nên vấn đề dấu của $F$ này có thể bỏ qua được. **Trang này cũng giải thích khá rõ ý tưởng của FMM**.
+
+---
+
+Giải thích tí *BEST SLIDE fast marching method - Anastasia Dubrovina.pdf*
+
+- Slide 18: Khi $T\_3 < T\_1$ thì ta phải lấy $T\_3 = \min\{T\_1,T\_2\} + h$ bởi vì $T\_3$ phải đến sau hai thằng kia mà mỗi bước tiến ít nhất phải là $h$.
+
+---
+
+**Tính sign distance trực tiếp**: This brute force approach has the advantage that it does not move the interface up to
+the numerical accuracy of the interpolation scheme. The disadvantage is its high cost and the likelihood of introducing some spurious irregularity into the data, making differentiated quantities such as curvature behave very badly. (*pde based fast local level set method - peng 99.pdf*)
 
 ---
 
