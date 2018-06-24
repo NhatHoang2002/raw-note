@@ -28,7 +28,8 @@ date: 2018-06-22
 	- Cái giải local này có thể xem *pde based fast local level set method - peng 99.pdf*, cái này tối ưu hơn cả cái của Sethian (theo như nó nói). Cái này họ xét nodes trong 1 tube cụ thể chứ ko phải trên toàn domain.
 - **Test case**:
 	- 3.5.5 trong thesis của Christoph WINKELMANN.
-	- file *4.1 level set numerical test case#  #*
+	- file *4.1 level set numerical test case*
+	- thesis của Gross Sven mục 10.1
 - If a time step causes the change in distance of a pixel to be greater than the grid size, will make the level set unstable, it is necessary to make a prediction on the maximum time step.
 	- Cf: *implement level set narrow band - larsen 2005.pdf*
 - 

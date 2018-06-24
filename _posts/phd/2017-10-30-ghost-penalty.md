@@ -5,6 +5,7 @@ categories: maths
 tags: ["ghost penalty","robust","interface"]
 maths: 1
 toc: 1
+date: 2018-06-22
 ---
 
 *Đem từ mấy cái file khác sang hẳn đây vì nó nhiều thứ để nói*
@@ -32,6 +33,7 @@ Methods using **the second approach**, on the other hand, are accurate, but the 
 - There is an example in detail with **Capatina2015**
 - **Burman2010** Note ghi chú chủ đề chính là ghost penalty luôn!
 -  **ghost penalty term** (trang 8, [ở đây](https://hal.inria.fr/hal-01149225/file/RR-8723.pdf))
+-  Trong *Liang Zhang THESIS 2017.pdf* mục 5.4.2 cũng có dùng Ghost penalty, ông này cũng có nói về small support nữa, ổng làm với Arnold. Ổng cũng có so sánh 2 cái. Cái **ghost penalty performs better**!
 
 ## Ý tưởng chính
 

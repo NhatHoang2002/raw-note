@@ -38,7 +38,7 @@ date: 2018-06-22
 - [https://fr.mathworks.com/help/simulink/ug/types-of-solvers.html](https://fr.mathworks.com/help/simulink/ug/types-of-solvers.html)
 - [https://fr.mathworks.com/help/dsp/ref/lusolver.html](https://fr.mathworks.com/help/dsp/ref/lusolver.html)
 - Học linear algebra rất hay : [http://linear.ups.edu/html/fcla.html](http://linear.ups.edu/html/fcla.html)
-- Link công việc của nhóm Reusken Arnold: [DROPS package](https://www.igpm.rwth-aachen.de/forschung/drops/publications).
+- Link công việc của nhóm **Reusken Arnold**: [DROPS package](https://www.igpm.rwth-aachen.de/forschung/drops/publications).
 
 ## Souce codes
 
