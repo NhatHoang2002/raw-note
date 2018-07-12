@@ -5,7 +5,7 @@ categories:
   - phd
 toc: 1
 maths: 1
-date: 2018-06-22
+date: 2018-06-24
 ---
 
 ## Questions on StackExchange
@@ -39,6 +39,7 @@ date: 2018-06-22
 - [https://fr.mathworks.com/help/dsp/ref/lusolver.html](https://fr.mathworks.com/help/dsp/ref/lusolver.html)
 - Học linear algebra rất hay : [http://linear.ups.edu/html/fcla.html](http://linear.ups.edu/html/fcla.html)
 - Link công việc của nhóm **Reusken Arnold**: [DROPS package](https://www.igpm.rwth-aachen.de/forschung/drops/publications).
+- **[ISCD toolbox](https://github.com/ISCDtoolbox)** gợi ý bởi thầy Pascal Frey
 
 ## Souce codes
 

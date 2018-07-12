@@ -6,9 +6,65 @@ categories:
   - it
 maths: 1
 toc: 1
+date: 2018-07-11
 ---
 
 Loạt bài này chủ yếu dùng để *ghi chú* trong quá trình hoàn thành cái coding. Có thể đó là những ghi chú về kiến thức, thuật toán liên quan. Cái này dùng để "gọi đến" trong cái ghi chú Working daily trong Evernote.
+
+## Medit
+
+Tool này của thầy Pascal Frey, có thể download [tại đây](https://github.com/ISCDtoolbox/Medit). Tham khảo doc online [tại đây](https://www.ljll.math.upmc.fr/frey/logiciels/Docmedit.dir/Docmedit.html#default), pdf [tại đây](https://www.ljll.math.upmc.fr/frey/publications/RT-0253.pdf).
+
+Lưu ý, tool này trùng tên với editor **medit** trên linux!!!!
+
+Some tips for medit
+
+- **Plot a file** (there must be two files with the same name in the current directory): `medit <file-name>` (without extension)
+- **Show metric, isoline,...:** after plot windows appears, press `m` for metric, `p` for isoline value,...
+- **Change the isoline value range**: Create a file name `<file-name>.medit` or `DEFAULT.medit` and write in the content (see more example in pdf document, section 6). For example,
+~~~ matlab
+Palette
+-0.79 0 1.21
+~~~
+- 
+
+## Fast Marching Method & Level set
+
+Xem thêm [note về level set](/level-set-method).
+
+[9/7/18] FMM: decide to use the toolbox of Pascal Frey.
+
+### Toolbox của Gabriel Peyre
+
+**Update 11/7/18**: Không dùng được vì cái này chỉ làm trên grid hình vuông. Email hỏi ổng thì ổng không trả lời!!! Chuyển qua dùng tool mshdist của thầy Pascal.
+
+- Phát hiện ra (cf. [here](https://fr.mathworks.com/matlabcentral/answers/345391-how-to-install-mingw-4-9-2-for-matlab)) nên cài **[TDM-GCC](https://sourceforge.net/projects/tdm-gcc/files/TDM-GCC Installer/)** thay vì (hoặc cùng với) MinGW.
+- Sau đó chỉ cho matlab biết đường dẫn
+
+	~~~ matlab
+	setenv('MW_MINGW64_LOC','C:\TDM-GCC-64')
+	~~~
+- Sau đó cd đến thư mục chứa file **mex** (nếu gặp lỗi **You should compile the mex file, see compile\_mex.m**)
+
+	~~~ matlab
+	compile_mex
+	~~~
+- Some lỗi (nếu có)
+	- Thật ra máy anh Việt cài Visual Studio trước khi cài matlab và hoạt động tốt. Có thể tải bản miễn phí [Visual Studio Express](https://visualstudio.microsoft.com/vs/express/) về xài.
+	- Xem [System requirements and Supported Compilers](https://fr.mathworks.com/support/sysreq/previous_releases.html) cho Matlab các phiên bản.
+	- See [this](https://www-m3.ma.tum.de/foswiki/pub/M3/MeshFree1415/WebHome/matlabgnucompiler.pdf), it's useful.
+- Thật ra code của ông này (theo [bài hướng dẫn này](http://nbviewer.jupyter.org/github/gpeyre/numerical-tours/blob/master/matlab/segmentation_3_snakes_levelset.ipynb)) chỉ dành cho grid mesh **hình vuông**, trong đó X, Y đều có size nxn (mỗi giá trị tương ứng của X và Y là coordinate của một nodes). Trong khi cái của mình x, y là tập hợp của 1 loạt các nodes (nên chúng chỉ có size 1xnNodes thôi). Nếu là mesh tam giác bất kỳ thì không chuyển về giống dạng meshgrid được!!!!
+- cái `vertex` và `faces` của ổng rất giống với cái `points` và `triangles` của mình ([code test](http://nbviewer.jupyter.org/github/gpeyre/numerical-tours/blob/master/matlab/meshproc_1_basics_2d.ipynb)).
+
+### Toolbox ISCDtoolbox
+
+- Dùng [toolbox mshdist](https://github.com/ISCDtoolbox/Mshdist) này.
+- Tuy nhiên, trước hết cần install [ISCD Commons Library](https://github.com/ISCDtoolbox/Commons) trước.
+- Để cài được cmake trên Windows, [download nó](https://cmake.org/download/). Lúx cài nhớ chọn add nó vào PATH.
+	- Cài xong, mở **Environment Variables** lên vào add đường dẫn CMake vào (*C:\Program Files\CMake\bin*)
+	- Sau khi thêm, nhớ restart lại trình gõ command (cmd).
+- 
+
 
 ## System of equations
 

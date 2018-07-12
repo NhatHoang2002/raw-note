@@ -5,8 +5,12 @@ categories:
   - phd
 toc: 1
 maths: 1
-date: 2018-06-22
+date: 2018-07-09
 ---
+
+## Simple level set test case
+
+Thử với trường hợp dùng SUPG để giải level set function trước. Cho velocity $u=(1,0)$. File **main\_levelset\_simple.m**.
 
 ## Quick note (rewrite 11/6.18)
 
@@ -26,13 +30,11 @@ date: 2018-06-22
 - [Trang này](https://profs.etsmtl.ca/hlombaert/levelset/) giải thích ý tưởng về level set khá hay.
 - **Narrow node**s: Chopp 1993 (chưa rõ tên bài báo)
 	- Cái giải local này có thể xem *pde based fast local level set method - peng 99.pdf*, cái này tối ưu hơn cả cái của Sethian (theo như nó nói). Cái này họ xét nodes trong 1 tube cụ thể chứ ko phải trên toàn domain.
-- **Test case**:
+- **Test cases**:
 	- 3.5.5 trong thesis của Christoph WINKELMANN.
 	- file *4.1 level set numerical test case*
 	- thesis của Gross Sven mục 10.1
-- If a time step causes the change in distance of a pixel to be greater than the grid size, will make the level set unstable, it is necessary to make a prediction on the maximum time step.
-	- Cf: *implement level set narrow band - larsen 2005.pdf*
-- 
+- If a time step causes the change in distance of a pixel to be greater than the grid size, will make the level set unstable, it is necessary to make a prediction on the maximum time step (*implement level set narrow band - larsen 2005.pdf*)
 
 ## Fast Marching Method
 
@@ -48,6 +50,19 @@ date: 2018-06-22
 - **Idea**: Ra một cái $\phi$ mới (sau khi áp dụng cách giải SDFEM): chỉ có zero-level set thôi, chưa có sign distance function. Áp dụng FMM để tìm một cái $\tilde{\phi}$ mới có cả 2 tính chất kia.
 - [Trang này](https://math.berkeley.edu/~sethian/2006/Explanations/fast_marching_explain.html) giải thích về FMM khá hay + [video này](https://www.youtube.com/watch?v=Ebi5juth-LE) giải thích ý tưởng FMM (ngôn ngữ lạ + simple problem).
 - [Trang này](https://math.berkeley.edu/~sethian/2006/Explanations/fast_marching_explain.html) cũng nói là FMM chỉ thích hợp nếu có giả sử lực $F$ luôn không đổi dấu, tức interface chỉ "nở ra" hoặc "co lại" trong suốt quá trình mà thôi. Mình nghĩ thêm, thật ra mình áp dụng FMM cho mỗi lần reinitialize nên vấn đề dấu của $F$ này có thể bỏ qua được. **Trang này cũng giải thích khá rõ ý tưởng của FMM**.
+- **Toolboxes**:
+	- [Toolbox Fast Marching](https://fr.mathworks.com/matlabcentral/fileexchange/6110-toolbox-fast-marching) (2009, mathwork) - **Gabriel Peyre**. $\Rightarrow$ Xem thêm [note coding](/coding-note-1).
+		- Cái này rất cũ, không biết áp dụng vào grid của mình như thế nào!
+		- [Link trên github](https://github.com/gpeyre/matlab-toolboxes) (đã không còn update, 2013) --> [numerical tours](http://www.numerical-tours.com/matlab/)
+		- Nay ổng dùng trang Numerical tours: [FMM 2D](http://www.numerical-tours.com/matlab/fastmarching_1_2d/)
+		- Level set + fast marching: [active contour using level sets](http://nbviewer.jupyter.org/github/gpeyre/numerical-tours/blob/master/matlab/segmentation_3_snakes_levelset.ipynb)
+		- get some errors (already ask him, waiting)
+	- **[Mshdist](https://github.com/ISCDtoolbox/Mshdist)** (ISCDtoolbox) của **Charles và Pascal Frey**.
+		- C++
+		- Bài báo *computation signed distance function - charles - pascal frey 2012.pdf*
+	- **[DROPS](https://www.igpm.rwth-aachen.de/forschung/drops/download)** library by **Arnold group**.
+		- the best choice (if available)
+		- cannot download (waiting for their answer)! (Cannot follows 10.1 guides because it's out-of-date!)
 
 ---
 
