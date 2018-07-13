@@ -32,39 +32,6 @@ Palette
 
 Xem thêm [note về level set](/level-set-method).
 
-[9/7/18] FMM: decide to use the toolbox of Pascal Frey.
-
-### Toolbox của Gabriel Peyre
-
-**Update 11/7/18**: Không dùng được vì cái này chỉ làm trên grid hình vuông. Email hỏi ổng thì ổng không trả lời!!! Chuyển qua dùng tool mshdist của thầy Pascal.
-
-- Phát hiện ra (cf. [here](https://fr.mathworks.com/matlabcentral/answers/345391-how-to-install-mingw-4-9-2-for-matlab)) nên cài **[TDM-GCC](https://sourceforge.net/projects/tdm-gcc/files/TDM-GCC Installer/)** thay vì (hoặc cùng với) MinGW.
-- Sau đó chỉ cho matlab biết đường dẫn
-
-	~~~ matlab
-	setenv('MW_MINGW64_LOC','C:\TDM-GCC-64')
-	~~~
-- Sau đó cd đến thư mục chứa file **mex** (nếu gặp lỗi **You should compile the mex file, see compile\_mex.m**)
-
-	~~~ matlab
-	compile_mex
-	~~~
-- Some lỗi (nếu có)
-	- Thật ra máy anh Việt cài Visual Studio trước khi cài matlab và hoạt động tốt. Có thể tải bản miễn phí [Visual Studio Express](https://visualstudio.microsoft.com/vs/express/) về xài.
-	- Xem [System requirements and Supported Compilers](https://fr.mathworks.com/support/sysreq/previous_releases.html) cho Matlab các phiên bản.
-	- See [this](https://www-m3.ma.tum.de/foswiki/pub/M3/MeshFree1415/WebHome/matlabgnucompiler.pdf), it's useful.
-- Thật ra code của ông này (theo [bài hướng dẫn này](http://nbviewer.jupyter.org/github/gpeyre/numerical-tours/blob/master/matlab/segmentation_3_snakes_levelset.ipynb)) chỉ dành cho grid mesh **hình vuông**, trong đó X, Y đều có size nxn (mỗi giá trị tương ứng của X và Y là coordinate của một nodes). Trong khi cái của mình x, y là tập hợp của 1 loạt các nodes (nên chúng chỉ có size 1xnNodes thôi). Nếu là mesh tam giác bất kỳ thì không chuyển về giống dạng meshgrid được!!!!
-- cái `vertex` và `faces` của ổng rất giống với cái `points` và `triangles` của mình ([code test](http://nbviewer.jupyter.org/github/gpeyre/numerical-tours/blob/master/matlab/meshproc_1_basics_2d.ipynb)).
-
-### Toolbox ISCDtoolbox
-
-- Dùng [toolbox mshdist](https://github.com/ISCDtoolbox/Mshdist) này.
-- Tuy nhiên, trước hết cần install [ISCD Commons Library](https://github.com/ISCDtoolbox/Commons) trước.
-- Để cài được cmake trên Windows, [download nó](https://cmake.org/download/). Lúx cài nhớ chọn add nó vào PATH.
-	- Cài xong, mở **Environment Variables** lên vào add đường dẫn CMake vào (*C:\Program Files\CMake\bin*)
-	- Sau khi thêm, nhớ restart lại trình gõ command (cmd).
-- 
-
 
 ## System of equations
 

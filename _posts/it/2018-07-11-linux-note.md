@@ -56,5 +56,6 @@ sudo apt-get install nautilus-admin
 nautilus -q # restart nautilus
 ~~~
  24. Cannot open matlab without sudo: change the owner permission of folder */home/thi/.matlab* to **thi*** (cf. 20)
- 25. Add app to dash: install alacarte `sudo apt-get install alacarte`
- 26. 
+ 25. Add app to dash: install **alacarte** `sudo apt-get install alacarte`
+ 26. Turn off animation open and minimize windows on ubuntu 17.10 and later (gnome desktop): **Gnome Tweak Tools > Apperance > Animations OFF**
+ 27. 
