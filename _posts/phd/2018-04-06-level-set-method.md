@@ -8,6 +8,10 @@ maths: 1
 date: 2018-07-13
 ---
 
+
+
+## General
+
 Trong note này sẽ bao gồm luôn mục **coding** thay cho note [coding-note](/coding-note-1)
 
 - **Giải level set** phải thông qua 2 bước quan trọng
@@ -20,6 +24,7 @@ Trong note này sẽ bao gồm luôn mục **coding** thay cho note [coding-note
   $$
 
 
+
 ## Coding note
 
 - File **main_levelset_simple** dùng để test.
@@ -29,6 +34,11 @@ Trong note này sẽ bao gồm luôn mục **coding** thay cho note [coding-note
     - Mối quan hệ giữa time step,  mesh size and $\delta$
     - Thế nên cần áp dụng test case khác để cho việc đánh giá chính xác hơn!
 - Giải tìm trên standard FEM chứ không phải $V_h^{\Gamma}$ 
+- Viết một cái tổng quát `getMEls` và `getMHls` luôn cho bất kỳ velocity nào + bất kỳ $\delta$ nào!
+- **Sửa lại cách đặt tên** `L` `K` `P` trong lúc tìm GM và Load vector.
+- **Note lý thuyết** (variation form) xem file *hw_levelset_13718.pdf*
+
+
 
 ## Test case
 
@@ -73,7 +83,6 @@ Quyết định dùng toolbox của Pascal Frey. Ngoài ra còn có các toolbox
       ```matlab
       compile_mex
       ```
-
     - Some lỗi (nếu có)
 
       - Thật ra máy anh Việt cài Visual Studio trước khi cài matlab và hoạt động tốt. Có thể tải bản miễn phí [Visual Studio Express](https://visualstudio.microsoft.com/vs/express/) về xài.

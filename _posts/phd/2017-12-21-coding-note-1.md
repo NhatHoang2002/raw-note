@@ -6,10 +6,22 @@ categories:
   - it
 maths: 1
 toc: 1
-date: 2018-07-11
+date: 2018-07-17
 ---
 
 Loạt bài này chủ yếu dùng để *ghi chú* trong quá trình hoàn thành cái coding. Có thể đó là những ghi chú về kiến thức, thuật toán liên quan. Cái này dùng để "gọi đến" trong cái ghi chú Working daily trong Evernote.
+
+## Change to function handle and inputParser
+
+Mục này để nói về những lý do và ghi chú liên quan đến việc chuyển từ cái cũ (có getP, getK) sang cái mới (dùng inputParser)
+
+- Tại sao phải tạo `getfPhiWhole` cho từng tam giác riêng lẻ mà không tạo luôn cái `getfPhiNCTs`? Bởi vì khi áp dụng tính ma trận liên quan đến [level set](/level-set-method) thì có lượng
+
+  $$
+  \sum_T \delta_T \partial_x \xi_i \int_T\xi_j\times \beta_xdx
+  $$
+
+- 
 
 ## Medit
 
@@ -26,7 +38,7 @@ Some tips for medit
 Palette
 -0.79 0 1.21
 ~~~
-- 
+
 
 ## Fast Marching Method & Level set
 
