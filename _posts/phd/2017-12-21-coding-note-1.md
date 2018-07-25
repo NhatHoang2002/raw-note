@@ -6,7 +6,7 @@ categories:
   - it
 maths: 1
 toc: 1
-date: 2018-07-17
+date: 2018-07-19
 ---
 
 Loạt bài này chủ yếu dùng để *ghi chú* trong quá trình hoàn thành cái coding. Có thể đó là những ghi chú về kiến thức, thuật toán liên quan. Cái này dùng để "gọi đến" trong cái ghi chú Working daily trong Evernote.
@@ -21,7 +21,11 @@ Mục này để nói về những lý do và ghi chú liên quan đến việc 
   \sum_T \delta_T \partial_x \xi_i \int_T\xi_j\times \beta_xdx
   $$
 
-- 
+- Trong file **getLfwg** cũ có dùng `typeG` nhưng cái mới thì thay bằng defG luôn. Tuy nhiên cái cũ có liên hệ với file **getGMgPP** (hoặc những cái khác)  cũng cần dùng typeG nên cần phải thay đổi GM luôn sau này!
+
+- Check lại code cho trường hợp fitted mesh (there is no cut triangle!), hiện tại **đang gặp lỗi**!!!!
+
+- **Becarefull**: có lỗi xảy ra với `getGradPhi` (đã sửa nhưng chưa chắc 100%)
 
 ## Medit
 

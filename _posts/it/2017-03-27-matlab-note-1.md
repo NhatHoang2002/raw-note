@@ -6,7 +6,7 @@ categories:
 tags: ["matlab"]
 maths: 1
 toc: 1
-date: 2018-04-09
+date: 2018-07-19
 ---
 
 {% include toc.html %}
@@ -103,6 +103,8 @@ in1 = find((eGP(5,:)==1)|(eGP(5,:)==3))
 
 - and : `&&`
 - or : `||`
+- equal: `==`
+- difference: `~=`
 
 
 ## Condition
@@ -822,6 +824,29 @@ end
 %% Two-point Gauss quadrature over reference element
 [ref_quad_pos, quad_weights] = ref_quad();
 ~~~
+
+### Function handle
+
+Xem chi tiết [ở đây](https://fr.mathworks.com/help/matlab/matlab_prog/creating-a-function-handle.html). Tạo function handle ít biến từ cái function handle nhiều biến hơn.
+
+~~~ matlab
+defF = @findDefFtw;
+defF1 = @(x,y,pa) defF(x,y,pa,1);
+defF2 = @(x,y,pa) defF(x,y,pa,2);
+
+f1 = defF1(1,2,3)
+f2 = defF2(1,2,3)
+
+function valF = findDefFtw(xx,yy,pa,sub)
+    if sub==1
+        valF=1;
+    else
+        valF=2;
+    end
+end
+~~~
+
+
 
 ## Floating point number
 
