@@ -6,7 +6,7 @@ categories:
   - it
 maths: 1
 toc: 1
-date: 2018-07-19
+date: 2018-07-26
 ---
 
 Loạt bài này chủ yếu dùng để *ghi chú* trong quá trình hoàn thành cái coding. Có thể đó là những ghi chú về kiến thức, thuật toán liên quan. Cái này dùng để "gọi đến" trong cái ghi chú Working daily trong Evernote.
