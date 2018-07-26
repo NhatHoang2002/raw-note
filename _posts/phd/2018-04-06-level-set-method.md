@@ -24,7 +24,6 @@ Trong note này sẽ bao gồm luôn mục **coding** thay cho note [coding-note
   $$
 
 
-
 ## Coding note
 
 - File **main_levelset_simple** dùng để test.
@@ -126,12 +125,8 @@ Quyết định dùng toolbox của Pascal Frey. Ngoài ra còn có các toolbox
 
 - **Giới thiệu về Level Set method** có thể bắt chước của chị Cúc. Trong thèse, chương 3.1, chương 1.3 cũng có nói tí tí, giới thiệu ở 2.2.
 
-- **Mass conservation**: 
-
-  - *level set 1996 - Hou et Chang*
-  - For incompressible flow, the total mass is conserved in time, however the numerical discretization of the level set formulation does not preserve this property in general. Even with some reinitialization procedures, it has been found that a cosiderable amount of total mass is lost in time. Tất cả cái này được nhắc đến trong **Hou1996** (trang 7).
-
 - **Ý tưởng level set**
+
   - Giải thích từ ý tưởng $\phi(x,t)=0$ đến phương trình level set: 2.2 jury thesis.
   - [Trang này](https://profs.etsmtl.ca/hlombaert/levelset/) giải thích ý tưởng về level set khá hay.
   - Ý tưởng về (signed) distance function được giới thiệu trong bài báo *sethian osher 1988*
@@ -146,6 +141,15 @@ Quyết định dùng toolbox của Pascal Frey. Ngoài ra còn có các toolbox
   - Thèse của chị Cúc $\Rightarrow$ toàn miền.
   - Bài báo của Sethian trang 12 **Sethian2003** , thì $u$ trên từng miền có giá trị khác nhau và được tính theo các phương trình khác nhau.
   - Thèse của Trung Hiếu lấy từ phương trình N-S nên $u$ cũng tính trên toàn miền.
+
+
+
+### Conservation of mass
+
+- *level set 1996 - Hou et Chang*
+- For incompressible flow, the total mass is conserved in time, however the numerical discretization of the level set formulation does not preserve this property in general. Even with some reinitialization procedures, it has been found that a cosiderable amount of total mass is lost in time. Tất cả cái này được nhắc đến trong **Hou1996** (trang 7).
+- **Trung Hieu thesis 7.2.2** trang 83 có nói về Mass conservation: *The loss of mass by discretizations of the level set function can be reduced if the grid is refined* $\Rightarrow$ dùng pp trong DROPS và **thesis của Gross Sven** (8.2). *We use another method, in which the level set method is shifted over a distance  $\delta$ in the normal direction, such that the volumes of both phases remain unchanged.*
+- **Arnold book** (7.4.2) cũng có nói về cái này. *following very simple (but less satisfactory) strategy, which guarantees volume conservation for the level set method* (p.220)
 
 
 

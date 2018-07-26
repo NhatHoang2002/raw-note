@@ -15,8 +15,9 @@ Loạt bài này chủ yếu dùng để *ghi chú* trong quá trình hoàn thà
 
 Mục này để nói về những lý do và ghi chú liên quan đến việc chuyển từ cái cũ (có getP, getK) sang cái mới (dùng inputParser)
 
-- Tại sao phải tạo `getfPhiWhole` cho từng tam giác riêng lẻ mà không tạo luôn cái `getfPhiNCTs`? Bởi vì khi áp dụng tính ma trận liên quan đến [level set](/level-set-method) thì có lượng
+- **LỖI LỚN!!!!** CHUYỂN SANG DÙNG FUNCTION HANDLE LÀM CHẬM HƠN RẤT RẤT NHIỀU!!!! (Gấp 17 lần, check ngày 26/7/18 với *main_sys_linda*)
 
+- Tại sao phải tạo `getfPhiWhole` cho từng tam giác riêng lẻ mà không tạo luôn cái `getfPhiNCTs`? Bởi vì khi áp dụng tính ma trận liên quan đến [level set](/level-set-method) thì có lượng
   $$
   \sum_T \delta_T \partial_x \xi_i \int_T\xi_j\times \beta_xdx
   $$
