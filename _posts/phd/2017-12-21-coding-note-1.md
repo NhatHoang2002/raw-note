@@ -17,6 +17,9 @@ Mục này để nói về những lý do và ghi chú liên quan đến việc 
 
 - **LỖI LỚN!!!!** CHUYỂN SANG DÙNG FUNCTION HANDLE LÀM CHẬM HƠN RẤT RẤT NHIỀU!!!! (Gấp 17 lần, check ngày 26/7/18 với *main_sys_linda*)
 
+  - Co the la do inputParser, xem [tai day](https://github.com/RobotLocomotion/drake/issues/777).
+  - Da tim ra nguyen nhan, ly do la boi inputParser va function handle. Sau khi giam inputParser thi thoi gian nhanh hon rat nhieu. Tuy nhien function handle van cham hon cach lam cu den 3 lan.
+
 - Tại sao phải tạo `getfPhiWhole` cho từng tam giác riêng lẻ mà không tạo luôn cái `getfPhiNCTs`? Bởi vì khi áp dụng tính ma trận liên quan đến [level set](/level-set-method) thì có lượng
   $$
   \sum_T \delta_T \partial_x \xi_i \int_T\xi_j\times \beta_xdx
