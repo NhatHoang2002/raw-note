@@ -5,7 +5,7 @@ categories:
   - phd
 toc: 1
 maths: 1
-date: 2018-07-13
+date: 2018-08-04
 ---
 
 
@@ -24,17 +24,40 @@ Trong note này sẽ bao gồm luôn mục **coding** thay cho note [coding-note
   $$
 
 
+### Signed distance function
+
+- Tại sao nếu là đường tròn thì $\phi$ có dạng là 
+
+    $$
+    \phi(x,y) = \sqrt{(x-x_0)^2 + (y-y_0)^2} - r_0
+    $$
+
+	thay vì dạng 
+
+    $$
+    \phi(x,y) = (x-x_0)^2+(y-y_0)^2-r_0^2
+    $$
+
+	trong đó $I(x\_0,y\_0)$ là tâm của đường tròn, còn $r\_0$ là bán kính?
+
+	Lý do là bởi phù hợp với **signed distance function**. Nếu từ một điểm không nằm trên đường tròn $M(x,y)$, khi ấy khoảng cách từ $M$ đến đường tròn chính là
+
+    $$
+    d(M,C) = d(M,I)-r_0
+    $$
+
+	đây cũng chính là công thức có căn.
+
+- Test coi mshdist hoạt động tốt không có thể tính $\Vert \nabla \phi \Vert$ xem có bằng 1 hay không! $\Rightarrow$ **Kết quả**: nếu dt quá lớn, u quá lớn thì cái $\phi$ xa rời cái signed distance function
+
+
+
 ## Coding note
 
 - File **main_levelset_simple** dùng để test.
-  - Không dùng SUPG (cho $\delta=0$ ) thì ra đẹp (với điều kiện phải kết hợp với `mshdist`)
-  - Dùng SUPG thì ra xấu????
-    - Có thể là do cách chọn tham số $\delta$
-    - Mối quan hệ giữa time step,  mesh size and $\delta$
-    - Thế nên cần áp dụng test case khác để cho việc đánh giá chính xác hơn!
+  - Dùng *model_levelset_vortex* thì ra **đẹp** nếu **không dùng SUPG** và **không dùng FMM** $\Rightarrow$ Kỳ lạ!!!
 - Giải tìm trên standard FEM chứ không phải $V_h^{\Gamma}$ 
 - Viết một cái tổng quát `getMEls` và `getMHls` luôn cho bất kỳ velocity nào + bất kỳ $\delta$ nào!
-- **Sửa lại cách đặt tên** `L` `K` `P` trong lúc tìm GM và Load vector.
 - **Note lý thuyết** (variation form) xem file *hw_levelset_13718.pdf*
 
 
@@ -43,8 +66,10 @@ Trong note này sẽ bao gồm luôn mục **coding** thay cho note [coding-note
 
 - *implementation standard level set method - niklas johansson.pdf*  (4.1. Vortex): có 2 ví dụ rất rõ ràng, nên áp dụng cái models trong đây để test coi code có chạy ổn không.
   - Ổng dùng grid hình vuông.
-  - Không dùng lượng stabilization như SUPG mà chỉ dùng redistancing.
+  - **Không** dùng lượng stabilization như SUPG mà chỉ dùng redistancing.
+  - Ổng cũng có nói đến cái việc dùng reinitialization sẽ ra xấu nhưng với mesh đẹp hơn thì sẽ tốt hơn (nhưng ko hoàn hảo bằng wtSUPG và wtFMM). Ổng cũng nói là dùng FMM ở mỗi time step sẽ xấu hơn là dùng 4 loop 1 lần hoặc nhiều hơn.
 - *Arnold book* (7.5): trong đây ổng dùng SUPG để stabilizise, có thể áp dụng model trong đây để xem **lý do vì sao SUPG trong code của mình không hoạt động**
+  - Ổng cũng có nói là **không hiểu sao** không dùng SUPG gì cả thì lại ra đẹp.
 - 3.5.5 trong thesis của Christoph WINKELMANN.
 - Thesis của Gross Sven mục 10.1
 
@@ -121,6 +146,14 @@ Quyết định dùng toolbox của Pascal Frey. Ngoài ra còn có các toolbox
 
       $\Rightarrow$ Cũng có thể xem trang 192 sách của **ArnoldBook** có nói về vấn đề này
 
+  - Nếu muốn xét boundary condition thì cũng khó nếu đã biết uex và velocity u, bởi vì nếu muốn dùng Dirichlet $u=u\_{ex}$ thì ta cần giải $\phi^{n+1}$, tức phải biết giá trị của nó tại thời điển $n+1$ nhưng không thể biết được.
+
+	$$
+	\phi^{n+1} + \dfrac{\tau}{2}\beta\cdot\nabla \phi^{n+1} + \dfrac{\tau}{2}\beta\cdot\nabla \phi^n - \phi^n =0.
+	$$
+	
+	$\Rightarrow$ **Chưa chính xác lắm!** Trong Arnold Book, ổng cũng có nói vấn đề về Dirichlet BC này ở mục Remark 7.5.1 (p. 221)
+
 - Chứng minh zero level solution of phương trình Hyperbolic (Cauchy problem) describes the position of the interface. $\Rightarrow$ xem Exercise 4.1 của **Lehrenfeld NOTE 2015.pdf**, có solution luôn!
 
 - **Giới thiệu về Level Set method** có thể bắt chước của chị Cúc. Trong thèse, chương 3.1, chương 1.3 cũng có nói tí tí, giới thiệu ở 2.2.
@@ -141,6 +174,24 @@ Quyết định dùng toolbox của Pascal Frey. Ngoài ra còn có các toolbox
   - Thèse của chị Cúc $\Rightarrow$ toàn miền.
   - Bài báo của Sethian trang 12 **Sethian2003** , thì $u$ trên từng miền có giá trị khác nhau và được tính theo các phương trình khác nhau.
   - Thèse của Trung Hiếu lấy từ phương trình N-S nên $u$ cũng tính trên toàn miền.
+
+
+
+### SUPG method
+
+- Có thể đọc trong Arnold Book (7.2 and 7.5.1), trong đó $\delta$ có dạng
+
+  $$
+  \delta_K = SD\dfrac{h}{\max \{ \Vert u \Vert_{L^{\infty}(K)}, tol/h \}}
+  $$
+
+  Trong đó, $SD$ là scale factor, $tol/h$ is introduced to avoid dividing by a number close to zero (Loch thesis p.46)
+
+
+
+### Error
+
+- As the objective of the level set equation is to capture the moving interface, the error between the exact interface $\Gamma$ and the approximate interface $\Gamma\_h$ , i.e. the difference between the zero level of the exact solution φ of the level set equation and the zero level of the discretized level set function $\phi\_h$ , is of major interest. This error can be measured in the L2-norm by integrating the squared distance function $d: \Omega \to \mathbb{R}$} to the interface $\Gamma$ over $\Gamma\_h$ ... page 13 Eva Loch thesis.
 
 
 
