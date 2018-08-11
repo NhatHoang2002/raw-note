@@ -5,10 +5,8 @@ categories:
   - phd
 toc: 1
 maths: 1
-date: 2018-08-04
+date: 2018-08-10
 ---
-
-
 
 ## General
 
@@ -22,6 +20,7 @@ Trong note này sẽ bao gồm luôn mục **coding** thay cho note [coding-note
   $$
   d(x_0,\Gamma_h) := \min_{x\in \Gamma_h} d(x_0,x).
   $$
+
 
 
 ### Signed distance function
@@ -57,7 +56,6 @@ Trong note này sẽ bao gồm luôn mục **coding** thay cho note [coding-note
 - File **main_levelset_simple** dùng để test.
   - Dùng *model_levelset_vortex* thì ra **đẹp** nếu **không dùng SUPG** và **không dùng FMM** $\Rightarrow$ Kỳ lạ!!!
 - Giải tìm trên standard FEM chứ không phải $V_h^{\Gamma}$ 
-- Viết một cái tổng quát `getMEls` và `getMHls` luôn cho bất kỳ velocity nào + bất kỳ $\delta$ nào!
 - **Note lý thuyết** (variation form) xem file *hw_levelset_13718.pdf*
 
 
@@ -87,6 +85,12 @@ Quyết định dùng toolbox của Pascal Frey. Ngoài ra còn có các toolbox
   - Must run on Linux or Mac (cannot install Windows)
   - Có thể plot file .sol bằng phần mềm [medit](/coding-note-1#medit) (phần mềm này không phải là cái medit editor trong linux)
 
+<ul class="collapsible" data-collapsible="accordion">
+<li>
+<div class="collapsible-header" markdown="1"><i class="material-icons">face</i>
+Others
+</div>
+<div class="collapsible-body" markdown="1">
 - [Toolbox Fast Marching](https://fr.mathworks.com/matlabcentral/fileexchange/6110-toolbox-fast-marching) (2009, mathwork) - **Gabriel Peyre**. $\Rightarrow$ Xem thêm [note coding](/coding-note-1).
   - Cái này rất cũ, không biết áp dụng vào grid của mình như thế nào!
 
@@ -131,6 +135,9 @@ Quyết định dùng toolbox của Pascal Frey. Ngoài ra còn có các toolbox
     setenv('MW_MINGW64_LOC','C:\TDM-GCC-64')
     ~~~
 
+</div>
+</li>
+</ul>
 
 
 
@@ -138,6 +145,64 @@ Quyết định dùng toolbox của Pascal Frey. Ngoài ra còn có các toolbox
 
 - Mình note **workflow** khá ổn: *hw level set workflow 6-2018.pdf*
 
+- Chứng minh zero level solution of phương trình Hyperbolic (Cauchy problem) describes the position of the interface. $\Rightarrow$ xem Exercise 4.1 của **Lehrenfeld NOTE 2015.pdf**, có solution luôn!
+
+- **Narrow node**s: Chopp 1993 (chưa rõ tên bài báo)
+  - Cái giải local này có thể xem *pde based fast local level set method - peng 99.pdf*, cái này tối ưu hơn cả cái của Sethian (theo như nó nói). Cái này họ xét nodes trong 1 tube cụ thể chứ ko phải trên toàn domain.
+
+- If a time step causes the change in distance of a pixel to be greater than the grid size, will make the level set unstable, it is necessary to make a **prediction on the maximum time step** (*implement level set narrow band - larsen 2005.pdf*)
+
+- $\mathbf{u}$ trong $\partial_t \varphi + \mathbf{u}\cdot\nabla\varphi=0$ có được định nghĩa trên toàn miền hay không? Có bài báo nào chỉ bó hẹp ở 1 subdomain như vấn đề của mình hay không?
+
+  - Thèse của chị Cúc $\Rightarrow$ toàn miền.
+  - Bài báo của Sethian trang 12 **Sethian2003** , thì $u$ trên từng miền có giá trị khác nhau và được tính theo các phương trình khác nhau.
+  - Thèse của Trung Hiếu lấy từ phương trình N-S nên $u$ cũng tính trên toàn miền.
+
+- Tại sao cần $\Vert \nabla \phi \Vert =1$? và tại sao cần level set function là signed distance function? 
+	- Có thể xem mục 9.3 thesis Eva Loch.
+	- 1.2.3 *Christoph WINKELMANN EPFL THESIS 2007*
+
+
+### Ý tưởng viết level set
+
+- có thể bắt chước của chị Cúc. Trong thèse, chương 3.1, chương 1.3 cũng có nói tí tí, giới thiệu ở 2.2.
+- Giải thích từ ý tưởng $\phi(x,t)=0$ đến phương trình level set: 2.2 jury thesis.
+- [Trang này](https://profs.etsmtl.ca/hlombaert/levelset/) giải thích ý tưởng về level set khá hay.
+- Ý tưởng về (signed) distance function được giới thiệu trong bài báo *sethian osher 1988*
+
+
+
+### SUPG method
+
+- Có thể đọc trong Arnold Book (7.2 and 7.5.1), trong đó $\delta$ có dạng
+
+  $$
+  \delta_K = SD\dfrac{h}{\max \{ \Vert u \Vert_{L^{\infty}(K)}, tol/h \}}
+  $$
+
+  Trong đó, $SD$ là scale factor, $tol/h$ is introduced to avoid dividing by a number close to zero (Loch thesis p.46)
+
+- Page 203 Arnold Book, có nói nếu velocity u phụ thuộc t thì biểu thức SUPG khác cái mà mình áp dụng hổm rài, cần coi kỹ cái này! $\Rightarrow$ **coi (7.17)**
+
+- Tuy nhiên cái ví dụ trong bài bào của lại có $\mathbf{u}=0$ và theo Arnold (p.221), ổng nói rằng *Due to $u=0$ on $\partial\Omega$ we do not need boundary conditions for $\phi$.*
+
+
+
+### Boundary condition
+
+- Có thể xem mục 3.3 trong thesis Eva Loch.
+
+- Remark 7.5.1 Arnold Book có nói về cách áp dụng velo $u\ne 0$ trên biên. 
+
+- Biên trong sách toàn là 
+
+  $$
+  \partial\Omega_{in}:= \{ x\in \partial \Omega: u\cdot n<0 \}
+  $$
+
+  Trong đó $n$ là **outward unit normal vector** to $\partial\Omega$ (cái này nói ở trang 219)
+
+- Lưu ý là nếu $u\in t$ thì ta phải xét $V_h(\phi_D)$ như trang 202.
 - **Không cần xét boundary condition**: 
 
   - *Trung Hieu thesis* 2.3, *thesis của chị Cúc* 3.1 : Khi level set function advance with time, nó không còn là signed-distance function như thời điểm ban đầu nữa ($\Vert{\nabla\varphi}\Vert \ne 1$). Điều này dẫn đến cần phải thay thế level set function bởi một hàm gần đúng khác sao cho cùng zero level set. Do đó, term $u\cdot\nabla \varphi$ chỉ được xét trong một giai đoạn thời gian rất ngắn. Vì thế, chúng ta có thể xét level set equation mà không có boundary condition.
@@ -154,44 +219,13 @@ Quyết định dùng toolbox của Pascal Frey. Ngoài ra còn có các toolbox
 	
 	$\Rightarrow$ **Chưa chính xác lắm!** Trong Arnold Book, ổng cũng có nói vấn đề về Dirichlet BC này ở mục Remark 7.5.1 (p. 221)
 
-- Chứng minh zero level solution of phương trình Hyperbolic (Cauchy problem) describes the position of the interface. $\Rightarrow$ xem Exercise 4.1 của **Lehrenfeld NOTE 2015.pdf**, có solution luôn!
-
-- **Giới thiệu về Level Set method** có thể bắt chước của chị Cúc. Trong thèse, chương 3.1, chương 1.3 cũng có nói tí tí, giới thiệu ở 2.2.
-
-- **Ý tưởng level set**
-
-  - Giải thích từ ý tưởng $\phi(x,t)=0$ đến phương trình level set: 2.2 jury thesis.
-  - [Trang này](https://profs.etsmtl.ca/hlombaert/levelset/) giải thích ý tưởng về level set khá hay.
-  - Ý tưởng về (signed) distance function được giới thiệu trong bài báo *sethian osher 1988*
-
-- **Narrow node**s: Chopp 1993 (chưa rõ tên bài báo)
-  - Cái giải local này có thể xem *pde based fast local level set method - peng 99.pdf*, cái này tối ưu hơn cả cái của Sethian (theo như nó nói). Cái này họ xét nodes trong 1 tube cụ thể chứ ko phải trên toàn domain.
-
-- If a time step causes the change in distance of a pixel to be greater than the grid size, will make the level set unstable, it is necessary to make a **prediction on the maximum time step** (*implement level set narrow band - larsen 2005.pdf*)
-
-- $\mathbf{u}$ trong $\partial_t \varphi + \mathbf{u}\cdot\nabla\varphi=0$ có được định nghĩa trên toàn miền hay không? Có bài báo nào chỉ bó hẹp ở 1 subdomain như vấn đề của mình hay không?
-
-  - Thèse của chị Cúc $\Rightarrow$ toàn miền.
-  - Bài báo của Sethian trang 12 **Sethian2003** , thì $u$ trên từng miền có giá trị khác nhau và được tính theo các phương trình khác nhau.
-  - Thèse của Trung Hiếu lấy từ phương trình N-S nên $u$ cũng tính trên toàn miền.
-
-
-
-### SUPG method
-
-- Có thể đọc trong Arnold Book (7.2 and 7.5.1), trong đó $\delta$ có dạng
-
-  $$
-  \delta_K = SD\dfrac{h}{\max \{ \Vert u \Vert_{L^{\infty}(K)}, tol/h \}}
-  $$
-
-  Trong đó, $SD$ là scale factor, $tol/h$ is introduced to avoid dividing by a number close to zero (Loch thesis p.46)
 
 
 
 ### Error
 
 - As the objective of the level set equation is to capture the moving interface, the error between the exact interface $\Gamma$ and the approximate interface $\Gamma\_h$ , i.e. the difference between the zero level of the exact solution φ of the level set equation and the zero level of the discretized level set function $\phi\_h$ , is of major interest. This error can be measured in the L2-norm by integrating the squared distance function $d: \Omega \to \mathbb{R}$} to the interface $\Gamma$ over $\Gamma\_h$ ... page 13 Eva Loch thesis.
+- Trang 219 Arnold Book có nói về error và bậc có được, có thể áp dụng để check xem cái của mình ra tốt không.
 
 
 
