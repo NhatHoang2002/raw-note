@@ -4,6 +4,10 @@ title: "Bài đăng theo mục"
 css: ["categories.css","page.css"]
 ---
 
+<div style="margin-bottom: 1rem;">
+	Nhấn vào thẻ bạn muốn xem các bài đăng.
+</div>
+
 <div class="col s12 cat-div">
   <div class="cat-list">
     {% for cat in site.categories %}
@@ -30,19 +34,21 @@ css: ["categories.css","page.css"]
 	    {% if catego %}
 		    {% capture test %}{{cat[0] | slice: 0}}{% endcapture %}
 		    {% capture testup %}{{cat[0] | slice: 0 | upcase}}{% endcapture %}
-		    <h3 class="cat-tag" class="text-cap" id="{{cat[0] | slugify}}{% if test == testup %}_cap{% endif %}">{{ catego.name }}</h3>
-		    <div class="thi-columns">
-			    <ul class="cat-post">
-			      {% for post in cat[1] %}
-			      <a class="post-title" href="{{site.baseurl}}{{post.url}}">
-			        <li>
-			          {{post.title}}
-			          <small class="post-date">{{post.date | date_to_string}}</small>
-			        </li>
-			      </a>
-			      {% endfor %}
-			    </ul>
-			</div>
+		    <div class="tag-sec" id="{{cat[0] | slugify}}{% if test == testup %}_cap{% endif %}">
+					<h3 class="cat-tag" class="text-cap">{{ catego.name }}</h3>
+					<div class="thi-columns">
+							<ul class="cat-post">
+								{% for post in cat[1] %}
+								<a class="post-title" href="{{site.baseurl}}{{post.url}}">
+									<li>
+										{{post.title}}
+										<small class="post-date">{{post.date | date_to_string}}</small>
+									</li>
+								</a>
+								{% endfor %}
+							</ul>
+					</div>
+				</div>
 	    {% endif %}
     {% endfor %}
   </div>
