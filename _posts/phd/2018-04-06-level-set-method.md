@@ -169,6 +169,7 @@ Others
 - Giải thích từ ý tưởng $\phi(x,t)=0$ đến phương trình level set: 2.2 jury thesis.
 - [Trang này](https://profs.etsmtl.ca/hlombaert/levelset/) giải thích ý tưởng về level set khá hay.
 - Ý tưởng về (signed) distance function được giới thiệu trong bài báo *sethian osher 1988*
+- Mục 2.2.1 Gross thesis
 
 
 

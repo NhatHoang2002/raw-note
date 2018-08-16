@@ -192,18 +192,10 @@ a:hover{
 	font-weight: 500!important;
 }
 
-.thi-post{
-	color: black;
-}
-
 @media only screen and (max-width: 992px){
 	#post-info span{
 		text-align: center;
 	}
-}
-
-hr{
-	margin: 1rem 0;
 }
 
 h1{
@@ -235,41 +227,6 @@ p{
 /* heading numbering */
 body {
     counter-reset: h2counter;
-}
-.thi-post h1 {
-    counter-reset: h2counter;
-}
-.thi-post h2{
-    counter-reset: h3counter;
-    font-size: 125%;
-    background: moccasin;
-    padding: 5px 10px;
-    border-radius: 0 20px 0 0;
-    overflow: hidden;
-}
-.thi-post h3{
-	font-size: 110%;
-}
-.thi-post h2:before {
-    content: counter(h2counter) ".\0000a0";
-    counter-increment: h2counter;
-}
-.thi-post h3{
-	border-left: 4px solid;
-	padding-left: 14px;
-}
-
-.thi-post h3:before {
-    content: counter(h2counter) "." counter(h3counter) ".\0000a0";
-    counter-increment: h3counter;
-}
-.thi-post h2.nocount:before {
-    content: none;
-    counter-increment: none;
-}
-.thi-post h3.nocount:before {
-	content: none;
-    counter-increment: none;
 }
 
 .notdisplay{
