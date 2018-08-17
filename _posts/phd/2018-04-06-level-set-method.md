@@ -205,6 +205,7 @@ Others
 
 - Lưu ý là nếu $u\in t$ thì ta phải xét $V_h(\phi_D)$ như trang 202.
 - **Không cần xét boundary condition**: 
+	- *Gross Sven thesis*: không đề cập đến BC cho level set equation. Tác giả bài báo này xét trên P2.
 
   - *Trung Hieu thesis* 2.3, *thesis của chị Cúc* 3.1 : Khi level set function advance with time, nó không còn là signed-distance function như thời điểm ban đầu nữa ($\Vert{\nabla\varphi}\Vert \ne 1$). Điều này dẫn đến cần phải thay thế level set function bởi một hàm gần đúng khác sao cho cùng zero level set. Do đó, term $u\cdot\nabla \varphi$ chỉ được xét trong một giai đoạn thời gian rất ngắn. Vì thế, chúng ta có thể xét level set equation mà không có boundary condition.
 

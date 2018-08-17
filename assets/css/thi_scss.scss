@@ -10,11 +10,11 @@
     font-size: 1.6rem;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid #ccc;
-    color: #333;
+    color: #266ac1;
     margin-top: 3rem;
     overflow: hidden;
     &:first-child{
-      margin-top: 1rem;
+      margin-top: 1rem!important;
     }
     &:before {
       content: counter(h2counter) ".\0000a0";

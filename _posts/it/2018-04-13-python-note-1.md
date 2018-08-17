@@ -2,13 +2,15 @@
 title: Python note 1
 categories:
   - it
-tags: ["matlab"]
+tags: ["python"]
 maths: 1
 toc: 1
-date: 2018-07-24
+date: 2018-08-17
 ---
 
 {% include toc.html %}
+
+<div style="margin-top: -1rem;"></div>
 
 ## Tài liệu
 
@@ -16,6 +18,63 @@ date: 2018-07-24
   - [Official docs](https://docs.python.org/3/)
 - Course on Pluralsight: [Python fundamentals by Austin Bingham and Robert Smallshire](https://app.pluralsight.com/library/courses/python-fundamentals/table-of-contents)
 - Video bài giảng của [Corey Schafer](https://www.youtube.com/user/schafer5/playlists) (anh Việt recommend)
+- [Python exercises](https://www.w3resource.com/python-exercises)
+- [How to think like a computer scientist?](http://openbookproject.net/thinkcs/python/english3e/index.html) : sách được thể hiện dưới dạng html
+- [Exercism](https://exercism.io/my/tracks/python) : học bằng bài tập, có nhiều ngôn ngữ khác nữa, free 100% (xem thêm [note riêng cho nó](/python-exercism-1))
+- [RealPython](https://realpython.com/start-here/)
+- [Python 3](https://www.tutorialspoint.com/python3/index.htm) on **tutorialspoint**
+
+
+
+## Install
+
+- Có thể cài mọi thứ thông qua [Anaconda](https://anaconda.com), tuy nhiên trên Windows vẫn chưa tự nhận thông qua Command Prompt.
+- Trên Linux hay Mac thì python tự nhận trong terminal, windows thì cần làm thêm các bước bên dưới.
+
+### exercism
+
+- Cái này dành để học trên trang web [exercism.io](https://exercism.io/tracks/python/tests)
+- Cài **pytest**: `pip3 install pytest pytest-cache`
+
+Install **CLI**
+
+1. Download [latest cli](https://github.com/exercism/cli/releases)
+2. Run `start "" "%LOCALAPPDATA%\Microsoft\WindowsApps"` in cmd
+3. Move all extracted files/folder from step 1 to folder *WindowsApps*
+4. Verify xem thành công không bằng cách gõ vào cmd `exercism`
+5. Install thành công
+6. Configure CLI: `exercism configure --token=c2562d83-65ea-4176-ab80-ff058b111cf9`
+
+
+
+### Làm cho Windows "nhận"
+
+- Nếu tự cài [Python](https://www.python.org/), cần add nó vào PATH của hệ thống Windows.
+- Cũng phải cần cài path của Anaconda vào PATH của Windows.
+
+1. Start > gõ "Path", mở *Edit the system enviroment variables*
+2. Enviroment Variables > User variables for ... > click double vào **path**
+3. Click double vào hàng trống cuối cùng trong list > Dán đường dẫn Anaconda vào
+	1. Để có thể tìm đường dẫn Anaconda, nhấn Start > gõ "Anaconda" > chuột phải > Open file location 
+	2. Nó mở ra cửa sổ chứa mấy file shortcut > chuột phải lần nữa vào Anaconda > Optn file location > nó sẽ mở đường dẫn của Anaconda, thông thường sẽ là **C:\ProgramData\Anaconda3**
+3. Lưu ý, lưu thư mục chứa mấy file python.exe chứ không có lưu cả file đó.
+4. Sau khi add vào PATH, cần phải restart lại [cmder](http://cmder.net/) (command prompt thì khỏi)
+
+### Jupyter notebook
+
+- [Cái này](http://jupyter.org/index.html) có sẵn nếu đã cài Anaconda.
+- Trên **Windows**, không thể chạy nó bằng dòng lệnh `jupyter notebook` như các [trang hướng dẫn](https://jupyter.readthedocs.io/en/latest/running.html) được!
+- Mà phải chạy bằng `python -m notebook` (chỉ có tác dụng sau khi đã add python path vào PATH của hệ thống như ở trên hướng dẫn)
+- Cũng có thể chạy file Jupyter Notebook có sẵn nhưng đường dẫn mặc định sau khi chạy xong (localhost:8888) không theo ý mình (ngoài /Home/), do đó, cần dùng [cmder](http://cmder.net/) (or command prompt) `cd` đến thư mục cần làm "host", sau đó chạy dòng lệnh `python -m notebook` như ở trên hướng dẫn.
+
+### Install package with `pip`
+
+- Trên Windows, thường nó sẽ hiện *'pip' is not recognized as an internal....*, lý do là bởi cmd chưa nhận ra *pip.exe* đang nằm ở đâu, hãy *add nó vào PATH của hệ thống* giống như hướng dẫn ở mục **Làm cho Windows "nhận"**
+- Nếu cài Anaconda, đường dẫn của pip là **C:\ProgramData\Anaconda3\Scripts**, nếu cài python riêng lẻ, đường dẫn của pip nằm ở trong thư mục **Scripts** nơi chứa python.exe.
+- **Update pip**: `python -m pip install --upgrade pip` (phải chạy cmd/cmder bằng quyền admin trước khi cài)
+- **Error**
+	- *distributed 1.21.8 requires msgpack, which is not installed.*: `pip install msgpack`
+- Other, read [this](https://pip.pypa.io/en/stable/installing/) to install pip.
 
 ## Linh tinh
 
@@ -31,8 +90,6 @@ date: 2018-07-24
 
 - không dùng `;` chỉ dùng thụt đầu dòng. Nếu muốn 2 lệnh trên 1 dòng thì cách nhau bởi `;`
   - Tab size trong Python là 4 spaces
-
-- comment dùng `#`, multi lines dùng `'''` ở đầu và cuối.
 
 - `y=x`, nếu `y` change thì `x` cũng change luôn. Thay vào đó, dùng `y=list(x)` hoặc `y=x[:]`
 
@@ -56,6 +113,27 @@ date: 2018-07-24
 
   - [PEP 8](https://www.python.org/dev/peps/pep-0008/) - Python style guide
   - [PEP 20](https://www.python.org/dev/peps/pep-0020/) - The Zen of Python.
+
+
+## Input and Output
+
+- get input from user and display
+
+	~~~ python
+	age = input("Your age? ") # python 3, raw_input for python 2
+	print("Your age:",age) # don't need space after "age"
+	~~~
+
+	Lưu ý: Tất cả input get được đều ở dạng string, nếu muốn áp dụng toán vào thì cần chuyển về float (`float`) hoặc int (`int`)
+
+- Xem thêm practice trên [Jupyter notebook](/jupyter/cs50.html)
+- `print "Hello"` là của python 2, còn python 3 bắt buộc là `print("Hello")` ([cf](https://docs.python.org/3/whatsnew/3.0.html))
+
+## Comments
+
+- Using `#` on each line
+- Multi lines dùng ''' ở đầu và cuối
+ 
 
 ## Operator 
 
@@ -126,7 +204,7 @@ import pandas as pd
 
 ## Python with Visual Studio Code
 
-**Quyết định chỉ dùng Spyder**
+**Quyết định chỉ dùng [Spyder](https://pythonhosted.org/spyder/installation.html)**
 
 Trong đoạn code kêu dùng Python với Spyder nhưng mà nó không tương thích với HiDPI nên quyết định chọn VSC. Không chọn Pycharm nữa vì nó nặng quá, VSC nhẹ hơn rất nhiều và làm được cho mấy cái ngôn ngữ khác được.
 
