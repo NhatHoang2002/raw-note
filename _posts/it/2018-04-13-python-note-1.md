@@ -14,9 +14,10 @@ date: 2018-08-17
 
 ## Tài liệu
 
-- [Python trên w3school](https://www.w3schools.com/python).
+- [programiz.com](https://www.programiz.com) : **nên dùng để tra**
+- [Python trên w3school](https://www.w3schools.com/python) : nên dùng để xem và check ví dụ (không đầy đủ các method)
 - [Exercism](https://exercism.io/my/tracks/python) : học bằng bài tập, có nhiều ngôn ngữ khác nữa, free 100% (xem thêm [note riêng cho nó](/python-exercism-1))
-- [Python 3](https://www.tutorialspoint.com/python3/index.htm) on **tutorialspoint**
+- [Python 3](https://www.tutorialspoint.com/python3/index.htm) on **tutorialspoint** : nên dùng để xem danh sách hết các method trong mỗi objects.
 - Python documentation: [http://devdocs.io/python~3.6/](http://devdocs.io/python~3.6/)
   - [Official docs](https://docs.python.org/3/)
 - Course on Pluralsight: [Python fundamentals by Austin Bingham and Robert Smallshire](https://app.pluralsight.com/library/courses/python-fundamentals/table-of-contents)
@@ -90,7 +91,7 @@ Install **CLI**
 
 - Chọn lệnh xong nhấn **Ctrl+Enter** để chạy code trong **Spyder**
 
-- - `"abc" + "xyz" = "abcxyz"`
+- `"abc" + "xyz" = "abcxyz"`
 
 - không dùng `;` chỉ dùng thụt đầu dòng. Nếu muốn 2 lệnh trên 1 dòng thì cách nhau bởi `;`
   - Tab size trong Python là 4 spaces
@@ -154,6 +155,7 @@ Install **CLI**
 - `//` chia số nguyên (kết quả là interger), còn `/` thì luôn ra `real`
 - Relation: `==, !=, >, <, >=, <=`
 - `i = i+1` $\Leftrightarrow$ `i += 1` and others
+- **Ternary conditional operator**: `b = 100 if a>10 else 0` giống như `b = (a>10)?100:0` trong C++
 
 ## Condition, loops
 

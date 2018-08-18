@@ -11,6 +11,7 @@ toc: 1
 
 - Trang web chính [nằm ở đây](https://exercism.io/tracks/python/tests).
 - [Main python note](/python-note-1)
+- [All solutions on github](https://github.com/dinhanhthi/exercism_python)
 
 ## Install
 
@@ -129,6 +130,7 @@ def reverse(text):
 - Ví dụ input `ACGTGGTCTTAA` phải cho ra `UGCACCAGAAUU`
 - Giả sử người dùng nhập đúng chữ cái và viết hoa (không xảy ra trường hợp `A123` hay `augt`)
 - Xem thêm [Python Dictionaries](https://www.w3schools.com/python/python_dictionaries.asp): unordered, changeable and indexed
+- Xem thêm [translate và maketrans](https://www.programiz.com/python-programming/methods/string/translate) method trong string
 
 <ul class="collapsible" data-collapsible="accordion">
 <li>
@@ -136,6 +138,8 @@ def reverse(text):
 Lời giải tham khảo
 </div>
 <div class="collapsible-body" markdown="1">
+Cách 1 (dùng dictionary)
+
 ~~~ python
 def to_rna(dna_strand):
     trans =	{
@@ -151,9 +155,17 @@ def to_rna(dna_strand):
     
     return rna
 ~~~
+
+Cách 2 ngắn hơn (dùng `translate` method trong string)
+
+~~~ python
+def to_rna(dna):
+    return dna.translate(str.maketrans('GCTA','CGAU'))
+~~~
 </div>
 </li>
 </ul>
+
 
 ### Gigasecond
 
@@ -178,6 +190,7 @@ def add_gigasecond(birth_date):
 </li>
 </ul>
 
+
 ### Yacht (dice game)
 
 - [Link bài tập](https://exercism.io/my/solutions/86598459fe544d9ea2153b1e260fcd72)
@@ -197,12 +210,14 @@ def add_gigasecond(birth_date):
 	Fours           	4 × number of fours     1 2 3 3 5 scores 0
 	Fives           	5 × number of fives     5 1 5 2 5 scores 15
 	Sixes           	6 × number of sixes     2 3 4 5 6 scores 6
-	Full House      	Total of the dice       3 3 3 5 5 scores 19
+	Full House      	Three of one number
+					 	and two of another	    3 3 3 5 5 scores 19
 	Four of a Kind  	Total of the four dice  4 4 4 4 6 scores 16
 	Little Straight 	30 points               1 2 3 4 5 scores 30
 	Big Straight    	30 points               2 3 4 5 6 scores 30
 	Choice          	Sum of the dice         2 3 3 4 6 scores 18
-	Yacht           	50 points               4 4 4 4 4 scores 50
+	Yacht           	All dices showing the
+					  same face (50 pts)      4 4 4 4 4 scores 50
 	~~~
 	</div>
 	</li>
@@ -212,6 +227,16 @@ def add_gigasecond(birth_date):
 
 	**Task**: Given a list of values for five dice and a category, your solution should return the score of the dice for that category. If the dice do not satisfy the requirements of the category your solution should return 0. You can assume that five values will always be presented, and the value of each will be between one and six inclusively. You should not assume that the dice are ordered.
 - Ví dụ input là `[1, 1, 1, 3, 5], yacht.ONES`
+- Xem thêm [Anonymous/Lambda function](https://www.programiz.com/python-programming/anonymous-function) trong python
+- Xem thêm về [list](https://www.tutorialspoint.com/python/python_lists.htm): duplicated, unordered,indexed, mutable
+- Xem thêm về [set](https://www.programiz.com/python-programming/set): unique, unordered, immutable, unindexed
+- Xem thêm về [sorted](https://www.programiz.com/python-programming/methods/built-in/sorted), lưu ý có sự khác nhau
+
+	~~~ python
+	dice = [3,2,1]
+	dice.sort() == [1,2,3] # return False
+	sorted(dice) == [1,2,3] # return True
+	~~~
 
 <ul class="collapsible" data-collapsible="accordion">
 <li>
@@ -220,12 +245,98 @@ Lời giải tham khảo
 </div>
 <div class="collapsible-body" markdown="1">
 ~~~ python
+YACHT = lambda dice: (len(set(dice)) ==1)*50
+ONES = lambda dice: dice.count(1)
+TWOS = lambda dice: dice.count(2)*2
+THREES = lambda dice: dice.count(3)*3
+FOURS = lambda dice: dice.count(4)*4
+FIVES = lambda dice: dice.count(5)*5
+SIXES = lambda dice: dice.count(6)*6
+FULL_HOUSE = lambda dice: sum(dice)*((len(set(dice)) == 2) and (dice.count(dice[0]) in [2,3]))
+FOUR_OF_A_KIND = lambda dice: (len(set(dice)) == 1) * list(set(dice))[0]*4 \
+    + ( (dice.count(list(set(dice))[0]) == 4)*list(set(dice))[0]*4 \
+       + (dice.count(list(set(dice))[1]) == 4)*list(set(dice))[1]*4 \
+           if len(set(dice)) == 2 else 0 )
+LITTLE_STRAIGHT = lambda dice: (sorted(dice) == [1,2,3,4,5])*30
+BIG_STRAIGHT = lambda dice: (sorted(dice) == [2,3,4,5,6])*30
+CHOICE = lambda dice: sum(dice)
 
+def score(dice, category):
+    return category(dice)
 ~~~
 </div>
 </li>
 </ul>
 
-	
+### Space Age
 
-	
+- [Link bài tập](https://exercism.io/my/solutions/91dd469652e74e6abf5bb7c38a1eb26f)
+- **Yêu cầu**: Viết 1 class cho biết số tuổi (theo hành tinh) khi người dùng nhập vào số giây. Ví dụ nhập vào `1 000 000 000` seconds thì cho ra `31.69` Earth-years old.
+- Xem thêm vè [class](https://www.programiz.com/python-programming/class).
+
+<ul class="collapsible" data-collapsible="accordion">
+<li>
+<div class="collapsible-header" markdown="1"><i class="material-icons">face</i>
+Lời giải tham khảo
+</div>
+<div class="collapsible-body" markdown="1">
+~~~ python
+class SpaceAge(object):
+    def __init__(self, seconds):
+        self.seconds_on_earth = 31557600
+        self.seconds = seconds
+        
+        # functions
+        self.on_earth = self.on_planet(1)
+        self.on_mercury = self.on_planet(0.2408467)
+        self.on_venus = self.on_planet(0.61519726)
+        self.on_mars = self.on_planet(1.8808158)
+        self.on_jupiter = self.on_planet(11.862615)
+        self.on_saturn = self.on_planet(29.447498)
+        self.on_uranus = self.on_planet(84.016846)
+        self.on_neptune = self.on_planet(164.79132)
+        
+    def on_planet(self,to_earth):
+        def year_on_planet():
+            return round(self.seconds/(self.seconds_on_earth*to_earth), 2)
+        return year_on_planet
+~~~
+</div>
+</li>
+</ul>
+
+### Rational Numbers
+
+- [Link bài tập](https://exercism.io/my/solutions/420a0c8766324adf93afd6a22cb99349)
+- **Yêu cầu**:
+
+<ul class="collapsible" data-collapsible="accordion">
+<li>
+<div class="collapsible-header" markdown="1"><i class="material-icons">face</i>
+Lời giải tham khảo
+</div>
+<div class="collapsible-body" markdown="1">
+~~~ python
+class SpaceAge(object):
+    def __init__(self, seconds):
+        self.seconds_on_earth = 31557600
+        self.seconds = seconds
+        
+        # functions
+        self.on_earth = self.on_planet(1)
+        self.on_mercury = self.on_planet(0.2408467)
+        self.on_venus = self.on_planet(0.61519726)
+        self.on_mars = self.on_planet(1.8808158)
+        self.on_jupiter = self.on_planet(11.862615)
+        self.on_saturn = self.on_planet(29.447498)
+        self.on_uranus = self.on_planet(84.016846)
+        self.on_neptune = self.on_planet(164.79132)
+        
+    def on_planet(self,to_earth):
+        def year_on_planet():
+            return round(self.seconds/(self.seconds_on_earth*to_earth), 2)
+        return year_on_planet
+~~~
+</div>
+</li>
+</ul>
