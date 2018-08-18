@@ -2,7 +2,7 @@
 title: Python note 1
 categories:
   - it
-tags: ["python"]
+tags: ["python","tự học","lập trìnnh"]
 maths: 1
 toc: 1
 date: 2018-08-17
@@ -14,15 +14,17 @@ date: 2018-08-17
 
 ## Tài liệu
 
+- [Python trên w3school](https://www.w3schools.com/python).
+- [Exercism](https://exercism.io/my/tracks/python) : học bằng bài tập, có nhiều ngôn ngữ khác nữa, free 100% (xem thêm [note riêng cho nó](/python-exercism-1))
+- [Python 3](https://www.tutorialspoint.com/python3/index.htm) on **tutorialspoint**
 - Python documentation: [http://devdocs.io/python~3.6/](http://devdocs.io/python~3.6/)
   - [Official docs](https://docs.python.org/3/)
 - Course on Pluralsight: [Python fundamentals by Austin Bingham and Robert Smallshire](https://app.pluralsight.com/library/courses/python-fundamentals/table-of-contents)
 - Video bài giảng của [Corey Schafer](https://www.youtube.com/user/schafer5/playlists) (anh Việt recommend)
 - [Python exercises](https://www.w3resource.com/python-exercises)
 - [How to think like a computer scientist?](http://openbookproject.net/thinkcs/python/english3e/index.html) : sách được thể hiện dưới dạng html
-- [Exercism](https://exercism.io/my/tracks/python) : học bằng bài tập, có nhiều ngôn ngữ khác nữa, free 100% (xem thêm [note riêng cho nó](/python-exercism-1))
 - [RealPython](https://realpython.com/start-here/)
-- [Python 3](https://www.tutorialspoint.com/python3/index.htm) on **tutorialspoint**
+- [Newsletter for python](https://www.pythonweekly.com/): docs, jobs, news,....
 
 
 
@@ -30,6 +32,8 @@ date: 2018-08-17
 
 - Có thể cài mọi thứ thông qua [Anaconda](https://anaconda.com), tuy nhiên trên Windows vẫn chưa tự nhận thông qua Command Prompt.
 - Trên Linux hay Mac thì python tự nhận trong terminal, windows thì cần làm thêm các bước bên dưới.
+
+
 
 ### exercism
 
@@ -132,7 +136,16 @@ Install **CLI**
 ## Comments
 
 - Using `#` on each line
-- Multi lines dùng ''' ở đầu và cuối
+- Multi lines dùng `"""` ở đầu và cuối, lưu ý, cái này cũng dùng để docstring, tức khi người dùng `help(ten_function)` thì mấy cái nằm trong đây sẽ được show ra. Ví dụ
+
+	~~~ python
+	def reverse(text):
+	    """Reverse a text.
+	    Input the text
+		Return text reversed
+	    """
+		return text[::-1]
+	~~~
  
 
 ## Operator 
