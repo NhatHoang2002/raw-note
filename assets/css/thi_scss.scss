@@ -20,7 +20,7 @@
       content: counter(h2counter) ".\0000a0";
       counter-increment: h2counter;
     }
-    &+h3{
+    &+h3, &+ ul + h3{
       margin-top: 1rem;
     }
   }
@@ -70,4 +70,12 @@ hr{
 .chip{
   margin-bottom: 10px;
   background-color: #eee;
+}
+
+.highlighter-rouge{
+  margin: 0!important;
+  pre{
+    padding: 1rem!important;
+    overflow: auto;
+  }
 }

@@ -5,6 +5,7 @@ categories:
 tags: ["python","exercism","tự học","lập trình"]
 maths: 1
 toc: 1
+date: 2018-08-18
 ---
 
 {% include toc.html %}
@@ -47,9 +48,9 @@ toc: 1
 	https://exercism.io/my/solutions/c5b073e3d5b14736b3068d2e2b0cfca3
 	~~~
 	
-	- Đi đến địa chỉ đó, làm các bước tiếp theo để hoàn thành. Thường bài tập Hello World khá dễ nên không cần mentor check lại.
+	Đi đến địa chỉ đó, làm các bước tiếp theo để hoàn thành. Thường bài tập Hello World khá dễ nên không cần mentor check lại.
 
-### Test file
+### Test a file
 
 - Sau khi hoàn thành, chạy file test: `pytest hello_world_test.py`
 - Lưu ý, file bài tập là **hello_world.py** nhưng file để test là **hello_world_test.py**, [đọc thêm](https://exercism.io/tracks/python/tests).
@@ -60,9 +61,13 @@ toc: 1
 
 ## Solutions to exercises
 
+### Read me first
+
 - Link bài tập chỉ khả dụng sau khi đã đăng nhập.
 - Các lời giải chỉ mang tính tham khảo, có thể có nhiều lời giải khác hay hơn.
 - Nên check các file **_test** đi kèm file bài tập để biết rõ hơn yêu cầu input và output là gì. Đây là file dùng để test file mình làm, họ đưa sẵn vài test cases.
+- Chi tiết gợi ý bài giải + yêu cầu: [Github repo](https://github.com/dinhanhthi/exercism_python)
+- Trong note này chỉ ghi chú **vài thứ cần xem** để có thể giải bài tập đó + Các **cách giải khác**
 
 ### Hello World
 
@@ -71,22 +76,6 @@ toc: 1
 - Lưu ý rằng, bài tập yêu cầu `return` chứ không phải `print()`!!!
 - Xem thêm về [Functions](https://www.tutorialspoint.com/python3/python_functions.htm) trong python
 
-<ul class="collapsible" data-collapsible="accordion">
-<li>
-<div class="collapsible-header" markdown="1"><i class="material-icons">face</i>
-Lời giải tham khảo
-</div>
-<div class="collapsible-body" markdown="1">
-~~~ python
-def hello():
-    return "Hello, World!"
-
-if __name__ == "__main__":
-    hello()
-~~~
-</div>
-</li>
-</ul>
 
 ### Reverse String 
 
@@ -98,7 +87,7 @@ if __name__ == "__main__":
 <ul class="collapsible" data-collapsible="accordion">
 <li>
 <div class="collapsible-header" markdown="1"><i class="material-icons">face</i>
-Lời giải tham khảo
+Cách khác
 </div>
 <div class="collapsible-body" markdown="1">
 Cách dễ và nhanh nhất, dùng **[Extended slices](https://docs.python.org/2/whatsnew/2.3.html#extended-slices)** trong python
@@ -135,7 +124,7 @@ def reverse(text):
 <ul class="collapsible" data-collapsible="accordion">
 <li>
 <div class="collapsible-header" markdown="1"><i class="material-icons">face</i>
-Lời giải tham khảo
+Cách khác
 </div>
 <div class="collapsible-body" markdown="1">
 Cách 1 (dùng dictionary)
@@ -172,23 +161,6 @@ def to_rna(dna):
 - [Link bài tập](https://exercism.io/my/solutions/2c33c07f99764bd988d18cee91b95e6d)
 - **Yêu cầu**: Tính thời gian một người sống được $10^9$ giây. Ví dụ người dùng nhập vào `2011,4,25` thì kết quả phải là `2043,1,1,1,46,40`. Người dùng có thể nhập bất cứ thứ gì miễn sau thỏa cấu trúc `yyyy,m,d[,h,m,s]` trong đó có thể nhập hoặc không `[,h,m,s]`.
 - Xem thêm [datetime](https://www.w3schools.com/python/python_datetime.asp), [more](https://docs.python.org/3.6/library/datetime.html), [examples with docs](https://pymotw.com/3/datetime/)
-
-<ul class="collapsible" data-collapsible="accordion">
-<li>
-<div class="collapsible-header" markdown="1"><i class="material-icons">face</i>
-Lời giải tham khảo
-</div>
-<div class="collapsible-body" markdown="1">
-~~~ python
-import datetime
-
-def add_gigasecond(birth_date):
-    gigasecond = datetime.timedelta(seconds=10**9)
-    return birth_date + gigasecond
-~~~
-</div>
-</li>
-</ul>
 
 
 ### Yacht (dice game)
@@ -230,7 +202,7 @@ def add_gigasecond(birth_date):
 - Xem thêm [Anonymous/Lambda function](https://www.programiz.com/python-programming/anonymous-function) trong python
 - Xem thêm về [list](https://www.tutorialspoint.com/python/python_lists.htm): duplicated, unordered,indexed, mutable
 - Xem thêm về [set](https://www.programiz.com/python-programming/set): unique, unordered, immutable, unindexed
-- Xem thêm về [sorted](https://www.programiz.com/python-programming/methods/built-in/sorted), lưu ý có sự khác nhau
+- Xem thêm về [sorted](https://www.programiz.com/python-programming/methods/built-in/sorted), lưu ý có sự khác nhau ([cf](https://stackoverflow.com/questions/22442378/what-is-the-difference-between-sortedlist-vs-list-sort))
 
 	~~~ python
 	dice = [3,2,1]
@@ -238,105 +210,48 @@ def add_gigasecond(birth_date):
 	sorted(dice) == [1,2,3] # return True
 	~~~
 
-<ul class="collapsible" data-collapsible="accordion">
-<li>
-<div class="collapsible-header" markdown="1"><i class="material-icons">face</i>
-Lời giải tham khảo
-</div>
-<div class="collapsible-body" markdown="1">
-~~~ python
-YACHT = lambda dice: (len(set(dice)) ==1)*50
-ONES = lambda dice: dice.count(1)
-TWOS = lambda dice: dice.count(2)*2
-THREES = lambda dice: dice.count(3)*3
-FOURS = lambda dice: dice.count(4)*4
-FIVES = lambda dice: dice.count(5)*5
-SIXES = lambda dice: dice.count(6)*6
-FULL_HOUSE = lambda dice: sum(dice)*((len(set(dice)) == 2) and (dice.count(dice[0]) in [2,3]))
-FOUR_OF_A_KIND = lambda dice: (len(set(dice)) == 1) * list(set(dice))[0]*4 \
-    + ( (dice.count(list(set(dice))[0]) == 4)*list(set(dice))[0]*4 \
-       + (dice.count(list(set(dice))[1]) == 4)*list(set(dice))[1]*4 \
-           if len(set(dice)) == 2 else 0 )
-LITTLE_STRAIGHT = lambda dice: (sorted(dice) == [1,2,3,4,5])*30
-BIG_STRAIGHT = lambda dice: (sorted(dice) == [2,3,4,5,6])*30
-CHOICE = lambda dice: sum(dice)
+	Lý do là bởi `dice.sort()` returns `None`. Trong python, hàm trả về `None` báo hiệu nó đã xử lý xong, tại chỗ. Ở trên ta so sánh `None` với `[1,2,3]` nên nó ra `False`.
 
-def score(dice, category):
-    return category(dice)
-~~~
-</div>
-</li>
-</ul>
 
 ### Space Age
 
 - [Link bài tập](https://exercism.io/my/solutions/91dd469652e74e6abf5bb7c38a1eb26f)
 - **Yêu cầu**: Viết 1 class cho biết số tuổi (theo hành tinh) khi người dùng nhập vào số giây. Ví dụ nhập vào `1 000 000 000` seconds thì cho ra `31.69` Earth-years old.
 - Xem thêm vè [class](https://www.programiz.com/python-programming/class).
+- Xem thêm về [ký hiệu underscore](https://hackernoon.com/understanding-the-underscore-of-python-309d1a029edc) trong python
 
-<ul class="collapsible" data-collapsible="accordion">
-<li>
-<div class="collapsible-header" markdown="1"><i class="material-icons">face</i>
-Lời giải tham khảo
-</div>
-<div class="collapsible-body" markdown="1">
-~~~ python
-class SpaceAge(object):
-    def __init__(self, seconds):
-        self.seconds_on_earth = 31557600
-        self.seconds = seconds
-        
-        # functions
-        self.on_earth = self.on_planet(1)
-        self.on_mercury = self.on_planet(0.2408467)
-        self.on_venus = self.on_planet(0.61519726)
-        self.on_mars = self.on_planet(1.8808158)
-        self.on_jupiter = self.on_planet(11.862615)
-        self.on_saturn = self.on_planet(29.447498)
-        self.on_uranus = self.on_planet(84.016846)
-        self.on_neptune = self.on_planet(164.79132)
-        
-    def on_planet(self,to_earth):
-        def year_on_planet():
-            return round(self.seconds/(self.seconds_on_earth*to_earth), 2)
-        return year_on_planet
-~~~
-</div>
-</li>
-</ul>
 
 ### Rational Numbers
 
 - [Link bài tập](https://exercism.io/my/solutions/420a0c8766324adf93afd6a22cb99349)
-- **Yêu cầu**:
+- **Yêu cầu**: Tạo các phép toán với số hữu tỷ
+- We can use some methods to define other ones
+- Xem thêm [__future__](https://docs.python.org/3.6/library/__future__.html)
+- Xem [object comparison](http://abregman.com/2016/11/29/python-objects-comparison/)
+- Xem [.format()](https://pyformat.info/)
 
-<ul class="collapsible" data-collapsible="accordion">
-<li>
-<div class="collapsible-header" markdown="1"><i class="material-icons">face</i>
-Lời giải tham khảo
-</div>
-<div class="collapsible-body" markdown="1">
-~~~ python
-class SpaceAge(object):
-    def __init__(self, seconds):
-        self.seconds_on_earth = 31557600
-        self.seconds = seconds
-        
-        # functions
-        self.on_earth = self.on_planet(1)
-        self.on_mercury = self.on_planet(0.2408467)
-        self.on_venus = self.on_planet(0.61519726)
-        self.on_mars = self.on_planet(1.8808158)
-        self.on_jupiter = self.on_planet(11.862615)
-        self.on_saturn = self.on_planet(29.447498)
-        self.on_uranus = self.on_planet(84.016846)
-        self.on_neptune = self.on_planet(164.79132)
-        
-    def on_planet(self,to_earth):
-        def year_on_planet():
-            return round(self.seconds/(self.seconds_on_earth*to_earth), 2)
-        return year_on_planet
-~~~
-</div>
-</li>
-</ul>
+	~~~ python
+	'{}/{}'.format(1,2) # gives "1/2"
+	'{1} {0}'.format('one', 'two') # gives "two one"
+	~~~
+
+- Xem [`__str__` vs `__repr__`](https://www.pythonforbeginners.com/basics/__str__-vs-__repr)
+
+	~~~ python
+	class Point:
+	...   def __init__(self, x, y):
+	...     self.x, self.y = x, y
+	...   def __repr__(self):
+	...     return 'Point(x=%s, y=%s)' % (self.x, self.y)
+	>>> p = Point(1, 2)
+	>>> p
+	Point(x=1, y=2)
+	~~~
+
+- Xem [math module](https://docs.python.org/3/library/math.html)
+- Các phương thức `__add__`, `__sub__`, `__mul__`, .... đại diện cho các phép toán `+ - *` thông thường
+
+
+
+### Sgf Parsing
+

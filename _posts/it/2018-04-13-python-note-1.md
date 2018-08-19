@@ -5,27 +5,34 @@ categories:
 tags: ["python","tự học","lập trìnnh"]
 maths: 1
 toc: 1
-date: 2018-08-17
+date: 2018-08-18
 ---
 
 {% include toc.html %}
 
 <div style="margin-top: -1rem;"></div>
 
+
 ## Tài liệu
 
-- [programiz.com](https://www.programiz.com) : **nên dùng để tra**
-- [Python trên w3school](https://www.w3schools.com/python) : nên dùng để xem và check ví dụ (không đầy đủ các method)
-- [Exercism](https://exercism.io/my/tracks/python) : học bằng bài tập, có nhiều ngôn ngữ khác nữa, free 100% (xem thêm [note riêng cho nó](/python-exercism-1))
-- [Python 3](https://www.tutorialspoint.com/python3/index.htm) on **tutorialspoint** : nên dùng để xem danh sách hết các method trong mỗi objects.
-- Python documentation: [http://devdocs.io/python~3.6/](http://devdocs.io/python~3.6/)
-  - [Official docs](https://docs.python.org/3/)
-- Course on Pluralsight: [Python fundamentals by Austin Bingham and Robert Smallshire](https://app.pluralsight.com/library/courses/python-fundamentals/table-of-contents)
-- Video bài giảng của [Corey Schafer](https://www.youtube.com/user/schafer5/playlists) (anh Việt recommend)
-- [Python exercises](https://www.w3resource.com/python-exercises)
-- [How to think like a computer scientist?](http://openbookproject.net/thinkcs/python/english3e/index.html) : sách được thể hiện dưới dạng html
-- [RealPython](https://realpython.com/start-here/)
-- [Newsletter for python](https://www.pythonweekly.com/): docs, jobs, news,....
+- **Dùng để tra cứu**
+	- [programiz.com](https://www.programiz.com) : **nên dùng để tra**
+	- [Python trên w3school](https://www.w3schools.com/python) : nên dùng để xem và check ví dụ (không đầy đủ các method)
+	- [Python 3](https://www.tutorialspoint.com/python3/index.htm) on **tutorialspoint** : nên dùng để xem danh sách hết các method trong mỗi objects.
+	- Python documentation: [http://devdocs.io/python~3.6/](http://devdocs.io/python~3.6/)
+  		- [Official docs](https://docs.python.org/3/) : chỉ dùng khi tra từ google
+	- **App mobile** (dành để đọc ref): [Python Reference](https://itunes.apple.com/us/app/python-reference/id1386866064?mt=8) của Wenhuan Li
+- **Course, learning**
+	- Course on Pluralsight: [Python fundamentals by Austin Bingham and Robert Smallshire](https://app.pluralsight.com/library/courses/python-fundamentals/table-of-contents)
+	- Video bài giảng của [Corey Schafer](https://www.youtube.com/user/schafer5/playlists) (anh Việt recommend)
+	- [How to think like a computer scientist?](http://openbookproject.net/thinkcs/python/english3e/index.html) : sách được thể hiện dưới dạng html
+	- [RealPython](https://realpython.com/start-here/)
+- **Exercise, practice**
+	- [Exercism](https://exercism.io/my/tracks/python) : học bằng bài tập, có nhiều ngôn ngữ khác nữa, free 100% (xem thêm [note riêng cho nó](/python-exercism-1))
+	- [Python exercises](https://www.w3resource.com/python-exercises)
+- **Others**:
+	- [Newsletter for python](https://www.pythonweekly.com/): docs, jobs, news,....
+	- [Insert Datacamp interative Python inside web/blog](https://github.com/datacamp/datacamp-light) (also for R)
 
 
 
@@ -65,12 +72,15 @@ Install **CLI**
 3. Lưu ý, lưu thư mục chứa mấy file python.exe chứ không có lưu cả file đó.
 4. Sau khi add vào PATH, cần phải restart lại [cmder](http://cmder.net/) (command prompt thì khỏi)
 
+
+
 ### Jupyter notebook
 
 - [Cái này](http://jupyter.org/index.html) có sẵn nếu đã cài Anaconda.
 - Trên **Windows**, không thể chạy nó bằng dòng lệnh `jupyter notebook` như các [trang hướng dẫn](https://jupyter.readthedocs.io/en/latest/running.html) được!
 - Mà phải chạy bằng `python -m notebook` (chỉ có tác dụng sau khi đã add python path vào PATH của hệ thống như ở trên hướng dẫn)
 - Cũng có thể chạy file Jupyter Notebook có sẵn nhưng đường dẫn mặc định sau khi chạy xong (localhost:8888) không theo ý mình (ngoài /Home/), do đó, cần dùng [cmder](http://cmder.net/) (or command prompt) `cd` đến thư mục cần làm "host", sau đó chạy dòng lệnh `python -m notebook` như ở trên hướng dẫn.
+
 
 ### Install package with `pip`
 
@@ -81,23 +91,35 @@ Install **CLI**
 	- *distributed 1.21.8 requires msgpack, which is not installed.*: `pip install msgpack`
 - Other, read [this](https://pip.pypa.io/en/stable/installing/) to install pip.
 
+
+
 ## Linh tinh
-
-- index start in python 0 (mảng, table,...)
-
-- Chú ý `x[1:3]` là lấy thằng thứ 2 và thứ 3 chứ ko có lấy thằng thứ 4. Kiểu nó sẽ lấy $1\le i < 3$.
-
-- Chọn command, sau đó nhấn **Ctrl+I** để xem help về command đó trong **Spyder**.
-
-- Chọn lệnh xong nhấn **Ctrl+Enter** để chạy code trong **Spyder**
-
-- `"abc" + "xyz" = "abcxyz"`
-
-- không dùng `;` chỉ dùng thụt đầu dòng. Nếu muốn 2 lệnh trên 1 dòng thì cách nhau bởi `;`
-  - Tab size trong Python là 4 spaces
 
 - `y=x`, nếu `y` change thì `x` cũng change luôn. Thay vào đó, dùng `y=list(x)` hoặc `y=x[:]`
 
+- [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) (read-eval-print-loop) : là môi trường gõ lệnh đơn lẻ, có thể dùng [reple.it](http://repl.it)
+
+  - Exit: Ctrl+Z (Windows), Ctrl+D (Linux, Mac)
+- **Clear**:
+	- `del <biến>` : giống `clear` trong matlab, không cần confirm
+	- `%reset` : xóa hết biến trong workspace hiện tại (giống `clear all` trong matlab). Nếu muốn clear 1 biến cụ thể, dùng `%reset_selective <biến>`. Cái này **cần confirm**
+		- Nếu không muốn thấy confirm, dùng `%reset -f`
+
+
+## IPython & Spyder
+
+- `clear` giống `clc` (clear hết trên khung màn hình)
+- `%reset` : xóa hết biến trong workspace hiện tại (giống `clear all` trong matlab). Nếu muốn clear 1 biến cụ thể, dùng `%reset_selective <biến>`
+- Chọn lệnh xong nhấn **Ctrl+Enter** để chạy code trong **Spyder**
+- Chọn command, sau đó nhấn **Ctrl+I** để xem help về command đó trong **Spyder**.
+
+
+## Zen of python
+
+### General notes
+
+- không dùng `;` chỉ dùng thụt đầu dòng. Nếu muốn 2 lệnh trên 1 dòng thì cách nhau bởi `;`
+- Tab size trong Python là 4 spaces
 - Có thể break lines bình thường trong python, không cần dùng thêm ký hiệu gì (nhớ thụt đầu dòng vao) HOẶC dùng dấu `\`
 
   ~~~ python
@@ -108,16 +130,27 @@ Install **CLI**
       '4' + '5')
   ~~~
 
-- [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) (read-eval-print-loop) : là môi trường gõ lệnh đơn lẻ, có thể dùng [reple.it](http://repl.it)
-
-  - Exit: Ctrl+Z (Windows), Ctrl+D (Linux, Mac)
-
-- `print()` print something, `read()` wait for user input something 
-
+- Có thể dùng: `a = 1_000_000` (from python 3.6)
 - [PEP](https://www.python.org/dev/peps/) (Python Enhancement Proposals)
 
   - [PEP 8](https://www.python.org/dev/peps/pep-0008/) - Python style guide
   - [PEP 20](https://www.python.org/dev/peps/pep-0020/) - The Zen of Python.
+
+
+
+### Comments
+
+- Using `#` on each line
+- Multi lines dùng `"""` ở đầu và cuối, lưu ý, cái này cũng dùng để docstring, tức khi người dùng `help(ten_function)` thì mấy cái nằm trong đây sẽ được show ra. Ví dụ
+
+	~~~ python
+	def reverse(text):
+	    """Reverse a text.
+	    Input the text
+		Return text reversed
+	    """
+		return text[::-1]
+	~~~
 
 
 ## Input and Output
@@ -133,48 +166,107 @@ Install **CLI**
 
 - Xem thêm practice trên [Jupyter notebook](/jupyter/cs50.html)
 - `print "Hello"` là của python 2, còn python 3 bắt buộc là `print("Hello")` ([cf](https://docs.python.org/3/whatsnew/3.0.html))
+- `print()` print something, `read()` wait for user input something 
 
-## Comments
-
-- Using `#` on each line
-- Multi lines dùng `"""` ở đầu và cuối, lưu ý, cái này cũng dùng để docstring, tức khi người dùng `help(ten_function)` thì mấy cái nằm trong đây sẽ được show ra. Ví dụ
-
-	~~~ python
-	def reverse(text):
-	    """Reverse a text.
-	    Input the text
-		Return text reversed
-	    """
-		return text[::-1]
-	~~~
  
 
-## Operator 
+## Underscore
+
+- Tham khảo [tại đây](https://hackernoon.com/understanding-the-underscore-of-python-309d1a029edc).
+- When used in interpreter (nhớ lại kết quả trước đó, giống `ans` trong matlab)
+- Cần ignore giá trị nào đó, giống `~` trong matlab.
+
+	~~~ python
+	x, _, y = (1, 2, 3) # x = 1, y = 3
+
+	# ignore the index
+	for _ in range(10)
+		do_something(i)
+
+	# Ignore a value of specific location
+	for _, val in list_of_tuple:
+	    do_something()
+	~~~
+
+- Để đặt tên, xem [PEP8](https://www.python.org/dev/peps/pep-0008/)
+	- `__double_leading_and_trailing_underscore__`: "magic" objects or attributes that live in user-controlled namespaces. E.g. `__init__`, `__import__` or `__file__`. **Never invent such names**; only use them as documented.
+	- `__double_leading_underscore`: when naming a class attribute, invokes name mangling (inside class `FooBar`, `__boo` becomes `_FooBar__boo`). Nghĩa là không gọi riêng cái biến với tên này được mà phải gọi lên tên của class.
+	- `_single_leading_underscore`: weak "internal use" indicator. E.g. `from M import *` does not import objects whose name starts with an underscore. **biến private**
+
+
+
+## Operators
 
 - `+-*/` bình thường
 - `//` chia số nguyên (kết quả là interger), còn `/` thì luôn ra `real`
 - Relation: `==, !=, >, <, >=, <=`
 - `i = i+1` $\Leftrightarrow$ `i += 1` and others
 - **Ternary conditional operator**: `b = 100 if a>10 else 0` giống như `b = (a>10)?100:0` trong C++
+- `from __future__ import division` đảm bảo phép chia `/` là chia số thực, nghĩa là `1/2` ra `0.5` chứ không phải ra `0` (cf. [PEP 238](https://www.python.org/dev/peps/pep-0238/)) $\Rightarrow$ **enabled by default in Python 3.x.**
+- **Đổi biến** nhanh gọn: `a, b = b, a`
+
+
+## Object and Class
+
+- **Object comparison** ([cf](http://abregman.com/2016/11/29/python-objects-comparison/))
+	- Below is an example of comparison
+
+		~~~ python
+		class Ball(object):
+		    def __init__(self, color, size):
+		        self.color = color
+		        self.size = size
+		
+		ball1 = Ball('blue', 'small')
+		ball2 = Ball('blue', 'small')
+		
+		print(ball1 == ball2) # Prints False!
+		~~~
+
+		Because python **compare the "id"** of `ball1` and `ball2` instead.
+	
+	- Do đó có các comparison *rich comparison methods* or *comparison magic methods* bên trong các class/object này để "định nghĩa" luôn *thế nào là bằng, lớn, nhỏ,...* giữa các object với nhau.
+
+		~~~ python
+		object.__lt__(self, other) # For x < y
+		object.__le__(self, other) # For x <= y
+		object.__eq__(self, other) # For x == y
+		object.__ne__(self, other) # For x != y OR x <> y
+		object.__gt__(self, other) # For x > y
+		object.__ge__(self, other) # For x >= y
+		~~~
+
+	- Xem thêm trong [cf](http://abregman.com/2016/11/29/python-objects-comparison/).
+
 
 ## Condition, loops
 
-``` python
-if condition:
-	comands
-elif
-	commands
-else
-	commands
-```
+- `if`, `for`, `while` ([cf](https://www.programiz.com/python-programming/if-elif-else))
 
-``` python
-while condition:
-    commands
-# use `break` to break
-```
+	``` python
+	# if
+	if condition:
+		comands
+	elif
+		commands
+	else
+		commands
+	
+	# while
+	while condition:
+	    commands
+	# use `break` to break
+	```
 
-## Strings, Bytes, List, Dictionaries
+- Special operator (Ternary conditional operator): `a = 100 if b>1 else 5`
+
+
+
+## Strings, bytes, list, dictionaries, sets
+
+- index start in python 0 (mảng, table,...)
+- Chú ý `x[1:3]` là lấy thằng thứ 2 và thứ 3 chứ ko có lấy thằng thứ 4. Kiểu nó sẽ lấy $1\le i < 3$.
+- `"abc" + "xyz" = "abcxyz"`
 
 
 

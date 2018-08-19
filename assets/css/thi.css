@@ -273,13 +273,9 @@ p + div.highlighter-rouge{
 	overflow: auto;
 }
 
-.highlight{
-	border-radius: 5px;
-}
-
 li code, p code{
 	background-color: #e7e9ee;
-	color: #dc0045;
+	color: #444;
 	padding: 1px 4px;
 	border-radius: 4px;
 	font-size: 95%;
@@ -294,11 +290,6 @@ pre code{
 .highlight .err{
 	background-color: initial!important;
 	background: none!important;
-}
-
-.highlighter-rouge pre{
-	padding: 8px 10px!important;
-	overflow: auto;
 }
 
 /* search */

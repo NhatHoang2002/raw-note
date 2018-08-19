@@ -4,7 +4,80 @@ categories:
   - it
 maths: 1
 toc: 1
+datacamp: 1
+date: 2018-08-18
 ---
+
+## Chèn code python/R datacamp
+
+- **Front matter**: `datacamp: 1`
+- [cf](https://github.com/datacamp/datacamp-light)
+- **Example**
+
+	<div data-datacamp-exercise data-lang="r">
+		<code data-type="pre-exercise-code">
+			# This will get executed each time the exercise gets initialized
+			b = 6
+		</code>
+		<code data-type="sample-code">
+			# Create a variable a, equal to 5
+			# Print out a
+		</code>
+		<code data-type="solution">
+			# Create a variable a, equal to 5
+			a <- 5
+	
+			# Print out a
+			print(a)
+		</code>
+		<code data-type="sct">
+			test_object("a")
+			test_function("print")
+			success_msg("Great job!")
+		</code>
+		<div data-type="hint">Use the assignment operator (<code><-</code>) to create the variable <code>a</code>.</div>
+	</div>
+
+- **Đoạn code**
+
+	~~~ html
+	<div data-datacamp-exercise data-lang="r">
+
+		<code data-type="pre-exercise-code">
+			# This will get executed each time the exercise gets initialized
+			b = 6
+		</code>
+
+		<code data-type="sample-code">
+			# Create a variable a, equal to 5
+			# Print out a
+		</code>
+
+		<code data-type="solution">
+			# Create a variable a, equal to 5
+			a <- 5
+			# Print out a
+			print(a)
+		</code>
+
+		<code data-type="sct">
+			test_object("a")
+			test_function("print")
+			success_msg("Great job!")
+		</code>
+
+		<div data-type="hint">Use the assignment operator (<code><-</code>) to create the variable <code>a</code>.</div>
+
+	</div>
+	~~~
+
+- **Explain**
+	- `data-lang="r"` có thể chọn `r` hoặc `python`
+	- `pre-exercise-code`: những thứ sẽ tự động chạy khi chương trình được load.
+	- `sample-code`: những thứ sẽ hiện trong editor ngay khi chương trình được load
+	- `solution`: kết quả bạn muốn người dùng làm theo, người dùng nạp sai thì nó sẽ báo sai
+	- `sct`: hàm check kết quả và thông báo kết quả, xem thêm cho [R](https://github.com/datacamp/testwhat), [python](https://github.com/datacamp/pythonwhat).
+
 
 ## Chèn code
 
