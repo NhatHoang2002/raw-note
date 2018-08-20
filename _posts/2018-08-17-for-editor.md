@@ -227,16 +227,16 @@ Kết quả
 - item 6
 </div>
 
-### Chia cột (code va kết quả)
+### Chia cột (code và kết quả)
 
 {% highlight html %}
 <div class="row" markdown="1">
-<div class="col m12 l5" markdown="1">
+<div class="col s12 l5" markdown="1">
 ~~~
 this is the code
 ~~~
 </div>
-<div class="col m12 l7" markdown="1">
+<div class="col s12 l7" markdown="1">
 ~~~
 this is the result
 ~~~
@@ -247,12 +247,12 @@ this is the result
 Kết quả
 
 <div class="row" markdown="1">
-<div class="col m12 l5" markdown="1">
+<div class="col s12 l5" markdown="1">
 ~~~
 this is the code
 ~~~
 </div>
-<div class="col m12 l7" markdown="1">
+<div class="col s12 l7" markdown="1">
 ~~~
 this is the result
 ~~~
