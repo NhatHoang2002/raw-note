@@ -5,7 +5,7 @@ categories:
 tags: ["python","tự học","lập trìnnh"]
 maths: 1
 toc: 1
-date: 2018-08-18
+date: 2018-08-20
 ---
 
 {% include toc.html %}
@@ -23,6 +23,7 @@ date: 2018-08-18
   		- [Official docs](https://docs.python.org/3/) : chỉ dùng khi tra từ google
 	- **App mobile** (dành để đọc ref): [Python Reference](https://itunes.apple.com/us/app/python-reference/id1386866064?mt=8) của Wenhuan Li
 - **Course, learning**
+	- [Intro to python for data science](https://campus.datacamp.com/courses/intro-to-python-for-data-science/) : video rồi làm bài tập trực tiếp trên web, đang theo.
 	- Course on Pluralsight: [Python fundamentals by Austin Bingham and Robert Smallshire](https://app.pluralsight.com/library/courses/python-fundamentals/table-of-contents)
 	- Video bài giảng của [Corey Schafer](https://www.youtube.com/user/schafer5/playlists) (anh Việt recommend)
 	- [How to think like a computer scientist?](http://openbookproject.net/thinkcs/python/english3e/index.html) : sách được thể hiện dưới dạng html
@@ -267,47 +268,30 @@ Install **CLI**
 - index start in python 0 (mảng, table,...)
 - Chú ý `x[1:3]` là lấy thằng thứ 2 và thứ 3 chứ ko có lấy thằng thứ 4. Kiểu nó sẽ lấy $1\le i < 3$.
 - `"abc" + "xyz" = "abcxyz"`
+- **Copy list**: dùng `a = list(b)` thay vì `a=b`
+- **Methods**: `.append(<element>)` (add thêm phần tử), `.count(<element>)` (đếm phần tử `<element>` trong list), `.reverse()` (đổi order các phần tử trong list), `sort()` (sắp xếp list tăng dần)
+- `sorted(<list), reverse = True)` : sắp xếp list nhưng không ảnh hưởng đến list
 
 
+## Package
 
-## [Pandas](http://pandas.pydata.org/) package
+- Một số package dùng trong data:
 
-*[pandas](https://pandas.pydata.org/)* is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the [Python](https://www.python.org/) programming language
+	- `numpy` (cf [this note]({{ site.baseutl }}/python-numpy-1))
+	- `matplotlib` (cf [this note]({{ site.baseutl }}/python-matplotlib-1))
+	- `scikit-learn` : Machine Learning (cf [this note]({{ site.baseutl }}/python-scikit-learn-1))
+	- `pandas`
 
-- `iloc`: select rows and columns by number (integer-location based indexing) [[xem thêm](https://www.shanelynn.ie/select-pandas-dataframe-rows-and-columns-using-iloc-loc-and-ix/)]
-  ~~~ python
-  # Rows:
-  data.iloc[0] # first row of data frame (Aleshia Tomkiewicz) - Note a Series data type output.
-  data.iloc[1] # second row of data frame (Evan Zigomalas)
-  data.iloc[-1] # last row of data frame (Mi Richan)
-  
-  # Columns:
-  data.iloc[:,0] # first column of data frame (first_name)
-  data.iloc[:,1] # second column of data frame (last_name)
-  data.iloc[:,-1] # last column of data frame (id)
-  
-  # Multiple row and column selections using iloc and DataFrame
-  data.iloc[0:5] # first five rows of dataframe
-  data.iloc[:, 0:2] # first two columns of data frame with all rows
-  data.iloc[[0,3,6,24], [0,5,6]] # 1st, 4th, 7th, 25th row + 1st 6th 7th columns.
-  data.iloc[0:5, 5:8] # first 5 rows and 5th, 6th, 7th columns of data frame (county -> phone1).
-  ~~~
-- `dataset.iloc[:,:-1].values`: chọn `values` của tất cả dòng (`:`) và tất cả cột trừ cột cuối (`:-1`)
+- Để cài package thường dùng `pip`: `pip3 install <package>`
+- Để xài 
+	1. `import numpy` và xài `numpy.array()`
+	2. `from numpy import array` và xài `array()` $\Rightarrow$ cách này thì người ta sẽ không biết `array()` đến từ `numpy`, code không rõ ràng cho lắm (datacamp [nói vậy](https://campus.datacamp.com/courses/intro-to-python-for-data-science/chapter-3-functions-and-packages?ex=9))
+	3. `from numpy import *` là import tất cả luôn (các methods, object đều sẽ hiện hữu, cái này nó khác với cái đầu tiên, cái đầu tiên không hiện hết method, khi nào cần xài thì dùng `numpy.array` thôi (có nói trong CS50)
+	4. `import matplotlib.pyplot as plt`
 
-## Import libraries
+- Viết tắt: `import numy as np`, sau này chỉ cần `np.array()`
 
-Ba hàm cơ bản khi học course ML A-Z
 
-~~~ python
-import numpy as np # "np là viết tắt, sau này dùng cho ngắn gọn
-# library về toán
-
-import matplotlib.pyplot as plt # có thể import sub lib bằng dấu "." như này
-# vẽ charts, hình trong python thì dùng lib này
-
-import pandas as pd
-# lib dành cho import dataset và manage dataset
-~~~
 
 ## Python with Visual Studio Code
 
