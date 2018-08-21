@@ -2,7 +2,7 @@
 layout: post
 title: Ghost penalty
 categories: maths
-tags: ["ghost penalty","robust","interface"]
+tags: [phd,numerical analysis,coding]
 maths: 1
 toc: 1
 date: 2018-06-22

@@ -1,8 +1,7 @@
 ---
 title: Python NumPy
-categories:
-  - it
-tags: ["python","tự học","lập trìnnh","numpy"]
+categories: it
+tags: [python,coding,numpy,data]
 maths: 1
 toc: 1
 date: 2018-08-20

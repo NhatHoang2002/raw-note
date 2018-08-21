@@ -1,7 +1,7 @@
 ---
 title: Numerical analysis 2
-categories:
-  - maths
+categories: maths
+tags: [numerical analysis,analysis]
 toc: 1
 maths: 1
 date: 2017-06-26

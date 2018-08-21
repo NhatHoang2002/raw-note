@@ -1,8 +1,7 @@
 ---
 title: Level Set Method
-categories:
-  - maths
-  - phd
+categories: [phd,maths]
+tags: [phd,numerical analysis]
 toc: 1
 maths: 1
 date: 2018-08-10

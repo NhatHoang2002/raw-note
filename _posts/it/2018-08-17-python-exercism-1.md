@@ -1,8 +1,7 @@
 ---
 title: Python Exercism 1
-categories:
-  - it
-tags: ["python","exercism","tự học","lập trình"]
+categories: it
+tags: [python,exercism,coding]
 maths: 1
 toc: 1
 date: 2018-08-18

@@ -1,8 +1,7 @@
 ---
 title: Python Pandas
-categories:
-  - it
-tags: ["python","tự học","lập trìnnh","pandas"]
+categories: it
+tags: [python,coding,pandas,data]
 maths: 1
 toc: 1
 date: 2018-08-20

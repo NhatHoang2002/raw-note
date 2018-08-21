@@ -1,8 +1,7 @@
 ---
 title: Python note 1
-categories:
-  - it
-tags: ["python","tự học","lập trìnnh"]
+categories: it
+tags: [python,coding]
 maths: 1
 toc: 1
 date: 2018-08-20
@@ -267,6 +266,7 @@ Install **CLI**
 
 - index start in python 0 (mảng, table,...)
 - Chú ý `x[1:3]` là lấy thằng thứ 2 và thứ 3 chứ ko có lấy thằng thứ 4. Kiểu nó sẽ lấy $1\le i < 3$.
+	Lý do là bởi đảm bảo `x[:3] + x[3:] = x`
 - `"abc" + "xyz" = "abcxyz"`
 - **Copy list**: dùng `a = list(b)` thay vì `a=b`
 - **Methods**: `.append(<element>)` (add thêm phần tử), `.count(<element>)` (đếm phần tử `<element>` trong list), `.reverse()` (đổi order các phần tử trong list), `sort()` (sắp xếp list tăng dần)
@@ -275,12 +275,7 @@ Install **CLI**
 
 ## Package
 
-- Một số package dùng trong data:
-
-	- `numpy` (cf [this note]({{ site.baseutl }}/python-numpy-1))
-	- `matplotlib` (cf [this note]({{ site.baseutl }}/python-matplotlib-1))
-	- `scikit-learn` : Machine Learning (cf [this note]({{ site.baseutl }}/python-scikit-learn-1))
-	- `pandas`
+- Một số package dùng trong data: `numpy` (cf [this note]({{ site.baseutl }}/python-numpy-1)), `matplotlib` (cf [this note]({{ site.baseutl }}/python-matplotlib-1)), `scikit-learn` : Machine Learning (cf [this note]({{ site.baseutl }}/python-scikit-learn-1)), `pandas` (cf [this note]({{ site.baseutl }}/python-pandas-1))
 
 - Để cài package thường dùng `pip`: `pip3 install <package>`
 - Để xài 

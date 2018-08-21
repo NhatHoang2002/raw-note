@@ -1,7 +1,7 @@
 ---
 title: NXFEM + Hansbo + Arnold + Nitsche
-categories:
-  - maths
+categories: maths
+tags: [phd,numerical analsysis]
 maths: 1
 date: 2017-06-08
 toc: 1
