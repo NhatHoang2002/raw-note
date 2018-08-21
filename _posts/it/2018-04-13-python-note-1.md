@@ -262,7 +262,7 @@ Install **CLI**
 
 
 
-## Strings, bytes, list, dictionaries, sets
+## Strings, bytes, list, dictionaries, sets, tuple
 
 - index start in python 0 (mảng, table,...)
 - Chú ý `x[1:3]` là lấy thằng thứ 2 và thứ 3 chứ ko có lấy thằng thứ 4. Kiểu nó sẽ lấy $1\le i < 3$.
@@ -271,6 +271,7 @@ Install **CLI**
 - **Copy list**: dùng `a = list(b)` thay vì `a=b`
 - **Methods**: `.append(<element>)` (add thêm phần tử), `.count(<element>)` (đếm phần tử `<element>` trong list), `.reverse()` (đổi order các phần tử trong list), `sort()` (sắp xếp list tăng dần)
 - `sorted(<list), reverse = True)` : sắp xếp list nhưng không ảnh hưởng đến list
+- Last item: `list[-1]`
 
 
 ## Package
