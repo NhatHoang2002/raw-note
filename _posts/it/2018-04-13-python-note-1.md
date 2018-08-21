@@ -4,7 +4,8 @@ categories: it
 tags: [python,coding]
 maths: 1
 toc: 1
-date: 2018-08-20
+date: 2018-08-21
+datacamp: 1
 ---
 
 {% include toc.html %}
@@ -23,10 +24,9 @@ date: 2018-08-20
 	- **App mobile** (dành để đọc ref): [Python Reference](https://itunes.apple.com/us/app/python-reference/id1386866064?mt=8) của Wenhuan Li
 - **Course, learning**
 	- [Intro to python for data science](https://campus.datacamp.com/courses/intro-to-python-for-data-science/) : video rồi làm bài tập trực tiếp trên web, đang theo.
-	- Course on Pluralsight: [Python fundamentals by Austin Bingham and Robert Smallshire](https://app.pluralsight.com/library/courses/python-fundamentals/table-of-contents)
+	- Course on Pluralsight: [Python fundamentals by Austin Bingham and Robert Smallshire](https://app.pluralsight.com/library/courses/python-fundamentals/table-of-contents) (chỉ video, không bài tập)
 	- Video bài giảng của [Corey Schafer](https://www.youtube.com/user/schafer5/playlists) (anh Việt recommend)
 	- [How to think like a computer scientist?](http://openbookproject.net/thinkcs/python/english3e/index.html) : sách được thể hiện dưới dạng html
-	- [RealPython](https://realpython.com/start-here/)
 - **Exercise, practice**
 	- [Exercism](https://exercism.io/my/tracks/python) : học bằng bài tập, có nhiều ngôn ngữ khác nữa, free 100% (xem thêm [note riêng cho nó](/python-exercism-1))
 	- [Python exercises](https://www.w3resource.com/python-exercises)
@@ -45,18 +45,7 @@ date: 2018-08-20
 
 ### exercism
 
-- Cái này dành để học trên trang web [exercism.io](https://exercism.io/tracks/python/tests)
-- Cài **pytest**: `pip3 install pytest pytest-cache`
-
-Install **CLI**
-
-1. Download [latest cli](https://github.com/exercism/cli/releases)
-2. Run `start "" "%LOCALAPPDATA%\Microsoft\WindowsApps"` in cmd
-3. Move all extracted files/folder from step 1 to folder *WindowsApps*
-4. Verify xem thành công không bằng cách gõ vào cmd `exercism`
-5. Install thành công
-6. Configure CLI: `exercism configure --token=c2562d83-65ea-4176-ab80-ff058b111cf9`
-
+Xem [note này]({{site.baseurl}}/python-exercism-1).
 
 
 ### Làm cho Windows "nhận"
@@ -166,8 +155,11 @@ Install **CLI**
 
 - Xem thêm practice trên [Jupyter notebook](/jupyter/cs50.html)
 - `print "Hello"` là của python 2, còn python 3 bắt buộc là `print("Hello")` ([cf](https://docs.python.org/3/whatsnew/3.0.html))
-- `print()` print something, `read()` wait for user input something 
-
+- `print()` print something, `read()` wait for user input something
+- `'{} bạn'.format{'Chào'}` returns `'Chào bạn'`
+- `Chào bạn {} và {}`.format('a', 'b') returns `'Chào bạn a và b'`
+- `Chào bạn {2} và {1}`.format('a', 'b') returns `'Chào bạn b và a'`
+- Từ Python 3.6, có thể dùng `f'Chào {a}'` where `a = 'bạn'`
  
 
 ## Underscore
@@ -241,28 +233,60 @@ Install **CLI**
 
 ## Condition, loops
 
+### Condition
+
 - `if`, `for`, `while` ([cf](https://www.programiz.com/python-programming/if-elif-else))
 
 	``` python
 	# if
 	if condition:
 		comands
-	elif
+	elif condition:
 		commands
-	else
+	else:
 		commands
-	
-	# while
-	while condition:
-	    commands
-	# use `break` to break
 	```
 
 - Special operator (Ternary conditional operator): `a = 100 if b>1 else 5`
+- Operators trong so sánh: `==`, `!=`, `and`, `or`, `not`, `is` (object is identity, so sánh **id**)
+
+	~~~ python
+	a = [1, 2, 3]
+	b = [1, 2, 3]
+	
+	a == b # True
+	a is b # False
+	id(a) == id(b) # True
+	~~~
+
+- **Không có switch case**, chỉ cần dùng `if elif else`
+- `False` = `None`, `''`, `[]`, `{}`, '()'
+- nonemty $\Rightarrow$ `True`
+
+### Iteration
+
+~~~ python
+# loop
+for num in nums:
+	commands
+
+# while
+while condition:
+    commands
+# use `break` to break
+~~~
+
+- `break`: stop loop
+- `continue`: go to next state of loop (ignore)
+- `range(5)` means `[0,1,2,3,4]`
+- `range(1,5)` means `[1,2,3,4]`
+- Có thể dùng dạng `while True`
 
 
 
 ## Strings, bytes, list, dictionaries, sets, tuple
+
+### Chung, không phân biệt
 
 - index start in python 0 (mảng, table,...)
 - Chú ý `x[1:3]` là lấy thằng thứ 2 và thứ 3 chứ ko có lấy thằng thứ 4. Kiểu nó sẽ lấy $1\le i < 3$.
@@ -272,6 +296,82 @@ Install **CLI**
 - **Methods**: `.append(<element>)` (add thêm phần tử), `.count(<element>)` (đếm phần tử `<element>` trong list), `.reverse()` (đổi order các phần tử trong list), `sort()` (sắp xếp list tăng dần)
 - `sorted(<list), reverse = True)` : sắp xếp list nhưng không ảnh hưởng đến list
 - Last item: `list[-1]`
+- `a.extend(b)`: đưa từng phần tử của b vào a, khác với `.append()`
+- `a.append('b')`: đưa phần tử `'b'` vào trong list a nhưng `a.append(c)` với `c=[1,2]` là đưa nguyên xi `[1,2]` vào a chứ không phải từng phần tử của c
+- `a.remove(1)` : remove 1 from a
+- `a.pop()`: remove last item from a and returns the this item.
+- Liệt kê values và index
+
+	~~~ python
+	courses = ['a', 'b', 'c']
+	for index, course in enumerate(courses, start = 1):
+		print(index, course)
+	
+	# returns
+	1 a
+	2 b
+	3 c
+	~~~
+
+- `course_str = ', '.join(courses)`: tạo 1 string từ courses, cách nhau bởi dấu phẩy
+- Ngược lại là `.split(' - ')` chuyển từ string sang list
+
+### Set
+
+- [All set's methods](https://www.programiz.com/python-programming/methods/set)
+- Noduplicated, unordered, mutable
+- `a.intersection(b)` returns the common elements in 2 sets
+- `a.difference(b)` returns different elements
+- `a.union(b)` returns the union
+
+
+### Empty
+
+- list: `a=[]` hoặc `a=list()`
+- tupe: `a=()` hoặc `a=tuple()`
+- set: `a={}` hoặc `a=set()`
+
+
+### Dictionaries
+
+- It's mutable
+- Example: `student = {'name': 'John', 'age': 25, 'course': ['Math', 'CompSci']}`
+- Truy suất `student['name']`
+- Xem key có trong dic không: `student.get('phone')` returns *None* nếu không tìm thấy, nếu muốn thay chữ None thì dùng `student.get('phone', 'Not Found')`.
+- Thêm/update nhiều key: `student.update({'name': 'Thi', 'phone': 555})`
+- Remove `del student['age']`, nếu giữa lại giá trị cái xóa thì `age = student.pop('age')`
+- `len(dict)`
+- See only values `student.values()`
+- See key theo pairs: `student.items()`
+- Truy suất only key (name, age, course): `for key in student:`
+- Truy suất key và values: `for key, value in student.items():`
+
+
+## Functions
+
+
+- Basic
+	~~~ python
+	def func():
+		pass # fill later
+	
+	func() # run this function
+	~~~
+- Function return không phải là value thì luôn là `None`, nó cũng cho biết function hoạt động tốt.
+- With `*`
+	~~~ python
+	def student(*argd, **kwargs):
+		commands
+	
+	courses = ['Math', 'Art']
+	info = {'name': 'Thi', 'age': 28}
+	std = student(*course, **info)
+	
+	# returns
+	('Math', 'Art')
+	{'name': 'Thi', 'age': 28}
+	~~~
+- 
 
 
 ## Package
