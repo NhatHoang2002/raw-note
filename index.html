@@ -10,7 +10,7 @@ css: ["index.css"]
   </div>
 
   <div style="margin-top: 1rem;">
-    <h2 class="h2-title">Các chủ đề</h2>
+    <h2 class="h2-title">Categories</h2>
     <div class="tag-list">
       {% for cat in site.categories %}
         {% for catDat in site.data.categories %}
@@ -27,7 +27,7 @@ css: ["index.css"]
     </div>
   </div>
 
-  <h2 class="h2-title">Danh sách các notes</h2>
+  <h2 class="h2-title">List of notes</h2>
 
   <div class="thi-columns">
     <ul class="tag-post">
@@ -84,7 +84,7 @@ css: ["index.css"]
   </div>
 
   <div class="tag-div">
-    <h2 class="h2-title">Các tags</h2>
+    <h2 class="h2-title">Tags</h2>
     <div class="tag-list">
       {% for tag in site.tags %}
         {% capture test %}{{tag[0] | slice: 0}}{% endcapture %}
