@@ -1,5 +1,5 @@
 ---
-title: Python note 1
+title: Python 1
 categories: it
 tags: [python,coding]
 maths: 1
@@ -8,9 +8,9 @@ date: 2018-08-21
 datacamp: 1
 ---
 
-{% include toc.html %}
+Bài này giống như chương Introduction, những thứ cơ bản nhất về Python và chung nhất. Có những [note khác]({{site.baseurl}}/tags#python) dành cho từng mục đích sử dụng python/thư viện python khác nhau.
 
-<div style="margin-top: -1rem;"></div>
+{% include toc.html %}
 
 
 ## Tài liệu
