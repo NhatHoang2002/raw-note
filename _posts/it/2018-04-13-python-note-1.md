@@ -157,8 +157,8 @@ Xem [note này]({{site.baseurl}}/python-exercism-1).
 - `print "Hello"` là của python 2, còn python 3 bắt buộc là `print("Hello")` ([cf](https://docs.python.org/3/whatsnew/3.0.html))
 - `print()` print something, `read()` wait for user input something
 - `'{} bạn'.format{'Chào'}` returns `'Chào bạn'`
-- `Chào bạn {} và {}`.format('a', 'b') returns `'Chào bạn a và b'`
-- `Chào bạn {2} và {1}`.format('a', 'b') returns `'Chào bạn b và a'`
+- `"Chào bạn {} và {}".format('a', 'b')` returns `'Chào bạn a và b'`
+- `"Chào bạn {2} và {1}".format('a', 'b')` returns `'Chào bạn b và a'`
 - Từ Python 3.6, có thể dùng `f'Chào {a}'` where `a = 'bạn'`
  
 
@@ -261,7 +261,7 @@ Xem [note này]({{site.baseurl}}/python-exercism-1).
 
 - **Không có switch case**, chỉ cần dùng `if elif else`
 - `False` = `None`, `''`, `[]`, `{}`, '()'
-- nonemty $\Rightarrow$ `True`
+- nonempty $\Rightarrow$ `True`
 
 ### Iteration
 
@@ -273,7 +273,6 @@ for num in nums:
 # while
 while condition:
     commands
-# use `break` to break
 ~~~
 
 - `break`: stop loop
@@ -288,7 +287,7 @@ while condition:
 
 ### Chung, không phân biệt
 
-- index start in python 0 (mảng, table,...)
+- index start in python `0` (mảng, table,...)
 - Chú ý `x[1:3]` là lấy thằng thứ 2 và thứ 3 chứ ko có lấy thằng thứ 4. Kiểu nó sẽ lấy $1\le i < 3$.
 	Lý do là bởi đảm bảo `x[:3] + x[3:] = x`
 - `"abc" + "xyz" = "abcxyz"`
@@ -371,7 +370,6 @@ while condition:
 	('Math', 'Art')
 	{'name': 'Thi', 'age': 28}
 	~~~
-- 
 
 
 ## Package
