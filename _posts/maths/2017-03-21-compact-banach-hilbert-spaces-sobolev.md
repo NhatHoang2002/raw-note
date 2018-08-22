@@ -3,7 +3,7 @@ title: Compact, Banach, Hibert, Sobolev spaces
 categories:
   - maths
 toc: 1
-tags: ["compact","banach","hibert","sobolev"]
+tags: [analysis]
 maths: 1
 ---
 

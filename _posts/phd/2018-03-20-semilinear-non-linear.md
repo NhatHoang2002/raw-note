@@ -2,7 +2,7 @@
 layout: post
 title: Semilinear, nonlinear problem
 categories: maths
-tags: ["semilinear","non linear"]
+tags: [analysis,numerical analysis]
 maths: 1
 toc: 1
 ---

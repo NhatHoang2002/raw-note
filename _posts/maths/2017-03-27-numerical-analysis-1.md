@@ -1,7 +1,7 @@
 ---
 title: Numerical analysis 1
 categories: maths
-tags: ["numerical analysis","solver","eigenvalue & eigenvector","boundary condition","shape function","quadrature","matrix","preconditioner","condition number","mesh","scheme","level set method","discontinuous","galerkin method","finite element method","conforming","nxfem","nitsche method","interface","newton method","streamline diffusion method","a priori","posteriori"]
+tags: [numerical analysis,analysis]
 maths: 1
 date: 2018-01-02
 toc: 1

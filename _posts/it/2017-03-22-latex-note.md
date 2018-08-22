@@ -1,40 +1,25 @@
 ---
 title: LaTeX notes
 categories: it
-tags: ["latex"]
+tags: [latex, matlab]
 maths: 1
 toc: 1
 date: 2018-03-31
 ---
 
-**Thêm space môi trường align**
+## Error
 
-~~~ latex
-\begin{align}
-a+b=c \\[10pt]
-x+y=z
-\end{align}
-~~~
+- `Underfull \hbox (badness 10000) message` (xem thêm [ở đây](https://tex.stackexchange.com/questions/199635/underfull-hbox-badness-10000-message)): Cách giải quyết đơn giản chỉ cần xóa đi `\\` ở cuối mỗi hàng được báo lỗi.
 
----
+## Maths
 
-Bỏ in nghiêng italic chỉ một cụm từ trong môi trường theorem latex: dùng `\normalfont` trước cái muốn bỏ.
+- Gói lệnh cơ bản
 
----
-
-*Underfull \hbox (badness 10000) message* (xem thêm [ở đây](https://tex.stackexchange.com/questions/199635/underfull-hbox-badness-10000-message))
-
-Cách giải quyết đơn giản chỉ cần xóa đi `\\` ở cuối mỗi hàng được báo lỗi.
-
----
-
-**Visual studio bibtex**: Có thể chạy lỗi (đoán là sai đường dẫn).
-
-- Mở file bằng texmaker (lưu ý là texmaker ko tự load các thay đổi trên VSC, chỉ có VSC mới load thay đổi trên texmaker)
-- Chạy lualatex > biblatex (thật ra là biber)
-- Quay lại VSC và chạy bình thường (Ctrl+F1)
-
----
+	~~~ latex
+	\usepackage{amsmath}
+	\usepackage{amsfonts}
+	\usepackage{amssymb}
+	~~~
 
 - Phân số đặc biệt: `\sfrac{1}{2}` , phải dùng gói `xfrac`.
 - $\Vert \cdot \Vert$: `\Vert \Vert`
@@ -46,10 +31,9 @@ Cách giải quyết đơn giản chỉ cần xóa đi `\\` ở cuối mỗi hà
 - [[]]: `\llbracket \rrbracket`
 - $\ell$: `\ell`
 - Chữ Holder: `H{\"o}lder`
+- Bỏ in nghiêng italic chỉ một cụm từ trong môi trường theorem latex: dùng `\normalfont` trước cái muốn bỏ.
 
----
-
-**Double brace bracket \{\{\}\}**
+### Double bracket
 
 ~~~ latex
 \usepackage{xparse}
@@ -85,9 +69,7 @@ Cách giải quyết đơn giản chỉ cần xóa đi `\\` ở cuối mỗi hà
 
 Using: `\doubleaccolade{}`
 
----
-
-**Triple norm**
+### Triple norm
 
 ~~~ latex
 \usepackage{mathtools}
@@ -99,30 +81,30 @@ Using: `\doubleaccolade{}`
 
 Using: `\vvvert{}`
 
----
 
-Điều chỉnh khoảng cách trước/sau/trong `align`
+### Spacing in align
 
-~~~ latex
-\setlength{\abovedisplayskip}{0pt} % nếu trước [align] là khoảng dài
-\setlength{\belowdisplayskip}{0pt} % nếu sau [align] là khoảng dài
-\setlength{\abovedisplayshortskip}{0pt} % nếu trước [align] là khoảng ngắn
-\setlength{\belowdisplayshortskip}{0pt} % nếu sau [align] là khoảng ngắn
+- Thêmn space
 
-\setlength{\jot}{0pt} % nếu em muốn tăng khoảng cách giữa các dòng bên trong align
-~~~
+	~~~ latex
+	\begin{align}
+	a+b=c \\[10pt]
+	x+y=z
+	\end{align}
+	~~~
 
----
+- Điều chỉnh khoảng cách trước/sau/trong `align`
 
-Gói lệnh cơ bản phải có
+	~~~ latex
+	\setlength{\abovedisplayskip}{0pt} % nếu trước [align] là khoảng dài
+	\setlength{\belowdisplayskip}{0pt} % nếu sau [align] là khoảng dài
+	\setlength{\abovedisplayshortskip}{0pt} % nếu trước [align] là khoảng ngắn
+	\setlength{\belowdisplayshortskip}{0pt} % nếu sau [align] là khoảng ngắn
+	
+	\setlength{\jot}{0pt} % nếu em muốn tăng khoảng cách giữa các dòng bên trong align
+	~~~
 
-~~~ latex
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
-~~~
-
----
+### Định nghĩa định lý
 
 Định nghĩa, định lý
 
@@ -136,7 +118,161 @@ Gói lệnh cơ bản phải có
 \newtheorem{proposition}{Proposition}
 ~~~
 
-**matlab2latex (hình matlab vào latex)** ([tham khảo thêm](https://tex.stackexchange.com/questions/329308/how-to-convert-a-matlab-figure-to-a-latex-code-not-to-a-graphic))
+## Chia cột
+
+- Có hai cách, [cách 1](https://www.sharelatex.com/learn/Multiple_columns) tự động hoàn toàn
+
+	~~~ latex
+	\usepackage{multicol}
+	\setlength{\columnseprule}{1pt}
+	\usepackage{color}
+	\def\columnseprulecolor{\color{blue}}
+	~~~
+	
+	~~~ latex
+	\begin{multicols}{3}
+	[
+	Những thứ ngoài cột
+	]
+	inside cột
+	\columnbreak
+	inside cột
+	\end{multicols}
+	~~~
+
+
+- Cách 2 chỉnh được độ rộng các cột, `\usepackage{parcolumns}`
+
+	~~~ latex
+	\begin{parcolumns}[colwidths={1=.48\textwidth},rulebetween=false]{2}
+	  \colchunk{ %left
+	    content column 1
+	  }
+	  \colchunk{ % right
+	    content column 2
+	  }
+	\end{parcolumns}
+	~~~
+
+## Inset code
+
+- Settings
+	~~~ latex
+	\usepackage{listings} %insert codes
+	\usepackage{color}
+	\definecolor{dkgreen}{rgb}{0,0.6,0}
+	\definecolor{gray}{rgb}{0.5,0.5,0.5}
+	\definecolor{mauve}{rgb}{0.58,0,0.82}
+	\lstset{frame=tb,
+	  language=C++,
+	  aboveskip=3mm,
+	  belowskip=3mm,
+	  showstringspaces=false,
+	  columns=flexible,
+	  basicstyle={\small\ttfamily},
+	  numbers=none,
+	  numberstyle=\tiny\color{gray},
+	  keywordstyle=\color{blue},
+	  commentstyle=\color{dkgreen},
+	  stringstyle=\color{mauve},
+	  breaklines=true,
+	  breakatwhitespace=true,
+	  tabsize=3
+	}
+	~~~
+
+- Có các ngôn ngữ
+
+	~~~
+	C++, Java, HTML, Fortran, Gnuplot, Matlab, Pascal, PHP, PSTricks, R, Python, Scilab, TeX, XML, Mathematica, SQL, VBScript.
+	~~~
+
+- Using
+
+	~~~ latex
+	\code{abc} % without listings
+	
+	\lstinline{abc} % inline
+	
+	\begin{lstlisting}
+	abc
+	\end{lstlisting}
+	~~~
+
+
+## Table Fugures
+
+### Change caption's position of table in latex
+
+- If you want caption appears above the table (but it's in center), put these lines before `\begin{document}`
+
+	``` latex
+	\usepackage{floatrow}
+	\floatsetup[table]{capposition=top}
+	```
+
+- If you want caption locates above and lest, use the following lines instead (also before `\begin{document}`)
+
+	``` latex
+	\usepackage{caption}
+	\captionsetup[table]{
+	  position=above,
+	  justification=raggedright,
+	  %labelsep=newline, % <<< label and text on different lines
+	  singlelinecheck=false
+	}
+	```
+
+- NOTE that, you need to put `\label{}` before `\tabular`, for example
+
+	``` latex
+	\begin{table}[!htp]
+	    \caption{...}
+	    \label{bang1}
+		\centering
+	    \begin{tabular}{|l|c|r|}
+	    table's content
+	    \end{tabular}
+	\end{table
+	```
+
+### Continuous numbering (without per chapter) for figures and tables
+
+- Use below before `\begin{document}`
+
+	``` latex
+	\usepackage{chngcntr}
+	\counterwithout{figure}{chapter} % for figures
+	\counterwithout{table}{chapter} % for tables
+	```
+- If you want to number per-section figure in the `article` class
+
+	``` latex
+	\usepackage{chngcntr}
+	\counterwithin{figure}{section}
+	```
+- For equations (no matter what you use `\begin{equation}` or `\begin{align}`), just use
+
+	``` latex
+	\usepackage{chngcntr}
+	\counterwithin{equation}{chapter}
+	```
+- Keep in mind that, you can number the equation per section in the `article` class the same way you do with figure or table.
+
+- You can also use it for `footnote`, theorem environment also.
+- Especially, you can apply this trick to the numbering of the chapter.
+
+	``` latex
+	\usepackage{chngcntr}
+	\counterwithout{section}{chapter}
+	\counterwithin{chapter}{part}
+	```
+- Just play with them and read more on the [package document](http://distrib-coffee.ipsl.jussieu.fr/pub/mirrors/ctan/macros/latex/contrib/chngcntr/chngcntr.pdf).
+
+
+## Hình matlab vào latex
+
+- [tham khảo thêm](https://tex.stackexchange.com/questions/329308/how-to-convert-a-matlab-figure-to-a-latex-code-not-to-a-graphic)
 
 1. Download file [tại đây](https://fr.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz)
 2. Giải nén và lưu tại một thư mục nào đó (sau khi giải nén thì chọn thư mục **src**)
@@ -144,242 +280,79 @@ Gói lệnh cơ bản phải có
 4. Mỗi lần chạy xong code matlab và vẽ được hình rồi thì chạy lệnh `matlab2tikz('aaa.tex','standalone',true)` thì nó sẽ lưu **cửa sổ hình cuối cùng** vào file tex tên **aaa.tex**. Option `'standalone',true` là để xóa hết khoảng trắng trong hình.
 5. Để sử dụng, thêm `% !TEX program = lualatex` vào đầu file .tex tạo thành và biên dịch bình thường bằgn Visual Studio code hoặc không cần để thêm dòng đó nhưng phải biên dịch bằng Lualatex.
 6. Nếu bạn **không dùng standalone** thì cần tạo thêm một file .tex khác có nội dung như sau
-~~~ latex
-% !TEX program = lualatex
-\documentclass{article}
 
-\usepackage{pgfplots}
-\pgfplotsset{compat=newest}
-%% the following commands are sometimes needed
-\usetikzlibrary{plotmarks}
-\usepackage{grffile}
-\usepackage{amsmath}
-%% you may also want the following commands
-%\pgfplotsset{plot coordinates/math parser=false}
-%\newlength\figureheight
-%\newlength\figurewidth
+	~~~ latex
+	% !TEX program = lualatex
+	\documentclass{article}
+	
+	\usepackage{pgfplots}
+	\pgfplotsset{compat=newest}
+	%% the following commands are sometimes needed
+	\usetikzlibrary{plotmarks}
+	\usepackage{grffile}
+	\usepackage{amsmath}
+	%% you may also want the following commands
+	%\pgfplotsset{plot coordinates/math parser=false}
+	%\newlength\figureheight
+	%\newlength\figurewidth
+	
+	\begin{document}
+	\input{aaa.tex}
+	\end{document}
+	~~~
 
-\begin{document}
-\input{aaa.tex}
-\end{document}
-~~~
+- Nếu gặp lỗi *TeX capacity exceeded, sorry* phát sinh, có thể tham khảo [cái này](https://github.com/matlab2tikz/matlab2tikz/wiki/TeX-capacity-exceeded,-sorry). Đã thử 1 lần thành công, biên dịch bằng **lualatex**.
 
-Nếu gặp lỗi *TeX capacity exceeded, sorry* phát sinh, có thể tham khảo [cái này](https://github.com/matlab2tikz/matlab2tikz/wiki/TeX-capacity-exceeded,-sorry). Đã thử 1 lần thành công, biên dịch bằng **lualatex**.
 
----
+## Bibtex
 
-**Chia cột**
+**Visual studio bibtex**: Có thể chạy lỗi (đoán là sai đường dẫn).
 
-Có hai cách, [cách 1](https://www.sharelatex.com/learn/Multiple_columns) tự động hoàn toàn
-
-~~~ latex
-\usepackage{multicol}
-\setlength{\columnseprule}{1pt}
-\usepackage{color}
-\def\columnseprulecolor{\color{blue}}
-~~~
-
-~~~ latex
-\begin{multicols}{3}
-[
-Những thứ ngoài cột
-]
-inside cột
-\columnbreak
-inside cột
-\end{multicols}
-~~~
-
----
-
-Cách 2 chỉnh được độ rộng các cột, `\usepackage{parcolumns}`
-
-~~~ latex
-\begin{parcolumns}[colwidths={1=.48\textwidth},rulebetween=false]{2}
-  \colchunk{ %left
-    content column 1
-  }
-  \colchunk{ % right
-    content column 2
-  }
-\end{parcolumns}
-~~~
-
----
-
-**Inser code**
-
-~~~ latex
-\usepackage{listings} %insert codes
-\usepackage{color}
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{mauve}{rgb}{0.58,0,0.82}
-\lstset{frame=tb,
-  language=C++,
-  aboveskip=3mm,
-  belowskip=3mm,
-  showstringspaces=false,
-  columns=flexible,
-  basicstyle={\small\ttfamily},
-  numbers=none,
-  numberstyle=\tiny\color{gray},
-  keywordstyle=\color{blue},
-  commentstyle=\color{dkgreen},
-  stringstyle=\color{mauve},
-  breaklines=true,
-  breakatwhitespace=true,
-  tabsize=3
-}
-~~~
-
-Có các ngôn ngữ
-
-~~~
-C++, Java, HTML, Fortran, Gnuplot, Matlab, Pascal, PHP, PSTricks, R, Python, Scilab, TeX, XML, Mathematica, SQL, VBScript.
-~~~
-
-Using
-
-~~~ matlab
-\code{abc} % without listings
-
-\lstinline{abc} % inline
-
-\begin{lstlisting}
-abc
-\end{lstlisting}
-~~~
-
----
-
-**Biber in Latex to make bibliography**
+- Mở file bằng texmaker (lưu ý là texmaker ko tự load các thay đổi trên VSC, chỉ có VSC mới load thay đổi trên texmaker)
+- Chạy lualatex > biblatex (thật ra là biber)
+- Quay lại VSC và chạy bình thường (Ctrl+F1)
 
 Before doing that, you need to change bibtex.exe into biber.exe before compiling. 
 
 - In **texmaker** : **Options** > **Configure texmaker** > **Commands** > **Bib(la)tex** > change `bibtex` to `biber`
 - In **WinEdt** : **Options** > **Execution modes** > **Bibtex** > Executable field, fill the path to **biber.exe** (usually, it locates at `C:\texlive\2016\bib\win32\biber.exe`)
 
-``` latex
-\usepackage[
-    backend=biber,
-    style=authoryear,
-    natbib=true,
-    url=true,
-    doi=true,
-    eprint=false
-]{biblatex}
+	``` latex
+	\usepackage[
+	    backend=biber,
+	    style=authoryear,
+	    natbib=true,
+	    url=true,
+	    doi=true,
+	    eprint=false
+	]{biblatex}
+	
+	\addbibresource{myref.bib}
+	
+	\printbibliography
+	```
 
-\addbibresource{myref.bib}
+- Compile with `PDFLarex` > `Bibtex` > `PDFLatex` > `View PDF`
+- If you want your bibliography showed in the same page with other fields on your document, use following lines
 
-\printbibliography
-```
+	``` latex
+	\begingroup
+	\let\clearpage\relax
+	\printbibliography
+	\endgroup
+	```
 
-Compile with `PDFLarex` > `Bibtex` > `PDFLatex` > `View PDF`
+- **Add link into bibtex reference**: Use biber/bibtex to make a bibliography as usual, just add this line before `\begin{codument}`
 
-If you want your bibliography showed in the same page with other fields on your document, use following lines
+	``` latex
+	\usepackage[backref=true]{hyperref}
+	```
 
-``` latex
-\begingroup
-\let\clearpage\relax
-\printbibliography
-\endgroup
-```
+- Thêm thông tin kèm cite
 
----
-
-**Add link into bibtex reference**
-
-Use biber/bibtex to make a bibliography as usual, just add this line before `\begin{codument}`
-
-``` latex
-\usepackage[backref=true]{hyperref}
-```
-
----
-
-Thêm thông tin kèm cite
-
-~~~ latex
-\cite[Chapter~3]{somebook}
-~~~
-
----
-
-**Change caption's position of table in latex**
-
-If you want caption appears above the table (but it's in center), put these lines before `\begin{document}`
-
-``` latex
-\usepackage{floatrow}
-\floatsetup[table]{capposition=top}
-```
-
-If you want caption locates above and lest, use the following lines instead (also before `\begin{document}`)
-
-``` latex
-\usepackage{caption}
-\captionsetup[table]{
-  position=above,
-  justification=raggedright,
-  %labelsep=newline, % <<< label and text on different lines
-  singlelinecheck=false
-}
-```
-
-NOTE that, you need to put `\label{}` before `\tabular`, for example
-
-``` latex
-\begin{table}[!htp]
-    \caption{...}
-    \label{bang1}
-	\centering
-    \begin{tabular}{|l|c|r|}
-    table's content
-    \end{tabular}
-\end{table
-```
-
----
-
-**Continuous numbering (without per chapter) for figures and tables**
-
-Use below before `\begin{document}`
-
-``` latex
-\usepackage{chngcntr}
-\counterwithout{figure}{chapter} % for figures
-\counterwithout{table}{chapter} % for tables
-```
-
-If you want to number per-section figure in the `article` class
-
-``` latex
-\usepackage{chngcntr}
-\counterwithin{figure}{section}
-```
-
-For equations (no matter what you use `\begin{equation}` or `\begin{align}`), just use
-
-``` latex
-\usepackage{chngcntr}
-\counterwithin{equation}{chapter}
-```
-
-Keep in mind that, you can number the equation per section in the `article` class the same way you do with figure or table.
-
-You can also use it for `footnote`, theorem environment also.
-
-Especially, you can apply this trick to the numbering of the chapter.
-
-``` latex
-\usepackage{chngcntr}
-\counterwithout{section}{chapter}
-\counterwithin{chapter}{part}
-```
-
-Just play with them and read more on the [package document](http://distrib-coffee.ipsl.jussieu.fr/pub/mirrors/ctan/macros/latex/contrib/chngcntr/chngcntr.pdf).
-
+	~~~ latex
+	\cite[Chapter~3]{somebook}
+	~~~
 
 ## Tikz & vẽ vời
 
@@ -478,9 +451,7 @@ Vẽ **hệ trục tọa độ (axes)**
     \draw (1pt,\y cm) -- (-1pt,\y cm) node[anchor=east] {$\y$};
 ```
 
----
-
-**Matlab và tikz**
+### Matlab và tikz
 
 Sau khi vẽ bằng matlab và xuất ra file tex.
 

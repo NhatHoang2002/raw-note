@@ -1,9 +1,7 @@
 ---
 title: Coding note 1
-categories:
-  - maths
-  - phd
-  - it
+categories: [phd,maths,it]
+tags: [phd,coding,matlab,numerical analysis]
 maths: 1
 toc: 1
 date: 2018-07-26

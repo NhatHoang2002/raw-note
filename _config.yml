@@ -1,39 +1,32 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
 title: Notes of Thi
 description: You cannot remember everything.
 baseurl: ""
 url: "http://note.dinhanhthi.com"
-permalink: /:title
 repository: dinhanhthi/self-note
+
+invisible: 1 # remove '#' if you want your site is invisible to search engine
 paginate: 28
 
+banner: "/assets/res/banner.png" # site banner (load when someone share your page url)
+favicon: "/assets/res/favicon.png" # site's favicon (icon left side of your page)
+
 # MatJek specific configurations
-github_profile: "https://note.dinhanhthi.com"
-user: "Dinh Anh Thi"
-user_email: "dinhanhthimail@gmail.com"
-contact_url: "https://dinhanhthi.com"
+user: 
+  name: "Dinh Anh Thi"
+  email: "dinhanhthimail@gmail.com"
+  website: "dinhanhthi.com"
+  avatar: "/assets/res/user.png"
+  github: "dinhanhthi"
 google_tracking_id: ""
 google_site_verification: ""
-disqus_shortname: 
+disqus_shortname: this-site
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
+permalink: /:title
 
-gems:
+plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-seo-tag

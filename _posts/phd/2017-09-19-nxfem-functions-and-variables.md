@@ -1,9 +1,7 @@
 ---
 title: NXFEM - functions and variables
-categories:
-  - maths 
-  - it 
-  - phd
+categories: [phd,maths,it]
+tags: [phd,numerical analysis,coding]
 maths: 1
 ---
 
