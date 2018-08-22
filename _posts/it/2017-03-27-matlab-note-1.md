@@ -6,7 +6,7 @@ categories:
 tags: ["matlab"]
 maths: 1
 toc: 1
-date: 2018-07-19
+date: 2018-08-05
 ---
 
 {% include toc.html %}
@@ -82,29 +82,89 @@ y = {1, 'a', x}; % cell array storing a number, a character, and 1x3 matrix
 
 Có thể đọc [bài viết rất dễ hiểu này](http://www.matlabtips.com/variable-scope-memory-spaces-in-matlab/).
 
+## Parallel
+
+- Không phải lúc nào dùng `parfor` cũng tốt hơn `for`, ví dụ như ở [trang doc này](https://fr.mathworks.com/help/distcomp/decide-when-to-use-parfor.html#bvnz955). Lý do là bởi nó còn có bước chia sẻ dữ liệu giữa các worker, kiểu như nó chia việc cho mỗi đứa xong nó thu hoạch, thời gian thu hoạch "dominated" thời gian chạy vòng for nên sẽ lâu hơn.
+  - Có thể dùng `ticBytes` và `tocBytes` để đo bytes transferred within parallel pool
+     ~~~ matlab
+     a = 0;
+     b = rand(100);
+     ticBytes(gcp);
+     parfor i = 1:100
+     a = a + sum(b(:, i));
+     end
+     tocBytes(gcp)
+     ~~~
+
+- Các loop phải riêng rẻ với nhau.
+
+- `parfor`-loop variables must be consecutive increasing integers (khắc phục [xem ở đây](https://fr.mathworks.com/help/distcomp/troubleshoot-variables-in-parfor-loops.html))
+
+  ~~~ matlab
+  parfor i = 0:0.2:1      % not integers
+  parfor j = 1:2:11       % not consecutive
+  parfor k = 12:-1:1      % not increasing
+  ~~~
+
+- Không thể dùng parloop bên trong 1 parloop khác.
+
+  - You can also use a function that uses `parfor` and embed it in a `parfor`-loop.  ([ref](https://fr.mathworks.com/help/distcomp/nested-parfor-loops-and-for-loops.html))
+  - Nested `parfor`-loops generally give you no computational benefit. 
+
+- Parallel processing incurs overhead. Generally, you should run the outer loop in parallel, because overhead only occurs once.
+
+- Nên dùng `for` bên trong `parfor` thay vì ngược lại. Không được dùng function call làm upper limit cho `for` bên trong `parfor`.
+
+  ~~~ matlab
+  A = zeros(100, 200);
+  parfor i = 1:size(A, 1)
+      for j = 1:size(A, 2)
+      	A(i, j) = i + j;
+      end
+  end
+  ~~~
+
+  Thêm vài cái lưu ý khác có thể [xem ở đây](https://fr.mathworks.com/help/distcomp/nested-parfor-loops-and-for-loops.html#bvjfi19-1).
+
+- Nếu muốn dùng `parfor` với nested function thì phải dùng function handle và `feval`
+
+  ~~~ matlab
+  function A = pfeg
+      function out = nfcn(in)
+      out = 1 + in;
+      end
+  
+  fcn = @nfcn;
+  
+  parfor idx = 1:10
+  	A(idx) = feval(fcn, idx); 
+  end
+  
+  end
+  ~~~
+
+- The body of a `parfor`-loop cannot contain [`break`](https://fr.mathworks.com/help/matlab/ref/break.html) or [`return`](https://fr.mathworks.com/help/matlab/ref/return.html) statements. Consider [`parfeval`](https://fr.mathworks.com/help/distcomp/parfeval.html) or [`parfevalOnAll`](https://fr.mathworks.com/help/distcomp/parfevalonall.html) instead
 
 ## Operators
+
+### Arithmetic
 
 ~~~ matlab
 floor(23/5); % returns 4
 mod(23,5); % returns 3
 ~~~
 
-### logical
+### Logical
 
 - or : `a|b` hoặc `or(a,b)`
+
 - and: `a&b` hoặc `and(a,b)`
 
-~~~ matlab
-in1 = find((eGP(5,:)==1)|(eGP(5,:)==3))
-~~~
+    ~~~ matlab
+    in1 = find((eGP(5,:)==1)|(eGP(5,:)==3))
+    ~~~
 
-### Logical in if, for statement
-
-- and : `&&`
-- or : `||`
-- equal: `==`
-- difference: `~=`
+- Logical in if, for statement: and : `&&`,  `||`,  `==`,  `~=`
 
 
 ## Condition
@@ -151,115 +211,101 @@ end
 
 ## Matrix and array
 
-`end` is used as in an indexing expression
+- `end` is used as in an indexing expression
 
-~~~ matlab
-B = A(end,2:end); % hàng cuối của i, cột thứ 2 tới cuối
-~~~
+    ~~~ matlab
+    B = A(end,2:end); % hàng cuối của i, cột thứ 2 tới cuối
+    ~~~
 
----
+- create a matrix
 
-create a matrix
+    ~~~ matlab
+    A=[ [1,5];[2,3] ]
+    X = [1 0 2; 0 1 1; 0 0 4]
+    ~~~
 
-~~~ matlab
-A=[ [1,5];[2,3] ]
-X = [1 0 2; 0 1 1; 0 0 4]
-~~~
+- vector
 
----
+    ~~~ matlab
+    thi = 0:0.5:10; % start:step:end
+    thi2 = [1;thi(1:end)]; % insert 1 into left of thi
+    ~~~
 
-vector
+- Vector/array start with index 1
 
-~~~ matlab
-thi = 0:0.5:10; % start:step:end
-thi2 = [1;thi(1:end)]; % insert 1 into left of thi
-~~~
+    ~~~ matlab
+    thi(0); % error
+    thi(1); % first element
 
-Vector/array start with index 1.
+    y = linspace(x1,x2) %returns a row vector of 100 evenly spaced points between x1 and x2.
+    y = linspace(x1,x2,n) % with n points
+    ~~~
 
-~~~ matlab
-thi(0); % error
-thi(1); % first element
-~~~
+- rand
 
-~~~ matlab
-y = linspace(x1,x2) %returns a row vector of 100 evenly spaced points between x1 and x2.
-y = linspace(x1,x2,n) % with n points
-~~~
+    ~~~ matlab
+    rand(2,4); % tạo matrix 2x3 với hệ số random
+    rand(2,4,3); % tạo matrix 2x3x4
+    rand(2); % tạo matrix 2x2 
+    ~~~
 
----
+- sparse matrix
 
-rand
+    ~~~ matlab
+    A = sparse(i,j,s,m,n) % i,j,s have the same lenght, mxn matrix
+    % i,j are the indices of elements which are different from 0, s is their value
+    [i,j,s] = A % inverse of sparse function
+    %% notice that, cái trên sx theo (j,i) chứ ko phải (i,j)
 
-~~~ matlab
-rand(2,4); % tạo matrix 2x3 với hệ số random
-rand(2,4,3); % tạo matrix 2x3x4
-rand(2); % tạo matrix 2x2 
-~~~
+    false(m,n) % create a mxn matrix whose all elements are false
+    ~~~
 
----
+- If wanna create a `i,j,s` vector to store a sparse matrix for FEM (**Finite Element Method**), should use with 9 element like that
 
-sparse matrix
+    ~~~ matlab
+    NT = size(elements,1);
+    i = zeros(9*NT,1); 
+    % the same for j and s
+    ~~~
 
-~~~ matlab
-A = sparse(i,j,s,m,n) % i,j,s have the same lenght, mxn matrix
-% i,j are the indices of elements which are different from 0, s is their value
-[i,j,s] = A % inverse of sparse function
-%% notice that, cái trên sx theo (j,i) chứ ko phải (i,j)
-~~~
+	It's because each vertex of the triangle has to link to itself and other 2 vertices (in total, it's 3), then $3 \times 3 = 9$.
 
-~~~ matlab
-false(m,n) % create a mxn matrix whose all elements are false
-~~~
+	Note that, if there is the same `i,j`, the `s` will be the sum of themm for example
 
-If wanna create a `i,j,s` vector to store a sparse matrix for FEM (**Finite Element Method**), should use with 9 element like that
+    ~~~ matlab
+    i=[1,1,2,1];
+    j=[1,2,2,2];
+    s=[1,3,6,2];
+    A=sparse(i,j,s,2,2);
+    % then A will be
+    % (1,1)		1
+    % (1,2)		5 % = 3+2
+    % (2,2)		6 
+    ~~~
 
-~~~ matlab
-NT = size(elements,1);
-i = zeros(9*NT,1); 
-% the same for j and s
-~~~
+	Get triplets from sparse matrix, it's also true for full matrix.
 
-It's because each vertex of the triangle has to link to itself and other 2 vertices (in total, it's 3), then $3 \times 3 = 9$.
+    ~~~ matlab
+    [i,j,v] = find(A)
+    [m,n] = size(S)
 
-Note that, if there is the same `i,j`, the `s` will be the sum of themm for example
+    i=[1 2 3 4]
+    j=[1 2 3 4]
+    v=[1 2 3 4]
+    A=sparse(i,j,v)
+    [ii,jj,vv]=find(A) % ii,jj,vv are i',j',v'
+    B=sparse(ii,jj,vv) % B is the same with A
+    ~~~
 
-~~~ matlab
-i=[1,1,2,1];
-j=[1,2,2,2];
-s=[1,3,6,2];
-A=sparse(i,j,s,2,2);
-% then A will be
-% (1,1)		1
-% (1,2)		5 % = 3+2
-% (2,2)		6 
-~~~
+- accumarray
 
-Get triplets from sparse matrix, it's also true for full matrix.
-
-~~~ matlab
-[i,j,v] = find(A)
-[m,n] = size(S)
-
-i=[1 2 3 4]
-j=[1 2 3 4]
-v=[1 2 3 4]
-A=sparse(i,j,v)
-[ii,jj,vv]=find(A) % ii,jj,vv are i',j',v'
-B=sparse(ii,jj,vv) % B is the same with A
-~~~
-
----
-
-accumarray
-
-~~~ matlab
-subs = [1; 3; 4; 3; 4]; % must be column-array
-val = [101 102 103 104 105]; % column or row array are accepted
-A = accumarray(subs,val); %A = [ 101;0;206;208]
-%% Since the second and fourth elements of subs are equal to 3, A(3) is the sum of the second and fourth elements of val, that is, A(3) = 102 + 104 = 206. Also, A(2) = 0 because subs does not contain the value 2. Since subs is a vector, the output, A, is also a vector.
-max(subs,[],1); % The length of A
-~~~
+    ~~~ matlab
+    subs = [1; 3; 4; 3; 4]; % must be column-array
+    val = [101 102 103 104 105]; % column or row array are accepted
+    A = accumarray(subs,val); %A = [ 101;0;206;208]
+    %% Since the second and fourth elements of subs are equal to 3, A(3) is the sum of the second and fourth elements of val, that is, A(3) = 102 + 104 = 206. Also, A(2) = 0 because subs does not contain the value 2. Since subs is a vector, the output, A, is also a vector.
+    max(subs,[],1); % The length of A
+    ~~~
 
 ### condition number
 

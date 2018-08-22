@@ -24,6 +24,8 @@ Trong note này sẽ bao gồm luôn mục **coding** thay cho note [coding-note
   $$
 
 
+
+
 ### Signed distance function
 
 - Tại sao nếu là đường tròn thì $\phi$ có dạng là 
@@ -57,7 +59,6 @@ Trong note này sẽ bao gồm luôn mục **coding** thay cho note [coding-note
 - File **main_levelset_simple** dùng để test.
   - Dùng *model_levelset_vortex* thì ra **đẹp** nếu **không dùng SUPG** và **không dùng FMM** $\Rightarrow$ Kỳ lạ!!!
 - Giải tìm trên standard FEM chứ không phải $V_h^{\Gamma}$ 
-- Viết một cái tổng quát `getMEls` và `getMHls` luôn cho bất kỳ velocity nào + bất kỳ $\delta$ nào!
 - **Note lý thuyết** (variation form) xem file *hw_levelset_13718.pdf*
 
 
@@ -187,11 +188,34 @@ Quyết định dùng toolbox của Pascal Frey. Ngoài ra còn có các toolbox
 
   Trong đó, $SD$ là scale factor, $tol/h$ is introduced to avoid dividing by a number close to zero (Loch thesis p.46)
 
+- Page 203 Arnold Book, có nói nếu velocity u phụ thuộc t thì biểu thức SUPG khác cái mà mình áp dụng hổm rài, cần coi kỹ cái này! $\Rightarrow$ **coi (7.17)**
+
+- Tuy nhiên cái ví dụ trong bài bào của lại có $\mathbf{u}=0$ và theo Arnold (p.221), ổng nói rằng *Due to $u=0$ on $\partial\Omega$ we do not need boundary conditions for $\phi$.*
+
+- 
+
+
+
+### Boundary condition
+
+- Remark 7.5.1 Arnold Book có nói về cách áp dụng velo $u\ne 0$ trên biên. 
+
+- Biên trong sách toàn là 
+
+  $$
+  \partial\Omega_{in}:= \{ x\in \partial \Omega: u\cdot n<0 \}
+  $$
+
+  Trong đó $n$ là **outward unit normal vector** to $\partial\Omega$ (cái này nói ở trang 219)
+
+- Lưu ý là nếu $u\in t$ thì ta phải xét $V_h(\phi_D)$ như trang 202.
+
 
 
 ### Error
 
 - As the objective of the level set equation is to capture the moving interface, the error between the exact interface $\Gamma$ and the approximate interface $\Gamma\_h$ , i.e. the difference between the zero level of the exact solution φ of the level set equation and the zero level of the discretized level set function $\phi\_h$ , is of major interest. This error can be measured in the L2-norm by integrating the squared distance function $d: \Omega \to \mathbb{R}$} to the interface $\Gamma$ over $\Gamma\_h$ ... page 13 Eva Loch thesis.
+- Trang 219 Arnold Book có nói về error và bậc có được, có thể áp dụng để check xem cái của mình ra tốt không.
 
 
 
