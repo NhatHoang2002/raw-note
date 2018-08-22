@@ -4,7 +4,8 @@ categories: it
 tags: [python,exercism,coding]
 maths: 1
 toc: 1
-date: 2018-08-18
+date: 2018-08-21
+comment: 1
 ---
 
 {% include toc.html %}
@@ -252,5 +253,35 @@ def to_rna(dna):
 
 
 
-### Sgf Parsing
+### [Not-finished] Sgf Parsing
 
+- [Link bài tập](https://exercism.io/my/solutions/98cabbde19724be7873d483c370d9fd1)
+- Bài này nói về việc ghi lại các nước đi của môn cờ vây, tuy nhiên không chuyên sâu.
+- Yêu cầu chỉ là khi họ nhập vào một SGF string, ví dụ, `'(;A[B](;B[C])(;C[D]))'` thì ta phải xuất ra một tree structure tương ứng (được định nghĩa trong class `SgfTree`)
+- Bài này độ khó **Medium**, để sau
+
+### [Not-finished] Bank Account
+
+- [Link bài tập](https://exercism.io/my/solutions/04e9d69f2a154a3181ed93aacc96cd9a)
+- **Medium**, làm sau.
+
+### Pangram
+
+- [Link bài tập](https://exercism.io/my/solutions/9aabe2664b644fc5963584d21ddce9d4)
+- Pangram là câu chứa tất cả các chữ cái trong tiếng Anh (24 chữ cái), mỗi chữ xuất hiện ít nhất 1 lần. Ví dụ "*The quick brown fox jumps over the lazy dog.*" 
+- **Yêu cầu**: check xem một câu nhập vào có phải là một pangram hay không.
+
+### Hamming
+
+- [Link bài tập](https://exercism.io/my/solutions/01050f07627743459e556f50ba9f7e59)
+- [Hamming distance](https://vi.wikipedia.org/wiki/Kho%E1%BA%A3ng_c%C3%A1ch_Hamming): giữa hai chuỗi ký tự, số ký tự ở cùng vị trí khác nhau chính là khoảng cách giữa hai chuỗi.
+- **Yêu cầu**: Trong bài này, yêu cầu tìm khoảng cách giữa 2 chuội DNA.
+- Xem [Exception handling](https://www.programiz.com/python-programming/exception-handling)
+- Others: read [zip()](https://www.programiz.com/python-programming/methods/built-in/zip), [sum()](https://www.programiz.com/python-programming/methods/built-in/sum)
+- Cách khác ([cf](https://github.com/ThomasZumsteg/exercism-python/blob/master/hamming/hamming.py))
+
+	~~~ python
+	def distance(strand_a, strand_b):
+	    """Counts the differences in two sequences of DNA"""
+	    return sum(1 for a,b in zip(strand_a, strand_b) if a != b)
+	~~~

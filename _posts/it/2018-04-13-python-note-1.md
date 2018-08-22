@@ -6,6 +6,7 @@ maths: 1
 toc: 1
 date: 2018-08-22
 datacamp: 1
+comment: 1
 ---
 
 Bài này giống như chương Introduction, những thứ cơ bản nhất về Python và chung nhất. Có những [note khác]({{site.baseurl}}/tags#python) dành cho từng mục đích sử dụng python/thư viện python khác nhau.
@@ -40,7 +41,7 @@ Bài này giống như chương Introduction, những thứ cơ bản nhất v�
 
 - Có thể cài mọi thứ thông qua [Anaconda](https://anaconda.com), tuy nhiên trên Windows vẫn chưa tự nhận thông qua Command Prompt.
 - Trên Linux hay Mac thì python tự nhận trong terminal, windows thì cần làm thêm các bước bên dưới.
-
+- [Cài IDE Sublime Text 3](#sublime-text-3) : dùng để soạn thảo và chạy python. Thực ra cái [Spyder](#spyder) tiện hơn nhưng Spyder không chọn run theo phiên bản python được.
 
 
 ### exercism
@@ -183,6 +184,26 @@ Xem [note này]({{site.baseurl}}/python-exercism-1).
 
 - Xem kỹ hướng dẫn ở [video này của Corey](https://www.youtube.com/watch?v=sugvnHA7ElY&t=247s).
 - Nếu `print(__name__)` một file thì nó sẽ ra `__main__` nếu như mình đang thực sự chạy file đó.
+- Giả sử có trường hợp mình `import` một file khác và chạy lệnh thực thi từ file được import, thì khi ấy, `__name__` là tên của file được import chứ không phải file đang chạy.
+- Đó là lý do vì sao ta thường dùng `__name__ == __main__` để chắc rằng lệnh đang được chạy trên chính file này chứ không phải từ file khác dùng lệnh `import`.
+- Ví dụ chỉ cần tạo 2 file có nội dung như sau rồi sau đó chạy từng file là hiểu
+	- File **name_main.py**
+
+		~~~ python
+		print("__name__: {}".format(__name__))
+		if __name__ == '__main__':
+		    print("This one is only showed if this file runs directly!")
+		~~~
+
+	- File **name_main_import.py**
+
+		~~~ python
+		# This file is only used for import name_main.py
+		import name_main
+		print("__name__: {}".format(__name__))
+		~~~
+
+	- Cái này giúp cho việc phân loại các lệnh được thực thi trực tiếp hay gián tiếp bên trong 1 file.
 
 ## Operators
 
@@ -345,6 +366,30 @@ while condition:
 - Truy suất key và values: `for key, value in student.items():`
 
 
+### Operators
+
+- [`zip()`](https://www.programiz.com/python-programming/methods/built-in/zip): gôm từng phần tử của hai đối tượng lại với nhau. 
+	- Hai đối tượng này có thể cùng kiểu hoặc không (kiểu list, tupe, set).
+	- Nếu số lượng hai đối tượng khác nhau thì sẽ lấy cho đến hết cái ít hơn
+	- Sau đó thì có thể áp dụng phép chuyển kiểu để hiển thị ra hoặc sử dụng luôn
+
+		<div class="row d-flex" markdown="1">
+		<div class="col s12 l6" markdown="1">
+		~~~ python
+		strand_a = [1, 2, 3, 4, 5, 6]
+		strand_b = "thi"
+		kk = zip(strand_a, strand_b)
+		print(tuple(kk))
+		~~~
+		</div>
+		<div class="col s12 l6" markdown="1">
+		<div class="terminal">
+		((1, 't'), (2, 'h'), (3, 'i'))
+		</div>
+		</div>
+		</div>
+	
+
 ## Functions
 
 
@@ -395,21 +440,29 @@ while condition:
 - `%reset` : xóa hết biến trong workspace hiện tại (giống `clear all` trong matlab). Nếu muốn clear 1 biến cụ thể, dùng `%reset_selective <biến>`
 - Chọn lệnh xong nhấn **Ctrl+Enter** để chạy code trong **Spyder**
 - Chọn command, sau đó nhấn **Ctrl+I** để xem help về command đó trong **Spyder**.
-
-
-### Visual Studio Code
-
-Trong đoạn code kêu dùng Python với Spyder nhưng mà nó không tương thích với HiDPI nên quyết định chọn VSC. Không chọn Pycharm nữa vì nó nặng quá, VSC nhẹ hơn rất nhiều và làm được cho mấy cái ngôn ngữ khác được.
-
-- Cứ mở thử một file python .py lên, nếu chưa cài extension cho VSC thì nó sẽ hỏi, nhấn vào mà cài thôi, nó sẽ cài extension mang tên Python.
-- Nó cũng hỏi và đề nghị cài thêm vài cái (quên tên), cứ cài thôi.
-- Nó cũng kêu chọn Python Environments gì đó, trong đó có option chọn **Anaconda** thì cứ chọn thôi (thanh dưới cùng của cửa sổ).
-- Xem thêm [ở đây](https://code.visualstudio.com/docs/languages/python) để biết về VSC + Python.
-
-[Trong course](/machine-learning-1) có dùng Ipython để mỗi lần gõ lệnh xong, quét kéo thả vào là chạy, tuy nhiên không biết torng VSC làm ở đâu. Đọc thêm [bài viết này](https://donjayamanne.github.io/pythonVSCodeDocs/docs/jupyter_getting-started/).
+- **Nhược điểm**: không chạy theo version của python được (trải nghiệm của anh Việt), dùng [Sublime Text](#sublime-text-3) có vẻ ngon hơn điểm này, giao diện của thằng kia cũng khá đẹp và thoáng.
 
 
 ### Sublime Text 3
+
+<ul class="collapsible" data-collapsible="accordion">
+<li>
+<div class="collapsible-header" markdown="1"><i class="material-icons">face</i>
+Keyboard shortcuts
+</div>
+<div class="collapsible-body" markdown="1">
+
+- **Ctrl + B**: Build/Run current file
+- **Ctrl+K, Ctrl+B**: Toggle sidebar
+- **Ctrl+Shift+P**: Open Command Palette
+- **Ctrl+R**: navigate to any function/class/symbol in the file you are currently editing
+- **Ctrl+P**: quick open file
+- **Ctrl+G**: đi đến bất kỳ line nào.
+- **Alt+Shift+<number>**: Open second window
+
+</div>
+</li>
+</ul>
 
 - Hướng dẫn từ [Corey Schafer](https://www.youtube.com/watch?v=xFciV6Ew5r4)
 - Download [Sublime Text 3](https://www.sublimetext.com/3)
@@ -536,3 +589,16 @@ Trong đoạn code kêu dùng Python với Spyder nhưng mà nó không tương 
 	~~~
 
 - Chạy code chỉ cần **Ctrl** + **B**.
+
+
+
+### Visual Studio Code
+
+Trong đoạn code kêu dùng Python với Spyder nhưng mà nó không tương thích với HiDPI nên quyết định chọn VSC. Không chọn Pycharm nữa vì nó nặng quá, VSC nhẹ hơn rất nhiều và làm được cho mấy cái ngôn ngữ khác được.
+
+- Cứ mở thử một file python .py lên, nếu chưa cài extension cho VSC thì nó sẽ hỏi, nhấn vào mà cài thôi, nó sẽ cài extension mang tên Python.
+- Nó cũng hỏi và đề nghị cài thêm vài cái (quên tên), cứ cài thôi.
+- Nó cũng kêu chọn Python Environments gì đó, trong đó có option chọn **Anaconda** thì cứ chọn thôi (thanh dưới cùng của cửa sổ).
+- Xem thêm [ở đây](https://code.visualstudio.com/docs/languages/python) để biết về VSC + Python.
+
+[Trong course](/machine-learning-1) có dùng Ipython để mỗi lần gõ lệnh xong, quét kéo thả vào là chạy, tuy nhiên không biết torng VSC làm ở đâu. Đọc thêm [bài viết này](https://donjayamanne.github.io/pythonVSCodeDocs/docs/jupyter_getting-started/).
