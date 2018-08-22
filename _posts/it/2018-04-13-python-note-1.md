@@ -4,7 +4,7 @@ categories: it
 tags: [python,coding]
 maths: 1
 toc: 1
-date: 2018-08-21
+date: 2018-08-22
 datacamp: 1
 ---
 
@@ -95,12 +95,6 @@ Xem [note này]({{site.baseurl}}/python-exercism-1).
 		- Nếu không muốn thấy confirm, dùng `%reset -f`
 
 
-## IPython & Spyder
-
-- `clear` giống `clc` (clear hết trên khung màn hình)
-- `%reset` : xóa hết biến trong workspace hiện tại (giống `clear all` trong matlab). Nếu muốn clear 1 biến cụ thể, dùng `%reset_selective <biến>`
-- Chọn lệnh xong nhấn **Ctrl+Enter** để chạy code trong **Spyder**
-- Chọn command, sau đó nhấn **Ctrl+I** để xem help về command đó trong **Spyder**.
 
 
 ## Zen of python
@@ -185,7 +179,10 @@ Xem [note này]({{site.baseurl}}/python-exercism-1).
 	- `__double_leading_underscore`: when naming a class attribute, invokes name mangling (inside class `FooBar`, `__boo` becomes `_FooBar__boo`). Nghĩa là không gọi riêng cái biến với tên này được mà phải gọi lên tên của class.
 	- `_single_leading_underscore`: weak "internal use" indicator. E.g. `from M import *` does not import objects whose name starts with an underscore. **biến private**
 
+### `__name__ == __main__`
 
+- Xem kỹ hướng dẫn ở [video này của Corey](https://www.youtube.com/watch?v=sugvnHA7ElY&t=247s).
+- Nếu `print(__name__)` một file thì nó sẽ ra `__main__` nếu như mình đang thực sự chạy file đó.
 
 ## Operators
 
@@ -200,35 +197,37 @@ Xem [note này]({{site.baseurl}}/python-exercism-1).
 
 ## Object and Class
 
-- **Object comparison** ([cf](http://abregman.com/2016/11/29/python-objects-comparison/))
-	- Below is an example of comparison
+### Comparison
 
-		~~~ python
-		class Ball(object):
-		    def __init__(self, color, size):
-		        self.color = color
-		        self.size = size
-		
-		ball1 = Ball('blue', 'small')
-		ball2 = Ball('blue', 'small')
-		
-		print(ball1 == ball2) # Prints False!
-		~~~
+- [Tham khảo](http://abregman.com/2016/11/29/python-objects-comparison/)
+- Below is an example of comparison
 
-		Because python **compare the "id"** of `ball1` and `ball2` instead.
+	~~~ python
+	class Ball(object):
+	    def __init__(self, color, size):
+	        self.color = color
+	        self.size = size
 	
-	- Do đó có các comparison *rich comparison methods* or *comparison magic methods* bên trong các class/object này để "định nghĩa" luôn *thế nào là bằng, lớn, nhỏ,...* giữa các object với nhau.
+	ball1 = Ball('blue', 'small')
+	ball2 = Ball('blue', 'small')
+	
+	print(ball1 == ball2) # Prints False!
+	~~~
 
-		~~~ python
-		object.__lt__(self, other) # For x < y
-		object.__le__(self, other) # For x <= y
-		object.__eq__(self, other) # For x == y
-		object.__ne__(self, other) # For x != y OR x <> y
-		object.__gt__(self, other) # For x > y
-		object.__ge__(self, other) # For x >= y
-		~~~
+	Because python **compare the "id"** of `ball1` and `ball2` instead.
 
-	- Xem thêm trong [cf](http://abregman.com/2016/11/29/python-objects-comparison/).
+- Do đó có các comparison *rich comparison methods* or *comparison magic methods* bên trong các class/object này để "định nghĩa" luôn *thế nào là bằng, lớn, nhỏ,...* giữa các object với nhau.
+
+	~~~ python
+	object.__lt__(self, other) # For x < y
+	object.__le__(self, other) # For x <= y
+	object.__eq__(self, other) # For x == y
+	object.__ne__(self, other) # For x != y OR x <> y
+	object.__gt__(self, other) # For x > y
+	object.__ge__(self, other) # For x >= y
+	~~~
+
+- Xem thêm trong [cf](http://abregman.com/2016/11/29/python-objects-comparison/).
 
 
 ## Condition, loops
@@ -387,9 +386,18 @@ while condition:
 
 
 
-## Python with Visual Studio Code
+## Python IDE
 
-**Quyết định chỉ dùng [Spyder](https://pythonhosted.org/spyder/installation.html)**
+### Spyder
+
+- [Download](https://pythonhosted.org/spyder/installation.html) and install (có thể thông qua Annaconda)
+- `clear` giống `clc` (clear hết trên khung màn hình)
+- `%reset` : xóa hết biến trong workspace hiện tại (giống `clear all` trong matlab). Nếu muốn clear 1 biến cụ thể, dùng `%reset_selective <biến>`
+- Chọn lệnh xong nhấn **Ctrl+Enter** để chạy code trong **Spyder**
+- Chọn command, sau đó nhấn **Ctrl+I** để xem help về command đó trong **Spyder**.
+
+
+### Visual Studio Code
 
 Trong đoạn code kêu dùng Python với Spyder nhưng mà nó không tương thích với HiDPI nên quyết định chọn VSC. Không chọn Pycharm nữa vì nó nặng quá, VSC nhẹ hơn rất nhiều và làm được cho mấy cái ngôn ngữ khác được.
 
@@ -399,3 +407,132 @@ Trong đoạn code kêu dùng Python với Spyder nhưng mà nó không tương 
 - Xem thêm [ở đây](https://code.visualstudio.com/docs/languages/python) để biết về VSC + Python.
 
 [Trong course](/machine-learning-1) có dùng Ipython để mỗi lần gõ lệnh xong, quét kéo thả vào là chạy, tuy nhiên không biết torng VSC làm ở đâu. Đọc thêm [bài viết này](https://donjayamanne.github.io/pythonVSCodeDocs/docs/jupyter_getting-started/).
+
+
+### Sublime Text 3
+
+- Hướng dẫn từ [Corey Schafer](https://www.youtube.com/watch?v=xFciV6Ew5r4)
+- Download [Sublime Text 3](https://www.sublimetext.com/3)
+- Nhớ là đã cài Python rồi như ở mục đầu tiên note này.
+- Cài đặt bình thường con cá hường.
+- Mở lên, thử một file .py nào đó, có nội dung như sau
+
+	~~~ python
+	print("Hello World!")
+	~~~
+
+- Chạy thử: **Tools** > **Build** > chạy được bình thường.
+- Install theme giống của Corey
+	- **Ctrl + Shift + P** để mở **Command Palette** (**Tools** > **Command Palette...**)
+	- Gõ vào và cài *Pakacge control*, giả sử đã cài xong
+	- Mở CP tiếp, install tiếp hai cái sau (optional, chỉ là giao diện thôi): **Predawn** và **Material Theme**
+- Sau đó mở **Preferences** > **Settings** > xóa hết cái bên **-User** và dán vào cái sau (cũng đến từ Corey)
+
+	~~~
+	{
+		"bold_folder_labels": true,
+		"caret_extra_width": 1,
+		"caret_style": "phase",
+		"close_windows_when_empty": false,
+		"theme": "Material-Theme-Darker.sublime-theme",
+		"color_scheme": "Packages/Predawn/predawn.tmTheme",
+		"copy_with_empty_selection": false,
+		"drag_text": false,
+		"draw_minimap_border": true,
+		"enable_tab_scrolling": false,
+		"ensure_newline_at_eof_on_save": true,
+		"file_exclude_patterns":
+		[
+			"*.pyc",
+			"*.pyo",
+			"*.exe",
+			"*.dll",
+			"*.obj",
+			"*.o",
+			"*.a",
+			"*.lib",
+			"*.so",
+			"*.dylib",
+			"*.ncb",
+			"*.sdf",
+			"*.suo",
+			"*.pdb",
+			"*.idb",
+			".DS_Store",
+			"*.class",
+			"*.psd",
+			"*.sublime-workspace"
+		],
+		"font_face": "Source Code Pro",
+		"font_options":
+		[
+			"no_round"
+		],
+		"font_size": 15,
+		"highlight_line": true,
+		"highlight_modified_tabs": true,
+		"ignored_packages":
+		[
+			"Vintage"
+		],
+		"line_padding_bottom": 1,
+		"line_padding_top": 1,
+		"match_brackets_content": false,
+		"match_selection": false,
+		"match_tags": false,
+		"material_theme_accent_graphite": true,
+		"material_theme_compact_sidebar": true,
+		"open_files_in_new_window": false,
+		"overlay_scroll_bars": "enabled",
+		"preview_on_click": false,
+		"scroll_past_end": true,
+		"scroll_speed": 5.0,
+		"show_definitions": false,
+		"show_encoding": true,
+		"show_errors_inline": false,
+		"show_full_path": false,
+		"sidebar_default": true,
+		"theme": "Default.sublime-theme",
+		"translate_tabs_to_spaces": true,
+		"trim_trailing_white_space_on_save": true,
+		"use_simple_full_screen": true,
+		"word_wrap": true
+	}
+	~~~
+
+- Cài thêm package **BracketHighlighter** (hiện bracket trên cột bên để dễ quan sát), **SidebarEnhancement** (thêm options vào trong sidebar)
+- cài package **Anaconda** (cái này giống tên cái Anaconda kia thôi), sau đó cần dán đoạn settings sau vào (**Preferences** > **Package settings** > **Anaconda** > **Settings - Users**> 
+
+	~~~
+	{
+	    "auto_formatting": true,
+	    "autoformat_ignore":
+	    [
+	        "E309",
+	        "E501"
+	    ],
+	    "pep8_ignore":
+	    [
+	        "E309",
+	        "E501"
+	    ],
+	    "anaconda_linter_underlines": false,
+	    "anaconda_linter_mark_style": "none",
+	    "display_signatures": false,
+	    "disable_anaconda_completion": true
+	}
+	~~~
+
+	Trong đây có option `auto_formatting` có chức năng tự động xóa khoảng trắng thừa nếu mình có nhập nhiều khoảng trắng quá,...
+
+- Tạo **Build System** mới với nhiều version python khác nhau: **Tools** > **Build System** > **New Build System...** rồi dán cái sau vào (thay đường dẫn đến phiên bản python tương ứng)
+
+	~~~ 
+	{
+	    "cmd": ["/usr/bin/python2.7", "-u", "$file"],
+	    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+	    "quiet": true
+	}
+	~~~
+
+- Chạy code chỉ cần **Ctrl** + **B**.
