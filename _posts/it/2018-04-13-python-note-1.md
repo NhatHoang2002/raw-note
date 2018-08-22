@@ -453,12 +453,12 @@ Keyboard shortcuts
 <div class="collapsible-body" markdown="1">
 
 - **Ctrl + B**: Build/Run current file
-- **Ctrl+K, Ctrl+B**: Toggle sidebar
-- **Ctrl+Shift+P**: Open Command Palette
-- **Ctrl+R**: navigate to any function/class/symbol in the file you are currently editing
-- **Ctrl+P**: quick open file
-- **Ctrl+G**: đi đến bất kỳ line nào.
-- **Alt+Shift+<number>**: Open second window
+- **Ctrl + K, Ctrl + B**: Toggle sidebar
+- **Ctrl + Shift + P**: Open Command Palette
+- **Ctrl + R**: navigate to any function/class/symbol in the file you are currently editing
+- **Ctrl + P**: quick open file
+- **Ctrl + G**: đi đến bất kỳ line nào.
+- **Alt + Shift + 2**: Open second window
 
 </div>
 </li>
@@ -481,6 +481,12 @@ Keyboard shortcuts
 	- Mở CP tiếp, install tiếp hai cái sau (optional, chỉ là giao diện thôi): **Predawn** và **Material Theme**
 - Sau đó mở **Preferences** > **Settings** > xóa hết cái bên **-User** và dán vào cái sau (cũng đến từ Corey)
 
+	<ul class="collapsible" data-collapsible="accordion">
+	<li>
+	<div class="collapsible-header" markdown="1"><i class="material-icons">face</i>
+	Xem chi tiết
+	</div>
+	<div class="collapsible-body" markdown="1">
 	~~~
 	{
 		"bold_folder_labels": true,
@@ -552,10 +558,19 @@ Keyboard shortcuts
 		"word_wrap": true
 	}
 	~~~
+	</div>
+	</li>
+	</ul>
 
 - Cài thêm package **BracketHighlighter** (hiện bracket trên cột bên để dễ quan sát), **SidebarEnhancement** (thêm options vào trong sidebar)
 - cài package **Anaconda** (cái này giống tên cái Anaconda kia thôi), sau đó cần dán đoạn settings sau vào (**Preferences** > **Package settings** > **Anaconda** > **Settings - Users**> 
 
+	<ul class="collapsible" data-collapsible="accordion">
+	<li>
+	<div class="collapsible-header" markdown="1"><i class="material-icons">face</i>
+	Xem chi tiết
+	</div>
+	<div class="collapsible-body" markdown="1">
 	~~~
 	{
 	    "auto_formatting": true,
@@ -575,11 +590,20 @@ Keyboard shortcuts
 	    "disable_anaconda_completion": true
 	}
 	~~~
-
+	
 	Trong đây có option `auto_formatting` có chức năng tự động xóa khoảng trắng thừa nếu mình có nhập nhiều khoảng trắng quá,...
+	</div>
+	</li>
+	</ul>
 
 - Tạo **Build System** mới với nhiều version python khác nhau: **Tools** > **Build System** > **New Build System...** rồi dán cái sau vào (thay đường dẫn đến phiên bản python tương ứng)
 
+	<ul class="collapsible" data-collapsible="accordion">
+	<li>
+	<div class="collapsible-header" markdown="1"><i class="material-icons">face</i>
+	Xem chi tiết
+	</div>
+	<div class="collapsible-body" markdown="1">
 	~~~ 
 	{
 	    "cmd": ["/usr/bin/python2.7", "-u", "$file"],
@@ -587,6 +611,9 @@ Keyboard shortcuts
 	    "quiet": true
 	}
 	~~~
+	</div>
+	</li>
+	</ul>
 
 - Chạy code chỉ cần **Ctrl** + **B**.
 
@@ -594,6 +621,12 @@ Keyboard shortcuts
 
 ### Visual Studio Code
 
+<ul class="collapsible" data-collapsible="accordion">
+<li>
+<div class="collapsible-header" markdown="1"><i class="material-icons">face</i>
+Xem chi tiết
+</div>
+<div class="collapsible-body" markdown="1">
 Trong đoạn code kêu dùng Python với Spyder nhưng mà nó không tương thích với HiDPI nên quyết định chọn VSC. Không chọn Pycharm nữa vì nó nặng quá, VSC nhẹ hơn rất nhiều và làm được cho mấy cái ngôn ngữ khác được.
 
 - Cứ mở thử một file python .py lên, nếu chưa cài extension cho VSC thì nó sẽ hỏi, nhấn vào mà cài thôi, nó sẽ cài extension mang tên Python.
@@ -602,3 +635,6 @@ Trong đoạn code kêu dùng Python với Spyder nhưng mà nó không tương 
 - Xem thêm [ở đây](https://code.visualstudio.com/docs/languages/python) để biết về VSC + Python.
 
 [Trong course](/machine-learning-1) có dùng Ipython để mỗi lần gõ lệnh xong, quét kéo thả vào là chạy, tuy nhiên không biết torng VSC làm ở đâu. Đọc thêm [bài viết này](https://donjayamanne.github.io/pythonVSCodeDocs/docs/jupyter_getting-started/).
+</div>
+</li>
+</ul>
