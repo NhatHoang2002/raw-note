@@ -64,6 +64,10 @@ li ul:not(.browser-default){
   color: black;
 }
 
+.collapsible{
+  overflow: hidden;
+}
+
 .collapsible-body{
   padding: 1rem!important;
 }

@@ -1,10 +1,11 @@
 ---
+layout: post
 title: Python 1
 categories: it
 tags: [python,coding]
 maths: 1
 toc: 1
-date: 2018-08-22
+date: 2018-08-24
 datacamp: 1
 comment: 1
 ---
@@ -28,9 +29,12 @@ Bài này giống như chương Introduction, những thứ cơ bản nhất v�
 	- Course on Pluralsight: [Python fundamentals by Austin Bingham and Robert Smallshire](https://app.pluralsight.com/library/courses/python-fundamentals/table-of-contents) (chỉ video, không bài tập)
 	- Video bài giảng của [Corey Schafer](https://www.youtube.com/user/schafer5/playlists) (anh Việt recommend)
 	- [How to think like a computer scientist?](http://openbookproject.net/thinkcs/python/english3e/index.html) : sách được thể hiện dưới dạng html
+	- [Google Python Class](https://developers.google.com/edu/python/)
 - **Exercise, practice**
 	- [Exercism](https://exercism.io/my/tracks/python) : học bằng bài tập, có nhiều ngôn ngữ khác nữa, free 100% (xem thêm [note riêng cho nó](/python-exercism-1))
-	- [Python exercises](https://www.w3resource.com/python-exercises)
+	- [CheckIO](https://py.checkio.org): like exercism.
+	- [Python exercises - w3resource](https://www.w3resource.com/python-exercises)
+	- [PracticePython](https://www.practicepython.org/)
 - **Others**:
 	- [Newsletter for python](https://www.pythonweekly.com/): docs, jobs, news,....
 	- [Insert Datacamp interative Python inside web/blog](https://github.com/datacamp/datacamp-light) (also for R)
@@ -42,6 +46,16 @@ Bài này giống như chương Introduction, những thứ cơ bản nhất v�
 - Có thể cài mọi thứ thông qua [Anaconda](https://anaconda.com), tuy nhiên trên Windows vẫn chưa tự nhận thông qua Command Prompt.
 - Trên Linux hay Mac thì python tự nhận trong terminal, windows thì cần làm thêm các bước bên dưới.
 - [Cài IDE Sublime Text 3](#sublime-text-3) : dùng để soạn thảo và chạy python. Thực ra cái [Spyder](#spyder) tiện hơn nhưng Spyder không chọn run theo phiên bản python được.
+
+### Ubuntu, only use Anaconda
+
+In the case that you have many version of python on Ubuntu and you have just installed Anaconda which also contains another version of python. **You wanna keep only one of Anaconda**
+
+1. Follow this [question on SE](https://askubuntu.com/questions/886983/how-to-set-anaconda-as-a-default-python)
+2. Add Anaconda to PATH: `export PATH=/home/thi/anaconda3/bin:$PATH`
+3. Check with `which python`, if it returns `/home/thi/anaconda3/bin/python` then it works (`python -v` returns anaconda also)
+4. From now, whenever you use `python`, it automatically use python inside the anaconda folder indicated as in the PATH.
+5. If you wanna go back to the system default, open the `.bashrc` file and comment out settings of anaconda with `#`. That's it!
 
 
 ### exercism
@@ -66,10 +80,19 @@ Xem [note này]({{site.baseurl}}/python-exercism-1).
 
 ### Jupyter notebook
 
-- [Cái này](http://jupyter.org/index.html) có sẵn nếu đã cài Anaconda.
-- Trên **Windows**, không thể chạy nó bằng dòng lệnh `jupyter notebook` như các [trang hướng dẫn](https://jupyter.readthedocs.io/en/latest/running.html) được!
-- Mà phải chạy bằng `python -m notebook` (chỉ có tác dụng sau khi đã add python path vào PATH của hệ thống như ở trên hướng dẫn)
-- Cũng có thể chạy file Jupyter Notebook có sẵn nhưng đường dẫn mặc định sau khi chạy xong (localhost:8888) không theo ý mình (ngoài /Home/), do đó, cần dùng [cmder](http://cmder.net/) (or command prompt) `cd` đến thư mục cần làm "host", sau đó chạy dòng lệnh `python -m notebook` như ở trên hướng dẫn.
+- See [here](http://jupyter.org/install) for full tutorial.
+
+- **Windows**
+    - [Cái này](http://jupyter.org/index.html) có sẵn nếu đã cài Anaconda.
+    - Trên **Windows**, không thể chạy nó bằng dòng lệnh `jupyter notebook` như các [trang hướng dẫn](https://jupyter.readthedocs.io/en/latest/running.html) được!
+    - Mà phải chạy bằng `python -m notebook` (chỉ có tác dụng sau khi đã add python path vào PATH của hệ thống như ở trên hướng dẫn)
+    - Cũng có thể chạy file Jupyter Notebook có sẵn nhưng đường dẫn mặc định sau khi chạy xong (localhost:8888) không theo ý mình (ngoài /Home/), do đó, cần dùng [cmder](http://cmder.net/) (or command prompt) `cd` đến thư mục cần làm "host", sau đó chạy dòng lệnh `python -m notebook` như ở trên hướng dẫn.
+
+- **Linux**
+    - Install via Anaconda or install via **python3** as below
+    - `python3 -m pip install --upgrade pip`
+    - `pip install --user jupyter`
+    - **Run**: `python3 -m notebook` (at where you wanna notebook run)
 
 
 ### Install package with `pip`
@@ -155,7 +178,7 @@ Xem [note này]({{site.baseurl}}/python-exercism-1).
 - `"Chào bạn {} và {}".format('a', 'b')` returns `'Chào bạn a và b'`
 - `"Chào bạn {2} và {1}".format('a', 'b')` returns `'Chào bạn b và a'`
 - Từ Python 3.6, có thể dùng `f'Chào {a}'` where `a = 'bạn'`
- 
+
 
 ## Underscore
 
@@ -301,6 +324,38 @@ while condition:
 - `range(1,5)` means `[1,2,3,4]`
 - Có thể dùng dạng `while True`
 
+[Behind the scene,](https://docs.python.org/3/tutorial/classes.html#iterators) the [`for`](https://docs.python.org/3/reference/compound_stmts.html#for) statement calls [`iter()`](https://docs.python.org/3/library/functions.html#iter) on the container object. Bên trong đây có nhiều phép toán được định nghĩa, ví dụ như `__next__` (khi dùng thì chỉ cần `next()`)
+
+<div class="mt-2 mb-2" data-datacamp-exercise data-lang="python">
+<code data-type="sample-code">
+s = 'abc'
+it = iter(s)
+print(next(it))
+print(next(it))
+print(next(it))
+
+# NEW EXAMPLE
+print('NEW EXAMPLE')
+class Reverse:
+    """Iterator for looping over a sequence backwards."""
+    def __init__(self, data):
+        self.data = data
+        self.index = len(data)
+
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        if self.index == 0:
+            raise StopIteration
+        self.index = self.index - 1
+        return self.data[self.index]
+
+rev = Reverse('spam')
+for char in rev:
+	print(char)
+</code>
+</div>
 
 
 ## Strings, bytes, list, dictionaries, sets, tuple
@@ -394,26 +449,70 @@ while condition:
 
 
 - Basic
-	~~~ python
-	def func():
-		pass # fill later
-	
-	func() # run this function
-	~~~
+
+    ~~~ python
+    def func():
+    pass # fill later
+
+    func() # run this function
+    ~~~
+
 - Function return không phải là value thì luôn là `None`, nó cũng cho biết function hoạt động tốt.
-- With `*`
-	~~~ python
-	def student(*argd, **kwargs):
-		commands
-	
-	courses = ['Math', 'Art']
-	info = {'name': 'Thi', 'age': 28}
-	std = student(*course, **info)
-	
-	# returns
-	('Math', 'Art')
-	{'name': 'Thi', 'age': 28}
-	~~~
+
+### With `*`
+
+- ([Đọc SE_ref biết hết](https://stackoverflow.com/questions/36901/what-does-double-star-asterisk-and-star-asterisk-do-for-parameters)) Cái này cho phép tạo ra function với bao nhiêu argument cũng được! Với 1 `*` thì nó cho chúng ta nhập 1 list arg dạng tuple, còn với `**` thì nó cho chúng ta nhập 1 dạng pair key-val của dictionary. 
+
+    ~~~ python
+    def student(*argd, **kwargs):
+    commands
+
+    courses = ['Math', 'Art']
+    info = {'name': 'Thi', 'age': 28}
+    std = student(*course, **info)
+
+    # returns
+    ('Math', 'Art')
+    {'name': 'Thi', 'age': 28}
+    ~~~
+
+- Nói rõ hơn tí chỗ `*` này ([official_ref](https://docs.python.org/dev/tutorial/controlflow.html#more-on-defining-functions), [stackE](https://stackoverflow.com/questions/36901/what-does-double-star-asterisk-and-star-asterisk-do-for-parameters)): 
+
+- Không phải hai cái kia đại diện cho 2 biến mà mỗi cái đại diện cho 1 nhóm biến. Nếu không thêm ký hiệu `*` thì nó cứ đưa hết vô biến đầu tiên (**tuple**)
+
+    ~~~ python
+    # Understand the meaning of character * in function
+    def student(*name, **note):
+    print('Name: {}'.format(name))
+    print('Note: {}'.format(note))
+
+    student('Thi', 10, 11, 'Bi')
+    # returns
+    # Name: ('Thi', 10, 11, 'Bi')
+    # Note: {}
+    ~~~
+
+- Cái `**` must be a **mapping** (e.g. dictionary) 
+
+- The `*` must be an **iterable** (what is it? see [on stack exchange](https://stackoverflow.com/questions/9884132/what-exactly-are-iterator-iterable-and-iteration)).
+
+- Can't use more than two `*`!
+
+- Không nhất thiết lúc nào cũng phải có đủ 1 `*` và `**`. Chúng ta có thể dùng 1 trong 2 thằng cũng được vì mỗi thằng có ý nghĩa khác nhau.
+
+- Cả hai thằng có thể dùng với normal arg (normal arg giống như fixed arg)
+
+- Đặc biệt
+
+    ~~~ python
+    def func(arg1, arg2, arg3, *, kwarg1, kwarg2):
+        pass
+    ~~~
+
+	Such function accepts only 3 positional arguments, and everything after `*` can only be passed as keyword arguments.
+
+
+
 
 
 ## Package

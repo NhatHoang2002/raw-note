@@ -10,3 +10,7 @@
   name: Bài viết hay
 - slug: notetheme
   name: NoteTheme 
+- slug: ml
+  name: Machine Learning
+- slug: data
+  name: Data Science

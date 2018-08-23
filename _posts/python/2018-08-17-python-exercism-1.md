@@ -4,7 +4,7 @@ categories: it
 tags: [python,exercism,coding]
 maths: 1
 toc: 1
-date: 2018-08-21
+date: 2018-08-23
 comment: 1
 ---
 
@@ -21,12 +21,74 @@ comment: 1
 
 ### Install **CLI**
 
-1. Download [latest cli](https://github.com/exercism/cli/releases)
-2. Run `start "" "%LOCALAPPDATA%\Microsoft\WindowsApps"` in cmd
-3. Move all extracted files/folder from step 1 to folder *WindowsApps*
-4. Verify xem thành công không bằng cách gõ vào cmd `exercism`
-5. Install thành công
-6. Configure CLI: `exercism configure --token=c2562d83-65ea-4176-ab80-ff058b111cf9`
+- You can follow this [walkthrough](https://exercism.io/cli-walkthrough) on exercism
+- **Windows**
+
+    <ul class="collapsible" data-collapsible="accordion">
+    <li>
+    <div class="collapsible-header" markdown="1"><i class="material-icons">face</i>
+    More details
+    </div>
+    <div class="collapsible-body" markdown="1">
+    - Download [latest cli](https://github.com/exercism/cli/releases)
+    - Run `start "" "%LOCALAPPDATA%\Microsoft\WindowsApps"` in cmd
+    - Move all extracted files/folder from step 1 to folder *WindowsApps*
+    - Verify xem thành công không bằng cách gõ vào cmd `exercism`
+    - Install thành công
+    - Configure CLI: `exercism configure --token=<your-token>`
+    - Token is obtained from [Settings](https://exercism.io/my/settings)
+    - Workspace: `C:\Users\<your-windows-username>\Exercism`
+    </div>
+    </li>
+    </ul>
+
+- **Ubuntu**
+
+    <ul class="collapsible" data-collapsible="accordion">
+    <li>
+    <div class="collapsible-header" markdown="1"><i class="material-icons">face</i>
+    More details
+    </div>
+    <div class="collapsible-body" markdown="1">
+    - Download [here](https://github.com/exercism/cli/releases) (choose the right package)
+    - Extract: `tar -xf exercism-linux-64bit.tgz`
+    - Put extracted folder to `~/bin`
+        <div  class="terminal" markdown="1">
+        `$ mkdir -p ~/bin`
+
+        `$ mv exercism ~/bin`
+
+        `$ ~/bin/exercism`
+
+        A command-line interface for the v2 redesign of Exercism.
+
+        Download exercises and submit your solutions.
+
+        ...
+        </div>
+    - Check if `~/bin` is already in `$PATH`?
+
+        <div class="terminal" markdown="1">
+        `[[ ":$PATH:" == *":$HOME/bin:"* ]] && echo "~/bin is in PATH" || echo "~/bin is not in PATH"`
+        </div>
+    If it returns `~/bin is in PATH`, OK, else,
+
+        <div class="terminal" markdown="1">
+        `echo "export PATH=~/bin:$PATH" >> ~/.bash_profile`
+        `source ~/.bash_profile`
+        </div>
+
+    - Check everything works? `cd` then `exercism`
+    - Configure CLI: `exercism configure --token=<your-token>`
+    - Token is obtained from [Settings](https://exercism.io/my/settings)
+    - Workspace: `/home/<your-linux-username>/exercism`
+    </div>
+    </li>
+    </ul>
+
+
+
+
 
 ## Workflow
 
@@ -285,3 +347,11 @@ def to_rna(dna):
 	    """Counts the differences in two sequences of DNA"""
 	    return sum(1 for a,b in zip(strand_a, strand_b) if a != b)
 	~~~
+    
+
+### Robot name
+
+- [Exercise link](https://exercism.io/my/solutions/ee52e50c520e4b7f9f2c1b4c5ca8d867)
+- **Question**: 
+- Read more [random](https://www.programiz.com/python-programming/modules/random)
+- 

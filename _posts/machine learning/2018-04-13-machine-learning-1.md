@@ -1,7 +1,7 @@
 ---
 title: Machine Learning 1-data preprocessing
-categories: it
-tags: ["machine learning"]
+categories: [ml, it]
+tags: [machine learning, ml udemy]
 maths: 1
 toc: 1
 date: 2018-04-23
