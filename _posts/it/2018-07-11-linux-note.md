@@ -3,6 +3,7 @@ title: Linux notes
 categories: it
 tags: ["linux","ubuntu"]
 toc: 1
+date: 2018-08-24
 ---
 
 1. Problem save file as `root` user and cannot open later: [link](https://askubuntu.com/questions/817902/unable-to-open-any-graphical-app-with-sudo/817906#817906)
@@ -17,7 +18,7 @@ toc: 1
     ~~~
 4. Find in linux with command lines: [link](https://chrisjean.com/4-great-tools-to-find-files-quickly-in-ubuntu/)
 5. Launching matlab without graphic ui: `matlab -nodesktop` ([link](https://blogs.mathworks.com/community/2010/02/22/launching-matlab-without-the-desktop/))
-6. How to add existing user to an existing group ([link](https://askubuntu.com/questions/79565/how-to-add-existing-user-to-an-existing-group)) 
+6. How to add existing user to an existing group ([link](https://askubuntu.com/questions/79565/how-to-add-existing-user-to-an-existing-group))
     ~~~
     sudo usermod -a -G groupName userName
     ~~~
@@ -41,20 +42,21 @@ toc: 1
     sudo apt install libcanberra-gtk-module libcanberra-gtk3-module
     ~~~
 20. Change ownership of a folder and its children
-    ~~~
+    ~~~ bash
     # folder and its children
     chown -R thi:root folder
     # a file
     chown <user>:<group> file
     ~~~
- 21. *IBUS-WARNING: The owner of /home/thi/.config/ibus/bus is not root!*
- 22. Check the permission of curent directory: `ll <file>` or `ll`
-	![check ll](/images/posts/linux/ll-user.png)
- 23. Right click nautilus "Open as Administrator":
-~~~
-sudo apt-get install nautilus-admin
-nautilus -q # restart nautilus
-~~~
- 24. Cannot open matlab without sudo: change the owner permission of folder */home/thi/.matlab* to **thi*** (cf. 20)
- 25. Add app to dash: install **alacarte** `sudo apt-get install alacarte`
- 26. Turn off animation open and minimize windows on ubuntu 17.10 and later (gnome desktop): **Gnome Tweak Tools > Apperance > Animations OFF**
+21. *IBUS-WARNING: The owner of /home/thi/.config/ibus/bus is not root!*
+22. Check the permission of curent directory: `ll <file>` or `ll`
+    ![check ll](/images/posts/linux/ll-user.png)
+23. Right click nautilus "Open as Administrator":
+    ~~~
+    sudo apt-get install nautilus-admin
+    nautilus -q # restart nautilus
+    ~~~
+24. Cannot open matlab without sudo: change the owner permission of folder */home/thi/.matlab* to **thi*** (cf. 20)
+25. Add app to dash: install **alacarte** `sudo apt-get install alacarte`
+26. Turn off animation open and minimize windows on ubuntu 17.10 and later (gnome desktop): **Gnome Tweak Tools > Apperance > Animations OFF**
+27. Gõ tiếng Việt SublimeText, install package `vn ime` (gõ tìm đúng như thế). Khi sử dụng thì nhấn F2.
