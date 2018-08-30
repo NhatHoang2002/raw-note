@@ -9,7 +9,7 @@ date: 2018-08-30
 
 {% assign img-url = '/images/posts/ML/coursera' %}
 
-Series này note từ đầu lúc học [machine learning trên Coursera](https://www.coursera.org/learn/machine-learning/). 
+This note was fist taken when I learnt the [machine learning course on Coursera](https://www.coursera.org/learn/machine-learning/). 
 
 - [Discussion forums](https://www.coursera.org/learn/machine-learning/discussions).
 - Check [server down or not](https://status.coursera.org/).
@@ -236,3 +236,6 @@ So, this is simply gradient descent on the original cost function J. This method
 
 The ellipses shown above are the contours of a quadratic function. Also shown is the trajectory taken by gradient descent, which was initialized at (48,30). The x’s in the figure (joined by straight lines) mark the successive values of θ that gradient descent went through as it converged to its minimum.
 
+## Linear Algebra review
+
+Refer to [note of Linear Algebra]({{site.baseurl}}/linear-algebra-1).
