@@ -1,5 +1,5 @@
 ---
-title: ML Coursera 1 - Week 1 & Week 2
+title: ML Coursera 1 - Week 1
 categories: [ml, it]
 tags: [machine learning, ml coursera]
 math: 1
@@ -13,6 +13,8 @@ This note was fist taken when I learnt the [machine learning course on Coursera]
 
 {% include toc.html %}
 
+{% include more.html content="[Go to Week 2](/machine-learning-coursera-2)." %}
+
 ## Preparing for the course
 
 - [Discussion forums](https://www.coursera.org/learn/machine-learning/discussions).
@@ -22,7 +24,6 @@ This note was fist taken when I learnt the [machine learning course on Coursera]
 - [All videos](https://youtu.be/PPLop4L2eGk) in course on Youtube.
 - Assignment must be done with Octave or Matlab.
 - You need a Matlab account and you can use it (free version for this course only): [Go to Matlab Online](https://matlab.mathworks.com/){:target="_blank"}, read more [here](https://www.coursera.org/learn/machine-learning/supplement/rANSM/accessing-matlab-online-and-uploading-the-exercise-files).
-- 
 
 ## Introduction
 
@@ -246,91 +247,4 @@ The ellipses shown above are the contours of a quadratic function. Also shown is
 {% include more.html content="[Download Lecture 3](/files/ML-coursera/Lecture3.pdf)." %}
 
 Refer to [note of Linear Algebra]({{site.baseurl}}/linear-algebra-1). For LA in this course of Ng, it's very simple, I knew all about this to I don't give any note here.
-
-## Multivariate Linear Regression
-
-{% include more.html content="[Download Lecture 4](/files/ML-coursera/Lecture4.pdf)." %}
-
-### Multiple Features
-
-Linear regression with multiple variables is also known as "**multivariate linear regression**". We now introduce notation for equations where we can have any number of input variables.
-
-- $x^{(i)}\_j$ = value of feature j in the ith training example
-- $x^(i)$ = the input (features) of the ith training example
-- m = the number of training examples
-- n = the number of features
-
-The multivariable form of the hypothesis function accommodating these multiple features is as follows:
-
-$$h_\theta (x) = \theta_0 + \theta_1 x_1 + \theta_2 x_2 + \theta_3 x_3 + \cdots + \theta_n x_n$$ 
-
-In order to develop intuition about this function, we can think about $\theta_0$ as the basic price of a house, $\theta_1$ as the price per square meter, $\theta_2$ as the price per floor, etc. $x_1$ will be the number of square meters in the house, $x_2$ the number of floors, etc.
-
-Using the definition of matrix multiplication, our multivariable hypothesis function can be concisely represented as:
-
-$$
-h_{\theta}(x) = [\theta_0 \theta_1 \ldots \theta_n] 
-	\left[\begin{matrix} x_0 \\ x_1 \\ . \\ . \\ x_n \end{matrix}\right]
-    = \theta^T x.
-$$
-
-This is a vectorization of our hypothesis function for one training example; see the lessons on vectorization to learn more.
-
-Remark: Note that **for convenience** reasons in this course <mark>we assume $x_{0}^{(i)} =1 \text{ for } (i\in { 1,\dots, m } )$</mark>. This allows us to do matrix operations with theta and x. Hence making the two vectors $\theta$ and $x^{(i)}$ match each other element-wise (that is, have the same number of elements: n+1).
-
-### Gradient descent for multiple variables
-
-The gradient descent equation itself is generally the same form; we just have to repeat it for our 'n' features:
-
-<div class="p-mark">
-Repeat until convergence: {
-$$
-\begin{align}
-    \theta_0 &:= \theta_0 - \alpha \frac{1}{m}\sum_{i=1}^m (h_{\theta}(x^{(i)}-y^{(i)}))\cdot x_0^{(i)} \\
-    \theta_1 &:= \theta_1 - \alpha \frac{1}{m}\sum_{i=1}^m (h_{\theta}(x^{(i)}-y^{(i)}))\cdot x_1^{(i)} \\
-    \ldots
-\end{align}
-$$
-}
-</div>
-In other words:
-
-<div class="p-mark">
-Repeat until convergence: {
-$$
-\theta_j := \theta_1 - \alpha \frac{1}{m}\sum_{i=1}^m (h_{\theta}(x^{(i)}-y^{(i)}))\cdot x_j^{(i)}, \quad \text{for }j=1,\ldots,n.
-$$
-}
-</div>
-
-The following image compares gradient descent with one variable to gradient descent with multiple variables:
-
-![Gradient descent for multiple variables 1]({{img-url}}/gd-mv-1.png){:.no-border}
-
-### GD in practice : Feature scaling
-
-<div class="p-mark">
-Make sure feature are on similar scale!
-</div>
-
-- If features have diff values, when we perform them on a plot, there may be very different on scale between axes! <mark>It may impact on the gradient descent!</mark>
-- An option is to divide to a maximum value, for example, $x \in \\{1,\ldots, 2000\\}$ can be scale to $\bar{x} \in \dfrac{\\{1,\ldots,2000\\}}{2000}$ so that we have the values are between $[-1,1]$. However, not used for range of $[-100,100]$ of bigger or $[-0.0001,0.0001]$ or smaller.
-- Another option is to use **mean normalisation**
-
-    $$
-    \bar{x}_i = \dfrac{x_i - \mu_i}{\text{range of }x_i}, \quad
-    \mu_i = \Sigma_i \frac{x_i}{n}.
-    $$
-    
-    For example, $x\_i \in [30,50]$, then range of $x\_i$ is 20.
-
-
-### GD in practice : Learning rate $\alpha$
-
-$$
-\theta_j = \theta_j - \alpha \dfrac{\partial}{\partial \theta_j} J(\theta)
-$$
-
-- **Debugging**: How to make sure gradient descent works correctly?
-- How to choose **learning rate** $\alpha$?
-
+​	
