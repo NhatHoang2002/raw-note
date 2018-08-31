@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Python 1
 categories: it
 tags: [python,coding]
@@ -71,7 +70,7 @@ Xem [note này]({{site.baseurl}}/python-exercism-1).
 1. Start > gõ "Path", mở *Edit the system enviroment variables*
 2. Enviroment Variables > User variables for ... > click double vào **path**
 3. Click double vào hàng trống cuối cùng trong list > Dán đường dẫn Anaconda vào
-	1. Để có thể tìm đường dẫn Anaconda, nhấn Start > gõ "Anaconda" > chuột phải > Open file location 
+	1. Để có thể tìm đường dẫn Anaconda, nhấn Start > gõ "Anaconda" > chuột phải > Open file location
 	2. Nó mở ra cửa sổ chứa mấy file shortcut > chuột phải lần nữa vào Anaconda > Optn file location > nó sẽ mở đường dẫn của Anaconda, thông thường sẽ là **C:\ProgramData\Anaconda3**
 3. Lưu ý, lưu thư mục chứa mấy file python.exe chứ không có lưu cả file đó.
 4. Sau khi add vào PATH, cần phải restart lại [cmder](http://cmder.net/) (command prompt thì khỏi)
@@ -251,10 +250,10 @@ Xem [note này]({{site.baseurl}}/python-exercism-1).
 	    def __init__(self, color, size):
 	        self.color = color
 	        self.size = size
-	
+
 	ball1 = Ball('blue', 'small')
 	ball2 = Ball('blue', 'small')
-	
+
 	print(ball1 == ball2) # Prints False!
 	~~~
 
@@ -296,7 +295,7 @@ Xem [note này]({{site.baseurl}}/python-exercism-1).
 	~~~ python
 	a = [1, 2, 3]
 	b = [1, 2, 3]
-	
+
 	a == b # True
 	a is b # False
 	id(a) == id(b) # True
@@ -344,7 +343,7 @@ class Reverse:
 
     def __iter__(self):
         return self
-    
+
     def __next__(self):
         if self.index == 0:
             raise StopIteration
@@ -380,7 +379,7 @@ for char in rev:
 	courses = ['a', 'b', 'c']
 	for index, course in enumerate(courses, start = 1):
 		print(index, course)
-	
+
 	# returns
 	1 a
 	2 b
@@ -423,7 +422,7 @@ for char in rev:
 
 ### Operators
 
-- [`zip()`](https://www.programiz.com/python-programming/methods/built-in/zip): gôm từng phần tử của hai đối tượng lại với nhau. 
+- [`zip()`](https://www.programiz.com/python-programming/methods/built-in/zip): gôm từng phần tử của hai đối tượng lại với nhau.
 	- Hai đối tượng này có thể cùng kiểu hoặc không (kiểu list, tupe, set).
 	- Nếu số lượng hai đối tượng khác nhau thì sẽ lấy cho đến hết cái ít hơn
 	- Sau đó thì có thể áp dụng phép chuyển kiểu để hiển thị ra hoặc sử dụng luôn
@@ -443,7 +442,7 @@ for char in rev:
 		</div>
 		</div>
 		</div>
-	
+
 
 ## Functions
 
@@ -461,7 +460,7 @@ for char in rev:
 
 ### With `*`
 
-- ([Đọc SE_ref biết hết](https://stackoverflow.com/questions/36901/what-does-double-star-asterisk-and-star-asterisk-do-for-parameters)) Cái này cho phép tạo ra function với bao nhiêu argument cũng được! Với 1 `*` thì nó cho chúng ta nhập 1 list arg dạng tuple, còn với `**` thì nó cho chúng ta nhập 1 dạng pair key-val của dictionary. 
+- ([Đọc SE_ref biết hết](https://stackoverflow.com/questions/36901/what-does-double-star-asterisk-and-star-asterisk-do-for-parameters)) Cái này cho phép tạo ra function với bao nhiêu argument cũng được! Với 1 `*` thì nó cho chúng ta nhập 1 list arg dạng tuple, còn với `**` thì nó cho chúng ta nhập 1 dạng pair key-val của dictionary.
 
     ~~~ python
     def student(*argd, **kwargs):
@@ -476,7 +475,7 @@ for char in rev:
     {'name': 'Thi', 'age': 28}
     ~~~
 
-- Nói rõ hơn tí chỗ `*` này ([official_ref](https://docs.python.org/dev/tutorial/controlflow.html#more-on-defining-functions), [stackE](https://stackoverflow.com/questions/36901/what-does-double-star-asterisk-and-star-asterisk-do-for-parameters)): 
+- Nói rõ hơn tí chỗ `*` này ([official_ref](https://docs.python.org/dev/tutorial/controlflow.html#more-on-defining-functions), [stackE](https://stackoverflow.com/questions/36901/what-does-double-star-asterisk-and-star-asterisk-do-for-parameters)):
 
 - Không phải hai cái kia đại diện cho 2 biến mà mỗi cái đại diện cho 1 nhóm biến. Nếu không thêm ký hiệu `*` thì nó cứ đưa hết vô biến đầu tiên (**tuple**)
 
@@ -492,7 +491,7 @@ for char in rev:
     # Note: {}
     ~~~
 
-- Cái `**` must be a **mapping** (e.g. dictionary) 
+- Cái `**` must be a **mapping** (e.g. dictionary)
 
 - The `*` must be an **iterable** (what is it? see [on stack exchange](https://stackoverflow.com/questions/9884132/what-exactly-are-iterator-iterable-and-iteration)).
 
@@ -520,7 +519,7 @@ for char in rev:
 - Một số package dùng trong data: `numpy` (cf [this note]({{ site.baseutl }}/python-numpy-1)), `matplotlib` (cf [this note]({{ site.baseutl }}/python-matplotlib-1)), `scikit-learn` : Machine Learning (cf [this note]({{ site.baseutl }}/python-scikit-learn-1)), `pandas` (cf [this note]({{ site.baseutl }}/python-pandas-1))
 
 - Để cài package thường dùng `pip`: `pip3 install <package>`
-- Để xài 
+- Để xài
 	1. `import numpy` và xài `numpy.array()`
 	2. `from numpy import array` và xài `array()` $\Rightarrow$ cách này thì người ta sẽ không biết `array()` đến từ `numpy`, code không rõ ràng cho lắm (datacamp [nói vậy](https://campus.datacamp.com/courses/intro-to-python-for-data-science/chapter-3-functions-and-packages?ex=9))
 	3. `from numpy import *` là import tất cả luôn (các methods, object đều sẽ hiện hữu, cái này nó khác với cái đầu tiên, cái đầu tiên không hiện hết method, khi nào cần xài thì dùng `numpy.array` thôi (có nói trong CS50)
@@ -662,7 +661,7 @@ Keyboard shortcuts
 	</ul>
 
 - Cài thêm package **BracketHighlighter** (hiện bracket trên cột bên để dễ quan sát), **SidebarEnhancement** (thêm options vào trong sidebar)
-- cài package **Anaconda** (cái này giống tên cái Anaconda kia thôi), sau đó cần dán đoạn settings sau vào (**Preferences** > **Package settings** > **Anaconda** > **Settings - Users**> 
+- cài package **Anaconda** (cái này giống tên cái Anaconda kia thôi), sau đó cần dán đoạn settings sau vào (**Preferences** > **Package settings** > **Anaconda** > **Settings - Users**>
 
 	<ul class="collapsible" data-collapsible="accordion">
 	<li>
@@ -689,7 +688,7 @@ Keyboard shortcuts
 	    "disable_anaconda_completion": true
 	}
 	~~~
-	
+
 	Trong đây có option `auto_formatting` có chức năng tự động xóa khoảng trắng thừa nếu mình có nhập nhiều khoảng trắng quá,...
 	</div>
 	</li>
@@ -703,7 +702,7 @@ Keyboard shortcuts
 	Xem chi tiết
 	</div>
 	<div class="collapsible-body" markdown="1">
-	~~~ 
+	~~~
 	{
 	    "cmd": ["/usr/bin/python2.7", "-u", "$file"],
 	    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",

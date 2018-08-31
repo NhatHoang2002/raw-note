@@ -1,5 +1,5 @@
 ---
-title: Machine Learning 2-Regression
+title: ML Udemy 2 - Regression
 categories: [ml, it]
 tags: [machine learning, ml udemy]
 maths: 1

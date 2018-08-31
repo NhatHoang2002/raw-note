@@ -1,5 +1,5 @@
 ---
-title: Machine Learning 1-data preprocessing
+title: ML Udemy 1 - data preprocessing
 categories: [ml, it]
 tags: [machine learning, ml udemy]
 maths: 1

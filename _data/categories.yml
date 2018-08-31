@@ -1,13 +1,13 @@
 - slug: maths
-  name: Toán
+  name: Mathematics
 - slug: phd
   name: PhD
 - slug: it
-  name: CNTT
+  name: Infomation Technology
 - slug: french
   name: French
 - slug: articles
-  name: Bài viết hay
+  name: Good articles
 - slug: notetheme
   name: NoteTheme 
 - slug: ml
