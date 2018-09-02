@@ -10,7 +10,7 @@ comment: 1
 
 {% assign img-url = '/images/posts/ML/coursera' %}
 
-This note was fist taken when I learnt the [machine learning course on Coursera](https://www.coursera.org/learn/machine-learning/). Lectures in this week: [Lecture 4](/files/ML-coursera/Lecture4.pdf).
+This note was fist taken when I learnt the [machine learning course on Coursera](https://www.coursera.org/learn/machine-learning/). Lectures in this week: [Lecture 4](/files/ML-coursera/Lecture4.pdf), [Lecture 5](/files/ML-coursera/Lecture5.pdf).
 
 {% include more.html content="[Go back to Week 1](/machine-learning-coursera-1)." %}
 
@@ -360,3 +360,5 @@ I have already known about matlab, so this part of note contains not too much in
 	x_test = [1 1650 3];
 	price = x_test * theta;
 	~~~
+
+{% include more.html content="[Go back to Week 3](/machine-learning-coursera-3)." %}

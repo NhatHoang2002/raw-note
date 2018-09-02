@@ -251,4 +251,5 @@ The ellipses shown above are the contours of a quadratic function. Also shown is
 {% include more.html content="[Download Lecture 3](/files/ML-coursera/Lecture3.pdf)." %}
 
 Refer to [note of Linear Algebra]({{site.baseurl}}/linear-algebra-1). For LA in this course of Ng, it's very simple, I knew all about this to I don't give any note here.
-​	
+​
+{% include more.html content="[Go to Week 2](/machine-learning-coursera-2)." %}
