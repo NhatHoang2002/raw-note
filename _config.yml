@@ -19,7 +19,7 @@ user:
   github: "dinhanhthi"
 google_tracking_id: ""
 google_site_verification: ""
-disqus_shortname: this-site
+disqus_shortname: note-thi
 
 # Build settings
 markdown: kramdown
