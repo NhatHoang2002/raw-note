@@ -5,6 +5,7 @@ tags: [machine learning, ml coursera]
 math: 1
 toc: 1
 date: 2018-08-31
+comment: 1
 ---
 
 {% assign img-url = '/images/posts/ML/coursera' %}
@@ -24,6 +25,7 @@ This note was fist taken when I learnt the [machine learning course on Coursera]
 - [All videos](https://youtu.be/PPLop4L2eGk) in course on Youtube.
 - Assignment must be done with Octave or Matlab.
 - You need a Matlab account and you can use it (free version for this course only): [Go to Matlab Online](https://matlab.mathworks.com/){:target="_blank"}, read more [here](https://www.coursera.org/learn/machine-learning/supplement/rANSM/accessing-matlab-online-and-uploading-the-exercise-files).
+- `cd` to the assignment folder and then using `submit()` to submit your work.
 
 ## Introduction
 
@@ -80,7 +82,7 @@ Example:
 
 ### Model Representation
 
-To establish notation for future use, we’ll use $x^{(i)}$ to denote the “input” variables (living area in this example), also called input features, and $y^{(i)}$ to denote the “output” or target variable that we are trying to predict (price). A pair $(x^{(i)} , y^{(i)} )$ is called a training example, and the dataset that we’ll be using to learn—a list of m training examples $(x(i),y(i))$; $i=1,\ldots,m—is$ called a training set. Note that the superscript “$(i)$” in the notation is simply an index into the training set, and has nothing to do with exponentiation. We will also use $X$ to denote the space of input values, and $Y$ to denote the space of output values. In this example, $X = Y = \mathbb{R}$.
+To establish notation for future use, we’ll use $x^{(i)}$ to denote the “input” variables (living area in this example), also called input features, and $y^{(i)}$ to denote the “output” or target variable that we are trying to predict (price). A pair $(x^{(i)} , y^{(i)} )$ is called a training example, and the dataset that we’ll be using to learn—a list of m training examples $(x(i),y(i))$; $i=1,\ldots,m$ is called a training set. Note that the superscript “$(i)$” in the notation is simply an index into the training set, and has nothing to do with exponentiation. We will also use $X$ to denote the space of input values, and $Y$ to denote the space of output values. In this example, $X = Y = \mathbb{R}$.
 
 To describe the supervised learning problem slightly more formally, our goal is, given a training set, to learn a function $h : X \to Y$ so that $h(x)$ is a “good” predictor for the corresponding value of $y$. For historical reasons, this function $h$ is called a hypothesis. Seen pictorially, the process is therefore like this:
 
@@ -92,14 +94,16 @@ When the target variable that we’re trying to predict is **continuous**, such 
 
 We can **measure the accuracy of our hypothesis function** by using a **cost function**. This takes an average difference (actually a fancier version of an average) of all the results of the hypothesis with inputs from x's and the actual output y's.
 
+<div class="p-mark">
 $$
 \begin{align}
-J(\theta_0, \theta_1) = \dfrac {1}{2m} \displaystyle \sum _{i=1}^m \left ( \hat{y}_{i}- y_{i} \right)^2 = \dfrac {1}{2m} \displaystyle \sum _{i=1}^m \left (h_\theta (x_{i}) - y_{i} \right)^2
+J(\theta_0, \theta_1) &= \dfrac {1}{2m} \displaystyle \sum _{i=1}^m \left ( \hat{y}^{(i)}- y^{(i)} \right)^2 = \dfrac {1}{2m} \displaystyle \sum _{i=1}^m \left (h_\theta (x^{(i)}) - y^{(i)} \right)^2 \\
+h_{\theta} &= \theta_0 +\theta_1x^{(i)}
 \end{align}
 $$
+</div>
 
-
-To break it apart, it is $\frac{1}{2}\bar{x}$ is the mean of the squares of $h_\theta (x_{i}) - y_{i}h$, or the difference between the predicted value and the actual value.
+To break it apart, it is $\frac{1}{2}\bar{x}$ is the mean of the squares of $h_\theta (x^{(i)}) - y^{(i)}h$, or the difference between the predicted value and the actual value.
 
 This function is otherwise called the "**Squared error function**", or "**Mean squared error**". The mean is halved $\frac{1}{2}$ as a convenience for the computation of the gradient descent, as the derivative term of the square function will cancel out the $\frac{1}{2}$ term. The following image summarizes what the cost function does:
 
@@ -209,7 +213,7 @@ $$
 
 ### Gradient descent for linear regression
 
-<div class="p-mark">
+<div class="p-mark" markdown="1">
 $J(\theta_0, \theta_1)$ in linear regression is always in "bowl shape" function or **convex function**.
 </div>
 
@@ -221,7 +225,7 @@ $$
 $$
 </div>
 
-where m is the size of the training set, $\theta_0$ a constant that will be changing simultaneously with $\theta_1$ and $(x_i,y_i)$ are values of the given training set (data).
+where m is the size of the training set, $\theta_0$ a constant that will be changing <mark>simultaneously</mark> with $\theta_1$ and $(x_i,y_i)$ are values of the given training set (data).
 
 Note that we have separated out the two cases for $\theta_j$ into separate equations for $\theta_0$ and $\theta_1$; and that for $\theta_1$ we are multiplying $x_{i}$ at the end due to the derivative. The following is a derivation of $\frac {\partial}{\partial \theta_j}J(\theta)$ for a single example :
 
