@@ -10,7 +10,7 @@ comment: 1
 
 {% assign img-url = '/images/posts/ML/coursera' %}
 
-This note was fist taken when I learnt the [machine learning course on Coursera](https://www.coursera.org/learn/machine-learning/).
+This note was first taken when I learnt the [machine learning course on Coursera](https://www.coursera.org/learn/machine-learning/).
 
 {% include toc.html %}
 

@@ -60,3 +60,4 @@ date: 2018-08-24
 25. Add app to dash: install **alacarte** `sudo apt-get install alacarte`
 26. Turn off animation open and minimize windows on ubuntu 17.10 and later (gnome desktop): **Gnome Tweak Tools > Apperance > Animations OFF**
 27. Gõ tiếng Việt SublimeText, install package `vn ime` (gõ tìm đúng như thế). Khi sử dụng thì nhấn F2.
+28. Save github account as default `git config credential.helper store` then `git pull` for the first time input.
