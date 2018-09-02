@@ -17,6 +17,8 @@ This note was fist taken when I learnt the [machine learning course on Coursera]
 
 ## Classification & Representation
 
+
+
 ### Classification
 
 ### Hypothesis representation

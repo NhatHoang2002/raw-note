@@ -14,9 +14,9 @@ Bài này giống như chương Introduction, những thứ cơ bản nhất v�
 {% include toc.html %}
 
 
-## Tài liệu
+## Documentation
 
-- **Dùng để tra cứu**
+- **For checking everytime**
 	- [programiz.com](https://www.programiz.com) : **nên dùng để tra**
 	- [Python trên w3school](https://www.w3schools.com/python) : nên dùng để xem và check ví dụ (không đầy đủ các method)
 	- [Python 3](https://www.tutorialspoint.com/python3/index.htm) on **tutorialspoint** : nên dùng để xem danh sách hết các method trong mỗi objects.
@@ -28,7 +28,7 @@ Bài này giống như chương Introduction, những thứ cơ bản nhất v�
 	- Course on Pluralsight: [Python fundamentals by Austin Bingham and Robert Smallshire](https://app.pluralsight.com/library/courses/python-fundamentals/table-of-contents) (chỉ video, không bài tập)
 	- Video bài giảng của [Corey Schafer](https://www.youtube.com/user/schafer5/playlists) (anh Việt recommend)
 	- [How to think like a computer scientist?](http://openbookproject.net/thinkcs/python/english3e/index.html) : sách được thể hiện dưới dạng html
-	- [Google Python Class](https://developers.google.com/edu/python/)
+	- [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/) : free ebook for python (there is a corresponding course on Udemy)
 - **Exercise, practice**
 	- [Exercism](https://exercism.io/my/tracks/python) : học bằng bài tập, có nhiều ngôn ngữ khác nữa, free 100% (xem thêm [note riêng cho nó](/python-exercism-1))
 	- [CheckIO](https://py.checkio.org): like exercism.

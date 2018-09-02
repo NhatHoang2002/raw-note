@@ -15,6 +15,7 @@ This series starts from the beginning of learning [Data Science on CodeCademy](h
 
 - [scikit-learn : learn on kaggle](http://blog.kaggle.com/author/kevin-markham/)
 - [Learn skills on kaggle](https://www.kaggle.com/learn/overview) (python, pandas, machine learning, data visualisation, sql, r, deep learning)
+- [My Journey to Data Science](https://towardsdatascience.com/my-journey-to-data-science-for-beginner-with-zero-coding-experience-1e7896b564d3) (For beginner with zero-coding experience)
 
 
 ## Install
