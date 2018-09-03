@@ -1,7 +1,7 @@
 ---
 title: Python NumPy
 categories: it
-tags: [python,coding,numpy,data]
+tags: [python,numpy,data]
 maths: 1
 toc: 1
 date: 2018-08-20

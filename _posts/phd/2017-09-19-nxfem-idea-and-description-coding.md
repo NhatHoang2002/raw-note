@@ -1,7 +1,7 @@
 ---
 title: NXFEM - idea and description (coding)
 categories: [phd,maths,it]
-tags: [phd,numerical analysis,coding,matlab]
+tags: [phd,numerical analysis,matlab]
 maths: 1
 toc: 1
 ---

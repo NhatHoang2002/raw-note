@@ -1,10 +1,10 @@
 ---
 title: Python Pandas
 categories: [it,data]
-tags: [python,coding,pandas,data]
+tags: [python,pandas,data]
 maths: 1
 toc: 1
-date: 2018-08-20
+date: 2018-09-03
 ---
 
 This note is used only for noting pandas package in python. You can see also: [python note]({{site.baseurl}}/tags#python), [data note]({{site.baseurl}}/categories#data) or [machine learning note]({{site.baseurl}}/categories#ml).
