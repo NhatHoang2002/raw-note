@@ -10,12 +10,8 @@ comment: 1
 
 {% assign img-url = '/images/posts/ML/coursera' %}
 
-<<<<<<< HEAD
 This note was first taken when I learnt the [machine learning course on Coursera](https://www.coursera.org/learn/machine-learning/). <br />
 **Lectures in this week**: [Lecture 4](/files/ML-coursera/Lecture4.pdf), [Lecture 5](/files/ML-coursera/Lecture5.pdf).
-=======
-This note was first taken when I learnt the [machine learning course on Coursera](https://www.coursera.org/learn/machine-learning/). Lectures in this week: [Lecture 4](/files/ML-coursera/Lecture4.pdf), [Lecture 5](/files/ML-coursera/Lecture5.pdf).
->>>>>>> 71fc13a2fbf084e8fbfbe3d02bee2697476b7ae9
 
 {% include more.html content="[Go back to Week 1](/machine-learning-coursera-1)." %}
 

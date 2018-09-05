@@ -4,11 +4,7 @@ categories: it
 tags: [python]
 maths: 1
 toc: 1
-<<<<<<< HEAD
 date: 2018-09-04
-=======
-date: 2018-09-03
->>>>>>> 71fc13a2fbf084e8fbfbe3d02bee2697476b7ae9
 datacamp: 1
 comment: 1
 ---
@@ -417,12 +413,8 @@ for char in rev:
 - **Don't forget ',' between elemeents**
 - Truy suất `student['name']`
 - Xem key có trong dic không: `student.get('phone')` returns *None* nếu không tìm thấy, nếu muốn thay chữ None thì dùng `student.get('phone', 'Not Found')`.
-<<<<<<< HEAD
 
   - Other way: `'name' in studnet`
-=======
-	- Other way: `'name' in studnet`
->>>>>>> 71fc13a2fbf084e8fbfbe3d02bee2697476b7ae9
 - Thêm/update nhiều key: `student.update({'name': 'Thi', 'phone': 555})`
 - Remove `del student['age']`, nếu giữa lại giá trị cái xóa thì `age = student.pop('age')`
 - `len(dict)`
@@ -431,7 +423,6 @@ for char in rev:
 - See only keys : `student.keys()`
 - Truy suất only key (name, age, course): `for key in student:`
 - Truy suất key và values: `for key, value in student.items():`
-<<<<<<< HEAD
 - define dictionary at once
 
     ~~~ python
@@ -446,9 +437,6 @@ for char in rev:
 
 - 
 
-=======
-- check
->>>>>>> 71fc13a2fbf084e8fbfbe3d02bee2697476b7ae9
 
 
 ### Operators

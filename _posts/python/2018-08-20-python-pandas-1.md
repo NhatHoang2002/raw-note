@@ -4,11 +4,7 @@ categories: [it,data]
 tags: [python,pandas,data]
 maths: 1
 toc: 1
-<<<<<<< HEAD
 date: 2018-09-04
-=======
-date: 2018-09-03
->>>>>>> 71fc13a2fbf084e8fbfbe3d02bee2697476b7ae9
 ---
 
 This note is used only for noting pandas package in python. You can see also: [python note]({{site.baseurl}}/tags#python), [data note]({{site.baseurl}}/categories#data) or [machine learning note]({{site.baseurl}}/categories#ml).
