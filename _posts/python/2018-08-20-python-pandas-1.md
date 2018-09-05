@@ -96,7 +96,7 @@ This note is used only for noting pandas package in python. You can see also: [p
 	bricks[ np.logical_and(brics['area'] > 8, brics['area'] < 10)]
 	~~~
 
-## Apply
+## `.apply()`
 
 Create a new column counting the lenght of elements in another column, we can using `.apply` function
 

@@ -274,6 +274,7 @@ for char in rev:
 
 - `course_str = ', '.join(courses)`: tạo 1 string từ courses, cách nhau bởi dấu phẩy
 - Ngược lại là `.split(' - ')` chuyển từ string sang list
+- `<list>.index(<element>)`
 
 ### Set
 
@@ -319,8 +320,6 @@ for char in rev:
     b = [3, 4]
     d = {'col1':a, 'col2': b}
     ~~~
-
-- 
 
 
 

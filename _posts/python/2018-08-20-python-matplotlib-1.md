@@ -4,7 +4,7 @@ categories: it
 tags: [python,matplotlib,data]
 maths: 1
 toc: 1
-date: 2018-08-21
+date: 2018-09-05
 ---
 
 {% assign fig = "/images/posts/python/matplotlib" %}
@@ -45,6 +45,7 @@ plt.show()
 - **Clear up** plot: `plt.clf`
 - `plt.grid(True)` : show grid
 - `plt.text(x, y , 'Text')`: display `'Text'` tại tạo độ `(x,y)`
+- **Only 1 arg**: `plt.plot(y)` consider the index as `x` input
 
 
 ### Scatter

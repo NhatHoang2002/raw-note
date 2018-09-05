@@ -5,19 +5,21 @@ tags: [machine learning, ml coursera]
 math: 1
 toc: 1
 comment: 1
-date: 2018-09-04
+date: 2018-09-05
 ---
 
 {% assign img-url = '/images/posts/ML/coursera' %}
 
 This note was first taken when I learnt the [machine learning course on Coursera](https://www.coursera.org/learn/machine-learning/).<br />
-**Lectures in this week**: [Lecture 4](/files/ML-coursera/Lecture4.pdf).
+**Lectures in this week**: [Lecture 6](/files/ML-coursera/Lecture6.pdf).
 
 {% include more.html content="[Go back to Week 2](/machine-learning-coursera-2)." %}
 
 {% include toc.html %}
 
 ## Classification & Representation
+
+{% include more.html content="[Download Lecture 6](/files/ML-coursera/Lecture6.pdf)." %}
 
 ### Classification
 
@@ -190,4 +192,59 @@ $$
 
 ### Advanced Optimization
 
+"**Conjugate gradient**", "**BFGS**", and "**L-BFGS**" are <mark>more sophisticated, faster</mark> ways to optimize $\theta$ that can be used **instead of gradient descent**. We suggest that you should not write these more sophisticated algorithms yourself (unless you are an expert in numerical computing) but use the libraries instead, as they're already tested and highly optimized. <mark>Octave/Matlab provides them.</mark>
+
+A single function that returns both $J(\theta)$ and $\frac{\partial}{\partial\theta_j}J(\theta)$
+
+~~~ matlab
+function [jVal, gradient] = costFunction(theta)
+  jVal = [...code to compute J(theta)...];
+  gradient = [...code to compute derivative of J(theta)...];
+end
+~~~
+
+Then we can use octave's `fminunc()` optimization algorithm along with the `optimset()` function that creates an object containing the options we want to send to `fminunc()`.
+
+~~~ python
+options = optimset('GradObj', 'on', 'MaxIter', 100);
+initialTheta = zeros(2,1);
+   [optTheta, functionVal, exitFlag] = fminunc(@costFunction, initialTheta, options);
+~~~
+
+We give to the function `fminunc()` our cost function, our initial vector of theta values, and the `options` object that we created beforehand.
+
 ## Multiclass classification: one-vs-all
+
+$y$ has more values than only two 0 and 1. We keep using binary classification for each group of 2 (consider one and see the others as the other group)
+
+<div class="row d-flex" markdown="1">
+<div class="col s12 l6" markdown="1">
+(n+1)-values $y \Rightarrow n+1$  binary classification problems. 
+
+<div class="p-mark">
+$$
+\begin{align*}
+y &\in \lbrace 0, 1 ... n\rbrace \\ 
+h_\theta^{(0)}(x) &= P(y = 0 | x ; \theta) \\ 
+h_\theta^{(1)}(x) &= P(y = 1 | x ; \theta) \\ 
+\cdots & \\ 
+h_\theta^{(n)}(x) &= P(y = n | x ; \theta) \\ 
+\mathrm{prediction} &= \max_i( h_\theta ^{(i)}(x) )
+\end{align*}
+$$
+</div>
+</div>
+<div class="col s12 l6" markdown="1">
+![One vs All 1]({{img-url}}/one-vs-all-1.png){:.no-border}
+</div>
+</div>
+
+## Solving the problem of overfitting
+
+### The problem of overfitting
+
+### Cost function
+
+### Regularized linear regression
+
+### Regularized logistic regression
