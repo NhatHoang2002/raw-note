@@ -11,3 +11,5 @@ comment: 1
 This note continues the [first python note](/python-note-1). Check out the [full list of notes in python](/tags#python).
 
 
+
+
