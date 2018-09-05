@@ -44,3 +44,5 @@ plt.show()
 - **Question**: random walk go up/down (of tails) but what is the chance to go up to 65, for example?
 - **Idea**: run 100 times the algorithm of random walk to get the last "tails" and then see the distribution of this final tail and guest the chance. Using **histogram** to visualize the distribution.
 
+
+
