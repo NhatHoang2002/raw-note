@@ -1,7 +1,7 @@
 ---
 title: Coding note FUNCTIONS
 categories: [phd,maths,it]
-tags: [coding,phd,matlab]
+tags: [phd,matlab]
 maths: 1
 toc: 1
 ---

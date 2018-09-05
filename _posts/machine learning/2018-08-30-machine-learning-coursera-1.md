@@ -10,7 +10,8 @@ comment: 1
 
 {% assign img-url = '/images/posts/ML/coursera' %}
 
-This note was fist taken when I learnt the [machine learning course on Coursera](https://www.coursera.org/learn/machine-learning/).
+This note was first taken when I learnt the [machine learning course on Coursera](https://www.coursera.org/learn/machine-learning/). <br />
+**Lectures in this week**: [Lecture 1](/files/ML-coursera/Lecture1.pdf), [Lecture 2](/files/ML-coursera/Lecture1.pdf), [Lecture 3](/files/ML-coursera/Lecture1.pdf).
 
 {% include toc.html %}
 
@@ -84,7 +85,7 @@ Example:
 
 To establish notation for future use, we’ll use $x^{(i)}$ to denote the “input” variables (living area in this example), also called input features, and $y^{(i)}$ to denote the “output” or target variable that we are trying to predict (price). A pair $(x^{(i)} , y^{(i)} )$ is called a training example, and the dataset that we’ll be using to learn—a list of m training examples $(x(i),y(i))$; $i=1,\ldots,m$ is called a training set. Note that the superscript “$(i)$” in the notation is simply an index into the training set, and has nothing to do with exponentiation. We will also use $X$ to denote the space of input values, and $Y$ to denote the space of output values. In this example, $X = Y = \mathbb{R}$.
 
-To describe the supervised learning problem slightly more formally, our goal is, given a training set, to learn a function $h : X \to Y$ so that $h(x)$ is a “good” predictor for the corresponding value of $y$. For historical reasons, this function $h$ is called a hypothesis. Seen pictorially, the process is therefore like this:
+To describe the supervised learning problem slightly more formally, our goal is, given a training set, to learn a function $h : X \to Y$ so that $h(x)$ is a “good” predictor for the corresponding value of $y$. For historical reasons, this function <mark>$h$ is called a hypothesis</mark>. Seen pictorially, the process is therefore like this:
 
 <div class="p-mark" markdown="1">
 When the target variable that we’re trying to predict is **continuous**, such as in our housing example, we call the learning problem a **regression problem**. When $y$ can take on only a **small number of discrete values** (such as if, given the living area, we wanted to predict if a dwelling is a house or an apartment, say), we call it a **classification problem**.
@@ -92,7 +93,7 @@ When the target variable that we’re trying to predict is **continuous**, such 
 
 ### Cost function
 
-We can **measure the accuracy of our hypothesis function** by using a **cost function**. This takes an average difference (actually a fancier version of an average) of all the results of the hypothesis with inputs from x's and the actual output y's.
+We can <mark>**measure the accuracy of our hypothesis function** by using a **cost function**</mark>. This takes an average difference (actually a fancier version of an average) of all the results of the hypothesis with inputs from x's and the actual output y's.
 
 <div class="p-mark">
 $$
@@ -219,10 +220,14 @@ $J(\theta_0, \theta_1)$ in linear regression is always in "bowl shape" function 
 
 When specifically applied to the case of linear regression, a new form of the gradient descent equation can be derived. We can substitute our actual cost function and our actual hypothesis function and modify the equation to :
 
-<div class="p-mark">	
+<div class="p-mark">
+Repeat until convergence:{
 $$
-\begin{align*} \text{repeat until convergence: } \lbrace & \newline \theta_0 := & \theta_0 - \alpha \frac{1}{m} \sum\limits_{i=1}^{m}(h_\theta(x_{i}) - y_{i}) \newline \theta_1 := & \theta_1 - \alpha \frac{1}{m} \sum\limits_{i=1}^{m}\left((h_\theta(x_{i}) - y_{i}) x_{i}\right) \newline \rbrace& \end{align*}
+\begin{align*}
+\theta_0 := & \theta_0 - \alpha \frac{1}{m} \sum\limits_{i=1}^{m}(h_\theta(x_{i}) - y_{i}) \newline \theta_1 := & \theta_1 - \alpha \frac{1}{m} \sum\limits_{i=1}^{m}\left((h_\theta(x_{i}) - y_{i}) x_{i}\right)
+\end{align*}
 $$
+}
 </div>
 
 where m is the size of the training set, $\theta_0$ a constant that will be changing <mark>simultaneously</mark> with $\theta_1$ and $(x_i,y_i)$ are values of the given training set (data).

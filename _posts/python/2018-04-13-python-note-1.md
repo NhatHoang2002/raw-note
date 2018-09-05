@@ -1,10 +1,10 @@
 ---
 title: Python 1
 categories: it
-tags: [python,coding]
+tags: [python]
 maths: 1
 toc: 1
-date: 2018-08-24
+date: 2018-09-04
 datacamp: 1
 comment: 1
 ---
@@ -14,9 +14,9 @@ Bài này giống như chương Introduction, những thứ cơ bản nhất v�
 {% include toc.html %}
 
 
-## Tài liệu
+## Documentation
 
-- **Dùng để tra cứu**
+- **For checking everytime**
 	- [programiz.com](https://www.programiz.com) : **nên dùng để tra**
 	- [Python trên w3school](https://www.w3schools.com/python) : nên dùng để xem và check ví dụ (không đầy đủ các method)
 	- [Python 3](https://www.tutorialspoint.com/python3/index.htm) on **tutorialspoint** : nên dùng để xem danh sách hết các method trong mỗi objects.
@@ -28,7 +28,8 @@ Bài này giống như chương Introduction, những thứ cơ bản nhất v�
 	- Course on Pluralsight: [Python fundamentals by Austin Bingham and Robert Smallshire](https://app.pluralsight.com/library/courses/python-fundamentals/table-of-contents) (chỉ video, không bài tập)
 	- Video bài giảng của [Corey Schafer](https://www.youtube.com/user/schafer5/playlists) (anh Việt recommend)
 	- [How to think like a computer scientist?](http://openbookproject.net/thinkcs/python/english3e/index.html) : sách được thể hiện dưới dạng html
-	- [Google Python Class](https://developers.google.com/edu/python/)
+	- [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/) : free ebook for python (there is a corresponding course on Udemy)
+	- [Python course for Data Science](https://courses.cognitiveclass.ai/courses/course-v1:Cognitiveclass+PY0101EN+v2/progress) on Big Data University.
 - **Exercise, practice**
 	- [Exercism](https://exercism.io/my/tracks/python) : học bằng bài tập, có nhiều ngôn ngữ khác nữa, free 100% (xem thêm [note riêng cho nó](/python-exercism-1))
 	- [CheckIO](https://py.checkio.org): like exercism.
@@ -343,7 +344,7 @@ class Reverse:
 
     def __iter__(self):
         return self
-
+    
     def __next__(self):
         if self.index == 0:
             raise StopIteration
@@ -407,17 +408,35 @@ for char in rev:
 
 ### Dictionaries
 
-- It's mutable
+- It's mutable (changeable)
 - Example: `student = {'name': 'John', 'age': 25, 'course': ['Math', 'CompSci']}`
+- **Don't forget ',' between elemeents**
 - Truy suất `student['name']`
 - Xem key có trong dic không: `student.get('phone')` returns *None* nếu không tìm thấy, nếu muốn thay chữ None thì dùng `student.get('phone', 'Not Found')`.
+
+  - Other way: `'name' in studnet`
 - Thêm/update nhiều key: `student.update({'name': 'Thi', 'phone': 555})`
 - Remove `del student['age']`, nếu giữa lại giá trị cái xóa thì `age = student.pop('age')`
 - `len(dict)`
 - See only values `student.values()`
 - See key theo pairs: `student.items()`
+- See only keys : `student.keys()`
 - Truy suất only key (name, age, course): `for key in student:`
 - Truy suất key và values: `for key, value in student.items():`
+- define dictionary at once
+
+    ~~~ python
+    d = {'col1':[1, 2], 'col2':[3, 4]}
+
+    # or
+
+    a = [1, 2]
+    b = [3, 4]
+    d = {'col1':a, 'col2': b}
+    ~~~
+
+- 
+
 
 
 ### Operators
