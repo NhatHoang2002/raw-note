@@ -5,13 +5,21 @@ tags: [machine learning, ml coursera]
 math: 1
 toc: 1
 comment: 1
+<<<<<<< HEAD
 date: 2018-09-04
+=======
+date: 2018-09-02
+>>>>>>> 71fc13a2fbf084e8fbfbe3d02bee2697476b7ae9
 ---
 
 {% assign img-url = '/images/posts/ML/coursera' %}
 
+<<<<<<< HEAD
 This note was first taken when I learnt the [machine learning course on Coursera](https://www.coursera.org/learn/machine-learning/).<br />
 **Lectures in this week**: [Lecture 4](/files/ML-coursera/Lecture4.pdf).
+=======
+This note was first taken when I learnt the [machine learning course on Coursera](https://www.coursera.org/learn/machine-learning/). Lectures in this week: [Lecture 4](/files/ML-coursera/Lecture4.pdf).
+>>>>>>> 71fc13a2fbf084e8fbfbe3d02bee2697476b7ae9
 
 {% include more.html content="[Go back to Week 2](/machine-learning-coursera-2)." %}
 
@@ -31,7 +39,11 @@ This note was first taken when I learnt the [machine learning course on Coursera
 
   ![Classification 1]({{img-url}}/classification-1.png){:.no-border .w-600}
 
+<<<<<<< HEAD
 - $h_{\theta}$ may take values >1 or <0 but <mark>we want $0\le h_{\theta} \le 1$</mark>. That's why we need **logistic regression**, i.e. $h_{\theta}$ is always between $[0,1]$
+=======
+- $h_{\theta}$ may take values >1 or <0 but we want <mark>$0\le h_{\theta} \le 1$</mark>. That's why we need **logistic regression**, i.e. $h_{\theta}$ is always between $[0,1]$
+>>>>>>> 71fc13a2fbf084e8fbfbe3d02bee2697476b7ae9
 
 - Remember and not confused that *logistic regression* is just a *classification regression* in cases of y taking discrete values.
 
