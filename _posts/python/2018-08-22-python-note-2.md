@@ -6,7 +6,6 @@ tags: [python]
 maths: 1
 toc: 1
 date: 2018-08-22
-datacamp: 1
 comment: 1
 ---
 

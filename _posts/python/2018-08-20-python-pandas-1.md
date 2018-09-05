@@ -4,7 +4,7 @@ categories: [it,data]
 tags: [python,pandas,data]
 maths: 1
 toc: 1
-date: 2018-09-04
+date: 2018-09-05
 ---
 
 This note is used only for noting pandas package in python. You can see also: [python note]({{site.baseurl}}/tags#python), [data note]({{site.baseurl}}/categories#data) or [machine learning note]({{site.baseurl}}/categories#ml).
@@ -32,9 +32,7 @@ This note is used only for noting pandas package in python. You can see also: [p
 
 ### Input data
 
-There is 2 ways : from a file *csv* (comma separated values) or from a dictionary
-
-- From dictionary, use `pd.DataFrame` ([cf](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html))
+- **From a dictionary variable**, use `pd.DataFrame` ([cf](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html))
 
     ~~~ python
     # from dictionary
@@ -50,11 +48,11 @@ There is 2 ways : from a file *csv* (comma separated values) or from a dictionar
 
     - `cars.index = row_labels` : set index for rows instead of automate numbers where `row_labels` is a list.
 
-- From csv, use `train = pd.read_csv(<file>)`
+- **From a csv file**, use `train = pd.read_csv(<file>)`
 
     - Using `index_col = 0` to hide the automate index.
 
-## Access
+## Access : `loc`, `iloc`
 
 - **Square brackets**
   - *Column access*: `cars[['country','capital']]`
@@ -63,14 +61,7 @@ There is 2 ways : from a file *csv* (comma separated values) or from a dictionar
   - *Row access*: `cars.loc[['RU', 'USA']]`
   - *Column access*: `cars.loc[:,'country']`
   - *Row & column*: `cars.loc[['RU'],['country']`
-
-### `loc`
-
-- `cars.loc["country"]` gives Row Pandas Series, `cars.loc[["country"]]` gives DataFrame
-- `cars.loc[['Ru','USA'],['country','are']]` : both rows and columns
-
-### `iloc`
-
+- If using **single bracket**, it's **Panda Series** type (`pandas.core.series.Series`), if using **double brackets**, it's **Pandas DataFrame** type (`pandas.core.series.Series`)!
 - `iloc`: select rows and columns by number (integer-location based indexing) [[xem thêm](https://www.shanelynn.ie/select-pandas-dataframe-rows-and-columns-using-iloc-loc-and-ix/)]
 
   ~~~ python
@@ -90,4 +81,27 @@ There is 2 ways : from a file *csv* (comma separated values) or from a dictionar
   data.iloc[[0,3,6,24], [0,5,6]] # 1st, 4th, 7th, 25th row + 1st 6th 7th columns.
   data.iloc[0:5, 5:8] # first 5 rows and 5th, 6th, 7th columns of data frame (county -> phone1).
   ~~~
+
 - `dataset.iloc[:,:-1].values`: chọn `values` của tất cả dòng (`:`) và tất cả cột trừ cột cuối (`:-1`)
+
+## Filtering Pandas DataFrame
+
+- **Goal**: select a conditional column from a data
+	- Using **Pandas Series**, not Pandas DataFrame!
+	- Comparison: `brics["area"] > 8`
+	- Total: `brics[brics['area'] > 8]`
+- Boolean operators, need to use `np.logical_and` or [others](/python-numpy-1#comparison)!
+
+	~~~ python
+	bricks[ np.logical_and(brics['area'] > 8, brics['area'] < 10)]
+	~~~
+
+## Apply
+
+Create a new column counting the lenght of elements in another column, we can using `.apply` function
+
+~~~ python
+brics['name_lenght'] = brics['country'].apply(len)
+~~~
+
+That means we wanna apply the `len` function to the column `country`.
