@@ -44,3 +44,7 @@ I heard alot about these these terms.
 - Get from a [Quora's answer](https://www.quora.com/What-are-the-differences-between-Data-Science-and-Data-Mining-are-they-same).
 - From [simplilearn](https://www.simplilearn.com/data-science-vs-big-data-vs-data-analytics-article): Data Science vs. Big Data vs. Data Analytics
 
+### Learning platforms
+
+- Datacamp vs Dataquest on [reddit](https://www.reddit.com/r/datascience/comments/7gne17/which_one_is_more_effective_for_learning_data/)
+

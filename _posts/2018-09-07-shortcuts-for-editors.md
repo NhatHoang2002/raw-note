@@ -155,7 +155,7 @@ There are some already-defined components on NoteTheme that you could use (If yo
     - item 5
     - item 6
     </div>
-    ~~
+    ~~~
 
 - Side by side
 
