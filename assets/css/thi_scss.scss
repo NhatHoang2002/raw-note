@@ -184,15 +184,28 @@ table, th, td{
 }
 
 .thi-more{
-	font-size: 105%;
+	font-size: 1.05rem;
 	color: darkcyan;
-  font-weight: 500;
-  margin: 1rem 0;
-  a{
-    color: darkcyan;
-  }
-  i{
-    margin-left: -10px;
-    float: left;
-  }
+	font-weight: 500;
+	margin: 1rem 0;
+	a{
+		color: darkcyan;
+	}
+	i{
+	margin-left: -10px;
+		float: left;
+	}
+}
+.thi-download{
+	font-size: 1.05rem;
+	color: #bb8821;
+	font-weight: 500;
+	margin: 1rem 0;
+	a{
+		color: #bb8821;
+	}
+	i{
+		float: left;
+		margin-right: 5px;
+	}
 }

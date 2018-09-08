@@ -19,7 +19,7 @@ This note was first taken when I learnt the [machine learning course on Coursera
 
 ## Multivariate Linear Regression
 
-{% include more.html content="[Download Lecture 4](/files/ML-coursera/Lecture4.pdf)." %}
+{% include download.html content="[Download Lecture 4](/files/ML-coursera/Lecture4.pdf)." %}
 
 ### Multiple Features
 
@@ -206,7 +206,7 @@ Solutions to the above problems include deleting a feature that is linearly depe
 
 ## Octave / Matlab
 
-{% include more.html content="[Download Lecture 5](/files/ML-coursera/Lecture5.pdf)." %}
+{% include download.html content="[Download Lecture 5](/files/ML-coursera/Lecture5.pdf)." %}
 
 I have already known about matlab, so this part of note contains not too much information from the course.
 

@@ -30,7 +30,7 @@ This note was first taken when I learnt the [machine learning course on Coursera
 
 ## Introduction
 
-{% include more.html content="[Download Lecture 1](/files/ML-coursera/Lecture1.pdf)." %}
+{% include download.html content="[Download Lecture 1](/files/ML-coursera/Lecture1.pdf)." %}
 
 ### What is ML?
 
@@ -79,7 +79,7 @@ Example:
 
 ## Model and Cost function
 
-{% include more.html content="[Download Lecture 2](/files/ML-coursera/Lecture2.pdf)." %}
+{% include download.html content="[Download Lecture 2](/files/ML-coursera/Lecture2.pdf)." %}
 
 ### Model Representation
 
@@ -253,7 +253,7 @@ The ellipses shown above are the contours of a quadratic function. Also shown is
 
 ## Linear Algebra review
 
-{% include more.html content="[Download Lecture 3](/files/ML-coursera/Lecture3.pdf)." %}
+{% include download.html content="[Download Lecture 3](/files/ML-coursera/Lecture3.pdf)." %}
 
 Refer to [note of Linear Algebra]({{site.baseurl}}/linear-algebra-1). For LA in this course of Ng, it's very simple, I knew all about this to I don't give any note here.
 ​

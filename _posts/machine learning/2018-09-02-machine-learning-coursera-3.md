@@ -19,7 +19,7 @@ This note was first taken when I learnt the [machine learning course on Coursera
 
 ## Classification & Representation
 
-{% include more.html content="[Download Lecture 6](/files/ML-coursera/Lecture6.pdf)." %}
+{% include download.html content="[Download Lecture 6](/files/ML-coursera/Lecture6.pdf)." %}
 
 ### Classification
 
