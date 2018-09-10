@@ -4,7 +4,7 @@ categories: [phd,maths]
 tags: [phd,numerical analysis]
 toc: 1
 maths: 1
-date: 2018-08-10
+date: 2018-09-10
 ---
 
 ## General
@@ -227,14 +227,32 @@ Others
 
 - As the objective of the level set equation is to capture the moving interface, the error between the exact interface $\Gamma$ and the approximate interface $\Gamma\_h$ , i.e. the difference between the zero level of the exact solution φ of the level set equation and the zero level of the discretized level set function $\phi\_h$ , is of major interest. This error can be measured in the L2-norm by integrating the squared distance function $d: \Omega \to \mathbb{R}$} to the interface $\Gamma$ over $\Gamma\_h$ ... page 13 Eva Loch thesis.
 - Trang 219 Arnold Book có nói về error và bậc có được, có thể áp dụng để check xem cái của mình ra tốt không.
+- If SUPG + FMM then (Arnold Book page 219)
 
+    $$
+    \Vert \phi_h^N - \phi^N \Vert_{L^2(\Omega)} \le CT(h^{k+\frac{1}{2}} + \Delta t^2)
+    $$
 
+- Volume error estimate (Arnold Book page 219)
+
+    $$
+    \begin{align}
+    \vert V_1(\phi_h^N) - V_1\vert &\le ch^k\\
+    V_1(T) &= V_1(0) = V_1 \\
+    V_1(\phi^N_h) &= \int_{\Omega^N_{1,h}} 1 d x \\
+    \Omega_{1,h}^N &:= \{ x\in \Omega: \phi^N_h(x) <0 \}.
+    \end{align}
+    $$
+
+    This estimate shows that volume error can be controlled by reducing the mesh size.
+
+- If $u$ depends on time, an error estimate for a problem like (5.15) in my thesis <mark>is not known yet!</mark> (Arnold Book, p. 204). But we have estimation (7.19) if $u$ is time-independent.
 
 ### Conservation of mass
 
 - *level set 1996 - Hou et Chang*
 - For incompressible flow, the total mass is conserved in time, however the numerical discretization of the level set formulation does not preserve this property in general. Even with some reinitialization procedures, it has been found that a cosiderable amount of total mass is lost in time. Tất cả cái này được nhắc đến trong **Hou1996** (trang 7).
-- **Trung Hieu thesis 7.2.2** trang 83 có nói về Mass conservation: *The loss of mass by discretizations of the level set function can be reduced if the grid is refined* $\Rightarrow$ dùng pp trong DROPS và **thesis của Gross Sven** (8.2). *We use another method, in which the level set method is shifted over a distance  $\delta$ in the normal direction, such that the volumes of both phases remain unchanged.*
+- **Trung Hieu thesis 7.2.2** trang 83 có nói về Mass conservation: *<mark>The loss of mass by discretizations of the level set function can be reduced if the grid is refined</mark>* $\Rightarrow$ dùng pp trong DROPS và **thesis của Gross Sven** (8.2). *We use another method, in which the level set method is shifted over a distance  $\delta$ in the normal direction, such that the volumes of both phases remain unchanged.*
 - **Arnold book** (7.4.2) cũng có nói về cái này. *following very simple (but less satisfactory) strategy, which guarantees volume conservation for the level set method* (p.220)
 
 
@@ -261,3 +279,27 @@ Others
   - 3 nhóm nodes đó là: Accepted, Considered và Far.
   - Ta không thể tính trực tiếp khoảng cách từ nodes đến $\Gamma_h$ được vì có nhiều đoạn, ta không biết phải tính khoảng cách từ node đó đến đoạn trong element nào? (Theo như Arnold Book, công thức (7.35) thì lấy min của tất cả các cái)
   - Theo như thuật toán thì có vẻ khoản cách từ các nodes *Considered* sẽ được tính thông qua các nodes *Accepted* (why?)
+
+- **Problem**: If we apply FMM (or some other reinitialization methods) many times, the <mark>interface will move.</mark>
+    - *implementation standard level set method - niklas johansson.pdf* (Section 3.2.3)
+    - *computation signed distance function - charles - pascal frey 2012.pdf* (Section 6)
+        - They used an adaptation process.
+    - *Eva Loch thesis* (p. 27 and Section 9.3)
+        - She said that the re-initialization of $\phi$ wish to be a zero-level set + signed distance function but the former is hard to be obtained in practice.
+        - She didn't say about the solution!
+    - *Lehrenfeld NOTE* (at the end of p. 64): still challenging!
+    - *Gross thesis* (p. 142)
+        - "A simple variant of the Fast Marching method (cf. [KS98, Set96a]) turned out to perform much better in our numerical simulations."
+
+## Mesh adaptation
+
+A problem with performance if we working on a very-fined mesh. We just want to focus on the area a round the interface but we finer the whole domain. An idea is to adapt the mesh only for the area around the interface. But how?
+
+- **Keyword**: adaptation, refinement mesh.
+- **Tools**
+    - Matlab ref: `refinemesh` ([cf](https://fr.mathworks.com/help/pde/ug/refinemesh.html))
+    - ISCD toolbox / [AdapTools](https://github.com/ISCDtoolbox/AdaptTools) but how to use it?
+
+- It's mentioned at Section 9.3 of Eva Loch's thesis: why we need Re-initialization.
+
+

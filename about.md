@@ -1,11 +1,18 @@
 ---
 layout: page
-title: "Giới thiệu"
+title: "About this site"
 css: ["about.css", "animate.css", "morphext.css"]
 js: ["morphext.min.js", "about.js"]
+comment: 1
 ---
 
-Chào bạn, rất vui vì bạn đã ghé thăm trang ghi chú của tôi. Tôi là [Đinh Anh Thi](https://dinhanhthi.com), người sáng lập trang [Math2IT](http://math2it.com) và [Tôi Tự Học](https://toituhoc.xyz). Đây là trang tôi thiết kế riêng cho việc ghi chú cá nhân chủ yếu về Toán và Tin học. Các bài viết trên trang này tôi viết cho chính tôi nên có thể người ngoài đọc vào sẽ có chút khó hiểu. Nếu bạn cần một vài thông tin gì đấy từ các ghi chú của tôi, vui lòng liên hệ [dinhanhthimail@gmail.com](mailto:dinhanhthimail@gmail.com), chân thành cảm ơn bạn.
+Hi there, it's Thi. This site contains all of my notes for my personal learning. The language I use in this site is mainly in English but sometimes (the old notes) I use Vietnamese (or French for some parts).
+
+Notes in this site are **only for me**, you thus don't understand what the hell I wrote sometimes. If you need to understand more or want me to explain something to you, don't hestitate to ask me in the comment below the post you are asking or here.
+
+My English is really not so good (I think you can see it), but I am willing to improve continuously. Please let me know if there are some errors.
+
+PS. I use **NoteTheme** (I modified form Matjek theme) for this note. If you wanna make another note-taking website like this for you, just read [this blog](https://dinhanhthi.github.io/NoteTheme/how-to-install-notetheme).
 
 <div class="thi-signature">
 Dinh Anh Thi

@@ -49,7 +49,7 @@ js: ["post.js"]
     {% include related-posts.html %}
     {% include search_form.html %}
 
-    {% if site.disqus_shortname and page.comment %}
+    {% if site.disqus_shortname and (page.comment or page.comments) %}
       {% include disqus.html %}
     {% endif %}
   </div>
