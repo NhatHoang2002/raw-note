@@ -114,4 +114,8 @@
   margin: 1.5rem auto;
   background: #e0ffff7a;
   width: fit-content;
+  @media only screen and (max-width: 600px){
+    width: 100%;
+    overflow: auto;
+  }
 }

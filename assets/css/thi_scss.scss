@@ -224,3 +224,9 @@ table, th, td{
     vertical-align: middle;
   }
 }
+
+.MathJax_Display{
+	@media only screen and (max-width: 600px){
+		overflow: auto;
+	}
+}
