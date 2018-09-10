@@ -209,3 +209,18 @@ table, th, td{
 		margin-right: 5px;
 	}
 }
+.see-again{
+  color: #5b119f;
+  a{
+    color: #925fc2;
+    border-bottom: 1px solid #925fc2;
+    padding-bottom: 2px;
+    font-weight: 500;
+  }
+  i{
+    vertical-align: middle;
+  }
+  span{
+    vertical-align: middle;
+  }
+}

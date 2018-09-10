@@ -5,7 +5,7 @@ tags: [machine learning, ml coursera]
 math: 1
 toc: 1
 comment: 1
-date: 2018-09-05
+date: 2018-09-10
 ---
 
 {% assign img-url = '/images/posts/ML/coursera' %}
@@ -13,7 +13,12 @@ date: 2018-09-05
 This note was first taken when I learnt the [machine learning course on Coursera](https://www.coursera.org/learn/machine-learning/).<br />
 **Lectures in this week**: [Lecture 6](/files/ML-coursera/Lecture6.pdf).
 
-{% include more.html content="[Go back to Week 2](/machine-learning-coursera-2)." %}
+<div class="see-again">
+<i class="material-icons">settings_backup_restore</i>
+<span markdown="1">
+[Go back to Week 2](/machine-learning-coursera-2).
+</span>
+</div>
 
 {% include toc.html %}
 
@@ -100,7 +105,13 @@ The training set is not used to determine the decision boundary, but parameter $
 
 ### Cost function
 
+<div class="see-again">
+<i class="material-icons">settings_backup_restore</i>
+<span markdown="1">
 Look back to the [cost function in linear regression](/machine-learning-coursera-1#cost-function).
+</span>
+</div>
+
 
 $$
 \begin{align}
@@ -165,7 +176,12 @@ $$
 
 ### Simplified Cost Function and Gradient Descent
 
-Review the gradient decent in linear regression [here](/machine-learning-coursera-1#gradient-descent).
+<div class="see-again">
+<i class="material-icons">settings_backup_restore</i>
+<span markdown="1">
+Review the [gradient decent in linear regression](/machine-learning-coursera-1#gradient-descent).
+</span>
+</div>
 
 In this logistic regression,
 
@@ -243,8 +259,91 @@ $$
 
 ### The problem of overfitting
 
+We have **many features**, $h_{\theta}$ may fit the training set very well ($J(\theta) \simeq 0$) but <mark>fail to generalize.</mark>
+
+<div class="row d-flex" markdown="1">
+<div class="col s12 l6" markdown="1">
+![Overfitting]({{img-url}}/overfitting-1.png){:.no-border}
+</div>
+<div class="col s12 l6" markdown="1">
+![Overfitting 2]({{img-url}}/overfitting-2.png){:.no-border}
+</div>
+</div>
+
 ### Cost function
 
+Options to solve:
+
+- Reduce the number of features
+	- Manually select which features to keep
+	- By algorithm
+- **Regularization** (<mark>add penalty terms</mark>)
+	- Keep all features but reduce magnitude/values of parameters $\theta_j$
+	- Works well when we have a lot of features, each of which contributes a bit to predicting $y$
+
+![Overfitting 2]({{img-url}}/overfitting-3.png){:.no-border .w-700}
+
+Because we need to find the **minimum**, we multiply $\theta_3, \theta_4$ by 1000 to make them very big and never be a min, i.e. they look like 0.
+
+$$
+J(\theta) = \frac{1}{2m} \left[ \sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)})^2 + \lambda \sum_{j=1}^n \theta_j^2 \right]
+$$
+
+If $\lambda$ is **too large,** the problem of **underfitting** occurs!
+
 ### Regularized linear regression
+
+**Gradient Descent** : 
+
+<div class="see-again">
+<i class="material-icons">settings_backup_restore</i>
+<span markdown="1">
+See again GD in [linear regression](/machine-learning-coursera-1#gradient-descent), [multiple variables](/machine-learning-coursera-2#gradient-descent-for-multiple-variables) and [logistic regression](/machine-learning-coursera-3#simplified-cost-function-and-gradient-descent).
+</span>
+</div>
+
+<div class="p-mark" markdown="1">
+Repeat{
+
+$$
+\begin{align}
+\theta_0 &:= \theta_0 - \alpha \frac{1}{m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)}) x_0^{(i)} \\
+\theta_j &:= \theta_j(1-\alpha\frac{\lambda}{m}) - \alpha \frac{1}{m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)}) x_j^{(i)}, j\in \{1,\ldots, n\}
+\end{align}
+$$
+
+}
+</div>
+
+Intuitively, <mark>reduce $\theta_j$ by some amount on every update</mark>, the second term is exactly the same it was before.
+
+**Normal equation** : 
+
+<div class="see-again">
+<i class="material-icons">settings_backup_restore</i>
+<span markdown="1">
+See again normal equation [linear regression](/machine-learning-coursera-2#normal-equation).
+</span>
+</div>
+
+<div class="row d-flex" markdown="1">
+<div class="col s12 l6" markdown="1">
+<div class="p-mark">
+$$
+\begin{align}
+\theta &= (X^TX + \lambda \cdot L)^{-1} X^T y \\
+L &= \begin{bmatrix} 0 & & & & \newline & 1 & & & \newline & & 1 & & \newline & & & \ddots & \newline & & & & 1 \newline\end{bmatrix}_{(n+1)\times (n+1)}
+\end{align}
+$$
+</div>
+</div>
+<div class="col s12 l6" markdown="1">
+- $X$ : $m\times (n+1)$ matrix
+- $m$ training examples, $n$ features.
+- We don't include $x_0$.
+- If $m<n$ then $X^TX$ is non-invertible, but after adding $\lambda\cdot L$, <mark>$X^TX + \lambda\cdot L$ becomes invertible!</mark>
+</div>
+</div>
+
 
 ### Regularized logistic regression

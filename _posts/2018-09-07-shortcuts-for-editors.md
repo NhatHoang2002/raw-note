@@ -4,6 +4,7 @@ categories: [it]
 tags: [jekyll,notetheme]
 maths: 1
 toc: 1
+date: 2018-09-10
 ---
 
 This post is only for editors, please read other posts.
@@ -68,7 +69,7 @@ There are some already-defined components on NoteTheme that you could use (If yo
 
 ## Boxes
 
-- **Hide/Show**
+### Hide/Show
 
     ~~~ html
     <ul class="collapsible" data-collapsible="accordion">
@@ -83,7 +84,7 @@ There are some already-defined components on NoteTheme that you could use (If yo
     </ul>
     ~~~
 
-- **Notifications**
+### Notifications
 
     ~~~ {% raw %}
     {% include warning.html content="Warning's content" %}
@@ -91,7 +92,7 @@ There are some already-defined components on NoteTheme that you could use (If yo
     {% include tip.html content="Info's content" %}
     {% endraw %} ~~~
 
-- **Pull quotes**
+### Pull quotes
 
     ~~~ html
     <p class="post-more-info" markdown="1">
@@ -99,7 +100,7 @@ There are some already-defined components on NoteTheme that you could use (If yo
     </p>
     ~~~
 
-- **Summarization box**
+### Summarization box
 
     ~~~ html
     <fieldset class="field-set" markdown="1">
@@ -108,7 +109,7 @@ There are some already-defined components on NoteTheme that you could use (If yo
     </fieldset>
     ~~~
 
-- **Theorem style**
+### Theorem style
 
     ~~~ html
     <div class="thi-box" markdown="1">
@@ -121,7 +122,7 @@ There are some already-defined components on NoteTheme that you could use (If yo
     </div>
     ~~~
 
-- **Important boxes**
+### Important boxes
 
     ~~~ html
     <div class="p-mark" markdown="1">
@@ -131,71 +132,86 @@ There are some already-defined components on NoteTheme that you could use (If yo
 
 ## Others
 
-- Toc
+### Toc
 
-    ~~~ {% raw %}
-    {% include toc.html %}
-    {% endraw %} ~~~
+~~~ {% raw %}
+{% include toc.html %}
+{% endraw %} ~~~
 
-    Inserting heading only on toc (not inside the post)
+Inserting heading only on toc (not inside the post)
 
-    ~~~ {% raw %}
-    {:.notdisplay}
-    # Hidden deading
-    {% endraw %} ~~~
+~~~ {% raw %}
+{:.notdisplay}
+# Hidden deading
+{% endraw %} ~~~
 
-- Columns for lists
+### Columns for lists
 
-    ~~~ html
-    <div class="thi-columns" markdown="1">
-    - item 1
-    - item 2
-    - item 3
-    - item 4
-    - item 5
-    - item 6
-    </div>
-    ~~~
+~~~ html
+<div class="thi-columns" markdown="1">
+- item 1
+- item 2
+- item 3
+- item 4
+- item 5
+- item 6
+</div>
+~~~
 
-- Side by side
+### Side by side
 
-    ~~~ html
-    <div class="row d-flex" markdown="1">
-    <div class="col s12 l6" markdown="1">
-    ~~~
-    This is the code
-    ~~~
-    </div>
-    <div class="col s12 l6" markdown="1">
-    ~~~
-    This is the result
-    ~~~
-    </div>
-    </div>
-    ~~~
+~~~ html
+<div class="row d-flex" markdown="1">
+<div class="col s12 l6" markdown="1">
+This is the code
+</div>
+<div class="col s12 l6" markdown="1">
+This is the result
+</div>
+</div>
+~~~
 
-- Read-more link
+### Links
 
-    ~~~ {% raw %}
-    {% include more.html content="[Welcome to Math2IT](http://math2it.com)." %}
-    {% endraw %} ~~~
+Read-more link
 
-- Steps
+~~~ {% raw %}
+{% include more.html content="[Welcome to Math2IT](http://math2it.com)." %}
+{% endraw %} ~~~
 
-    ~~~ html
-    <div  class="thi-step">
-    <div class="step">
-    <div class="step-number"></div>
-    <div class="step-content" markdown="1">
-    Content in step 1.
-    </div>
-    </div>
-    
-    <div class="step">
-    <div class="step-number"></div>
-    <div class="step-content" markdown="1">
-    Content in step 2
-    </div>
-    </div>
-    </div>
-    ~~~
+See again
+
+~~~ html
+<div class="see-again">
+<i class="material-icons">settings_backup_restore</i>
+<span markdown="1">
+Content
+</span>
+</div>
+~~~
+
+Download
+
+~~~ {% raw %}
+{% include download.html content="[Download text](download link)." %}
+{% endraw %} ~~~
+
+### Steps
+
+~~~ html
+<div  class="thi-step">
+<div class="step">
+<div class="step-number"></div>
+<div class="step-content" markdown="1">
+Content in step 1.
+</div>
+</div>
+
+<div class="step">
+<div class="step-number"></div>
+<div class="step-content" markdown="1">
+Content in step 2
+</div>
+</div>
+</div>
+~~~

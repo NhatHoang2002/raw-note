@@ -83,7 +83,7 @@ Example:
 
 ### Model Representation
 
-To establish notation for future use, we’ll use $x^{(i)}$ to denote the “input” variables (living area in this example), also called input features, and $y^{(i)}$ to denote the “output” or target variable that we are trying to predict (price). A pair $(x^{(i)} , y^{(i)} )$ is called a training example, and the dataset that we’ll be using to learn—a list of m training examples $(x(i),y(i))$; $i=1,\ldots,m$ is called a training set. Note that the superscript “$(i)$” in the notation is simply an index into the training set, and has nothing to do with exponentiation. We will also use $X$ to denote the space of input values, and $Y$ to denote the space of output values. In this example, $X = Y = \mathbb{R}$.
+To establish notation for future use, we’ll use $x^{(i)}$ to denote the “input” variables (living area in this example), also called input features, and $y^{(i)}$ to denote the “output” or target variable that we are trying to predict (price). A pair $(x^{(i)} , y^{(i)} )$ is called a training example, and the dataset that we’ll be using to learn—a list of <mark>m training examples</mark> $(x(i),y(i))$; $i=1,\ldots,m$ is called a **training set**. Note that the superscript “$(i)$” in the notation is simply an index into the training set, and has nothing to do with exponentiation. We will also use $X$ to denote the space of input values, and $Y$ to denote the space of output values. In this example, $X = Y = \mathbb{R}$.
 
 To describe the supervised learning problem slightly more formally, our goal is, given a training set, to learn a function $h : X \to Y$ so that $h(x)$ is a “good” predictor for the corresponding value of $y$. For historical reasons, this function <mark>$h$ is called a hypothesis</mark>. Seen pictorially, the process is therefore like this:
 
@@ -93,7 +93,7 @@ When the target variable that we’re trying to predict is **continuous**, such 
 
 ### Cost function
 
-We can <mark>**measure the accuracy of our hypothesis function** by using a **cost function**</mark>. This takes an average difference (actually a fancier version of an average) of all the results of the hypothesis with inputs from x's and the actual output y's.
+We can <mark>measure the accuracy of our hypothesis function by using a cost function</mark>. This takes an average difference (actually a fancier version of an average) of all the results of the hypothesis with inputs from x's and the actual output y's.
 
 <div class="p-mark">
 $$

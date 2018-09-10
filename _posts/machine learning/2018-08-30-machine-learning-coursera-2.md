@@ -13,7 +13,12 @@ comment: 1
 This note was first taken when I learnt the [machine learning course on Coursera](https://www.coursera.org/learn/machine-learning/). <br />
 **Lectures in this week**: [Lecture 4](/files/ML-coursera/Lecture4.pdf), [Lecture 5](/files/ML-coursera/Lecture5.pdf).
 
-{% include more.html content="[Go back to Week 1](/machine-learning-coursera-1)." %}
+<div class="see-again">
+<i class="material-icons">settings_backup_restore</i>
+<span markdown="1">
+[Go back to Week 1](/machine-learning-coursera-1).
+</span>
+</div>
 
 {% include toc.html %}
 
@@ -362,4 +367,4 @@ I have already known about matlab, so this part of note contains not too much in
 	price = x_test * theta;
 	~~~
 
-{% include more.html content="[Go back to Week 3](/machine-learning-coursera-3)." %}
+{% include more.html content="[Next to Week 3](/machine-learning-coursera-3)." %}
