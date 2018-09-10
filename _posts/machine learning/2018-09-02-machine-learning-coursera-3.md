@@ -257,6 +257,8 @@ $$
 
 ## Solving the problem of overfitting
 
+{% include download.html content="[Download Lecture 7](/files/ML-coursera/Lecture7.pdf)." %}
+
 ### The problem of overfitting
 
 We have **many features**, $h_{\theta}$ may fit the training set very well ($J(\theta) \simeq 0$) but <mark>fail to generalize.</mark>
@@ -285,15 +287,17 @@ Options to solve:
 
 Because we need to find the **minimum**, we multiply $\theta_3, \theta_4$ by 1000 to make them very big and never be a min, i.e. they look like 0.
 
+<div class="p-mark">
 $$
 J(\theta) = \frac{1}{2m} \left[ \sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)})^2 + \lambda \sum_{j=1}^n \theta_j^2 \right]
 $$
+</div>
 
 If $\lambda$ is **too large,** the problem of **underfitting** occurs!
 
 ### Regularized linear regression
 
-**Gradient Descent** : 
+#### Gradient Descent
 
 <div class="see-again">
 <i class="material-icons">settings_backup_restore</i>
@@ -317,7 +321,7 @@ $$
 
 Intuitively, <mark>reduce $\theta_j$ by some amount on every update</mark>, the second term is exactly the same it was before.
 
-**Normal equation** : 
+#### Normal equation
 
 <div class="see-again">
 <i class="material-icons">settings_backup_restore</i>
@@ -347,3 +351,39 @@ $$
 
 
 ### Regularized logistic regression
+
+<div class="see-again">
+<i class="material-icons">settings_backup_restore</i>
+<span markdown="1">
+See again [cost function for logistic regression](/machine-learning-coursera-3#cost-function).
+</span>
+</div>
+
+$$
+J(\theta) = - \frac{1}{m} \displaystyle \sum_{i=1}^m [y^{(i)}\log (h_\theta (x^{(i)})) + (1 - y^{(i)})\log (1 - h_\theta(x^{(i)}))]
+$$
+
+We can regularize this equation by adding a term to the end:
+
+$$
+J(\theta) = - \frac{1}{m} \displaystyle \sum_{i=1}^m [y^{(i)}\log (h_\theta (x^{(i)})) + (1 - y^{(i)})\log (1 - h_\theta(x^{(i)}))]
++
+\dfrac{\lambda}{2m}\sum_{j=1}^n \theta_j^2.
+$$
+
+And the gradient descent
+
+<div class="p-mark" markdown="1">
+Repeat{
+
+$$
+\begin{align}
+\theta_0 &:= \theta_0 - \alpha \frac{1}{m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)}) x_0^{(i)} \\
+\theta_j &:= \theta_j(1-\alpha\frac{\lambda}{m}) - \alpha \frac{1}{m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)}) x_j^{(i)}, j\in \{1,\ldots, n\}
+\end{align}
+$$
+
+}
+</div>
+
+The same form with GD regularized linear regression, <mark>the difference in this case is only the definition of $h_{\theta}(x)$</mark>

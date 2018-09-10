@@ -17,7 +17,7 @@ css: ["page.css"]
 		</div>
 		<div class="row">
 			{{ content }}
-			{% if site.disqus_shortname and (page.comment or page.comments) %}
+			{% if site.disqus_shortname and page.comment %}
 			  {% include disqus.html %}
 			{% endif %}
 		</div>
