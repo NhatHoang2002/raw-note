@@ -4,7 +4,7 @@ categories: [phd,maths]
 tags: [phd,numerical analysis]
 toc: 1
 maths: 1
-date: 2018-09-10
+date: 2018-09-11
 ---
 
 ## General
@@ -223,11 +223,11 @@ Others
 
 
 
-### Error
+### Errors
 
 - As the objective of the level set equation is to capture the moving interface, the error between the exact interface $\Gamma$ and the approximate interface $\Gamma\_h$ , i.e. the difference between the zero level of the exact solution φ of the level set equation and the zero level of the discretized level set function $\phi\_h$ , is of major interest. This error can be measured in the L2-norm by integrating the squared distance function $d: \Omega \to \mathbb{R}$} to the interface $\Gamma$ over $\Gamma\_h$ ... page 13 Eva Loch thesis.
 - Trang 219 Arnold Book có nói về error và bậc có được, có thể áp dụng để check xem cái của mình ra tốt không.
-- If SUPG + FMM then (Arnold Book page 219)
+- If SUPG then (Arnold Book page 219) <mark>only for SUPG (not FMM)</mark>
 
     $$
     \Vert \phi_h^N - \phi^N \Vert_{L^2(\Omega)} \le CT(h^{k+\frac{1}{2}} + \Delta t^2)
@@ -247,6 +247,18 @@ Others
     This estimate shows that volume error can be controlled by reducing the mesh size.
 
 - If $u$ depends on time, an error estimate for a problem like (5.15) in my thesis <mark>is not known yet!</mark> (Arnold Book, p. 204). But we have estimation (7.19) if $u$ is time-independent.
+- The estimate between $\phi_h^N$ and $\phi$ is only used for the case of using SUPG (not FMM). Because if we use FMM, the interface moves, so on the whole domain, $\phi_h$ changes too much. However, its zero-level seems to be better. That's why we need to consider different estimates like in (7.50) at page 227.
+
+- **<mark>Importance!!!!</mark>**: Note that $\Vert u-u_h\Vert$ is different from $\Vert I_hu-u_h\Vert$. And we have the **interpolant error estimate** (Lemma 5.2.2 FEM note of Pascal Frey)
+
+    <div class="p-mark">
+    $$
+    \begin{align}
+    \Vert I_h u - u\Vert_{H^1(\Omega)} &\le Ch^2 \Vert u''\Vert_{L^2(\Omega)} \\
+    \Vert (I_hu)' - u' \Vert_{L^2(\Omega)} &\le Ch \Vert u''\Vert_{L^2(\Omega)}
+    \end{align}
+    $$
+    </div>
 
 ### Conservation of mass
 

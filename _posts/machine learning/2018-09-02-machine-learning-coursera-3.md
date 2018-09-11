@@ -11,7 +11,7 @@ date: 2018-09-11
 {% assign img-url = '/images/posts/ML/coursera' %}
 
 This note was first taken when I learnt the [machine learning course on Coursera](https://www.coursera.org/learn/machine-learning/).<br />
-**Lectures in this week**: [Lecture 6](/files/ML-coursera/Lecture6.pdf).
+**Lectures in this week**: [Lecture 6](/files/ML-coursera/Lecture6.pdf), [Lecture 7](/files/ML-coursera/Lecture7.pdf).
 
 <div class="see-again">
 <i class="material-icons">settings_backup_restore</i>

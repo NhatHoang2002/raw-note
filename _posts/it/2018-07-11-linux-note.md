@@ -2,7 +2,7 @@
 title: Linux notes
 categories: it
 tags: ["linux","ubuntu"]
-date: 2018-09-03
+date: 2018-09-10
 ---
 
 1. Problem save file as `root` user and cannot open later: [link](https://askubuntu.com/questions/817902/unable-to-open-any-graphical-app-with-sudo/817906#817906)
@@ -60,6 +60,12 @@ date: 2018-09-03
 26. Turn off animation open and minimize windows on ubuntu 17.10 and later (gnome desktop): **Gnome Tweak Tools > Apperance > Animations OFF**
 27. Gõ tiếng Việt SublimeText, install package `vn ime` (gõ tìm đúng như thế). Khi sử dụng thì nhấn F2.
 28. Save github account as default `git config credential.helper store` then `git pull` for the first time input.
+29. Install file `.bin`, `.run`
 
+    ~~~
+    chmod +x file-name.run 
+    ./file-name.run
+    ~~~
 
+30. Matlab drive connector: after installing, run `~/bin/MATLABConnector toggle`
 
