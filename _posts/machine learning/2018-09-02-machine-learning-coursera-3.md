@@ -224,7 +224,7 @@ Then we can use octave's `fminunc()` optimization algorithm along with the `opti
 ~~~ python
 options = optimset('GradObj', 'on', 'MaxIter', 100);
 initialTheta = zeros(2,1);
-   [optTheta, functionVal, exitFlag] = fminunc(@costFunction, initialTheta, options);
+[optTheta, functionVal, exitFlag] = fminunc(@costFunction, initialTheta, options);
 ~~~
 
 We give to the function `fminunc()` our cost function, our initial vector of theta values, and the `options` object that we created beforehand.
@@ -342,7 +342,7 @@ $$
 </div>
 </div>
 <div class="col s12 l6" markdown="1">
-- $X$ : $m\times (n+1)$ matrix
+- <mark>$X$ : $m\times (n+1)$ matrix</mark>
 - $m$ training examples, $n$ features.
 - We don't include $x_0$.
 - If $m<n$ then $X^TX$ is non-invertible, but after adding $\lambda\cdot L$, <mark>$X^TX + \lambda\cdot L$ becomes invertible!</mark>
@@ -365,11 +365,13 @@ $$
 
 We can regularize this equation by adding a term to the end:
 
+<div class="p-mark">
 $$
 J(\theta) = - \frac{1}{m} \displaystyle \sum_{i=1}^m [y^{(i)}\log (h_\theta (x^{(i)})) + (1 - y^{(i)})\log (1 - h_\theta(x^{(i)}))]
 +
 \dfrac{\lambda}{2m}\sum_{j=1}^n \theta_j^2.
 $$
+</div>
 
 And the gradient descent
 
@@ -396,6 +398,8 @@ The same form with GD regularized linear regression, <mark>the difference in thi
 See again [How to submit?](/machine-learning-coursera-1#preparing-for-the-course).
 </span>
 </div>
+
+### Logistic Regression
 
 - **plotData**: Plot from `X`, `y` to separate two kind of `X`
 
@@ -437,7 +441,7 @@ See again [How to submit?](/machine-learning-coursera-1#preparing-for-the-course
 	and **its gradient** is
 
 	$$
-	\dfrac{\partial(\theta)}{\partial\theta_j} = \dfrac{1}{m} \sum_{i=1}^n (h_{\theta}(x^{(i)}) - y^{(i)}) x_j^{(i)}, \text{ for } j=0,\ldots,n.
+	\dfrac{\partial(\theta)}{\partial\theta_j} = \dfrac{1}{m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)}) x_j^{(i)}, \text{ for } j=0,\ldots,n.
 	$$
 
 	or in vectorization,
@@ -453,3 +457,50 @@ See again [How to submit?](/machine-learning-coursera-1#preparing-for-the-course
 	J = 1/m * ( -y' * log(h) - (1-y)' * log(1-h) );
 	grad = 1/m * X' * ( h - y);
 	~~~
+
+- `fminunc`:
+	- `GradObj` option to `on`, which tells fminunc that our function returns both the cost and the gradient
+
+	~~~ matlab
+	options = optimset('GradObj', 'on', 'MaxIter', 400);
+	~~~
+
+	- Notice that by using `fminunc`, you did not have to write any loops yourself, or set a learning rate like you did for gradient descent.
+
+- **predict.m**: remember that,
+
+	$$
+	\begin{align}
+	h_{\theta}(x) &= g(X\theta), \\
+	h_{\theta}(x) &\ge 0.5 \to y = 1\\
+	h_{\theta}(x) &< 0.5 \to y = 0
+	\end{align}
+	$$
+
+	~~~ matlab
+	h = sigmoid(X*theta); % m x 1
+	p = (h >= 0.5);
+	~~~
+
+### Regularized logistic regression
+
+- **costFunctionReg.m**: recall that,
+
+	$$
+	J(\theta) = - \frac{1}{m} \displaystyle \sum_{i=1}^m [y^{(i)}\log (h_\theta (x^{(i)})) + (1 - y^{(i)})\log (1 - h_\theta(x^{(i)}))]
+	+
+	\dfrac{\lambda}{2m}\sum_{j=1}^n \theta_j^2.
+	$$
+
+	its gradient,
+
+	<div class="p-mark">
+	$$
+	\begin{align}
+	\dfrac{\partial J(\theta)}{\partial \theta_0}
+		&= \dfrac{1}{m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)}) x_j^{(i)}, \text{ for } j=0 \\
+	\dfrac{\partial J(\theta)}{\partial \theta_j}
+		&= \left( \dfrac{1}{m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)})x_j^{(i)} \right) + \dfrac{\lambda}{m}\theta_j, \text{ for } j\ge 1
+	\end{align}
+	$$
+	</div>
