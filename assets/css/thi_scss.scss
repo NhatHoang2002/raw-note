@@ -223,6 +223,9 @@ table, th, td{
   span{
     vertical-align: middle;
   }
+  & + ul, ol{
+	margin-top: 1rem;
+  }
 }
 
 .MathJax_Display{
