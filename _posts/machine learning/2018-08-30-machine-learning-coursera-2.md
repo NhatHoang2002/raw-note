@@ -159,7 +159,7 @@ For example, if $x_1$ has range 1-10, then $x_1^2$ has range 1-100, $x_1^3$ has 
 	$$
 	</div>
 
-	The first column is the supposed feature whose all values are equal to 1.
+	The <mark>first column</mark> is the supposed feature whose all values are <mark>equal to 1</mark>.
 - the value of <mark>$\theta$ that minimize your cost function $J(\theta)$ </mark>
 
 	<div class="p-mark">
@@ -341,9 +341,9 @@ I have already known about matlab, so this part of note contains not too much in
 	
 	$$
 	\begin{align}
-	    \theta_0 &:= \theta_0 - \alpha \frac{1}{m}\sum_{i=1}^m (h_{\theta}(x^{(i)}-y^{(i)}))\cdot x_0^{(i)} \\
-	    \theta_1 &:= \theta_1 - \alpha \frac{1}{m}\sum_{i=1}^m (h_{\theta}(x^{(i)}-y^{(i)}))\cdot x_1^{(i)} \\
-	    \theta_1 &:= \theta_2 - \alpha \frac{1}{m}\sum_{i=1}^m (h_{\theta}(x^{(i)}-y^{(i)}))\cdot x_2^{(i)} 
+	    \theta_0 &:= \theta_0 - \alpha \frac{1}{m}\sum_{i=1}^m (h_{\theta}(x^{(i)})-y^{(i)})\cdot x_0^{(i)} \\
+	    \theta_1 &:= \theta_1 - \alpha \frac{1}{m}\sum_{i=1}^m (h_{\theta}(x^{(i)})-y^{(i)})\cdot x_1^{(i)} \\
+	    \theta_1 &:= \theta_2 - \alpha \frac{1}{m}\sum_{i=1}^m (h_{\theta}(x^{(i)})-y^{(i)})\cdot x_2^{(i)} 
 	\end{align}
 	$$
 
