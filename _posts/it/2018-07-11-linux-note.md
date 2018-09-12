@@ -2,24 +2,24 @@
 title: Linux notes
 categories: it
 tags: ["linux","ubuntu"]
-date: 2018-09-10
+date: 2018-09-12
 ---
 
 1. Problem save file as `root` user and cannot open later: [link](https://askubuntu.com/questions/817902/unable-to-open-any-graphical-app-with-sudo/817906#817906)
 2. Reinstall gksu (beed deleted by Ubuntu/Debian): [link](https://askubuntu.com/questions/1042344/i-need-an-equivalent-of-gksu-in-18-04) --> It seems that work not so well.
     ~~~
-    gksu -u <user> -c <command>
+gksu -u <user> -c <command>
     ~~~
 3. Scale matlab: need to install matleb version >= R2017b
     ~~~ matlab
-    s = settings;s.matlab.desktop.DisplayScaleFactor
-    s.matlab.desktop.DisplayScaleFactor.PersonalValue = 2
+s = settings;s.matlab.desktop.DisplayScaleFactor
+s.matlab.desktop.DisplayScaleFactor.PersonalValue = 2
     ~~~
 4. Find in linux with command lines: [link](https://chrisjean.com/4-great-tools-to-find-files-quickly-in-ubuntu/)
 5. Launching matlab without graphic ui: `matlab -nodesktop` ([link](https://blogs.mathworks.com/community/2010/02/22/launching-matlab-without-the-desktop/))
 6. How to add existing user to an existing group ([link](https://askubuntu.com/questions/79565/how-to-add-existing-user-to-an-existing-group))
     ~~~
-    sudo usermod -a -G groupName userName
+sudo usermod -a -G groupName userName
     ~~~
 7. Cannot move files to the trash/wrong owner: [link](https://askubuntu.com/questions/288513/cant-move-files-to-the-trash)
 8. Check disk space with command lines: `df -h`
@@ -62,10 +62,31 @@ date: 2018-09-10
 28. Save github account as default `git config credential.helper store` then `git pull` for the first time input.
 29. Install file `.bin`, `.run`
 
-    ~~~
+    ~~~ bash
     chmod +x file-name.run 
     ./file-name.run
     ~~~
 
 30. Matlab drive connector: after installing, run `~/bin/MATLABConnector toggle`
+31. Install freefem++ on Ubuntu 18
+    - Install prerequired packages
+
+        ~~~ bash
+    sudo apt-get install cpp freeglut3-dev g++ gcc gfortran
+    sudo apt-get install  ghostscript m4 make patch pkg-config wget python
+    sudo apt install autoconf
+    sudo apt-get install bison
+    sudo apt-get install flex
+        ~~~
+    - Download freefem++ at [here](http://www.freefem.org/) (choose the tar.gz file)
+    - Extract and `cd` to the extrated folder
+    - Run following commands
+
+        ~~~ bash
+    autoreconf -i
+    ./configure 
+    make 
+    make check
+    sudo make install
+        ~~~
 
