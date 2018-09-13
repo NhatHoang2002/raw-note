@@ -512,3 +512,5 @@ See again [How to submit?](/machine-learning-coursera-1#preparing-for-the-course
 	grad(1,1) = 1/m * X(:,1)' * (h-y);
 	grad(2:end,1) = 1/m * X(:,2:end)' * (h-y) + lambda/m * theta(2:end,1);
 	~~~
+
+{% include more.html content="[Next to Week 4](/machine-learning-coursera-4)." %}
