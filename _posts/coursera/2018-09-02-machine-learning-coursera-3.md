@@ -404,10 +404,10 @@ See again [How to submit?](/machine-learning-coursera-1#preparing-for-the-course
 - **plotData**: Plot from `X`, `y` to separate two kind of `X`
 
 	~~~ matlab
-	XPos = X(y==1, :);
-	XNeg = X(y==0, :);
-	plot(XPos(:,1), XPos(:,2), 'k+', 'LineWidth', 2, 'MarkerSize', 7);
-	plot(XNeg(:,1), XNeg(:,2), 'ko', 'MarkerFaceColor', 'y', 'MarkerSize', 7);
+XPos = X(y==1, :);
+XNeg = X(y==0, :);
+plot(XPos(:,1), XPos(:,2), 'k+', 'LineWidth', 2, 'MarkerSize', 7);
+plot(XNeg(:,1), XNeg(:,2), 'ko', 'MarkerFaceColor', 'y', 'MarkerSize', 7);
 	~~~
 
 - **sigmoid.m**: recall that
@@ -420,7 +420,7 @@ See again [How to submit?](/machine-learning-coursera-1#preparing-for-the-course
 	$$
 
 	~~~ matlab
-	g = 1 ./ (1 + exp(-z));
+g = 1 ./ (1 + exp(-z));
 	~~~
 
 - **costFunction.m**: recall that, the cost function in logistic regression is
@@ -453,17 +453,17 @@ See again [How to submit?](/machine-learning-coursera-1#preparing-for-the-course
 	</div>
 
 	~~~ matlab
-	h = sigmoid(X*theta); % hypothesis
-	J = 1/m * ( -y' * log(h) - (1-y)' * log(1-h) );
-	grad = 1/m * X' * ( h - y);
+h = sigmoid(X*theta); % hypothesis
+J = 1/m * ( -y' * log(h) - (1-y)' * log(1-h) );
+grad = 1/m * X' * ( h - y);
 	~~~
 
 - `fminunc`:
 	- `GradObj` option to `on`, which tells fminunc that our function returns both the cost and the gradient
 
-	~~~ matlab
+		~~~ matlab
 	options = optimset('GradObj', 'on', 'MaxIter', 400);
-	~~~
+		~~~
 
 	- Notice that by using `fminunc`, you did not have to write any loops yourself, or set a learning rate like you did for gradient descent.
 
@@ -478,39 +478,39 @@ See again [How to submit?](/machine-learning-coursera-1#preparing-for-the-course
 	$$
 
 	~~~ matlab
-	h = sigmoid(X*theta); % m x 1
-	p = (h >= 0.5);
+h = sigmoid(X*theta); % m x 1
+p = (h >= 0.5);
 	~~~
 
 ### Regularized logistic regression
 
-- **costFunctionReg.m**: recall that,
+**costFunctionReg.m**: recall that,
 
-	$$
-	J(\theta) = - \frac{1}{m} \displaystyle \sum_{i=1}^m [y^{(i)}\log (h_\theta (x^{(i)})) + (1 - y^{(i)})\log (1 - h_\theta(x^{(i)}))]
-	+
-	\dfrac{\lambda}{2m}\sum_{j=1}^n \theta_j^2.
-	$$
+$$
+J(\theta) = - \frac{1}{m} \displaystyle \sum_{i=1}^m [y^{(i)}\log (h_\theta (x^{(i)})) + (1 - y^{(i)})\log (1 - h_\theta(x^{(i)}))]
++
+\dfrac{\lambda}{2m}\sum_{j=1}^n \theta_j^2.
+$$
 
-	its gradient,
+its gradient,
 
-	<div class="p-mark">
-	$$
-	\begin{align}
-	\dfrac{\partial J(\theta)}{\partial \theta_0}
-		&= \dfrac{1}{m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)}) x_j^{(i)}, \text{ for } j=0 \\
-	\dfrac{\partial J(\theta)}{\partial \theta_j}
-		&= \left( \dfrac{1}{m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)})x_j^{(i)} \right) + \dfrac{\lambda}{m}\theta_j, \text{ for } j\ge 1
-	\end{align}
-	$$
-	</div>
+<div class="p-mark">
+$$
+\begin{align}
+\dfrac{\partial J(\theta)}{\partial \theta_0}
+	&= \dfrac{1}{m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)}) x_j^{(i)}, \text{ for } j=0 \\
+\dfrac{\partial J(\theta)}{\partial \theta_j}
+	&= \left( \dfrac{1}{m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)})x_j^{(i)} \right) + \dfrac{\lambda}{m}\theta_j, \text{ for } j\ge 1
+\end{align}
+$$
+</div>
 
-	~~~ matlab
-	h = sigmoid(X*theta); % hypothesis
-	J = 1/m * ( -y' * log(h) - (1-y)' * log(1-h) ) + lambda/(2*m) * sum(theta(2:end).^2);
-	
-	grad(1,1) = 1/m * X(:,1)' * (h-y);
-	grad(2:end,1) = 1/m * X(:,2:end)' * (h-y) + lambda/m * theta(2:end,1);
-	~~~
+~~~ matlab
+h = sigmoid(X*theta); % hypothesis
+J = 1/m * ( -y' * log(h) - (1-y)' * log(1-h) ) + lambda/(2*m) * sum(theta(2:end).^2);
+
+grad(1,1) = 1/m * X(:,1)' * (h-y);
+grad(2:end,1) = 1/m * X(:,2:end)' * (h-y) + lambda/m * theta(2:end,1);
+~~~
 
 {% include more.html content="[Next to Week 4](/machine-learning-coursera-4)." %}

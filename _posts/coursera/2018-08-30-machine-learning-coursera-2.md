@@ -234,15 +234,15 @@ I have already known about matlab, so this part of note contains not too much in
 - **warmUpExercise.m** : nothing to say. 
 
 	~~~ matlab
-	A = eye(5);
+A = eye(5);
 	~~~
 
 - **plotData.m**: nothing to say, just using the `plot` command.
 
 	~~~ matlab
-	plot(x, y, 'rx', 'MarkerSize', 10);         % plot the data
-	ylabel('Profit in $10,000');                % Set the y-axis label
-	xlabel('Population of City in 10,000s');    % Set the x-axis label
+plot(x, y, 'rx', 'MarkerSize', 10);         % plot the data
+ylabel('Profit in $10,000');                % Set the y-axis label
+xlabel('Population of City in 10,000s');    % Set the x-axis label
 	~~~
 
 - **computeCost.m**: follows the formula of cost function
@@ -257,7 +257,7 @@ I have already known about matlab, so this part of note contains not too much in
 	Note that, there is some confusion in the notations given in the talk of Ng about the dimension of $X$.
 	
 	~~~ matlab
-	J = 1/(2*m)*sum((X*theta - y).^2);
+J = 1/(2*m)*sum((X*theta - y).^2);
 	~~~
 
 - **gradientDescent.m**: follows the formula of Gradient Descent for linear regression given at the end of Week 1.
@@ -269,47 +269,46 @@ I have already known about matlab, so this part of note contains not too much in
 	Notice that, $\theta_0, \theta_1$ are computed **simultaneously**!!
 	
 	~~~ matlab
-	thetaOld = theta; % prevent the changes 
-	theta(1,1) = thetaOld(1,1) - alpha * (1/m) * sum(X*thetaOld - y);
-	theta(2,1) = thetaOld(2,1) - alpha * (1/m) * dot((X*thetaOld - y),X(:,2));
+thetaOld = theta; % prevent the changes 
+theta(1,1) = thetaOld(1,1) - alpha * (1/m) * sum(X*thetaOld - y);
+theta(2,1) = thetaOld(2,1) - alpha * (1/m) * dot((X*thetaOld - y),X(:,2));
 	~~~
 
 - The code for visualizing $J(\theta_0,\theta_1)$
 
 	~~~ matlab
-	fprintf('Visualizing J(theta_0, theta_1) ...\n')
-	
-	% Grid over which we will calculate J
-	theta0_vals = linspace(-10, 10, 100);
-	theta1_vals = linspace(-1, 4, 100);
-	
-	% initialize J_vals to a matrix of 0's
-	J_vals = zeros(length(theta0_vals), length(theta1_vals));
-	
-	% Fill out J_vals
-	for i = 1:length(theta0_vals)
-	    for j = 1:length(theta1_vals)
-		  t = [theta0_vals(i); theta1_vals(j)];
-		  J_vals(i,j) = computeCost(X, y, t);
-	    end
-	end
-	
-	
-	% Because of the way meshgrids work in the surf command, we need to
-	% transpose J_vals before calling surf, or else the axes will be flipped
-	J_vals = J_vals';
-	% Surface plot
-	figure;
-	surf(theta0_vals, theta1_vals, J_vals)
-	xlabel('\theta_0'); ylabel('\theta_1');
-	
-	% Contour plot
-	figure;
-	% Plot J_vals as 15 contours spaced logarithmically between 0.01 and 100
-	contour(theta0_vals, theta1_vals, J_vals, logspace(-2, 3, 20))
-	xlabel('\theta_0'); ylabel('\theta_1');
-	hold on;
-	plot(theta(1), theta(2), 'rx', 'MarkerSize', 10, 'LineWidth', 2);
+  fprintf('Visualizing J(theta_0, theta_1) ...\n')
+
+  % Grid over which we will calculate J
+  theta0_vals = linspace(-10, 10, 100);
+  theta1_vals = linspace(-1, 4, 100);
+  
+  % initialize J_vals to a matrix of 0's
+  J_vals = zeros(length(theta0_vals), length(theta1_vals));
+  
+  % Fill out J_vals
+  for i = 1:length(theta0_vals)
+      for j = 1:length(theta1_vals)
+  	    t = [theta0_vals(i); theta1_vals(j)];
+	    J_vals(i,j) = computeCost(X, y, t);
+      end
+  end
+  
+  % Because of the way meshgrids work in the surf command, we need to
+  % transpose J_vals before calling surf, or else the axes will be flipped
+  J_vals = J_vals';
+  % Surface plot
+  figure;
+  surf(theta0_vals, theta1_vals, J_vals)
+  xlabel('\theta_0'); ylabel('\theta_1');
+  
+  % Contour plot
+  figure;
+  % Plot J_vals as 15 contours spaced logarithmically between 0.01 and 100
+  contour(theta0_vals, theta1_vals, J_vals, logspace(-2, 3, 20))
+  xlabel('\theta_0'); ylabel('\theta_1');
+  hold on;
+  plot(theta(1), theta(2), 'rx', 'MarkerSize', 10, 'LineWidth', 2);
 	~~~
 
 - Now, you can submit your work by typing `submit()`.
@@ -319,9 +318,9 @@ I have already known about matlab, so this part of note contains not too much in
 - **featureNormalize.m**: We need to store mean and standard deviation after nomalizing step because we will use them to nomalize a "new" data test.
 
 	~~~ matlab
-	mu = mean(X); % mean of features
-	sigma = std(X); % standard deviation
-	X_norm = (X - mu) ./ sigma;
+mu = mean(X); % mean of features
+sigma = std(X); % standard deviation
+X_norm = (X - mu) ./ sigma;
 	~~~
 
 - **computeCostMulti.m**: code generated in this case can be used for `ex1` also.
@@ -334,7 +333,7 @@ I have already known about matlab, so this part of note contains not too much in
 	$$
 
 	~~~ matlab
-	J = 1/(2*m) * (X*theta - y)' * (X*theta - y);
+J = 1/(2*m) * (X*theta - y)' * (X*theta - y);
 	~~~
 
 - **gradientDescentMulti.m**: code generated in this case can be used for `ex1` also.
@@ -348,23 +347,22 @@ I have already known about matlab, so this part of note contains not too much in
 	$$
 
 	~~~ matlab
-	n = size(X,2); % number of features
-	theta = theta - alpha * (1/m) * transpose(dot(repmat(X*theta - y,1,n),X,1));
+n = size(X,2); % number of features
+theta = theta - alpha * (1/m) * transpose(dot(repmat(X*theta - y,1,n),X,1));
 	~~~
 	
 - **ex1_multi.m**: There are two notes. (1) if using feature nomalize, it's necessary to nomalize X_test before finding the price. (2) If using normal equation, no need to use normalization.
 
 	~~~ matlab
-	% using feature normalization 
-	% (choose alpha = 0.03 to get better resutl)
-	x_test = [1650 3];
-	x_test = (x_test - mu) ./ sigma;
-	x_test = [1, x_test];
-	price = x_test * theta;
-	
-	% using normal equation
-	x_test = [1 1650 3];
-	price = x_test * theta;
+% using feature normalization 
+% (choose alpha = 0.03 to get better resutl)
+x_test = [1650 3];
+x_test = (x_test - mu) ./ sigma;
+x_test = [1, x_test];
+price = x_test * theta;
+% using normal equation
+x_test = [1 1650 3];
+price = x_test * theta;
 	~~~
 
 {% include more.html content="[Next to Week 3](/machine-learning-coursera-3)." %}
