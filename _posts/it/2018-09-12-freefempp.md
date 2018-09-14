@@ -5,12 +5,16 @@ toc: 1
 tags: ["freefem++"]
 maths: 1
 comment: 1
-date: 2018-09-13
+date: 2018-09-14
 ---
 
 I use this note for the FreeFem++ programming language. I have used it since the first year of my PhD thesis and I droped it 2 year laters because of some unexpected troubles. I then decide to use matlab instead. However, I keep using FreeFem++ in some simple cases just for comparing the computation with the codes done with matlab.
 
 {% include toc.html %}
+
+## Work with PhD
+
+- This is very interesting: *numerical modeling transport problem with freefem - Florian De Vuyst.pdf*
 
 ## Download and install
 
@@ -65,6 +69,42 @@ include "<name>.edp"; // location is not important
     ~~~
 
 - ff++ never uses label on the vertices
+
+## FreeFem++ with Visual Studio Code
+
+- Install FreeFem++ as usual
+- **Terminal** > **Configure Default Build Task** (choose the folder stick to this task)
+- A **task.json** file opened and fill it with
+
+    ~~~ 
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run FreeFem++",
+      "type": "shell",
+      "command": "FreeFem++ ${file}",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+    }
+  ]
+}
+    ~~~
+
+- Press **Ctrl + Shift + B**.
+- Assign keyboard shortcut to this task: **Files** > **Preferences** > **Keyboard Shortcuts** > Click on link "**keybindings.json**" and add following codes (change "ctrl+r" with the ones you want)
+
+    ~~~
+{
+    "key": "ctrl+r",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Run FreeFem++"
+}
+    ~~~
 
 ## The order working with FreeFem++
 

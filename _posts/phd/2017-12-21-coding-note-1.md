@@ -4,10 +4,19 @@ categories: [phd,maths,it]
 tags: [phd,matlab,numerical analysis]
 maths: 1
 toc: 1
-date: 2018-07-26
+date: 2018-09-14
 ---
 
 Loạt bài này chủ yếu dùng để *ghi chú* trong quá trình hoàn thành cái coding. Có thể đó là những ghi chú về kiến thức, thuật toán liên quan. Cái này dùng để "gọi đến" trong cái ghi chú Working daily trong Evernote.
+
+{% include warning.html content="Starting working with matlab from notebook 2!!! (1/2017)" %}
+
+## Why we don't use FreeFem++? <new />
+
+We don't use FreeFem++ and started to use Matlab because
+
+- We cannot implement Ghost penalty with FreeFem++
+- 
 
 ## Change to function handle and inputParser
 
