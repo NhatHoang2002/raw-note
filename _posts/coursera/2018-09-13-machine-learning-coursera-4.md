@@ -124,3 +124,4 @@ $$
 </div>****
 
 ## Exercise Programmation: Multi-class Classification and Neural Networks
+

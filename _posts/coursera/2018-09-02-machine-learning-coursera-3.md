@@ -64,11 +64,11 @@ This note was first taken when I learnt the [machine learning course on Coursera
 
 - Some propabilities
 
-
-$$
-\begin{align*}& h_\theta(x) = P(y=1 | x ; \theta) = 1 - P(y=0 | x ; \theta) \newline& P(y = 0 | x;\theta) + P(y = 1 | x ; \theta) = 1\end{align*}
-$$
-
+	<div class="p-mark">
+	$$
+	\begin{align*}& h_\theta(x) = P(y=1 | x ; \theta) = 1 - P(y=0 | x ; \theta) \newline& P(y = 0 | x;\theta) + P(y = 1 | x ; \theta) = 1\end{align*}
+	$$
+	</div>
 
 
 ### Decision Boundary
