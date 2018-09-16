@@ -4,7 +4,7 @@ categories: [it]
 tags: [jekyll,notetheme]
 maths: 1
 toc: 1
-date: 2018-09-10
+date: 2018-09-16
 ---
 
 This post is only for editors, please read other posts.
@@ -39,9 +39,9 @@ There are some already-defined components on NoteTheme that you could use (If yo
 - **An easier way**: use `{{ "{% raw " }}%}` and `{{ "{% endraw " }}%}` around the key-word. These two commands are also used for a block of codes, 
 
 	~~~
-	~~~ {{ "{% raw " }}%}{% raw %}{% for %}
-	// các dòng codes
-	{% end for %}{% endraw %}{{ "{% endraw " }}%} ~~~
+~~~ {{ "{% raw " }}%}{% raw %}{% for %}
+// các dòng codes
+{% end for %}{% endraw %}{{ "{% endraw " }}%} ~~~
 	~~~
 
 	**Tips**: For a beautiful display, put `{{ "{% raw " }}%}` and `{{ "{% endraw " }}%}` exactly like the above code.
@@ -51,19 +51,19 @@ There are some already-defined components on NoteTheme that you could use (If yo
 - **Normal way**
 
     ~~~ {% raw %}
-    ![](/link/to/figure/){:.w-500 .no-border}
+  ![](/link/to/figure/){:.w-500 .no-border}
     {% endraw %} ~~~
 
 - **Inline figures**
 
     ~~~ {% raw %}
-    {% include img-inline.html content="/link/to/figure/" %}
+  {% include img-inline.html content="/link/to/figure/" %}
     {% endraw %} ~~~
 
 - **Youtube video**
 
     ~~~ {% raw %}
-    {% include youtube.html content="wIsK4kQTrIg" size="5" %}
+  {% include youtube.html content="wIsK4kQTrIg" size="5" %}
     {% endraw %} ~~~
 
 
@@ -71,26 +71,39 @@ There are some already-defined components on NoteTheme that you could use (If yo
 
 ### Hide/Show
 
-    ~~~ html
-    <ul class="collapsible" data-collapsible="accordion">
-    <li>
-    <div class="collapsible-header" markdown="1"><i class="material-icons">face</i>
-    Title
-    </div>
-    <div class="collapsible-body" markdown="1">
-    Content
-    </div>
-    </li>
-    </ul>
-    ~~~
+~~~ html
+<ul class="collapsible" data-collapsible="accordion">
+<li>
+<div class="collapsible-header" markdown="1"><i class="material-icons">face</i>
+Title
+</div>
+<div class="collapsible-body" markdown="1">
+Content
+</div>
+</li>
+</ul>
+~~~
 
 ### Notifications
 
-    ~~~ {% raw %}
-    {% include warning.html content="Warning's content" %}
+- Info
 
-    {% include tip.html content="Info's content" %}
-    {% endraw %} ~~~
+	~~~ html
+  <p markdown="1" class="thi-tip">
+    <i class="material-icons mat-icon">info</i>
+	content
+  </p>
+	~~~
+
+- Error
+
+	~~~ html
+	<p markdown="1" class="thi-tip">
+		<i class="material-icons mat-icon">error</i>
+		content
+	</p>
+	~~~
+
 
 ### Pull quotes
 

@@ -5,7 +5,7 @@ tags: [machine learning, ml coursera]
 math: 1
 toc: 1
 comment: 1
-date: 2018-09-14
+date: 2018-09-16
 ---
 
 {% assign img-url = '/images/posts/ML/coursera' %}
@@ -64,7 +64,7 @@ This note was first taken when I learnt the [machine learning course on Coursera
 		$$
 		</div>
 
-### Forward propagation: vectorized implementation
+### <mark>Forward propagation</mark>: vectorized implementation
 
 ![Neural network 3]({{img-url}}/neural-network-3.png){:.no-border .w-800}
 
@@ -124,4 +124,73 @@ $$
 </div>****
 
 ## Exercise Programmation: Multi-class Classification and Neural Networks
+
+<div class="see-again">
+<i class="material-icons">settings_backup_restore</i>
+<span markdown="1">
+See again [Multiclass classification: one-vs-all](/machine-learning-coursera-3#multiclass-classification-one-vs-all).
+</span>
+</div>
+
+<div class="see-again">
+<i class="material-icons">settings_backup_restore</i>
+<span markdown="1">
+See again [Advanced Optimization](/machine-learning-coursera-3#advanced-optimization).
+</span>
+</div>
+
+- `lrCostFunction.m`
+
+  This ex is the same with the one in the previous week.
+
+  ~~~ matlab
+  h = sigmoid(X*theta); % hypothesis
+  J = 1/m * ( -y' * log(h) - (1-y)' * log(1-h) ) + lambda/(2*m) * sum(theta(2:end).^2);
+  
+  grad(1,1) = 1/m * X(:,1)' * (h-y);
+  grad(2:end,1) = 1/m * X(:,2:end)' * (h-y) + lambda/m * theta(2:end,1);
+  ~~~
+
+- `oneVsAll.m`
+
+  ~~~ matlab
+  initial_theta = zeros(n + 1, 1);
+  options = optimset('GradObj', 'on', 'MaxIter', 50);
+  for c = 1:num_labels
+  	  [theta] = fmincg (@(t)(lrCostFunction(t, X, (y == c), lambda)), initial_theta, options);
+  	  all_theta(c,:) = theta(:);
+  end
+  ~~~
+
+  <p markdown="1" class="thi-tip">
+    <i class="material-icons mat-icon">info</i>
+    `fmincg` works similarly to `fminunc`, but is more more efficient for dealing with a large number of parameters.
+  </p>
+
+- `predictOneVsAll.m`
+
+    ~~~ matlab
+  h = X * all_theta';
+  [~, p] = max(h,[],2);
+    ~~~
+
+- `predict.m` : "you implemented multi-class logistic regression to recognize handwritten digits. However, logistic regression cannot form more complex hypotheses as it is only a linear classifier."
+
+    ~~~ matlab
+  X = [ones(m, 1) X]; % add column 1 to a2
+  z2 = X * Theta1';
+  a2 = sigmoid(z2);
+  a2 = [ones(m, 1) a2]; % add column 1 to a2
+  h = a2 * Theta2';
+  [~, p] = max(h,[],2);
+    ~~~
+
+
+
+
+
+
+
+
+
 

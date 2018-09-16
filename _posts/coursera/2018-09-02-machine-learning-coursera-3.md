@@ -229,6 +229,11 @@ initialTheta = zeros(2,1);
 
 We give to the function `fminunc()` our cost function, our initial vector of theta values, and the `options` object that we created beforehand.
 
+<p markdown="1" class="thi-tip">
+  <i class="material-icons mat-icon">info</i>
+  `fmincg` works similarly to `fminunc`, but is more more efficient for dealing with a large number of parameters.
+</p>
+
 ## Multiclass classification: one-vs-all
 
 $y$ has more values than only two 0 and 1. We keep using binary classification for each group of 2 (consider one and see the others as the other group)
@@ -250,10 +255,22 @@ h_\theta^{(n)}(x) &= P(y = n | x ; \theta) \\
 $$
 </div>
 </div>
+
 <div class="col s12 l6" markdown="1">
 ![One vs All 1]({{img-url}}/one-vs-all-1.png){:.no-border}
 </div>
 </div>
+
+<div class="p-mark" markdown="1">
+After fiding `optTheta` from `fmincg`, we need to find $h_{\theta}$. From $h_{\theta}$ for all classes, we find the one with the highest propability (highest $h$). That's why we have the line of code `prediction` above.
+</div>
+
+
+
+<p markdown="1" class="thi-tip">
+<i class="material-icons mat-icon">info</i>
+See [ex 4](/machine-learning-coursera-4#exercise-programmation-multi-class-classification-and-neural-networks) for an example in practice.
+</p>
 
 ## Solving the problem of overfitting
 

@@ -24,6 +24,14 @@
   margin: 2rem 0;
 }
 
+.thi-tip a, thi-warning a{
+	text-decoration: underline;
+}
+
+li > .thi-tip, .thi-warning{
+	margin: 0.5rem 0;
+}
+
 // thi box
 .thi-box{
 	margin: 2rem 0;
