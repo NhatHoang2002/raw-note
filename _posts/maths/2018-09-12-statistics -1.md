@@ -4,6 +4,7 @@ categories: [math]
 tags: [machine learning, statistics, data, R]
 math: 1
 toc: 1
+date: 2018-09-17
 ---
 
 {% assign img-url = '/images/posts/math/statistics' %}
@@ -23,4 +24,15 @@ This note is only used for my learning statistics for data science. It's not a t
 - **Data Science from Scratch First Principles with Python** (downloaded)
 
 
+## Python codes notes
 
+Find **mean**, **median** and **mode**
+
+~~~ python
+import numpy as np
+from scipy import stats 
+
+print(np.mean(numbers))
+print(np.median(numbers))
+print(int(stats.mode(numbers)[0]))
+~~~

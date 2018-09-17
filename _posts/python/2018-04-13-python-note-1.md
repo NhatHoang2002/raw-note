@@ -49,7 +49,18 @@ This post is used for noting the fundamental syntax of python. For more specific
 - `"Chào bạn {} và {}".format('a', 'b')` returns `'Chào bạn a và b'`
 - `"Chào bạn {2} và {1}".format('a', 'b')` returns `'Chào bạn b và a'`
 - Từ Python 3.6, có thể dùng `f'Chào {a}'` where `a = 'bạn'`
+- Print upto number of decimal
 
+    ~~~ python
+    number = 1
+    print("{:.6f}".format(number)) # 1.000000
+    ~~~
+- Get the input and store to `numbers` list
+
+    ~~~ python
+    size = int(input())
+    numbers = list(map(int, input().split()))
+    ~~~
 
 ## Underscore
 
@@ -149,33 +160,47 @@ This post is used for noting the fundamental syntax of python. For more specific
 
 ### Condition
 
-- `if`, `for`, `while` ([cf](https://www.programiz.com/python-programming/if-elif-else))
+`if`, `for`, `while` ([cf](https://www.programiz.com/python-programming/if-elif-else))
 
-	``` python
-	# if
-	if condition:
-		comands
-	elif condition:
-		commands
-	else:
-		commands
-	```
+~~~ python
+# if
+if condition:
+    comands
+elif condition:
+    commands
+else:
+    commands
+~~~
 
-- Special operator (Ternary conditional operator): `a = 100 if b>1 else 5`
-- Operators trong so sánh: `==`, `!=`, `and`, `or`, `not`, `is` (object is identity, so sánh **id**)
+---
 
-	~~~ python
-	a = [1, 2, 3]
-	b = [1, 2, 3]
+Special operator (Ternary conditional operator): `a = 100 if b>1 else 5`
 
-	a == b # True
-	a is b # False
-	id(a) == id(b) # True
-	~~~
+---
 
-- **Không có switch case**, chỉ cần dùng `if elif else`
-- `False` = `None`, `''`, `[]`, `{}`, '()'
-- nonempty $\Rightarrow$ `True`
+Operators trong so sánh: `==`, `!=`, `and`, `or`, `not`, `is` (object is identity, so sánh **id**)
+
+~~~ python
+a = [1, 2, 3]
+b = [1, 2, 3]
+
+a == b # True
+a is b # False
+id(a) == id(b) # True
+~~~
+
+---
+
+**Không có switch case**, chỉ cần dùng `if elif else`
+
+---
+
+`False` = `None`, `''`, `[]`, `{}`, '()'
+
+---
+
+nonempty $\Rightarrow$ `True`
+
 
 ### Iteration
 
@@ -259,18 +284,23 @@ for char in rev:
 - `a.append('b')`: đưa phần tử `'b'` vào trong list a nhưng `a.append(c)` với `c=[1,2]` là đưa nguyên xi `[1,2]` vào a chứ không phải từng phần tử của c
 - `a.remove(1)` : remove 1 from a
 - `a.pop()`: remove last item from a and returns the this item.
-- Liệt kê values và index
 
-	~~~ python
-	courses = ['a', 'b', 'c']
-	for index, course in enumerate(courses, start = 1):
-		print(index, course)
+---
 
-	# returns
-	1 a
-	2 b
-	3 c
-	~~~
+Liệt kê values và index
+
+~~~ python
+courses = ['a', 'b', 'c']
+for index, course in enumerate(courses, start = 1):
+    print(index, course)
+
+# returns
+1 a
+2 b
+3 c
+~~~
+
+---
 
 - `course_str = ', '.join(courses)`: tạo 1 string từ courses, cách nhau bởi dấu phẩy
 - Ngược lại là `.split(' - ')` chuyển từ string sang list
@@ -281,6 +311,7 @@ for char in rev:
 - `len(a)` gives lenght of list a (if dim of a is 1)
 - `len(a)` gives number of **rows** of a (if dim a is 2)
 	`len(a[0])` gives number of **columns** of a
+- `map(<function>, <list>)`: apply `<function>` to each item in the `<list>`
 
 ### Set
 
@@ -315,17 +346,20 @@ for char in rev:
 - See only keys : `student.keys()`
 - Truy suất only key (name, age, course): `for key in student:`
 - Truy suất key và values: `for key, value in student.items():`
-- define dictionary at once
 
-    ~~~ python
-    d = {'col1':[1, 2], 'col2':[3, 4]}
+---
 
-    # or
+define dictionary at once
 
-    a = [1, 2]
-    b = [3, 4]
-    d = {'col1':a, 'col2': b}
-    ~~~
+~~~ python
+d = {'col1':[1, 2], 'col2':[3, 4]}
+
+# or
+
+a = [1, 2]
+b = [3, 4]
+d = {'col1':a, 'col2': b}
+~~~
 
 
 
@@ -353,7 +387,6 @@ for val_a, val_b in zip(strand_a, strand_b):
 		</div>
 		</div>
 		</div>
-
 
 ## Functions
 
