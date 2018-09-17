@@ -21,26 +21,27 @@ This post is used for noting the fundamental syntax of python. For more specific
 - Using `#` on each line
 - Multi lines dùng `"""` ở đầu và cuối, lưu ý, cái này cũng dùng để docstring, tức khi người dùng `help(ten_function)` thì mấy cái nằm trong đây sẽ được show ra. Ví dụ
 
-~~~ python
-def reverse(text):
-    """Reverse a text.
-    Input the text
-    Return text reversed
-    """
-    return text[::-1]
-~~~
+  ~~~ python
+  def reverse(text):
+      """Reverse a text.
+      Input the text
+      Return text reversed
+      """
+      return text[::-1]
+  ~~~
 
+- Continuously print: `print('.', end='')`
 
 ## Input and Output
 
 - get input from user and display
 
-~~~ python
-age = input("Your age? ") # python 3, raw_input for python 2
-print("Your age:",age) # don't need space after "age"
-~~~
+  ~~~ python
+  age = input("Your age? ") # python 3, raw_input for python 2
+  print("Your age:",age) # don't need space after "age"
+  ~~~
 
-Lưu ý: Tất cả input get được đều ở dạng string, nếu muốn áp dụng toán vào thì cần chuyển về float (`float`) hoặc int (`int`)
+  Lưu ý: Tất cả input get được đều ở dạng string, nếu muốn áp dụng toán vào thì cần chuyển về float (`float`) hoặc int (`int`)
 
 - Xem thêm practice trên [Jupyter notebook](/jupyter/cs50.html)
 - `print "Hello"` là của python 2, còn python 3 bắt buộc là `print("Hello")` ([cf](https://docs.python.org/3/whatsnew/3.0.html))
@@ -51,35 +52,42 @@ Lưu ý: Tất cả input get được đều ở dạng string, nếu muốn á
 - Từ Python 3.6, có thể dùng `f'Chào {a}'` where `a = 'bạn'`
 - Print upto number of decimal
 
-~~~ python
-number = 1
-print("{:.6f}".format(number)) # 1.000000
-~~~
+  ~~~ python
+  number = 1
+  print("{:.6f}".format(number)) # 1.000000
+  ~~~
 
 - Get the input and store to `numbers` list
 
-~~~ python
-numbers = list(map(int, input().split()))
-~~~
+  ~~~ python
+  numbers = list(map(int, input().split()))
+  ~~~
+
+- Only 1 line
+
+  ~~~ python
+  x, y, z, n = (int(input()) for _ in range(4))
+  ~~~
+
 
 
 ## Underscore
 
 - Tham khảo [tại đây](https://hackernoon.com/understanding-the-underscore-of-python-309d1a029edc).
 - When used in interpreter (nhớ lại kết quả trước đó, giống `ans` trong matlab)
-- Cần ignore giá trị nào đó, giống `~` trong matlab.
+- Cần **ignore** giá trị nào đó, giống `~` trong matlab.
 
-~~~ python
-x, _, y = (1, 2, 3) # x = 1, y = 3
+  ~~~ python
+  x, _, y = (1, 2, 3) # x = 1, y = 3
 
-# ignore the index
-for _ in range(10)
-    do_something(i)
+  # ignore the index
+  for _ in range(10)
+      do_something(i)
 
-# Ignore a value of specific location
-for _, val in list_of_tuple:
-    do_something()
-~~~
+  # Ignore a value of specific location
+  for _, val in list_of_tuple:
+      do_something()
+  ~~~
 
 - Để đặt tên, xem [PEP8](https://www.python.org/dev/peps/pep-0008/)
 	- `__double_leading_and_trailing_underscore__`: "magic" objects or attributes that live in user-controlled namespaces. E.g. `__init__`, `__import__` or `__file__`. **Never invent such names**; only use them as documented.
@@ -92,27 +100,24 @@ for _, val in list_of_tuple:
 - Nếu `print(__name__)` một file thì nó sẽ ra `__main__` nếu như mình đang thực sự chạy file đó.
 - Giả sử có trường hợp mình `import` một file khác và chạy lệnh thực thi từ file được import, thì khi ấy, `__name__` là tên của file được import chứ không phải file đang chạy.
 - Đó là lý do vì sao ta thường dùng `__name__ == __main__` để chắc rằng lệnh đang được chạy trên chính file này chứ không phải từ file khác dùng lệnh `import`.
+- Ví dụ chỉ cần tạo 2 file có nội dung như sau rồi sau đó chạy từng file là hiểu
+  - File **name_main.py**
 
----
+  ~~~ python
+  print("__name__: {}".format(__name__))
+  if __name__ == '__main__':
+      print("This one is only showed if this file runs directly!")
+  ~~~
+  
+  - File **name_main_import.py**
 
-Ví dụ chỉ cần tạo 2 file có nội dung như sau rồi sau đó chạy từng file là hiểu
-- File **name_main.py**
+  ~~~ python
+  # This file is only used for import name_main.py
+  import name_main
+  print("__name__: {}".format(__name__))
+  ~~~
 
-~~~ python
-print("__name__: {}".format(__name__))
-if __name__ == '__main__':
-    print("This one is only showed if this file runs directly!")
-~~~
-
-- File **name_main_import.py**
-
-~~~ python
-# This file is only used for import name_main.py
-import name_main
-print("__name__: {}".format(__name__))
-~~~
-
-Cái này giúp cho việc phân loại các lệnh được thực thi trực tiếp hay gián tiếp bên trong 1 file.
+  Cái này giúp cho việc phân loại các lệnh được thực thi trực tiếp hay gián tiếp bên trong 1 file.
 
 ## Operators
 
@@ -129,70 +134,68 @@ Cái này giúp cho việc phân loại các lệnh được thực thi trực t
 
 ### Comparison
 
-[Tham khảo](http://abregman.com/2016/11/29/python-objects-comparison/). Below is an example of comparison
+- [Tham khảo](http://abregman.com/2016/11/29/python-objects-comparison/). Below is an example of comparison
 
-~~~ python
-class Ball(object):
-    def __init__(self, color, size):
-        self.color = color
-        self.size = size
+  ~~~ python
+  class Ball(object):
+      def __init__(self, color, size):
+          self.color = color
+          self.size = size
 
-ball1 = Ball('blue', 'small')
-ball2 = Ball('blue', 'small')
+  ball1 = Ball('blue', 'small')
+  ball2 = Ball('blue', 'small')
 
-print(ball1 == ball2) # Prints False!
-~~~
+  print(ball1 == ball2) # Prints False!
+  ~~~
 
-Because python **compare the "id"** of `ball1` and `ball2` instead.
+  Because python **compare the "id"** of `ball1` and `ball2` instead.
 
-Do đó có các comparison *rich comparison methods* or *comparison magic methods* bên trong các class/object này để "định nghĩa" luôn *thế nào là bằng, lớn, nhỏ,...* giữa các object với nhau.
+- Do đó có các comparison *rich comparison methods* or *comparison magic methods* bên trong các class/object này để "định nghĩa" luôn *thế nào là bằng, lớn, nhỏ,...* giữa các object với nhau.
 
-~~~ python
-object.__lt__(self, other) # For x < y
-object.__le__(self, other) # For x <= y
-object.__eq__(self, other) # For x == y
-object.__ne__(self, other) # For x != y OR x <> y
-object.__gt__(self, other) # For x > y
-object.__ge__(self, other) # For x >= y
-~~~
+  ~~~ python
+  object.__lt__(self, other) # For x < y
+  object.__le__(self, other) # For x <= y
+  object.__eq__(self, other) # For x == y
+  object.__ne__(self, other) # For x != y OR x <> y
+  object.__gt__(self, other) # For x > y
+  object.__ge__(self, other) # For x >= y
+  ~~~
 
-Xem thêm trong [cf](http://abregman.com/2016/11/29/python-objects-comparison/).
+  Xem thêm trong [cf](http://abregman.com/2016/11/29/python-objects-comparison/).
 
 
 ## Condition, loops
 
 ### Condition
 
-`if`, `for`, `while` ([cf](https://www.programiz.com/python-programming/if-elif-else))
+- `if`, `for`, `while` ([cf](https://www.programiz.com/python-programming/if-elif-else))
 
-~~~ python
-# if
-if condition:
-    comands
-elif condition:
-    commands
-else:
-    commands
-~~~
+  ~~~ python
+  # if
+  if condition:
+      comands
+  elif condition:
+      commands
+  else:
+      commands
+  ~~~
 
-Special operator (Ternary conditional operator): `a = 100 if b>1 else 5`
+- Special operator (Ternary conditional operator): `a = 100 if b>1 else 5`
+- Operators trong so sánh: `==`, `!=`, `and`, `or`, `not`, `is` (object is identity, so sánh **id**)
 
-Operators trong so sánh: `==`, `!=`, `and`, `or`, `not`, `is` (object is identity, so sánh **id**)
+  ~~~ python
+  a = [1, 2, 3]
+  b = [1, 2, 3]
 
-~~~ python
-a = [1, 2, 3]
-b = [1, 2, 3]
+  a == b # True
+  a is b # False
+  id(a) == id(b) # True
+  ~~~
 
-a == b # True
-a is b # False
-id(a) == id(b) # True
-~~~
+- **Không có switch case**, chỉ cần dùng `if elif else`
+- `False` = `None`, `''`, `[]`, `{}`, '()'
+- nonempty $\Rightarrow$ `True`
 
-**Không có switch case**, chỉ cần dùng `if elif else`
-
-`False` = `None`, `''`, `[]`, `{}`, '()'
-
-nonempty $\Rightarrow$ `True`
 
 ### Iteration
 
@@ -211,39 +214,7 @@ while condition:
 - `range(5)` means `[0,1,2,3,4]`
 - `range(1,5)` means `[1,2,3,4]`
 - Có thể dùng dạng `while True`
-
-[Behind the scene,](https://docs.python.org/3/tutorial/classes.html#iterators) the [`for`](https://docs.python.org/3/reference/compound_stmts.html#for) statement calls [`iter()`](https://docs.python.org/3/library/functions.html#iter) on the container object. Bên trong đây có nhiều phép toán được định nghĩa, ví dụ như `__next__` (khi dùng thì chỉ cần `next()`)
-
-<div class="mt-2 mb-2" data-datacamp-exercise data-lang="python">
-<code data-type="sample-code">
-s = 'abc'
-it = iter(s)
-print(next(it))
-print(next(it))
-print(next(it))
-
-# NEW EXAMPLE
-print('NEW EXAMPLE')
-class Reverse:
-    """Iterator for looping over a sequence backwards."""
-    def __init__(self, data):
-        self.data = data
-        self.index = len(data)
-
-    def __iter__(self):
-        return self
-    
-    def __next__(self):
-        if self.index == 0:
-            raise StopIteration
-        self.index = self.index - 1
-        return self.data[self.index]
-
-rev = Reverse('spam')
-for char in rev:
-	print(char)
-</code>
-</div>
+- [Behind the scene,](https://docs.python.org/3/tutorial/classes.html#iterators) the [`for`](https://docs.python.org/3/reference/compound_stmts.html#for) statement calls [`iter()`](https://docs.python.org/3/library/functions.html#iter) on the container object. Bên trong đây có nhiều phép toán được định nghĩa, ví dụ như `__next__` (khi dùng thì chỉ cần `next()`)
 
 - **Looping data structures**: suppose that `world` is a dictionary, then one can use. Focus on `.items()`
 
@@ -274,25 +245,21 @@ for char in rev:
 - Last item: `list[-1]`
 - `a.extend(b)`: đưa từng phần tử của b vào a, khác với `.append()`
 - `a.append('b')`: đưa phần tử `'b'` vào trong list a nhưng `a.append(c)` với `c=[1,2]` là đưa nguyên xi `[1,2]` vào a chứ không phải từng phần tử của c
-- `a.remove(1)` : remove 1 from a
+- `a.remove(1)` : remove 1 from a (but not remove all 1 from a)
+  - If you wanna remove all 1 from a: `arr = [x for x in arr if x != 1]`
 - `a.pop()`: remove last item from a and returns the this item.
+- Liệt kê values và index
 
----
+  ~~~ python
+  courses = ['a', 'b', 'c']
+  for index, course in enumerate(courses, start = 1):
+      print(index, course)
 
-Liệt kê values và index
-
-~~~ python
-courses = ['a', 'b', 'c']
-for index, course in enumerate(courses, start = 1):
-    print(index, course)
-
-# returns
-1 a
-2 b
-3 c
-~~~
-
----
+  # returns
+  1 a
+  2 b
+  3 c
+  ~~~
 
 - `course_str = ', '.join(courses)`: tạo 1 string từ courses, cách nhau bởi dấu phẩy
 - Ngược lại là `.split(' - ')` chuyển từ string sang list
@@ -328,7 +295,6 @@ for index, course in enumerate(courses, start = 1):
 - **Don't forget ',' between elemeents**
 - Truy suất `student['name']`
 - Xem key có trong dic không: `student.get('phone')` returns *None* nếu không tìm thấy, nếu muốn thay chữ None thì dùng `student.get('phone', 'Not Found')`.
-
   - Other way: `'name' in studnet`
 - Thêm/update nhiều key: `student.update({'name': 'Thi', 'phone': 555})`
 - Remove `del student['age']`, nếu giữa lại giá trị cái xóa thì `age = student.pop('age')`
@@ -338,20 +304,17 @@ for index, course in enumerate(courses, start = 1):
 - See only keys : `student.keys()`
 - Truy suất only key (name, age, course): `for key in student:`
 - Truy suất key và values: `for key, value in student.items():`
+- define dictionary at once
 
----
+  ~~~ python
+  d = {'col1':[1, 2], 'col2':[3, 4]}
 
-define dictionary at once
+  # or
 
-~~~ python
-d = {'col1':[1, 2], 'col2':[3, 4]}
-
-# or
-
-a = [1, 2]
-b = [3, 4]
-d = {'col1':a, 'col2': b}
-~~~
+  a = [1, 2]
+  b = [3, 4]
+  d = {'col1':a, 'col2': b}
+  ~~~
 
 
 
@@ -362,35 +325,35 @@ d = {'col1':a, 'col2': b}
 	- Nếu số lượng hai đối tượng khác nhau thì sẽ lấy cho đến hết cái ít hơn
 	- Sau đó thì có thể áp dụng phép chuyển kiểu để hiển thị ra hoặc sử dụng luôn
 
-		<div class="row d-flex" markdown="1">
-		<div class="col s12 l6" markdown="1">
-		~~~ python
-strand_a = [1, 2, 3, 4, 5, 6]
-strand_b = "thi"
-kk = zip(strand_a, strand_b)
-print(tuple(kk))
-// can be used 
-for val_a, val_b in zip(strand_a, strand_b):
-		~~~
-		</div>
-		<div class="col s12 l6" markdown="1">
-		<div class="terminal">
-		((1, 't'), (2, 'h'), (3, 'i'))
-		</div>
-		</div>
-		</div>
+    <div class="row d-flex" markdown="1">
+    <div class="col s12 l6" markdown="1">
+    ~~~ python
+  strand_a = [1, 2, 3, 4, 5, 6]
+  strand_b = "thi"
+  kk = zip(strand_a, strand_b)
+  print(tuple(kk))
+  // can be used 
+  for val_a, val_b in zip(strand_a, strand_b):
+    ~~~
+    </div>
+    <div class="col s12 l6" markdown="1">
+    <div class="terminal">
+    ((1, 't'), (2, 'h'), (3, 'i'))
+    </div>
+    </div>
+    </div>
 
 ## Functions
 
 
 - Basic
 
-    ~~~ python
-    def func():
-    pass # fill later
+  ~~~ python
+  def func():
+  pass # fill later
 
-    func() # run this function
-    ~~~
+  func() # run this function
+  ~~~
 
 - Function return không phải là value thì luôn là `None`, nó cũng cho biết function hoạt động tốt.
 
@@ -398,34 +361,34 @@ for val_a, val_b in zip(strand_a, strand_b):
 
 - ([Đọc SE_ref biết hết](https://stackoverflow.com/questions/36901/what-does-double-star-asterisk-and-star-asterisk-do-for-parameters)) Cái này cho phép tạo ra function với bao nhiêu argument cũng được! Với 1 `*` thì nó cho chúng ta nhập 1 list arg dạng tuple, còn với `**` thì nó cho chúng ta nhập 1 dạng pair key-val của dictionary.
 
-    ~~~ python
-    def student(*argd, **kwargs):
-    commands
+  ~~~ python
+  def student(*argd, **kwargs):
+  commands
 
-    courses = ['Math', 'Art']
-    info = {'name': 'Thi', 'age': 28}
-    std = student(*course, **info)
+  courses = ['Math', 'Art']
+  info = {'name': 'Thi', 'age': 28}
+  std = student(*course, **info)
 
-    # returns
-    ('Math', 'Art')
-    {'name': 'Thi', 'age': 28}
-    ~~~
+  # returns
+  ('Math', 'Art')
+  {'name': 'Thi', 'age': 28}
+  ~~~
 
 - Nói rõ hơn tí chỗ `*` này ([official_ref](https://docs.python.org/dev/tutorial/controlflow.html#more-on-defining-functions), [stackE](https://stackoverflow.com/questions/36901/what-does-double-star-asterisk-and-star-asterisk-do-for-parameters)):
 
 - Không phải hai cái kia đại diện cho 2 biến mà mỗi cái đại diện cho 1 nhóm biến. Nếu không thêm ký hiệu `*` thì nó cứ đưa hết vô biến đầu tiên (**tuple**)
 
-    ~~~ python
-    # Understand the meaning of character * in function
-    def student(*name, **note):
-    print('Name: {}'.format(name))
-    print('Note: {}'.format(note))
+  ~~~ python
+  # Understand the meaning of character * in function
+  def student(*name, **note):
+  print('Name: {}'.format(name))
+  print('Note: {}'.format(note))
 
-    student('Thi', 10, 11, 'Bi')
-    # returns
-    # Name: ('Thi', 10, 11, 'Bi')
-    # Note: {}
-    ~~~
+  student('Thi', 10, 11, 'Bi')
+  # returns
+  # Name: ('Thi', 10, 11, 'Bi')
+  # Note: {}
+  ~~~
 
 - Cái `**` must be a **mapping** (e.g. dictionary)
 
@@ -439,10 +402,10 @@ for val_a, val_b in zip(strand_a, strand_b):
 
 - Đặc biệt
 
-    ~~~ python
-    def func(arg1, arg2, arg3, *, kwarg1, kwarg2):
-        pass
-    ~~~
+  ~~~ python
+  def func(arg1, arg2, arg3, *, kwarg1, kwarg2):
+      pass
+  ~~~
 
 	Such function accepts only 3 positional arguments, and everything after `*` can only be passed as keyword arguments.
 

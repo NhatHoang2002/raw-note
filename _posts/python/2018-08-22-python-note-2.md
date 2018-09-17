@@ -5,7 +5,7 @@ categories: it
 tags: [python]
 maths: 1
 toc: 1
-date: 2018-08-22
+date: 2018-09-18
 comment: 1
 ---
 
@@ -26,3 +26,13 @@ I use this note for only tricks in Python (quick exercises solution also).
     ~~~
 
 - `s.isupper()`, `s.islower()`
+
+## List
+
+- Delete all same element 'a' from list
+
+  ~~~ python
+  arr = [x for x in arr if x != 'a']
+  ~~~
+
+  Note that, if we only want to delete 1 element a, use `arr.remove('a')`
