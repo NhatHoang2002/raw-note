@@ -21,26 +21,26 @@ This post is used for noting the fundamental syntax of python. For more specific
 - Using `#` on each line
 - Multi lines dùng `"""` ở đầu và cuối, lưu ý, cái này cũng dùng để docstring, tức khi người dùng `help(ten_function)` thì mấy cái nằm trong đây sẽ được show ra. Ví dụ
 
-	~~~ python
-	def reverse(text):
-	    """Reverse a text.
-	    Input the text
-		Return text reversed
-	    """
-		return text[::-1]
-	~~~
+~~~ python
+def reverse(text):
+    """Reverse a text.
+    Input the text
+    Return text reversed
+    """
+    return text[::-1]
+~~~
 
 
 ## Input and Output
 
 - get input from user and display
 
-	~~~ python
-	age = input("Your age? ") # python 3, raw_input for python 2
-	print("Your age:",age) # don't need space after "age"
-	~~~
+~~~ python
+age = input("Your age? ") # python 3, raw_input for python 2
+print("Your age:",age) # don't need space after "age"
+~~~
 
-	Lưu ý: Tất cả input get được đều ở dạng string, nếu muốn áp dụng toán vào thì cần chuyển về float (`float`) hoặc int (`int`)
+Lưu ý: Tất cả input get được đều ở dạng string, nếu muốn áp dụng toán vào thì cần chuyển về float (`float`) hoặc int (`int`)
 
 - Xem thêm practice trên [Jupyter notebook](/jupyter/cs50.html)
 - `print "Hello"` là của python 2, còn python 3 bắt buộc là `print("Hello")` ([cf](https://docs.python.org/3/whatsnew/3.0.html))
@@ -51,16 +51,17 @@ This post is used for noting the fundamental syntax of python. For more specific
 - Từ Python 3.6, có thể dùng `f'Chào {a}'` where `a = 'bạn'`
 - Print upto number of decimal
 
-    ~~~ python
-    number = 1
-    print("{:.6f}".format(number)) # 1.000000
-    ~~~
+~~~ python
+number = 1
+print("{:.6f}".format(number)) # 1.000000
+~~~
+
 - Get the input and store to `numbers` list
 
-    ~~~ python
-    size = int(input())
-    numbers = list(map(int, input().split()))
-    ~~~
+~~~ python
+numbers = list(map(int, input().split()))
+~~~
+
 
 ## Underscore
 
@@ -68,17 +69,17 @@ This post is used for noting the fundamental syntax of python. For more specific
 - When used in interpreter (nhớ lại kết quả trước đó, giống `ans` trong matlab)
 - Cần ignore giá trị nào đó, giống `~` trong matlab.
 
-	~~~ python
-	x, _, y = (1, 2, 3) # x = 1, y = 3
+~~~ python
+x, _, y = (1, 2, 3) # x = 1, y = 3
 
-	# ignore the index
-	for _ in range(10)
-		do_something(i)
+# ignore the index
+for _ in range(10)
+    do_something(i)
 
-	# Ignore a value of specific location
-	for _, val in list_of_tuple:
-	    do_something()
-	~~~
+# Ignore a value of specific location
+for _, val in list_of_tuple:
+    do_something()
+~~~
 
 - Để đặt tên, xem [PEP8](https://www.python.org/dev/peps/pep-0008/)
 	- `__double_leading_and_trailing_underscore__`: "magic" objects or attributes that live in user-controlled namespaces. E.g. `__init__`, `__import__` or `__file__`. **Never invent such names**; only use them as documented.
@@ -91,24 +92,27 @@ This post is used for noting the fundamental syntax of python. For more specific
 - Nếu `print(__name__)` một file thì nó sẽ ra `__main__` nếu như mình đang thực sự chạy file đó.
 - Giả sử có trường hợp mình `import` một file khác và chạy lệnh thực thi từ file được import, thì khi ấy, `__name__` là tên của file được import chứ không phải file đang chạy.
 - Đó là lý do vì sao ta thường dùng `__name__ == __main__` để chắc rằng lệnh đang được chạy trên chính file này chứ không phải từ file khác dùng lệnh `import`.
-- Ví dụ chỉ cần tạo 2 file có nội dung như sau rồi sau đó chạy từng file là hiểu
-	- File **name_main.py**
 
-		~~~ python
-		print("__name__: {}".format(__name__))
-		if __name__ == '__main__':
-		    print("This one is only showed if this file runs directly!")
-		~~~
+---
 
-	- File **name_main_import.py**
+Ví dụ chỉ cần tạo 2 file có nội dung như sau rồi sau đó chạy từng file là hiểu
+- File **name_main.py**
 
-		~~~ python
-		# This file is only used for import name_main.py
-		import name_main
-		print("__name__: {}".format(__name__))
-		~~~
+~~~ python
+print("__name__: {}".format(__name__))
+if __name__ == '__main__':
+    print("This one is only showed if this file runs directly!")
+~~~
 
-	- Cái này giúp cho việc phân loại các lệnh được thực thi trực tiếp hay gián tiếp bên trong 1 file.
+- File **name_main_import.py**
+
+~~~ python
+# This file is only used for import name_main.py
+import name_main
+print("__name__: {}".format(__name__))
+~~~
+
+Cái này giúp cho việc phân loại các lệnh được thực thi trực tiếp hay gián tiếp bên trong 1 file.
 
 ## Operators
 
@@ -125,35 +129,34 @@ This post is used for noting the fundamental syntax of python. For more specific
 
 ### Comparison
 
-- [Tham khảo](http://abregman.com/2016/11/29/python-objects-comparison/)
-- Below is an example of comparison
+[Tham khảo](http://abregman.com/2016/11/29/python-objects-comparison/). Below is an example of comparison
 
-	~~~ python
-	class Ball(object):
-	    def __init__(self, color, size):
-	        self.color = color
-	        self.size = size
+~~~ python
+class Ball(object):
+    def __init__(self, color, size):
+        self.color = color
+        self.size = size
 
-	ball1 = Ball('blue', 'small')
-	ball2 = Ball('blue', 'small')
+ball1 = Ball('blue', 'small')
+ball2 = Ball('blue', 'small')
 
-	print(ball1 == ball2) # Prints False!
-	~~~
+print(ball1 == ball2) # Prints False!
+~~~
 
-	Because python **compare the "id"** of `ball1` and `ball2` instead.
+Because python **compare the "id"** of `ball1` and `ball2` instead.
 
-- Do đó có các comparison *rich comparison methods* or *comparison magic methods* bên trong các class/object này để "định nghĩa" luôn *thế nào là bằng, lớn, nhỏ,...* giữa các object với nhau.
+Do đó có các comparison *rich comparison methods* or *comparison magic methods* bên trong các class/object này để "định nghĩa" luôn *thế nào là bằng, lớn, nhỏ,...* giữa các object với nhau.
 
-	~~~ python
-	object.__lt__(self, other) # For x < y
-	object.__le__(self, other) # For x <= y
-	object.__eq__(self, other) # For x == y
-	object.__ne__(self, other) # For x != y OR x <> y
-	object.__gt__(self, other) # For x > y
-	object.__ge__(self, other) # For x >= y
-	~~~
+~~~ python
+object.__lt__(self, other) # For x < y
+object.__le__(self, other) # For x <= y
+object.__eq__(self, other) # For x == y
+object.__ne__(self, other) # For x != y OR x <> y
+object.__gt__(self, other) # For x > y
+object.__ge__(self, other) # For x >= y
+~~~
 
-- Xem thêm trong [cf](http://abregman.com/2016/11/29/python-objects-comparison/).
+Xem thêm trong [cf](http://abregman.com/2016/11/29/python-objects-comparison/).
 
 
 ## Condition, loops
@@ -172,11 +175,7 @@ else:
     commands
 ~~~
 
----
-
 Special operator (Ternary conditional operator): `a = 100 if b>1 else 5`
-
----
 
 Operators trong so sánh: `==`, `!=`, `and`, `or`, `not`, `is` (object is identity, so sánh **id**)
 
@@ -189,18 +188,11 @@ a is b # False
 id(a) == id(b) # True
 ~~~
 
----
-
 **Không có switch case**, chỉ cần dùng `if elif else`
-
----
 
 `False` = `None`, `''`, `[]`, `{}`, '()'
 
----
-
 nonempty $\Rightarrow$ `True`
-
 
 ### Iteration
 

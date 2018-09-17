@@ -20,7 +20,16 @@ Trong note này sẽ bao gồm luôn mục **coding** thay cho note [coding-note
   d(x_0,\Gamma_h) := \min_{x\in \Gamma_h} d(x_0,x).
   $$
 
+### <new /> Using FreeFem++
 
+We can consider to use `convect` in FreeFem++. It used Galerkin Characteristic FEM (cf. *convegence convect (galerkin characteristic fem)) Pironneau.pdf*)
+
+- Why in the past, we cannot use `convect`?
+
+Thi paper said that:
+
+- There are many methods to solve convection-diffusion equations approximated by the FEM: SUPG, its Galerkin Least Square variant, Deconninck's PSI method, Discontinuous-Galerkin or Galerkin-characteristics.
+- This page doesn't prove for any case, he said that in practice, the Characteristics is very good. "*Even if it is fundamental, the problem is sufficiently important to be dealt with and so the object of this paper is to show -with proofs- that there is at least one case*"
 
 ### Signed distance function
 

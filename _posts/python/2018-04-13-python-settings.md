@@ -1,10 +1,10 @@
 ---
-title: Python Settings
+title: Python 0
 categories: it
 tags: [python]
 maths: 1
 toc: 1
-date: 2018-09-05
+date: 2018-09-17
 comment: 1
 ---
 
@@ -30,8 +30,8 @@ This post is only for installing and setting up python on computer. All document
 	- [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/) : free ebook for python (there is a corresponding course on Udemy)
 	- [Python course for Data Science](https://courses.cognitiveclass.ai/courses/course-v1:Cognitiveclass+PY0101EN+v2/progress) on Big Data University.
 - **Exercise, practice**
-	- [Exercism](https://exercism.io/my/tracks/python) : học bằng bài tập, có nhiều ngôn ngữ khác nữa, free 100% (xem thêm [note riêng cho nó](/python-exercism-1))
-	- [CheckIO](https://py.checkio.org): like exercism.
+    - <new /> **[HackerRank](https://www.hackerrank.com/domains/python)** : challenge you in different problems and exercises.
+    - <update /> Others with the same type as HackerRank: [Exercism](https://exercism.io/my/tracks/python), [CheckIO](https://py.checkio.org), 
 	- [Python exercises - w3resource](https://www.w3resource.com/python-exercises)
 	- [PracticePython](https://www.practicepython.org/)
 - **Others**:

@@ -5,7 +5,7 @@ toc: 1
 tags: ["freefem++"]
 maths: 1
 comment: 1
-date: 2018-09-14
+date: 2018-09-17
 ---
 
 I use this note for the FreeFem++ programming language. I have used it since the first year of my PhD thesis and I droped it 2 year laters because of some unexpected troubles. I then decide to use matlab instead. However, I keep using FreeFem++ in some simple cases just for comparing the computation with the codes done with matlab.
@@ -270,15 +270,6 @@ varf Ans(u,v)=
 )
 ~~~
 
-## FE-space
-
-~~~ cpp
-func f = x^2 + y^2;
-Vh fh = f; //fh is projection of f to Vh
-plot(f); //error <-- can't plot
-plot(fh); //plot is olny used under read/complex FE-function. 
-~~~
-
 
 ## Matrix
 
@@ -344,27 +335,50 @@ if(condition){
 
 ## Define a function
 
-- Function of a number
-    ~~~ cpp
+Function of a number
+~~~ cpp
 func real gamma(real x, real y){
-	if(x<x1/4 || x>3*x1/4 || y>y1/2) 
-		return 1; 
-	else
-		if((x>x1/4) && (x<3*x1/4) && (y<y1/2))
-			return -1;
-		else
-			return 0;
+if(x<x1/4 || x>3*x1/4 || y>y1/2) 
+    return 1; 
+else
+    if((x>x1/4) && (x<3*x1/4) && (y<y1/2))
+        return -1;
+    else
+        return 0;
 }
-    ~~~
-- Function of an array
+~~~
 
-    ~~~ cpp
+Function of an array
+
+~~~ cpp
 func real[int] name(real[int] &x){ //cai nay dung con tro thi phai 
-	real[int] u;
-	....
-	return u; //hoac cung co the return x va khong can dinh nghia truoc u
+real[int] u;
+....
+return u; //hoac cung co the return x va khong can dinh nghia truoc u
 }
-    ~~~
+~~~
+
+Function in FE
+
+~~~ cpp
+func f = x^2 + y^2;
+Vh fh = f; //fh is projection of f to Vh
+plot(f); //error <-- can't plot
+plot(fh); //plot is olny used under read/complex FE-function. 
+~~~
+
+If a function returns `real` but takes values from `x,y` then it returns in `Vh` with diff values w.r.t values of `x` and `y` (cf. */nxfem/test/levelset/test_vortex_ffpp.edp*)
+
+~~~ cpp
+func real velo(real x, real y, int t){
+    real val;
+    // lines of codes
+    return val; 
+}
+Vh u;
+real t = 1;
+u = velo(x, y, t); 
+~~~
 
 
 ## Array in FreeFem++
