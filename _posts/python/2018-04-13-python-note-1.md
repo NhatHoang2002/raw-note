@@ -4,7 +4,7 @@ categories: it
 tags: [python]
 maths: 1
 toc: 1
-date: 2018-09-04
+date: 2018-09-17
 datacamp: 1
 comment: 1
 ---
@@ -276,6 +276,12 @@ for char in rev:
 - Ngược lại là `.split(' - ')` chuyển từ string sang list
 - `<list>.index(<element>)`
 
+### List
+
+- `len(a)` gives lenght of list a (if dim of a is 1)
+- `len(a)` gives number of **rows** of a (if dim a is 2)
+	`len(a[0])` gives number of **columns** of a
+
 ### Set
 
 - [All set's methods](https://www.programiz.com/python-programming/methods/set)
@@ -333,10 +339,12 @@ for char in rev:
 		<div class="row d-flex" markdown="1">
 		<div class="col s12 l6" markdown="1">
 		~~~ python
-		strand_a = [1, 2, 3, 4, 5, 6]
-		strand_b = "thi"
-		kk = zip(strand_a, strand_b)
-		print(tuple(kk))
+strand_a = [1, 2, 3, 4, 5, 6]
+strand_b = "thi"
+kk = zip(strand_a, strand_b)
+print(tuple(kk))
+// can be used 
+for val_a, val_b in zip(strand_a, strand_b):
 		~~~
 		</div>
 		<div class="col s12 l6" markdown="1">
