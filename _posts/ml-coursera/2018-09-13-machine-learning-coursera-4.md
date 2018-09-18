@@ -176,14 +176,14 @@ See again [Advanced Optimization](/machine-learning-coursera-3#advanced-optimiza
 
 - `predict.m` : "you implemented multi-class logistic regression to recognize handwritten digits. However, logistic regression cannot form more complex hypotheses as it is only a linear classifier."
 
-    ~~~ matlab
-  X = [ones(m, 1) X]; % add column 1 to a2
-  z2 = X * Theta1';
-  a2 = sigmoid(z2);
-  a2 = [ones(m, 1) a2]; % add column 1 to a2
-  h = a2 * Theta2';
-  [~, p] = max(h,[],2);
-    ~~~
+	~~~ matlab
+	X = [ones(m, 1) X]; % add column 1 to a2
+	z2 = X * Theta1';
+	a2 = sigmoid(z2);
+	a2 = [ones(m, 1) a2]; % add column 1 to a2
+	h = a2 * Theta2';
+	[~, p] = max(h,[],2);
+	~~~
 
 
 

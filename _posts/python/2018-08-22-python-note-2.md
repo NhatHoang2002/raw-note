@@ -36,3 +36,5 @@ I use this note for only tricks in Python (quick exercises solution also).
   ~~~
 
   Note that, if we only want to delete 1 element a, use `arr.remove('a')`
+
+- Remove duplicates and only keep 1 of them: change to `set`: `b = set(a)` where `a` is a list

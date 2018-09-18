@@ -34,23 +34,22 @@ This note is used only for noting pandas package in python. You can see also: [p
 
 - **From a dictionary variable**, use `pd.DataFrame` ([cf](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html))
 
-    ~~~ python
-    # from dictionary
-    
-    names = ['United States', 'Australia', 'Japan', 'India', 'Russia', 'Morocco', 'Egypt']
-    dr =  [True, False, False, False, True, True, True]
-    cpc = [809, 731, 588, 18, 200, 70, 45]
-    
-    my_dict = {'country':names, 'drives_right':dr, 'cars_per_cap':cpc}
-    
-    cars = pd.DataFrame(data = my_dict)
-    ~~~
+  ~~~ python
+  # from dictionary
+  
+  names = ['United States', 'Australia', 'Japan', 'India', 'Russia', 'Morocco', 'Egypt']
+  dr =  [True, False, False, False, True, True, True]
+  cpc = [809, 731, 588, 18, 200, 70, 45]
+  
+  my_dict = {'country':names, 'drives_right':dr, 'cars_per_cap':cpc}
+  
+  cars = pd.DataFrame(data = my_dict)
+  ~~~
 
-    - `cars.index = row_labels` : set index for rows instead of automate numbers where `row_labels` is a list.
+  - `cars.index = row_labels` : set index for rows instead of automate numbers where `row_labels` is a list.
 
 - **From a csv file**, use `train = pd.read_csv(<file>)`
-
-    - Using `index_col = 0` to hide the automate index.
+  - Using `index_col = 0` to hide the automate index.
 
 ## Access : `loc`, `iloc`
 
@@ -91,10 +90,9 @@ This note is used only for noting pandas package in python. You can see also: [p
 	- Comparison: `brics["area"] > 8`
 	- Total: `brics[brics['area'] > 8]`
 - Boolean operators, need to use `np.logical_and` or [others](/python-numpy-1#comparison)!
-
-	~~~ python
-	bricks[ np.logical_and(brics['area'] > 8, brics['area'] < 10)]
-	~~~
+  ~~~ python
+  bricks[ np.logical_and(brics['area'] > 8, brics['area'] < 10)]
+  ~~~
 
 ## `.apply()`
 

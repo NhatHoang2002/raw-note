@@ -1,10 +1,10 @@
 ---
 title: Numerical analysis 2
 categories: maths
-tags: [numerical analysis,analysis]
+tags: [numerical analysis, analysis]
 toc: 1
 maths: 1
-date: 2017-06-26
+date: 2018-09-18
 ---
 
 ## Some definitions
@@ -122,4 +122,13 @@ Lehrenfeld có nhận xét là ví dụ trong Hansbo với Hansbo-averaging thì
 </li>
 </ul>
 
+## Courant–Friedrichs–Lewy condition (CFL)
 
+<div class="p-mark">
+$$
+\dfrac{u \times \Delta t}{\Delta x} \le C
+$$
+</div>
+
+- If method is explicit, then $C=1$
+- If method is implicit, Implicit (matrix) solvers are usually less sensitive to numerical instability and so larger values of $C$ may be tolerated.

@@ -441,6 +441,22 @@ if (y0 == 0.5) cout << "1"; else cout << "0"; //result 0
 if (y1 == 0.5) cout << "1"; else cout << "0"; //result 1
     ~~~
 
+- It's strange
+
+	~~~ cpp
+real dt = 0.1;
+real t = 0;
+real Tmax = 1;
+for (int i=1; i< 11; i++){
+	t += dt;
+}
+bool ss;
+ss = (t == Tmax);
+cout << "t= " << t << endl; // 1
+cout << "Tmax= " << Tmax << endl; // 1
+cout << "ss= " << ss << endl; // False
+	~~~ 
+
 ## Level set
 
 ~~~ cpp

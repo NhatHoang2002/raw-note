@@ -1,5 +1,5 @@
 ---
-title: Python 1
+title: "Python 1 : Fundamentals"
 categories: it
 tags: [python]
 maths: 1
@@ -240,7 +240,10 @@ while condition:
 	Lý do là bởi đảm bảo `x[:3] + x[3:] = x`
 - `"abc" + "xyz" = "abcxyz"`
 - **Copy list**: dùng `a = list(b)` thay vì `a=b`
-- **Methods**: `.append(<element>)` (add thêm phần tử), `.count(<element>)` (đếm phần tử `<element>` trong list), `.reverse()` (đổi order các phần tử trong list), `sort()` (sắp xếp list tăng dần)
+- `.append(<element>)` (add thêm phần tử)
+- `.count(<element>)` (đếm phần tử `<element>` trong list)
+- `.reverse()` (đổi order các phần tử trong list), 
+- `.sort()` (sắp xếp list tăng dần)
 - `sorted(<list), reverse = True)` : sắp xếp list nhưng không ảnh hưởng đến list
 - Last item: `list[-1]`
 - `a.extend(b)`: đưa từng phần tử của b vào a, khác với `.append()`

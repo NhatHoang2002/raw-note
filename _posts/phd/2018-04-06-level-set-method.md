@@ -31,6 +31,14 @@ Thi paper said that:
 - There are many methods to solve convection-diffusion equations approximated by the FEM: SUPG, its Galerkin Least Square variant, Deconninck's PSI method, Discontinuous-Galerkin or Galerkin-characteristics.
 - This page doesn't prove for any case, he said that in practice, the Characteristics is very good. "*Even if it is fundamental, the problem is sufficiently important to be dealt with and so the object of this paper is to show -with proofs- that there is at least one case*"
 
+**Remarks** (18/9/18)
+
+- CFL ok
+- CR of $\Vert \phi - \phi^N_h\Vert_{L^2(\Omega)}$ is 1????
+- The figures are not so good at $t=N$ but they are better if the mesh is finer
+
+
+
 ### Signed distance function
 
 - Tại sao nếu là đường tròn thì $\phi$ có dạng là 
