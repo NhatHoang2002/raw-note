@@ -4,7 +4,7 @@ categories: [phd,maths]
 tags: [phd,numerical analysis]
 toc: 1
 maths: 1
-date: 2018-09-19
+date: 2018-09-20
 ---
 
 ## General
@@ -158,6 +158,8 @@ Others
 
 
 ## Documentation
+
+- <new /> *adaptive techniques level set - osher - losasso - fedkiw.pdf* describes the history of level set methods + adaptive. It's good for understand *in-one-place* all things.
 
 - Mình note **workflow** khá ổn: *hw level set workflow 6-2018.pdf*
 
@@ -331,4 +333,5 @@ A problem with performance if we working on a very-fined mesh. We just want to f
 
 - It's mentioned at Section 9.3 of Eva Loch's thesis: why we need Re-initialization.
 
+- <new /> **Adaptmesh** in freefem++ by Hecht
 
