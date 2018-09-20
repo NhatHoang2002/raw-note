@@ -4,7 +4,7 @@ categories: [phd,maths]
 tags: [phd,numerical analysis]
 toc: 1
 maths: 1
-date: 2018-09-11
+date: 2018-09-19
 ---
 
 ## General

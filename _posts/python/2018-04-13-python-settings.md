@@ -170,7 +170,7 @@ Xem [note này]({{site.baseurl}}/python-exercism-1).
 - **Nhược điểm**: không chạy theo version của python được (trải nghiệm của anh Việt), dùng [Sublime Text](#sublime-text-3) có vẻ ngon hơn điểm này, giao diện của thằng kia cũng khá đẹp và thoáng.
 
 
-### Sublime Text 3
+### <update /> Sublime Text 3
 
 <ul class="collapsible" data-collapsible="accordion">
 <li>
@@ -323,20 +323,20 @@ Keyboard shortcuts
 	</li>
 	</ul>
 
-- Tạo **Build System** mới với nhiều version python khác nhau: **Tools** > **Build System** > **New Build System...** rồi dán cái sau vào (thay đường dẫn đến phiên bản python tương ứng)
+- <update /> Tạo **Build System** mới với nhiều version python khác nhau: **Tools** > **Build System** > **New Build System...** rồi dán cái sau vào (thay đường dẫn đến phiên bản python tương ứng)
 
 	<ul class="collapsible" data-collapsible="accordion">
 	<li>
 	<div class="collapsible-header" markdown="1"><i class="material-icons">face</i>
-	Xem chi tiết
+	In details
 	</div>
 	<div class="collapsible-body" markdown="1">
 	~~~
-	{
-	    "cmd": ["/usr/bin/python2.7", "-u", "$file"],
-	    "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
-	    "quiet": true
-	}
+{
+	"cmd": ["/home/thi/anaconda3/bin/python", "-u", "$file"],
+	"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+	"quiet": true
+}
 	~~~
 	</div>
 	</li>
