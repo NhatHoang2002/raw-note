@@ -163,7 +163,7 @@ X[:,1:3] = imputer.transform(X[:,1:3]) # replace missing X
 Các `strategy`:
 
 - `mean` = giá trị trung bình $\frac{1}{n}\sum_i x_i$
-- `median` = số trung vị, tức số trong dãy có vị trí ở giữa (nếu số phần tử là lẻ). Nếu số phần tử là lẻ thì nó sẽ lấy trung bình 2 số ở giữa.
+- `median` = số trung vị, tức số trong dãy có vị trí ở giữa (nếu số phần tử là lẻ). Nếu số phần tử là lẻ thì nó chẵn lấy trung bình 2 số ở giữa.
 - `most_frequent` = số xuất hiện thường xuyên nhất.
 
 **R**

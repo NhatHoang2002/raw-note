@@ -4,7 +4,7 @@ categories: [math]
 tags: [machine learning, statistics, data, R]
 math: 1
 toc: 1
-date: 2018-09-17
+date: 2018-09-21
 ---
 
 {% assign img-url = '/images/posts/math/statistics' %}
@@ -32,7 +32,35 @@ Find **mean**, **median** and **mode**
 import numpy as np
 from scipy import stats 
 
-print(np.mean(numbers))
-print(np.median(numbers))
-print(int(stats.mode(numbers)[0]))
+print(np.mean(<list>))
+print(np.median(<list>))
+print(int(stats.mode(<list>)[0]))
 ~~~
+
+## 10 days of statistics on HackerRank
+
+- Follow the challenge [here](https://www.hackerrank.com/domains/tutorials/10-days-of-statistics).
+- **Mean, Median, Mod**:
+	- `mean` = mean value $\frac{1}{n}\sum_i x_i$
+	- `median` = the number at the center, if the number of elements are odd, it's the center number, if even, it's the mean of two center elements.
+	- `mod` = number(s) with the most number of appearances.
+
+- **Quartile** of an <mark>ordered</mark> data set are the 3 points that split the data set into 4 groups. 
+	- $Q_1$: the **middle** number between the **smallest number** in a data set and its **median**
+	- $Q_2$: the **median** ($50^{th}$ percentile) of the data set
+	- $Q_3$: the **middle** number between a data set's **median** and its **largest number**
+	- **Algorithm**:
+		- If the number of elements is odd, don't include the median for each half when seeking $Q_1, Q_2$
+		- If the number of elements is even, just devide into 2 halves.
+		- $Q_1$ is the median of first half, $Q_2$ is the median of second half.
+
+- Find `median` without `numpy`
+
+	~~~ python
+def find_median(lst):
+    len_lst = len(lst)
+    if len_lst % 2 == 1:
+        return lst[len_lst//2]
+    else:
+        return (lst[len_lst//2-1] + lst[len_lst//2])/2
+	~~~
