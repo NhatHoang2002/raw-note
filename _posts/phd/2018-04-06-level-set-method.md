@@ -89,7 +89,7 @@ Thi paper said that:
 
 
 
-## Toobox
+## Toolbox
 
 Quyết định dùng toolbox của Pascal Frey. Ngoài ra còn có các toolbox khác như sau
 
@@ -100,6 +100,44 @@ Quyết định dùng toolbox của Pascal Frey. Ngoài ra còn có các toolbox
   - Đã test thành công với ví dụ `phi=phi.^3`
   - Must run on Linux or Mac (cannot install Windows)
   - Có thể plot file .sol bằng phần mềm [medit](/coding-note-1#medit) (phần mềm này không phải là cái medit editor trong linux)
+
+<ul class="collapsible" data-collapsible="accordion">
+<li>
+<div class="collapsible-header" markdown="1"><i class="material-icons">face</i>
+How to install on linux
+</div>
+<div class="collapsible-body" markdown="1">
+
+- Install Commons
+
+	~~~ bash
+git clone https://github.com/ISCDtoolbox/Commons.git
+cd Commons
+mkdir build
+cd build
+sudo apt-get install cmake
+sudo apt-get update
+sudo apt-get install build-essential manpages-dev
+cmake ..
+make
+make install
+	~~~
+
+- Install `mshdist`
+
+	~~~ bash
+git clone https://github.com/ISCDtoolbox/MshDist.git
+cd MshDist
+mkdir build
+cd build
+cmake ..
+make
+make install
+	~~~
+
+</div>
+</li>
+</ul>
 
 <ul class="collapsible" data-collapsible="accordion">
 <li>

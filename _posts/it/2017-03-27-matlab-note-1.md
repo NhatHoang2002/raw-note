@@ -13,6 +13,11 @@ date: 2018-08-05
 
 ## Linh tinh
 
+- Scale matlab: need to install matleb version >= R2017b
+    ~~~ matlab
+s = settings;s.matlab.desktop.DisplayScaleFactor
+s.matlab.desktop.DisplayScaleFactor.PersonalValue = 2
+	~~~
 - Dùng dấu ngoặc kép đôi khi không được, phải dùng dấu ngoặc đơn.
 - Change default folder in matlab : **Preferences** > **MATLAB** > **General** > (on the right side) **Initial working folder**.
 - Run script nhấn `F5`.
