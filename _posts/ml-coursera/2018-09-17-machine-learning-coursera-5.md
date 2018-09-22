@@ -5,7 +5,7 @@ tags: [machine learning, ml coursera]
 math: 1
 toc: 1
 comment: 1
-date: 2018-09-21
+date: 2018-09-22
 ---
 
 {% assign img-url = '/images/posts/ML/coursera' %}
@@ -24,6 +24,8 @@ This note was first taken when I learnt the [machine learning course on Coursera
 {% include toc.html %}
 
 ## Cost function & Backpropagation
+
+{% include download.html content="[Download Lecture 9](/files/ML-coursera/Lecture9.pdf)." %}
 
 ### Cost function
 
@@ -70,12 +72,98 @@ This note was first taken when I learnt the [machine learning course on Coursera
 
 ### <mark>Backpropagation algorithm</mark>
 
+Talking about an algorithm to **minize the cost function**.
 
+<div class="see-again">
+<i class="material-icons">settings_backup_restore</i>
+<span markdown="1">
+See again [Forward propagation](/machine-learning-coursera-4#forward-propagation-vectorized-implementation).
+</span>
+</div>
 
+- **Forward propagation** : from $a^{(1)}$ to the last layer $a^{(L)}$. $\Rightarrow$ computes $h_{\Theta}(x) = a^{(L)} = g(z^{(L)}) = g(\Theta^{(L-1)}a^{(L-1)})$
+- **Backpropagation** : from $a^{(L)}$ back to $a^{(1)}$ $\Rightarrow$ <mark>computes the derivative (gradient)</mark>
 
-### Cost function
+**Notations**:
 
-### Backpropagation algorithm
+- $\delta_j^{(l)}$ = "error" of node $j$ in layer $l$.
+- $a_j^{(l)}$ = activation of node $j$ in layer $l$.
+
+For each output unit (layer $L=4$)
+
+$$
+\delta_j^{(4)} = a_j^{(4)} - y_j = (h_{\Theta})_j - y_j
+$$
+
+or **vectorization**,
+
+$$
+\delta^{(4)} = a^{(4)} - y 
+$$
+
+each vecor's **<mark>dimension</mark>** = number of output units.
+
+![Backpropagation 1]({{img-url}}/backpropagation-1.png){:.no-border .w-700}
+
+Keep couting $\delta^{(4)}$ to $\delta^{(2)}$. **<mark>There is no $\delta^{(1)}$</mark>** because they are our input dataset, they don't have any error!
+
+- $\Delta_{ij}^{(l)}$ computes $\frac{\partial}{\partial\Theta_{ij}^{(l)}} J(\Theta)$.
+
+![Backpropagation 2]({{img-url}}/backpropagation-2.png){:.no-border .w-700}
+
+<mark>Note that</mark>, backpropagation and forward propagation are **used alternately** inside loop i.
+
+<div class="p-mark" markdown="1">
+**ALGORITHM**. For training example $t=1$ to $m$:
+
+1. Set $a^{(1)} = x^{(t)}$
+2. Compute $a^{(l)}$ for $l=2,3,\ldots,L$ using **forward propagation**
+
+	$$
+	\begin{align}
+	z^{l+1} &= \Theta^{(l)}a^{(l)} \\
+	a^{(l+1)} &= g(z^{(l+1)}) \quad (\text{add } a^{(l)}_0)\\
+	...& \\
+	a^{(L)} &= h_{\Theta}(x) = g(z^{(L)})
+	\end{align}
+	$$
+
+3. Using $y^{(t)}$, compute
+
+	$$
+	\delta^{L} = a^{(L)} - y^{(t)}
+	$$
+
+	where, $L$ = total number of layers, $a^{(L)}$ = is the vector of outputs of the activation units for the last layer. So, $\delta^{(L)}$ the differences of our actual results in the last layer and the correct outputs in $y$.
+
+4. Compute $\delta^{(L-1)},\ldots,\delta^{(2)}$ using,
+
+	$$
+	\delta^{(l)} = ((\Theta^{(l)})^T \delta^{(l+1)}) .* a^{(l)} .* (1-a^{(l)})
+	$$
+
+5. $\Delta_{ij}^{(l)} = \Delta_{ij}^{(l)} + a_j^{(l)}\delta_i^{(l+1)}$ or with vectorization 
+
+	$$
+	\Delta^{(l)} = \Delta^{(l)} + \delta^{(l+1)} (a^{(l)})^T
+	$$
+
+	Hence, we update our new $\Delta$ matrix,
+
+	$$
+	\begin{align}
+	D_{i,j}^{(l)} &:= \frac{1}{m} (\Delta_{i,j}^{(l)} + \lambda\Theta^{(l)}_{i,j}), \quad \text{if } j\ne 0 \\
+	D_{i,j}^{(l)} &:= \frac{1}{m} \Delta_{i,j}^{(l)}, \quad \text{if } j= 0
+	\end{align}
+	$$
+
+6. Finally, we get
+
+	$$
+	\dfrac{\partial}{\partial\Theta_{ij}^{(l)}} J(\Theta)  = D_{ij}^{(l)}.
+	$$
+
+</div>
 
 ### Backpropagation intuition
 

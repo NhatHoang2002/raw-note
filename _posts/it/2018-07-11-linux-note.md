@@ -202,5 +202,26 @@ sudo usermod -a -G groupName userName
 	- **Download a single file**: `megaget <file>`
 	- **Download from uploaded directory**: `megacopy --local <folder> --remote <folder-to-download> --download`
 
+42. Connect `ssh` to a virtual machine (the same network)
+
+- Install openssh for both client and server machine
+
+~~~ bash
+sudo apt-get install openssh-client
+sudo apt-get install openssh-server
+~~~
+
+- On server machine, check ssh is running or not
+
+~~~ bash
+ps -A | grep sshd
+# return [number] ?  00:00:00 sshd then it works
+~~~
+
+
+
+
+
+
 
 
