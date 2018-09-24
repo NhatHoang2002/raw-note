@@ -6,7 +6,7 @@ categories:
 tags: ["matlab"]
 maths: 1
 toc: 1
-date: 2018-08-05
+date: 2018-09-24
 ---
 
 {% include toc.html %}
@@ -74,6 +74,32 @@ A square bracket creates a vector or matrix, whereas curly brackets creates a [c
 ~~~ matlab
 x = [1 2 3]; % matrix with values 1, 2, 3
 y = {1, 'a', x}; % cell array storing a number, a character, and 1x3 matrix
+~~~
+
+## <new /> Debug by only command lines
+
+- [Ref link](https://fr.mathworks.com/help/matlab/debugging-code.html).
+
+~~~ matlab
+% set breakpoint
+dbstop in <file-name> at <line-number>
+
+% clear breakpoints
+dbclear all
+dbclear in <file>
+dbclear in <file> at <line>
+
+% list all breakpoints
+dbstatus
+
+% Execute next executable line from current breakpoint
+dbstep
+
+% Resume execution
+dbcont
+
+% quit debugging
+dbquit
 ~~~
 
 ## Workspace
