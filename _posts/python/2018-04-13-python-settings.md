@@ -4,7 +4,7 @@ categories: it
 tags: [python]
 maths: 1
 toc: 1
-date: 2018-09-17
+date: 2018-09-25
 comment: 1
 ---
 
@@ -51,7 +51,10 @@ This post is only for installing and setting up python on computer. All document
 In the case that you have many version of python on Ubuntu and you have just installed Anaconda which also contains another version of python. **You wanna keep only one of Anaconda**
 
 1. Follow this [question on SE](https://askubuntu.com/questions/886983/how-to-set-anaconda-as-a-default-python)
-2. Add Anaconda to PATH: `export PATH=/home/thi/anaconda3/bin:$PATH`
+2. <update /> Add Anaconda to PATH: `export PATH=/home/thi/anaconda3/bin:$PATH` 
+	- If using above command, it's only saved for the current workspace, after the computer restarts, it disappears.
+	- Open `~/.profile` and then paste above command to it.
+	- Excute: `source ~/.profile` in order to immediately reflect changes to your current terminal instance
 3. Check with `which python`, if it returns `/home/thi/anaconda3/bin/python` then it works (`python -v` returns anaconda also)
 4. From now, whenever you use `python`, it automatically use python inside the anaconda folder indicated as in the PATH.
 5. If you wanna go back to the system default, open the `.bashrc` file and comment out settings of anaconda with `#`. That's it!

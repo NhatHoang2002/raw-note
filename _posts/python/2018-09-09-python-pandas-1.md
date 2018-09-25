@@ -16,6 +16,7 @@ This note is used only for noting pandas package in python. You can see also: [p
 - *[pandas](https://pandas.pydata.org/)* is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the [Python](https://www.python.org/) programming language
 - [Official pandas doc](http://pandas.pydata.org/pandas-docs/stable/search.html?q=head%28%29&check_keywords=yes&area=default) (use the search function)
 - Built first from `numpy`
+- [10 minutes to pandas](http://pandas.pydata.org/pandas-docs/version/0.15/10min.html)
 
 
 ## Installation

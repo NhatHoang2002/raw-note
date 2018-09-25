@@ -5,7 +5,7 @@ tags: [dataquest, python, numpy, pandas]
 maths: 1
 toc: 1
 comment: 1
-date: 2018-09-24
+date: 2018-09-25
 ---
 
 This note is used for my notes about the [**Data Scientist** path](https://www.dataquest.io/path/data-scientist) on **dataquest**. I take this note after I have some basics on python with [other notes](/tags#python), that's why I just write down some *new-for-me* things.
@@ -164,7 +164,9 @@ medians = f500[["revenues", "profits"]].median(axis=0)
 # or without axis=0 because it's default
 		~~~
 - `s.value_counts()`: displays each unique non-null value from a series, with a count of the number of times that value is used.
-	- `s.value_counts(dropna=False)` exclude null values when making calculations.
+	- `s.value_counts(dropna=True)` exclude null values when making calculations.
+	- `s.value_counts(dropna=False)` includes also the null (normally, it doesn't)
+	- `s.value_counts(normalize=True)` use percentages instead of counts 
 - Top 5 most common values of a column
 
 	~~~ python
@@ -387,7 +389,6 @@ laptops.isnull().sum()
 
 - **Dropping**: Removing rows/columns having null values. Use `df.dropna()`
 	- `df.dropna()`: removes rows, `df.dropna(axis=1)`: removes columns
-- `s.value_counts(dropna=False)` includes also the null (normally, it doesn't)
 - `df.drop('<column>', axis=1)` removes a column and without `aixs` to remove a row.
 	- `df.drop([<list-of-columns>])`
 - **Reorder column**:
@@ -408,10 +409,42 @@ laptops.isnull().sum()
 
 ## Mission 294 - Guided Project: Exploring Ebay Car Sales Data
 
+{% include download.html content="[See the ref solution](https://github.com/dataquestio/solutions/blob/master/Mission294Solutions.ipynb)." %}
+
+- `s.sort_index(ascending=False)` to sort index of series
+- `s.sort_values()` : to sort values
+- See first 10 letters of each row on each column: `autos["ad_created"].str[:10]`
+- `df[(df["col"] > x ) & (df["col"] < y )]` = `df[df["col"].between(x,y)]` to take the values of column "col" between `x` and `y`.
+- `s.value_counts().sort_index(ascending=True)`: sort values of `s` for easier examination.
+- `autos = autos[autos["price"].between(1,351000)]`: only take values between an amount.
+- **element-wise logical** comparison: `&` (and), `==` (equal), `|` (or), `~` (not)
+- number of current examined elements: `autos.shape[0]`
+- Find how many "less or greater" in percent:
+	~~~ python
+(~autos["registration_year"].between(1900, 2016)).sum() / autos.shape[0]
+	~~~
+- Many ways to select rows in a dataframe that fall within a value range for a column.
+	~~~ python
+autos = autos[autos["registration_year"].between(1900, 2016)]
+	~~~
+- A series will present a (hide) column `index` and a column `value`. We can use `s.index` to show the indexes of this series.
+- **Combine the data from both series objects into a single dataframe**
+	- [pandas series constructor](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html)
+	- [pandas dataframe constructor](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html)
+- **Quickly** create a
+	- pandas series: 
+		~~~ python
+s = pd.Series([True, True, False, True])
+# or from a dictionary abc
+s = pd.Series(abc) # key in dict becomes the index in series
+		~~~
+	- pandas dataframe: 
+		~~~ python
+df = pd.DataFrame(np.random.randn(6,4),index=dates,columns=list('ABCD'))
+# or from a series
+df = pd.DataFrame(s, columns=["<name>"]) # column name will be set to 0 by default
+		~~~
+- **Add many series into a df**: convert 1 series to df and then add other series to this df as new columns.
 
 
-
-
-
-
-
+{% include more.html content="[Go to Dataquest note 2: Exploratory Data Visualization](/dataquest-2-exploratory-data-visualization)." %}
