@@ -16,7 +16,6 @@ Loạt bài này chủ yếu dùng để *ghi chú* trong quá trình hoàn thà
 We don't use FreeFem++ and started to use Matlab because
 
 - We cannot implement Ghost penalty with FreeFem++
-- 
 
 ## Change to function handle and inputParser
 

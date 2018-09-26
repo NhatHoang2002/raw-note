@@ -12,6 +12,10 @@ I use this note for the FreeFem++ programming language. I have used it since the
 
 {% include toc.html %}
 
+## Docs
+
+- [Doc website](https://doc.freefem.org/).
+
 ## Work with PhD
 
 - This is very interesting: *numerical modeling transport problem with freefem - Florian De Vuyst.pdf*
