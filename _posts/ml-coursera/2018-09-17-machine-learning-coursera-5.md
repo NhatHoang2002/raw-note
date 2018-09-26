@@ -344,18 +344,41 @@ Theta3 = rand(1,11) * (2 * INIT_EPSILON) - INIT_EPSILON;
 
 	On neural network, cost function is **non convex**. Therefore, methods can (**theoritically**) stuck on local optimal. But **in practice**, it's **not a huge problem**!
 
-## Application of Neural networks
-
-
-
-
 
 ## Exercise de programmation: Neural network learning
 
+- `nnCostFunction.m`: Recall that,
 
+	<div class="p-mark" markdown="1">
+	$$
+	400 \text{ units } \to \Theta^{(1)} \to 25 \text{ units } \to \Theta^{(2)} \to 10 \text{ units } \\
+	\Theta^{(1)} \in \mathbb{R}^{25\times 401}, \,
+	\Theta^{(2)} \in \mathbb{R}^{10\times 26} \,
+	X \in \mathbb{R}^{5000\times 4000}
+	$$
+	</div>
 
+	See again the [formulas in forward propagation](/machine-learning-coursera-4#forward-propagation-vectorized-implementation).
 
+	A <mark>very important remark</mark>, in the formulas
 
+	$$
+	J(\Theta) = - \frac{1}{m} \sum_{i=1}^m \sum_{k=1}^K \left[y^{(i)}_k \log ((h_\Theta (x^{(i)}))_k) + (1 - y^{(i)}_k)\log (1 - (h_\Theta(x^{(i)}))_k)\right] + \frac{\lambda}{2m}\sum_{l=1}^{L-1} \sum_{i=1}^{s_l} \sum_{j=1}^{s_{l+1}} ( \Theta_{j,i}^{(l)})^2
+	$$
+
+	$y_k$ is **only** corresponding to $(h\_{\Theta})\_k$ for $k$ in output units. We **cannot** multiply matrix $y$ ($m\times K$) with matrix $h\_{\Theta}$ ($m\times K$) because they will multiply all of  rows and columns including some components like $y\_k$ with $(h\_{\Theta})\_{k'\ne k}$.
+
+	~~~ matlab
+  a1 = [ones(m, 1) X]; % add column 1 to a1 (or X), m x 401
+  z2 = a1 * Theta1'; % m x 25
+  a2 = sigmoid(z2); % m x 25
+  a2 = [ones(m, 1) a2]; % add column 1 to a2, m x 26
+  z3 = a2 * Theta2'; % m x 10
+  h = sigmoid(z3); % m x 10
+
+  ynew = (1:num_labels) == y;
+  J = (-1/m) * sum(sum( ynew .* log(h) + (1-ynew) .* log(1-h) ));
+	~~~
 
 
 

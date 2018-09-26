@@ -2,7 +2,7 @@
 title: Linux notes
 categories: it
 tags: ["linux","ubuntu"]
-date: 2018-09-21
+date: 2018-09-25
 ---
 
 1. Problem save file as `root` user and cannot open later: [link](https://askubuntu.com/questions/817902/unable-to-open-any-graphical-app-with-sudo/817906#817906)
@@ -228,7 +228,25 @@ export PATH=/home/thi/anaconda3/bin:$PATH
 # save and close .profile and then apply following line to get instant update
 source ~/.profile
 	~~~
-45. Mp3 tag editor: `sudo apt install exfalso` (Ex Falso)
+45. Mp3 tag editor: `sudo apt install exfalso` (**Ex Falso**)
+46. Resize multiple photos (keep the ratio/scale): 
+
+	~~~ bash
+	# install
+	sudo apt-get install imagemagick
+
+	# resize but keep the ratio (save to jpg)
+	mogrify -resize 50% -format jpg *
+
+	# resize keep the extension
+	mogrify -resize 50% *
+
+	# with a specific size (save to jpg)
+	mogrify -resize 800x600 -format jpg *
+
+	# just the width (save to jpg)
+	mogrify -resize 800x -format jpg *
+	~~~
 
 
 

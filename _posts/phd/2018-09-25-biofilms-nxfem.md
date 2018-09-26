@@ -11,6 +11,7 @@ This note is for chapter 6 in my thesis. I will use NXFEM coupling with LSM to s
 
 - In **chopp 2007 xfem biofilm growth.pdf**.
 - The same (more specific): **xfem moving interface THESIS - Bryan G. Smith.pdf**
+- Is mentioned in **chopp duddu et al 2006 combine nxfem levelset.pdf**, page 18 (figure biofilm, layer growth a little bit - Fig 5). Fig in this article is consistent with result in chopp 2007 xfem.
 - $u$: substrate
 - $v$: biomass
 
