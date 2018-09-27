@@ -1,7 +1,7 @@
 ---
 title: Data - Kaggle
 categories: [ml, it, data]
-tags: [machine learning, data codecademy, kaggle]
+tags: [machine learning, data codecademy, kaggle, data]
 maths: 1
 toc: 1
 date: 2018-09-03

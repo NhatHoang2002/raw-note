@@ -1,7 +1,7 @@
 ---
 title: "DataQuest 2: Exploratory Data Visualization"
 categories: [ml, it, data]
-tags: [dataquest, python, numpy, pandas]
+tags: [dataquest, python, numpy, pandas, data]
 maths: 1
 toc: 1
 comment: 1

@@ -1,10 +1,10 @@
 ---
 title: Data Science 1
 categories: [ml, it, data]
-tags: [machine learning, data codecademy]
+tags: [machine learning, data codecademy, data]
 maths: 1
 toc: 1
-date: 2018-09-07
+date: 2018-09-27
 ---
 
 This series starts from the beginning of learning Data Science and try [solving the Titanic problem](https://www.kaggle.com/c/titanic) on Kaggle.
@@ -18,6 +18,8 @@ This series starts from the beginning of learning Data Science and try [solving 
 - [My Journey to Data Science](https://towardsdatascience.com/my-journey-to-data-science-for-beginner-with-zero-coding-experience-1e7896b564d3) (For beginner with zero-coding experience)
 - [Big data university](courses.cognitiveclass.ai), [IBM cloud](https://console.bluemix.net) (expired April 6, 2019)
 - [The Data Science Handbook](http://www.thedatasciencehandbook.com/) (free): This book is not for self-learning data science, it talks about data world instead. This book contains "in-depth interviews with 25 remarkable data scientists, where they share their insights, stories, and advice."
+- <update />[Data Scientist path on Dataquest](https://www.dataquest.io/path/data-scientist). (see [my notes](/tags#dataquest) for this path)
+- <update />[Data Scientist path on OpenClassRoom](https://openclassrooms.com/fr/paths/63-data-scientist) (in french)
 
 
 ## Install

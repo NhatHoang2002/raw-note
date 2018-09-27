@@ -497,7 +497,7 @@ $$
 
 with $\delta^{(2)} \in \mathbb{R}^{1\times 26}, a^{(1)} \in \mathbb{R}^{1\times 401}$, the result we obtain is $\Delta^{(1)} \in \mathbb{R}^{26\times 401}$ not $25 \times 401$. That's why we need to remove/ignore $\delta^{(2)}_0$. For $\delta^{(3)} \in \mathbb{R}^{1\times 10}, a^{(2)}\in \mathbb{R}^{1\times 26}$, we don't need to do that because the dimension is satisfied.
 
-Note that, loop through all examples (`1:m`), that's why we have `\Delta^{(1)} = \Delta^{(1)} + ...`.
+Note that, loop through all examples (`1:m`), that's why we have $\Delta^{(1)} = \Delta^{(1)} + ...$.
 
 ~~~ matlab
 % in section Part 2

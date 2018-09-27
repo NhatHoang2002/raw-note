@@ -3,11 +3,14 @@ title: Biofilms model with NXFEM
 categories: [maths,phd]
 tags: [phd,numerical analysis,biofilm]
 maths: 1
+date: 2018-09-27
 ---
 
 This note is for chapter 6 in my thesis. I will use NXFEM coupling with LSM to simulate a biofilm model. 
 
 ## Models
+
+### Very simple biofilm model
 
 - In **chopp 2007 xfem biofilm growth.pdf**.
 - The same (more specific): **xfem moving interface THESIS - Bryan G. Smith.pdf**
@@ -49,3 +52,18 @@ $$
 \mu=\begin{cases} 3.6\times 10^{-6} \, (\Omega_1) \\ 0 \, (\Omega_2) \end{cases}
 $$
 
+### 3 test cases
+
+In **chopp duddu et al 2006 combine nxfem levelset.pdf**, Chopp listed 4 test cases for biofilms. He also describes the properties of the domain, the condition's values and so on. **Page 16 - 18**.
+
+- $100\times 100$ triangles mesh size.
+- $\Omega = 0.5\times 0.5$ mm
+- $dt = \frac{dx}{\max{F}}$
+- $S = 8.3\times 10^{-6}\, \frac{mgO_2}{mm^3}$
+- $\nabla_n S=0, \nabla_n \Phi = 0$ on sides of $\Omega$
+
+1. First example, only 1 semi-circle whose radius is $0.01$ mm, grow in $44$ days. **Fig 5** and [49] (**chopp 2007 xfem biofilm growth.pdf**).
+2. Second, 3 semi-circles, the middle has radius $0.02$ mm whereas others has $0.01$ mm for each. <mark>How to implement???</mark>. **Fig 6**
+3. Third, see in the article.
+
+**Chopp06combine** --[49]-> **Chopp07xfem** --[4]-> **Chopp06simulating** (splitting) and --[6]- **kalpperFinger** and --[5]- **dependQuorum** (parameters)
