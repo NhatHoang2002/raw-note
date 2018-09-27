@@ -185,7 +185,7 @@ See again [Advanced Optimization](/machine-learning-coursera-3#advanced-optimiza
 	[~, p] = max(h,[],2);
 	~~~
 
-
+{% include more.html content="[Next to Week 5](/machine-learning-coursera-5)." %}
 
 
 
