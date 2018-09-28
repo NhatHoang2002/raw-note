@@ -229,7 +229,7 @@ export PATH=/home/thi/anaconda3/bin:$PATH
 source ~/.profile
 	~~~
 45. Mp3 tag editor: `sudo apt install exfalso` (**Ex Falso**)
-46. Resize multiple photos (keep the ratio/scale): 
+46. Resize multiple photos (keep the ratio/scale) ([more options](https://imagemagick.org/Usage/resize/)): 
 
 	~~~ bash
 	# install
@@ -246,6 +246,9 @@ source ~/.profile
 
 	# just the width (save to jpg)
 	mogrify -resize 800x -format jpg *
+
+	# only resize images bigger than 1000px width
+	mogrify -resize 1000x\> *
 	~~~
 
 

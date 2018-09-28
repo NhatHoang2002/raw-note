@@ -18,8 +18,10 @@ This series starts from the beginning of learning Data Science and try [solving 
 - [My Journey to Data Science](https://towardsdatascience.com/my-journey-to-data-science-for-beginner-with-zero-coding-experience-1e7896b564d3) (For beginner with zero-coding experience)
 - [Big data university](courses.cognitiveclass.ai), [IBM cloud](https://console.bluemix.net) (expired April 6, 2019)
 - [The Data Science Handbook](http://www.thedatasciencehandbook.com/) (free): This book is not for self-learning data science, it talks about data world instead. This book contains "in-depth interviews with 25 remarkable data scientists, where they share their insights, stories, and advice."
-- <update />[Data Scientist path on Dataquest](https://www.dataquest.io/path/data-scientist). (see [my notes](/tags#dataquest) for this path)
+- [Data Scientist path on Dataquest](https://www.dataquest.io/path/data-scientist). (see [my notes](/tags#dataquest) for this path)
 - <update />[Data Scientist path on OpenClassRoom](https://openclassrooms.com/fr/paths/63-data-scientist) (in french)
+- <update/> [CS109 Data Science](http://cs109.github.io/2015/pages/videos.html) by Harvard.
+- <update /> [Statistical Data Analysis in Python](https://github.com/fonnesbeck/statistical-analysis-python-tutorial) by Christopher Fonnesbeck.
 
 
 ## Install

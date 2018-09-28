@@ -29,6 +29,7 @@ This post is only for installing and setting up python on computer. All document
 	- [How to think like a computer scientist?](http://openbookproject.net/thinkcs/python/english3e/index.html) : sách được thể hiện dưới dạng html
 	- [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/) : free ebook for python (there is a corresponding course on Udemy)
 	- [Python course for Data Science](https://courses.cognitiveclass.ai/courses/course-v1:Cognitiveclass+PY0101EN+v2/progress) on Big Data University.
+	- <update /> [Python for Data Analysis](https://github.com/wesm/pydata-book), 2nd Edition by Wes McKinney, published by O'Reilly Media.
 - **Exercise, practice**
     - <new /> **[HackerRank](https://www.hackerrank.com/domains/python)** : challenge you in different problems and exercises.
     - <update /> Others with the same type as HackerRank: [Exercism](https://exercism.io/my/tracks/python), [CheckIO](https://py.checkio.org), 
