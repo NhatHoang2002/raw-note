@@ -93,6 +93,8 @@ ax.bar(bar_positions, bar_heights)
 - the width of each bar is set to 0.8 by default.
 - `plt.subplot()`: generate single subplot + returns both figure and axes
 
+![Bar plot example]({{img-url}}/bar_plot_intro.png){:.no-border .w-700}
+
 ~~~ python
 num_cols = ['RT_user_norm', 'Metacritic_user_nom', 'IMDB_norm', 'Fandango_Ratingvalue', 'Fandango_Stars']
 bar_heights = norm_reviews[num_cols].iloc[0].values
@@ -116,6 +118,9 @@ plt.show()
 	- `bar_positions` : specify the y coordinate for the bottom sides 
 	- `bar_widths`: like bar_heights
 - **<mark>Note that</mark>**: there is diff between pos of `ax.barh` or `ax.bar` before or after `ax.set_xticks` or `ax.set_yticks`. It **should be before**!
+- <mark>ax.set_xticklabels() takes in a list.</mark>
+
+![Scatter plot example]({{img-url}}/scatter_plot_intro.png){:.no-border .w-700}
 
 
 - `ax.scatter(x, y)`: **scatter plot** (plot with dot)
@@ -138,6 +143,60 @@ plt.show()
 
 - Using `s.value_counts()` to display the frequency distribution.
 - Don't forget to `s.sort_index()` to sort the indexes.
+
+![Histogram example]({{img-url}}/histogram_plot_intro.png){:.no-border .w-700}
+
+- Diff between **histogram** and **bar plots**
+	+ hist describes continuous values while bar plots descibes discrete
+	+ there is no space between each bin
+	+ location of bars on x-axis matter in hist but not in bar plot.
+	~~~ python 
+# Either of these will work.
+ax.hist(norm_reviews['Fandango_Ratingvalue'], 20, range=(0, 5))
+ax.hist(norm_reviews['Fandango_Ratingvalue'], bins=20, range=(0, 5))
+	~~~
+
+<div class="row d-flex" markdown="1">
+<div class="col s12 l7" markdown="1">
+![Boxplot intro]({{img-url}}/boxplot_intro.png){:.no-border .w-500}
+</div>
+<div class="col s12 l5" markdown="1">
+![Boxplot illustration]({{img-url}}/boxplot_understand.png){:.no-border .w-400}
+</div>
+</div>
+
+- **quartile** is diff from histogram because it divides the range of values into **four** regions where each region contains 1/4th of the total values. 
+	- While histograms allow us to visually estimate the percentage of ratings that fall into a **range of bins**.
+	- To visualize quartiles, we need to use a **[box plot](https://www.wellbeingatschool.org.nz/information-sheet/understanding-and-interpreting-box-plots)** (box-and-whisker plot)
+	- quartile is a case of **quantile** which divides the range of values into **many** equal value regions.
+
+	~~~ python
+ax.boxplot(norm_reviews["RT_user_norm"])
+# multi boxplots
+num_cols = ['RT_user_norm', 'Metacritic_user_nom', 'IMDB_norm', 'Fandango_Ratingvalue', 'Fandango_Stars']
+ax.boxplot(norm_reviews[num_cols].values)
+	~~~
+
+## Mission 146: Guided Project: Visualizing Earnings Based On College Majors
+
+- Do students in more popular majors make more money? $\Rightarrow$ Using **scatter plots**
+- How many majors are predominantly male? Predominantly female? $\Rightarrow$ Using **histograms**
+- Which category of majors have the most students? $\Rightarrow$ Using **bar plots**
+
+- **Jupyter**'s magic `% matplotlib inline` so that plots are displayed inline
+- Use `df.iloc[]` to return the first row formatted as a table.
+- Use `df.head()` and DataFrame.tail() to become familiar with how the data is structured.
+- Use `df.describe()` to generate summary statistics for all of the numeric columns.
+- Number of rows : `df.shape[0]` or number of columns `df.shape[1]`
+- Pandas has it own a plot method, see [here](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.plot.html).
+
+	~~~ python
+recent_grads.plot(x='Sample_size', y='Employed', kind='scatter')
+# 'Sample_size' and 'Employed' are columns of recent_grads
+	~~~
+
+	We can use one line code because of `% matplotlib inline` (of **Jupyter**)
+
 - 
 
 

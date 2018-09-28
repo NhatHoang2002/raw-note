@@ -388,7 +388,7 @@ laptops.isnull().sum()
 	~~~
 
 - **Dropping**: Removing rows/columns having null values. Use `df.dropna()`
-	- `df.dropna()`: removes rows, `df.dropna(axis=1)`: removes columns
+	- `df = df.dropna()`: removes rows, `df.dropna(axis=1)`: removes columns
 - `df.drop('<column>', axis=1)` removes a column and without `aixs` to remove a row.
 	- `df.drop([<list-of-columns>])`
 - **Reorder column**:
