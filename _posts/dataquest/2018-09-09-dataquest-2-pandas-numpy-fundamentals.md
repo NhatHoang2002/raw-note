@@ -447,4 +447,4 @@ df = pd.DataFrame(s, columns=["<name>"]) # column name will be set to 0 by defau
 - **Add many series into a df**: convert 1 series to df and then add other series to this df as new columns.
 
 
-{% include more.html content="[Go to Dataquest note 2: Exploratory Data Visualization](/dataquest-2-exploratory-data-visualization)." %}
+{% include more.html content="[Go to Dataquest note 2: Data Visualization (Exploratory & Stotytelling](/dataquest-2-exploratory-data-visualization)." %}

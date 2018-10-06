@@ -1,11 +1,11 @@
 ---
-title: "DataQuest 2: Exploratory Data Visualization"
+title: "DataQuest 2: Data Visualization (Exploratory & Stotytelling)"
 categories: [ml, it, data]
 tags: [dataquest, python, numpy, pandas, data]
 maths: 1
 toc: 1
 comment: 1
-date: 2018-09-28
+date: 2018-10-01
 ---
 
 {% assign img-url = "/images/posts/data/dataquest" %}
@@ -18,6 +18,8 @@ This note is used for my notes about the [**Data Scientist** path](https://www.d
 [Go back to Dataquest note 2: Pandas and Numpy fundamentals](/dataquest-2-pandas-numpy-fundamentals).
 </span>
 </div>
+
+{% include more.html content="[See many other plot types](http://pandas.pydata.org/pandas-docs/stable/visualization.html)." %}
 
 {% include toc.html %}
 
@@ -179,6 +181,8 @@ ax.boxplot(norm_reviews[num_cols].values)
 
 ## Mission 146: Guided Project: Visualizing Earnings Based On College Majors
 
+{% include download.html content="[Ref solution](https://github.com/dataquestio/solutions/blob/master/Mission146Solutions.ipynb)." %}
+
 - Do students in more popular majors make more money? $\Rightarrow$ Using **scatter plots**
 - How many majors are predominantly male? Predominantly female? $\Rightarrow$ Using **histograms**
 - Which category of majors have the most students? $\Rightarrow$ Using **bar plots**
@@ -195,9 +199,50 @@ recent_grads.plot(x='Sample_size', y='Employed', kind='scatter')
 # 'Sample_size' and 'Employed' are columns of recent_grads
 	~~~
 
-	We can use one line code because of `% matplotlib inline` (of **Jupyter**)
+	We can use one-line code because of `% matplotlib inline` (of **Jupyter**)
 
-- 
+- We can use `s.plot()`
+- We can control the number of bins in series by `s.hist`
+
+	~~~ python
+recent_grads['Sample_size'].plot(kind="hist", rot=40) # rot = rotation
+recent_grads['Sample_size'].hist(bins=25, range=(0,5000))
+	~~~
+
+- `scatter_matrix()` can plot scatter and hist an the same time for 2 columns ([ref](https://pandas.pydata.org/pandas-docs/stable/visualization.html#scatter-matrix-plot))
+
+	<div class="row d-flex" markdown="1">
+	<div class="col s12 l6" markdown="1">
+	~~~ python
+from pandas.plotting import scatter_matrix
+scatter_matrix(recent_grads[['Women', 'Men']], figsize=(10,10))
+	~~~
+	</div>
+	<div class="col s12 l6" markdown="1">
+	![Boxplot intro]({{img-url}}/scatterplot_matrix_intro.png){:.no-border .w-500}
+	</div>
+	</div>
+
+- Normally, when using bar plot, we need to specify the locations, labels, lenghts and widths of the bars but **pandas helps us do that**
+
+	~~~ python
+  # first 5 values in 'Women' column
+  recent_grads[:5]['Women'].plot(kind='bar')
+
+  # or better with labels
+  recent_grads[:5].plot.bar(x='Major', y='Women')
+	~~~
+
+{% include more.html content="[See many other plot types](http://pandas.pydata.org/pandas-docs/stable/visualization.html)." %}
+
+
+
+## Mission 147: Improving Plot Aesthetics
+
+{% include download.html content="[Download mission 147](/files/dataquest/mission-147.pdf)." %}
+
+
+
 
 
 

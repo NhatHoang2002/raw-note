@@ -4,7 +4,7 @@ categories: [math]
 tags: [machine learning, statistics, data, R]
 math: 1
 toc: 1
-date: 2018-09-21
+date: 2018-10-04
 ---
 
 {% assign img-url = '/images/posts/math/statistics' %}
@@ -39,7 +39,8 @@ print(int(stats.mode(<list>)[0]))
 
 ## 10 days of statistics on HackerRank
 
-- Follow the challenge [here](https://www.hackerrank.com/domains/tutorials/10-days-of-statistics).
+{% include more.html content="[Goto this Chalenge](https://www.hackerrank.com/domains/tutorials/10-days-of-statistics)." %}
+
 - **Mean, Median, Mod**:
 	- `mean` = mean value $\frac{1}{n}\sum_i x_i$
 	- `median` = the number at the center, if the number of elements are odd, it's the center number, if even, it's the mean of two center elements.
@@ -64,3 +65,16 @@ def find_median(lst):
     else:
         return (lst[len_lst//2-1] + lst[len_lst//2])/2
 	~~~
+
+### Binomial distribution
+
+A binomial experiment (or Bernoulli trial) is a statistical experiment that has the following properties: 
+
+- The experiment consists of  repeated trials.
+- The trials are independent.
+- The outcome of each trial is either success ($s$) or failure ($f$).
+
+### Bernoulli Random Variable and Distribution
+
+Check for short resume [here](https://www.hackerrank.com/challenges/s10-binomial-distribution-1/tutorial).
+

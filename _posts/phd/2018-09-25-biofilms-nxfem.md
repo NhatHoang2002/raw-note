@@ -3,7 +3,7 @@ title: Biofilms model with NXFEM
 categories: [maths,phd]
 tags: [phd,numerical analysis,biofilm]
 maths: 1
-date: 2018-09-27
+date: 2018-10-04
 ---
 
 This note is for chapter 6 in my thesis. I will use NXFEM coupling with LSM to simulate a biofilm model. 
@@ -12,7 +12,7 @@ This note is for chapter 6 in my thesis. I will use NXFEM coupling with LSM to s
 
 ### Very simple biofilm model
 
-- In **chopp 2007 xfem biofilm growth.pdf**.
+- Below model is in **<mark>chopp 2007 xfem biofilm growth.pdf</mark>**.
 - The same (more specific): **xfem moving interface THESIS - Bryan G. Smith.pdf**
 - Is mentioned in **chopp duddu et al 2006 combine nxfem levelset.pdf**, page 18 (figure biofilm, layer growth a little bit - Fig 5). Fig in this article is consistent with result in chopp 2007 xfem.
 - $u$: substrate
@@ -52,7 +52,7 @@ $$
 \mu=\begin{cases} 3.6\times 10^{-6} \, (\Omega_1) \\ 0 \, (\Omega_2) \end{cases}
 $$
 
-### 3 test cases
+### Three test cases
 
 In **chopp duddu et al 2006 combine nxfem levelset.pdf**, Chopp listed 4 test cases for biofilms. He also describes the properties of the domain, the condition's values and so on. **Page 16 - 18**.
 
@@ -67,3 +67,33 @@ In **chopp duddu et al 2006 combine nxfem levelset.pdf**, Chopp listed 4 test ca
 3. Third, see in the article.
 
 **Chopp06combine** --[49]-> **Chopp07xfem** --[4]-> **Chopp06simulating** (splitting) and --[6]- **kalpperFinger** and --[5]- **dependQuorum** (parameters)
+
+
+## Affected components
+
+All changeable components in the code,
+
+- Time: `.Tmax`, `.dt`
+- `pa.r0` : interface's radius
+- $\kappa$ (`.kapU`, `.kapV`)
+- Penalty coefficient $\lambda$ (`.lamU`, `.lamV`)
+- (May take an affect) `.bcU`, `.bcV`
+
+Note that,
+
+- $\kappa, \lambda$ depends on the choice of using or not using ghost penalty!
+
+
+## Modify main_chopp2007.m
+
+- Why we need `cp` instead of `pa`? Because in some functions to find global matrix/load vector, we need the diff coef inside pa, but how about diff for `u` and `v`? If we use `pa.kapU`, `pa.kapV`, it's not good because we need to consider upto 4 parameters!
+- Why **main_sys_linda** can use `pa`? No, it didn't!!!
+- Form of $\kappa\_i$?
+- Smallcut, many other functions are not modified to the new version yet!
+
+
+## Don't forget to do
+
+- Adaptive mesh (start with freefem++ first)
+- Run the test in Arnold's book!
+- Model **main_sys_linda** is not the one in article1 because both of u and v have the interface conditions [u], [v]! Check the file **main_article1** instead!
