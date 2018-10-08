@@ -15,7 +15,7 @@ This note is used for my notes about the [**Data Scientist** path](https://www.d
 <div class="see-again">
 <i class="material-icons">settings_backup_restore</i>
 <span markdown="1">
-[Go back to Dataquest note 2: Pandas and Numpy fundamentals](/dataquest-2-pandas-numpy-fundamentals).
+[Go back to Dataquest 2: Step 2 - Pandas and Numpy fundamentals](/dataquest-2-pandas-numpy-fundamentals).
 </span>
 </div>
 
@@ -152,13 +152,12 @@ plt.show()
   + hist describes continuous values while bar plots descibes discrete
   + there is no space between each bin
   + location of bars on x-axis matter in hist but not in bar plot.
-  ~~~ python 
-  
-  ~~~
-# Either of these will work.
-ax.hist(norm_reviews['Fandango_Ratingvalue'], 20, range=(0, 5))
-ax.hist(norm_reviews['Fandango_Ratingvalue'], bins=20, range=(0, 5))
-​	~~~
+    
+    ~~~ python 
+    # Either of these will work.
+    ax.hist(norm_reviews['Fandango_Ratingvalue'], 20, range=(0, 5))
+    ax.hist(norm_reviews['Fandango_Ratingvalue'], bins=20, range=(0, 5))
+    ~~~
 
 <div class="row d-flex" markdown="1">
 <div class="col s12 l7" markdown="1">
@@ -174,13 +173,12 @@ ax.hist(norm_reviews['Fandango_Ratingvalue'], bins=20, range=(0, 5))
   - To visualize quartiles, we need to use a **[box plot](https://www.wellbeingatschool.org.nz/information-sheet/understanding-and-interpreting-box-plots)** (box-and-whisker plot)
   - quartile is a case of **quantile** which divides the range of values into **many** equal value regions.
 
-  ~~~ python
-  ax.boxplot(norm_reviews["RT_user_norm"])
-  ~~~
-# multi boxplots
-num_cols = ['RT_user_norm', 'Metacritic_user_nom', 'IMDB_norm', 'Fandango_Ratingvalue', 'Fandango_Stars']
-ax.boxplot(norm_reviews[num_cols].values)
-​	~~~
+    ~~~ python
+    ax.boxplot(norm_reviews["RT_user_norm"])
+    # multi boxplots
+    num_cols = ['RT_user_norm', 'Metacritic_user_nom', 'IMDB_norm', 'Fandango_Ratingvalue', 'Fandango_Stars']
+    ax.boxplot(norm_reviews[num_cols].values)
+    ~~~
 
 ## Mission 146: Guided Project: Visualizing Earnings Based On College Majors
 
@@ -197,48 +195,46 @@ ax.boxplot(norm_reviews[num_cols].values)
 - Number of rows : `df.shape[0]` or number of columns `df.shape[1]`
 - Pandas has it own a plot method, see [here](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.plot.html).
 
-  ~~~ python
-  recent_grads.plot(x='Sample_size', y='Employed', kind='scatter')
-  ~~~
+    ~~~ python
+recent_grads.plot(x='Sample_size', y='Employed', kind='scatter')
 # 'Sample_size' and 'Employed' are columns of recent_grads
-	~~~
+    ~~~
 	
 	We can use one-line code because of `% matplotlib inline` (of **Jupyter**)
 
 - We can use `s.plot()`
 - We can control the number of bins in series by `s.hist`
 
-	~~~ python
+    ~~~ python
 recent_grads['Sample_size'].plot(kind="hist", rot=40) # rot = rotation
 recent_grads['Sample_size'].hist(bins=25, range=(0,5000))
-	~~~
+    ~~~
 
 - `scatter_matrix()` can plot scatter and hist an the same time for 2 columns ([ref](https://pandas.pydata.org/pandas-docs/stable/visualization.html#scatter-matrix-plot))
 
-	<div class="row d-flex" markdown="1">
-	<div class="col s12 l6" markdown="1">
-	~~~ python
+    <div class="row d-flex" markdown="1">
+    <div class="col s12 l6" markdown="1">
+    ~~~ python
 from pandas.plotting import scatter_matrix
 scatter_matrix(recent_grads[['Women', 'Men']], figsize=(10,10))
-	~~~
-	</div>
-	<div class="col s12 l6" markdown="1">
-	![Boxplot intro]({{img-url}}/scatterplot_matrix_intro.png){:.no-border .w-500}
-	</div>
-	</div>
+    ~~~
+    </div>
+    <div class="col s12 l6" markdown="1">
+    ![Boxplot intro]({{img-url}}/scatterplot_matrix_intro.png){:.no-border .w-500}
+    </div>
+    </div>
 
 - Normally, when using bar plot, we need to specify the locations, labels, lenghts and widths of the bars but **pandas helps us do that**
 
-	~~~ python
+    ~~~ python
   # first 5 values in 'Women' column
   recent_grads[:5]['Women'].plot(kind='bar')
 
   # or better with labels
   recent_grads[:5].plot.bar(x='Major', y='Women')
-	~~~
+    ~~~
 
 {% include more.html content="[See many other plot types](http://pandas.pydata.org/pandas-docs/stable/visualization.html)." %}
-
 
 
 ## Mission 147: Improving Plot Aesthetics

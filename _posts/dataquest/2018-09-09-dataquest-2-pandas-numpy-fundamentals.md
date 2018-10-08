@@ -441,20 +441,20 @@ autos = autos[autos["registration_year"].between(1900, 2016)]
 	- [pandas series constructor](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html)
 	- [pandas dataframe constructor](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html)
 - **Quickly** create a
-  - pandas series: 
-    ~~~ python
-    s = pd.Series([True, True, False, True])
-    ~~~
-# or from a dictionary abc
-s = pd.Series(abc) # key in dict becomes the index in series
-​		~~~
-​	- pandas dataframe: 
-​		~~~ python
-df = pd.DataFrame(np.random.randn(6,4),index=dates,columns=list('ABCD'))
-# or from a series
-df = pd.DataFrame(s, columns=["<name>"]) # column name will be set to 0 by default
-​		~~~
+
+	~~~ python
+  # pandas series:
+  s = pd.Series([True, True, False, True])
+  # or from a dictionary abc
+  s = pd.Series(abc) # key in dict becomes the index in series
+
+  # pandas dataframe: 
+  df = pd.DataFrame(np.random.randn(6,4),index=dates,columns=list('ABCD'))
+  # or from a series
+  df = pd.DataFrame(s, columns=["<name>"]) # column name will be set to 0 by default
+	~~~
+
 - **Add many series into a df**: convert 1 series to df and then add other series to this df as new columns.
 
 
-{% include more.html content="[Go to Dataquest note 2: Data Visualization (Exploratory & Stotytelling](/dataquest-2-exploratory-data-visualization)." %}
+{% include more.html content="[Go to Dataquest 3: Step 2 - Data Visualization (Exploratory & Stotytelling](/dataquest-2-exploratory-data-visualization)." %}
