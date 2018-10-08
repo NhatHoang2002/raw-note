@@ -2,6 +2,7 @@
 title: Linux notes
 categories: it
 tags: ["linux","ubuntu"]
+snippet: 1
 date: 2018-09-25
 ---
 
@@ -204,30 +205,32 @@ sudo usermod -a -G groupName userName
 
 42. Connect `ssh` to a virtual machine (the same network)
 
-	- Install openssh for both client and server machine
+     - Install openssh for both client and server machine
 
-		~~~ bash
-sudo apt-get install openssh-client
-sudo apt-get install openssh-server
-		~~~
+     	~~~ bash
+     sudo apt-get install openssh-client
+     sudo apt-get install openssh-server
+     	~~~
 
-	- On server machine, check ssh is running or not
+     - On server machine, check ssh is running or not
 
-		~~~ bash
-ps -A | grep sshd
+       ~~~ bash
+       ps -A | grep sshd
+       ~~~
 # return [number] ?  00:00:00 sshd then it works
 		~~~
 
 43. Terminal multi windows: `sudo apt-get install terminator`
 44. Save a directory a `$PATH` of local profile.
 
-	~~~ bash
-sudo gedit ~/.profile
+    ~~~ bash
+    sudo gedit ~/.profile
+    ~~~
 # copy and paste following line (should change the path)
 export PATH=/home/thi/anaconda3/bin:$PATH
 # save and close .profile and then apply following line to get instant update
 source ~/.profile
-	~~~
+​	~~~
 45. Mp3 tag editor: `sudo apt install exfalso` (**Ex Falso**)
 46. Resize multiple photos (keep the ratio/scale) ([more options](https://imagemagick.org/Usage/resize/)): 
 

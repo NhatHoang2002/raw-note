@@ -1,5 +1,5 @@
 ---
-title: "DataQuest 2: Data Visualization (Exploratory & Stotytelling)"
+title: "DataQuest 3: Step 2 - Data Visualization (Exploratory & Stotytelling)"
 categories: [ml, it, data]
 tags: [dataquest, python, numpy, pandas, data]
 maths: 1
@@ -149,14 +149,16 @@ plt.show()
 ![Histogram example]({{img-url}}/histogram_plot_intro.png){:.no-border .w-700}
 
 - Diff between **histogram** and **bar plots**
-	+ hist describes continuous values while bar plots descibes discrete
-	+ there is no space between each bin
-	+ location of bars on x-axis matter in hist but not in bar plot.
-	~~~ python 
+  + hist describes continuous values while bar plots descibes discrete
+  + there is no space between each bin
+  + location of bars on x-axis matter in hist but not in bar plot.
+  ~~~ python 
+  
+  ~~~
 # Either of these will work.
 ax.hist(norm_reviews['Fandango_Ratingvalue'], 20, range=(0, 5))
 ax.hist(norm_reviews['Fandango_Ratingvalue'], bins=20, range=(0, 5))
-	~~~
+​	~~~
 
 <div class="row d-flex" markdown="1">
 <div class="col s12 l7" markdown="1">
@@ -168,16 +170,17 @@ ax.hist(norm_reviews['Fandango_Ratingvalue'], bins=20, range=(0, 5))
 </div>
 
 - **quartile** is diff from histogram because it divides the range of values into **four** regions where each region contains 1/4th of the total values. 
-	- While histograms allow us to visually estimate the percentage of ratings that fall into a **range of bins**.
-	- To visualize quartiles, we need to use a **[box plot](https://www.wellbeingatschool.org.nz/information-sheet/understanding-and-interpreting-box-plots)** (box-and-whisker plot)
-	- quartile is a case of **quantile** which divides the range of values into **many** equal value regions.
+  - While histograms allow us to visually estimate the percentage of ratings that fall into a **range of bins**.
+  - To visualize quartiles, we need to use a **[box plot](https://www.wellbeingatschool.org.nz/information-sheet/understanding-and-interpreting-box-plots)** (box-and-whisker plot)
+  - quartile is a case of **quantile** which divides the range of values into **many** equal value regions.
 
-	~~~ python
-ax.boxplot(norm_reviews["RT_user_norm"])
+  ~~~ python
+  ax.boxplot(norm_reviews["RT_user_norm"])
+  ~~~
 # multi boxplots
 num_cols = ['RT_user_norm', 'Metacritic_user_nom', 'IMDB_norm', 'Fandango_Ratingvalue', 'Fandango_Stars']
 ax.boxplot(norm_reviews[num_cols].values)
-	~~~
+​	~~~
 
 ## Mission 146: Guided Project: Visualizing Earnings Based On College Majors
 
@@ -194,11 +197,12 @@ ax.boxplot(norm_reviews[num_cols].values)
 - Number of rows : `df.shape[0]` or number of columns `df.shape[1]`
 - Pandas has it own a plot method, see [here](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.plot.html).
 
-	~~~ python
-recent_grads.plot(x='Sample_size', y='Employed', kind='scatter')
+  ~~~ python
+  recent_grads.plot(x='Sample_size', y='Employed', kind='scatter')
+  ~~~
 # 'Sample_size' and 'Employed' are columns of recent_grads
 	~~~
-
+	
 	We can use one-line code because of `% matplotlib inline` (of **Jupyter**)
 
 - We can use `s.plot()`

@@ -1,5 +1,5 @@
 ---
-title: "DataQuest 2: Pandas and Numpy fundamentals"
+title: "DataQuest 2: Step 2 - Pandas and Numpy fundamentals"
 categories: [ml, it, data]
 tags: [dataquest, python, numpy, pandas, data]
 maths: 1
@@ -104,6 +104,7 @@ This note is used for my notes about the [**Data Scientist** path](https://www.d
 
 - `c[c[:,1] > 2, 1] = 99`
 - `ndarray.shape` gives a tuple `(#rows, #columns)`.
+
   - `ndarray.shape[0]` gives number of rows
 
 
@@ -128,6 +129,7 @@ See the [note of Pandas](/python-pandas-1).
 - Unlike NumPy, pandas does not use the same type for 1D and 2D arrays.
 - `f500.dtypes` gives type of each column
 - `f500.head()` returns first 5 rows
+
     - `f500.head(10) returns first 10 rows`
 - `f500.tail()`
 - Unlike NumPy, pandas **does not use the same type** for 1D and 2D arrays.
@@ -155,11 +157,12 @@ print(revs.describe())
 - for **all**: `all_desc = f500.describe(include='all')`
 - for only **numeric**: `print(f500.describe(include=['O']))`
 - **Methods**: `.max()`, `.min()`, `.mean()`, `.median()`, `.mode()`, `.sum()` applied to both **series** and **dataframe**.
-	- `df.<method>(axis=0)` or `df.<method>(axis="index")` calculate along the **row** axis. <mark>default</mark>
-	- `df.<method>(axis=1)` or `df.<method>(axis="column")` calculate along the **column** axis.
+  - `df.<method>(axis=0)` or `df.<method>(axis="index")` calculate along the **row** axis. <mark>default</mark>
+  - `df.<method>(axis=1)` or `df.<method>(axis="column")` calculate along the **column** axis.
 
-		~~~ python
-medians = f500[["revenues", "profits"]].median(axis=0)
+    ~~~ python
+    medians = f500[["revenues", "profits"]].median(axis=0)
+    ~~~
 # we could also use .median(axis="index")
 # or without axis=0 because it's default
 		~~~
@@ -221,12 +224,14 @@ import numpy as np
 - The same for **series** but don't forget that series is 1-D
 - **Import data** ([cf](https://www.dataquest.io/m/292/exploring-data-with-pandas/3/reading-csv-files-with-pandas))
 
-	~~~ python
+  ~~~ python
+  
+  ~~~
 # we want to use the 1st column as the row labels
 f500 = pd.read_csv("f500.csv", index_col=0)
 # remove the index name (text in the first line, first column)
 f500.index.name = None
-	~~~
+​	~~~
 
 - Sort the rows of `f500` by columns `employees` (it **returns** another df but does not change the df itself)
 
@@ -235,7 +240,8 @@ sorted_emp = f500.sort_values(by=["employees"], ascending=False)
 	~~~
 
 - `s.str.contains("<str>")` : check if str is in s or not
-	- `s.str.contains("<str>", regex = False)` if we want to consider str as a string.
+
+  - `s.str.contains("<str>", regex = False)` if we want to consider str as a string.
 - `s.str.endswith("<str>")` : check if s ends with str or not
 - `s.str.startswith("<str>")`
 - `s.isnull()` or `s.notnull()` : check s contains NaN or null
@@ -327,7 +333,8 @@ laptops.info() # see the general info of the dataset
   laptops.columns = [clean_col(c) for c in laptops.columns]
 	~~~
 - `series.str.replace("text1", "text2")`: look like `string.replace()` but a vectorized version for many items.
-	- **Tips**: we can use `s.str.replace().str.replace()`(<mark>many times</mark>)
+
+  - **Tips**: we can use `s.str.replace().str.replace()`(<mark>many times</mark>)
 - `s.astype(float)` or `s.astype(int)` change to numeric for all items in a series
 - `df.rename({"<old-label>": "<new-label>"}, axis=1, inplace=True)`
 
@@ -388,9 +395,11 @@ laptops.isnull().sum()
 	~~~
 
 - **Dropping**: Removing rows/columns having null values. Use `df.dropna()`
-	- `df = df.dropna()`: removes rows, `df.dropna(axis=1)`: removes columns
+
+  - `df = df.dropna()`: removes rows, `df.dropna(axis=1)`: removes columns
 - `df.drop('<column>', axis=1)` removes a column and without `aixs` to remove a row.
-	- `df.drop([<list-of-columns>])`
+
+  - `df.drop([<list-of-columns>])`
 - **Reorder column**:
 	- `df.columns`: list of all columns
 	- `df.to_csv()`: save out CSV file and option `index=False` if we don't want to save the index labels.
@@ -432,18 +441,19 @@ autos = autos[autos["registration_year"].between(1900, 2016)]
 	- [pandas series constructor](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html)
 	- [pandas dataframe constructor](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html)
 - **Quickly** create a
-	- pandas series: 
-		~~~ python
-s = pd.Series([True, True, False, True])
+  - pandas series: 
+    ~~~ python
+    s = pd.Series([True, True, False, True])
+    ~~~
 # or from a dictionary abc
 s = pd.Series(abc) # key in dict becomes the index in series
-		~~~
-	- pandas dataframe: 
-		~~~ python
+​		~~~
+​	- pandas dataframe: 
+​		~~~ python
 df = pd.DataFrame(np.random.randn(6,4),index=dates,columns=list('ABCD'))
 # or from a series
 df = pd.DataFrame(s, columns=["<name>"]) # column name will be set to 0 by default
-		~~~
+​		~~~
 - **Add many series into a df**: convert 1 series to df and then add other series to this df as new columns.
 
 

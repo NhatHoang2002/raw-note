@@ -65,6 +65,23 @@ css: ["index.css"]
     </ul>
   </div>
 
+  <div class="col s12" style="margin-bottom: 2rem;">
+    <h2 class="h2-title">Snippets</h2>
+    <div class="thi-columns">
+      <ul class="tag-post">
+      {% for post in paginator.posts %}
+        {% if post.snippet %}
+        <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
+          <li>
+            {{ post.title }} <small class="post-date">{{post.date | date: "%d/%m/%Y"}}</small>
+          </li>
+        </a>
+        {% endif %}
+      {% endfor %}
+      </ul>
+    </div>
+  </div>
+
   <div class="tag-div">
     <h2 class="h2-title">Tags</h2>
     <div class="tag-list">

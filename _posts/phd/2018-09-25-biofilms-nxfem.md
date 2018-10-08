@@ -3,12 +3,18 @@ title: Biofilms model with NXFEM
 categories: [maths,phd]
 tags: [phd,numerical analysis,biofilm]
 maths: 1
-date: 2018-10-04
+date: 2018-10-08
 ---
 
 This note is for chapter 6 in my thesis. I will use NXFEM coupling with LSM to simulate a biofilm model. 
 
 ## Models
+
+## Notes
+
+- **Chap6** in reMarkable
+- Handwriting notes (**main**)
+- This site.
 
 ### Very simple biofilm model
 
@@ -91,7 +97,7 @@ Note that,
 - Form of $\kappa\_i$?
 - Smallcut, many other functions are not modified to the new version yet!
 
-### To-be code
+### To-be coded
 
 - Periodic boundary condition in x direction.
 - multi biofilm shape (separated)

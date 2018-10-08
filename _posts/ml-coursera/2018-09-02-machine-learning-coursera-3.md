@@ -266,6 +266,25 @@ After fiding `optTheta` from `fmincg`, we need to find $h_{\theta}$. From $h_{\t
 </div>
 
 
+<ul class="collapsible" data-collapsible="accordion">
+<li>
+<div class="collapsible-header" markdown="1"><i class="material-icons">face</i>
+Why max?
+</div>
+<div class="collapsible-body" markdown="1">
+
+We want to choose a $\Theta$ such that for all $j\in \\{ 0,\ldots,n \\}$, 
+
+$$
+h_{\theta}^{(j)} = P(y=j\vert x;\theta) \ge 0.5
+$$
+
+Don't forget that, we consider $h\_{\theta} \ge 0.5$ as true. Because of that, there is onlty 1 option, that's max of all $j$.
+    
+</div>
+</li>
+</ul>
+
 
 <p markdown="1" class="thi-tip">
 <i class="material-icons mat-icon">info</i>

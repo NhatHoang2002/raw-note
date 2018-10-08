@@ -7,6 +7,8 @@ maths: 1
 date: 2018-10-07
 ---
 
+{% assign file-src = "/files/phd" %}
+
 ## General
 
 Trong note này sẽ bao gồm luôn mục **coding** thay cho note [coding-note](/coding-note-1)
@@ -19,6 +21,7 @@ Trong note này sẽ bao gồm luôn mục **coding** thay cho note [coding-note
   $$
   d(x_0,\Gamma_h) := \min_{x\in \Gamma_h} d(x_0,x).
   $$
+
 
 
 ### <new /> Using FreeFem++
@@ -66,6 +69,19 @@ Thi paper said that:
 
 - Test coi mshdist hoạt động tốt không có thể tính $\Vert \nabla \phi \Vert$ xem có bằng 1 hay không! $\Rightarrow$ **Kết quả**: nếu dt quá lớn, u quá lớn thì cái $\phi$ xa rời cái signed distance function
 
+<update />**Some examples of signed distance function** (cf [slide 14, here]({{file-src}}/W02_SignedDistanceFunction.pdf))
+
+- A circle,
+
+  $$
+  \phi(x) = \sqrt{(x-a)^2 + (y-b)^2} - r
+  $$
+
+- A sphere,
+
+  $$
+  \phi(x) = \sqrt{(x-a)^2 + (y-b)^2 + (z-c)^2} - r
+  $$
 
 
 ## Coding note
