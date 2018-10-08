@@ -4,7 +4,7 @@ categories: [phd,maths]
 tags: [phd,numerical analysis]
 toc: 1
 maths: 1
-date: 2018-09-20
+date: 2018-10-07
 ---
 
 ## General
@@ -19,6 +19,7 @@ Trong note này sẽ bao gồm luôn mục **coding** thay cho note [coding-note
   $$
   d(x_0,\Gamma_h) := \min_{x\in \Gamma_h} d(x_0,x).
   $$
+
 
 ### <new /> Using FreeFem++
 
@@ -260,8 +261,9 @@ Others
   Trong đó $n$ là **outward unit normal vector** to $\partial\Omega$ (cái này nói ở trang 219)
 
 - Lưu ý là nếu $u\in t$ thì ta phải xét $V_h(\phi_D)$ như trang 202.
+
 - **Không cần xét boundary condition**: 
-	- *Gross Sven thesis*: không đề cập đến BC cho level set equation. Tác giả bài báo này xét trên P2.
+  - *Gross Sven thesis*: không đề cập đến BC cho level set equation. Tác giả bài báo này xét trên P2.
 
   - *Trung Hieu thesis* 2.3, *thesis của chị Cúc* 3.1 : Khi level set function advance with time, nó không còn là signed-distance function như thời điểm ban đầu nữa ($\Vert{\nabla\varphi}\Vert \ne 1$). Điều này dẫn đến cần phải thay thế level set function bởi một hàm gần đúng khác sao cho cùng zero level set. Do đó, term $u\cdot\nabla \varphi$ chỉ được xét trong một giai đoạn thời gian rất ngắn. Vì thế, chúng ta có thể xét level set equation mà không có boundary condition.
 
@@ -271,11 +273,13 @@ Others
 
   - Nếu muốn xét boundary condition thì cũng khó nếu đã biết uex và velocity u, bởi vì nếu muốn dùng Dirichlet $u=u\_{ex}$ thì ta cần giải $\phi^{n+1}$, tức phải biết giá trị của nó tại thời điển $n+1$ nhưng không thể biết được.
 
-	$$
-	\phi^{n+1} + \dfrac{\tau}{2}\beta\cdot\nabla \phi^{n+1} + \dfrac{\tau}{2}\beta\cdot\nabla \phi^n - \phi^n =0.
-	$$
-	
-	$\Rightarrow$ **Chưa chính xác lắm!** Trong Arnold Book, ổng cũng có nói vấn đề về Dirichlet BC này ở mục Remark 7.5.1 (p. 221)
+  $$
+  \phi^{n+1} + \dfrac{\tau}{2}\beta\cdot\nabla \phi^{n+1} + \dfrac{\tau}{2}\beta\cdot\nabla \phi^n - \phi^n =0.
+  $$
+
+  $\Rightarrow$ **Chưa chính xác lắm!** Trong Arnold Book, ổng cũng có nói vấn đề về Dirichlet BC này ở mục Remark 7.5.1 (p. 221)
+
+  - <update /> In the note of Chopp, section 5.2.3, he also talks about the "not-so-useful" of boundary condition. 
 
 
 

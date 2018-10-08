@@ -28,7 +28,7 @@ $$
 \nabla_n u &= 0 \quad (\partial\Omega \backslash \partial\Omega_1) \\
 u &= 10^{-5} \quad (\partial\Omega_3)
 \end{align}
-$$ 
+$$
 
 </div>
 <div class="col s12 l6" markdown="1">
@@ -40,7 +40,7 @@ v = \nabla_n v &= 0 \quad (\Gamma) \\
 \nabla_n v &= 0 \quad (\partial\Omega \backslash \partial\Omega_1) \\
 v &= 0 \quad (\partial\Omega_3)
 \end{align}
-$$ 
+$$
 
 </div>
 </div>
@@ -90,6 +90,13 @@ Note that,
 - Why **main_sys_linda** can use `pa`? No, it didn't!!!
 - Form of $\kappa\_i$?
 - Smallcut, many other functions are not modified to the new version yet!
+
+### To-be code
+
+- Periodic boundary condition in x direction.
+- multi biofilm shape (separated)
+  - Chopp06-stimulating: section 5, there are some results to be compared!
+- Time scale??
 
 
 ## Don't forget to do
