@@ -428,6 +428,8 @@ The same form with GD regularized linear regression, <mark>the difference in thi
 
 ## Exercice de programmation: Logistic Regression
 
+{% include download.html content="[Check instruction and explanation ex2](/files/ML-coursera/ex2.pdf)." %}
+
 <div class="see-again">
 <i class="material-icons">settings_backup_restore</i>
 <span markdown="1">

@@ -229,6 +229,8 @@ I have already known about matlab, so this part of note contains not too much in
 
 ## Exercice de programmation: Linear Regression
 
+{% include download.html content="[Check instruction and explanation ex1](/files/ML-coursera/ex1.pdf)." %}
+
 ### LR with one variable (required)
 
 - **warmUpExercise.m** : nothing to say. 

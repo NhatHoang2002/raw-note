@@ -125,6 +125,8 @@ $$
 
 ## Exercise Programmation: Multi-class Classification and Neural Networks
 
+{% include download.html content="[Check instruction and explanation ex3](/files/ML-coursera/ex3.pdf)." %}
+
 <div class="see-again">
 <i class="material-icons">settings_backup_restore</i>
 <span markdown="1">

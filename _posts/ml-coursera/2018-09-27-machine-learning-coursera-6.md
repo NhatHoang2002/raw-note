@@ -138,6 +138,7 @@ See again [Linear regression with regularization](/machine-learning-coursera-3#r
 
 ### Learning Curves
 
+- Learning curve plots training and cross validation error as a function of training set size.
 - If we add <mark>more training</mark> examples, it <mark>doesn't</mark> mean we will get a better result because it also depends on the degree of polynomial we choose (**high bias - underfitting**).
 - In the case of **high variance (overfitting)**. <mark>increase the number of training</mark> examples seem <mark>helps</mark>.
 
@@ -162,11 +163,112 @@ See again [Linear regression with regularization](/machine-learning-coursera-3#r
 
 ## Exercise the programmation
 
+{% include download.html content="[Check instruction and explanation ex5](/files/ML-coursera/ex5.pdf)." %}
 
+### Regularized Linear Regression
+
+<div class="see-again">
+<i class="material-icons">settings_backup_restore</i>
+<span markdown="1">
+See again ["Regularized linear regression"](/machine-learning-coursera-3#regularized-linear-regression).
+</span>
+</div>
+
+Note that, in the previous notes, there is no vectorized form of this regression. I will list it in this section.
+
+- Normal form,
+
+	$$
+	\begin{align}
+	J(\theta) = \dfrac{1}{2m}\sum_{i=1}^m \left( h_{\theta}(x^{(i)}) - y^{(i)} \right)^2 + \dfrac{\lambda}{2m} \sum_{j=1}^n \theta_j^2.
+	\end{align}
+	$$
+
+- Vectorized form,
+
+	<div class="p-mark">
+	$$
+	J(\Theta) = \dfrac{1}{2m} (X\Theta - y)^T(X\Theta - y) + \dfrac{\lambda}{2m}\Theta(1:n)^T\Theta(1:n)
+	$$
+	</div>
+
+- Its gradient,
+
+$$
+\begin{align}
+\dfrac{\partial J}{\partial \theta_j} &= 
+	\dfrac{1}{m} \sum_{i=1}^m \left( h_{\theta}(x^{(i)}) - y^{(i)} \right)x_j^{(i)}, \, (j=0)\\
+\dfrac{\partial J}{\partial \theta_j} &= 
+	\dfrac{1}{m} \sum_{i=1}^m \left( h_{\theta}(x^{(i)}) - y^{(i)} \right)x_j^{(i)} + \dfrac{\lambda}{m}\sum_{j=1}^n\theta_j, \, (j=1,\ldots,n).
+\end{align}
+$$
+
+- Vetorized form,
+
+	<div class="p-mark">
+	$$
+	\begin{align}
+	\nabla\Theta(0) &= \dfrac{1}{m} X^T(X\Theta - y), \\
+	\nabla\Theta(1:n) &= \dfrac{1}{m} X^T(X\Theta - y) + \dfrac{\lambda}{2m}\Theta(1:n).
+	\end{align}
+	$$
+	</div>
+
+
+File **linearRegCostFunction.m**,
+
+~~~ matlab
+h = X * theta; % hypothesis
+J = 1/(2*m) * (X*theta - y)' * (X*theta - y)... 
+        + lambda/(2*m) * sum(theta(2:end).^2);
+
+grad(1,1) = 1/m * X(:,1)' * (h-y);
+grad(2:end,1) = 1/m * X(:,2:end)' * (h-y) + lambda/m * theta(2:end,1);
+~~~
+
+Because our current implementation of linear regression is trying to fit a <mark>2-dimensional $\Theta$</mark>, regularization will **not be incredibly helpful** for a $\Theta$ of such low dimension.
+
+### Bias variance
+
+File **learningCurve.m**. Note that, we want to validate the quality of $\Theta$ obtained from the training set, that why we use the same `theta` for both `error_train` and `error_val`. We should compute cross validation error on the **entire** `Xval, yval` set instead of a part like train set.
+
+~~~ matlab
+for i = 1:m
+    theta = trainLinearReg(X(1:i,:), y(1:i), lambda);
+    [error_train(i), ~] = linearRegCostFunction(X(1:i,:), y(1:i), theta, 0);
+    
+    [error_val(i), ~] = linearRegCostFunction(Xval, yval, theta, 0);
+end
+~~~
+
+### Polynomial regression
+
+File **polyFeatures.m**. The problem with our linear model was that it was too simple for the data and resulted in underfitting (high bias). In this part of the exercise, you will address this problem by adding more features.
+
+~~~ matlab
+for i=1:p
+   X_poly(:,i) = X(:,1).^i; 
+end
+~~~
+
+### Selecting $\lambda$ using a cross validation set
+
+In particular, a model without regularization ($\lambda = 0$) fits the training set well, but does not generalize. Conversely, a model with too much regularization ($\lambda=100$) does not fit the training set and testing set well. A good choice of $\lambda$ (e.g., $\lambda=1$) can provide a good fit to the data.
+
+File **validationCurve.m**. In this section, you will implement an automated method to select the $\lambda$ parameter. Concretely, you will use a cross validation set to evaluate how good each $\lambda$ value is. After selecting the best $\lambda$ value using the cross validation set, we can then evaluate the model on the test set to estimate how well the model will perform on actual unseen data.
+
+~~~ matlab
+for i = 1:length(lambda_vec)
+    lambda = lambda_vec(i);
+    theta = trainLinearReg(X, y, lambda);
+    [error_train(i), ~] = linearRegCostFunction(X, y, theta, 0);
+    [error_val(i), ~] = linearRegCostFunction(Xval, yval, theta, 0);
+end
+~~~
 
 ## Building A spam classifier
 
-{% include download.html content="[Download Lecture 11/files/ML-coursera/Lecture11pdf)." %}
+{% include download.html content="[Download Lecture 11](/files/ML-coursera/Lecture11.pdf)." %}
 
 ### Prioritizing what to work on
 

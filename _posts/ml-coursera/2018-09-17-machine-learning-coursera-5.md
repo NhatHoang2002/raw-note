@@ -367,6 +367,8 @@ where $L\_{in} = s\_l, L\_{out} = s\_{l+1}$. $s_l$ is the no. of units (not coun
 
 ## Exercise de programmation: Neural network learning
 
+{% include download.html content="[Check instruction and explanation ex4](/files/ML-coursera/ex4.pdf)." %}
+
 ### Feedforward and cost function
 
 `nnCostFunction.m`: Recall that,
