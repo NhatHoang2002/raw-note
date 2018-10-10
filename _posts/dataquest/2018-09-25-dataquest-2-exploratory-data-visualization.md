@@ -5,7 +5,7 @@ tags: [dataquest, python, numpy, pandas, data]
 maths: 1
 toc: 1
 comment: 1
-date: 2018-10-09
+date: 2018-10-10
 ---
 
 {% assign img-url = "/images/posts/data/dataquest" %}
@@ -48,18 +48,18 @@ import matplotlib.pyplot as plt
 
 {% include download.html content="[Download mission 143](/files/dataquest/mission-143.pdf)." %}
 
-- Add **subplot** (<mark>top-left to bottom-right</mark>)
+- Add **subplot** (<mark>top-left to bottom-right</mark>) (multi plots in the same figure)
 
 	~~~ python
 import matplotlib.pyplot as plt
 fig = plt.figure()
-ax1 = fig.add_subplot(2,1,1) # nrows, ncols, plot_number
+ax1 = fig.add_subplot(2,1,1) # 2rows, 1cols, plot_number 1
 ax2 = fig.add_subplot(2,1,2)
 plt.show()
 	~~~
 
 	- Use `ax1.plt(x, y)` as usual `plt.plot`
-- Change size of `fig`: `plt.figure(figsize=(width_inch, height_inch))`
+- Change size of figure `fig`: `plt.figure(figsize=(width_inch, height_inch))`
 - Use many times `plt.plot()` to draw multi function on the same plot.
 - Use `plt.plot(x, y, c="red")` to choose a color for plot. See [more here](https://matplotlib.org/api/colors_api.html).
 - `plt.plot(x, y, label="<label>")` legend and then `plt.legend(loc='upper left')`, read more [here](https://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.legend).
@@ -182,7 +182,7 @@ plt.show()
 
 ## Mission 146: Guided Project: Visualizing Earnings Based On College Majors
 
-{% include download.html content="[Ref solution](https://github.com/dataquestio/solutions/blob/master/Mission146Solutions.ipynb)." %}
+{% include download.html content="[Ref solution of project 146](https://github.com/dataquestio/solutions/blob/master/Mission146Solutions.ipynb)." %}
 
 - Do students in more popular majors make more money? $\Rightarrow$ Using **scatter plots**
 - How many majors are predominantly male? Predominantly female? $\Rightarrow$ Using **histograms**
@@ -257,7 +257,7 @@ scatter_matrix(recent_grads[['Women', 'Men']], figsize=(10,10))
 - Modify/Remove **ticks** on axes & remove axes spine: 
 
   ~~~ python
-  ax.tick_params(bottom="off", top="off", left="off", right="off")
+  ax.tick_params(bottom="off", top="off", left="off", right="off", labelbottom='off')
   # Add your code here
   ax.spines["right"].set_visible(False)
   ax.spines["left"].set_visible(False)
@@ -274,7 +274,41 @@ scatter_matrix(recent_grads[['Women', 'Men']], figsize=(10,10))
 
 {% include download.html content="[Download mission 148](/files/dataquest/mission-148.pdf)." %}
 
+- The [Color Blind 10](http://tableaufriction.blogspot.com/2012/11/finally-you-can-use-tableau-data-colors.html) palette contains ten colors that are colorblind friendly.
+- **Matplotlib** expects each value to be scaled down and to **range between 0 and 1 **(not 0 and 255 of RGB color).
 
+  ~~~ python
+  cb_dark_blue = (0/255,107/255,164/255)
+  ax.plot(women_degrees['Year'], women_degrees['Biology'], label='Women', c=cb_dark_blue)
+  ~~~
 
+- Line width: `ax.plot(linewidth=2)`
+- Annotation: `ax.text(<x>, <y>, <text>)`
+- Big figure `fig` and then inside there are multiple plot `ax`
+
+  ~~~ python
+  fig = plt.figure(figsize=(18, 3))
+  ax = fig.add_subplot(1,6,sp+1)
+  ~~~
+
+## Mission 149: Guided Project: Visualizing The Gender Gap In College Degrees
+
+{% include download.html content="[Ref solution of project 149](https://github.com/dataquestio/solutions/blob/master/Mission149Solutions.ipynb)." %}
+
+- `ax.set_yticks([0,100])`: just keep 0 and 100 on the y ticks, or `xticks`
+- transparency: `ax.plot(c="red", alpha=0.3)`
+- Horizontal line in the figure: `ax.axhline(<startpoing>)`
+- <mark>Note that</mark>, all coordinate in the plot is the coordinate of the axes (depends on the data)
+- Save the plots (<mark>must be used before</mark> `plt.show()`)
+
+  ~~~ python
+  plt.plot(women_degrees['Year'], women_degrees['Biology'])
+  plt.savefig('biology_degrees.png')
+  plt.show()
+  ~~~
+
+## Mission 152: Conditional Plots
+
+{% include download.html content="[Download mission 152](/files/dataquest/mission-152.pdf)." %}
 
 
