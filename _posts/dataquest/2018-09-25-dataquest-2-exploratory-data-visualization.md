@@ -5,7 +5,7 @@ tags: [dataquest, python, numpy, pandas, data]
 maths: 1
 toc: 1
 comment: 1
-date: 2018-10-01
+date: 2018-10-09
 ---
 
 {% assign img-url = "/images/posts/data/dataquest" %}
@@ -241,7 +241,38 @@ scatter_matrix(recent_grads[['Women', 'Men']], figsize=(10,10))
 
 {% include download.html content="[Download mission 147](/files/dataquest/mission-147.pdf)." %}
 
+- 2 line plot in the same figure
 
+  ~~~ python
+  fig, ax = plt.subplots()
+  ax.plot(women_degrees['Year'], women_degrees['Biology'], label='Women')
+  ax.plot(women_degrees['Year'], 100-women_degrees['Biology'], label='Men')
+
+  ax.tick_params(bottom="off", top="off", left="off", right="off")
+  ax.set_title('Percentage of Biology Degrees Awarded By Gender')
+  ax.legend(loc="upper right")
+  ~~~
+
+- [**The data-ink**](https://infovis-wiki.net/wiki/Data-Ink_Ratio) ratio is the proportion of Ink that is used to present actual data compared to the total amount of ink (or pixels) used in the entire display. (Ratio of Data-Ink to non-Data-Ink). The goal is to design a display with the <mark>highest possible data-ink ratio</mark>.
+- Modify/Remove **ticks** on axes & remove axes spine: 
+
+  ~~~ python
+  ax.tick_params(bottom="off", top="off", left="off", right="off")
+  # Add your code here
+  ax.spines["right"].set_visible(False)
+  ax.spines["left"].set_visible(False)
+  ~~~
+
+  or shorter for spines
+
+  ~~~ python
+  for key,spine in ax.spines.items():
+    spine.set_visible(False)
+  ~~~
+
+## Mission 148: Color, Layout, and Annotations
+
+{% include download.html content="[Download mission 148](/files/dataquest/mission-148.pdf)." %}
 
 
 

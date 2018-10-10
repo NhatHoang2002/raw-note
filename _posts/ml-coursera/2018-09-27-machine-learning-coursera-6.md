@@ -5,7 +5,7 @@ tags: [machine learning, ml coursera]
 math: 1
 toc: 1
 comment: 1
-date: 2018-10-08
+date: 2018-10-09
 ---
 
 {% assign img-url = '/images/posts/ML/coursera' %}
@@ -270,9 +270,20 @@ end
 
 {% include download.html content="[Download Lecture 11](/files/ML-coursera/Lecture11.pdf)." %}
 
+We talk about **Machine Learning system design**. 
+
 ### Prioritizing what to work on
 
+So how could you spend your time to improve the accuracy of this classifier?
+
+- Collect lots of data (for example "honeypot" project but doesn't always work)
+- Develop sophisticated features (for example: using email header data in spam emails)
+- Develop algorithms to process your input in different ways (recognizing misspellings in spam).
+- It is difficult to tell which of the options will be most helpful.
+
 ### Error analysis
+
+
 
 ## Handling skewed data
 
