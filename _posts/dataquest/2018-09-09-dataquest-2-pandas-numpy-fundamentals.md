@@ -160,12 +160,12 @@ print(revs.describe())
   - `df.<method>(axis=0)` or `df.<method>(axis="index")` calculate along the **row** axis. <mark>default</mark>
   - `df.<method>(axis=1)` or `df.<method>(axis="column")` calculate along the **column** axis.
 
-    ~~~ python
-    medians = f500[["revenues", "profits"]].median(axis=0)
-    ~~~
+~~~ python
+medians = f500[["revenues", "profits"]].median(axis=0)
 # we could also use .median(axis="index")
 # or without axis=0 because it's default
-		~~~
+~~~
+
 - `s.value_counts()`: displays each unique non-null value from a series, with a count of the number of times that value is used.
 	- `s.value_counts(dropna=True)` exclude null values when making calculations.
 	- `s.value_counts(dropna=False)` includes also the null (normally, it doesn't)
@@ -224,20 +224,18 @@ import numpy as np
 - The same for **series** but don't forget that series is 1-D
 - **Import data** ([cf](https://www.dataquest.io/m/292/exploring-data-with-pandas/3/reading-csv-files-with-pandas))
 
-  ~~~ python
-  
-  ~~~
+~~~ python
 # we want to use the 1st column as the row labels
 f500 = pd.read_csv("f500.csv", index_col=0)
 # remove the index name (text in the first line, first column)
 f500.index.name = None
-​	~~~
+​~~~
 
 - Sort the rows of `f500` by columns `employees` (it **returns** another df but does not change the df itself)
 
-	~~~ python
-sorted_emp = f500.sort_values(by=["employees"], ascending=False)
-	~~~
+  ~~~ python
+  sorted_emp = f500.sort_values(by=["employees"], ascending=False)
+  ~~~
 
 - `s.str.contains("<str>")` : check if str is in s or not
 
@@ -246,10 +244,11 @@ sorted_emp = f500.sort_values(by=["employees"], ascending=False)
 - `s.str.startswith("<str>")`
 - `s.isnull()` or `s.notnull()` : check s contains NaN or null
 
-	~~~ python
-rev_change_null = f500[f500["revenue_change"].isnull()]
-print(rev_change_null[["company","country","sector"]])
-	~~~
+  ~~~ python
+  rev_change_null = f500[f500["revenue_change"].isnull()]
+  print(rev_change_null[["company","country","sector"]])
+  ~~~
+
 - <mark>Important</mark> about selecting
 
 	~~~ python
@@ -266,18 +265,19 @@ print(rev_change_null[["company","country","sector"]])
 	~~~
 - Using boolean operators
 
-	~~~ python
-combined = (f500_sel["revenues"] > 265000) & (f500_sel["country"] == "China")
-combined = over_265 & china
-final_cols = ["company", "revenues"]
-result = f500_sel[combined, final_cols]
-	~~~
+  ~~~ python
+  combined = (f500_sel["revenues"] > 265000) & (f500_sel["country"] == "China")
+  combined = over_265 & china
+  final_cols = ["company", "revenues"]
+  result = f500_sel[combined, final_cols]
+  ~~~
 
 	or just one line
 
-	~~~ python
-result = f500_sel.loc[(f500_sel["revenues"] > 265000) & (f500_sel["country"] == "China"), final_cols]
-	~~~
+  ~~~ python
+  result = f500_sel.loc[(f500_sel["revenues"] > 265000) & (f500_sel["country"] == "China"), final_cols]
+  ~~~
+
 - **Comparision operators**: `==`, `~(a==b)` (not equal)
 - **Panda index alignment**. If a dataframe `food` and a series `colors` have the same index (but diff order), they can be couple with
 	- `food["color"] = colors`
@@ -364,15 +364,16 @@ laptops.rename({"screen_size": "screen_size_inches"}, axis=1, inplace=True)
 - **Split from the right**: `s.str.rsplit()`
 - Example
 
-	~~~ python
-	screen_res = laptops["screen"].str.rsplit(n=1, expand=True)
-	# giving the columns string labels makes them easier to work with
-	screen_res.columns = ["A", "B"]
-	# for rows where the value of column "B" is null, fill in the
-	# value found in column "A" for that row
-	screen_res.loc[screen_res["B"].isnull(), "B"] = screen_res["A"]
-	print(screen_res.iloc[:10])
-	~~~
+~~~ python
+screen_res = laptops["screen"].str.rsplit(n=1, expand=True)
+# giving the columns string labels makes them easier to work with
+screen_res.columns = ["A", "B"]
+# for rows where the value of column "B" is null, fill in the
+# value found in column "A" for that row
+screen_res.loc[screen_res["B"].isnull(), "B"] = screen_res["A"]
+print(screen_res.iloc[:10])
+~~~
+
 - `s.map(<dictionary>)` to fix a list of "the same" values but diff typing. If there is no value in `s` which are in the key of <dictionary>, all will be mapped to `NaN`. Thus, <mark>include both correct or incorret values in dictionary</mark>
 
 	~~~ python
