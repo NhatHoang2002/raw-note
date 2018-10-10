@@ -4,7 +4,7 @@ categories: [ml, it, data]
 tags: [machine learning, data codecademy, data]
 maths: 1
 toc: 1
-date: 2018-09-27
+date: 2018-10-10
 ---
 
 This series starts from the beginning of learning Data Science and try [solving the Titanic problem](https://www.kaggle.com/c/titanic) on Kaggle.
@@ -29,6 +29,18 @@ This series starts from the beginning of learning Data Science and try [solving 
 - Installing [Anaconda](https://docs.anaconda.com/anaconda/install/linux) (to use pandas and other neccessary packages)
 - Add Anaconda to PATH: `export PATH=/home/thi/anaconda3/bin:$PATH`
 - If you have something strange, check this [note of python first]({{site.baseurl}}/python-note-1#install)
+
+## Getting start
+
+- [Loan prediction](https://github.com/dataquestio/loan-prediction) : an example of a <mark>finished project</mark>.
+- <mark>The first step in creating a project is to decide on a topic</mark>. You want the topic to be something you're interested in and motivated to explore. It's very obvious when people are making projects just to make them, rather than out of a genuine interest in the topic.
+  - Think about what sectors or angles you're really interested in, then find data sets relating to those sectors.
+  - Review several data sets, and find one that seems interesting enough to explore.
+- Some resources
+  - [Data.gov](https://www.data.gov/) - A directory of government data downloads
+  - [/r/datasets](https://reddit.com/r/datasets) - A subreddit that has hundreds of interesting data sets
+  - [Awesome datasets](https://github.com/caesar0301/awesome-public-datasets) - A list of data sets hosted on GitHub
+  - [rs.io](http://rs.io/100-interesting-data-sets-for-statistics/) - A great blog post with hundreds of interesting data sets
 
 ## Differences 
 
