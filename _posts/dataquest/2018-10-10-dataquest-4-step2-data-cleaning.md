@@ -131,4 +131,5 @@ This note is used for my notes about the [**Data Scientist** path](https://www.d
 
 {% include download.html content="[Download mission 136](/files/dataquest/mission-136.pdf)." %}
 
+- Investigating the correlations between SAT scores and demographics in US.
 - 
