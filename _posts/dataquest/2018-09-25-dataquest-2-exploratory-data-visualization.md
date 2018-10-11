@@ -444,4 +444,4 @@ plt.show()
 - Creating **interactive visualizations** using [bokeh](http://bokeh.pydata.org/en/latest/docs/gallery/iris.html)
 - Creating **interactive map** visualizations using [folium](http://python-visualization.github.io/folium/)
 
-{% include more.html content="[Go to Dataquest 4: Step 2 - Data Cleaning](/dataquest-2-exploratory-data-visualization)." %}
+{% include more.html content="[Go to Dataquest 4: Step 2 - Data Cleaning](/dataquest-4-step2-data-cleaning)." %}

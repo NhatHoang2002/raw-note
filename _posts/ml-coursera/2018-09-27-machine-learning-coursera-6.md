@@ -5,7 +5,7 @@ tags: [machine learning, ml coursera]
 math: 1
 toc: 1
 comment: 1
-date: 2018-10-09
+date: 2018-10-11
 ---
 
 {% assign img-url = '/images/posts/ML/coursera' %}
@@ -283,9 +283,50 @@ So how could you spend your time to improve the accuracy of this classifier?
 
 ### Error analysis
 
+**Recommended approach**
+
+- <mark>Start with simple algorithm that you can implement quickly</mark>. Implement it and test it on your cross-validation data
+- Plot learning curves to decide if more data, more features,... are likely to help.
+- Manually examine the errors on examples in the **cross validation set** and try to spot a trend where most of the errors were made.
+- It is very important to get error results as a single, numerical value. Otherwise it is difficult to assess your algorithm's performance.
+- Most of the time the simplest method is the most correct one.
+- <mark>So once again, take a quick and dirty way to implement the algorithms. From the result , we will then spend some time wisely go which the direction of complexity of the learning algorithm for particular set of problems.</mark>
 
 
 ## Handling skewed data
+
+### Error metrics for skewed classes:
+
+**Skewed classes**: a somewhat trickier problem to handle with error analysis.
+
+- This is cancer examples, where we have 1% error test. Suppose to be good learning algorithm?
+- But as it turns out, the cancer patients only 0.50%. If we set the function that ignore X, only set y = 0 all the time(set all patients don't have cancer), then automatically we have 0.5% error test. EVEN BETTER!(sarcastically)
+- If this the problem, then it is called Skewed classes. And become much harder problem.
+Skewed classes: The data that we have turns out not balance, it weight more to one class than the other
+- Which turns out ignore the data is more correct than incorporating data.
+- The solution? Even improving the accuracy of the algorithms, it still lack the prediction of real overall output
+- Better come up with different metrics
+
+![Precision / Recall]({{img-url}}/precision-recall.png){:.no-border .w-700}
+
+- **Precision** : the ratio of patients actually have cancer based on all cancer prediction (actual positive/predicted positive)
+- **Recall**: the ratio of correctly tell them if they are indeed have a cancer. <mark>The higher the recall, the better our learning algorithm.</mark>
+- Using these, in skew classes, there's no possible to cheat ( 0 or 1 all the time). For example if we set y = 0(all patients don't have cancer) all the time, then we would have recall = 0. That is we can't predict at all whether or not the patients have cancer.
+- With Precision/Recall , we can tell how's the algorithm is doing well even if we have skew classes. Good error metrics for evaluation classifier for skewed classes rather than just classification error/accuracy.
+
+
+### Trading off precision and recall
+
+We don't want to take $h_{\Theta}\ge 0.5$ as before in some cases because of there may be a low recall (i.e. we predict someone that doesn't have cancer bue they do). Instead of $0.5$, we need to choose another **threshold**, but how many?
+
+<div class="row d-flex" markdown="1">
+<div class="col s12 l6" markdown="1">
+![Trade-off precision and recall]({{img-url}}/precision-recall-trade-off.png){:.no-border .w-500}
+</div>
+<div class="col s12 l6" markdown="1">
+![F score]({{img-url}}/f-score.png){:.no-border .w-500}
+</div>
+</div>
 
 ### Error Metrics for skewed classes
 

@@ -8,13 +8,13 @@ date: 2018-10-08
 
 This note is for chapter 6 in my thesis. I will use NXFEM coupling with LSM to simulate a biofilm model. 
 
-## Models
-
 ## Notes
 
 - **Chap6** in reMarkable
 - Handwriting notes (**main**)
 - This site.
+
+## Models
 
 ### Very simple biofilm model
 
