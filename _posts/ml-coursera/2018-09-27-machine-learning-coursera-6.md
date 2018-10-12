@@ -328,9 +328,7 @@ We don't want to take $h_{\Theta}\ge 0.5$ as before in some cases because of the
 </div>
 </div>
 
-### Error Metrics for skewed classes
-
-### Training off precision and recall
+- <mark>The intermediate value between 0 and 1 still give a reasonable value.</mark>
 
 ## Using large data sets
 
