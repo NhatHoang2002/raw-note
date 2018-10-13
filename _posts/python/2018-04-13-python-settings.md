@@ -6,6 +6,7 @@ maths: 1
 toc: 1
 date: 2018-09-25
 comment: 1
+snippet: 1
 ---
 
 This post is only for installing and setting up python on computer. All documentation resources are also presented here.

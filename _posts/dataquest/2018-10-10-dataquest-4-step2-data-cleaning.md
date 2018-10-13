@@ -131,5 +131,4 @@ This note is used for my notes about the [**Data Scientist** path](https://www.d
 
 {% include download.html content="[Download mission 136](/files/dataquest/mission-136.pdf)." %}
 
-- Investigating the correlations between SAT scores and demographics in US.
-- 
+{% include more.html content="[See Jupyter notebook walkthrough](https://github.com/dinhanhthi/ML-self-teaching/blob/master/dataquest-data-scientist/step_2/data_cleaning/m136_data_cleaning_walkthrough.ipynb)." %}
