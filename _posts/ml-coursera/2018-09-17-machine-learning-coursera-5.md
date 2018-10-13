@@ -1,5 +1,5 @@
 ---
-title: ML Coursera 5 - Week 5
+title: "ML Coursera 5 - Week 5: Neural Networks - Learning"
 categories: [ml, it]
 tags: [machine learning, ml coursera]
 math: 1

@@ -1,5 +1,5 @@
 ---
-title: ML Coursera 6 - Week 6
+title: "ML Coursera 6 - Week 6: Advice for Applying Machine Learning"
 categories: [ml, it]
 tags: [machine learning, ml coursera]
 math: 1
@@ -307,7 +307,7 @@ Skewed classes: The data that we have turns out not balance, it weight more to o
 - The solution? Even improving the accuracy of the algorithms, it still lack the prediction of real overall output
 - Better come up with different metrics
 
-![Precision / Recall]({{img-url}}/precision-recall.png){:.no-border .w-700}
+	![Precision / Recall]({{img-url}}/precision-recall.png){:.no-border .w-700}
 
 - **Precision** : the ratio of patients actually have cancer based on all cancer prediction (actual positive/predicted positive)
 - **Recall**: the ratio of correctly tell them if they are indeed have a cancer. <mark>The higher the recall, the better our learning algorithm.</mark>
@@ -329,9 +329,29 @@ We don't want to take $h_{\Theta}\ge 0.5$ as before in some cases because of the
 </div>
 
 - <mark>The intermediate value between 0 and 1 still give a reasonable value.</mark>
+- If we increase threshold, precision increases but recall decreases.
+- Threshold offers a way to control trade-off between precision and recall
+- Fscore gives a <mark>single real number evaluation metric</mark> (if we use both precision and recall, it's harder to choose because there are 2 numbers for evaluating)
+	- If you're trying to automatically set the threshold, one way is to try a range of threshold values and evaluate them on your cross validation set 
+	- Then pick the threshold which gives the best fscore.
+
 
 ## Using large data sets
 
 ### Data for machine learning
+
+How much data quotient to train on?
+
+- Take an algorithm, give it more data, should beat a "better" one with less data. Shows that
+	- Algorithm choice is pretty similar
+	- More data helps????
+- When is this true and when is it not?
+	- If we can correctly assume that features x have enough information to predict y accurately, then more data will probably help
+	- Another way to think about this is we want our algorithm to have low bias and low variance
+		- Low bias --> use complex algorithm
+		- Low variance --> use large training set
+
+{% include more.html content="[Go to Week 7](/machine-learning-coursera-7)." %}
+
 
 

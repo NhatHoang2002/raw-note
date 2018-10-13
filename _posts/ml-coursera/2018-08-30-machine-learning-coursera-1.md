@@ -1,10 +1,10 @@
 ---
-title: ML Coursera 1 - Week 1
+title: "ML Coursera 1 - Week 1: Introduction"
 categories: [ml, it]
 tags: [machine learning, ml coursera]
 math: 1
 toc: 1
-date: 2018-08-31
+date: 2018-10-12
 comment: 1
 ---
 
@@ -16,6 +16,10 @@ This note was first taken when I learnt the [machine learning course on Coursera
 {% include toc.html %}
 
 {% include more.html content="[Go to Week 2](/machine-learning-coursera-2)." %}
+
+## Other documentation
+
+<update /> This is a very detailed (and from the course) [note](http://www.holehouse.org/mlclass/). We can check it if this note is not enough.
 
 ## Preparing for the course
 

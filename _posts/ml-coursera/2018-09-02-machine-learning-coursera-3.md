@@ -1,5 +1,5 @@
 ---
-title: ML Coursera 3 - Week 3
+title: "ML Coursera 3 - Week 3: Logistic Regression"
 categories: [ml, it]
 tags: [machine learning, ml coursera]
 math: 1
