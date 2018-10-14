@@ -1,7 +1,7 @@
 ---
-title: Links and locations
-categories: [maths,phd]
-tags: [phd,stackexchange,link,analysis,numerical analysis]
+title: "PhD: Links and locations"
+categories: [phd]
+tags: [phd,stackexchange,link,analysis,numerical analysis,math]
 toc: 1
 maths: 1
 date: 2018-06-24

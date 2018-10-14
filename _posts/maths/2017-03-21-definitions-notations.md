@@ -1,8 +1,8 @@
 ---
 title: Quick definitions + notations
-categories:
-  - maths
+categories: math
 maths: 1
+tags: [phd, math]
 toc: 1
 ---
 

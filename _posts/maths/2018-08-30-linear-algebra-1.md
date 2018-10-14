@@ -1,7 +1,7 @@
 ---
 title: Linear Algebra 1
 categories: [math]
-tags: [machine learning, ml coursera, linear algebra]
+tags: [machine learning, ml coursera, linear algebra,math]
 math: 1
 toc: 1
 date: 2018-08-30

@@ -1,7 +1,7 @@
 ---
 title: Fluid dynamics
-categories:
-  - maths
+categories: math
+tags: [math,phd,numerical analysis]
 maths: 1
 ---
 

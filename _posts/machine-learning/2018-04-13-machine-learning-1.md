@@ -19,7 +19,8 @@ This is a general note series for [Machine Learning](/categories#ml).
 - [Machine Learning Crash course](https://developers.google.com/machine-learning/crash-course/ml-intro) by Google (no certificate).
 - [Machine Learning](https://www.coursera.org/learn/machine-learning) by **Andrew Ng** on Coursera ([my notes for this course](/tags#ml-coursera))
 - [Machine Learning A-Z™: Hands-On Python & R In Data Science](https://www.udemy.com/machinelearning/) from A-Z on **Udemy** ([my note for this course](/tags#ml-udemy))
-- <new />[Statistical Learning](https://lagunita.stanford.edu/courses/HumanitiesSciences/StatLearning/Winter2016/about) course by **Stanford University** (free, certificate, in R). One can find the python codes [here](https://github.com/tdpetrou/Machine-Learning-Books-With-Python/tree/master/Introduction%20to%20Statistical%20Learning) or [here](https://github.com/JWarmenhoven/ISLR-python). 
+- [Statistical Learning](https://lagunita.stanford.edu/courses/HumanitiesSciences/StatLearning/Winter2016/about) course by **Stanford University** (free, certificate, in R). One can find the python codes [here](https://github.com/tdpetrou/Machine-Learning-Books-With-Python/tree/master/Introduction%20to%20Statistical%20Learning) or [here](https://github.com/JWarmenhoven/ISLR-python). 
+
 
 ### Blogs & Websites
 

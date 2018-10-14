@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Ghost penalty
-categories: maths
-tags: [phd,numerical analysis]
+categories: phd
+tags: [phd,numerical analysis,math]
 maths: 1
 toc: 1
 date: 2018-06-22

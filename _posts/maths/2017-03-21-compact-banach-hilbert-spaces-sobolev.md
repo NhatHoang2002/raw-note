@@ -1,9 +1,8 @@
 ---
 title: Compact, Banach, Hibert, Sobolev spaces
-categories:
-  - maths
+categories: math
 toc: 1
-tags: [analysis]
+tags: [analysis, math]
 maths: 1
 ---
 

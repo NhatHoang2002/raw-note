@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Semilinear, nonlinear problem
-categories: maths
-tags: [analysis,numerical analysis]
+categories: math
+tags: [analysis,numerical analysis,phd,math]
 maths: 1
 toc: 1
 ---

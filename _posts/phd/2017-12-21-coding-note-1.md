@@ -1,6 +1,6 @@
 ---
-title: Coding note 1
-categories: [phd,maths,it]
+title: "PhD: Coding note 1"
+categories: [phd]
 tags: [phd,matlab,numerical analysis]
 maths: 1
 toc: 1

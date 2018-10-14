@@ -1,6 +1,6 @@
 ---
-title: Biofilms model with NXFEM
-categories: [maths,phd]
+title: "PhD: Biofilms model with NXFEM"
+categories: [phd]
 tags: [phd,numerical analysis,biofilm]
 maths: 1
 date: 2018-10-08

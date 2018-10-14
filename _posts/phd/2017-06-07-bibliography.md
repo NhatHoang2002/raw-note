@@ -1,6 +1,6 @@
 ---
-title: Bibliography (Tài liệu tham khảo)
-categories: [phd,maths]
+title: "PhD: Bibliography"
+categories: [phd]
 tags: [phd,numerical analysis,analysis]
 maths: 1
 ---
