@@ -3,7 +3,7 @@ title: "PhD: Biofilms model with NXFEM"
 categories: [phd]
 tags: [phd,numerical analysis,biofilm]
 maths: 1
-date: 2018-10-08
+date: 2018-10-15
 ---
 
 This note is for chapter 6 in my thesis. I will use NXFEM coupling with LSM to simulate a biofilm model. 
@@ -74,6 +74,9 @@ In **chopp duddu et al 2006 combine nxfem levelset.pdf**, Chopp listed 4 test ca
 
 **Chopp06combine** --[49]-> **Chopp07xfem** --[4]-> **Chopp06simulating** (splitting) and --[6]- **kalpperFinger** and --[5]- **dependQuorum** (parameters)
 
+### Others
+
+- _frederic MASTER THESIS 2010  biofilms.pdf_ page 21, 85.
 
 ## Affected components
 

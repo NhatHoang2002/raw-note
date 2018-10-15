@@ -176,7 +176,7 @@ sudo usermod -a -G groupName userName
 
 41. **Sync files with mega right on terminal**
 
-	- Install **megatools: `sudo apt-get install megatools`
+	- Install **megatools**: `sudo apt-get install megatools`
 	- Using megatools, cf the [main website](https://megatools.megous.com).
 	- Create a condig file which stores your login information (be careful, everyone can see your pass)
 
@@ -205,32 +205,31 @@ sudo usermod -a -G groupName userName
 
 42. Connect `ssh` to a virtual machine (the same network)
 
-     - Install openssh for both client and server machine
+	- Install openssh for both client and server machine
 
-     	~~~ bash
-     sudo apt-get install openssh-client
-     sudo apt-get install openssh-server
-     	~~~
+	~~~ bash
+	sudo apt-get install openssh-client
+	sudo apt-get install openssh-server
+	~~~
 
-     - On server machine, check ssh is running or not
+	- On server machine, check ssh is running or not
 
-       ~~~ bash
-       ps -A | grep sshd
-       ~~~
-# return [number] ?  00:00:00 sshd then it works
-		~~~
+	~~~ bash
+	ps -A | grep sshd
+	# return [number] ?  00:00:00 sshd then it works
+	~~~
 
 43. Terminal multi windows: `sudo apt-get install terminator`
 44. Save a directory a `$PATH` of local profile.
 
-    ~~~ bash
-    sudo gedit ~/.profile
-    ~~~
-# copy and paste following line (should change the path)
-export PATH=/home/thi/anaconda3/bin:$PATH
-# save and close .profile and then apply following line to get instant update
-source ~/.profile
-​	~~~
+	~~~ bash
+	sudo gedit ~/.profile
+	# copy and paste following line (should change the path)
+	export PATH=/home/thi/anaconda3/bin:$PATH
+	# save and close .profile and then apply following line to get instant update
+	source ~/.profile
+	~~~
+
 45. Mp3 tag editor: `sudo apt install exfalso` (**Ex Falso**)
 46. Resize multiple photos (keep the ratio/scale) ([more options](https://imagemagick.org/Usage/resize/)): 
 
@@ -254,7 +253,30 @@ source ~/.profile
 	mogrify -resize 1000x\> *
 	~~~
 
+47. Shorten directory in terminal
 
+- Temporarily, just enter `PS1='\u:\W\$ '` en press enter.
+- Permanently, open `sudo gedit ~/.bashrc` and find
+
+	~~~ bash
+if [ "$color_prompt" = yes ]; then
+		PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+		PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+	~~~
+
+	Remove `@\h` and replace `\w` by `\W` so that it becomes,
+
+	~~~ bash
+if [ "$color_prompt" = yes ]; then
+		PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
+else
+		PS1='${debian_chroot:+($debian_chroot)}\u:\W\$ '
+fi
+	~~~
+
+	Save, exit, close terminal and start another to see the result.
 
 
 
