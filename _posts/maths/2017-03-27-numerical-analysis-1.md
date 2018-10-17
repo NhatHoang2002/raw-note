@@ -159,7 +159,8 @@ Vì ở trên có đại lượng $(c\cdot\nabla u_h, c\cdot\nabla v_h)$, which 
 
 ###  Fully discrete method
 
-**Thomee2006** uses **fully-discrete scheme**. Đây là một disadvantage.
+- **Thomee2006** uses **fully-discrete scheme**. Đây là một disadvantage.
+- Chapter 7 in book of Knabner.
 
 ### Immersed interface method (IIM)
 

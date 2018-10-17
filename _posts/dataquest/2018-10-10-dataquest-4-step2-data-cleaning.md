@@ -131,4 +131,49 @@ This note is used for my notes about the [**Data Scientist** path](https://www.d
 
 {% include download.html content="[Download mission 136](/files/dataquest/mission-136.pdf)." %}
 
-{% include more.html content="[See Jupyter notebook walkthrough](https://github.com/dinhanhthi/ML-self-teaching/blob/master/dataquest-data-scientist/step_2/data_cleaning/m136_data_cleaning_walkthrough.ipynb)." %}
+{% include more.html content="[See Jupyter notebook walkthrough](https://github.com/dinhanhthi/ML-self-teaching/blob/master/dataquest-data-scientist/step_2/data_cleaning/)." %}
+
+- In python notebook, don't use `print()` to display df, just call the name of this df, it will automatically appears.
+- To combine dataframes together, we need a unique column to be a ID for all df (`DBN` in this case)
+- Combine 2 df, use `pd.concat`
+- Copy a column to another one.
+- Use `s.apply()` to apply a function to all coponents inside a series/pf
+- Convert to numeric `pd.to_numeric`
+
+## Mission 137 - Data Cleaning <mark>Walkthrough</mark>
+
+{% include download.html content="[Download mission 137](/files/dataquest/mission-137.pdf)." %}
+
+{% include more.html content="[See Jupyter notebook walkthrough](https://github.com/dinhanhthi/ML-self-teaching/blob/master/dataquest-data-scientist/step_2/data_cleaning/)." %}
+
+- Split a df into unique groups base all a column: `df.groupby(<column>)`
+- Use the [`df.agg()`](http://pandas.pydata.org/pandas-docs/stable/groupby.html#aggregation) method on the resulting `df.groupby` object, along with the `np.mean()` function as an argument, to calculate the average of each group. The result will take the column as indexes
+- Use [`df.reset_index()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.reset_index.html) to reset the column out of index.
+- Because we are investigating the data in the most recent time, we thus only consider the data in the recent years!
+- [`pd.merge()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.merge.html) to merge dataframes: inner, outer, left and right type of merge: depends on the importance of the data, we will use an appropriate merge method. For example, if we want to keep the data on the left, we use left merge method because if we use the right one, there are many data will be deleted.
+- We can fill in missing data in pandas using the [`df.fillna()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.fillna.html) method. **Need to assign back to the df**.
+- Compute the mean of every column using [`df.mean()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.mean.html). If we pass the results of the df.mean() method into the df.fillna() method, pandas will fill in the missing values in each column with the mean of that column. 
+
+
+## Mission 138 - Data Cleaning Walkthrough: Analyzing and Visualizing the Data
+
+{% include download.html content="[Download mission 138](/files/dataquest/mission-137.pdf)." %}
+
+{% include more.html content="[See Jupyter notebook walkthrough](https://github.com/dinhanhthi/ML-self-teaching/blob/master/dataquest-data-scientist/step_2/data_cleaning/)." %}
+
+- **[R value](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)**: Correlations tell us <mark>how closely related two columns are</mark>. We'll be using the r value, also called Pearson's correlation coefficient, which measures how closely two sequences of numbers are correlated. Both are increasing or decreasing or different at the same time!
+- In general, <mark>r values above .25 or below -.25 are enough to qualify a correlation as interesting</mark>.
+- We can use the pandas [`df.corr()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.corr.html) method to find correlations between columns in a dataframe. The method returns a new dataframe where the index for each column and row is the name of a column in the original data set.
+- Apply plots for a df: `df.plot.scatter(x="A", y="B")`
+- Using **multi conditionals** for columns in df, we apply each condition separately **instead of using** `df[df["a"]=="x" and df["b"]=="y"]`
+- We learned how to use the [**Basemap package**](http://matplotlib.org/basemap/) to create maps in the Visualizing Geographic Data mission. The Basemap package enables us to create high-quality maps, plot points over them, and then draw coastlines and other features.
+- Convert the pandas series containing the latitude and longitude coordinates to lists using the [`s.tolist()`](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.tolist.html) method.
+- Basemap also supports **[scatter plot](http://matplotlib.org/basemap/api/basemap_api.html#mpl_toolkits.basemap.Basemap.scatter)**
+
+## Mission 139 - Guided Project: Analyzing NYC High School Data
+
+{% include more.html content="[See Jupyter notebook walkthrough](https://github.com/dinhanhthi/ML-self-teaching/blob/master/dataquest-data-scientist/step_2/data_cleaning/)." %}
+
+
+
+
