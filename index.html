@@ -69,7 +69,7 @@ css: ["index.css"]
     <h2 class="h2-title">Snippets</h2>
     <div class="thi-columns">
       <ul class="tag-post">
-      {% for post in paginator.posts %}
+      {% for post in site.posts %}
         {% if post.snippet %}
         <a class="post-title" href="{{ site.baseurl }}{{ post.url }}">
           <li>
