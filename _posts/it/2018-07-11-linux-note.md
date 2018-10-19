@@ -278,6 +278,14 @@ fi
 
 	Save, exit, close terminal and start another to see the result.
 
+48. Check CPU & RAM info
+
+	~~~ bash
+# cpu
+cat /proc/cpuinfo
+# ram
+cat /proc/meminfo
+	~~~
 
 
 
