@@ -24,6 +24,7 @@ My collection of good websites.
 - [Scientific American - Roots of Unity](https://blogs.scientificamerican.com/roots-of-unity/)
 - [Thoughtco - Maths](https://www.thoughtco.com/math-4133545): a member of dotdash
 - [Pour la Science : maths](https://www.pourlascience.fr/maths-info/) (french)
+- [Better Explained](http://betterexplained.com): intuitive math, very very good!
 
 ## IT
 
@@ -68,6 +69,16 @@ Let our Coding Score rate your coding skills!
 ## Tools
 
 - [LanguageTools](https://www.languagetool.org/): spell checking
+- [Mathcha.io](https://mathcha.io): mathematical notebooks, drawing tools,... (like latex but interactive)
+- [Docusaurus](https://docusaurus.io/): Easy to Maintain Open Source Documentation Websites
+- [Tables Generator](http://www.tablesgenerator.com): latex, markdown, html table generator.
+- [short.cm](short.cm): Use custom domain as a short url engine.
+- [Facebook url/object debugger](https://developers.facebook.com/tools/debug/og/object/): check if a url have enough fields or not.
+- [InstaCalc](https://instacalc.com/): integrate calculators inside a web page (like examples on betterexplained)
+- [GoConqr](https://www.goconqr.com/en/) : create quizz, interactive learning resources online.
+- [Cloudflare](https://dash.cloudflare.com/login) : free https for custom domain.
+- Free vector pic/photos stocks: [freepik](https://www.freepik.com/), [pixabay](https://pixabay.com/), [unsplash](https://unsplash.com/), [pexels](https://www.pexels.com/).
+- [Electron](https://electronjs.org/): build cross-platform applications.
 
 ## Others
 

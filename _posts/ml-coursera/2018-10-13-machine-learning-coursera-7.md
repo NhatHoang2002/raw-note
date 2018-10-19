@@ -13,9 +13,10 @@ date: 2018-10-17
 This note was first taken when I learnt the [machine learning course on Coursera](https://www.coursera.org/learn/machine-learning/).<br />
 **Lectures in this week**: [Lecture 12](/files/ML-coursera/Lecture12.pdf).
 
-<div class="p-mark" markdown="1">
-From this note, I see that this note is really detailed so that I can use it for the future reference. I have set the backup for this [week7 here](/files/ML-coursera/notes/SVM.pdf).
-</div>
+<p markdown="1" class="thi-tip">
+<i class="material-icons mat-icon">error</i>
+From this note, I see that [this note](http://www.holehouse.org/mlclass) is really detailed so that I can use it for the future reference. I have set the backup for this [week7 here](/files/ML-coursera/notes/week7-svm.pdf).
+</p>
 
 <div class="see-again">
 <i class="material-icons">settings_backup_restore</i>
