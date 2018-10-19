@@ -15,7 +15,7 @@ This note was first taken when I learnt the [machine learning course on Coursera
 
 <p markdown="1" class="thi-tip">
 <i class="material-icons mat-icon">error</i>
-From this note, I see that [this note](http://www.holehouse.org/mlclass) is really detailed so that I can use it for the future reference. I have set the backup for this [week7 here](/files/ML-coursera/notes/week7-svm.pdf).
+From this note, I see that [this note](/files/ML-coursera/note/) of [Alex Holehouse](http://holehouse.org/) is really detailed so that I can use it for the future reference. I don't have enough time for noting as previous note.
 </p>
 
 <div class="see-again">

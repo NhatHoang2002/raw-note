@@ -19,7 +19,7 @@ This note was first taken when I learnt the [machine learning course on Coursera
 
 ## Other documentation
 
-<update /> This is a very detailed (and from the course) [note](http://www.holehouse.org/mlclass/). We can check it if this note is not enough.
+<update /> This is a very detailed (and from the course) [note](/files/ML-coursera/note/) of [Alex Holehouse](http://holehouse.org/). We can check it if this note is not enough. Notice that, from the week 7, I decides to use much on this note instead of writing my self because I don't have enough time for doing this.
 
 ## Preparing for the course
 
