@@ -5,7 +5,7 @@ categories:
 toc: 1
 tags: ["jekyll","liquid"]
 maths: 1
-date: 2017-06-06
+date: 2018-10-20
 ---
 
 {% include toc.html %}
@@ -137,3 +137,10 @@ In your repository, create ONLY ONE file index.html with the content
 </html>
 ~~~
 
+## Local jekyll site
+
+Only regenerate the changed file (more quickly): 
+
+~~~ bash
+bundle exec jekyll serve -I true
+~~~

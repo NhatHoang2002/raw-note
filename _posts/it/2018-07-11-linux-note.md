@@ -287,5 +287,7 @@ cat /proc/cpuinfo
 cat /proc/meminfo
 	~~~
 
+49. Check the current path: `pwd`
+
 
 

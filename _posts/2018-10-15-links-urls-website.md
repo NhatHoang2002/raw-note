@@ -4,6 +4,7 @@ categories: [other]
 tags: [education, technology]
 toc: 1
 snippet: 1
+date: 2018-10-20
 ---
 
 My collection of good websites.
@@ -79,6 +80,83 @@ Let our Coding Score rate your coding skills!
 - [Cloudflare](https://dash.cloudflare.com/login) : free https for custom domain.
 - Free vector pic/photos stocks: [freepik](https://www.freepik.com/), [pixabay](https://pixabay.com/), [unsplash](https://unsplash.com/), [pexels](https://www.pexels.com/).
 - [Electron](https://electronjs.org/): build cross-platform applications.
+- [Gatsby](https://www.gatsbyjs.org/): Build apps and websites with [React](https://reactjs.org).
+- [JAMstack](https://jamstack.org/) (Javascript API & Markup): Modern web development architecture based on client-side JavaScript, reusable APIs, and prebuilt Markup.
+- [netlify](https://www.netlify.com/): Build, deploy, and manage modern web projects
+
+## Youtube channel
+
+### Maths
+
+- Eddie Woo: [http://bit.ly/2QPdcqb](http://bit.ly/2QPdcqb)
+- Khan Academy: [http://bit.ly/2NIw3kO](http://bit.ly/2NIw3kO)
+- La statistique expliquée à mon chat (french): [http://bit.ly/2NKOSEg](http://bit.ly/2NKOSEg)
+- Math center: [http://bit.ly/2QORGBU](http://bit.ly/2QORGBU)
+- Matthew Weathers: [http://bit.ly/2yBAoRm](http://bit.ly/2yBAoRm)
+- Numberphile: [http://bit.ly/2NH0LL4](http://bit.ly/2NH0LL4)
+- Numberphile2: [http://bit.ly/2OVlfED](http://bit.ly/2OVlfED)
+- PBS Infinite Series: [http://bit.ly/2ygIyzm](http://bit.ly/2ygIyzm)
+- TED-Ed: [http://bit.ly/2OpmufN](http://bit.ly/2OpmufN)
+- tecmath: [http://bit.ly/2NDeiDr](http://bit.ly/2NDeiDr)
+- The story of maths: [http://bit.ly/2OqLtPW](http://bit.ly/2OqLtPW)
+
+### Science
+
+- 1 jour, 1 question (french): [http://bit.ly/2ygGirS](http://bit.ly/2ygGirS)
+- 3Blue1Brown: [http://bit.ly/2EheXva](http://bit.ly/2EheXva)
+- Applied Science: [http://bit.ly/2NFhS04](http://bit.ly/2NFhS04)
+- AsapSCIENCE: [http://bit.ly/2PsKP0F](http://bit.ly/2PsKP0F)
+- C'est pas sorcier (french): [http://bit.ly/2Opvjqa](http://bit.ly/2Opvjqa)
+- CGP Grey: [http://bit.ly/2NGCFjC](http://bit.ly/2NGCFjC)
+- CrashCouse: [http://bit.ly/2IU0SCh](http://bit.ly/2IU0SCh)
+- Domain of Science: [http://bit.ly/2QJRsw2](http://bit.ly/2QJRsw2)
+- HowStuffWorks: [http://bit.ly/2OplRCX](http://bit.ly/2OplRCX)
+- Kurzgesagt – In a Nutshell: [http://bit.ly/2NGpsaK](http://bit.ly/2NGpsaK)
+- MinuteEarth: [http://bit.ly/2IV5tUJ](http://bit.ly/2IV5tUJ)
+- minutephysics: [http://bit.ly/2A9aDKh](http://bit.ly/2A9aDKh)
+- Monster Box: [http://bit.ly/2RN3eXN](http://bit.ly/2RN3eXN)
+- PBS Space Time: [http://bit.ly/2PsSBYy](http://bit.ly/2PsSBYy)
+- TED-Ed: [http://bit.ly/2OpmufN](http://bit.ly/2OpmufN)
+- Tu mourras moins bête - ARTE (french): [http://bit.ly/2EmYWnh](http://bit.ly/2EmYWnh)
+- It's OK to be smart: [http://bit.ly/2yFFBrc](http://bit.ly/2yFFBrc)
+- NativLang (language): [http://bit.ly/2EiOZHB](http://bit.ly/2EiOZHB)
+- The infographics show: [http://bit.ly/2A9z0HO](http://bit.ly/2A9z0HO)
+- Nucleus Medical Media: [http://bit.ly/2NELquH](http://bit.ly/2NELquH)
+
+### Information technology
+
+- Artificial Intelligence - All in One: [http://bit.ly/2yDjou9](http://bit.ly/2yDjou9)
+- CatTech: [http://bit.ly/2RNrQ2H](http://bit.ly/2RNrQ2H)
+- Corey Schafer (Python): [http://bit.ly/2A9bSZI](http://bit.ly/2A9bSZI)
+- CS Dojo: [http://bit.ly/2On6J9f](http://bit.ly/2On6J9f)
+- CS50: [http://bit.ly/2OZNSAy](http://bit.ly/2OZNSAy)
+- Data School: [http://bit.ly/2CGt6QI](http://bit.ly/2CGt6QI)
+- Derek Banas: [http://bit.ly/2CemkRa](http://bit.ly/2CemkRa)
+- Google Developers: [http://bit.ly/2OZXoDG](http://bit.ly/2OZXoDG)
+- MIT: [http://bit.ly/2CHtsH1](http://bit.ly/2CHtsH1)
+- Simplilearn: [http://bit.ly/2yfgzju](http://bit.ly/2yfgzju)
+- Tech Insider: [http://bit.ly/2ROiK5B](http://bit.ly/2ROiK5B)
+- The Coding Train: [http://bit.ly/2ITNs9u](http://bit.ly/2ITNs9u)
+- MIT OpenCourseWare: [http://bit.ly/2ITAAQz](http://bit.ly/2ITAAQz)
+
+### Others
+
+- 5-Minute Crafts: [http://bit.ly/2OqflvG](http://bit.ly/2OqflvG)
+- BRIGHT SIDE: [http://bit.ly/2NG2KQ6](http://bit.ly/2NG2KQ6)
+- eHow: [http://bit.ly/2pTtUcy](http://bit.ly/2pTtUcy)
+- HowCast: [http://bit.ly/2RPoBrj](http://bit.ly/2RPoBrj)
+- Life hacker: [http://bit.ly/2pU6WCg](http://bit.ly/2pU6WCg)
+- OpenLearn from The Open University: [http://bit.ly/2IWX1Vc](http://bit.ly/2IWX1Vc)
+- PBS Digital Studios: [http://bit.ly/2IUnkeK](http://bit.ly/2IUnkeK)
+- TED: [http://bit.ly/2yBAXdW](http://bit.ly/2yBAXdW)
+- The School of life: [http://bit.ly/2Ei1fI8](http://bit.ly/2Ei1fI8)
+- Tốp 5 Lạ Kỳ: [http://bit.ly/2CGbAfH](http://bit.ly/2CGbAfH)
+- Vsauce: [http://bit.ly/2NGqdAC](http://bit.ly/2NGqdAC)
+- KidsHealth.org (for kids' parent): [http://bit.ly/2QP701t](http://bit.ly/2QP701t)
+- Kids Learning Tube: [http://bit.ly/2QP7tRh](http://bit.ly/2QP7tRh)
+- Kho sách nói: [http://bit.ly/2A9mWGz](http://bit.ly/2A9mWGz)
+
+
 
 ## Others
 

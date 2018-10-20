@@ -5,7 +5,7 @@ tags: [machine learning, ml coursera]
 math: 1
 toc: 1
 comment: 1
-date: 2018-10-17
+date: 2018-10-20
 ---
 
 {% assign img-url = '/images/posts/ML/coursera' %}
@@ -13,7 +13,7 @@ date: 2018-10-17
 This note was first taken when I learnt the [machine learning course on Coursera](https://www.coursera.org/learn/machine-learning/).<br />
 **Lectures in this week**: [Lecture 12](/files/ML-coursera/Lecture12.pdf).
 
-<p markdown="1" class="thi-tip">
+<p markdown="1" class="thi-warning">
 <i class="material-icons mat-icon">error</i>
 From this note, I see that [this note](/files/ML-coursera/note/) of [Alex Holehouse](http://holehouse.org/) is really detailed so that I can use it for the future reference. I don't have enough time for noting as previous note.
 </p>
@@ -108,7 +108,7 @@ From this note, I see that [this note](/files/ML-coursera/note/) of [Alex Holeho
   <div class="p-mark">
   $$
   \begin{align}
-  \text{similarity} = k(x,l^{(i)}) &= \text{exp}\left( -\dfrac{\Vert x-l^{(i)}\Vert^2}{2\sigma^2} \right) \\
+  \text{similarity} = k(x,l^{(i)}) &= \exp\left( -\dfrac{\Vert x-l^{(i)}\Vert^2}{2\sigma^2} \right) \\
   f_i &:=  \text{similarity}(x,l^{(i)}).
   \end{align}
   $$
@@ -166,5 +166,166 @@ From this note, I see that [this note](/files/ML-coursera/note/) of [Alex Holeho
 
 ### Using an SVM
 
+- Don't write yourown codes to linearize the SVM, use already-writen library such as **liblinear**, **[libsvm](https://www.csie.ntu.edu.tw/~cjlin/libsvm/)**, ...
+  - Choice of $C$
+  - Choice of kernel (similarly functions)
+    - No kernel ("linear kernel", use $X\Theta$)
+    - Gaussian kernel (above): need to choose $\sigma^2$
+- <mark>Do perform feature scaling before using Gaussian kernel</mark>
+- Not all similarity functions you develop are valid kernels $\Rightarrow$ <mark>Must satisfy **Merecer's Theorem**</mark> to make sure SVM packages' optimizations run correctly, and do not diverge.
+- **Polynomial kernel**: 
+  - use when $x$ and $l$ are both strictly non-negative
+  - People not use this much.
+  - parameters: $const$ and $degree$
+
+  $$
+  k(x,l) = (X^Tl + const)^{degree}
+  $$
+
+- Other kernels: string kernel (input data using texts, string,...), chi-square kernel, histogram intersection kernel,...
+- <mark>Remember: choose whatever kernel performs best on cross-validation data</mark>
+
+### Mul(Dclass*classifica(on
+
+- Many packages have built in multi-class classification packages
+- Otherwise use one-vs all method
+- Not a big issue
+
+### Logistic regression vs. SVM
+
+- If n (features) is large vs. m (training set)
+  - Feature vector dimension is 10 000
+  - Training set is 10 - 1000
+  - Then use **logistic regression** or **SVM with a linear kernel**
+- If n is small and m is intermediate
+  - n = 1 - 1000
+  - m = 10 - 10 000
+  - **Gaussian kernel** is good
+- If n is small and m is large
+  - n = 1 - 1000
+  - m = 50 000+
+  - SVM will be slow to run with Gaussian kernel
+  - In that case
+    - Manually createMul(Dclass*classifica(on or add more features
+    - Use **logistic Mul(Dclass*classifica(onregression of SVM with a linear kernel**
+Mul(Dclass*classifica(on
+- Logistic regressionMul(Dclass*classifica(on and SVM with a linear kernel are pretty similar (performance, works)
+- SVM has a convex optimization problem - so you get a 
+- **Neural network** likely to work well for most of these settings, but may be **slower to train**.
+
 ## Programming Assignment
 
+### SVM
+
+- A large $C$ parameter tells the SVM to try to classify all the examples correctly. $C$ plays a role
+similar to $\frac{1}{\lambda}$ , where $\lambda$ is the regularization parameter that we were using
+previously for logistic regression.
+
+  <div class="see-again">
+  <i class="material-icons">settings_backup_restore</i>
+  <span markdown="1">
+  See again [Regularized logistic regression](/machine-learning-coursera-3#regularized-logistic-regression).
+  </span>
+  </div>
+
+  <div class="row d-flex" markdown="1">
+  <div class="col s12 l6" markdown="1">
+  ![Difference C for SVM]({{img-url}}/svm-c-1.png){:.no-border .w-500}
+  _$C=1$_
+  </div>
+  <div class="col s12 l6" markdown="1">
+  ![Difference C for SVM]({{img-url}}/svm-c-2.png){:.no-border .w-500}
+  _$C=100$_
+  </div>
+  </div>
+
+- Most SVM software packages (including svmTrain.m) automatically add the extra feature $x_0 = 1$ for you and automatically take care of learning the intercept term $\theta_0$. So when passing your training data to the SVM software, <mark>there is no need to add this extra feature $x_0 = 1$ yourself.</mark>
+
+### SVM with Gaussian Kernels
+
+- To find non-linear decision boundaries with the SVM, we need to first implement a Gaussian kernel.
+- You can think of the **Gaussian kernel** as a similarity function that <mark>measures the “distance" between a pair of examples $(x^{(i)}, x^{(j)})$</mark>. The Gaussian kernel is also parameterized by a **bandwidth parameter**, $\sigma$, which determines <mark>how fast the similarity metric decreases (to 0)</mark> as the examples are further apart.
+- **The Gaussian kernel function** defined as
+
+  $$
+  K_{Gaussian}(x^{(i)}, x^{(j)}) 
+    = \exp\left( -\dfrac{\Vert x^{(i)} - x^{(j)} \Vert^2}{2\sigma^2} \right)
+    = \exp\left( -\dfrac{ \sum_{k=1}^n(x^{(i)} - x^{(j)})^2 }{2\sigma^2} \right)
+  $$
+
+- File **gaussianKernel.m**
+
+  ~~~ matlab
+  sim = exp( -(norm(x1-x2))^2/(2*sigma^2) );
+  ~~~
+
+### Example Dataset 3
+
+File **dataset3Params.m**
+
+~~~ matlab
+range = [0.01, 0.03, 0.1, 0.3, 1, 3, 10, 30];
+predictionErrMin = 100000; % initial
+
+for i=1:size(range,2)
+   for j=1:size(range,2)
+       model= svmTrain(X, y, range(i), @(x1, x2) gaussianKernel(x1, x2, range(j))); 
+       predictions = svmPredict(model, Xval);
+       predictionErr = mean(double(predictions ~= yval));
+       if predictionErr < predictionErrMin
+           predictionErrMin = predictionErr;
+           C = range(i);
+           sigma = range(j);
+       end
+   end
+end
+~~~
+
+### Spam Classification
+
+- You need to convert each email into a feature vector $x\in \mathbb{R}^n$. The following parts of the exercise will <mark>walk you through how such a feature vector can be constructed from an email</mark>.
+
+### Preprocessing Emails
+
+- One method often employed in processing emails is to “normalize" these values, so that all URLs are treated the same, all numbers are treated the same, etc.
+  - we could replace each URL in the email with the unique string `httpaddr` to indicate that a **URL was present**.
+- Usually, we do:
+  - **Lower-casing**: convert entire email to lowercase.
+  - **Stripping HTML**: All HTML tags are removed from the emails.
+  - **Normalizing URLs:** All URLs are replaced with the text `httpaddr`
+  - **Normalizing Email Addresses**: with the text `emailaddr`.
+  - **Normalizing Numbers**: `number`.
+  - **Normalizing Dollars**: All dollar signs ($) are replaced with the text `dollar`.
+  - **Word Stemming**: "discount", “discounts", “discounted" and “discounting" replace by `discount`
+  - **Removal of non-words**: Non-words and punctuation have been removed. all tabs, spaces, newlines becomes 1-space character.
+
+### Vocabulary List
+
+- Our vocabulary list was selected by choosing all words which occur at least a 100 times in the spam corpus, resulting in a list of 1899 words. <mark>In practice, a vocabulary list with about 10,000 to 50,000 words is often used.</mark>
+- Given the vocabulary list, we can now map each word in the preprocessed emails (e.g., Figure 9) into a list of word indices that contains the index of the word in the vocabulary list.
+  - If the word exists, you should add the index of the word into the word indices variable.
+  - If the word does not exist, and is therefore not in the vocabulary, you can skip the word.
+- File **processEmail.m**
+
+  ~~~ matlab
+  for i=1:length(vocabList)
+      if strcmp(str, vocabList{i})
+          word_indices = [word_indices; i]; 
+      end
+  end
+  ~~~
+
+### Extracting Features from Emails
+
+- You will now implement the feature extraction that converts each email into a vector in $\mathbb{R}^n$.
+- $n=$ number of words in vocabulary list.
+- $x_i\in \{0,1\}$ for an email corresponds to whether the i-th word in the dictionary occurs in the email.
+- File **emailFeatures.m**
+
+  ~~~ matlab
+  x(word_indices)=1;
+  ~~~
+
+
+
+{% include more.html content="[Go to Week 8](/machine-learning-coursera-8)." %}
