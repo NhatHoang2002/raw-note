@@ -50,13 +50,13 @@ From this note, I see that [this note](/files/ML-coursera/note/) of [Alex Holeho
 - So we get (new **SVM cost function**)
 
   $$
-  \min \dfra{1}{m}\left[ \sum_{i=1}^m y^{(i)} cost_1(\Theta%Tx^{(i)}) + (1-y^{(i)})cost_0(\Theta^Tx^{(i)}) \right] + \dfrac{\lambda}{2m}\sum_{i=1}^n \theta^2_j
+  \min \dfrac{1}{m}\left[ \sum_{i=1}^m y^{(i)} cost_1(\Theta%Tx^{(i)}) + (1-y^{(i)})cost_0(\Theta^Tx^{(i)}) \right] + \dfrac{\lambda}{2m}\sum_{i=1}^n \theta^2_j
   $$
 
 - We use another notation to minimize problem
 
   $$
-  \min_{\Theta} C \sum_{i=1}^m \left[ \sum_{i=1}^m y^{(i)} cost_1(\Theta%Tx^{(i)}) + (1-y^{(i)})cost_0(\Theta^Tx^{(i)}) \right] + \dfrac{1}{2}\sum_{i=1}^n \theta^2_j
+  \min_{\Theta} C \sum_{i=1}^m \left[ \sum_{i=1}^m y^{(i)} cost_1(\Theta^Tx^{(i)}) + (1-y^{(i)})cost_0(\Theta^Tx^{(i)}) \right] + \dfrac{1}{2}\sum_{i=1}^n \theta^2_j
   $$
 
 - Unlike logistic, $h_{\theta}(x)$ doesn't give us a probability, but instead we get a direct prediction of 1 or 0 (as mentioned before)
@@ -79,11 +79,18 @@ From this note, I see that [this note](/files/ML-coursera/note/) of [Alex Holeho
 
   ![Larger minimum distance]({{img-url}}/svm-4.png){:.no-border .w-500}
 
-- 
-
 ### Mathematics behind large classification
 
-## Kernels
+## Kernels I
+
+- That a hypothesis computes a decision boundary by taking the sum of the parameter vector multiplied by a new feature vector f, which simply contains the various high order x terms
+
+$$
+\begin{align}
+h_{\theta}(x) &= \theta_0 + \theta_1f_1 + \theta_2 + \ldots, \\
+f_1 &= x_1, f_2 = x_1x_2, \ldots
+\end{align}
+$$
 
 ### Kernels I
 
