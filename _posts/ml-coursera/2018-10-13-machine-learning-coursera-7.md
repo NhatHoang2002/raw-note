@@ -47,10 +47,19 @@ From this note, I see that [this note](/files/ML-coursera/note/) of [Alex Holeho
 
   ![Two new cost functions]({{img-url}}/svm-1.png){:.no-border .w-700}
 
+  <div class="p-mark">
+  $$
+  \begin{align}
+  cost_0 &= -\log(1-\dfrac{1}{1+e^{-z}}) \\
+  cost_1 &= -\log(\dfrac{1}{1+e^{-z}})
+  \end{align}
+  $$
+  </div>
+
 - So we get (new **SVM cost function**)
 
   $$
-  \min \dfrac{1}{m}\left[ \sum_{i=1}^m y^{(i)} cost_1(\Theta%Tx^{(i)}) + (1-y^{(i)})cost_0(\Theta^Tx^{(i)}) \right] + \dfrac{\lambda}{2m}\sum_{i=1}^n \theta^2_j
+  \min \dfrac{1}{m}\left[ \sum_{i=1}^m y^{(i)} cost_1(\Theta^Tx^{(i)}) + (1-y^{(i)})cost_0(\Theta^Tx^{(i)}) \right] + \dfrac{\lambda}{2m}\sum_{i=1}^n \theta^2_j
   $$
 
 - We use another notation to minimize problem
@@ -81,20 +90,77 @@ From this note, I see that [this note](/files/ML-coursera/note/) of [Alex Holeho
 
 ### Mathematics behind large classification
 
-## Kernels I
-
-- That a hypothesis computes a decision boundary by taking the sum of the parameter vector multiplied by a new feature vector f, which simply contains the various high order x terms
-
-$$
-\begin{align}
-h_{\theta}(x) &= \theta_0 + \theta_1f_1 + \theta_2 + \ldots, \\
-f_1 &= x_1, f_2 = x_1x_2, \ldots
-\end{align}
-$$
+## Kernels
 
 ### Kernels I
 
+- That a hypothesis computes a decision boundary by taking the sum of the parameter vector multiplied by a new feature vector f, which simply contains the various high order x terms
+
+  $$
+  \begin{align}
+  h_{\theta}(x) &= \theta_0 + \theta_1f_1 + \theta_2 + \ldots, \\
+  f_1 &= x_1, f_2 = x_1x_2, \ldots
+  \end{align}
+  $$
+
+- We choose **landmarks** $l^{(1)}, l^{(2)}, \ldots$ and then using the **<mark>similarity</mark>** (_kernel_) between $x$ and each landmark $l^{(i)}$.
+
+  <div class="p-mark">
+  $$
+  \begin{align}
+  \text{similarity} = k(x,l^{(i)}) &= \text{exp}\left( -\dfrac{\Vert x-l^{(i)}\Vert^2}{2\sigma^2} \right) \\
+  f_i &:=  \text{similarity}(x,l^{(i)}).
+  \end{align}
+  $$
+  </div>
+
+  - $\sigma$: standard deviation
+  - $\sigma^2$: variance.
+  - $\Vert \cdot \Vert$: Euclidean distance
+
+  $$
+  \Vert x-l^{(i)}\Vert^2 = \sum_{j=1}^n (x_j-l_j^{(i)})
+  $$
+
+  - There are many **kernels**, above def of similarity is** Gaussian kernel**.
+
+  ![Kernel and similarity]({{img-url}}/kernel-1.png){:.no-border .w-600}
+
+  - We call $f$ landmark also!
+
 ### Kernels II
+
+- Where do we get the landmarks from?
+- For each example place a **landmark at exactly the same location**
+  - Given $m$ examples of $n$ features $(x^{(i)}, y^{(i)}$ for $i=1,m$.
+  - Choose landmarks: $l^{(i)} = x^{(i)}$ where $i=1,m$.
+  - We will build $n$ landmark $f^{(i)}$, each of them is built from
+
+  $$
+  f_k^{(i)} = k(x^{(i)}, l^{(k)}), \text{ for } k=1,m.
+  $$
+
+- <mark>Note that</mark> $m$ input elements $x^{(i)}$ becomes $m+1$ landmarks $f$ ($f^{0} = 1$)
+- $\Theta$ now becomes $\Theta \in \mathbb{R}^{(m+1)\times 1}$.
+- $f\in \mathbb{R}^{(m+1)}$ also.
+- <mark>Predict $1$ if $\Theta^Tf \ge 0$</mark>
+- **SVM learning algorithm**
+
+  <div class="p-mark">
+  $$
+    \min_{\Theta} C\sum_{i=1}^m \left( y^{(i)} cost_1 (\Theta^Tf^{(i)}) + (1-y^{(i)})cost_0(\Theta^Tf^{(i)})\right) 
+      + \dfrac{1}{2}\sum_{j=1}^m\phi_j^2, \quad (n=m \text{ in this case})
+  $$
+  </div>
+
+- We minimize using $f$ as the feature vector instead of $x$
+- <mark>$m=n$</mark> because number of features is the number of training data examples we have.
+- It's really expensive because there may be a lot of features (= number of training examples). <mark>It's good to use shelf software to minimize this function</mark> instead. DON'T write your own software to do that!!
+- **Variance vs Bias trade-off**
+  - Large $C$ ($\frac{1}{\lambda}$): low bias, high variance $\Rightarrow$ overfitting.
+  - Small C gives a hypothesis of high bias low variance $\Rightarrow$ underfitting
+  - Large $\sigma^2$: f features vary more smoothly - higher bias, lower variance
+  - Small $\sigma^2$: f features vary unexpectedly - low bias, high variance
 
 ## SVMs in practice
 
