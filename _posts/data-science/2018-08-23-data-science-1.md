@@ -49,9 +49,10 @@ This series starts from the beginning of learning Data Science and try [solving 
 I found many paths on the internet to enter the data science's world. Most of them categorized into 3 types: *analyst - scientist - engineer*. I wanna find out the difference between them and what is the perfect fit for me. In this section, I am **not** an expert to answer this question **for you**, I noted this answer **only for me**.
 
 - [Explanation on Dataquest](https://www.dataquest.io/blog/data-analyst-data-scientist-data-engineer/).
-- **Data analyst**: the bridge, the driver, from the past show the present.
-- **Data scientist**: behind the scenes, from the past show the future.
-- **Data enginerr**: the workers.
+- **Data analyst**: the bridge, the driver, from the past show the present. Common tasks done by data analysts include _data cleaning_, _performing analysis_ and _creating data visualizations_.
+- **Data scientist**: behind the scenes, from the past show the future. They apply their expertise in statistics and building machine learning models to make predictions and answer key business questions. **Jobs**: _clean, analyze, and visualize data_ (like data analyst) + have _more depth_ and expertise in these skills, and will also be able to _train and optimize machine learning models_.
+- **Data engineer**: the workers _build and optimize the systems_ that allow data scientists and analysts to perform their work. The data engineer ensures that any data is properly received, transformed, stored, and made accessible to other users.
+
 
 ### Data science, data mining, big data
 

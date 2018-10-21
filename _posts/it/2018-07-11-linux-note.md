@@ -3,7 +3,7 @@ title: Linux notes
 categories: it
 tags: ["linux","ubuntu"]
 snippet: 1
-date: 2018-09-25
+date: 2018-10-21
 ---
 
 1. Problem save file as `root` user and cannot open later: [link](https://askubuntu.com/questions/817902/unable-to-open-any-graphical-app-with-sudo/817906#817906)
@@ -68,6 +68,15 @@ sudo usermod -a -G groupName userName
     nautilus -q # restart nautilus
     ~~~
 24. Cannot open matlab without sudo: change the owner permission of folder */home/thi/.matlab* to **thi*** (cf. 20)
+
+	- Another solution: suppose that matlab is installed on a user's directory and you have already add this to the `$PATH`. IT's only work if you use `matlab` (not `sudo matlab`). Then do
+
+	~~~
+sudo env "PATH=$PATH"
+	~~~
+
+	from this, you can `sudo matlab`
+
 25. Add app to dash: install **alacarte** `sudo apt-get install alacarte`
 26. Turn off animation open and minimize windows on ubuntu 17.10 and later (gnome desktop): **Gnome Tweak Tools > Apperance > Animations OFF**
 27. Gõ tiếng Việt SublimeText, install package `vn ime` (gõ tìm đúng như thế). Khi sử dụng thì nhấn F2.
@@ -154,13 +163,13 @@ sudo usermod -a -G groupName userName
 	- Run below command line
 
 		~~~ bash
-	sudo ./install -agreeToLicense yes -mode silent -destinationFolder /home/thi/matlabR -fileInstallationKey xxxxx-xxxxx-xxxxx  -outputFile /home/matlab_install.log
+	sudo /home/thi/matlab_install/install -agreeToLicense yes -mode silent -destinationFolder /home/thi/matlabR -fileInstallationKey xxxxx-xxxxx-xxxxx  -outputFile /home/matlab_install.log
 		~~~
 
 	- After the installation, copy file `license_standalone.lic` to `/home/thi/matlabR/licenses/`
 	- Copy file `libmwservices.so` to `/home/thi/matlabR/bin/glnxa64/`
 	- Try running matlab: `/home/thi/matlabR/bin/matlab`
-	- If you have an error like `libXt.so.6: cannot open shared object file: No such file or directory`, try to install `sudo apt-get install install libxt6`.
+	- If you have an error like `libXt.so.6: cannot open shared object file: No such file or directory`, try to install `sudo apt-get install libxt6`.
 	- Make linux recognize your matlab command `matlab` like in the instruction 40.
 	- Finish.
 
@@ -201,6 +210,11 @@ sudo usermod -a -G groupName userName
 	- **Upload a folder**: `megacopy --local <folder> --remote <folder>`
 	- **Download from link**: `megadl <mega-link>`
 	- **Download a single file**: `megaget <file>`
+
+		~~~ bash
+megaget /Root/Apps/matlab17b/R2017b_glnxa64_dvd2.iso
+		~~~
+
 	- **Download from uploaded directory**: `megacopy --local <folder> --remote <folder-to-download> --download`
 
 42. Connect `ssh` to a virtual machine (the same network)
@@ -255,28 +269,28 @@ sudo usermod -a -G groupName userName
 
 47. Shorten directory in terminal
 
-- Temporarily, just enter `PS1='\u:\W\$ '` en press enter.
-- Permanently, open `sudo gedit ~/.bashrc` and find
+	- Temporarily, just enter `PS1='\u:\W\$ '` en press enter.
+	- Permanently, open `sudo gedit ~/.bashrc` and find
 
-	~~~ bash
+		~~~ bash
 if [ "$color_prompt" = yes ]; then
 		PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
 		PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
-	~~~
+		~~~
 
-	Remove `@\h` and replace `\w` by `\W` so that it becomes,
+		Remove `@\h` and replace `\w` by `\W` so that it becomes,
 
-	~~~ bash
+		~~~ bash
 if [ "$color_prompt" = yes ]; then
 		PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
 else
 		PS1='${debian_chroot:+($debian_chroot)}\u:\W\$ '
 fi
-	~~~
+		~~~
 
-	Save, exit, close terminal and start another to see the result.
+		Save, exit, close terminal and start another to see the result.
 
 48. Check CPU & RAM info
 
@@ -288,6 +302,41 @@ cat /proc/meminfo
 	~~~
 
 49. Check the current path: `pwd`
+50. Add path to system
+
+	~~~ bash
+export PATH=/home/thi/bin:$PATH
+	~~~
+
+	But above command only works for current session, if you wanna add permanently, open `~/.profile` and then paste above command into it and then save. Finally, do below command to make instantly worked!
+
+	~~~ bash
+source ~/.profile
+	~~~
+
+51. Rename a file/folder in terminal linux: `mv olname.txt newname.txt`
+52. Get ip address (ipconfig trong Windows): `ifconfig`
+53. Use ssh to get access to another computer in the same network (LAN)
+
+	0. Follow (a little bit) [here](https://www.makeuseof.com/tag/remotely-manage-linux-server-ssh/).
+	1. **On the remote machine**
+	1. update and upgrade install
+	2. install `openssh-server`
+	3. open `/etc/ssh/sshd_config` and uncomment on `Port 22` and lines starting with `Hostkey...`
+	4. start the network: `sudo service ssh start`
+	5. stop the network: `sudo service ssh stop`
+	6. check if the network is running or not? `sudo service ssh status`
+	7. Check the current ip: `ifconfig`: look on the _inet_
+	7. **On the local machine**
+	8. Install the same tool and use `ssh username@remote-host`
+
+54. Look and kill an app process:
+
+	- Check the id: `ps ax | grep teamviewer`
+	- Kill: `kill -9 <pid>`
+
+55. Remove matlab on linux: simply `rm -rf <matlab-folder>`
+
 
 
 

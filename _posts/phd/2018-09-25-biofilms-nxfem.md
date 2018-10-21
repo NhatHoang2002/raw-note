@@ -3,7 +3,7 @@ title: "PhD: Biofilms model with NXFEM"
 categories: [phd]
 tags: [phd,numerical analysis,biofilm]
 maths: 1
-date: 2018-10-15
+date: 2018-10-20
 ---
 
 This note is for chapter 6 in my thesis. I will use NXFEM coupling with LSM to simulate a biofilm model. 
@@ -77,6 +77,16 @@ In **chopp duddu et al 2006 combine nxfem levelset.pdf**, Chopp listed 4 test ca
 ### Others
 
 - _frederic MASTER THESIS 2010  biofilms.pdf_ page 21, 85.
+
+## CFL - time step
+
+- If $\Delta x$ is very small in comparison with $\Delta t$, there may be instability and divergence (sometimes). That's why we need CFL condition (relation between velocity $u$, time step $\Delta t$ and mesh size $\Delta x$)
+
+  $$
+  CFL = \dfrac{\Vert u\Vert \Delta t}{\Delta x}
+  $$
+
+- For the **Crank–Nicolson numerical scheme**, a low CFL number is not required for stability, however it is required for numerical accuracy (wiki).
 
 ## Affected components
 
