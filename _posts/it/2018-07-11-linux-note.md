@@ -336,7 +336,12 @@ source ~/.profile
 	- Kill: `kill -9 <pid>`
 
 55. Remove matlab on linux: simply `rm -rf <matlab-folder>`
-
-
+56. Add bookmark for evince (default pdf reader)
+	- **F9**: hide/show sidebar
+	- Menu on the top right > Add bookmarks
+	- Click on bookmark and rename it
+	- **Ctrl** + **Shift** + **S** to save (instead of Ctrl+S)
+57. Using foxit reader for ubuntu: tab, keyboard shortcuts,...
+ 
 
 
