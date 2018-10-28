@@ -4,7 +4,7 @@ categories: [other]
 tags: [education, technology]
 toc: 1
 snippet: 1
-date: 2018-10-20
+date: 2018-10-28
 ---
 
 My collection of good websites.
@@ -26,6 +26,7 @@ My collection of good websites.
 - [Thoughtco - Maths](https://www.thoughtco.com/math-4133545): a member of dotdash
 - [Pour la Science : maths](https://www.pourlascience.fr/maths-info/) (french)
 - [Better Explained](http://betterexplained.com): intuitive math, very very good!
+- [Zeste de savoir](https://zestedesavoir.com) (many things, in french)
 
 ## IT
 
@@ -110,8 +111,8 @@ Let our Coding Score rate your coding skills!
 - CGP Grey: [http://bit.ly/2NGCFjC](http://bit.ly/2NGCFjC)
 - CrashCouse: [http://bit.ly/2IU0SCh](http://bit.ly/2IU0SCh)
 - Domain of Science: [http://bit.ly/2QJRsw2](http://bit.ly/2QJRsw2)
-- HowStuffWorks: [http://bit.ly/2OplRCX](http://bit.ly/2OplRCX)
-- Kurzgesagt – In a Nutshell: [http://bit.ly/2NGpsaK](http://bit.ly/2NGpsaK)
+- HowStuffWorks: [http://bit.ly/2OplRCX](ht- [Zeste de savoir](https://zestedesavoir.com) (many things, in french)p://bit.ly/2OplRCX)
+- Kurzgesagt – In a Nutshell: [http://bit.l- [Zeste de savoir](https://zestedesavoir.com) (many things, in french)/2NGpsaK](http://bit.ly/2NGpsaK)
 - MinuteEarth: [http://bit.ly/2IV5tUJ](http://bit.ly/2IV5tUJ)
 - minutephysics: [http://bit.ly/2A9aDKh](http://bit.ly/2A9aDKh)
 - Monster Box: [http://bit.ly/2RN3eXN](http://bit.ly/2RN3eXN)
@@ -162,3 +163,4 @@ Let our Coding Score rate your coding skills!
 
 - [DotDash](https://www.dotdash.com/) : many fields (lifewire, thoughtco,...)
 - [Vsauce](http://www.vsauce.com/#/) : many things
+- [Zeste de savoir](https://zestedesavoir.com) (many things, in french)

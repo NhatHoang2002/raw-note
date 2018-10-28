@@ -119,8 +119,23 @@ This note was first taken when I learnt the [machine learning course on Coursera
 - How to use PCA for yourself + and how to reduce dimension for your data.
 - Data preprocessing: [feature scaling/mean normalization](/machine-learning-coursera-2#gd-in-practice--feature-scaling)
 - `svd` in matlab/octave = "**singular value decomposition**" or `eig` function with the same function (`svd ` is more numerically stable than eig)
+	- Compute **covariance matrix** $\Sigma$
+	- Compute **Eigenvectors** of matrix $\Sigma$
 
 	![PCA algorithm]({{img-url}}/pca-2.png){:.w-700}
+
+	<ul class="collapsible" data-collapsible="accordion">
+	<li>
+	<div class="collapsible-header" markdown="1"><i class="material-icons">face</i>
+	Covariance matrix
+	</div>
+	<div class="collapsible-body" markdown="1">
+
+	In probability theory and statistics, a **[covariance matrix](https://en.wikipedia.org/wiki/Covariance_matrix)** is a matrix whose element in the $i, j$ position is the covariance between the i-th and j-th elements of a random vector. 
+
+	</div>
+	</li>
+	</ul>
 
 	- After having U, just take first k column if we wanna k dimension from n
 
@@ -159,8 +174,110 @@ Choo k from 1 to the one get the fraction less than 0.001.
 
 ## Programming assignment
 
+{% include more.html content="[File ex7.pdf](/files/ML-coursera/ex7.pdf)." %}
+
+### K-means Clustering
+
+- The K-means algorithm is a method to automatically cluster similar data examples together. 
+- K-means algorithm is as follows
+
+	~~~ matlab
+% Initialize centroids
+centroids = kMeansInitCentroids(X, K);
+for iter = 1:iterations
+	% Cluster assignment step: Assign each data point to the
+	% closest centroid. idx(i) corresponds to cˆ(i), the index
+	% of the centroid assigned to example i
+	idx = findClosestCentroids(X, centroids);
+	% Move centroid step: Compute means based on centroid
+	% assignments
+	centroids = computeMeans(X, idx, K);
+end
+	~~~
+
+- Size: $X\in \mathbb{R}^{m\times n}$, $K\in \mathbb{R}$, centroids $\in \mathbb{R}^{K\times n}$, $c\in \mathbb{R}^{m\times 1}$ (`idx` is c)
+	- $m$ examples, $n$ features
+- File **findClosestCentroids.m**
+
+	~~~ matlab
+for i=1:size(X,1)
+		min = 100; % initial
+		for k=1:K
+			if norm(X(i,:)-centroids(k,:)) < min
+					min = norm(X(i,:)-centroids(k,:));
+					min_idx = k;
+			end
+		end
+		idx(i,1) = min_idx;
+end
+	~~~
+
+- Computing centroid means: file **computeCentroids.m**
+
+	~~~ matlab
+for k=1:K
+		idxCk = find(idx == k); % index of all X that corresponding to centroid k
+		centroids(k,:) = sum(X(idxCk,:))/size(idxCk,1);
+end
+	~~~
+
+- File **kMeansInitCentroids.m** (Random initialization)
+
+	~~~ matlab
+% Initialize the centroids to be random examples
+% Randomly reorder the indices of examples
+randidx = randperm(size(X, 1));
+% Take the first K examples as centroids
+centroids = X(randidx(1:K), :);
+	~~~
 
 {% include more.html content="[Go to Week 9](/machine-learning-coursera-9)." %}
 
+### Image compression with K-means
 
+Check the guide in [ex7.pdf](/files/ML-coursera/ex7.pdf), page 7.
 
+In this exercise, you will use the K-means algorithm to select the 16 colors that will be used to represent the compressed image. Concretely, you will
+treat every pixel in the original image as a data example and use the K-means algorithm to find the 16 colors that best group (cluster) the pixels in the 3-dimensional RGB space. Once you have computed the cluster centroids on the image, you will then use the 16 colors to replace the pixels in the original
+image.
+
+### PCA
+
+PCA consists of two computational steps: 
+
+- First, you compute the covariance matrix of the data.
+- Then, you use Octave/MATLAB’s `SVD` function to compute the eigenvectors $U\_1, U\_2,\ldots,U\_n$.
+
+Before using PCA, it is important to first normalize the data by subtracting the mean value of each feature from the dataset, and scaling each dimension so that they are in the same range.
+
+File **pca.m**
+
+~~~ matlab
+Sigma = 1/m * (X'*X);
+[U, S, ~] = svd(Sigma);
+~~~
+
+### Dimensionality Reduction with PCA
+
+File **projectData.m**:
+
+~~~ matlab
+Ureduce = U(:,1:K);
+Z = X*Ureduce;
+~~~
+
+File **recoverData.m**
+
+~~~ matlab
+Ureduce = U(:,1:K);
+X_rec = Z*Ureduce';
+~~~
+
+### Face Image Dataset
+
+In this part of the exercise, you will run PCA on face images to see how it can be used in practice for dimension reduction. 
+
+For example, if you were training a neural network to perform person recognition (gven a face image, predict the identitfy of the person), you can use
+the dimension reduced input of only a 100 dimensions instead of the original pixels.
+
+{% include more.html content="[Go to Week 9](/machine-learning-coursera-9)." %}
