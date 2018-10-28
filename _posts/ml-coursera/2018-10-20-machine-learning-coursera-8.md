@@ -231,8 +231,6 @@ randidx = randperm(size(X, 1));
 centroids = X(randidx(1:K), :);
 	~~~
 
-{% include more.html content="[Go to Week 9](/machine-learning-coursera-9)." %}
-
 ### Image compression with K-means
 
 Check the guide in [ex7.pdf](/files/ML-coursera/ex7.pdf), page 7.
