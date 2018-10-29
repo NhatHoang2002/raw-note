@@ -865,3 +865,5 @@ for i from n downto 1 do
   x[i]:=x[i]/r[i,i]
 od;
 ~~~
+
+{% include more.html content="[Go to Numerical Analysis note 2](/numerical-analysis-2)." %}

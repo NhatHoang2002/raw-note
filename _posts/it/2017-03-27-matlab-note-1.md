@@ -567,7 +567,7 @@ Xem danh sách các câu lệnh trong ứng với pde bằng cách gõ `help pde
 
 #### Mesh data
 
-Description about PDE mesh data `[p,t,e]` : [here](https://fr.mathworks.com/help/pde/ug/mesh-data.html).
+Description about PDE mesh data `[p,t,e]` : [here](https://fr.mathworks.com/help/pde/ug/mesh-data-pet-triples.html).
 
 - Cách đặt số của vertices trong `t` là theo chiều ngược chiều kim đồng hồ. Cái này được nói đến trong **LongChen** và khi thực nghiệm cũng thấy thế.
 - Cách đặt số của endpoints trong `e` cũng theo chiều ngược chiều kim đồng hồ, phù hợp với thứ tự của vertices trong `t`, cái này là dự đoán.

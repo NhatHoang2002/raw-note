@@ -27,6 +27,7 @@ My collection of good websites.
 - [Pour la Science : maths](https://www.pourlascience.fr/maths-info/) (french)
 - [Better Explained](http://betterexplained.com): intuitive math, very very good!
 - [Zeste de savoir](https://zestedesavoir.com) (many things, in french)
+- <update /> [Count Bayesie](https://www.countbayesie.com/) : talk about statistics (intuitively)
 
 ## IT
 

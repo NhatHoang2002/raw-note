@@ -7,6 +7,13 @@ maths: 1
 date: 2018-09-18
 ---
 
+<div class="see-again">
+<i class="material-icons">settings_backup_restore</i>
+<span markdown="1">
+[Go back to Numerical Analysis note 1](/numerical-analysis-1).
+</span>
+</div>
+
 ## Some definitions
 
 ### Machine epsilon
@@ -132,3 +139,15 @@ $$
 
 - If method is explicit, then $C=1$
 - If method is implicit, Implicit (matrix) solvers are usually less sensitive to numerical instability and so larger values of $C$ may be tolerated.
+
+## <new /> Adaptive mesh method
+
+**Principles of Adaptive Mesh Refinement** ([ref](http://www.cs.utexas.edu/users/dagh/ch2.html)): In the adaptive mesh refinement technique <mark>we start with a base coarse grid</mark>. As the solution proceeds we identify the regions requiring more resolution by some parameter characterizing the solution, say the local truncation error. We superimpose finer subgrids only on these regions. Finer and finer subgrids are added recursively until either a given maximum level of refinement is reached or the local truncation error has dropped below the desired level. Thus in an adaptive mesh refinement computation grid spacing is fixed for the base grid only and is determined locally for the subgrids according to the requirements of the problem.
+
+**Implementation Features**: 
+
+- In our implementation, we maintain a shadow hierarchy to estimate the local truncation error. The shadow hierarchy is a 2:1 coarser copy of the main grid hierarchy. The grid functions on the main hierarchy are updated along with those on the shadow hierarchy. This is equivalent to taking one integration step in the shadow hierarchy and two integration steps in the main hierarchy. When it is time for regridding, the truncation error is estimated by subtracting the grid functions on the shadow hierarchy from the corresponding values on the main hierarchy. The advantage of this method is that we do not replicate fine grid storage at regridding times.
+- When a fine grid is created, the function values at the fine grid points are obtained through a linear interpolation of the function values at the grid points of the underlying coarser grid. This initialization of the fine grid point values is known as prolongation.
+- After a fine grid (nested within a coarse grid) has been integrated the coarse grid values are updated by injecting the fine grid solution values onto the coarse grid points. This updating process of the coarse grid values is called restriction.
+- When the program is run on parallel processors we maintain a ghost region for intra-grid communication. Suppose we distribute the computation on a grid over several processors we keep a buffer or ghost region along the inner boundaries of each component grid. The values in the ghost region are used to updated the inner boundary values of neighboring component grids.
+I
