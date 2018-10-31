@@ -1,6 +1,6 @@
 ---
 title: "DataQuest 3: Step 2 - Data Visualization (Exploratory & Stotytelling)"
-categories: [ml, data]
+categories: [data]
 tags: [dataquest, python, numpy, pandas, data]
 maths: 1
 toc: 1

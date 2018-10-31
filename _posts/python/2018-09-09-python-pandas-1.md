@@ -1,6 +1,6 @@
 ---
 title: Python Pandas
-categories: [it,data]
+categories: [data]
 tags: [python,pandas,data]
 maths: 1
 toc: 1

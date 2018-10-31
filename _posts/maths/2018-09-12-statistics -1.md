@@ -26,7 +26,6 @@ This note is only used for my learning statistics for data science. It's not a t
 ## Concepts
 
 - [What is Expected Value?](https://towardsdatascience.com/what-is-expected-value-4815bdbd84de)
-- 
 
 ## 10 days of statistics on HackerRank
 
