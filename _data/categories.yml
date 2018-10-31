@@ -4,9 +4,11 @@
   name: PhD
 - slug: it
   name: Infomation Technology
+- slug: web
+  name: Web development
 - slug: french
   name: French
-- slug: articles
+- slug: article
   name: Good articles
 - slug: notetheme
   name: NoteTheme 

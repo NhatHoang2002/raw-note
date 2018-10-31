@@ -1,6 +1,6 @@
 ---
 title: "Links: Data Science & Machine Learning"
-categories: [ml,it,data]
+categories: [ml, data]
 tags: [machine learning, data]
 toc: 1
 snippet: 1
@@ -47,6 +47,8 @@ Good links to read and save for data science and machine learning.
 - [Statistical Data Analysis in Python](https://github.com/fonnesbeck/statistical-analysis-python-tutorial) by Christopher Fonnesbeck.
 - [Probability & Statistics for Data Science](https://towardsdatascience.com/probability-statistics-for-data-science-series-83b94353ca48) (Series)
 - [No free hunch](http://blog.kaggle.com/) (Kaggle's official blog).
+- <update /> [Towards Data Science](https://towardsdatascience.com/): medium style, many intuitive posts on statistics and data science.
+
 
 ### Articles
 

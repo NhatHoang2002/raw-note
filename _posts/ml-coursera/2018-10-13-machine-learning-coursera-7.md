@@ -1,6 +1,6 @@
 ---
 title: "ML Coursera 7 - Week 7: Support Vector Machines"
-categories: [ml, it]
+categories: [ml]
 tags: [machine learning, ml coursera]
 math: 1
 toc: 1

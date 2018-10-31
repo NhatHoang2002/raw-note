@@ -1,9 +1,8 @@
 ---
 title: Jekyll & Liquid note
-categories:
-  - it
+categories: web
 toc: 1
-tags: ["jekyll","liquid"]
+tags: ["jekyll", "liquid", website building]
 maths: 1
 date: 2018-10-20
 ---

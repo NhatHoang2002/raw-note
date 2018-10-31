@@ -1,6 +1,6 @@
 ---
 title: "ML Coursera 1 - Week 1: Introduction"
-categories: [ml, it]
+categories: [ml]
 tags: [machine learning, ml coursera]
 math: 1
 toc: 1

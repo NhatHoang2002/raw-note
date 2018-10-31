@@ -4,7 +4,7 @@ categories: [math]
 tags: [machine learning, statistics, data, R]
 math: 1
 toc: 1
-date: 2018-10-04
+date: 2018-10-30
 ---
 
 {% assign img-url = '/images/posts/math/statistics' %}
@@ -23,19 +23,10 @@ This note is only used for my learning statistics for data science. It's not a t
 	- **Think Stats** (downloaded)
 - **Data Science from Scratch First Principles with Python** (downloaded)
 
+## Concepts
 
-## Python codes notes
-
-Find **mean**, **median** and **mode**
-
-~~~ python
-import numpy as np
-from scipy import stats 
-
-print(np.mean(<list>))
-print(np.median(<list>))
-print(int(stats.mode(<list>)[0]))
-~~~
+- [What is Expected Value?](https://towardsdatascience.com/what-is-expected-value-4815bdbd84de)
+- 
 
 ## 10 days of statistics on HackerRank
 
@@ -59,11 +50,11 @@ print(int(stats.mode(<list>)[0]))
 
 	~~~ python
 def find_median(lst):
-    len_lst = len(lst)
-    if len_lst % 2 == 1:
-        return lst[len_lst//2]
-    else:
-        return (lst[len_lst//2-1] + lst[len_lst//2])/2
+		len_lst = len(lst)
+		if len_lst % 2 == 1:
+				return lst[len_lst//2]
+		else:
+				return (lst[len_lst//2-1] + lst[len_lst//2])/2
 	~~~
 
 ### Binomial distribution
@@ -78,3 +69,15 @@ A binomial experiment (or Bernoulli trial) is a statistical experiment that has 
 
 Check for short resume [here](https://www.hackerrank.com/challenges/s10-binomial-distribution-1/tutorial).
 
+## Python codes notes
+
+Find **mean**, **median** and **mode**
+
+~~~ python
+import numpy as np
+from scipy import stats 
+
+print(np.mean(<list>))
+print(np.median(<list>))
+print(int(stats.mode(<list>)[0]))
+~~~

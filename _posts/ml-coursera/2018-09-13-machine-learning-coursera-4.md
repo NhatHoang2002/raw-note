@@ -1,6 +1,6 @@
 ---
 title: "ML Coursera 4 - Week 4: Neural Networks - Representation"
-categories: [ml, it]
+categories: [ml]
 tags: [machine learning, ml coursera]
 math: 1
 toc: 1

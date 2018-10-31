@@ -46,6 +46,7 @@ Let our Coding Score rate your coding skills!
 - [NumFOCUS](https://numfocus.org/): Better tools to build a better world
 - [DevDocs](https://devdocs.io/): documentations
 - [PluralSight](https://www.pluralsight.com/): learning platform.
+- <update /> [Towards Data Science](https://towardsdatascience.com/): medium style, many intuitive posts on statistics and data science.
 
 
 ## Science

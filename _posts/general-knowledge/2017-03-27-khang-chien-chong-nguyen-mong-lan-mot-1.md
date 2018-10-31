@@ -1,7 +1,7 @@
 ---
 title: Kháng chiến chống Nguyên Mông lần 1 (kỳ 1)
-categories: articles
-tags: ["lịch sử"]
+categories: article
+tags: ["history"]
 toc: 1
 ---
 

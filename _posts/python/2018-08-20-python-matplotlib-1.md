@@ -1,7 +1,7 @@
 ---
 title: Python matplotlib
-categories: it
-tags: [python,matplotlib,data]
+categories: [it, data]
+tags: [python, matplotlib, data]
 maths: 1
 toc: 1
 date: 2018-09-05

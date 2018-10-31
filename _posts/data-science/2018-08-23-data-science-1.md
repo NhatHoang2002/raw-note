@@ -1,6 +1,6 @@
 ---
 title: Data Science 1
-categories: [ml, it, data]
+categories: [ml, data]
 tags: [machine learning, data codecademy, data]
 maths: 1
 toc: 1

@@ -1,6 +1,6 @@
 ---
 title: ML Udemy 2 - Regression
-categories: [ml, it]
+categories: [ml]
 tags: [machine learning, ml udemy]
 maths: 1
 toc: 1

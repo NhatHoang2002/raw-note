@@ -1,6 +1,6 @@
 ---
 title: "DataQuest 2: Step 2 - Pandas and Numpy fundamentals"
-categories: [ml, it, data]
+categories: [ml, data]
 tags: [dataquest, python, numpy, pandas, data]
 maths: 1
 toc: 1

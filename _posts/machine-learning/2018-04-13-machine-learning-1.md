@@ -1,6 +1,6 @@
 ---
 title: Machine Learning 1
-categories: [ml, it]
+categories: [ml]
 tags: [machine learning]
 maths: 1
 toc: 1

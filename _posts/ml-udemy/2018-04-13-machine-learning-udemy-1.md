@@ -1,6 +1,6 @@
 ---
 title: ML Udemy 1 - data preprocessing
-categories: [ml, it]
+categories: [ml]
 tags: [machine learning, ml udemy]
 maths: 1
 toc: 1

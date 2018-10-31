@@ -1,8 +1,6 @@
 ---
 title: Matlab note
-categories:
-  - it
-  - phd
+categories: [it, phd]
 tags: ["matlab"]
 maths: 1
 toc: 1
@@ -552,16 +550,18 @@ xem thêm các ví dụ khác về [max](http://www.mathworks.com/help/releases/
 
 ## PDE toolbox
 
-Xem danh sách các câu lệnh trong ứng với pde bằng cách gõ `help pde` hoặc [xem ở đây](https://fr.mathworks.com/help/pde/functionlist.html). Dưới đây là một số câu lệnh đặc biệt
+- Xem danh sách các câu lệnh trong ứng với pde bằng cách gõ `help pde` hoặc [xem ở đây](https://fr.mathworks.com/help/pde/functionlist.html). Dưới đây là một số câu lệnh đặc biệt
 
-- `pdeent`  Indices of triangles neighboring a given set of triangles. 
-- `pdegrad` Compute the gradient of the pde solution.
-- `pdeprtni` Interpolate function values to mesh nodes.
-- `pdecgrad` Compute the flux of a pde solution.
-- `tri2grid` Interpolate from pde triangular mesh to rectangular mesh.
-- `pdetrg` Triangle geometry data.
-- `geometryFromEdges`
-- `pdeBoundaryConditions`
+  - `pdeent`  Indices of triangles neighboring a given set of triangles. 
+  - `pdegrad` Compute the gradient of the pde solution.
+  - `pdeprtni` Interpolate function values to mesh nodes.
+  - `pdecgrad` Compute the flux of a pde solution.
+  - `tri2grid` Interpolate from pde triangular mesh to rectangular mesh.
+  - `pdetrg` Triangle geometry data.
+  - `geometryFromEdges`
+  - `pdeBoundaryConditions`
+
+- List of equations can be solved by PDE toolbox: [cf](https://fr.mathworks.com/help/pde/ug/equations-you-can-solve.html)
 
 ### Mesh
 

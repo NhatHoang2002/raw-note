@@ -1,7 +1,7 @@
 ---
 title: Python Exercism 1
 categories: it
-tags: [python,exercism]
+tags: [python, exercism]
 maths: 1
 toc: 1
 date: 2018-08-23

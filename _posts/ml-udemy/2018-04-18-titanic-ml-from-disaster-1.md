@@ -1,7 +1,7 @@
 ---
 title: Titanic - Machine Learning from Disaster 1
-categories: it
-tags: ["machine learning"]
+categories: [data, ml]
+tags: [machine learning, data, kaggle]
 maths: 1
 toc: 1
 ---
