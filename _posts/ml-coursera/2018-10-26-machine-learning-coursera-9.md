@@ -41,11 +41,21 @@ This note was first taken when I learnt the [machine learning course on Coursera
 
 ### Gaussian distribution (normal distribution)
 
+- $\mu$: mean, average of examples.
+- $\sigma^2$: standard deviation squared.
+- We can take $m-1$ instead of $m$ for $\sigma^2$. Slightly different mathematical problems, but in practice it makes little difference.
+
 <div class="p-mark">
 $$
-{P(x\mid \mu ,\sigma^2)={\frac{1}{\sqrt {2\pi \sigma ^{2}}}}e^{-{\frac {(x-\mu )^{2}}{2\sigma ^{2}}}}}
+\begin{align}
+P(x\mid \mu ,\sigma^2) &= {\frac{1}{\sqrt {2\pi \sigma ^{2}}}}e^{-{\frac {(x-\mu )^{2}}{2\sigma ^{2}}}}, \\
+\mu &= \frac{1}{m}\sum_{i=1}^m x^{(i)}, \\
+\sigma^2 &= \frac{1}{m}\sum_{i=1}^m (x^{(i)}-\mu)^2
+\end{align}
 $$
 </div>
+
+![Gaussian distribution]({{img-url}}/gaussian.png){:.w-600}
 
 ### Algorithm
 
