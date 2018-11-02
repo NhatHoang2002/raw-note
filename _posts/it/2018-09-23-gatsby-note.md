@@ -1,5 +1,5 @@
 ---
-title: Gatsby
+title: Gatsby 1
 categories: web
 toc: 1
 tags: [gatsby, github, website building]

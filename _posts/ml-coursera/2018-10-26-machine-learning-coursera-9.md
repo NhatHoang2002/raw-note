@@ -31,7 +31,21 @@ This note was first taken when I learnt the [machine learning course on Coursera
 
 ### Problem motivation
 
-### Gaussian distribution
+- Check if _there is an anomalous data-point_ in the data?
+- How we do this?
+  - Using our training dataset we build a model with $p(x)$ "_What is the probability that example x is normal_?"
+  - If $p(x_{test}) < \epsilon$: flag this as an anomaly
+  - If $p(x_{test}) \ge \epsilon$: flag this as OK.
+  - $\epsilon$ is some **threshold probability** value which we define, depending on how sure we need/want to be
+- Application: Fraud detection, Manufacturing (aircraft engine), Monitoring computers in data center,...
+
+### Gaussian distribution (normal distribution)
+
+<div class="p-mark">
+$$
+{P(x\mid \mu ,\sigma^2)={\frac{1}{\sqrt {2\pi \sigma ^{2}}}}e^{-{\frac {(x-\mu )^{2}}{2\sigma ^{2}}}}}
+$$
+</div>
 
 ### Algorithm
 
