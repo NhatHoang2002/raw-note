@@ -27,7 +27,7 @@ My collection of good websites.
 - [Pour la Science : maths](https://www.pourlascience.fr/maths-info/) (french)
 - [Better Explained](http://betterexplained.com): intuitive math, very very good!
 - [Zeste de savoir](https://zestedesavoir.com) (many things, in french)
-- <update /> [Count Bayesie](https://www.countbayesie.com/) : talk about statistics (intuitively)
+- [Count Bayesie](https://www.countbayesie.com/) : talk about statistics (intuitively)
 
 ## IT
 
@@ -47,7 +47,8 @@ Let our Coding Score rate your coding skills!
 - [DevDocs](https://devdocs.io/): documentations
 - [PluralSight](https://www.pluralsight.com/): learning platform.
 - [Towards Data Science](https://towardsdatascience.com/): medium style, many intuitive posts on statistics and data science.
-- <update />[Kyle Mathews](https://www.bricolage.io/): guy who created Gatsby.
+- [Kyle Mathews](https://www.bricolage.io/): guy who created Gatsby.
+- <update /> [Scotch](https://scotch.io/) - Top self web development
 
 
 ## Science

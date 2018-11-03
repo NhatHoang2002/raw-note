@@ -30,10 +30,10 @@ This post is only for installing and setting up python on computer. All document
 	- [How to think like a computer scientist?](http://openbookproject.net/thinkcs/python/english3e/index.html) : sách được thể hiện dưới dạng html
 	- [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/) : free ebook for python (there is a corresponding course on Udemy)
 	- [Python course for Data Science](https://courses.cognitiveclass.ai/courses/course-v1:Cognitiveclass+PY0101EN+v2/progress) on Big Data University.
-	- <update /> [Python for Data Analysis](https://github.com/wesm/pydata-book), 2nd Edition by Wes McKinney, published by O'Reilly Media.
+	- [Python for Data Analysis](https://github.com/wesm/pydata-book), 2nd Edition by Wes McKinney, published by O'Reilly Media.
 - **Exercise, practice**
-    - <new /> **[HackerRank](https://www.hackerrank.com/domains/python)** : challenge you in different problems and exercises.
-    - <update /> Others with the same type as HackerRank: [Exercism](https://exercism.io/my/tracks/python), [CheckIO](https://py.checkio.org), 
+    - **[HackerRank](https://www.hackerrank.com/domains/python)** : challenge you in different problems and exercises.
+    - Others with the same type as HackerRank: [Exercism](https://exercism.io/my/tracks/python), [CheckIO](https://py.checkio.org), 
 	- [Python exercises - w3resource](https://www.w3resource.com/python-exercises)
 	- [PracticePython](https://www.practicepython.org/)
 - **Others**:
@@ -53,7 +53,7 @@ This post is only for installing and setting up python on computer. All document
 In the case that you have many version of python on Ubuntu and you have just installed Anaconda which also contains another version of python. **You wanna keep only one of Anaconda**
 
 1. Follow this [question on SE](https://askubuntu.com/questions/886983/how-to-set-anaconda-as-a-default-python)
-2. <update /> Add Anaconda to PATH: `export PATH=/home/thi/anaconda3/bin:$PATH` 
+2. Add Anaconda to PATH: `export PATH=/home/thi/anaconda3/bin:$PATH` 
 	- If using above command, it's only saved for the current workspace, after the computer restarts, it disappears.
 	- Open `~/.profile` and then paste above command to it.
 	- Excute: `source ~/.profile` in order to immediately reflect changes to your current terminal instance
@@ -175,7 +175,7 @@ Xem [note này]({{site.baseurl}}/python-exercism-1).
 - **Nhược điểm**: không chạy theo version của python được (trải nghiệm của anh Việt), dùng [Sublime Text](#sublime-text-3) có vẻ ngon hơn điểm này, giao diện của thằng kia cũng khá đẹp và thoáng.
 
 
-### <update /> Sublime Text 3
+### Sublime Text 3
 
 <ul class="collapsible" data-collapsible="accordion">
 <li>
@@ -328,7 +328,7 @@ Keyboard shortcuts
 	</li>
 	</ul>
 
-- <update /> Tạo **Build System** mới với nhiều version python khác nhau: **Tools** > **Build System** > **New Build System...** rồi dán cái sau vào (thay đường dẫn đến phiên bản python tương ứng)
+- Tạo **Build System** mới với nhiều version python khác nhau: **Tools** > **Build System** > **New Build System...** rồi dán cái sau vào (thay đường dẫn đến phiên bản python tương ứng)
 
 	<ul class="collapsible" data-collapsible="accordion">
 	<li>

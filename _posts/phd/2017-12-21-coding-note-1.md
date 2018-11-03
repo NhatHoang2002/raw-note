@@ -11,7 +11,7 @@ Loạt bài này chủ yếu dùng để *ghi chú* trong quá trình hoàn thà
 
 {% include warning.html content="Starting working with matlab from notebook 2!!! (1/2017)" %}
 
-## Why we don't use FreeFem++? <new />
+## Why we don't use FreeFem++? 
 
 We don't use FreeFem++ and started to use Matlab because
 

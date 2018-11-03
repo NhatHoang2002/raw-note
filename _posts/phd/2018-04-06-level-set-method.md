@@ -24,7 +24,7 @@ Trong note này sẽ bao gồm luôn mục **coding** thay cho note [coding-note
 
 
 
-### <new /> Using FreeFem++
+### Using FreeFem++
 
 We can consider to use `convect` in FreeFem++. It used Galerkin Characteristic FEM (cf. *convegence convect (galerkin characteristic fem)) Pironneau.pdf*)
 
@@ -69,7 +69,7 @@ Thi paper said that:
 
 - Test coi mshdist hoạt động tốt không có thể tính $\Vert \nabla \phi \Vert$ xem có bằng 1 hay không! $\Rightarrow$ **Kết quả**: nếu dt quá lớn, u quá lớn thì cái $\phi$ xa rời cái signed distance function
 
-<update />**Some examples of signed distance function** (cf [slide 14, here]({{file-src}}/W02_SignedDistanceFunction.pdf))
+**Some examples of signed distance function** (cf [slide 14, here]({{file-src}}/W02_SignedDistanceFunction.pdf))
 
 - A circle,
 
@@ -214,7 +214,7 @@ Others
 
 ## Documentation
 
-- <new /> *adaptive techniques level set - osher - losasso - fedkiw.pdf* describes the history of level set methods + adaptive. It's good for understand *in-one-place* all things.
+-  *adaptive techniques level set - osher - losasso - fedkiw.pdf* describes the history of level set methods + adaptive. It's good for understand *in-one-place* all things.
 
 - Mình note **workflow** khá ổn: *hw level set workflow 6-2018.pdf*
 
@@ -295,7 +295,7 @@ Others
 
   $\Rightarrow$ **Chưa chính xác lắm!** Trong Arnold Book, ổng cũng có nói vấn đề về Dirichlet BC này ở mục Remark 7.5.1 (p. 221)
 
-  - <update /> In the note of Chopp, section 5.2.3, he also talks about the "not-so-useful" of boundary condition. 
+  -  In the note of Chopp, section 5.2.3, he also talks about the "not-so-useful" of boundary condition. 
 
 
 
@@ -391,5 +391,5 @@ A problem with performance if we working on a very-fined mesh. We just want to f
 
 - It's mentioned at Section 9.3 of Eva Loch's thesis: why we need Re-initialization.
 
-- <new /> **Adaptmesh** in freefem++ by Hecht
+-  **Adaptmesh** in freefem++ by Hecht
 

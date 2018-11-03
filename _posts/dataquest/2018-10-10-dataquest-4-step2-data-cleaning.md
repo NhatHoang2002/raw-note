@@ -132,7 +132,7 @@ This note is used for my notes about the [**Data Scientist** path](https://www.d
 
 {% include download.html content="[Download mission 136](/files/dataquest/mission-136.pdf)." %}
 
-{% include more.html content="[See Jupyter notebook walkthrough](https://github.com/dinhanhthi/ML-self-teaching/tree/master/dataquest-data-scientist/step2/data_cleaning)." %}
+{% include more.html content="[See Jupyter notebook walkthrough](https://github.com/dinhanhthi/Dataquest-Learning/blob/master/step2/data_cleaning)." %}
 
 - In python notebook, don't use `print()` to display df, just call the name of this df, it will automatically appears.
 - To combine dataframes together, we need a unique column to be a ID for all df (`DBN` in this case)
@@ -145,7 +145,7 @@ This note is used for my notes about the [**Data Scientist** path](https://www.d
 
 {% include download.html content="[Download mission 137](/files/dataquest/mission-137.pdf)." %}
 
-{% include more.html content="[See Jupyter notebook walkthrough](https://github.com/dinhanhthi/ML-self-teaching/tree/master/dataquest-data-scientist/step2/data_cleaning)." %}
+{% include more.html content="[See Jupyter notebook walkthrough](https://github.com/dinhanhthi/Dataquest-Learning/blob/master/step2/data_cleaning)." %}
 
 - Split a df into unique groups base all a column: `df.groupby(<column>)`
 - Use the [`df.agg()`](http://pandas.pydata.org/pandas-docs/stable/groupby.html#aggregation) method on the resulting `df.groupby` object, along with the `np.mean()` function as an argument, to calculate the average of each group. The result will take the column as indexes
@@ -160,7 +160,7 @@ This note is used for my notes about the [**Data Scientist** path](https://www.d
 
 {% include download.html content="[Download mission 138](/files/dataquest/mission-137.pdf)." %}
 
-{% include more.html content="[See Jupyter notebook walkthrough](https://github.com/dinhanhthi/ML-self-teaching/tree/master/dataquest-data-scientist/step2/data_cleaning)." %}
+{% include more.html content="[See Jupyter notebook walkthrough](https://github.com/dinhanhthi/Dataquest-Learning/blob/master/step2/data_cleaning)." %}
 
 - **[R value](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)**: Correlations tell us <mark>how closely related two columns are</mark>. We'll be using the r value, also called Pearson's correlation coefficient, which measures how closely two sequences of numbers are correlated. Both are increasing or decreasing or different at the same time!
 - In general, <mark>r values above .25 or below -.25 are enough to qualify a correlation as interesting</mark>.
@@ -173,7 +173,7 @@ This note is used for my notes about the [**Data Scientist** path](https://www.d
 
 ## Mission 139 - Guided Project: Analyzing NYC High School Data
 
-{% include more.html content="[See Jupyter notebook walkthrough](https://github.com/dinhanhthi/ML-self-teaching/tree/master/dataquest-data-scientist/step2/data_cleaning)." %}
+{% include more.html content="[See Jupyter notebook walkthrough](https://github.com/dinhanhthi/Dataquest-Learning/blob/master/step2/data_cleaning)." %}
 
 
 
