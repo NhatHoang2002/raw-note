@@ -1,10 +1,10 @@
 ---
-title: Collection of good links and websites
+title: Collection of useful links and websites
 categories: [other]
 tags: [education, technology]
 toc: 1
 snippet: 1
-date: 2018-10-28
+date: 2018-11-05
 ---
 
 My collection of good websites.
@@ -48,8 +48,21 @@ Let our Coding Score rate your coding skills!
 - [PluralSight](https://www.pluralsight.com/): learning platform.
 - [Towards Data Science](https://towardsdatascience.com/): medium style, many intuitive posts on statistics and data science.
 - [Kyle Mathews](https://www.bricolage.io/): guy who created Gatsby.
-- <update /> [Scotch](https://scotch.io/) - Top self web development
+- [Scotch](https://scotch.io/) - Top self web development
 
+### <new /> LaTeX
+
+- [TeX FAQ](https://texfaq.org/): The TeX Frequently Asked Question List
+- [texblog.org](https://texblog.org/) : many things
+- [TeX on StackExchange](https://tex.stackexchange.com) : Q&A
+- [Detexify](http://detexify.kirelabs.org/classify.html) : find the way to write a unknown symbol
+- [HostMath](http://www.hostmath.com/) : math/equations latex editor online
+- [CodeCogs](http://www.codecogs.com/latex/eqneditor.php) : online latex equation editor
+- [Overleaf](https://www.overleaf.com): tex editor online
+- [Latex template](http://www.latextemplates.com/)
+- [Latex table generator online](http://www.tablesgenerator.com/latex_tables)
+- [Pgfplots](http://pgfplots.net/): pgf drawing in latex
+- [Tikz examples](http://www.texample.net/tikz/)
 
 ## Science
 
