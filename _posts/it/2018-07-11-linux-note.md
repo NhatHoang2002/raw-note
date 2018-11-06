@@ -342,6 +342,12 @@ source ~/.profile
 	- Click on bookmark and rename it
 	- **Ctrl** + **Shift** + **S** to save (instead of Ctrl+S)
 57. Using foxit reader for ubuntu: tab, keyboard shortcuts,...
+58. Remove PPA from ubuntu by terminal. For example, _The repository 'http://ppa.launchpad.net/b-eltzner/qpdfview/ubuntu artful Release' does not have a Release file._ Remove the file _b-eltzner-qpdfview-ubuntu_ from directory _/etc/apt/sources.list.d_
+
+	~~~ bash
+	sudo rm /etc/apt/sources.list.d/<file>
+	~~~
+
  
 
 
