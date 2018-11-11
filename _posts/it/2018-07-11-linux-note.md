@@ -348,6 +348,9 @@ source ~/.profile
 	sudo rm /etc/apt/sources.list.d/<file>
 	~~~
 
- 
-
-
+59. `screen`, keep session on server open after turn off local machine. 
+	- Turn on the screen session: `screen`
+	- Detach the session (safely turn off computer while the session still on the remote): **Ctrl+A** and then 
+	- See the list of screen: `screen -ls`
+	- Go to some session: `screen -r pts-0.phd-matlab`
+	- [cf](https://www.tecmint.com/keep-remote-ssh-sessions-running-after-disconnection/)
