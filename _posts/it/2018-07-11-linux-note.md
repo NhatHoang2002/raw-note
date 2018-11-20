@@ -350,7 +350,10 @@ source ~/.profile
 
 59. `screen`, keep session on server open after turn off local machine. 
 	- Turn on the screen session: `screen`
-	- Detach the session (safely turn off computer while the session still on the remote): **Ctrl+A** and then 
+	- Detach the session (safely turn off computer while the session still on the remote): **Ctrl+A** and then **D**
 	- See the list of screen: `screen -ls`
 	- Go to some session: `screen -r pts-0.phd-matlab`
+	- Wanna kill some sesion:
+		- First go to this session by `screen -r`
+		- Then press **Ctrl+A** then **K** then **y**
 	- [cf](https://www.tecmint.com/keep-remote-ssh-sessions-running-after-disconnection/)
