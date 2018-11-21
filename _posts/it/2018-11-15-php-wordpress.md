@@ -146,5 +146,28 @@ After installing phpmyadmin, there has to be an user `phpmyadmin` in the list of
 
 ### Go to phpMyAdmin
 
-- Go to **[localhost/phpmyadmin](http://localhost/phpmyadmin)**
+- Go to **[http://localhost/phpmyadmin](http://localhost/phpmyadmin)**
 - Login with your user and password you created above (`thi` for example).
+
+## Change apache2 root document
+
+- The Apache server is installed on **/var/www/html**.
+- Simply download [this tool](https://github.com/hsb4995/Apachange) and follow the instructions. You can also check the author's [answer](https://askubuntu.com/a/738527/248456) on SE.
+
+## Install and setup wordpress
+
+I mainly followed these steps but sometimes (for example, install wodpress on localhost, I did myself!)
+
+- [Download WP](https://wordpress.org/download/)
+- Extract the zip file to the root folder of apache2.
+- Open **http://localhost/phpmyadmin**, log in with the user you created before (e.g. _thi_), create a database whose name is **wordpress**. Notethat, you need to remember and be sure that the database's name + user + password are the same with the one in next steps.
+- Open **http://localhost**, you will see a installation site.
+- Follow the steps in this site, remember to fill in the infor I noted above.
+- After installing successfully WP, you meet the login page, fill out your username and password to log it in.
+- Cf. [WP official documentation](https://codex.wordpress.org/) and [StackOverflow-WP](https://stackoverflow.com/questions/tagged/wordpress)
+
+### WP theme
+
+- The themes will be stored in **./wp-content/themes**.
+- Create a new folder for your theme, I call it **math2itwp**
+- **Note that**: A WordPress theme needs only two files to exist – **style.css** and **index.php**.
