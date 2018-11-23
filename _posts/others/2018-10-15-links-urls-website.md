@@ -50,7 +50,7 @@ Let our Coding Score rate your coding skills!
 - [Kyle Mathews](https://www.bricolage.io/): guy who created Gatsby.
 - [Scotch](https://scotch.io/) - Top self web development
 
-### <new /> LaTeX
+### LaTeX
 
 - [TeX FAQ](https://texfaq.org/): The TeX Frequently Asked Question List
 - [texblog.org](https://texblog.org/) : many things
@@ -122,7 +122,7 @@ Let our Coding Score rate your coding skills!
 
 - 1 jour, 1 question (french): [http://bit.ly/2ygGirS](http://bit.ly/2ygGirS)
 - 3Blue1Brown: [http://bit.ly/2EheXva](http://bit.ly/2EheXva)
-- Applied Science: [http://bit.ly/2NFhS04](http://bit.ly/2NFhS04)
+- Applied Science: [http://bit.lhttps://www.youtube.com/channel/UCf6gW1swSLhhsSQaOGNcM5wy/2NFhS04](http://bit.ly/2NFhS04)
 - AsapSCIENCE: [http://bit.ly/2PsKP0F](http://bit.ly/2PsKP0F)
 - C'est pas sorcier (french): [http://bit.ly/2Opvjqa](http://bit.ly/2Opvjqa)
 - CGP Grey: [http://bit.ly/2NGCFjC](http://bit.ly/2NGCFjC)
@@ -140,6 +140,7 @@ Let our Coding Score rate your coding skills!
 - NativLang (language): [http://bit.ly/2EiOZHB](http://bit.ly/2EiOZHB)
 - The infographics show: [http://bit.ly/2A9z0HO](http://bit.ly/2A9z0HO)
 - Nucleus Medical Media: [http://bit.ly/2NELquH](http://bit.ly/2NELquH)
+- <new />[VFacts](https://www.youtube.com/channel/UCf6gW1swSLhhsSQaOGNcM5w) (Vietnamese channels)
 
 ### Information technology
 

@@ -8,6 +8,33 @@ date: 2018-11-20
 
 I use this note for all I've learned when I build again website math2it.com using Wordpress.
 
+## PHP notes
+
+- We can split php commands and put between them html (or mix between php and html), just remember to use open and close tag `<?php ?>`. For example, `if` is splitted
+
+  ~~~ php
+  <?php 
+  if ( have_posts() ) : 
+    while ( have_posts() ) : the_post();
+      get_template_part( 'content', get_post_format() );
+    endwhile;?>
+    <nav>
+      <ul class="pager">
+        <li><?php next_posts_link( 'Previous' ); ?></li>
+        <li><?php previous_posts_link( 'Next' ); ?></li>
+      </ul>
+    </nav>
+  <?php
+  endif; 
+  ?>
+  ~~~
+
+- Pure PHP files don’t need closing tags.
+
+
+
+
+
 ## Install LAMP on Linux
 
 ### Install Apache2 and Mysql server
@@ -166,7 +193,7 @@ I mainly followed these steps but sometimes (for example, install wodpress on lo
 - After installing successfully WP, you meet the login page, fill out your username and password to log it in.
 - Cf. [WP official documentation](https://codex.wordpress.org/) and [StackOverflow-WP](https://stackoverflow.com/questions/tagged/wordpress)
 
-### WP theme
+## WP theme
 
 - The themes will be stored in **./wp-content/themes**.
 - Create a new folder for your theme, I call it **math2itwp**
@@ -176,13 +203,13 @@ I mainly followed these steps but sometimes (for example, install wodpress on lo
 - Note that, **blog.css** is not loaded yet, <mark>learn right now that you can never link to anything in a WordPress page without some PHP.</mark>
   - Change in **index.php** the line
 
-    ~~~ php
-    <!-- old code -->
-    <link href="blog.css" rel="stylesheet">
+~~~ php
+<!-- old code -->
+<link href="blog.css" rel="stylesheet">
 
-    <!-- new one -->
-    <link href="<?php echo get_bloginfo('template_directory'); ?>/blog.css" rel="stylesheet">
-    ~~~
+<!-- new one -->
+<link href="<?php echo get_bloginfo('template_directory'); ?>/blog.css" rel="stylesheet">
+~~~
 
 ### Split into parts
 
@@ -193,19 +220,57 @@ We now wanna split the unique **index.php** into parts like _header.php, footer.
 - Just cut and copy lines relating to header, footer, content and sidebar to the corresponding php files.
 - In the **index.php**,
 
-  ~~~ php
-  <!-- header -->
-  <?php get_header(); ?>
+~~~ php
+<!-- header -->
+<?php get_header(); ?>
 
-  <!-- content -->
-  <?php get_template_part( 'content', get_post_format() ); ?>
+<!-- content -->
+<?php get_template_part( 'content', get_post_format() ); ?>
 
-  <!-- sidebar -->
-  <?php get_sidebar(); ?>
+<!-- sidebar -->
+<?php get_sidebar(); ?>
 
-  <!-- footer -->
-  <?php get_footer(); ?>
-  ~~~navigation
+<!-- footer -->
+<?php get_footer(); ?>
+~~~
+
+### Featured Image
+
+In default, there is no field for uploading featured image for post, add below
+
+~~~ php
+// Support Featured Images
+add_theme_support( 'post-thumbnails' );
+~~~
+
+It automatically adds a field for you to upload featured image to a post (in post's editor).
+
+Use below lines to take this photo in **content-single.php** (each post)
+
+~~~ php
+<?php if ( has_post_thumbnail() ) {
+  the_post_thumbnail();
+} ?>
+~~~
+
+Or in **content.php** (index/list of posts page)
+
+~~~ php
+<?php if ( has_post_thumbnail() ) {?>
+  <div class="row">
+    <div class="col-md-4">
+      <?php	the_post_thumbnail('thumbnail'); ?>
+    </div>
+    <div class="col-md-6">
+      <?php the_excerpt(); ?>
+    </div>
+  </div>
+<?php } else { ?>
+  <?php the_excerpt(); ?>
+<?php } ?>
+~~~
+
+which replaces the line `<?php the_excerpt(); ?>`.
 
 ## Wordpress' components
 
@@ -266,7 +331,133 @@ Wordpress archives
 
 For pages, you can create a new **page.php** with different layout. All pages will use this layout to display the content.
 
+~~~ php
+<?php get_header(); ?>
+	<div class="row">
+		<div class="col-sm-12">
+			<?php 
+				if ( have_posts() ) : while ( have_posts() ) : the_post(); 	
+					get_template_part( 'content', get_post_format() );
+				endwhile; endif; 
+			?>
+		</div> <!-- /.col -->
+	</div> <!-- /.row -->
+<?php get_footer(); ?>
+~~~
+
+### Post's layout
+
+Create a file named **single.php**. Different from _page.php_, the `content` will be `content-single`
+
+~~~ php
+<?php get_header(); ?>
+	<div class="row">
+		<div class="col-sm-12">
+			<?php 
+				if ( have_posts() ) : while ( have_posts() ) : the_post();
+					get_template_part( 'content-single', get_post_format() );
+				endwhile; endif; 
+			?>
+		</div> <!-- /.col -->
+	</div> <!-- /.row -->
+<?php get_footer(); ?>
+~~~
+
+Create **content-single.php**, like _content.php_ but for _single.php_
+
+~~~ php
+<div class="blog-post">
+	<h2 class="blog-post-title"><?php the_title(); ?></h2>
+	<p class="blog-post-meta"><?php the_date(); ?> by <a href="#"><?php the_author(); ?></a></p>
+ <?php the_content(); ?>
+</div><!-- /.blog-post -->
+~~~
+
+Note that:
+
+- **index.php** pulling in **content.php**
+- **single.php** pulling in **content-single.php**
+- Using `the_permalink()` to link to url of each post based on its title.
+- `<?php the_excerpt(); ?>` only shows 55 characters of each post.
+
+## Pagination
+
+~~~ php
+<?php next_posts_link( 'Older posts' ); ?>
+<?php previous_posts_link( 'Newer posts' ); ?>
+~~~
+
+## Functions
+
+- Check an idea in Tania's [article](https://www.taniarascia.com/wordpress-from-scratch-part-two/).
+- Check **functions.php** to see some example codes.
+- File `functions.php` locates in your theme directory.
+- Add functionality and change defaults throughout WordPress
+- Any code you create can be made into a plugin, and vice versa
+- A general structure of a function (for action references, [cf](https://codex.wordpress.org/Plugin_API/Action_Reference))
+
+~~~ php
+function custom_function() {
+	//code
+}
+add_action( 'action', 'custom_function');
+~~~
+
+### Enqueue Scripts and Stylesheets
+
+Don't forget to remove all lines linking to other sources.
+
+~~~ php
+// Add scripts and stylesheets
+function startwordpress_scripts() {
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.3.6' );
+	wp_enqueue_style( 'blog', get_template_directory_uri() . '/css/blog.css' );
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '3.3.6', true );
+}
+
+add_action( 'wp_enqueue_scripts', 'startwordpress_scripts' );
+~~~
+
+### Enqueue Google Fonts
+
+Don't forget to remove all lines linking to other sources.
+
+~~~ php
+// Add Google Fonts
+function startwordpress_google_fonts() {
+				wp_register_style('OpenSans', 'http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800');
+				wp_enqueue_style( 'OpenSans');
+		}
+add_action('wp_print_styles', 'startwordpress_google_fonts');
+~~~
+
+### Title depends on page
+
+Remove in _header.php_ line `<title></title>`
+
+~~~ php
+// WordPress Titles
+add_theme_support( 'title-tag' );
+~~~
+
+## Create Global Custom Fields
+
+{% include more.html content="[Create a WordPress Theme Settings Page with the Settings API](https://www.sitepoint.com/create-a-wordpress-theme-settings-page-with-the-settings-api/)." %}
+
+- For example, a sidebar's component appears globally.
+- We can add sections (settings) to the left-hand sidebar in WPadmin.
+
+
 ## Errors
+
+### Cannot upload featured photos
+
+You see something like _Unable to create directory wp-content/uploads/2018/03. Is its parent directory writable by the server?_.
+
+- Try to add `define( 'UPLOADS', 'wp-content/uploads' );` in file **wp-config.pgp** (befor the lines `require_once(ABSPATH . 'wp-settings.php');`).
+- Try to change permission of the folder **wp-content** for all users!
+
+### Cannot custom permalink
 
 In the case you cannot use other Permalink settings than **Plain**, for example you cannot reach _localhost/post-name_ and only be able to reach the homepage. <mark>If you just need to build the theme</mark>, use **Plain** (with post id), everything goes right!
 
