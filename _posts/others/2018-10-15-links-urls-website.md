@@ -101,6 +101,7 @@ Let our Coding Score rate your coding skills!
 - [Gatsby](https://www.gatsbyjs.org/): Build apps and websites with [React](https://reactjs.org).
 - [JAMstack](https://jamstack.org/) (Javascript API & Markup): Modern web development architecture based on client-side JavaScript, reusable APIs, and prebuilt Markup.
 - [netlify](https://www.netlify.com/): Build, deploy, and manage modern web projects
+- <new />[Canva](https://www.canva.com): create beatiful covers with text.
 
 ## Youtube channel
 

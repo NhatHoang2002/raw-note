@@ -32,9 +32,6 @@ I use this note for all I've learned when I build again website math2it.com usin
 - Pure PHP files don’t need closing tags.
 
 
-
-
-
 ## Install LAMP on Linux
 
 ### Install Apache2 and Mysql server
@@ -447,6 +444,49 @@ add_theme_support( 'title-tag' );
 - For example, a sidebar's component appears globally.
 - We can add sections (settings) to the left-hand sidebar in WPadmin.
 
+## Custom post type
+
+- This can be replace to **Post** in WP admin panel with many other type of posts rather than the default one.
+- You can use this [Advanced Custom Fields](http://www.advancedcustomfields.com/) plugin.
+- Check on [WP official doc](https://codex.wordpress.org/Post_Types).
+- I followed Tania's [article](https://www.taniarascia.com/wordpress-from-scratch-part-two/)!
+- Check [ref](https://codex.wordpress.org/Function_Reference/register_post_type) about fields being used
+
+~~~ php
+// Custom Post Type
+function create_my_custom_post() {
+	register_post_type( 'my-custom-post',
+			array(
+			'labels' => array(
+					'name' => __( 'My Custom Post' ),
+					'singular_name' => __( 'My Custom Post' ),
+			),
+			'public' => true,
+			'has_archive' => true,
+			'supports' => array(
+					'title',
+					'editor',
+					'thumbnail',
+				  'custom-fields'
+			)
+	));
+}
+add_action( 'init', 'create_my_custom_post' );
+~~~
+
+- `title` is the title field that I call with `<?php the_title(); ?>`.
+- `editor` is the content editing area that I call with `<?php the_content(); ?>`.
+- `thumbnail` is the featured image that I call with `<?php the_post_thumbnail(); ?>`.
+- `custom-fields` are custom fields that I can add in and call later.
+
+
+## Custom field
+
+- Create > save to database > use in frontend
+- cf. [custom meta box](https://developer.wordpress.org/reference/functions/add_meta_box/), [custom post type](https://codex.wordpress.org/Post_Types)
+- Create other fields like: email, url or upload field for other images instead of featured one.
+- Like [Advanced custom field](https://www.advancedcustomfields.com/) but without any plugin!!!
+- Can be used to add book cover beside book feature image.
 
 ## Errors
 
