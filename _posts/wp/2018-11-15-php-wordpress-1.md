@@ -1,7 +1,7 @@
 ---
 title: PhP Wordpress 1
 categories: web
-tags: [php, website building, mysql]
+tags: [php, website building, mysql, wordpress]
 toc: 1
 date: 2018-11-20
 ---
@@ -515,3 +515,5 @@ RewriteRule . /index.php [L]
 ~~~
 
 Try to refresh the page and see the changes!!!!
+
+{% include more.html content="[Next to Wordpress 2](/php-wordpress-2)." %}
