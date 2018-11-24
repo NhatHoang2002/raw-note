@@ -101,7 +101,7 @@ Let our Coding Score rate your coding skills!
 - [Gatsby](https://www.gatsbyjs.org/): Build apps and websites with [React](https://reactjs.org).
 - [JAMstack](https://jamstack.org/) (Javascript API & Markup): Modern web development architecture based on client-side JavaScript, reusable APIs, and prebuilt Markup.
 - [netlify](https://www.netlify.com/): Build, deploy, and manage modern web projects
-- <new />[Canva](https://www.canva.com): create beatiful covers with text.
+- [Canva](https://www.canva.com): create beatiful covers with text.
 
 ## Youtube channel
 
@@ -141,7 +141,10 @@ Let our Coding Score rate your coding skills!
 - NativLang (language): [http://bit.ly/2EiOZHB](http://bit.ly/2EiOZHB)
 - The infographics show: [http://bit.ly/2A9z0HO](http://bit.ly/2A9z0HO)
 - Nucleus Medical Media: [http://bit.ly/2NELquH](http://bit.ly/2NELquH)
-- <new />[VFacts](https://www.youtube.com/channel/UCf6gW1swSLhhsSQaOGNcM5w) (Vietnamese channels)
+- [VFacts](https://www.youtube.com/channel/UCf6gW1swSLhhsSQaOGNcM5w) (Vietnamese channels)
+- [Convert to SVG](https://www.pngtosvg.com/)
+- [Create font from svg](http://fontello.com/)
+
 
 ### Information technology
 

@@ -71,3 +71,36 @@ gem install compass
 		~~~ bash
 		compass watch
 		~~~
+
+## Navigation
+
+As default, like in [WP1 note](/php-wordpress-1), we can create a "menu bar" with already-created pages by 
+
+~~~ php
+<nav class="blog-nav">
+	<a class="blog-nav-item active" href="<?php echo get_bloginfo( 'wpurl' );?>">Home</a>
+	<?php wp_list_pages( '&title_li=' ); ?>
+</nav>
+~~~
+
+However, I wanna create a custom navigation bar in which there are some fields being not a page! I also wanna change the color of each field when it's chosen.
+
+- I followed [wpbeginner's tut](https://www.wpbeginner.com/wp-themes/how-to-add-custom-navigation-menus-in-wordpress-3-0-themes/).
+- 
+
+### Use fontello for custom icon font
+
+Instead of using Awesomefont, we use [fontello](http://fontello.com/) for a custom icon font.
+
+- If you need to crop an image, use [this site](https://www269.lunapic.com/editor/?action=quick-crop).
+- Convert that image to svg format, use [this site](https://www.pngtosvg.com/).
+- Use [fontello](http://fontello.com/) site to convert to font (drag and drop svg file to the site) and then choose the font and download.
+- Create a folder named **css/fontello** and copy **fontello.css** in the downloaded zip file to it.
+- Copy **font** folder in downloaded zip file to **css/**
+- In **functions.php**, add
+
+	~~~ php
+	wp_enqueue_style( 'fontello', get_template_directory_uri() . '/css/fontello/fontello.css' );
+	~~~
+
+- Use `<i class="icon-math2it"></i>` for the icon where `math2it` is the name you give to fontello site before you download.
