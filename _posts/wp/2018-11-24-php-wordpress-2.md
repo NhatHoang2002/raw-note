@@ -72,9 +72,12 @@ gem install compass
 		compass watch
 		~~~
 
+{:#navigation}
 ## Navigation
 
-As default, like in [WP1 note](/php-wordpress-1), we can create a "menu bar" with already-created pages by 
+### Default menu
+
+As default, like in [WP1 note](/php-wordpress-1), we can create a "menu bar" with _already-created pages_ by 
 
 ~~~ php
 <nav class="blog-nav">
@@ -83,14 +86,85 @@ As default, like in [WP1 note](/php-wordpress-1), we can create a "menu bar" wit
 </nav>
 ~~~
 
-However, I wanna create a custom navigation bar in which there are some fields being not a page! I also wanna change the color of each field when it's chosen.
+### Manually
 
-- I followed [wpbeginner's tut](https://www.wpbeginner.com/wp-themes/how-to-add-custom-navigation-menus-in-wordpress-3-0-themes/).
-- 
+However, I wanna create a **custom navigation** bar in which there are _some fields being not a page_! I also wanna change the color of each field when it's chosen.
 
-### Use fontello for custom icon font
+You can add manually by something like that in the file **header.php**,
 
-Instead of using Awesomefont, we use [fontello](http://fontello.com/) for a custom icon font.
+~~~ php
+<nav class="navbar navbar-dark nav-bg navbar-custom">
+	<div class="container">
+		<a class="nav-home" href="<?php echo get_bloginfo( 'wpurl' );?>">
+		<i class="icon-home"></i>
+			<span>Home</span>
+		</a>
+		<a class="nav-custom-1" href="<?php echo get_bloginfo( 'wpurl' );?>/custom-1">
+			<i class="icon-pi-outline"></i>
+			<span>Custom 1</span>
+		</a>
+		<div class="nav-search">
+			// form of search
+		</div>
+	</div>
+</nav>
+~~~
+
+### Add custom menu with additional icon field
+
+But I wanna add some field in **wp admin** so that I can add some fields in that (intuitively), the code in the _header.php_ is only some lines, they will automatically get the info I provide in wp-admin to show. But how?
+
+- I wanna add custom link & custom title for that nav.
+- I wanna add custom color for each nav.
+- I wanna add custom icon for each nav.
+- I wanna add custom "other factor" for each nav.
+
+I followed below articles:
+
+- For [create and display a custom menu](https://www.wpblog.com/create-custom-navigation-menu-in-wordpress-themes/) in WP. For more options, cf [wp_nav_menu](https://developer.wordpress.org/reference/functions/wp_nav_menu/)
+- Use **Advanced Custom Fields**! (for localhost, download the zip file, extract to a folder and copy it to **wp-content/plugins**) and follow [this instruction](https://www.advancedcustomfields.com/resources/adding-fields-menu-items/) to add custom field to menu, like "icon", and how to display it alongside with other defaut ones.
+	1. After install ACF.
+	2. **Custom Fields** (in WP admin) > **Add new** (field group) > name it _Nav custom items_
+	3. In **Add field**, add **icon** for example
+	4. In **Location**, choose **Menu item** in _Show this field group if_ and then **equal to** > **All**
+	5. Click on **Update**
+	6. Go back to **Appearance** > **Menus** > click on some nav and see the new field "icon".
+- Next question, how to use this field in the theme?
+- Remove all class in `li` of the menu, follow [this article](https://stackoverflow.com/questions/5222140/remove-li-class-id-for-menu-items-and-pages-list?answertab=oldest#tab-top).
+- By default, the menu will have a form like,
+
+	~~~ html
+	<div class="custom-nav">
+		<ul>
+			<li>
+				<a>Menu 1</a>
+			</li>
+			<li>
+				<a>Menu 2</a>
+			</li>
+			<li>
+				<a>Menu 3</a>
+			</li>
+		</ul>
+	</div>
+	~~~
+
+- Now, we only want below one, just follow [this article](https://www.designtoday.info/removing-li-menu-from-wordpress/).
+
+	~~~ html
+	<a>Menu 1</a>
+	<a>Menu 2</a>
+	<a>Menu 3</a>
+	~~~
+
+### Use only one search field file
+
+
+
+
+## Use fontello for custom icon font
+
+Instead of using [Awesome font](https://fontawesome.com/), we use [fontello](http://fontello.com/) for a custom icon font.
 
 - If you need to crop an image, use [this site](https://www269.lunapic.com/editor/?action=quick-crop).
 - Convert that image to svg format, use [this site](https://www.pngtosvg.com/).
@@ -104,3 +178,8 @@ Instead of using Awesomefont, we use [fontello](http://fontello.com/) for a cust
 	~~~
 
 - Use `<i class="icon-math2it"></i>` for the icon where `math2it` is the name you give to fontello site before you download.
+
+
+## Ad custom color to each category
+
+Using [Advanced Custom Field](https://www.advancedcustomfields.com/resources/adding-fields-taxonomy-term/) like in [section navigation](#navigation). Note that, we need to choose **Taxonomy** in _Show this field group if_.
