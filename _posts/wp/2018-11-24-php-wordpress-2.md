@@ -183,3 +183,15 @@ Instead of using [Awesome font](https://fontawesome.com/), we use [fontello](htt
 ## Ad custom color to each category
 
 Using [Advanced Custom Field](https://www.advancedcustomfields.com/resources/adding-fields-taxonomy-term/) like in [section navigation](#navigation). Note that, we need to choose **Taxonomy** in _Show this field group if_.
+
+### Get color from WP and update to CSS
+
+For a moment, I don't know how to do this. I wanna get the color in each nav color and apply them to the hover affect in the css file. There are some ways to use php code inside a css file but I get no result. I'll try it later!
+
+## Build custom post layout with settings in WP admin
+
+I wanna build a custom post layout and then use it in many different page layouts.
+
+## Get the latest posts
+
+I wanna build the index files. First I wanna show the latest posts.
