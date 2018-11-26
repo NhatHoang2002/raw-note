@@ -35,7 +35,7 @@ sudo usermod -a -G groupName userName
 14. Prevent bluetooth devices disconnected after sleep: [link](https://unix.stackexchange.com/questions/177998/bluetooth-mouse-disconnects)
 15. Tweaks for ubuntu on surface book: [link](https://medium.com/@viettrungdang/tweaks-for-ubuntu-on-surface-book-cd05cdb8f378)
 16. [linux-surface](https://github.com/jakeday/linux-surface)
-17. windows shrink drive in windows: [link](https://somoit.net/windows/windows-cannot-shrink-volume-unmovable-files)
+17. Windows **shrink** drive in windows: [link](https://somoit.net/windows/windows-cannot-shrink-volume-unmovable-files) (partition, resize disk drive, hard disk)
 18. Shortcut to a folder in linux: [link]( https://unix.stackexchange.com/questions/226315/how-to-use-ln-s-to-create-a-command-line-shortcut)
 19. **Failed to load module “canberra-gtk-module”**
     ~~~

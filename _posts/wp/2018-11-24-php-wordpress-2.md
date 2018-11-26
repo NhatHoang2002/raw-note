@@ -186,7 +186,26 @@ Using [Advanced Custom Field](https://www.advancedcustomfields.com/resources/add
 
 ### Get color from WP and update to CSS
 
-For a moment, I don't know how to do this. I wanna get the color in each nav color and apply them to the hover affect in the css file. There are some ways to use php code inside a css file but I get no result. I'll try it later!
+I wanna a custom css color will be applied to each nav element. These color are taken from the wp admin database. It means that we can obtain them via a php code. However, it's difficult to use php code inside a css file. It's easier if we add "inline code" in `<head>` like that
+
+~~~ html
+<style type="text/css">
+	.icon-home:hover{color: #eee;}.icon-tex:hover{color: #fff;}
+</style>
+~~~
+
+In order to get each element of nav by using php,
+
+~~~ php
+$menuLocations = get_nav_menu_locations();
+$menuID = $menuLocations['<id-of-menu>'];
+$primaryNav = wp_get_nav_menu_items($menuID);
+foreach ( $primaryNav as $navItem ) {
+	$nav_icon = get_field('nav-icon', $navItem); // get icon of each nav
+	$nav_color = get_field('nav-color', $navItem); // get color of each nav
+	echo '.'.$nav_icon.':hover{color:'.$nav_color.';}';
+}
+~~~
 
 ## Build custom post layout with settings in WP admin
 
