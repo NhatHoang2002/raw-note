@@ -209,8 +209,13 @@ foreach ( $primaryNav as $navItem ) {
 
 ## Build custom post layout with settings in WP admin
 
-I wanna build a custom post layout and then use it in many different page layouts.
+I wanna build a custom post layout and then use it in many different page layouts. In this layout, firstly, I want,
+
+1. **source of post**: where the post from?
+2. **number of post**: how many posts will be displayed?
+3. **post's properties**: which properties of post can be chosen to be showed in this layout?
+4. **Flexible positions**: left or right big-post in comparison with the other smaller, for example.
 
 ## Get the latest posts
 
-I wanna build the index files. First I wanna show the latest posts.
+I wanna build the index page. First I wanna show the latest posts.
