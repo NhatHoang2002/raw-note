@@ -129,7 +129,7 @@ I followed below articles:
 	4. In **Location**, choose **Menu item** in _Show this field group if_ and then **equal to** > **All**
 	5. Click on **Update**
 	6. Go back to **Appearance** > **Menus** > click on some nav and see the new field "icon".
-- Next question, how to use this field in the theme?
+- Next question, <mark>how to use this field in the theme?</mark>, read [this section](#acf).
 - Remove all class in `li` of the menu, follow [this article](https://stackoverflow.com/questions/5222140/remove-li-class-id-for-menu-items-and-pages-list?answertab=oldest#tab-top).
 - By default, the menu will have a form like,
 
@@ -216,6 +216,153 @@ I wanna build a custom post layout and then use it in many different page layout
 3. **post's properties**: which properties of post can be chosen to be showed in this layout?
 4. **Flexible positions**: left or right big-post in comparison with the other smaller, for example.
 
+{:#acf}
+## Advanced Custom Fields
+
+The question is how to use fields created by ACF?
+
 ## Get the latest posts
 
 I wanna build the index page. First I wanna show the latest posts.
+
+- [CF](https://developer.wordpress.org/reference/functions/wp_get_recent_posts/): get latest published posts with title and thumbnail.
+
+	~~~ php
+	<ul id="slider-id" class="slider-class">
+		<?php
+		$recent_posts = wp_get_recent_posts(array(
+			'numberposts' => 4, // Number of recent posts thumbnails to display
+			'post_status' => 'publish' // Show only the published posts
+		));
+		foreach($recent_posts as $post) : ?>
+			<li>
+				<a href="<?php echo get_permalink($post['ID']) ?>">
+					<?php echo get_the_post_thumbnail($post['ID'], 'full'); ?>
+					//Assuming that the slider support captions 
+					<p class="slider-caption-class"><?php echo $post['post_title'] ?></p>
+				</a>
+			</li>
+		<?php endforeach; wp_reset_query(); ?>
+	</ul>
+	~~~
+
+- WP post object (besides `post_title`, `ID`)
+
+	~~~ php
+	WP_Post Object
+	(
+		[ID] =>
+		[post_author] =>
+		[post_date] => 
+		[post_date_gmt] => 
+		[post_content] => 
+		[post_title] => 
+		[post_excerpt] => 
+		[post_status] =>
+		[comment_status] =>
+		[ping_status] => 
+		[post_password] => 
+		[post_name] =>
+		[to_ping] => 
+		[pinged] => 
+		[post_modified] => 
+		[post_modified_gmt] =>
+		[post_content_filtered] => 
+		[post_parent] => 
+		[guid] => 
+		[menu_order] =>
+		[post_type] =>
+		[post_mime_type] => 
+		[comment_count] =>
+		[filter] =>
+	)
+	~~~
+
+- Change `post-date` format to `02-11-2018` for example ([cf](https://stackoverflow.com/questions/18175498/how-do-i-format-the-post-date-in-wordpress)): replace `$post['post-date']` by 
+
+	~~~ php
+	date('n-j-Y', strtotime($post['post_date']));
+	~~~
+
+- Get the category of the post ([cf](https://stackoverflow.com/questions/17303840/get-category-name-from-post-id))
+
+~~~ php
+$category_detail = get_the_category('4');//4 is $post->ID
+	foreach($category_detail as $cd){
+	echo $cd->cat_name;
+}
+~~~
+
+- If you use Advanced Custum Field to create a new field, e.g. `cat-icon`, for category, you can access it via
+
+	~~~ php
+	// give 'cat-icon' for category $ first cat
+	$post_cat_icon = get_field('cat-icon', $first_cat[0]);
+	~~~
+
+## Add custom menu and submenu in WP admin
+
+- Add menu, [cf](https://developer.wordpress.org/reference/functions/add_menu_page/)
+- Add submenu, [cf](https://developer.wordpress.org/reference/functions/add_submenu_page/)
+- Cf [Tania](https://www.taniarascia.com/wordpress-from-scratch-part-two/).
+- Ad custom settings with tabs, [cf SE](https://wordpress.stackexchange.com/a/127499/93421)
+
+How to call them?
+
+~~~ php
+<li><a href="<?php echo get_option('github'); ?>">GitHub</a></li>
+<li><a href="<?php echo get_option('twitter'); ?>">Twitter</a></li>
+~~~
+
+1. Add new field
+
+	~~~ php
+	// facebook-group
+		add_settings_field(
+			'facebook-group', 
+			'Facebook Group URL', 
+			'site_setting_facebook_group',  // function to call
+			'site_setting_option', 
+			'site_setting' // sectom id 
+		);
+	~~~
+
+2. Register
+
+	~~~ php
+	register_setting('site_setting_option', 'facebook-group');
+	~~~
+
+3. Callback
+
+	~~~ php
+	// facebook group
+	function site_setting_facebook_group() { ?>
+		<input type="text" name="facebook-group" id="facebook-group" value="<?php echo get_option('facebook-group'); ?>" />
+	<?php }
+	~~~
+
+## Includes files in functions.php
+
+In order to manage functions added to **functions.php**, we need to store each function in to a separated file and then include it in functions.php. [Cf SE](https://wordpress.stackexchange.com/questions/1403/organizing-code-in-your-wordpress-themes-functions-php-file).
+
+- Child file, eg **css-js.php**, stored in _/functions-files/_
+- Beginning of _css-js.php_, add `<?php`
+- In **functions.php**
+
+	~~~ php
+	require_once( __DIR__ . '/functions-files/css-js.php');
+	~~~
+
+## Change seprator between title and tagline 
+
+Add to **functions.php** ([cf](https://wordpress.stackexchange.com/questions/203279/how-to-change-the-seperator-in-the-title)),
+
+~~~ php
+add_theme_support( 'title-tag' );
+add_filter( 'document_title_separator', 'cyb_document_title_separator' );
+function cyb_document_title_separator( $sep ) {
+    $sep = "|";
+    return $sep;
+}
+~~~

@@ -25,7 +25,7 @@ The idea of turning a nonlinear equation into a linear one by using an approxima
 
 ## Convergence measures & stability
 
-[[source]](http://zoro.ee.ncku.edu.tw/na/res/04-simple_enclosure.pdf) For any rootfinding technique, we have 3 convergence measures to construct the stopping condition
+For any rootfinding technique, we have 3 convergence measures to construct the stopping condition
 
 - absolute error : $p_n-p < \varepsilon$
 - relative error : $\dfrac{\vert p_n-p\vert}{\vert p_n\vert}<\varepsilon$
