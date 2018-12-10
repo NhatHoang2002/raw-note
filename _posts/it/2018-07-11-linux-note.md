@@ -3,7 +3,7 @@ title: Linux notes
 categories: it
 tags: ["linux","ubuntu"]
 snippet: 1
-date: 2018-10-21
+date: 2018-12-08
 ---
 
 1. Problem save file as `root` user and cannot open later: [link](https://askubuntu.com/questions/817902/unable-to-open-any-graphical-app-with-sudo/817906#817906)
@@ -357,3 +357,13 @@ source ~/.profile
 		- First go to this session by `screen -r`
 		- Then press **Ctrl+A** then **K** then **y**
 	- [cf](https://www.tecmint.com/keep-remote-ssh-sessions-running-after-disconnection/)
+
+60. Download playlist audio youtube, using **youtube-dl** ([github](https://github.com/rg3/youtube-dl/blob/master/README.md#readme))
+
+~~~ dash
+sudo apt-get install curl -y (cài curl nếu chưa cài)
+sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
+sudo chmod a+rx /usr/local/bin/youtube-dl
+
+youtube-dl --yes-playlist -f 140 <link-playlist>
+~~~

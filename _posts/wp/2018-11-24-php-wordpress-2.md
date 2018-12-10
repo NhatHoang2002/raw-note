@@ -1,5 +1,5 @@
 ---
-title: PhP Wordpress 2
+title: "PhP Wordpress 2: index page"
 categories: web
 tags: [php, website building, mysql, wordpress]
 toc: 1
@@ -388,3 +388,25 @@ add_action( 'admin_head', 'admin_panel_css' );
 ~~~
 
 In case you wanna use **scss**, you can follow [this section](#scss).
+
+## Get posts from specific category
+
+References: 
+
+- [get_posts](https://developer.wordpress.org/reference/functions/get_posts/)
+- [Get posts by categories on SE](https://wordpress.stackexchange.com/questions/193110/wordpress-get-posts-by-category)
+- [Herald post type c example](https://demo.mekshq.com/herald/?page_id=1066)
+
+## Support SVG image file
+
+Default, SVG is not supported in WP. You need to add following lines to **functions.php** to active this ([cf](https://themeisle.com/blog/add-svg-to-wordpress/)),
+
+~~~ php
+function add_file_types_to_uploads($file_types){
+$new_filetypes = array();
+$new_filetypes['svg'] = 'image/svg+xml';
+$file_types = array_merge($file_types, $new_filetypes );
+return $file_types;
+}
+add_action('upload_mimes', 'add_file_types_to_uploads');
+~~~
