@@ -397,6 +397,21 @@ References:
 - [Get posts by categories on SE](https://wordpress.stackexchange.com/questions/193110/wordpress-get-posts-by-category)
 - [Herald post type c example](https://demo.mekshq.com/herald/?page_id=1066)
 
+1. In order to know ID of some category: Posts > Categories > Move your mouse over the category you wanna know its id, look at the bottom of your web browser, they list something like this *...wp-admin/term.php?taxonomy=category&tag\_ID=1...*. The number 1 is the id you are looking for.
+2. Use below code to get posts from this category ([cf](https://wordpress.stackexchange.com/questions/193110/wordpress-get-posts-by-category))
+
+	~~~ php
+	$args = array(
+			'category'         => 1,
+			'numberposts' 		 => 5,
+			'orderby'          => 'name',
+			'order'            => 'ASC',
+	);
+	$posts = get_posts($args);
+	~~~
+
+3. If you wanna take a specific post with its id or just wanna get a range of post from `$post`, [cf](https://stackoverflow.com/questions/16219388/wordpress-get-range-of-posts).
+
 ## Support SVG image file
 
 Default, SVG is not supported in WP. You need to add following lines to **functions.php** to active this ([cf](https://themeisle.com/blog/add-svg-to-wordpress/)),
