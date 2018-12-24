@@ -269,6 +269,8 @@ Or in **content.php** (index/list of posts page)
 
 which replaces the line `<?php the_excerpt(); ?>`.
 
+- Read more on [`get_the_post_thumbnail()`](https://developer.wordpress.org/reference/functions/get_the_post_thumbnail/)
+
 ## Wordpress' components
 
 ### Site's components

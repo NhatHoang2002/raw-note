@@ -412,6 +412,23 @@ References:
 
 3. If you wanna take a specific post with its id or just wanna get a range of post from `$post`, [cf](https://stackoverflow.com/questions/16219388/wordpress-get-range-of-posts).
 
+## Get the first post
+
+Using bool variable to check the first post, cannot use something like `$post[0]`!!!
+
+~~~ php 
+$first_post = true;
+foreach($cat_posts as $post) : 
+	setup_postdata( $post );
+	if ($first_post):
+		// codes
+	endif;
+	$first_post = false;
+endforeach; wp_reset_postdata();
+~~~
+
+If you don't want to use `postdata`, just use $$post->ID$.
+
 ## Support SVG image file
 
 Default, SVG is not supported in WP. You need to add following lines to **functions.php** to active this ([cf](https://themeisle.com/blog/add-svg-to-wordpress/)),
