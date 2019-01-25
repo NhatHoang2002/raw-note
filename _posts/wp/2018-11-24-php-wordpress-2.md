@@ -1,8 +1,9 @@
 ---
-title: "PhP Wordpress 2: index page"
+title: "PHP Wordpress 2: index page"
 categories: web
 tags: [php, website building, mysql, wordpress]
 toc: 1
+date: 2018-12-24
 ---
 
 I use this note for all I've learned when I build again website math2it.com using Wordpress. Different from [Note of Wordpress 1](/php-wordpress-1), in this note, I focus on what I will use to build the theme.
@@ -183,34 +184,6 @@ Instead of using [Awesome font](https://fontawesome.com/), we use [fontello](htt
 
 - Use `<i class="icon-math2it"></i>` for the icon where `math2it` is the name you give to fontello site before you download.
 
-
-## Ad custom color to each category
-
-Using [Advanced Custom Field](https://www.advancedcustomfields.com/resources/adding-fields-taxonomy-term/) like in [section navigation](#navigation). Note that, we need to choose **Taxonomy** in _Show this field group if_.
-
-### Get color from WP and update to CSS
-
-I wanna a custom css color will be applied to each nav element. These color are taken from the wp admin database. It means that we can obtain them via a php code. However, it's difficult to use php code inside a css file. It's easier if we add "inline code" in `<head>` like that
-
-~~~ html
-<style type="text/css">
-	.icon-home:hover{color: #eee;}.icon-tex:hover{color: #fff;}
-</style>
-~~~
-
-In order to get each element of nav by using php,
-
-~~~ php
-$menuLocations = get_nav_menu_locations();
-$menuID = $menuLocations['<id-of-menu>'];
-$primaryNav = wp_get_nav_menu_items($menuID);
-foreach ( $primaryNav as $navItem ) {
-	$nav_icon = get_field('nav-icon', $navItem); // get icon of each nav
-	$nav_color = get_field('nav-color', $navItem); // get color of each nav
-	echo '.'.$nav_icon.':hover{color:'.$nav_color.';}';
-}
-~~~
-
 ## Build custom post layout with settings in WP admin
 
 I wanna build a custom post layout and then use it in many different page layouts. In this layout, firstly, I want,
@@ -226,6 +199,17 @@ References: [cat templates codex](https://codex.wordpress.org/Category_Templates
 ## Advanced Custom Fields
 
 The question is how to use fields created by ACF?
+
+~~~ php
+get_field('abstract',$post->ID); // get field from post type
+~~~
+
+Depend on the **return type** when you create this custom field.
+
+~~~ php
+$featureIcon = get_field('feature_icon',$postID);
+echo $featureIcon['url']; // url of image type
+~~~
 
 ## Get the latest posts
 
@@ -389,7 +373,49 @@ add_action( 'admin_head', 'admin_panel_css' );
 
 In case you wanna use **scss**, you can follow [this section](#scss).
 
-## Get posts from specific category
+## Category
+
+### Category's components
+
+- Get cat from post: `$first_cat = get_the_category($post['ID']);`
+- Cat's title: `get_the_category($cat_id);` or `<?php echo get_cat_name($cat_id);?>`
+- Cat's icon:
+
+~~~ php
+$first_cat = get_the_category($post['ID']); // the 1st cat of a post
+$post_cat_icon = get_field('cat-icon', $first_cat[0]);?>
+~~~
+
+- Cat's url: `<?php echo get_category_link($cat_id) ?>`
+
+### Ad custom color to each category
+
+Using [Advanced Custom Field](https://www.advancedcustomfields.com/resources/adding-fields-taxonomy-term/) like in [section navigation](#navigation). Note that, we need to choose **Taxonomy** in _Show this field group if_.
+
+### Get color from WP and update to CSS
+
+I wanna a custom css color will be applied to each nav element. These color are taken from the wp admin database. It means that we can obtain them via a php code. However, it's difficult to use php code inside a css file. It's easier if we add "inline code" in `<head>` like that
+
+~~~ html
+<style type="text/css">
+	.icon-home:hover{color: #eee;}.icon-tex:hover{color: #fff;}
+</style>
+~~~
+
+In order to get each element of nav by using php,
+
+~~~ php
+$menuLocations = get_nav_menu_locations();
+$menuID = $menuLocations['<id-of-menu>'];
+$primaryNav = wp_get_nav_menu_items($menuID);
+foreach ( $primaryNav as $navItem ) {
+	$nav_icon = get_field('nav-icon', $navItem); // get icon of each nav
+	$nav_color = get_field('nav-color', $navItem); // get color of each nav
+	echo '.'.$nav_icon.':hover{color:'.$nav_color.';}';
+}
+~~~
+
+### Get posts from specific category
 
 References: 
 
@@ -412,7 +438,7 @@ References:
 
 3. If you wanna take a specific post with its id or just wanna get a range of post from `$post`, [cf](https://stackoverflow.com/questions/16219388/wordpress-get-range-of-posts).
 
-## Get the first post
+### Get the first post
 
 Using bool variable to check the first post, cannot use something like `$post[0]`!!!
 
@@ -427,7 +453,7 @@ foreach($cat_posts as $post) :
 endforeach; wp_reset_postdata();
 ~~~
 
-If you don't want to use `postdata`, just use $$post->ID$.
+If you don't want to use `postdata`, just use `$post->ID`.
 
 ## Support SVG image file
 
@@ -441,4 +467,17 @@ $file_types = array_merge($file_types, $new_filetypes );
 return $file_types;
 }
 add_action('upload_mimes', 'add_file_types_to_uploads');
+~~~
+
+## Pass variable to template file
+
+We use [`set_query_var`](https://developer.wordpress.org/reference/functions/set_query_var/) coupling with `get_template_part()`
+
+~~~ php
+// When calling a template with get_template_part()
+set_query_var('my_form_id', 23);
+get_template_part('my-form-template');
+
+// Inside my-form-template.php
+$my_form_id = get_query_var('my_form_id');
 ~~~

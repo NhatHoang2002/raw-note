@@ -1,5 +1,5 @@
 ---
-title: PhP Wordpress 1
+title: PHP Wordpress 1
 categories: web
 tags: [php, website building, mysql, wordpress]
 toc: 1
