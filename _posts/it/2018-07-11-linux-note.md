@@ -3,7 +3,7 @@ title: Linux notes
 categories: it
 tags: ["linux","ubuntu"]
 snippet: 1
-date: 2018-12-08
+date: 2019-01-26
 ---
 
 1. Problem save file as `root` user and cannot open later: [link](https://askubuntu.com/questions/817902/unable-to-open-any-graphical-app-with-sudo/817906#817906)
@@ -360,10 +360,14 @@ source ~/.profile
 
 60. Download playlist audio youtube, using **youtube-dl** ([github](https://github.com/rg3/youtube-dl/blob/master/README.md#readme))
 
-~~~ dash
+~~~ bash
 sudo apt-get install curl -y (cài curl nếu chưa cài)
 sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
 sudo chmod a+rx /usr/local/bin/youtube-dl
 
-youtube-dl --yes-playlist -f 140 <link-playlist>
+youtube-dl --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s" <link-playlist>
 ~~~
+
+61. Copy files from ubuntu to iPhone iOS iPad
+	- Don't need to install any files if one needs to copy photos/videos from iphone to ubuntu, one can use gThumb to do this or just use file manager to copy.
+	- If one wants to copy files to iphone. Follow [this one](https://askubuntu.com/questions/799414/how-to-move-files-from-ubuntu-to-iphone)
