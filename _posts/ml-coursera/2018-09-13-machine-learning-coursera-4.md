@@ -24,6 +24,8 @@ This note was first taken when I learnt the [machine learning course on Coursera
 
 ## Neural Networks
 
+Check `[this link](https://medium.com/datathings/neural-networks-and-backpropagation-explained-in-a-simple-way-f540a3611f5e)` to see the basic idea of NN and forward/backward propagation.
+
 {% include download.html content="[Download Lecture 8](/files/ML-coursera/Lecture8.pdf)." %}
 
 - Algorithms try to mimic the brain.
