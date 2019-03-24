@@ -1,5 +1,5 @@
 ---
-title: "IBM Data Professional Certificate Week-1-2-3"
+title: "IBM Data Course 1: What is Data Science - Week-1-2-3"
 categories: [data]
 tags: [data, ibm data]
 math: 1
