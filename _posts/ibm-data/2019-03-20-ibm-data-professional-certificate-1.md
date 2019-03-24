@@ -13,7 +13,7 @@ This note was first taken when I learnt the [IBM Data Professional Certificate c
 
 {% include toc.html %}
 
-{% include more.html content="[Go to Week 2](/machine-learning-coursera-2)." %}
+{% include more.html content="[Go to Course 2](/ibm-data-professional-certificate-2)." %}
 
 ## Week 1
 
