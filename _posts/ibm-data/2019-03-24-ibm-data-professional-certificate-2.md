@@ -4,7 +4,7 @@ categories: [data]
 tags: [data, ibm data]
 toc: 1
 comment: 1
-date: 2019-03-30
+date: 2019-04-01
 ---
 
 {% assign img-url = '/images/posts/data/ibm' %}
@@ -37,6 +37,8 @@ This note was first taken when I learnt the [IBM Data Professional Certificate c
 		3. Can you put the model into practice?
 
 ![A flowchart of Data Science Methodology]({{img-url}}/pro2app.png){:.w-700}
+
+{% include download.html content="[See white paper about Methodology](/files/ibm/methodology.pdf)." %}
 
 ### Business Understanding
 
@@ -173,6 +175,12 @@ This note was first taken when I learnt the [IBM Data Professional Certificate c
 
 ### Deployment
 
-- 
+- Once a satisfactory model has been developed and is approved by the business sponsors, it is deployed into the production environment or a comparable test environment.
+- While a data science model will provide an answer, the key to making the answer relevant and useful to address the initial question, involves getting the stakeholders familiar with the tool produced.
+- In this scenario, the business people translated the model results so that the clinical staff could understand how to identify high-risk patients and design suitable intervention actions. The goal, of course, was to reduce the likelihood that these patients would be readmitted within 30 days after discharge. 
 
 ### Feedback
+
+- Once in play, feedback from the users will help to refine the model and assess it for performance and impact.
+- The data science methodology is highly iterative, ensuring the refinement at each stage in the game.
+- Analyzing this feedback enables data scientists to refine the model to improve its accuracy and usefulness. They can automate some or all of the feedback-gathering and model assessment, refinement and redeployment steps to speed up the process of model refreshing for better outcomes.
