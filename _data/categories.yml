@@ -6,6 +6,8 @@
   name: Infomation Technology
 - slug: web
   name: Web development
+- slug: python
+  name: Python
 - slug: french
   name: French
 - slug: article

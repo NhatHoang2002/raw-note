@@ -4,6 +4,7 @@ categories: [python,math]
 tags: [hackerrank, statistics, python]
 math: 1
 toc: 1
+date: 2019-04-03
 ---
 
 {% assign img-url = '/images/posts/hackerrank' %}
@@ -124,10 +125,102 @@ $$
 
 
 $$
-b(x,n,p) = \binom {n}{k}\times p^x \times q^{1-x}
+b(x,n,p) = \binom {n}{x}\times p^x \times q^{1-x}
 $$
 
 - **Cumulative Probability** (<mark>CDF</mark>): $F_X(x) = P(X\le x)$ and $P(a<X\le b) = F_X(b)-F_X(a)$.
 
+## Day 4 : Geometric Distribution
 
+- **Negative Binomial Experiment**: A negative binomial experiment is a statistical experiment that has the following properties:
+	- The experiment consists of n repeated trials.
+	- The trials are independent.
+	- The outcome of each trial is either success (s) or failure (f). 
+	- P(s) is the same for every trial.
+	- The experiment continues until x successes are observed. 
+- If x is the number of experiments until the xth success occurs, then X is a discrete random variable called **a negative binomial**. 
 
+$$
+b^{\ast}(x,n,p) = \binom {n-1}{x-1}\times p^x \times q^{1-x}
+$$
+
+- The number of successes to be observed is x.
+- The total number of trials is n.
+- The probability of success of 1 trial is p.
+- The probability of failure of 1 trial q, where q=1-p.
+- $b^{\ast}(x,n,p)$ is the negative binomial probability, meaning the probability of having x-1 successes after n-1 trials and having x successes after n trials.
+
+- **Geometric Distribution**: The geometric distribution is a special case of the negative binomial distribution that deals with the number of Bernoulli trials required to get a success (i.e., *counting the number of failures before the first success*). Recall that X is the number of successes in n independent Bernoulli trials, so for each i (where $1\le i \le n$):
+
+$$
+X_i = \begin{cases}
+1 \quad \text{if the ith trial is a success}\\
+0 \quad \text{otherwise}
+\end{cases}
+$$
+
+- The geometric distribution is a negative binomial distribution where the number of successes is 1. We express this with the following formula:
+
+$$
+g(n,p) = q^{n-1}\times p.
+$$
+
+## Day 5 : Poisson Distribution
+
+- A **Poisson experiment** is a statistical experiment that has the following properties:
+	- The outcome of each trial is either success or failure.
+	- The average number of successes ($\lambda$) that occurs in a specified region is known.
+	- The probability that a success will occur is proportional to the size of the region.
+	- The probability that a success will occur in an extremely small region is virtually zero.
+- A Poisson random variable is the number of successes that result from a Poisson experiment. The probability distribution of a Poisson random variable is called a **Poisson distribution**: 
+
+$$
+P(k, \lambda) = \dfrac{\lambda^k e^{-\lambda}}{k!}
+$$
+
+- $e=2.71828$
+- $\lambda$ is the average number of successes that occur in a specified region.
+- k is the actual number of successes that occur in a specified region.
+- $P(k,\lambda)$ is the Poisson probability, which is the probability of getting exactly k successes when the average number of successes is $\lambda$. 
+- Check examples & special case [here](https://www.hackerrank.com/challenges/s10-poisson-distribution-1/tutorial).
+- **Special case**: X has Poisson Distribution, $E[X] = \lambda = Var(X), Var(X) = E[X^2] - (E[X])^2$ 
+
+## Day 5 : Normal Distribution
+
+- The **probability density of normal distribution** is:
+
+$$
+N(\mu,\sigma^2) = \dfrac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+$$
+
+- $\mu$ is the mean (or expectation) of the distribution. It is also equal to median and mode of the distribution.
+- $\sigma^2$ is the variance.
+- $\sigma$ is the standard deviation. 
+- In python, we can use `numpy.random.normal` ([ref](https://docs.scipy.org/doc/numpy/reference/generated/numpy.random.normal.html))
+- If $\mu=0, \sigma=1$ then the normal distribution is known as **standard normal distribution** 
+
+$$
+\phi(x) = \dfrac{e^{-\frac{x^2}{2}}}{\sqrt{2\pi}}
+$$
+
+- Every normal distribution can be represented as standard normal distribution:
+
+$$
+N(\mu,\sigma^2) = \frac{1}{\sigma}\phi(\frac{x-\mu}{\sigma})
+$$
+
+- Consider a real-valued random variable, X. The **cumulative distribution function** of X (or just the **distribution function** of X) evaluated at x is the probability that X will take a value less than or equal to x:
+
+$$
+F_X(x) = P(X\le x) \\
+P(a\le X\le b) = P(a<X<b) = F_X(b) - F_X(a)
+$$
+
+- The **cumulative distribution function** for a function with normal distribution is (erf = error function):
+
+$$
+\Phi(x) = \frac{1}{2}(1+\text{erf}(\frac{x-\mu}{\sigma\sqrt{2}})) \\
+\text{erf}(z) = \frac{2}{\sqrt{\pi}}\int_0^z e^{-x^2}dx
+$$
+
+- In python, we can use [`math.erf` function](https://docs.python.org/3.5/library/math.html#math.erf).

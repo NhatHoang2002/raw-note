@@ -4,7 +4,7 @@ categories: [data]
 tags: [data, ibm data]
 toc: 1
 comment: 1
-date: 2019-04-01
+date: 2019-04-03
 ---
 
 {% assign img-url = '/images/posts/data/ibm' %}
@@ -18,7 +18,11 @@ This note was first taken when I learnt the [IBM Data Professional Certificate c
 </span>
 </div>
 
+{% include more.html content="[Go to Course 4](/ibm-data-professional-certificate-3)." %}
+
 {% include toc.html %}
+
+{% include download.html content="[See white paper about Methodology](/files/ibm/methodology.pdf)." %}
 
 ## Week 1: From Problem to Approach
 
@@ -37,8 +41,6 @@ This note was first taken when I learnt the [IBM Data Professional Certificate c
 		3. Can you put the model into practice?
 
 ![A flowchart of Data Science Methodology]({{img-url}}/pro2app.png){:.w-700}
-
-{% include download.html content="[See white paper about Methodology](/files/ibm/methodology.pdf)." %}
 
 ### Business Understanding
 
