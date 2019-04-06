@@ -1,10 +1,10 @@
 ---
 title: "IBM Data Course 5: Databases and SQL for Data Science (Week 1 & Week 2)"
 categories: [data]
-tags: [data, ibm data, python, SQL]
+tags: [data, ibm data, SQL]
 toc: 1
 comment: 1
-date: 2019-04-05
+date: 2019-04-06
 ---
 
 {% assign img-url = '/images/posts/data/ibm' %}
@@ -142,7 +142,7 @@ This note was first taken when I learnt the [IBM Data Professional Certificate c
 		- If no `WHERE` clause is used, **all rows will be removed**.
 
 
-### Relational database concepts
+### Relational database concepts (optional)
 
 - **Information model** & **Data model**
 	- Different types of models
@@ -160,6 +160,8 @@ This note was first taken when I learnt the [IBM Data Professional Certificate c
 		- Ex: book -> entity, attributes -> book title, year,...
 		- Entity -> table in database
 		- Atributes -> columns in the table
+	- **Foreign keys** (<mark>FK</mark>): is defined in a second table, but it refers to the primary key or a unique key in the first table
+		- For example, a table called Employees has a primary key called employee_id. Another table called Employee Details has a foreign key which references employee_id in order to uniquely identify the relationship between the two tables.
 	- A table containing one or more foreign keys is called a **Dependent table**.
 - **Types of relationship** between entities
 	- Building blocks of relationship are
@@ -424,3 +426,20 @@ There are several ways to access multiple tables in the same query:
 3. **JOIN OPERATOR**
 
 Check at [Go to Course 5 Week 3 & 4](/ibm-data-professional-certificate-5)
+
+### Relational model constraints (optional)
+
+- At least one author writes one book. This is a one to one relationship. To look up the author information, the book entity refers to the author entity. In a relational data model, this is called **referencing**.
+	![ERD representation of a relational data model]({{img-url}}/ibm-4-10.png){:.w-700}
+- **Primary Key** which uniquely identifies a row in a table but not for the foreign key (FK)
+- **Parent table**: a table containing a Primary key that is related to at least one Foreign key.
+- **Dependent table**: a table containing one or more Foreign keys.
+	![Relational Model Terminology]({{img-url}}/ibm-4-11.png){:.w-700}
+- **constraint**: điều kiện ràng buộc. 6 different types of relational model constraint
+	- **Entity Integrity Constraint**: example : primary key. Terms: primary and key constraint or unique constraint are also used. *This constraint prevents duplicate value in the table*.
+	- **Referential Integrity Constraint** *ensures the validity of the data using a combination of Primary Keys and Foreign Keys*.
+	- **Semantic Integrity Constraint**: The semantic integrity constraint refers to the *correctness of the meaning of the data*. For example, in the relation author, if the attribute or column city contains a garbage value instead of Toronto, the **garbage** value does not have any meaning. *The semantic integrity constraint is related to the correctness of the data.* 
+	- **Domain constraint**:A domain constraint specifies the ***permissible** values for a given attribute*. For example, in the relation author, the attribute country must contain a two letter country code such as CA for Canada or IN for India. If a number value of 34 is entered for the country attribute instead of a two let her country code, the value 34 does not have any meaning.
+	- **Null constraint**: The null constraint *specifies that attribute values cannot be null*
+	- **Check constraint**: The check constraint enforces domain integrity by *limiting the values that are accepted by an attribute*. 
+
