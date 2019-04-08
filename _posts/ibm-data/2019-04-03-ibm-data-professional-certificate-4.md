@@ -250,7 +250,7 @@ How to create databses + upload csv files to cooperate with them on IBM Clound D
 		SELECT DISTINCT(country)
 			FROM author
 		~~~
-	- **GROUP BY**: count the number of row has the same values
+	- **[GROUP BY](https://www.w3schools.com/sql/sql_groupby.asp)**: count the number of row has the same values
 		~~~ sql
 		SELECT country, COUNT(country) 
 			FROM author 
@@ -435,7 +435,7 @@ Check at [Go to Course 5 Week 3 & 4](/ibm-data-professional-certificate-5)
 - **Parent table**: a table containing a Primary key that is related to at least one Foreign key.
 - **Dependent table**: a table containing one or more Foreign keys.
 	![Relational Model Terminology]({{img-url}}/ibm-4-11.png){:.w-700}
-- **constraint**: điều kiện ràng buộc. 6 different types of relational model constraint
+- **constraint**: *điều kiện ràng buộc*. 6 different types of relational model constraint
 	- **Entity Integrity Constraint**: example : primary key. Terms: primary and key constraint or unique constraint are also used. *This constraint prevents duplicate value in the table*.
 	- **Referential Integrity Constraint** *ensures the validity of the data using a combination of Primary Keys and Foreign Keys*.
 	- **Semantic Integrity Constraint**: The semantic integrity constraint refers to the *correctness of the meaning of the data*. For example, in the relation author, if the attribute or column city contains a garbage value instead of Toronto, the **garbage** value does not have any meaning. *The semantic integrity constraint is related to the correctness of the data.* 

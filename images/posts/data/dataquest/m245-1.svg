@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="600px" height="100px" viewBox="0 0 600 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch -->
+    <title>s1_data_pipeline</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="100" height="100"></rect>
+        <rect id="path-2" x="0" y="0" width="100" height="100"></rect>
+        <rect id="path-3" x="0" y="0" width="100" height="100"></rect>
+        <rect id="path-4" x="0" y="0" width="100" height="100"></rect>
+        <rect id="path-5" x="0" y="0" width="100" height="100"></rect>
+    </defs>
+    <g id="DE5---Postgres" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="DE5M1" transform="translate(-26.000000, -67.000000)">
+            <g id="s1_data_pipeline" transform="translate(26.000000, 67.000000)">
+                <g id="Pipeline-Bit">
+                    <g id="Rectangle">
+                        <use fill-opacity="0.2" fill="#7E87A8" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <rect stroke="#7E87A8" stroke-width="1" x="0.5" y="0.5" width="99" height="99"></rect>
+                    </g>
+                    <text id="Collecting" font-family="HelveticaNeue, Helvetica Neue" font-size="12" font-weight="normal" fill="#333333">
+                        <tspan x="23" y="54">Collecting</tspan>
+                    </text>
+                </g>
+                <g id="Pipeline-Bit" transform="translate(125.000000, 0.000000)">
+                    <g id="Rectangle">
+                        <use fill-opacity="0.2" fill="#7E87A8" fill-rule="evenodd" xlink:href="#path-2"></use>
+                        <rect stroke="#7E87A8" stroke-width="1" x="0.5" y="0.5" width="99" height="99"></rect>
+                    </g>
+                    <text id="Short-Term-Storage" font-family="HelveticaNeue, Helvetica Neue" font-size="12" font-weight="normal" fill="#333333">
+                        <tspan x="19.994" y="47">Short-Term</tspan>
+                        <tspan x="28.892" y="61">Storage</tspan>
+                    </text>
+                </g>
+                <g id="Pipeline-Bit" transform="translate(250.000000, 0.000000)">
+                    <g id="Rectangle">
+                        <use fill-opacity="0.2" fill="#7E87A8" fill-rule="evenodd" xlink:href="#path-3"></use>
+                        <rect stroke="#7E87A8" stroke-width="1" x="0.5" y="0.5" width="99" height="99"></rect>
+                    </g>
+                    <text id="Processing" font-family="HelveticaNeue, Helvetica Neue" font-size="12" font-weight="normal" fill="#333333">
+                        <tspan x="20" y="54">Processing</tspan>
+                    </text>
+                </g>
+                <g id="Pipeline-Bit" transform="translate(375.000000, 0.000000)">
+                    <g id="Rectangle">
+                        <use fill-opacity="0.2" fill="#7E87A8" fill-rule="evenodd" xlink:href="#path-4"></use>
+                        <rect stroke="#7E87A8" stroke-width="1" x="0.5" y="0.5" width="99" height="99"></rect>
+                    </g>
+                    <text id="Long-Term-Storage" font-family="HelveticaNeue, Helvetica Neue" font-size="12" font-weight="normal" fill="#333333">
+                        <tspan x="20.99" y="47">Long-Term</tspan>
+                        <tspan x="28.892" y="61">Storage</tspan>
+                    </text>
+                </g>
+                <g id="Pipeline-Bit" transform="translate(500.000000, 0.000000)">
+                    <g id="Rectangle">
+                        <use fill-opacity="0.2" fill="#7E87A8" fill-rule="evenodd" xlink:href="#path-5"></use>
+                        <rect stroke="#7E87A8" stroke-width="1" x="0.5" y="0.5" width="99" height="99"></rect>
+                    </g>
+                    <text id="Presenting" font-family="HelveticaNeue, Helvetica Neue" font-size="12" font-weight="normal" fill="#333333">
+                        <tspan x="21.44" y="54">Presenting</tspan>
+                    </text>
+                </g>
+                <path d="M104,50.5 L121,50.5" id="Line" stroke="#979797" stroke-linecap="square"></path>
+                <path d="M229,50.5 L246,50.5" id="Line" stroke="#979797" stroke-linecap="square"></path>
+                <path d="M354,50.5 L371,50.5" id="Line" stroke="#979797" stroke-linecap="square"></path>
+                <path d="M479,50.5 L496,50.5" id="Line" stroke="#979797" stroke-linecap="square"></path>
+            </g>
+        </g>
+    </g>
+</svg>
