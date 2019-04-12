@@ -1,7 +1,7 @@
 ---
 title: "IBM Data Course 5: Databases and SQL for Data Science (Week 3 & Week 4)"
 categories: [data]
-tags: [data, ibm data, python, SQL]
+tags: [data, ibm data, python, SQL, pandas, numpy]
 toc: 1
 comment: 1
 date: 2019-04-08

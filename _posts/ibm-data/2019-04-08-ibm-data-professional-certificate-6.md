@@ -1,7 +1,7 @@
 ---
 title: "IBM Data Course 6: Data Analysis with Python"
 categories: [data]
-tags: [data, ibm data]
+tags: [data, ibm data, python, pandas, numpy]
 toc: 1
 comment: 1
 date: 2019-04-12
@@ -113,12 +113,12 @@ This note was first taken when I learnt the [IBM Data Professional Certificate c
 		- replace it with an avarage
 		- replace it by frequency (values appear most often)
 		- replace it based on other functions
-	~~~ python
-	df.replace(<missing value>, <new value>)
-	
-	mean = df["col1"].mean()
-	df["col1"].replace(np.nan, mean)
-	~~~
+			~~~ python
+			df.replace(<missing value>, <new value>)
+			
+			mean = df["col1"].mean()
+			df["col1"].replace(np.nan, mean)
+			~~~
 	- Leaving it as missing value
 - **Data Formatting in Python**
 	![Data Formatting in Python]({{img-url}}/ibm-6-1.jpg){:.w-700}
@@ -135,9 +135,9 @@ This note was first taken when I learnt the [IBM Data Professional Certificate c
 	![Data Normalization in Python]({{img-url}}/ibm-6-2.jpg){:.w-700}
 	- diff ranges, hard to compare, the bigger will influnce the result most.
 	- Diff approaches
-		- Simple feature scaling: $x\_{new} = \dfrac{x\_{old}}{x\_{max}}$
-		- Min-max: $x\_{new} = \dfrac{x\_{old}-x\_{min}}{x\_{max}-x\_{min}}$
-		- Z-score: $x\_{new} = \dfrac{x\_{old}-\mu}{\delta}$, usually between (-3,3) based on normal distribution.
+		- **Simple feature scaling**: $x\_{new} = \dfrac{x\_{old}}{x\_{max}}$
+		- **Min-max**: $x\_{new} = \dfrac{x\_{old}-x\_{min}}{x\_{max}-x\_{min}}$
+		- **Z-score**: $x\_{new} = \dfrac{x\_{old}-\mu}{\delta}$, usually between (-3,3) based on normal distribution.
 	~~~ python
 	df["col1"] = df["col1"]/df["col1"].max() // simple feature scaling
 	df["col1"] = (df["col1"] - df["col1"].min())/(df["col1"].max() - df["col1"].min()) // min-max
@@ -189,6 +189,9 @@ This note was first taken when I learnt the [IBM Data Professional Certificate c
 		~~~ python
 		sns.regplot(x="var1", y="var2", data=df)
 		plt.ylim(0,)
+
+		// or
+		df[["col1", "col2"]].corr()
 		~~~
 - **Correslation - Statistics**
 	- **[Pearson correlation](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)**: measures the strenght of correlation between 2 features
@@ -221,6 +224,8 @@ big F-score
 ![Example]({{img-url}}/ibm-6-12.jpg){:.w-700}
 
 ## Week 4: Model Development
+
+Check [**the lab**]({{site.url}}/files/ibm/model-development.html)
 
 - **Model Development**
 - **Linear Regression**: 
@@ -339,6 +344,21 @@ big F-score
 		</div>
 		</div>
 - **Prediction and Decision Making**
+	- See in the lab!!!
+
+## Week 5: Model Evaluation
+
+- **Model Evaluation and Refinement**: tells us how a model perform in the real world.
+	- **In-sample evaluation** tells us how well our model fits the data already given to train it.
+		- It does not give us an estimate of how well the train model can predict new data.
+		- Solution: in-sample (training data) and out-of-sample (test data)
+	- Split data set into: 70% training and 30% test:
+		~~~ python
+		from sklearn.model_selection import train_test_split
+		~~~
+	- **Generalization error** is a measure of how well our data does at predicting previously unseen data.
+	- All our error estimates are relatively close together, but they are further away from the true generalization performance. To overcome this problem, we use **[cross-validation](https://towardsdatascience.com/cross-validation-70289113a072)**.
+		~~~ python
+		from sklearn.model_selection import cross_val_score
+		~~~
 	- 
-
-
