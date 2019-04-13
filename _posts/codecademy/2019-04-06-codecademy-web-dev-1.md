@@ -1,7 +1,7 @@
 ---
 title: "Codecademy - Web Development 1"
 categories: [web]
-tags: [html]
+tags: [html, codecademy web, codecademy]
 toc: 1
 comment: 1
 date: 2019-04-08

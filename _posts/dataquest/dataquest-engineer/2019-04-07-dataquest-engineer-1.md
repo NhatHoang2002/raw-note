@@ -1,6 +1,6 @@
 ---
 title: "DataQuest - Data Engineer 1: Postgres for Data Engineers"
-categories: [data]
+categories: [data, python]
 tags: [dataquest, python, data]
 toc: 1
 comment: 1

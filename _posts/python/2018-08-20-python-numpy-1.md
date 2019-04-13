@@ -1,6 +1,6 @@
 ---
 title: Python NumPy
-categories: [ml, data]
+categories: [ml, data, python]
 tags: [python,numpy,data]
 maths: 1
 toc: 1

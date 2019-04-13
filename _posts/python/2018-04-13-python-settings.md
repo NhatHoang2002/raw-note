@@ -1,6 +1,6 @@
 ---
 title: "Python 0 : Docs & Settings"
-categories: it
+categories: [it, python]
 tags: [python]
 maths: 1
 toc: 1

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Python 3"
-categories: it
+categories: [it, python]
 tags: [python, data]
 maths: 1
 toc: 1

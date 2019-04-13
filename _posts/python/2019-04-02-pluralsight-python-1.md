@@ -1,6 +1,6 @@
 ---
 title: "Python PluralSight 1"
-categories: it
+categories: [it, python]
 tags: [python, pluralsight]
 maths: 1
 toc: 1

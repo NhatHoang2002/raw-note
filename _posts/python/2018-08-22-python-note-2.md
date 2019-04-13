@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Python 2 : Tricks"
-categories: it
+categories: [it, python]
 tags: [python]
 maths: 1
 toc: 1

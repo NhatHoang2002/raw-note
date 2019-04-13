@@ -1,6 +1,6 @@
 ---
 title: Python matplotlib
-categories: [data]
+categories: [data, python]
 tags: [python, matplotlib, data]
 maths: 1
 toc: 1

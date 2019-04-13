@@ -1,6 +1,6 @@
 ---
 title: "DataQuest 4: Step 2 - Data Cleaning"
-categories: [data]
+categories: [data,python]
 tags: [dataquest, python, numpy, pandas, data]
 maths: 1
 toc: 1

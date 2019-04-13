@@ -1,6 +1,6 @@
 ---
 title: "Python Hard Learning"
-categories: it
+categories: [it, python]
 tags: [python]
 maths: 1
 toc: 1

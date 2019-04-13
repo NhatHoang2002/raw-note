@@ -4,7 +4,7 @@ categories: [data]
 tags: [data, ibm data, python, pandas, numpy]
 toc: 1
 comment: 1
-date: 2019-04-12
+date: 2019-04-13
 math: 1
 ---
 
@@ -18,6 +18,8 @@ This note was first taken when I learnt the [IBM Data Professional Certificate c
 [Go back to Course 5: Week 3 & 4](/ibm-data-professional-certificate-5).
 </span>
 </div>
+
+{% include more.html content="[Go to Course 7](/ibm-data-professional-certificate-7)." %}
 
 {% include toc.html %}
 
@@ -225,7 +227,9 @@ big F-score
 
 ## Week 4: Model Development
 
-Check [**the lab**]({{site.url}}/files/ibm/model-development.html)
+<div class="p-mark" markdown="1">
+Check [**the lab**]({{site.url}}/files/ibm/model-development.html) for better understanding in a case-study.
+</div>
 
 - **Model Development**
 - **Linear Regression**: 
@@ -333,32 +337,65 @@ Check [**the lab**]({{site.url}}/files/ibm/model-development.html)
 		- Using: `lm.score(X, y)`
 		- Usually between 0 and 1
 		- If <0 -> overfitting
-		<div class="row d-flex" markdown="1">
-		<div class="col s12 l6" markdown="1">
-		$R^2=1$ : good
-		![R-squared]({{img-url}}/ibm-6-18.jpg){:.w-500}
-		</div>
-		<div class="col s12 l6" markdown="1">
-		$R^2=0$ : worst
-		![R-squared]({{img-url}}/ibm-6-19.jpg){:.w-500}
-		</div>
-		</div>
+
+<div class="row d-flex" markdown="1">
+<div class="col s12 l6" markdown="1">
+$R^2=1$ : good
+![R-squared]({{img-url}}/ibm-6-18.jpg){:.w-500}
+</div>
+<div class="col s12 l6" markdown="1">
+$R^2=0$ : worst
+![R-squared]({{img-url}}/ibm-6-19.jpg){:.w-500}
+</div>
+</div>
+
 - **Prediction and Decision Making**
 	- See in the lab!!!
 
 ## Week 5: Model Evaluation
 
+<div class="p-mark" markdown="1">
+Check [**the lab**]({{site.url}}/files/ibm/model-evaluation-and-refinement.html) for better understanding in a case-study.
+</div>
+
 - **Model Evaluation and Refinement**: tells us how a model perform in the real world.
 	- **In-sample evaluation** tells us how well our model fits the data already given to train it.
-		- It does not give us an estimate of how well the train model can predict new data.
-		- Solution: in-sample (training data) and out-of-sample (test data)
+		- **Problem**: It does not give us an estimate of how well the train model can predict new data.
+		- **Solution**: in-sample (training data) and out-of-sample (test data)
 	- Split data set into: 70% training and 30% test:
 		~~~ python
 		from sklearn.model_selection import train_test_split
 		~~~
 	- **Generalization error** is a measure of how well our data does at predicting previously unseen data.
 	- All our error estimates are relatively close together, but they are further away from the true generalization performance. To overcome this problem, we use **[cross-validation](https://towardsdatascience.com/cross-validation-70289113a072)**.
+		- It’s a model validation techniques for assessing how the results of a statistical analysis (model) will generalize to an independent data 
+		- It is mainly used in settings where the goal is prediction, and one wants to estimate how accurately a predictive model will perform in practice.
+		- It is important **the validation and the training set to be drawn from the same distribution** otherwise it would make things worse.
+		- Why it's helpful
+			- Validation help us evaluate the quality of the model
+			- Validation help us select the model which will perform best on unseen data
+			- Validation help us to avoid overfitting and underfitting.
+
 		~~~ python
 		from sklearn.model_selection import cross_val_score
+		
+		sklearn.model_selection.train_test_split // make train/test
 		~~~
-	- 
+- **Overfitting, Underfitting and Model Selection**
+	- everything on the left box is considered as overfitting, right underfitting
+		![Model selection]({{img-url}}/ibm-6-20.jpg){:.w-700}
+	- We can calculate **different R-squared values** as follows.
+		![calculate diff R-squared values]({{img-url}}/ibm-6-21.jpg){:.w-700}
+- **Ridge Regression**: <mark>prevent overfitting</mark>
+	- In polynomial equations, the coefficients going with the high order terms are very big. The Ridge regression will control these coefficients by introduce a parameter alpha.
+	- alpha too large -> these coeff seem to be zero -> underfitting
+	- alpha = 0 -> overfitting
+	- <mark>in order to track alpha, we use cross validation</mark>
+	- in Python
+		![using ridge regression in python]({{img-url}}/ibm-6-22.jpg){:.w-700}
+	- To **choose a good alpha**, we start with the smaller one, increase step by step and then **choose the one make R-squared values be max**. Or with MSE.
+		- <mark>Minimize MSE or maximize R-squared.</mark>
+- **Grid Search**
+	- Grid Search allows us to scan through multiple free parameters with few lines of code.
+	- Scikit-learn has a **means of automatically iterating over these hyperparameters** (like alpha) using cross-validation. This method is called Grid Search.
+	- What are the advantages of Grid Search is how quickly we can test multiple parameters.

@@ -1,6 +1,6 @@
 ---
 title: "IBM Data Course 5: Databases and SQL for Data Science (Week 1 & Week 2)"
-categories: [data]
+categories: [data,python]
 tags: [data, ibm data, SQL]
 toc: 1
 comment: 1
