@@ -1,7 +1,7 @@
 ---
 title: "IBM Data Course 6: Data Analysis with Python"
-categories: [data]
-tags: [data, ibm data, python, pandas, numpy]
+categories: [data, python]
+tags: [data, ibm data, python, pandas, numpy, seaborn]
 toc: 1
 comment: 1
 date: 2019-04-13
@@ -125,7 +125,7 @@ This note was first taken when I learnt the [IBM Data Professional Certificate c
 - **Data Formatting in Python**
 	![Data Formatting in Python]({{img-url}}/ibm-6-1.jpg){:.w-700}
 	- Change mile per galon (mpg) to litre per km (l/100km): `df["col1"] = 235/df["col1"]`
-	- Rename a column: `df.rename(columns={"col_old": "col_new"}, inline=True)`
+	- Rename a column: `df.rename(columns={"col_old": "col_new"}, inplace=True)`
 	- Somtimes, incorrect data types.
 		- **objects**: "a", "hello",...
 		- **int64**: 1,3,5

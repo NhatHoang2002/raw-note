@@ -223,20 +223,16 @@ import numpy as np
 	- with `.iloc[]`, the dening slice **is not** included
 - The same for **series** but don't forget that series is 1-D
 - **Import data** ([cf](https://www.dataquest.io/m/292/exploring-data-with-pandas/3/reading-csv-files-with-pandas))
-
-  ~~~ python
-  # we want to use the 1st column as the row labels
-  f500 = pd.read_csv("f500.csv", index_col=0)
-  # remove the index name (text in the first line, first column)
-  f500.index.name = None
-  ​~~~
-
+	~~~ python
+	# we want to use the 1st column as the row labels
+	f500 = pd.read_csv("f500.csv", index_col=0)
+	# remove the index name (text in the first line, first column)
+	f500.index.name = None
+	​~~~
 - Sort the rows of `f500` by columns `employees` (it **returns** another df but does not change the df itself)
-
-  ~~~ python
-  sorted_emp = f500.sort_values(by=["employees"], ascending=False)
-  ~~~
-
+	~~~ python
+	sorted_emp = f500.sort_values(by=["employees"], ascending=False)
+	~~~
 - `s.str.contains("<str>")` : check if str is in s or not
   - `s.str.contains("<str>", regex = False)` if we want to consider str as a string.
 - `s.str.endswith("<str>")` : check if s ends with str or not
