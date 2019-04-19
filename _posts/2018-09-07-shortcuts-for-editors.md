@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Shortcuts for editors
 categories: [it]
 tags: [jekyll,notetheme]

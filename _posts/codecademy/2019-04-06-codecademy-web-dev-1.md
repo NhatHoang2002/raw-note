@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Codecademy - Web Development 1"
 categories: [web]
 tags: [html, codecademy web, codecademy]

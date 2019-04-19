@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Machine Learning 1
 categories: [ml]
 tags: [machine learning]

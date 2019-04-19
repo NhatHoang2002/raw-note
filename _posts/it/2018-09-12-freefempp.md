@@ -1,4 +1,5 @@
 ---
+layout: post
 title: FreeFem++ note
 categories: [it, phd]
 toc: 1

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "ML Coursera 7 - Week 7: Support Vector Machines"
 categories: [ml]
 tags: [machine learning, ml coursera]

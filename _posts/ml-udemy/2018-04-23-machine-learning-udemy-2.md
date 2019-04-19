@@ -1,4 +1,5 @@
 ---
+layout: post
 title: ML Udemy 2 - Regression
 categories: [ml]
 tags: [machine learning, ml udemy]

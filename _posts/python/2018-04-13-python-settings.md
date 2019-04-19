@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Python 0 : Docs & Settings"
 categories: [it, python]
 tags: [python]

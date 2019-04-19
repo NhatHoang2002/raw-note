@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "IBM Data Course 3: Data Science Methodology"
 categories: [data]
 tags: [data, ibm data]

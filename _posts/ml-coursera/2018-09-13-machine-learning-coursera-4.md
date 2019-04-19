@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "ML Coursera 4 - Week 4: Neural Networks - Representation"
 categories: [ml]
 tags: [machine learning, ml coursera]

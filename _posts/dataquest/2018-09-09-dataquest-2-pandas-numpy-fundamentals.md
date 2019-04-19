@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "DataQuest 2: Step 2 - Pandas and Numpy fundamentals"
 categories: [data,python]
 tags: [dataquest, python, numpy, pandas, data]

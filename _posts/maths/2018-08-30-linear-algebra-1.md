@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Linear Algebra 1
 categories: [math]
 tags: [machine learning, ml coursera, linear algebra,math]

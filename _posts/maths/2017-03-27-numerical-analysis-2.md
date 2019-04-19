@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Numerical analysis 2
 categories: math
 tags: [numerical analysis, analysis,phd,math]

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Matlab note
 categories: [it, phd]
 tags: ["matlab"]

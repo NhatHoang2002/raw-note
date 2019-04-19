@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Collection of useful links and websites
 categories: [other]
 tags: [education, technology]

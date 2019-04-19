@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "PHP Wordpress 2: index page"
 categories: web
 tags: [php, website building, mysql, wordpress]

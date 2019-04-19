@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Codecademy - Python 1"
 categories: [python]
 tags: [python, codecademy python, codecademy]

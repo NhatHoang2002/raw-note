@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "IBM Data Course 7: Data Visualization with Python"
 categories: [data, python]
 tags: [data, ibm data, python, matplotlib, seaborn, pandas]

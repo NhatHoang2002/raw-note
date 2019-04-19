@@ -1,4 +1,5 @@
 ---
+layout: post
 title: LaTeX notes
 categories: it
 tags: [latex, matlab]

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Gatsby 1
 categories: web
 toc: 1

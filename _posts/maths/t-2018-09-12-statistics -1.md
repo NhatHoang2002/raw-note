@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Statistics 1
 categories: [math]
 tags: [machine learning, statistics, data, R]

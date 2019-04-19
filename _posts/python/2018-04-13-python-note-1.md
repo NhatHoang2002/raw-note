@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Python 1 : Fundamentals"
 categories: [it, python]
 tags: [python]

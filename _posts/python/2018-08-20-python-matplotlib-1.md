@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Python matplotlib
 categories: [data, python]
 tags: [python, matplotlib, data]

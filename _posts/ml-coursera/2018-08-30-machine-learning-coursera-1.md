@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "ML Coursera 1 - Week 1: Introduction"
 categories: [ml]
 tags: [machine learning, ml coursera]

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Hackerrank 1: 10 days of statistics"
 categories: [python,math]
 tags: [hackerrank, statistics, python]

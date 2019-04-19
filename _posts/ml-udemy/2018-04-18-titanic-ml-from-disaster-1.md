@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Titanic - Machine Learning from Disaster 1
 categories: [data, ml]
 tags: [machine learning, data, kaggle]

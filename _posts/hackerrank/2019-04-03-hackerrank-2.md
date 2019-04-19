@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Hackerrank 2: 30 days of code"
 categories: [python]
 tags: [hackerrank, python]

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Some showcases with NoteTheme
 categories: [notetheme]
 tags: [jekyll,theme,notetheme]

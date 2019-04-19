@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "ML Coursera 6 - Week 6: Advice for Applying Machine Learning"
 categories: [ml]
 tags: [machine learning, ml coursera]

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Python Hard Learning"
 categories: [it, python]
 tags: [python]

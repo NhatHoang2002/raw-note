@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Python Pandas
 categories: [data, python]
 tags: [python,pandas,data]

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "IBM Data Course 8: Machine Learning with Python"
 categories: [data, python, ml]
 tags: [data, ibm data, python, machine learning]

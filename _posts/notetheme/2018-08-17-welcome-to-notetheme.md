@@ -1,4 +1,6 @@
+
 ---
+layout: post
 title: Welcome to NoteTheme
 categories: notetheme
 tags: [notetheme, jekyll, theme, welcome]

@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Python NumPy
 categories: [ml, data, python]
 tags: [python,numpy,data]

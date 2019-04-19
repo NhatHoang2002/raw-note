@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "ML Coursera 8 - Week 8: Unsupervised Learning"
 categories: [ml]
 tags: [machine learning, ml coursera]

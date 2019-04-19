@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Python Exercism 1
 categories: it
 tags: [python, exercism]

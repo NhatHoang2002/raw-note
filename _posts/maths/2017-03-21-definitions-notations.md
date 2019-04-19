@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Quick definitions + notations
 categories: math
 maths: 1

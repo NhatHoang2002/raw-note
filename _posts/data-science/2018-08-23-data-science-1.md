@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Data Science 1
 categories: [ml, data]
 tags: [machine learning, data codecademy, data]

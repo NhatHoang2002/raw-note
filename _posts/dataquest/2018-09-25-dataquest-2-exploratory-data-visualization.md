@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "DataQuest 3: Step 2 - Data Visualization (Exploratory & Stotytelling)"
 categories: [data,python]
 tags: [dataquest, python, numpy, pandas, data]

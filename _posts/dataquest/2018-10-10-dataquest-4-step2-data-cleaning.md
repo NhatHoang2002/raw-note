@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "DataQuest 4: Step 2 - Data Cleaning"
 categories: [data,python]
 tags: [dataquest, python, numpy, pandas, data]

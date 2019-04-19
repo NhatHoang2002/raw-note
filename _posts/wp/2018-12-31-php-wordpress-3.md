@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "PHP Wordpress 3: Quick"
 categories: web
 tags: [php, website building, mysql, wordpress]

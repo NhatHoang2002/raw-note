@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Python PluralSight 1"
 categories: [it, python]
 tags: [python, pluralsight]

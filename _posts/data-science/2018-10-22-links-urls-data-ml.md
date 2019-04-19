@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Links: Data Science & Machine Learning"
 categories: [ml, data]
 tags: [machine learning, data]

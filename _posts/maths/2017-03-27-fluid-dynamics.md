@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Fluid dynamics
 categories: math
 tags: [math,phd,numerical analysis]

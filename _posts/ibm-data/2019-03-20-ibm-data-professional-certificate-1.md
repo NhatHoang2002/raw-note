@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "IBM Data Course 1 & 2: What is Data Science & Open Source tools for Data Science"
 categories: [data]
 tags: [data, ibm data]

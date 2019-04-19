@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "IBM Data Course 6: Data Analysis with Python"
 categories: [data, python]
 tags: [data, ibm data, python, pandas, numpy, seaborn]

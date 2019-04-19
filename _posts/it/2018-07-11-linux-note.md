@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Linux notes
 categories: it
 tags: ["linux","ubuntu"]

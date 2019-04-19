@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Jekyll & Liquid note
 categories: web
 toc: 1

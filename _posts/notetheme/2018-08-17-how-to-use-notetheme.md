@@ -1,4 +1,5 @@
 ---
+layout: post
 title: How to use NoteTheme
 categories: [notetheme]
 tags: [jekyll,theme,notetheme]

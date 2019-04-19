@@ -1,4 +1,5 @@
 ---
+layout: post
 title: ML Udemy 1 - data preprocessing
 categories: [ml]
 tags: [machine learning, ml udemy]

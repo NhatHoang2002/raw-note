@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Compact, Banach, Hibert, Sobolev spaces
 categories: math
 toc: 1
