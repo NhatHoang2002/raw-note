@@ -1,8 +1,7 @@
 title: Notes of Thi
 description: You cannot remember everything.
 baseurl: ""
-url: "http://mynote.dinhanhthi.com"
-repository: dinhanhthi/self-note
+url: ""
 
 invisible: 1 # remove '#' if you want your site is invisible to search engine
 paginate: 28
@@ -11,7 +10,7 @@ banner: "/assets/res/banner.png" # site banner (load when someone share your pag
 favicon: "/assets/res/favicon.png" # site's favicon (icon left side of your page)
 
 # MatJek specific configurations
-user: 
+user:
   name: "Anh-Thi DINH"
   email: "dinhanhthi@gmail.com"
   website: "dinhanhthi.com"

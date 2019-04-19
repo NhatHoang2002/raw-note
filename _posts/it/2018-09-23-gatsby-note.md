@@ -3,7 +3,7 @@ title: Gatsby 1
 categories: web
 toc: 1
 tags: [gatsby, github, website building]
-date: 2018-10-31
+date: 2019-04-16
 ---
 
 This note contains all my remarks for using [GatsbyJS](https://www.gatsbyjs.org). I wanna find a better solution for jekyll websites. I come to this framework because of [this comparison post](https://www.gatsbyjs.org/features/).
@@ -24,10 +24,10 @@ This note contains all my remarks for using [GatsbyJS](https://www.gatsbyjs.org)
 
 - [npm](https://www.npmjs.com/) is the package manager for JavaScript and the world’s largest software registry
   - Install [NodeJS (with npm)](https://nodejs.org/en/) (check [this](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04) for other methods)
-    ~~~ bash
-sudo apt-get update
-sudo apt-get install nodejs
-    ~~~
+		~~~ bash
+		sudo apt-get update
+		sudo apt-get install nodejs
+		~~~
   - Check the current version: `npm -v` (for npm) and `node -v` (for nodejs)
 - Check version for gatsby: `gatsby -v`
 - Install: `npm install --global gatsby-cli`
@@ -35,14 +35,20 @@ sudo apt-get install nodejs
   - Create a new folder by: `mkdir ~/.npm-global`
   - Open `~/.profile`
   - Add following lines to this file
-    ~~~ bash
-npm config set prefix '~/.npm-global'
-export PATH=~/.npm-global/bin:$PATH
-    ~~~
+		~~~ bash
+		npm config set prefix '~/.npm-global'
+		export PATH=~/.npm-global/bin:$PATH
+		~~~
   - Save the file and then run (if you don't restart the computer, do the same below work for new tab of terminal): `source ~/.profile`.
-
 - Install new site
-  ~~~ bash
-gatsby new gatsby-site
-  ~~~
+	~~~ bash
+	gatsby new gatsby-site
+	~~~
+- Or using a [Gatsby Bootstrap Starter](https://github.com/jaxx2104/gatsby-starter-bootstrap), follow the way to install on this repo.
 - Run the site: `gatsby develop` and then browse `http//localhost:8000`
+
+## Blocks in use
+
+- [[ref](https://www.gatsbyjs.org/tutorial/part-one/)] Any React component defined in src/pages/*.js will automatically become a page. Let’s see this in action
+- **Sublime text**: install package [Babel](https://github.com/babel/babel-sublime) for the syntax highlight!
+- 

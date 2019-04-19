@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
-<head><meta charset="utf-8" />
+<!-- saved from url=(0087)file:///C:/Users/dinha/Downloads/ML0101EN-Reg-Mulitple-Linear-Regression-Co2-py-v1.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<title>DV0101EN-1-1-1-Introduction-to-Matplotlib-and-Line-Plots-py-v2.0</title>
+<title>ML0101EN-Reg-Mulitple-Linear-Regression-Co2-py-v1</title>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="./ML0101EN-Reg-Mulitple-Linear-Regression-Co2-py-v1_files/require.min.js.téléchargement"></script>
+<script src="./ML0101EN-Reg-Mulitple-Linear-Regression-Co2-py-v1_files/jquery.min.js.téléchargement"></script>
 
 <script>
 (function() {
@@ -13108,13 +13108,13 @@ div#notebook {
 </style>
 
 <!-- Custom stylesheet, it must be in the same directory as the html file -->
-<link rel="stylesheet" href="custom.css">
+<link rel="stylesheet" href="file:///C:/Users/dinha/Downloads/custom.css">
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="./ML0101EN-Reg-Mulitple-Linear-Regression-Co2-py-v1_files/MathJax.js.téléchargement"></script>
     <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
+    <script type="text/x-mathjax-config;executed=true">
     MathJax.Hub.Config({
         tex2jax: {
             inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -13131,103 +13131,184 @@ div#notebook {
         }
     });
     </script>
-    <!-- End of mathjax configuration --></head>
-<body>
+    <!-- End of mathjax configuration --><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 0; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax:focus, body :focus .MathJax {display: inline-table}
+.MathJax.MathJax_FullWidth {text-align: center; display: table-cell!important; width: 10000em!important}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax_LineBox {display: table!important}
+.MathJax_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Main; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Main-bold; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Main-italic; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Math-italic; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Caligraphic; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size1; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size2; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size3; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size4; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf?V=2.7.1') format('opentype')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">@font-face {font-family: MathJax_Typewriter; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Typewriter-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Typewriter-Regular.otf?V=2.7.1') format('opentype')}
+</style></head>
+<body style=""><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://cognitiveclass.ai"><img src = "https://ibm.box.com/shared/static/9gegpsmnsoo25ikkbl4qzlvlyjbgxs5x.png" width = 400> </a></p>
-<h1 align=center><font size = 5>Introduction to Matplotlib and Line Plots</font></h1>
+<p><a href="https://www.bigdatauniversity.com/"><img src="./ML0101EN-Reg-Mulitple-Linear-Regression-Co2-py-v1_files/Cognitive-Class-Logo.png" width="400" align="center"></a></p>
+<h1><center>Multiple Linear Regression</center></h1><p></p><h4>About this Notebook</h4>
+In this notebook, we learn how to use scikit-learn to implement Multiple linear regression. We download a dataset that is related to fuel consumption and Carbon dioxide emission of cars. Then, we split our data into training and test sets, create a model using training set, Evaluate your model using test set, and finally use model to predict unknown value<p></p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2><p>The aim of these labs is to introduce you to data visualization with Python as concrete and as consistent as possible. 
-Speaking of consistency, because there is no <em>best</em> data visualization library avaiblable for Python - up to creating these labs - we have to introduce different libraries and show their benefits when we are discussing new visualization concepts. Doing so, we hope to make students well-rounded with visualization libraries and concepts so that they are able to judge and decide on the best visualitzation technique and tool for a given problem <em>and</em> audience.</p>
-<p>Please make sure that you have completed the prerequisites for this course, namely <a href='http://cocl.us/PY0101EN_DV0101EN_LAB1_Coursera'>**Python for Data Science**</a> and <a href='http://cocl.us/DA0101EN_DV0101EN_LAB1_Coursera'>**Data Analysis with Python**</a>, which are part of this specialization.</p>
-<p><strong>Note</strong>: The majority of the plots and visualizations will be generated using data stored in <em>pandas</em> dataframes. Therefore, in this lab, we provide a brief crash course on <em>pandas</em>. However, if you are interested in learning more about the <em>pandas</em> library, detailed description and explanation of how to use it and how to clean, munge, and process data stored in a <em>pandas</em> dataframe are provided in our course <a href='http://cocl.us/DA0101EN_DV0101EN_LAB1_Coursera'>**Data Analysis with Python**</a>, which is also part of this specialization.</p>
+<h1>Table of contents</h1><p></p><div class="alert alert-block alert-info" style="margin-top: 20px">
+    <ol>
+        <li><a href="file:///C:/Users/dinha/Downloads/ML0101EN-Reg-Mulitple-Linear-Regression-Co2-py-v1.html#understanding-data">Understanding the Data</a></li>
+        <li><a href="file:///C:/Users/dinha/Downloads/ML0101EN-Reg-Mulitple-Linear-Regression-Co2-py-v1.html#reading_data">Reading the Data in</a></li>
+        <li><a href="file:///C:/Users/dinha/Downloads/ML0101EN-Reg-Mulitple-Linear-Regression-Co2-py-v1.html#multiple_regression_model">Multiple Regression Model</a></li>
+        <li><a href="file:///C:/Users/dinha/Downloads/ML0101EN-Reg-Mulitple-Linear-Regression-Co2-py-v1.html#prediction">Prediction</a></li>
+        <li><a href="file:///C:/Users/dinha/Downloads/ML0101EN-Reg-Mulitple-Linear-Regression-Co2-py-v1.html#practice">Practice</a></li>
+    </ol>
+</div>
+<br><p></p>
 <hr>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Table-of-Contents">Table of Contents<a class="anchor-link" href="#Table-of-Contents">&#182;</a></h2><div class="alert alert-block alert-info" style="margin-top: 20px">
-
-<ol>
-<li><a href="#0">Exploring Datasets with <em>pandas</em></a><br>
-1.1 <a href="#2">The Dataset: Immigration to Canada from 1980 to 2013</a><br>
-1.2 <a href="#4"><em>pandas</em> Basics</a> <br>
-1.3 <a href="#6"><em>pandas</em> Intermediate: Indexing and Selection</a> <br></li>
-<li><a href="#8">Visualizing Data using Matplotlib</a> <br>
-2.1 <a href="#10">Matplotlib: Standard Python Visualization Library</a> <br></li>
-<li><a href="#12">Line Plots</a>
-&lt;/div&gt;<hr></li>
-</ol>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Exploring-Datasets-with-pandas-">Exploring Datasets with <em>pandas</em> <a id="0" /><a class="anchor-link" href="#Exploring-Datasets-with-pandas-">&#182;</a></h1><p><em>pandas</em> is an essential data analysis toolkit for Python. From their <a href="http://pandas.pydata.org/">website</a>:</p>
-<blockquote><p><em>pandas</em> is a Python package providing fast, flexible, and expressive data structures designed to make working with “relational” or “labeled” data both easy and intuitive. It aims to be the fundamental high-level building block for doing practical, <strong>real world</strong> data analysis in Python.</p>
-</blockquote>
-<p>The course heavily relies on <em>pandas</em> for data wrangling, analysis, and visualization. We encourage you to spend some time and  familizare yourself with the <em>pandas</em> API Reference: <a href="http://pandas.pydata.org/pandas-docs/stable/api.html">http://pandas.pydata.org/pandas-docs/stable/api.html</a>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-Dataset:-Immigration-to-Canada-from-1980-to-2013-">The Dataset: Immigration to Canada from 1980 to 2013 <a id="2" /><a class="anchor-link" href="#The-Dataset:-Immigration-to-Canada-from-1980-to-2013-">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Dataset Source: <a href="http://www.un.org/en/development/desa/population/migration/data/empirical2/migrationflows.shtml">International migration flows to and from selected countries - The 2015 revision</a>.</p>
-<p>The dataset contains annual data on the flows of international immigrants as recorded by the countries of destination. The data presents both inflows and outflows according to the place of birth, citizenship or place of previous / next residence both for foreigners and nationals. The current version presents data pertaining to 45 countries.</p>
-<p>In this lab, we will focus on the Canadian immigration data.</p>
-<p><img src = "https://ibm.box.com/shared/static/mb48k9fiylkd7z3a21cq38xxfy1wni2y.png" align="center" width=900></p>
-<p>For sake of simplicity, Canada's immigration data has been extracted and uploaded to one of IBM servers. You can fetch the data from <a href="https://ibm.box.com/shared/static/lw190pt9zpy5bd1ptyg2aw15awomz9pu.xlsx">here</a>.</p>
-<hr>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="pandas-Basics"><em>pandas</em> Basics<a id="4" /><a class="anchor-link" href="#pandas-Basics">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The first thing we'll do is import two key data analysis modules: <em>pandas</em> and <strong>Numpy</strong>.</p>
-
+<h3 id="Importing-Needed-packages">Importing Needed packages<a class="anchor-link" href="file:///C:/Users/dinha/Downloads/ML0101EN-Reg-Mulitple-Linear-Regression-Co2-py-v1.html#Importing-Needed-packages">¶</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  <span class="c1"># useful for many scientific computing in Python</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># primary data structure library</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">pylab</span> <span class="k">as</span> <span class="nn">pl</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 
     </div>
@@ -13238,78 +13319,48 @@ Speaking of consistency, because there is no <em>best</em> data visualization li
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's download and import our primary Canadian Immigration dataset using <em>pandas</em> <code>read_excel()</code> method. Normally, before we can do that, we would need to download a module which <em>pandas</em> requires to read in excel files. This module is <strong>xlrd</strong>. For your convenience, we have pre-installed this module, so you would not have to worry about that. Otherwise, you would need to run the following line of code to install the <strong>xlrd</strong> module:</p>
-
-<pre><code>!conda install -c anaconda xlrd --yes</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Now we are ready to read in our data.</p>
+<h3 id="Downloading-Data">Downloading Data<a class="anchor-link" href="file:///C:/Users/dinha/Downloads/ML0101EN-Reg-Mulitple-Linear-Regression-Co2-py-v1.html#Downloading-Data">¶</a></h3><p>To download the data, we will use !wget to download it from IBM Object Storage.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_can</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;https://ibm.box.com/shared/static/lw190pt9zpy5bd1ptyg2aw15awomz9pu.xlsx&#39;</span><span class="p">,</span>
-                       <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Canada by Citizenship&#39;</span><span class="p">,</span>
-                       <span class="n">skiprows</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
-                       <span class="n">skipfooter</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Data read into a pandas dataframe!&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>wget -O FuelConsumption.csv https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/ML0101ENv3/labs/FuelConsumptionCo2.csv
 </pre></div>
 
     </div>
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's view the top 5 rows of the dataset using the <code>head()</code> function.</p>
+<div class="output_wrapper">
+<div class="output">
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_can</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-<span class="c1"># tip: You can specify the number of rows you&#39;d like to see as follows: df_can.head(10) </span>
-</pre></div>
 
-    </div>
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>--2019-04-15 11:01:48--  https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/ML0101ENv3/labs/FuelConsumptionCo2.csv
+Resolving s3-api.us-geo.objectstorage.softlayer.net (s3-api.us-geo.objectstorage.softlayer.net)... 67.228.254.193
+Connecting to s3-api.us-geo.objectstorage.softlayer.net (s3-api.us-geo.objectstorage.softlayer.net)|67.228.254.193|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 72629 (71K) [text/csv]
+Saving to: ‘FuelConsumption.csv’
+
+FuelConsumption.csv 100%[=====================&gt;]  70.93K  --.-KB/s   in 0.04s  
+
+2019-04-15 11:01:48 (1.63 MB/s) - ‘FuelConsumption.csv’ saved [72629/72629]
+
+</pre>
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We can also veiw the bottom 5 rows of the dataset using the <code>tail()</code> function.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_can</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>
-</pre></div>
-
-    </div>
 </div>
 </div>
 
@@ -13317,139 +13368,7 @@ Speaking of consistency, because there is no <em>best</em> data visualization li
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>When analyzing a dataset, it's always a good idea to start by getting basic information about your dataframe. We can do this by using the <code>info()</code> method.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_can</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>To get the list of column headers we can call upon the dataframe's <code>.columns</code> parameter.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_can</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span> 
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Similarly, to get the list of indicies we use the <code>.index</code> parameter.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_can</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Note: The default type of index and columns is NOT list.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">df_can</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">df_can</span><span class="o">.</span><span class="n">index</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>To get the index and columns as lists, we can use the <code>tolist()</code> method.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_can</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-<span class="n">df_can</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-
-<span class="nb">print</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">df_can</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()))</span>
-<span class="nb">print</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">df_can</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">tolist</span><span class="p">()))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>To view the dimensions of the dataframe, we use the <code>.shape</code> parameter.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># size of dataframe (rows, columns)</span>
-<span class="n">df_can</span><span class="o">.</span><span class="n">shape</span>    
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Note: The main types stored in <em>pandas</em> objects are <em>float</em>, <em>int</em>, <em>bool</em>, <em>datetime64[ns]</em> and <em>datetime64[ns, tz] (in &gt;= 0.17.0)</em>, <em>timedelta[ns]</em>, <em>category (in &gt;= 0.15.0)</em>, and <em>object</em> (string). In addition these dtypes have item sizes, e.g. int64 and int32.</p>
+<p><strong>Did you know?</strong> When it comes to Machine Learning, you will likely be working with large datasets. As a business, where can you host your data? IBM is offering a unique opportunity for businesses, with 10 Tb of IBM Cloud Object Storage: <a href="http://cocl.us/ML0101EN-IBM-Offer-CC">Sign up now for free</a></p>
 
 </div>
 </div>
@@ -13457,537 +13376,20 @@ Speaking of consistency, because there is no <em>best</em> data visualization li
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's clean the data set to remove a few unnecessary columns. We can use <em>pandas</em> <code>drop()</code> method as follows:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># in pandas axis=0 represents rows (default) and axis=1 represents columns.</span>
-<span class="n">df_can</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;AREA&#39;</span><span class="p">,</span><span class="s1">&#39;REG&#39;</span><span class="p">,</span><span class="s1">&#39;DEV&#39;</span><span class="p">,</span><span class="s1">&#39;Type&#39;</span><span class="p">,</span><span class="s1">&#39;Coverage&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">df_can</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's rename the columns so that they make sense. We can use <code>rename()</code> method by passing in a dictionary of old and new names as follows:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_can</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;OdName&#39;</span><span class="p">:</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;AreaName&#39;</span><span class="p">:</span><span class="s1">&#39;Continent&#39;</span><span class="p">,</span> <span class="s1">&#39;RegName&#39;</span><span class="p">:</span><span class="s1">&#39;Region&#39;</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">df_can</span><span class="o">.</span><span class="n">columns</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We will also add a 'Total' column that sums up the total immigrants by country over the entire period 1980 - 2013, as follows:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_can</span><span class="p">[</span><span class="s1">&#39;Total&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_can</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We can check to see how many null objects we have in the dataset as follows:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_can</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Finally, let's view a quick summary of each column in our dataframe using the <code>describe()</code> method.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_can</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<hr>
-<h2 id="pandas-Intermediate:-Indexing-and-Selection-(slicing)"><em>pandas</em> Intermediate: Indexing and Selection (slicing)<a id="6" /><a class="anchor-link" href="#pandas-Intermediate:-Indexing-and-Selection-(slicing)">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Select-Column">Select Column<a class="anchor-link" href="#Select-Column">&#182;</a></h3><p><strong>There are two ways to filter on a column name:</strong></p>
-<p>Method 1: Quick and easy, but only works if the column name does NOT have spaces or special characters.</p>
-<div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">column_name</span> 
-        <span class="p">(</span><span class="n">returns</span> <span class="n">series</span><span class="p">)</span>
-</pre></div>
-<p>Method 2: More robust, and can filter on multiple columns.</p>
-<div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;column&#39;</span><span class="p">]</span>  
-        <span class="p">(</span><span class="n">returns</span> <span class="n">series</span><span class="p">)</span>
-</pre></div>
-<div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;column 1&#39;</span><span class="p">,</span> <span class="s1">&#39;column 2&#39;</span><span class="p">]]</span> 
-        <span class="p">(</span><span class="n">returns</span> <span class="n">dataframe</span><span class="p">)</span>
-</pre></div>
-<hr>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Example: Let's try filtering on the list of countries ('Country').</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_can</span><span class="o">.</span><span class="n">Country</span>  <span class="c1"># returns a series</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's try filtering on the list of countries ('OdName') and the data for years: 1980 - 1985.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_can</span><span class="p">[[</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="mi">1980</span><span class="p">,</span> <span class="mi">1981</span><span class="p">,</span> <span class="mi">1982</span><span class="p">,</span> <span class="mi">1983</span><span class="p">,</span> <span class="mi">1984</span><span class="p">,</span> <span class="mi">1985</span><span class="p">]]</span> <span class="c1"># returns a dataframe</span>
-<span class="c1"># notice that &#39;Country&#39; is string, and the years are integers. </span>
-<span class="c1"># for the sake of consistency, we will convert all column names to string later on.</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Select-Row">Select Row<a class="anchor-link" href="#Select-Row">&#182;</a></h3><p>There are main 3 ways to select rows:</p>
-<div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">label</span><span class="p">]</span>        
-        <span class="c1">#filters by the labels of the index/column</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>       
-        <span class="c1">#filters by the positions of the index/column</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Before we proceed, notice that the defaul index of the dataset is a numeric range from 0 to 194. This makes it very difficult to do a query by a specific country. For example to search for data on Japan, we need to know the corressponding index value.</p>
-<p>This can be fixed very easily by setting the 'Country' column as the index using <code>set_index()</code> method.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_can</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="c1"># tip: The opposite of set is reset. So to reset the index, we can use df_can.reset_index()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_can</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># optional: to remove the name of the index</span>
-<span class="n">df_can</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="kc">None</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Example: Let's view the number of immigrants from Japan (row 87) for the following scenarios:</p>
-
-<pre><code>1. The full row data (all columns)
-2. For year 2013
-3. For years 1980 to 1985</code></pre>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 1. the full row data (all columns)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df_can</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Japan&#39;</span><span class="p">])</span>
-
-<span class="c1"># alternate methods</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df_can</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">87</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df_can</span><span class="p">[</span><span class="n">df_can</span><span class="o">.</span><span class="n">index</span> <span class="o">==</span> <span class="s1">&#39;Japan&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">squeeze</span><span class="p">())</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 2. for year 2013</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df_can</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Japan&#39;</span><span class="p">,</span> <span class="mi">2013</span><span class="p">])</span>
-
-<span class="c1"># alternate method</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df_can</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">87</span><span class="p">,</span> <span class="mi">36</span><span class="p">])</span> <span class="c1"># year 2013 is the last column, with a positional index of 36</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 3. for years 1980 to 1985</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df_can</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Japan&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">1980</span><span class="p">,</span> <span class="mi">1981</span><span class="p">,</span> <span class="mi">1982</span><span class="p">,</span> <span class="mi">1983</span><span class="p">,</span> <span class="mi">1984</span><span class="p">,</span> <span class="mi">1984</span><span class="p">]])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df_can</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">87</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Column names that are integers (such as the years) might introduce some confusion. For example, when we are referencing the year 2013, one might confuse that when the 2013th positional index.</p>
-<p>To avoid this ambuigity, let's convert the column names into strings: '1980' to '2013'.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_can</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">df_can</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span>
-<span class="c1"># [print (type(x)) for x in df_can.columns.values] #&lt;-- uncomment to check type of column headers</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Since we converted the years to string, let's declare a variable that will allow us to easily call upon the full range of years:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># useful for plotting later on</span>
-<span class="n">years</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1980</span><span class="p">,</span> <span class="mi">2014</span><span class="p">)))</span>
-<span class="n">years</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Filtering-based-on-a-criteria">Filtering based on a criteria<a class="anchor-link" href="#Filtering-based-on-a-criteria">&#182;</a></h3><p>To filter the dataframe based on a condition, we simply pass the condition as a boolean vector.</p>
-<p>For example, Let's filter the dataframe to show the data on Asian countries (AreaName = Asia).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 1. create the condition boolean series</span>
-<span class="n">condition</span> <span class="o">=</span> <span class="n">df_can</span><span class="p">[</span><span class="s1">&#39;Continent&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Asia&#39;</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">condition</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 2. pass this condition into the dataFrame</span>
-<span class="n">df_can</span><span class="p">[</span><span class="n">condition</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># we can pass mutliple criteria in the same line. </span>
-<span class="c1"># let&#39;s filter for AreaNAme = Asia and RegName = Southern Asia</span>
-
-<span class="n">df_can</span><span class="p">[(</span><span class="n">df_can</span><span class="p">[</span><span class="s1">&#39;Continent&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Asia&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df_can</span><span class="p">[</span><span class="s1">&#39;Region&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Southern Asia&#39;</span><span class="p">)]</span>
-
-<span class="c1"># note: When using &#39;and&#39; and &#39;or&#39; operators, pandas requires we use &#39;&amp;&#39; and &#39;|&#39; instead of &#39;and&#39; and &#39;or&#39;</span>
-<span class="c1"># don&#39;t forget to enclose the two conditions in parentheses</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Before we proceed: let's review the changes we have made to our dataframe.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;data dimensions:&#39;</span><span class="p">,</span> <span class="n">df_can</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df_can</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
-<span class="n">df_can</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<hr>
-<h1 id="Visualizing-Data-using-Matplotlib">Visualizing Data using Matplotlib<a id="8" /><a class="anchor-link" href="#Visualizing-Data-using-Matplotlib">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Matplotlib:-Standard-Python-Visualization-Library">Matplotlib: Standard Python Visualization Library<a id="10" /><a class="anchor-link" href="#Matplotlib:-Standard-Python-Visualization-Library">&#182;</a></h2><p>The primary plotting library we will explore in the course is <a href="http://matplotlib.org/">Matplotlib</a>.  As mentioned on their website:</p>
-<blockquote><p>Matplotlib is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms. Matplotlib can be used in Python scripts, the Python and IPython shell, the jupyter notebook, web application servers, and four graphical user interface toolkits.</p>
-</blockquote>
-<p>If you are aspiring to create impactful visualization with python, Matplotlib is an essential tool to have at your disposal.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Matplotlib.Pyplot">Matplotlib.Pyplot<a class="anchor-link" href="#Matplotlib.Pyplot">&#182;</a></h3><p>One of the core aspects of Matplotlib is <code>matplotlib.pyplot</code>. It is Matplotlib's scripting layer which we studied in details in the videos about Matplotlib. Recall that it is a collection of command style functions that make Matplotlib work like MATLAB. Each <code>pyplot</code> function makes some change to a figure: e.g., creates a figure, creates a plotting area in a figure, plots some lines in a plotting area, decorates the plot with labels, etc. In this lab, we will work with the scripting layer to learn how to generate line plots. In future labs, we will get to work with the Artist layer as well to experiment first hand how it differs from the scripting layer.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's start by importing <code>Matplotlib</code> and <code>Matplotlib.pyplot</code> as follows:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># we are using the inline backend</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline 
-
-<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>*optional: check if Matplotlib is loaded.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Matplotlib version: &#39;</span><span class="p">,</span> <span class="n">mpl</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span> <span class="c1"># &gt;= 2.0.0</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>*optional: apply a style to Matplotlib.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">available</span><span class="p">)</span>
-<span class="n">mpl</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">([</span><span class="s1">&#39;ggplot&#39;</span><span class="p">])</span> <span class="c1"># optional: for ggplot-like style</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Plotting-in-pandas">Plotting in <em>pandas</em><a class="anchor-link" href="#Plotting-in-pandas">&#182;</a></h3><p>Fortunately, pandas has a built-in implementation of Matplotlib that we can use. Plotting in <em>pandas</em> is as simple as appending a <code>.plot()</code> method to a series or dataframe.</p>
-<p>Documentation:</p>
+<h2 id="understanding_data">Understanding the Data</h2><h3 id="FuelConsumption.csv:"><code>FuelConsumption.csv</code>:<a class="anchor-link" href="file:///C:/Users/dinha/Downloads/ML0101EN-Reg-Mulitple-Linear-Regression-Co2-py-v1.html#FuelConsumption.csv:">¶</a></h3><p>We have downloaded a fuel consumption dataset, <strong><code>FuelConsumption.csv</code></strong>, which contains model-specific fuel consumption ratings and estimated carbon dioxide emissions for new light-duty vehicles for retail sale in Canada. <a href="http://open.canada.ca/data/en/dataset/98f1a129-f628-4ce4-b24d-6f16bf24dd64">Dataset source</a></p>
 <ul>
-<li><a href="http://pandas.pydata.org/pandas-docs/stable/api.html#plotting">Plotting with Series</a><br></li>
-<li><a href="http://pandas.pydata.org/pandas-docs/stable/api.html#api-dataframe-plotting">Plotting with Dataframes</a></li>
+<li><strong>MODELYEAR</strong> e.g. 2014</li>
+<li><strong>MAKE</strong> e.g. Acura</li>
+<li><strong>MODEL</strong> e.g. ILX</li>
+<li><strong>VEHICLE CLASS</strong> e.g. SUV</li>
+<li><strong>ENGINE SIZE</strong> e.g. 4.7</li>
+<li><strong>CYLINDERS</strong> e.g 6</li>
+<li><strong>TRANSMISSION</strong> e.g. A6</li>
+<li><strong>FUELTYPE</strong> e.g. z</li>
+<li><strong>FUEL CONSUMPTION in CITY(L/100 km)</strong> e.g. 9.9</li>
+<li><strong>FUEL CONSUMPTION in HWY (L/100 km)</strong> e.g. 8.9</li>
+<li><strong>FUEL CONSUMPTION COMB (L/100 km)</strong> e.g. 9.2</li>
+<li><strong>CO2 EMISSIONS (g/km)</strong> e.g. 182   --&gt; low --&gt; 0</li>
 </ul>
 
 </div>
@@ -13996,45 +13398,374 @@ Speaking of consistency, because there is no <em>best</em> data visualization li
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Line-Pots-(Series/Dataframe)-">Line Pots (Series/Dataframe) <a id="12" /><a class="anchor-link" href="#Line-Pots-(Series/Dataframe)-">&#182;</a></h1>
+<h2 id="reading_data">Reading the data in</h2>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>What is a line plot and why use it?</strong></p>
-<p>A line chart or line plot is a type of plot which displays information as a series of data points called 'markers' connected by straight line segments. It is a basic type of chart common in many fields.
-Use line plot when you have a continuous data set. These are best suited for trend-based visualizations of data over a period of time.</p>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"FuelConsumption.csv"</span><span class="p">)</span>
+
+<span class="c1"># take a look at the dataset</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>MODELYEAR</th>
+      <th>MAKE</th>
+      <th>MODEL</th>
+      <th>VEHICLECLASS</th>
+      <th>ENGINESIZE</th>
+      <th>CYLINDERS</th>
+      <th>TRANSMISSION</th>
+      <th>FUELTYPE</th>
+      <th>FUELCONSUMPTION_CITY</th>
+      <th>FUELCONSUMPTION_HWY</th>
+      <th>FUELCONSUMPTION_COMB</th>
+      <th>FUELCONSUMPTION_COMB_MPG</th>
+      <th>CO2EMISSIONS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2014</td>
+      <td>ACURA</td>
+      <td>ILX</td>
+      <td>COMPACT</td>
+      <td>2.0</td>
+      <td>4</td>
+      <td>AS5</td>
+      <td>Z</td>
+      <td>9.9</td>
+      <td>6.7</td>
+      <td>8.5</td>
+      <td>33</td>
+      <td>196</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2014</td>
+      <td>ACURA</td>
+      <td>ILX</td>
+      <td>COMPACT</td>
+      <td>2.4</td>
+      <td>4</td>
+      <td>M6</td>
+      <td>Z</td>
+      <td>11.2</td>
+      <td>7.7</td>
+      <td>9.6</td>
+      <td>29</td>
+      <td>221</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2014</td>
+      <td>ACURA</td>
+      <td>ILX HYBRID</td>
+      <td>COMPACT</td>
+      <td>1.5</td>
+      <td>4</td>
+      <td>AV7</td>
+      <td>Z</td>
+      <td>6.0</td>
+      <td>5.8</td>
+      <td>5.9</td>
+      <td>48</td>
+      <td>136</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2014</td>
+      <td>ACURA</td>
+      <td>MDX 4WD</td>
+      <td>SUV - SMALL</td>
+      <td>3.5</td>
+      <td>6</td>
+      <td>AS6</td>
+      <td>Z</td>
+      <td>12.7</td>
+      <td>9.1</td>
+      <td>11.1</td>
+      <td>25</td>
+      <td>255</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2014</td>
+      <td>ACURA</td>
+      <td>RDX AWD</td>
+      <td>SUV - SMALL</td>
+      <td>3.5</td>
+      <td>6</td>
+      <td>AS6</td>
+      <td>Z</td>
+      <td>12.1</td>
+      <td>8.7</td>
+      <td>10.6</td>
+      <td>27</td>
+      <td>244</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Let's start with a case study:</strong></p>
-<p>In 2010, Haiti suffered a catastrophic magnitude 7.0 earthquake. The quake caused widespread devastation and loss of life and aout three million people were affected by this natural disaster. As part of Canada's humanitarian effort, the Government of Canada stepped up its effort in accepting refugees from Haiti. We can quickly visualize this effort using a <code>Line</code> plot:</p>
-<p><strong>Question:</strong> Plot a line graph of immigration from Haiti using <code>df.plot()</code>.</p>
 
 </div>
-</div>
-</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>First, we will extract the data series for Haiti.</p>
+<p>Lets select some features that we want to use for regression.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">haiti</span> <span class="o">=</span> <span class="n">df_can</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;Haiti&#39;</span><span class="p">,</span> <span class="n">years</span><span class="p">]</span> <span class="c1"># passing in years 1980 - 2013 to exclude the &#39;total&#39; column</span>
-<span class="n">haiti</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cdf</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">'ENGINESIZE'</span><span class="p">,</span><span class="s1">'CYLINDERS'</span><span class="p">,</span><span class="s1">'FUELCONSUMPTION_CITY'</span><span class="p">,</span><span class="s1">'FUELCONSUMPTION_HWY'</span><span class="p">,</span><span class="s1">'FUELCONSUMPTION_COMB'</span><span class="p">,</span><span class="s1">'CO2EMISSIONS'</span><span class="p">]]</span>
+<span class="n">cdf</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ENGINESIZE</th>
+      <th>CYLINDERS</th>
+      <th>FUELCONSUMPTION_CITY</th>
+      <th>FUELCONSUMPTION_HWY</th>
+      <th>FUELCONSUMPTION_COMB</th>
+      <th>CO2EMISSIONS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2.0</td>
+      <td>4</td>
+      <td>9.9</td>
+      <td>6.7</td>
+      <td>8.5</td>
+      <td>196</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2.4</td>
+      <td>4</td>
+      <td>11.2</td>
+      <td>7.7</td>
+      <td>9.6</td>
+      <td>221</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.5</td>
+      <td>4</td>
+      <td>6.0</td>
+      <td>5.8</td>
+      <td>5.9</td>
+      <td>136</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3.5</td>
+      <td>6</td>
+      <td>12.7</td>
+      <td>9.1</td>
+      <td>11.1</td>
+      <td>255</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3.5</td>
+      <td>6</td>
+      <td>12.1</td>
+      <td>8.7</td>
+      <td>10.6</td>
+      <td>244</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>3.5</td>
+      <td>6</td>
+      <td>11.9</td>
+      <td>7.7</td>
+      <td>10.0</td>
+      <td>230</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>3.5</td>
+      <td>6</td>
+      <td>11.8</td>
+      <td>8.1</td>
+      <td>10.1</td>
+      <td>232</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>3.7</td>
+      <td>6</td>
+      <td>12.8</td>
+      <td>9.0</td>
+      <td>11.1</td>
+      <td>255</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>3.7</td>
+      <td>6</td>
+      <td>13.4</td>
+      <td>9.5</td>
+      <td>11.6</td>
+      <td>267</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Lets plot Emission values with respect to Engine size:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">cdf</span><span class="o">.</span><span class="n">ENGINESIZE</span><span class="p">,</span> <span class="n">cdf</span><span class="o">.</span><span class="n">CO2EMISSIONS</span><span class="p">,</span>  <span class="n">color</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Engine size"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Emission"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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">
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Creating-train-and-test-dataset">Creating train and test dataset<a class="anchor-link" href="file:///C:/Users/dinha/Downloads/ML0101EN-Reg-Mulitple-Linear-Regression-Co2-py-v1.html#Creating-train-and-test-dataset">¶</a></h4><p>Train/Test Split involves splitting the dataset into training and testing sets respectively, which are mutually exclusive. After which, you train with the training set and test with the testing set. 
+This will provide a more accurate evaluation on out-of-sample accuracy because the testing dataset is not part of the dataset that have been used to train the data. It is more realistic for real world problems.</p>
+<p>This means that we know the outcome of each data point in this dataset, making it great to test with! And since this data has not been used to train the model, the model has no knowledge of the outcome of these data points. So, in essence, it’s truly an out-of-sample testing.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">msk</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mf">0.8</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">cdf</span><span class="p">[</span><span class="n">msk</span><span class="p">]</span>
+<span class="n">test</span> <span class="o">=</span> <span class="n">cdf</span><span class="p">[</span><span class="o">~</span><span class="n">msk</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -14045,49 +13776,94 @@ Use line plot when you have a continuous data set. These are best suited for tre
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Next, we will plot a line plot by appending <code>.plot()</code> to the <code>haiti</code> dataframe.</p>
-
+<h4 id="Train-data-distribution">Train data distribution<a class="anchor-link" href="file:///C:/Users/dinha/Downloads/ML0101EN-Reg-Mulitple-Linear-Regression-Co2-py-v1.html#Train-data-distribution">¶</a></h4>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">haiti</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">ENGINESIZE</span><span class="p">,</span> <span class="n">train</span><span class="o">.</span><span class="n">CO2EMISSIONS</span><span class="p">,</span>  <span class="n">color</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Engine size"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Emission"</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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">
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><em>pandas</em> automatically populated the x-axis with the index values (years), and the y-axis with the column values (population). However, notice how the years were not displayed because they are of type <em>string</em>. Therefore, let's change the type of the index values to <em>integer</em> for plotting.</p>
-<p>Also, let's label the x and y axis using <code>plt.title()</code>, <code>plt.ylabel()</code>, and <code>plt.xlabel()</code> as follows:</p>
+<h2 id="multiple_regression_model">Multiple Regression Model</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In reality, there are multiple variables that predict the Co2emission. When more than one independent variable is present, the process is called multiple linear regression. For example, predicting co2emission using FUELCONSUMPTION_COMB, EngineSize and Cylinders of cars. The good thing here is that Multiple linear regression is the extension of simple linear regression model.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">haiti</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">haiti</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span> <span class="c1"># let&#39;s change the index values of Haiti to type integer for plotting</span>
-<span class="n">haiti</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Immigration from Haiti&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Number of immigrants&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Years&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># need this line to show the updates made to the figure</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">linear_model</span>
+<span class="n">regr</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">train</span><span class="p">[[</span><span class="s1">'ENGINESIZE'</span><span class="p">,</span><span class="s1">'CYLINDERS'</span><span class="p">,</span><span class="s1">'FUELCONSUMPTION_COMB'</span><span class="p">]])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">train</span><span class="p">[[</span><span class="s1">'CO2EMISSIONS'</span><span class="p">]])</span>
+<span class="n">regr</span><span class="o">.</span><span class="n">fit</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="c1"># The coefficients</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">'Coefficients: '</span><span class="p">,</span> <span class="n">regr</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Coefficients:  [[10.55398564  7.83589194  9.49083236]]
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -14095,82 +13871,123 @@ Use line plot when you have a continuous data set. These are best suited for tre
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can clearly notice how number of immigrants from Haiti spiked up from 2010 as Canada stepped up its efforts to accept refugees from Haiti. Let's annotate this spike in the plot by using the <code>plt.text()</code> method.</p>
+<p>As mentioned before, <strong>Coefficient</strong> and <strong>Intercept</strong> , are the parameters of the fit line. 
+Given that it is a multiple linear regression, with 3 parameters, and knowing that the parameters are the intercept and coefficients of hyperplane, sklearn can estimate them from our data. Scikit-learn uses plain Ordinary Least Squares method to solve this problem.</p>
+<h4 id="Ordinary-Least-Squares-(OLS)">Ordinary Least Squares (OLS)<a class="anchor-link" href="file:///C:/Users/dinha/Downloads/ML0101EN-Reg-Mulitple-Linear-Regression-Co2-py-v1.html#Ordinary-Least-Squares-(OLS)">¶</a></h4><p>OLS is a method for estimating the unknown parameters in a linear regression model. OLS chooses the parameters of a linear function of a set of explanatory variables by minimizing the sum of the squares of the differences between the target dependent variable and those predicted by the linear function. In other words, it tries to minimizes the sum of squared errors (SSE) or mean squared error (MSE) between the target variable (y) and our predicted output (<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-1-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mover&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x005E;&lt;/mo&gt;&lt;/mover&gt;&lt;/mrow&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1" style="width: 0.717em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.598em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.193em, 1000.54em, 2.503em, -999.997em); top: -2.14em; left: 0em;"><span class="mrow" id="MathJax-Span-2"><span class="texatom" id="MathJax-Span-3"><span class="mrow" id="MathJax-Span-4"><span class="munderover" id="MathJax-Span-5"><span style="display: inline-block; position: relative; width: 0.598em; height: 0px;"><span style="position: absolute; clip: rect(3.396em, 1000.48em, 4.348em, -999.997em); top: -3.985em; left: 0.003em;"><span class="mi" id="MathJax-Span-6" style="font-family: MathJax_Math-italic;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.098em, 1000.42em, 3.634em, -999.997em); top: -4.045em; left: 0.063em;"><span class="mo" id="MathJax-Span-7" style="font-family: MathJax_Main;">^</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.146em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.282em; border-left: 0px solid; width: 0px; height: 1.289em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><mover><mi>y</mi><mo stretchy="false">^</mo></mover></mrow></math></span></span><script type="math/tex" id="MathJax-Element-1">\hat{y}</script>) over all samples in the dataset.</p>
+<p>OLS can find the best parameters using of the following methods:</p>
+
+<pre><code>- Solving the model parameters analytically using closed-form equations
+- Using an optimization algorithm (Gradient Descent, Stochastic Gradient Descent, Newton’s Method, etc.)</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="prediction">Prediction</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_hat</span><span class="o">=</span> <span class="n">regr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test</span><span class="p">[[</span><span class="s1">'ENGINESIZE'</span><span class="p">,</span><span class="s1">'CYLINDERS'</span><span class="p">,</span><span class="s1">'FUELCONSUMPTION_COMB'</span><span class="p">]])</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">test</span><span class="p">[[</span><span class="s1">'ENGINESIZE'</span><span class="p">,</span><span class="s1">'CYLINDERS'</span><span class="p">,</span><span class="s1">'FUELCONSUMPTION_COMB'</span><span class="p">]])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">test</span><span class="p">[[</span><span class="s1">'CO2EMISSIONS'</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Residual sum of squares: </span><span class="si">%.2f</span><span class="s2">"</span>
+      <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">y_hat</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># Explained variance score: 1 is perfect prediction</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Variance score: </span><span class="si">%.2f</span><span class="s1">'</span> <span class="o">%</span> <span class="n">regr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Residual sum of squares: 715.98
+Variance score: 0.84
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>explained variance regression score:</strong><br>
+If <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-2-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mover&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x005E;&lt;/mo&gt;&lt;/mover&gt;&lt;/mrow&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-8" style="width: 0.717em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.598em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.193em, 1000.54em, 2.503em, -999.997em); top: -2.14em; left: 0em;"><span class="mrow" id="MathJax-Span-9"><span class="texatom" id="MathJax-Span-10"><span class="mrow" id="MathJax-Span-11"><span class="munderover" id="MathJax-Span-12"><span style="display: inline-block; position: relative; width: 0.598em; height: 0px;"><span style="position: absolute; clip: rect(3.396em, 1000.48em, 4.348em, -999.997em); top: -3.985em; left: 0.003em;"><span class="mi" id="MathJax-Span-13" style="font-family: MathJax_Math-italic;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.098em, 1000.42em, 3.634em, -999.997em); top: -4.045em; left: 0.063em;"><span class="mo" id="MathJax-Span-14" style="font-family: MathJax_Main;">^</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.146em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.282em; border-left: 0px solid; width: 0px; height: 1.289em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><mover><mi>y</mi><mo stretchy="false">^</mo></mover></mrow></math></span></span><script type="math/tex" id="MathJax-Element-2">\hat{y}</script> is the estimated target output, y the corresponding (correct) target output, and Var is Variance, the square of the standard deviation, then the explained variance is estimated as follow:</p>
+<p><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-3-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mtext mathvariant=&quot;monospace&quot;&gt;explainedVariance&lt;/mtext&gt;&lt;/mrow&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;,&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mover&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x005E;&lt;/mo&gt;&lt;/mover&gt;&lt;/mrow&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mo fence=&quot;false&quot; stretchy=&quot;false&quot;&gt;{&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mover&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;&amp;#x005E;&lt;/mo&gt;&lt;/mover&gt;&lt;/mrow&gt;&lt;mo fence=&quot;false&quot; stretchy=&quot;false&quot;&gt;}&lt;/mo&gt;&lt;/mrow&gt;&lt;mrow&gt;&lt;mi&gt;V&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mo fence=&quot;false&quot; stretchy=&quot;false&quot;&gt;{&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo fence=&quot;false&quot; stretchy=&quot;false&quot;&gt;}&lt;/mo&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-15" style="width: 21.61em; display: inline-block;"><span style="display: inline-block; position: relative; width: 17.979em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(0.836em, 1017.98em, 3.039em, -999.997em); top: -2.199em; left: 0em;"><span class="mrow" id="MathJax-Span-16"><span class="texatom" id="MathJax-Span-17"><span class="mrow" id="MathJax-Span-18"><span class="mtext" id="MathJax-Span-19" style="font-family: MathJax_Typewriter;">explainedVariance</span></span></span><span class="mo" id="MathJax-Span-20" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-21" style="font-family: MathJax_Math-italic;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-22" style="font-family: MathJax_Main;">,</span><span class="texatom" id="MathJax-Span-23" style="padding-left: 0.182em;"><span class="mrow" id="MathJax-Span-24"><span class="munderover" id="MathJax-Span-25"><span style="display: inline-block; position: relative; width: 0.598em; height: 0px;"><span style="position: absolute; clip: rect(3.396em, 1000.48em, 4.348em, -999.997em); top: -3.985em; left: 0.003em;"><span class="mi" id="MathJax-Span-26" style="font-family: MathJax_Math-italic;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.098em, 1000.42em, 3.634em, -999.997em); top: -4.045em; left: 0.063em;"><span class="mo" id="MathJax-Span-27" style="font-family: MathJax_Main;">^</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span></span><span class="mo" id="MathJax-Span-28" style="font-family: MathJax_Main;">)</span><span class="mo" id="MathJax-Span-29" style="font-family: MathJax_Main; padding-left: 0.301em;">=</span><span class="mn" id="MathJax-Span-30" style="font-family: MathJax_Main; padding-left: 0.301em;">1</span><span class="mo" id="MathJax-Span-31" style="font-family: MathJax_Main; padding-left: 0.241em;">−</span><span class="mfrac" id="MathJax-Span-32" style="padding-left: 0.241em;"><span style="display: inline-block; position: relative; width: 3.396em; height: 0px; margin-right: 0.122em; margin-left: 0.122em;"><span style="position: absolute; clip: rect(3.217em, 1003.22em, 4.348em, -999.997em); top: -4.58em; left: 50%; margin-left: -1.664em;"><span class="mrow" id="MathJax-Span-33"><span class="mi" id="MathJax-Span-34" style="font-size: 70.7%; font-family: MathJax_Math-italic;">V<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.122em;"></span></span><span class="mi" id="MathJax-Span-35" style="font-size: 70.7%; font-family: MathJax_Math-italic;">a</span><span class="mi" id="MathJax-Span-36" style="font-size: 70.7%; font-family: MathJax_Math-italic;">r</span><span class="mo" id="MathJax-Span-37" style="font-size: 70.7%; font-family: MathJax_Main;">{</span><span class="mi" id="MathJax-Span-38" style="font-size: 70.7%; font-family: MathJax_Math-italic;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-39" style="font-size: 70.7%; font-family: MathJax_Main;">−</span><span class="texatom" id="MathJax-Span-40"><span class="mrow" id="MathJax-Span-41"><span class="munderover" id="MathJax-Span-42"><span style="display: inline-block; position: relative; width: 0.42em; height: 0px;"><span style="position: absolute; clip: rect(3.515em, 1000.36em, 4.289em, -999.997em); top: -3.985em; left: 0.003em;"><span class="mi" id="MathJax-Span-43" style="font-size: 70.7%; font-family: MathJax_Math-italic;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.336em, 1000.3em, 3.812em, -999.997em); top: -4.045em; left: 0.063em;"><span class="mo" id="MathJax-Span-44" style="font-size: 70.7%; font-family: MathJax_Main;">^</span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span></span></span></span></span><span class="mo" id="MathJax-Span-45" style="font-size: 70.7%; font-family: MathJax_Main;">}</span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(3.277em, 1002.26em, 4.348em, -999.997em); top: -3.509em; left: 50%; margin-left: -1.128em;"><span class="mrow" id="MathJax-Span-46"><span class="mi" id="MathJax-Span-47" style="font-size: 70.7%; font-family: MathJax_Math-italic;">V<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.122em;"></span></span><span class="mi" id="MathJax-Span-48" style="font-size: 70.7%; font-family: MathJax_Math-italic;">a</span><span class="mi" id="MathJax-Span-49" style="font-size: 70.7%; font-family: MathJax_Math-italic;">r</span><span class="mo" id="MathJax-Span-50" style="font-size: 70.7%; font-family: MathJax_Main;">{</span><span class="mi" id="MathJax-Span-51" style="font-size: 70.7%; font-family: MathJax_Math-italic;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-52" style="font-size: 70.7%; font-family: MathJax_Main;">}</span></span><span style="display: inline-block; width: 0px; height: 3.991em;"></span></span><span style="position: absolute; clip: rect(0.836em, 1003.4em, 1.253em, -999.997em); top: -1.307em; left: 0em;"><span style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 3.396em; height: 0px;"></span><span style="display: inline-block; width: 0px; height: 1.074em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.205em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.854em; border-left: 0px solid; width: 0px; height: 2.289em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><mtext mathvariant="monospace">explainedVariance</mtext></mrow><mo stretchy="false">(</mo><mi>y</mi><mo>,</mo><mrow class="MJX-TeXAtom-ORD"><mover><mi>y</mi><mo stretchy="false">^</mo></mover></mrow><mo stretchy="false">)</mo><mo>=</mo><mn>1</mn><mo>−</mo><mfrac><mrow><mi>V</mi><mi>a</mi><mi>r</mi><mo fence="false" stretchy="false">{</mo><mi>y</mi><mo>−</mo><mrow class="MJX-TeXAtom-ORD"><mover><mi>y</mi><mo stretchy="false">^</mo></mover></mrow><mo fence="false" stretchy="false">}</mo></mrow><mrow><mi>V</mi><mi>a</mi><mi>r</mi><mo fence="false" stretchy="false">{</mo><mi>y</mi><mo fence="false" stretchy="false">}</mo></mrow></mfrac></math></span></span><script type="math/tex" id="MathJax-Element-3">\texttt{explainedVariance}(y, \hat{y}) = 1 - \frac{Var\{ y - \hat{y}\}}{Var\{y\}}</script><br>
+The best possible score is 1.0, lower values are worse.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p></p><h2 id="practice">Practice</h2>
+Try to use a multiple linear regression with the same dataset but this time use <strong>FUEL CONSUMPTION in CITY</strong> and 
+<strong>FUEL CONSUMPTION in HWY</strong> instead of FUELCONSUMPTION_COMB. Does it result in better accuracy?<p></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">haiti</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;line&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Immigration from Haiti&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Number of Immigrants&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Years&#39;</span><span class="p">)</span>
-
-<span class="c1"># annotate the 2010 Earthquake. </span>
-<span class="c1"># syntax: plt.text(x, y, label)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">6000</span><span class="p">,</span> <span class="s1">&#39;2010 Earthquake&#39;</span><span class="p">)</span> <span class="c1"># see note below</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># write your code here</span>
+<span class="n">regr</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">train</span><span class="p">[[</span><span class="s1">'ENGINESIZE'</span><span class="p">,</span><span class="s1">'CYLINDERS'</span><span class="p">,</span><span class="s1">'FUELCONSUMPTION_CITY'</span><span class="p">,</span><span class="s1">'FUELCONSUMPTION_HWY'</span><span class="p">]])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">train</span><span class="p">[[</span><span class="s1">'CO2EMISSIONS'</span><span class="p">]])</span>
+<span class="n">regr</span><span class="o">.</span><span class="n">fit</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">'Coefficients: '</span><span class="p">,</span> <span class="n">regr</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
+<span class="n">y_</span><span class="o">=</span> <span class="n">regr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test</span><span class="p">[[</span><span class="s1">'ENGINESIZE'</span><span class="p">,</span><span class="s1">'CYLINDERS'</span><span class="p">,</span><span class="s1">'FUELCONSUMPTION_CITY'</span><span class="p">,</span><span class="s1">'FUELCONSUMPTION_HWY'</span><span class="p">]])</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">test</span><span class="p">[[</span><span class="s1">'ENGINESIZE'</span><span class="p">,</span><span class="s1">'CYLINDERS'</span><span class="p">,</span><span class="s1">'FUELCONSUMPTION_CITY'</span><span class="p">,</span><span class="s1">'FUELCONSUMPTION_HWY'</span><span class="p">]])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asanyarray</span><span class="p">(</span><span class="n">test</span><span class="p">[[</span><span class="s1">'CO2EMISSIONS'</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Residual sum of squares: </span><span class="si">%.2f</span><span class="s2">"</span><span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">y_</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Variance score: </span><span class="si">%.2f</span><span class="s1">'</span> <span class="o">%</span> <span class="n">regr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>With just a few lines of code, you were able to quickly identify and visualize the spike in immigration!</p>
-<p>Quick note on x and y values in <code>plt.text(x, y, label)</code>:</p>
+<div class="output_wrapper">
+<div class="output">
 
-<pre><code> Since the x-axis (years) is type 'integer', we specified x as a year. The y axis (number of immigrants) is type 'integer', so we can just specify the value y = 6000.
 
-</code></pre>
-<div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">2000</span><span class="p">,</span> <span class="mi">6000</span><span class="p">,</span> <span class="s1">&#39;2010 Earthquake&#39;</span><span class="p">)</span> <span class="c1"># years stored as type int</span>
-</pre></div>
+<div class="output_area">
 
-<pre><code>If the years were stored as type 'string', we would need to specify x as the index position of the year. Eg 20th index is year 2000 since it is the 20th year with a base year of 1980.
-</code></pre>
-<div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">6000</span><span class="p">,</span> <span class="s1">&#39;2010 Earthquake&#39;</span><span class="p">)</span> <span class="c1"># years stored as type int</span>
-</pre></div>
+    <div class="prompt"></div>
 
-<pre><code>We will cover advanced annotation methods in later modules.</code></pre>
 
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Coefficients:  [[10.66448127  7.38345472  6.31291384  2.82232368]]
+Residual sum of squares: 717.06
+Variance score: 0.84
+</pre>
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We can easily add more countries to line plot to make meaningful comparisons immigration from different countries.</p>
-<p><strong>Question:</strong> Let's compare the number of immigrants from India and China from 1980 to 2013.</p>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Step 1: Get the data set for China and India, and display dataframe.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### type your answer here</span>
-</pre></div>
-
-    </div>
 </div>
 </div>
 
@@ -14178,260 +13995,43 @@ Use line plot when you have a continuous data set. These are best suited for tre
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Double-click <strong>here</strong> for the solution.
-<!-- The correct answer is:
-df_CI = df_can.loc[['India', 'China'], years]
-df_CI.head()
---></p>
+<p>Double-click <strong>here</strong> for the solution.</p>
+<!-- Your answer is below:
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Step 2: Plot graph. We will explicitly specify line plot by passing in <code>kind</code> parameter to <code>plot()</code>.</p>
+regr = linear_model.LinearRegression()
+x = np.asanyarray(train[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_CITY','FUELCONSUMPTION_HWY']])
+y = np.asanyarray(train[['CO2EMISSIONS']])
+regr.fit (x, y)
+print ('Coefficients: ', regr.coef_)
+y_= regr.predict(test[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_CITY','FUELCONSUMPTION_HWY']])
+x = np.asanyarray(test[['ENGINESIZE','CYLINDERS','FUELCONSUMPTION_CITY','FUELCONSUMPTION_HWY']])
+y = np.asanyarray(test[['CO2EMISSIONS']])
+print("Residual sum of squares: %.2f"% np.mean((y_ - y) ** 2))
+print('Variance score: %.2f' % regr.score(x, y))
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### type your answer here</span>
-</pre></div>
 
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Double-click <strong>here</strong> for the solution.
-<!-- The correct answer is:
-df_CI.plot(kind='line')
---></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>That doesn't look right...</p>
-<p>Recall that <em>pandas</em> plots the indices on the x-axis and the columns as individual lines on the y-axis. Since <code>df_CI</code> is a dataframe with the <code>country</code> as the index and <code>years</code> as the columns, we must first transpose the dataframe using <code>transpose()</code> method to swap the row and columns.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_CI</span> <span class="o">=</span> <span class="n">df_CI</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
-<span class="n">df_CI</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><em>pandas</em> will auomatically graph the two countries on the same graph. Go ahead and plot the new transposed dataframe. Make sure to add a title to the plot and label the axes.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### type your answer here</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Double-click <strong>here</strong> for the solution.
-<!-- The correct answer is:
-df_CI.index = df_CI.index.map(int) # let's change the index values of df_CI to type integer for plotting
-df_CI.plot(kind='line')
---></p>
-<!--
-plt.title('Immigrants from China and India')
-plt.ylabel('Number of Immigrants')
-plt.xlabel('Years')
 -->
-
-<!--
-plt.show()
---> 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>From the above plot, we can observe that the China and India have very similar immigration trends through the years.</p>
+<h2>Want to learn more?</h2><p>IBM SPSS Modeler is a comprehensive analytics platform that has many machine learning algorithms. It has been designed to bring predictive intelligence to decisions made by individuals, by groups, by systems – by your enterprise as a whole. A free trial is available through this course, available here: <a href="http://cocl.us/ML0101EN-SPSSModeler">SPSS Modeler</a></p>
+<p>Also, you can use Watson Studio to run these notebooks faster with bigger datasets. Watson Studio is IBM's leading cloud solution for data scientists, built by data scientists. With Jupyter notebooks, RStudio, Apache Spark and popular libraries pre-packaged in the cloud, Watson Studio enables data scientists to collaborate on their projects without having to install anything. Join the fast-growing community of Watson Studio users today with a free account at <a href="https://cocl.us/ML0101EN_DSX">Watson Studio</a></p>
+<h3>Thanks for completing this lesson!</h3><p></p><h4>Author:  <a href="https://ca.linkedin.com/in/saeedaghabozorgi">Saeed Aghabozorgi</a></h4><p></p>
+<p><a href="https://ca.linkedin.com/in/saeedaghabozorgi">Saeed Aghabozorgi</a>, PhD is a Data Scientist in IBM with a track record of developing enterprise level applications that substantially increases clients’ ability to turn data into actionable knowledge. He is a researcher in data mining field and expert in developing advanced analytic methods like machine learning and statistical modelling on large datasets.</p><hr>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><em>Note</em>: How come we didn't need to transpose Haiti's dataframe before plotting (like we did for df_CI)?</p>
-<p>That's because <code>haiti</code> is a series as opposed to a dataframe, and has the years as its indices as shown below.</p>
-<div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">haiti</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="n">haiti</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
-</pre></div>
-<blockquote><p>class 'pandas.core.series.Series' <br>
-1980    1666 <br>
-1981    3692 <br>
-1982    3498 <br>
-1983    2860 <br>
-1984    1418 <br>
-Name: Haiti, dtype: int64 <br></p>
-</blockquote>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Line plot is a handy tool to display several dependent variables against one independent variable. However, it is recommended that no more than 5-10 lines on a single graph; any more than that and it becomes difficult to interpret.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Question:</strong> Compare the trend of top 5 countries that contributed the most to immigration to Canada.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### type your answer here</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Double-click <strong>here</strong> for the solution.
-<!-- The correct answer is:
-\\ # Step 1: Get the dataset. Recall that we created a Total column that calculates the cumulative immigration by country. \\ We will sort on this column to get our top 5 countries using pandas sort_values() method.
-\\ inplace = True paramemter saves the changes to the original df_can dataframe
-df_can.sort_values(by='Total', ascending=False, axis=0, inplace=True)
---></p>
-<!--
-# get the top 5 entries
-df_top5 = df_can.head(5)
--->
-
-<!--
-# transpose the dataframe
-df_top5 = df_top5[years].transpose() 
--->
-
-<!--
-print(df_top5)
--->
-
-<!--
-\\ # Step 2: Plot the dataframe. To make the plot more readeable, we will change the size using the `figsize` parameter.
-df_top5.index = df_top5.index.map(int) # let's change the index values of df_top5 to type integer for plotting
-df_top5.plot(kind='line', figsize=(14, 8)) # pass a tuple (x, y) size
--->
-
-<!--
-plt.title('Immigration Trend of Top 5 Countries')
-plt.ylabel('Number of Immigrants')
-plt.xlabel('Years')
--->
-
-<!--
-plt.show()
--->
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Other-Plots">Other Plots<a class="anchor-link" href="#Other-Plots">&#182;</a></h3><p>Congratulations! you have learned how to wrangle data with python and create a line plot with Matplotlib. There are many other plotting styles available other than the default Line plot, all of which can be accessed by passing <code>kind</code> keyword to <code>plot()</code>. The full list of available plots are as follows:</p>
-<ul>
-<li><code>bar</code> for vertical bar plots</li>
-<li><code>barh</code> for horizontal bar plots</li>
-<li><code>hist</code> for histogram</li>
-<li><code>box</code> for boxplot</li>
-<li><code>kde</code> or <code>density</code> for density plots</li>
-<li><code>area</code> for area plots</li>
-<li><code>pie</code> for pie plots</li>
-<li><code>scatter</code> for scatter plots</li>
-<li><code>hexbin</code> for hexbin plot</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Thank-you-for-completing-this-lab!">Thank you for completing this lab!<a class="anchor-link" href="#Thank-you-for-completing-this-lab!">&#182;</a></h3><p>This notebook was originally created by <a href="https://www.linkedin.com/in/jayrajasekharan">Jay Rajasekharan</a> with contributions from <a href="https://www.linkedin.com/in/ehsanmkermani">Ehsan M. Kermani</a>, and <a href="https://www.linkedin.com/in/slobodan-markovic">Slobodan Markovic</a>.</p>
-<p>This notebook was recently revised by <a href="https://www.linkedin.com/in/aklson/">Alex Aklson</a>. I hope you found this lab session interesting. Feel free to contact me if you have any questions!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This notebook is part of a course on <strong>Coursera</strong> called <em>Data Visualization with Python</em>. If you accessed this notebook outside the course, you can take this course online by clicking <a href="http://cocl.us/DV0101EN_Coursera_Week1_LAB1">here</a>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<hr>
-
-<p>Copyright &copy; 2018 <a href="https://cognitiveclass.ai/?utm_source=bducopyrightlink&amp;utm_medium=dswb&amp;utm_campaign=bdu">Cognitive Class</a>. This notebook and its source code are released under the terms of the <a href="https://bigdatauniversity.com/mit-license/">MIT License</a>.</p>
-
+<p>Copyright © 2018 <a href="https://cocl.us/DX0108EN_CC">Cognitive Class</a>. This notebook and its source code are released under the terms of the <a href="https://bigdatauniversity.com/mit-license/">MIT License</a>.</p>
 </div>
 </div>
 </div>
     </div>
   </div>
-</body>
+
 
  
 
 
-</html>
+
+<script src="file:///C:/Users/dinha/Downloads/@jupyter-widgets/html-manager@*/dist/embed-amd.js"></script><div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-family: MathJax_Typewriter, sans-serif;"></div></div></body></html>
