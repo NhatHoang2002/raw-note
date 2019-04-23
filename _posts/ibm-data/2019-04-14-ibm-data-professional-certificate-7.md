@@ -20,8 +20,6 @@ This note was first taken when I learnt the [IBM Data Professional Certificate c
 
 {% include more.html content="[Go to Course 8](/ibm-data-professional-certificate-8)." %}
 
-{% include toc.html %}
-
 ## Week 1: Introduction to Data Visualization Tools
 
 <p markdown="1" class="thi-warning">
