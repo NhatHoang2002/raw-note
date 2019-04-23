@@ -6,6 +6,7 @@ tags: [data, ibm data, python, machine learning]
 toc: 1
 comment: 1
 math: 1
+date: 2019-04-22
 ---
 
 {% assign img-url = '/images/posts/data/ibm' %}
@@ -118,8 +119,6 @@ This note was first taken when I learnt the [IBM Data Professional Certificate c
 
 ## Week 3: Classification
 
-<mark>NEED TO BE NOTED LATER!!!!</mark>
-
 <p markdown="1" class="thi-tip">
 <i class="material-icons mat-icon">info</i>
 Labs
@@ -127,6 +126,114 @@ Labs
 - [Decision Trees]({{site.baseurl}}/files/ibm/ML0101EN-Clas-K-Nearest-neighbors-CustCat-py-v1.html)
 </p>
 
-- Supervised learning approaches.
+- **Classification**
+	- Supervised learning approaches.
+	- We can also build classifier models for both *binary classification* and *multi-class classification*.
 - **Multiclass classifier**: A classifier that can predict a field with multiple discrete values, such as "DrugA", "DrugX" or "DrugY".
-- 
+- **For example**, classification can be used for email filtering, speech recognition, handwriting recognition, biometric identification, document classification and much more.
+- Classification algorithms in machine learning:
+	- decision trees, 
+	- naive bayes, 
+	- linear discriminant analysis, 
+	- k-nearest neighbor, 
+	- logistic regression, 
+	- neural networks, 
+	- support vector machines. 
+- **K-nearest Neighbours**
+	- - This is a classification algorithm, we choose a categories for some example based on the category of their neighbors. For example, if $K=1$, the category of that example is the same with the category of the nearest example to it.
+	- Calculate the accuracy with different numbers of $K$ and then choose the best one.
+- **Evaluation Metrics in Classification**
+	- **Jaccard index**: <mark>higher is better</mark>
+		![Jaccard index]({{img-url}}/ibm-8-3.jpg){:.w-700}
+	- **F1-Score**: <mark>higher is better</mark>
+		![F1-score]({{img-url}}/ibm-8-4.jpg){:.w-700}
+	- **Log Loss**: Logarithmic loss (also known as Log loss) measures the performance of a classifier where the predicted output is a probability value between 0 and 1. We can calculate the log loss for each row using the log loss equation, which measures how far each prediction is, from the actual label. 
+		![Log loss]({{img-url}}/ibm-8-5.jpg){:.w-700}
+
+### From the labs
+
+Load data file and show the 1st 5 lines
+
+~~~ python
+df = pd.read_csv('teleCust1000t.csv')
+df.head()
+~~~
+
+See how many of each class in your data set
+
+~~~ python
+df['custcat'].value_counts()
+~~~
+
+Visualize your income colum in histogram
+
+~~~ python
+df.hist(column='income', bins=50)
+~~~
+
+List all of columns' name in your data set
+
+~~~ python
+df.hist(column='income', bins=50)
+~~~
+
+To use scikit-learn library, we have to convert the Pandas data frame to a Numpy array:
+
+~~~ python
+X = df[['col1', 'col2', 'col3']].values
+~~~
+
+Check the values of some column
+
+~~~ python
+df['custcat'].values
+~~~
+
+Normalize data (zero mean, unit variance,...)
+
+~~~ python
+from sklearn import preprocessing
+X = preprocessing.StandardScaler().fit(X).transform(X.astype(float))
+~~~
+
+Split the data into training/test sets
+
+~~~ python
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split( X, y, test_size=0.2, random_state=4)
+~~~
+
+Using K-nearest neighbor (KNN)
+
+~~~ python
+from sklearn.neighbors import KNeighborsClassifier
+k = 4
+#Train Model and Predict  
+neigh = KNeighborsClassifier(n_neighbors = k).fit(X_train,y_train)
+yhat = neigh.predict(X_test)
+~~~
+
+Accuracy evaluation
+
+~~~ python
+from sklearn import metrics
+print("Train set Accuracy: ", metrics.accuracy_score(y_train, neigh.predict(X_train)))
+print("Test set Accuracy: ", metrics.accuracy_score(y_test, yhat))
+~~~
+
+### Decision tree
+
+- The basic intuition behind a decision tree is to map out all possible decision paths in the form of a tree.
+- **Decision tree learning algorithm**
+  ![Decision tree]({{img-url}}/ibm-8-6.jpg){:.w-700}
+- What is important in making a decision tree, is to determine which attribute is the best or more predictive to split data based on the feature.
+- **Entropy** is the amount of information disorder or the amount of randomness in the data.
+  - <makr>The lower the entropy, the less uniform the distribution, the purer the node.</makr>
+  ![Entropy]({{img-url}}/ibm-8-7.jpg){:.w-700}
+  - How we decide which entropy is better? -> the tree with the higher **information gain** after splitting.
+    ![entropy with information gain]({{img-url}}/ibm-8-8.jpg){:.w-700}
+  - **information gain**: is the information that can increase the level of certainty after splitting.
+    $$
+    \text{information gain} = \text{entropy before split} - \text{entropy after split}
+    $$
+  - <makr>Bigger information gain, smaller entropy</makr> -> choose the tree with smaller entropy value.

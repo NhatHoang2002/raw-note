@@ -45,9 +45,10 @@ pre{
   &.highlight{
     max-height: 400px;
   }
-} 
+}
 
 .highlighter-rouge pre{
 	padding: 8px 10px!important;
 	overflow: auto;
+    tab-size: 2;
 }

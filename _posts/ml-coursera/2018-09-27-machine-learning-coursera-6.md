@@ -145,20 +145,21 @@ See again [Linear regression with regularization](/machine-learning-coursera-3#r
 
 <div class="row d-flex" markdown="1">
 <div class="col s12 l6" markdown="1">
-![Learning curve: high bias]({{img-url}}/learning-curve-1.png){:.no-border .w-600}
+![Learning curve: high bias]({{img-url}}/learning-curve-1.png){:.no-border .w-400}
 </div>
 <div class="col s12 l6" markdown="1">
-![Learning curve: high variance]({{img-url}}/learning-curve-2.png){:.no-border .w-600}
+![Learning curve: high variance]({{img-url}}/learning-curve-2.png){:.no-border .w-400}
 </div>
 </div>
+
 ### Deciding what to do next (revisited)
 
 <div class="row d-flex" markdown="1">
 <div class="col s12 l6" markdown="1">
-![Debugging a learning algorithm]({{img-url}}/debug-learning-algorithm.png){:.no-border .w-600}
+![Debugging a learning algorithm]({{img-url}}/debug-learning-algorithm.png){:.no-border .w-400}
 </div>
 <div class="col s12 l6" markdown="1">
-![Neural network and overfitting]({{img-url}}/neural-network-overfitting.png){:.no-border .w-600}
+![Neural network and overfitting]({{img-url}}/neural-network-overfitting.png){:.no-border .w-400}
 </div>
 </div>
 

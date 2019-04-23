@@ -30,12 +30,26 @@ This note is created when I started to learn the [Learn Python 3](https://www.co
 	    print("Have fun shopping!")
 	~~~
 - Multiple return values
-~~~ python
-def square_point(x_value, y_value):
-  x_2 = x_value * x_value
-  y_2 = y_value * y_value
-  return x_2, y_2
-~~~
-
+	~~~ python
+	def square_point(x_value, y_value):
+	  x_2 = x_value * x_value
+	  y_2 = y_value * y_value
+	  return x_2, y_2
+	~~~
+- Try/Except
+	~~~ python
+	# raise an error
+	def raises_value_error():
+	  raise ValueError
+	raises_value_error()
+	
+	# try with try/except
+	def raises_value_error():
+	  raise ValueError
+	try:
+	  raises_value_error()
+	except ValueError:
+	  print("You raised a ValueError!")
+	~~~
 
 
