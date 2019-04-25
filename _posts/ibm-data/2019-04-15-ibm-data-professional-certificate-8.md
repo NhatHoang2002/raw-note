@@ -237,9 +237,11 @@ print("Test set Accuracy: ", metrics.accuracy_score(y_test, yhat))
   - How we decide which entropy is better? -> the tree with the higher **information gain** after splitting.
     ![entropy with information gain]({{img-url}}/ibm-8-8.jpg){:.w-700}
   - **information gain**: is the information that can increase the level of certainty after splitting.
+    
     $$
-    \text{information gain} = \text{entropy before split} - \text{entropy after split}
+    \text{information gain} = \text{entropy before split} - \text{weighted entropy after split}
     $$
+
   - <mark>Bigger information gain, smaller entropy</mark> -> choose the tree with smaller entropy value.
 - Sklearn Decision Trees **do not** handle categorical variables.
   - We can convert these features to numerical values using **pandas.get_dummies()**

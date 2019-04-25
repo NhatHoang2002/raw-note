@@ -62,6 +62,9 @@ This note was first taken when I learnt the [IBM Data Professional Certificate c
 
 ### k-Means Clustering
 
+{:.thi-tip}
+[The lab of K-means]({{site.url}}{{site.baseurl}}/files/ibm/ML0101EN-Clus-K-Means-Customer-Seg-py-v1)
+
 - **K-Means** can group data only unsupervised based on the similarity of customers to each other.
   - Partitioning clustering
   - K-means divides the data into **non-overlapping** subsets (clusters) without any cluster-internal structure
@@ -73,7 +76,33 @@ This note was first taken when I learnt the [IBM Data Professional Certificate c
   - To divide the data into non-overlapping clusters without any cluster-internal structure
 - k-means clustering - initialize k
   1. Initialize k=3 **centrois randomly**
-  2. 
+    1. Choose randomly 3 points in our data points.
+    2. Choose randomly 2 points (not in our data points)
+  2. Find the distance to these centroids from each of data points.
+  3. Assign each point to the closest centroid -> use distance matrix
+  4. However, because we choose randomly the centroids, the SSE (sum of squared differences between each point and its centroid) is big
+    
+    $$
+    SSE = \Sigma (x_i-c_j)^2
+    $$
+
+  5. Move the centroid to the mean of each cluster
+  6. Go back to step 2 and repeat until there are no more changes.
+  7. Above algorithm leads to **local** optimal (not guarantee about global optimal)
+  8. Run the whole process multiple times with different starting conditions (the algorithm is quite fast)
+- **Accuracy of k-means**
+  - **elbow method**: 
+    - If we increase K, the mean distances are always deacrease -> cannot increase K forever
+    - But, there is an "elbow", the decreasing is much. We choose the K at this elbow!
+
+### Hierarchical Clustering
+
+{:.thi-tip}
+[The lab of K-means]({{site.url}}{{site.baseurl}}/files/ibm/ML0101EN-Clus-Hierarchical-Cars-py-v1)
+
+- 
+
+### Density-based Clustering
 
 
-
+## Week 5 : 
