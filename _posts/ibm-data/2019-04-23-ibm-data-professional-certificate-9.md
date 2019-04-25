@@ -100,7 +100,73 @@ This note was first taken when I learnt the [IBM Data Professional Certificate c
 {:.thi-tip}
 [The lab of K-means]({{site.url}}{{site.baseurl}}/files/ibm/ML0101EN-Clus-Hierarchical-Cars-py-v1)
 
-- 
+- Hierarchical clustering algorithms build a hierarchy of clusters where each node is a cluster consisting of the clusters of its daughter nodes. 
+- Strategies for hierarchical clustering generally fall into two types, 
+  - **divisive** (phân tán ra) : dividing the cluster, it's **top-down**.
+  - **agglomerative** (tích tụ vào) : amass or collect things, it's **bottom-up** -> <mark>more popular!</mark>
+- Hierarchical clustering is illustrated by **dendrogram** (sơ đồ nhánh).
+  ![Idea of hierarchical clustering]({{img-url}}/ibm-8-17.jpg)
+- Agglomerative algorithm
+  ![Agglomerative algorithm]({{img-url}}/ibm-8-18.jpg)
+- To calculate distance between clusters:
+  ![calculate distance between clusters]({{img-url}}/ibm-8-19.jpg)
+- <mark>Hierarchical clustering has longer runtimes than K-means!</mark>
+- Advantages vs disavadtages
+  ![Advantages vs disavadtages]({{img-url}}/ibm-8-20.jpg)
+- Hierarchical clustering vs K-means
+  ![Hierarchical clustering vs K-means]({{img-url}}/ibm-8-21.jpg)
+
+### Hierarchical Clustering (lab)
+
+{:.thi-tip}
+[The lab of K-means]({{site.url}}{{site.baseurl}}/files/ibm/ML0101EN-Clus-Hierarchical-Cars-py-v1)
+
+Generating Random Data
+
+~~~ python
+from sklearn.datasets.samples_generator import make_blobs
+X1, y1 = make_blobs(n_samples=50, centers=[[4,4], [-2, -1], [1, 1], [10,4]], cluster_std=0.9)
+# cluster_std: The standard deviation of the clusters. The larger the number, the further apart the clusters
+#   Choose a number between 0.5-1.5
+~~~
+
+Plot the data
+
+~~~ python
+plt.scatter(X1[:, 0], X1[:, 1], marker='o') 
+~~~
+
+Agglomerative Clustering
+
+~~~ python
+from sklearn.cluster import AgglomerativeClustering
+agglom = AgglomerativeClustering(n_clusters = 4, linkage = 'average')
+agglom.fit(X1,y1)
+~~~
+
+Find the **distance matrix**
+
+~~~ python
+from scipy.spatial import distance_matrix
+dist_matrix = distance_matrix(X1,X1) 
+~~~
+
+Hierarchical clustering
+
+~~~ python
+from scipy.cluster import hierarchy
+Z = hierarchy.linkage(dist_matrix, 'complete')
+~~~
+
+Save the dendrogram to a variable called dendro
+
+~~~ python
+dendro = hierarchy.dendrogram(Z)
+~~~
+
+Check the lab to know how to use **scipy** to calculate distance matrix.
+
+
 
 ### Density-based Clustering
 
