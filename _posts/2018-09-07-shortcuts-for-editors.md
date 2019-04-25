@@ -181,6 +181,16 @@ This is the result
 </div>
 ~~~
 
+Other way
+
+~~~ html
+<div class="columns-2" markdown="1">
+Texts
+
+![alt](/link)
+</div>
+~~~
+
 ### Links
 
 See again

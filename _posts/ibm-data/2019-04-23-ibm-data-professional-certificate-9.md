@@ -5,6 +5,7 @@ categories: [data, python, ml]
 tags: [data, ibm data, python, machine learning]
 toc: 1
 comment: 1
+date: 2019-04-24
 ---
 
 {% assign img-url = '/images/posts/data/ibm' %}
@@ -33,8 +34,11 @@ This note was first taken when I learnt the [IBM Data Professional Certificate c
 - What's **difference between clustering and classification**?
   ![difference between clustering and classification]({{img-url}}/ibm-8-14.jpg){:.w-700}
 - **Application of clustering**
-  ![clustering application 1]({{img-url}}/ibm-8-15.jpg){:.w-500}
-  ![clustering application 2]({{img-url}}/ibm-8-16.jpg){:.w-500}
+  <div class="columns-2" markdown="1">
+  ![clustering application 1]({{img-url}}/ibm-8-15.jpg)
+  
+  ![clustering application 2]({{img-url}}/ibm-8-16.jpg)
+  </div>
 - **Why clustering?**
   - Exploratory data analysis
   - Summary generation
@@ -58,8 +62,18 @@ This note was first taken when I learnt the [IBM Data Professional Certificate c
 
 ### k-Means Clustering
 
-- 
-
+- **K-Means** can group data only unsupervised based on the similarity of customers to each other.
+  - Partitioning clustering
+  - K-means divides the data into **non-overlapping** subsets (clusters) without any cluster-internal structure
+  - Examples within a cluster are very similar
+  - Examples across different clusters are very different
+- **Onjective of k-means**
+  - To form clusters in such a way that similar samples go into a cluster, and dissimilar samples fall into different clusters.
+  - To minimize the “intra cluster” distances and maximize the “inter-cluster” distances.
+  - To divide the data into non-overlapping clusters without any cluster-internal structure
+- k-means clustering - initialize k
+  1. Initialize k=3 **centrois randomly**
+  2. 
 
 
 

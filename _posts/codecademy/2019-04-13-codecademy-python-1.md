@@ -5,6 +5,7 @@ categories: [python]
 tags: [python, codecademy python, codecademy]
 toc: 1
 comment: 1
+date: 2019-04-24
 ---
 
 This note is created when I started to learn the [Learn Python 3](https://www.codecademy.com/courses/learn-python-3) on Codecademy.
@@ -51,5 +52,8 @@ This note is created when I started to learn the [Learn Python 3](https://www.co
 	except ValueError:
 	  print("You raised a ValueError!")
 	~~~
-
-
+- An if statement that is always false is called a **contradiction**.
+- **zip**: create paired list
+- Count an element in a list: `votes.count('Jake')`
+- `.sort()` vs `sorted()`: 1st one returns `None` and make the change on the list while the 2nd return a sorted list.
+- 
