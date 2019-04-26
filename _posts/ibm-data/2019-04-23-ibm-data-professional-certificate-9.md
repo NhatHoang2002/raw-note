@@ -5,7 +5,7 @@ categories: [data, python, ml]
 tags: [data, ibm data, python, machine learning]
 toc: 1
 comment: 1
-date: 2019-04-24
+date: 2019-04-26
 ---
 
 {% assign img-url = '/images/posts/data/ibm' %}
@@ -76,10 +76,10 @@ This note was first taken when I learnt the [IBM Data Professional Certificate c
   - To divide the data into non-overlapping clusters without any cluster-internal structure
 - k-means clustering - initialize k
   1. Initialize k=3 **centrois randomly**
-    1. Choose randomly 3 points in our data points.
-    2. Choose randomly 2 points (not in our data points)
+    - Choose randomly 3 points in our data points.
+    - Choose randomly 2 points (not in our data points)
   2. Find the distance to these centroids from each of data points.
-  3. Assign each point to the closest centroid -> use distance matrix
+  3. Assign each point to the closest centroid -> use **distance matrix**
   4. However, because we choose randomly the centroids, the SSE (sum of squared differences between each point and its centroid) is big
     
     $$
@@ -166,9 +166,89 @@ dendro = hierarchy.dendrogram(Z)
 
 Check the lab to know how to use **scipy** to calculate distance matrix.
 
+### Density-based Clustering (DBSCAN Clustering)
 
+{:.thi-tip}
+[The lab of Density-Based Clustering]({{site.url}}{{site.baseurl}}/files/ibm/ML0101EN-Clus-DBSCN-weather-py-v1)
 
-### Density-based Clustering
+- Works based on **density of objects**.  
+- When applied to tasks with **arbitrary shaped** clusters or **clusters within clusters**, traditional techniques might not be able to achieve good results.
+- Density-based clustering locates **regions of high density** that are separated **from** one another by **regions of low density**.
+  ![k-means vs density-based clustering]({{img-url}}/ibm-8-22.jpg)
+- A specific and very popular type of density-based clustering is **DBSCAN** (*Density-Based Spatial Clustering of Applications with Noise*).
+  - The wonderful attributes of the DBSCAN algorithm is that it can **find out any arbitrary shaped cluster without getting effected by noise**.
+    ![DBSCAN example]({{img-url}}/ibm-8-23.jpg)
+  - One of the **most common clustering algorithm**.
+  - The algorithm has **no notion of outliers** that is, all points are assigned to a cluster even if they do not belong in any.
+  - Tt does **not require one to specify the number of clusters** such as K in K-means
+  - 2 parameters
+    - R (radius of neighborhood) that if include enough number of points within, we call it **a dense area**.
+    - M (min number of neighbors): the min number of data points we want in a neighborhood to define a cluster.
+- **DBSCAN ALgorithm**: all points fall into 3 types
+    - **Core point** (red) : have enough M points around.
+    - **Border point** (yellow) : in the area of R with other point but have <M points around.
+    - **Outlier point** (gray) : don't have any points around.
+    ![core / border / outlier points]({{img-url}}/ibm-8-24.jpg)
 
+## Week 5 : Recommender Systems
 
-## Week 5 : 
+###  Intro to recommender systems
+
+- Recommender systems try to capture these patterns and similar behaviors, to help predict what else you might like.
+- There are generally 2 main types of recommendation systems: 
+  - **Content-based** : *Show me more of the same of what I've liked before.*
+  - **Collaborative filtering** : *Tell me what's popular among my neighbors, I also may like it.*
+  - (also) **Hybrid recommender systems** : combines various mechanisms.
+- Implementing recommender systems: **Memory-based** & **Model-based**: 
+  ![Implementing recommender systems]({{img-url}}/ibm-8-25.jpg)
+
+## Content-based recommender systems
+
+{:.thi-tip}
+[The lab of Content-based recommender systems]({{site.url}}{{site.baseurl}}/files/ibm/ML0101EN-RecSys-Content-Based-movies-py-v1)
+
+- tries to recommend items to users based on their profile. The user's profile revolves around that user's preferences and tastes. 
+- based on similarity between those items
+
+<div class="columns-2" markdown="1">
+![Content-based recommender systems example]({{img-url}}/ibm-8-26.jpg)
+
+![Weighing the genres]({{img-url}}/ibm-8-27.jpg)
+</div>
+
+![Weighing the genres]({{img-url}}/ibm-8-28.jpg)
+
+- For a **very new genre** that the user never watch, the systems didn't work properly! -> we can use **collaborative filering.**
+
+### Collaborative Filtering
+
+{:.thi-tip}
+[The lab of Collaborative Filtering]({{site.url}}{{site.baseurl}}/files/ibm/ML0101EN-RecSys-Collaborative-Filtering-movies-py-v1)
+
+- Collaborative filtering is based on the fact that relationships exist between products and people's interests.
+- 2 approaches
+  - **user-based**:  based on user's neighborhood
+  - **item-based**: based on item's similarity
+  ![user-based vs item-based]({{img-url}}/ibm-8-33.jpg)
+- **User-based**: if you watch the same movie with your neighbor and she watches a new film, you may like that film too.
+- Find the similar users -> using something like **Pearson Correlation Function**.
+  - **Why?** Pearson correlation is invariant to scaling, i.e. multiplying all elements by a nonzero constant or adding any constant to all elements. For example, if you have two vectors X and Y,then, pearson(X, Y) == pearson(X, 2 * Y + 3). This is a pretty important property in recommendation systems because for example two users might rate two series of items totally different in terms of absolute rates, but they would be similar users (i.e. with similar ideas) with similar rates in various scales .
+- **How?**
+
+  <div class="columns-2" markdown="1">
+  ![user rating matrix]({{img-url}}/ibm-8-29.jpg)
+  
+  ![learning the similarity weights]({{img-url}}/ibm-8-30.jpg)
+  </div>
+  
+  ![creating the weighted the rating matrix]({{img-url}}/ibm-8-31.jpg)
+
+  ![creating the weighted the rating matrix]({{img-url}}/ibm-8-32.jpg)
+- **Process**
+  - Select a user with the movies the user has watched
+  - Based on his rating to movies, find the top X neighbours 
+  - Get the watched movie record of the user for each neighbour.
+  - Calculate a similarity score using some formula
+  - Recommend the items with the highest score
+- Challenge of collaborative filtering
+  ![Challenge of collaborative filtering]({{img-url}}/ibm-8-34.jpg)  
