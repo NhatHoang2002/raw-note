@@ -255,6 +255,8 @@ Check the lab to know how to use **scipy** to calculate distance matrix.
 
 ## Week 6: Final Project
 
+{:.thi-tip}
+[My final project]({{site.url}}{{site.baseurl}}/files/ibm/final_project)
+
 - You will complete a notebook where you will build a classifier to predict **whether a loan case will be paid off or not**.
 - If you have already sign up and have an account on Watson Studio (previous courses), you can sign in to the page of creating projects [here](https://eu-gb.dataplatform.cloud.ibm.com/home?context=analytics) (the guide on the course is not really helpful).
-- 
