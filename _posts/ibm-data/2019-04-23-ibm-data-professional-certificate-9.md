@@ -63,7 +63,7 @@ This note was first taken when I learnt the [IBM Data Professional Certificate c
 ### k-Means Clustering
 
 {:.thi-tip}
-[The lab of K-means]({{site.url}}{{site.baseurl}}/files/ibm/ML0101EN-Clus-K-Means-Customer-Seg-py-v1)
+[The lab of K-means]({{site.url}}{{site.baseurl}}/files/ibm/ML0101EN-Clus-K-Means-Customer-Seg-py-v1). This is [another lab]({{site.url}}{{site.baseurl}}/files/ibm/DP0701EN-3-3-1-Clustering-k-means-py-v1.0) from course 9.
 
 - **K-Means** can group data only unsupervised based on the similarity of customers to each other.
   - Partitioning clustering

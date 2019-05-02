@@ -4,7 +4,6 @@ title: "IBM Data Course 9: Applied Data Science Capstone"
 categories: [data, python, ml]
 tags: [data, ibm data, python, machine learning]
 toc: 1
-comment: 1
 date: 2019-05-02
 ---
 
@@ -59,6 +58,14 @@ This note was first taken when I learnt the [IBM Data Professional Certificate c
 
 ### Using Foursquare API
 
+What we can do?
+
+1. Search for a specific type of venue around a given location - Regular
+2. Learn more about a specific venue - Premium.
+3. Learn more about a specific Foursquare user - Regular
+4. Explore a given location - Regular
+5. Explore trending venues around a given location - Regular
+
 <div class="columns-2" markdown="1">
 ![API-search]({{img-url}}/ibm-9-2.jpg)
 
@@ -70,5 +77,22 @@ This note was first taken when I learnt the [IBM Data Professional Certificate c
 
 ![API-search 4]({{img-url}}/ibm-9-5.jpg)
 </div>
+
+<div class="columns-2" markdown="1">
+![API-search 5]({{img-url}}/ibm-9-6.jpg)
+
+![API-search 6]({{img-url}}/ibm-9-7.jpg)
+</div>
+
+### LAB : Foursquare API
+
+{:.thi-tip}
+[Learning FourSquare API with Python]({{site.url}}{{site.baseurl}}/files/ibm/DP0701EN-2-2-1-Foursquare-API-py-v1.0)
+
+## Week 3 : Neighborhood Segmentation and Clustering
+
+- You'll learn AGAIN **clustering & K-means** (look [this note of course 8]({{site.url}}{{site.baseurl}}/ibm-data-professional-certificate-9#week-4-clustering))
+- [Another lab]({{site.url}}{{site.baseurl}}/files/ibm/DP0701EN-3-3-1-Clustering-k-means-py-v1.0) for K-means clustering beside [this old lab]({{site.url}}{{site.baseurl}}/files/ibm/ML0101EN-Clus-K-Means-Customer-Seg-py-v1).
+- [Lab : Segmenting and Clustering Neighborhoods in New York City]({{site.url}}{{site.baseurl}}/files/ibm/DP0701EN-3-3-2-Neighborhoods-New-York-py-v1.0)
 
 
