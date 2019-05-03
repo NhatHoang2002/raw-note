@@ -95,4 +95,68 @@ What we can do?
 - [Another lab]({{site.url}}{{site.baseurl}}/files/ibm/DP0701EN-3-3-1-Clustering-k-means-py-v1.0) for K-means clustering beside [this old lab]({{site.url}}{{site.baseurl}}/files/ibm/ML0101EN-Clus-K-Means-Customer-Seg-py-v1).
 - [Lab : Segmenting and Clustering Neighborhoods in New York City]({{site.url}}{{site.baseurl}}/files/ibm/DP0701EN-3-3-2-Neighborhoods-New-York-py-v1.0)
 
+### Assignment : Segmenting and Clustering Neighborhoods in Toronto
+
+{:.thi-tip}
+[My solution for this assignment]({{site.url}}{{site.baseurl}}/files/ibm/Neighborhoods_in_Toronto)
+
+- unlike New York, the neighborhood data is not readily available on the internet
+- a **Wikipedia page** exists that has all the information we need to explore and cluster the neighborhoods in Toronto. You will be **required to scrape the Wikipedia page** and wrangle the data, clean it, and then read it into a pandas dataframe so that it is in a structured format like the New York dataset.
+- Use [this tool](https://beautiful-soup-4.readthedocs.io/en/latest/) and [this tutorial](https://www.youtube.com/watch?v=ng2o98k983k) to scrap.
+- Or use [this tutorial](https://qxf2.com/blog/web-scraping-using-python/) to scrap a table in a wiki page.
+- How to couple BeautifulSoup with pandas dataframe, check [this](https://stackoverflow.com/questions/50633050/scrape-tables-into-dataframe-with-beautifulsoup).
+
+Install **beatifulsoup4**
+
+~~~ bash
+pip install beautifulsoup4
+
+# It should return something like "Requirement already satisfied: beautifulsoup4 in c:\programdata\anaconda3\lib\site-packages (4.6.0)"
+
+# sometimes you need to upgrade your pip
+python -m pip install --upgrade pip --user
+~~~
+
+Install other required libs
+
+~~~ bash
+pip install lxml
+pip install html5lib
+pip install requests
+~~~
+
+### Scrape html from source
+
+Follow [this instruction](https://www.youtube.com/watch?v=ng2o98k983k) of Corey. Install all required packages like previous section and then do these,
+
+~~~ python
+from bs4 import BeautifulSoup
+import requests
+
+source = requests.get('<url>').text
+soup = BeautifulSoup(source, 'lxml') // all html content of <url>
+
+print(soup.prettify()) # print with indents
+
+match = soup.div # get the first div
+soup.h2 # first h2
+
+soup.find('div') # find first div found
+soup.find('div', class_='footer') # find first div whose class is "footer"
+
+# find all div with class "article"
+for article in soup.find_all('div', class_="article"):
+  headline = article.h2.a.text # a tag
+  summery = article.p.text # p tag
+
+# access src in an iframe
+# <iframe class=""youtube-player ... src="" ....></iframe>
+vid_src = article.find("iframe", class_="youtube-player")["src"]
+~~~
+
+## Week 4 : The Battle of Neighborhoods
+
+
+
+## Week 5 : The Battle of Neighborhoods (Cont'd)
 
