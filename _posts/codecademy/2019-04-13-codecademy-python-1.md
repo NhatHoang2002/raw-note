@@ -3,14 +3,11 @@ layout: post
 title: "Codecademy - Python 1"
 categories: [python]
 tags: [python, codecademy python, codecademy]
-toc: 1
 comment: 1
-date: 2019-04-24
+date: 2019-05-05
 ---
 
 This note is created when I started to learn the [Learn Python 3](https://www.codecademy.com/courses/learn-python-3) on Codecademy.
-
-## Basic
 
 - Multiplines string
 	~~~ python
@@ -56,4 +53,17 @@ This note is created when I started to learn the [Learn Python 3](https://www.co
 - **zip**: create paired list
 - Count an element in a list: `votes.count('Jake')`
 - `.sort()` vs `sorted()`: 1st one returns `None` and make the change on the list while the 2nd return a sorted list.
-- 
+- List comprehension:
+  ~~~ python
+  usernames = [word for word in words if word[0] == '@']
+  ~~~
+- Join string:
+  ~~~ python
+  my_munequita = ['My', 'Spanish', 'Harlem', 'Mona', 'Lisa']
+  ' '.join(my_munequita)
+  ~~~
+- Format
+  ~~~ python
+  Print("Toi ten la {}".format("Anh Thi")
+  Print("Toi ten la {name}, toi den tu {town}.".format(name="Anh Thi", town="Ben Tre")
+  ~~~

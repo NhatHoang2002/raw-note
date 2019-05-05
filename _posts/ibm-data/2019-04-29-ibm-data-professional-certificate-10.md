@@ -154,9 +154,7 @@ for article in soup.find_all('div', class_="article"):
 vid_src = article.find("iframe", class_="youtube-player")["src"]
 ~~~
 
-## Week 4 : The Battle of Neighborhoods
+## Week 4 & 5 : The Battle of Neighborhoods
 
 
-
-## Week 5 : The Battle of Neighborhoods (Cont'd)
 
