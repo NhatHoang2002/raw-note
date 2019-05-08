@@ -4,8 +4,11 @@ title: "Codecademy - Python 1"
 categories: [python]
 tags: [python, codecademy python, codecademy]
 comment: 1
-date: 2019-05-05
+date: 2019-05-08
+toc: 1
 ---
+
+{% assign img-url = '/images/posts/codecademy/python-3' %}
 
 This note is created when I started to learn the [Learn Python 3](https://www.codecademy.com/courses/learn-python-3) on Codecademy.
 
@@ -206,9 +209,90 @@ This note is created when I started to learn the [Learn Python 3](https://www.co
 ## Class
 
 - A **class** **instance** is also called an **object**. 
+- The constructor (the function called `__init__`)
 - In Python `__main__` means “*this current file that we’re running*” 
 - `hasattr(obj, "attr")` check if an object has an attribute or not.
 - `getattr(attributeless, "other_fake_attribute", 800)`: check an attribute, if there is not, the default value will be returned.
 - It’s possible for an object to have some attributes that are not explicitly defined in an object’s constructor. 
 - `dir(<obj>)` to see obj's attributes
-- 
+- Python automatically adds a number of attributes to all objects that get created
+- Create a subclass
+  ~~~ python
+  class Bin:
+  	pass
+  class RecyclingBin(Bin):
+    pass
+  ~~~
+- `issubclass()` is a Python built-in function that takes two parameters. `issubclass()` returns **True** if the first argument is a **subclass** of the second argument. `issubclass()` raises a **TypeError** if either argument passed in is not a class.
+  ~~~ python
+  issubclass(ZeroDivisionError, Exception)
+  # Returns True
+  ~~~
+  ![subclasses]({{img-url}}/python-1-1.jpg)
+- Check out the [Buit-in Exceptions hierarchy](https://docs.python.org/3/library/exceptions.html#exception-hierarchy) in Python.
+- **Overriding methods**: Below we define an **Admin** class that subclasses **User**. It has all methods, attributes, and functionality that User has. However, if you call `has_permission_for` on an instance of Admin, it won’t check its permissions dictionary. Since this User is also an Admin, we just say they have permission to see everything!
+  ~~~ python
+  # class "User"
+  class User:
+    def __init__(self, username, permissions):
+      self.username = username
+      self.permissions = permissions
+  
+    def has_permission_for(self, key):
+      if self.permissions.get(key):
+        return True
+      else:
+        return False
+  
+  # class "Admin"
+  class Admin(User):
+    def has_permission_for(self, key):
+      return True
+  ~~~
+- Sometimes, we need to **add some extra logic to the existing method**, we use `super()`
+  ~~~ python
+  class Sink:
+    def __init__(self, basin, nozzle):
+      self.basin = basin
+      self.nozzle = nozzle
+  
+  class KitchenSink(Sink):
+    def __init__(self, basin, nozzle, trash_compactor=None):
+      super().__init__(basin, nozzle)
+      if trash_compactor:
+        self.trash_compactor = trash_compactor
+  ~~~
+- **Interface**: We use the same attributes / methods for 2 different classes so that if we build some function outside these classes and take the input, we don't care about the class this instance belongs to.
+  - When two classes have the same method names and attributes, we say they implement **the same interface**.
+  - Different objects from different classes can perform the same operation (even if it is implemented differently for each class).
+- **Polymorphism** (đa hình) :
+  - What’s worth remembering is that we want to implement forms that are familiar in our programs so that usage is expected.
+  - Polymorphism is an abstract concept that covers a lot of ground, but defining class hierarchies that all implement the same interface is a way of introducing polymorphism to our code.
+- **Dunder Methods** (`__` double underscores)
+  - `__iter__`, the iterator, we use the `iter()` function to turn the list `self.user_list` into an iterator so we can use for user in `user_group` syntax.
+  - `__len__`, the length method, so when we call `len(user_group)` it will return the length of the underlying `self.user_list` list.
+  - `__contains__`, the check for containment, allows us to use user in `user_group` syntax to check if a User exists in the `user_list` we have.
+  - Following class acts like the usual list
+    ~~~ python
+    class UserGroup:
+      def __init__(self, users, permissions):
+        self.user_list = users
+        self.permissions = permissions
+    
+      def __iter__(self):
+        return iter(self.user_list)
+    
+      def __len__(self):
+        return len(self.user_list)
+    
+      def __contains__(self, user):
+        return user in self.user_list
+    ~~~
+- Check [this project on Codecademy](https://www.codecademy.com/courses/learn-python-3/projects/basta-fazoolin) to review the lesson in practice.
+
+## Function arguments
+
+- `None` is nothing
+  - It's `False`
+  - We can use `if var is None` to check
+  - default return in a function if the function has no return statement
