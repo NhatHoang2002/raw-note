@@ -4,7 +4,7 @@ title: "Codecademy - Python 1"
 categories: [python]
 tags: [python, codecademy python, codecademy]
 comment: 1
-date: 2019-05-08
+date: 2019-05-09
 toc: 1
 ---
 
@@ -296,3 +296,91 @@ This note is created when I started to learn the [Learn Python 3](https://www.co
   - It's `False`
   - We can use `if var is None` to check
   - default return in a function if the function has no return statement
+- **Unpacking the function**
+  ~~~ python
+  def multiple_returns(cool_num1, cool_num2):
+    sum_nums = cool_num1 + cool_num2
+    div_nums = cool_num1 / cool_num2
+    return sum_nums, div_nums
+  
+  sum, div = sum_and_div(18, 9)
+  ~~~
+- **Positional Argument Unpacking** (`*arg`): Below we use a single asterisk (*) to indicate we’ll accept any number of positional arguments passed to the function. Our parameter args is a tuple of all of the arguments passed. In this case args has three values inside, but it can have many more (or fewer).
+  ~~~ python
+  def shout_strings(*args):
+    for argument in args:
+      print(argument.upper())
+  
+  shout_strings("hi", "what do we have here", "cool, thanks!")
+  # Prints out:
+  # "HI"
+  # "WHAT DO WE HAVE HERE"
+  # "COOL, THANKS!"
+  ~~~
+
+  ~~~ python
+  def truncate_sentences(length, *sentences):
+    for sentence in sentences:
+      print(sentence[:length])
+  
+  truncate_sentences(8, "What's going on here", "Looks like we've been cut off")
+  # Prints out:
+  # "What's g"
+  # "Looks li"
+  ~~~
+- **Keyword Argument Unpacking** (`**kwarg`)
+  ~~~ python
+  def arbitrary_keyword_args(**kwargs):
+    print(type(kwargs))
+    print(kwargs)
+  
+    # See if there's an "anything_goes" keyword arg and print it
+    print(kwargs.get('anything_goes'))
+  ~~~
+
+  ~~~ python
+  def main(filename, *args, user_list=None, **kwargs):
+    if user_list is None:
+      user_list = []
+  
+    if '-a' in args:
+      user_list = all_users()
+  
+    if kwargs.get('active'):
+      user_list = [user for user_list if user.active]
+  
+    with open(filename) as user_file:
+      user_file.write(user_list)
+
+  # usage
+  main("files/users/userslist.txt", 
+     "-d", 
+     "-a", 
+     save_all_records=True, 
+     user_list=current_users)
+
+  # in the main()
+  filename == "files/users/userslist.txt"
+  args == ('-d', '-a)
+  user_list == current_users
+  kwargs == {'save_all_records': True}
+  ~~~
+- We don't need to change the current input to the list to the pass to the function, we can use `*` and `**` right on the call of the parameter like this
+  ~~~ python
+  def pour_from_sink(temperature="Warm", flow="Medium")
+    set_temperature(temperature)
+    set_flow(flow)
+    open_sink()
+  
+  # Our function takes two keyword arguments
+  # If we make a dictionary with their parameter names...
+  sink_open_kwargs = {
+    'temperature': 'Hot',
+    'flow': "Slight",
+  }
+  
+  # We can destructure them an pass to the function
+  pour_from_sink(**sink_open_kwargs)
+  # Equivalent to the following:
+  # pour_from_sink(temperature="Hot", flow="Slight")
+  ~~~
