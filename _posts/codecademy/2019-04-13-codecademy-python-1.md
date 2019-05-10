@@ -384,3 +384,44 @@ This note is created when I started to learn the [Learn Python 3](https://www.co
   # Equivalent to the following:
   # pour_from_sink(temperature="Hot", flow="Slight")
   ~~~
+
+## Decorations
+
+Using decorator without arguments
+
+~~~ python
+def title_decorator(print_name_function):
+  def wrapper():
+    print("Professor:")
+    print_name_function()
+  return wrapper
+
+@title_decorator
+def print_my_name():
+  print("Thi")
+
+print_my_name()
+# result
+# Professor:
+# Thi
+~~~
+
+Or with arguments
+
+~~~ python
+def title_decorator(print_name_function):
+  def wrapper(*args, **kwargs):
+    print("Professor:")
+    print_name_function(*args, **kwargs)
+  return wrapper
+
+@title_decorator
+def print_my_name(name):
+  print(name)
+
+print_my_name("Thi")
+# result
+# Professor:
+# Thi
+~~~
+
