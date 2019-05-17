@@ -4,7 +4,7 @@ title: "IBM Data Course 9: Applied Data Science Capstone"
 categories: [data, python, ml]
 tags: [data, ibm data, python, machine learning]
 toc: 1
-date: 2019-05-02
+date: 2019-05-17
 ---
 
 {% assign img-url = '/images/posts/data/ibm' %}
@@ -155,6 +155,17 @@ vid_src = article.find("iframe", class_="youtube-player")["src"]
 ~~~
 
 ## Week 4 & 5 : The Battle of Neighborhoods
+
+{:.thi-tip}
+[My solution for this assignment](https://github.com/dinhanhthi/Coursera_Capstone) & a [blog](https://dinhanhthi.com/setting-up-a-cafe-in-hcmc) about it.
+
+Examples of already-done works:
+
+1. [Picking up a location in San Francisco for opening a new restaurant](https://medium.com/@cxc639/the-battle-of-neighborhoods-1f71b91e3c1e) (his [github repo](https://github.com/chang48/Data-Science-Projects/tree/master/Battle_of_neighborhoods))
+2. [Segmentation and Comparison of Neighborhood of Toronto & New York Using Foursquare API and Clustering](https://www.galibhassankhan.com/2019/04/10/segmentation-and-comparison-of-neighborhood-toronto-new-york-using-foursquare-api-and-clustering/)
+3. [Housing Sales Prices & Venues Data Analysis of Istanbul](https://www.linkedin.com/pulse/housing-sales-prices-venues-data-analysis-ofistanbul-sercan-y%C4%B1ld%C4%B1z/)
+
+
 
 
 
