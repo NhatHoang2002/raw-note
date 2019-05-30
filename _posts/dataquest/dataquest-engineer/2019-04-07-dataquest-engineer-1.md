@@ -5,6 +5,7 @@ categories: [data, python]
 tags: [dataquest, python, data]
 toc: 1
 comment: 1
+date: 2019-05-23
 ---
 
 This note is used for my notes about the [Data Engineer path](https://www.dataquest.io/path/data-engineer) on **dataquest**. I take this note after I have some basics [on python]({{site.url}}/tags#python) and followed 45% [Data Scientist path](https://www.dataquest.io/path/data-scientist) (also on Dataquest).
@@ -30,9 +31,9 @@ This note is used for my notes about the [Data Engineer path](https://www.dataqu
 ### Connecting to Postgres
 
 - **[SQLite](https://www.sqlite.org/)** as it is one of the most common database engines that is used.
-- SQLite contains most of the SQL commands that are used with bigger engines which means *if you know SQLite, you know the basics of every other SQL database*.
+- SQLite contains most of the SQL commands that are used with bigger engines which means *<mark>if you know SQLite, you know the basics of every other SQL database</mark>*.
 - The biggest **drawbacks** of SQLite in a data production system are due to its positves in development. Because of its simple use case, 
-	- SQLite was not built for multiple connections. 
+	- SQLite was **not built for multiple connections**. 
 	- SQLite only allows a single process to write to the database 
 	- **making it difficult to share with multiple people and services**.
 - Remember that the **goal of the data engineer** is to <mark>unlock the data platform to a wide group of analysts, data scientists, or any other interested member in an organization</mark>.
@@ -62,7 +63,7 @@ This note is used for my notes about the [Data Engineer path](https://www.dataqu
 	one = cur.fetchone() # returns the first result or None
 	all = cur.fetchall() # returns a list of each row in the table or an empty list []
 	~~~
-	- the cur object calls the execute method and, if it is successful, it **will return `None`**.
+- the cur object calls the execute method and, if it is successful, it **will return `None`**.
 	~~~ python
 	import psycopg2
 	conn = psycopg2.connect("dbname=dq user=dq")
@@ -105,3 +106,27 @@ cur.execute(
     "CREATE TABLE users(id integer PRIMARY KEY, email text, name text, address text);"
     )
 ~~~
+
+### SQL Transactions
+
+- Transactions prevent this type of behavior by ensuring that all the queries in a transaction block are executed at the same time.
+  - Two users request 2 different demands but they affect on the same data.
+  - If any of the transactions fail, the whole group fails, and no changes are made to the database at all.
+- PostgreSQL engine only run when the *commit* is called. All queries request are made before the commit is called. Therefore, postgresql only consider all the queriest at once!
+- We can use `rollback` if we don't want to apply the changes ub the tracsaction.
+
+~~~ python
+import psycopg2
+conn = psycopg2.connect("dbname=dq user=dq")
+cur = conn.cursor()
+cur.execute(
+    "CREATE TABLE users(id integer PRIMARY KEY, email text, name text, address text);"
+)
+conn.commit() # commit to apply the changes in the transaction to the database
+conn.close() # close the connection
+~~~
+
+### Inserting the data
+
+
+
