@@ -2,7 +2,7 @@
 layout: post
 title: Data Science 1
 categories: [ml, data]
-tags: [machine learning, data codecademy, data]
+tags: [machine learning, data]
 maths: 1
 toc: 1
 date: 2018-10-10

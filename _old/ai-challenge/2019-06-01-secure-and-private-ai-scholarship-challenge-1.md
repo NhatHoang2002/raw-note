@@ -118,7 +118,7 @@ This note was first taken when I learnt the [Secure and Private AI Scholarship C
 
 <p markdown="1" class="thi-tip">
 <i class="material-icons mat-icon">info</i>
-[Jupyter notebook Part 2 - Neural networks with PyTorch]({{jupyter-url}}/Part 1 - Tensors in PyTorch (Exercises).html).
+[Jupyter notebook Part 2 - Neural networks with PyTorch]({{jupyter-url}}/Part 2 - Neural Networks in PyTorch (Exercises).html).
 </p>
 
 - Deep learning networks tend to be massive with dozens or hundreds of layers, that's <mark>where the term "deep" comes from.</mark> 
@@ -126,9 +126,11 @@ This note was first taken when I learnt the [Secure and Private AI Scholarship C
   - In fully-connected networks, the input to each layer must be a one-dimensional vector (which can be stacked into a 2D tensor as a batch of multiple examples). 
   - Thinking about sizes, we need to convert the batch of images with shape `(64, 1, 28, 28)` to a have a shape of `(64, 784)`, 784 is 28 times 28. This is typically called **flattening**, we flattened the 2D images into 1D vectors.
 - **Softmax function**. What this does is squish each input $x\_i$ between 0 and 1 and normalizes the values to give you a proper probability distribution where the probabilites sum up to one.
+
   $$
   \Large \sigma(x_i) = \cfrac{e^{x_i}}{\sum_k^K{e^{x_k}}}
   $$
+
 - `torch.sum(dim=0)`: Setting `dim=0` takes the sum across the rows while `dim=1` takes the sum across the columns.
 
   ~~~ python
