@@ -5,7 +5,7 @@ categories: [data]
 tags: [data, data codecademy, codecademy]
 comment: 1
 toc: 1
-date: 2019-06-10
+date: 2019-06-26
 ---
 
 {% assign img-url = '/images/posts/codecademy/data' %}
@@ -96,5 +96,18 @@ This note is created when I started to learn the [Data Science](https://www.code
 ## Numpy with Statistics
 
 - `np.percentile(d, 40)` gives the number which divides array `d` into 40% and 60%.
-- 
+- histogram:
 
+  ~~~ python
+  plt.hist(commutes, range=(20,50), bins=6)
+  ~~~
+
+- A **unimodal dataset** has only one distinct peak. (1 đỉnh)
+- A **bimodal dataset** has two distinct peaks. This often happens when the data contains two different populations. (2 đỉnh)
+- A **multimodal dataset** has more than two peaks.
+- A **uniform dataset** doesn’t have any distinct peaks.
+- A **symmetric dataset** has equal amounts of data on both sides of the peak. Both sides should look about the same.
+- A **skew-right dataset** has a long tail on the right of the peak, but most of the data is on the left.
+- A **skew-left dataset** has a long tail on the left of the peak, but most of the data is on the right.
+- <mark>The type of distribution affects the position of the mean and median</mark>. In heavily skewed distributions, the mean becomes a less useful measurement.
+- the **normal distribution**, which is a symmetric, unimodal distribution.
