@@ -5,7 +5,7 @@ categories: [data]
 tags: [data, data codecademy, codecademy]
 comment: 1
 toc: 1
-date: 2019-06-26
+date: 2019-07-16
 ---
 
 {% assign img-url = '/images/posts/codecademy/data' %}
@@ -96,7 +96,7 @@ This note is created when I started to learn the [Data Science](https://www.code
 ## Numpy with Statistics
 
 - `np.percentile(d, 40)` gives the number which divides array `d` into 40% and 60%.
-- histogram:
+- **histogram**:
 
   ~~~ python
   plt.hist(commutes, range=(20,50), bins=6)
@@ -111,3 +111,25 @@ This note is created when I started to learn the [Data Science](https://www.code
 - A **skew-left dataset** has a long tail on the left of the peak, but most of the data is on the right.
 - <mark>The type of distribution affects the position of the mean and median</mark>. In heavily skewed distributions, the mean becomes a less useful measurement.
 - the **normal distribution**, which is a symmetric, unimodal distribution.
+- **random number generator** (fit a normal distribution):
+  - `a = np.random.normal(loc=0, scale=1, size=100000)`
+  - `loc` (mean of normal dist), `scale` (SD of ND), `size` (# of random numbers)
+- We expect that **68%** of our dataset to be between [mean-std, mean+std]
+  - 68% of our samples will fall between +/- 1 standard deviation of the mean
+  - 95% of our samples will fall between +/- 2 standard deviations of the mean
+  - 99.7% of our samples will fall between +/- 3 standard deviations of the mean
+- **The binomial distribution** can help us. It tells us how likely it is for a certain number of “successes” to happen, given a probability of success and a number of trials.
+  - The binomial distribution is important because it allows us to know <mark>how likely a certain outcome is, even when it’s not the expected one.</mark>
+  - Exp: 70% số người mua vị gà (70 trong 100 người sẽ chọn gà) nhưng khả năng "7 trong 10 người chọn gà" thì rất thấp (27% mà thôi).
+  - `np.random.binomial(10, 0.30, size=10000)`
+
+  ~~~ python
+  # Our basketball player has a 30% chance of making any individual basket. He took 10 shots and made 4 of them, even though we only expected him to make 3. What percent chance did he have of making those 4 shots?
+  
+  a = np.random.binomial(10, 0.30, size=10000)
+  np.mean(a == 4)
+  
+  # 0.1973
+  ~~~
+
+- 
