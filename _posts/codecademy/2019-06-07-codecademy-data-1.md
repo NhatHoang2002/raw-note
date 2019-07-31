@@ -5,7 +5,7 @@ categories: [data]
 tags: [data, data codecademy, codecademy]
 comment: 1
 toc: 1
-date: 2019-07-16
+date: 2019-07-24
 ---
 
 {% assign img-url = '/images/posts/codecademy/data' %}
@@ -128,8 +128,41 @@ This note is created when I started to learn the [Data Science](https://www.code
   
   a = np.random.binomial(10, 0.30, size=10000)
   np.mean(a == 4)
-  
   # 0.1973
+
+  # 2nd way
+  len(a[a==4]) / len(a)
   ~~~
 
-- 
+## Hypothesis Testing (SciPy)
+
+- [Link course](https://www.codecademy.com/paths/data-science/tracks/scipy).
+- **engagement** -> time people spend on your website.
+- Performing an **A/B test** — are the different observations really the results of different conditions (i.e., Condition A vs. Condition B)? Or just the result of random chance?
+- **Conducting a survey** — is the fact that men gave slightly different responses than women a real difference between men and women? Or just the result of chance?
+- The individual measurements on Monday, Tuesday, and Wednesday are called **samples**. A sample is a subset of the **entire population**. The mean of each sample is the **sample mean** and it is an estimate of the **population mean**.
+- **Central Limit Theorem**: 
+  - Sometime, you measured more one sample than the others. That makes your sample selection skewed to one direction of the total population.
+  - if we have a large enough sample size, all of our sample means will be sufficiently close to the population mean.
+- **Hypothesis Tests**: 
+  - Hypothesis testing is a mathematical way of determining *whether we can be confident that the null hypothesis is false*.
+  - **null hypothesis** ($H\_0$): *the null hypothesis is the proposition that there is no effect or no relationship between phenomena or populations.* ([ThoughtCo](https://www.thoughtco.com/definition-of-null-hypothesis-and-examples-605436))
+  - Chúng ta có thể test các null hypothesis này để thấy rằng chúng có thể sai mà từ đó thấy được mối quan hệ của các thành phần.
+  - **The alternate hypothesis** ($H\_A$ or $H\_1$)
+  - **Example** (*How to State a Null Hypothesis?*): Mối liên quan giữa số lần tập thể dục mỗi tuần và số kg giảm được. Giả sử mỗi tuần tập 5 lần sẽ giảm 6kg. Bây giờ ta giảm số lần tập mỗi tuần xuống còn 3 thì liệu số kg giảm được sẽ ít hơn 6 ko?
+    - $H\_A=H\_1=\{ \mu<6 \}$ (Alternate hypothesis)
+    - $H\_0 = \{ \mu\ge 6 \}$ (chẳng những không giảm mà còn tăng)
+    - Cách biểu diễn khác: $H\_0 = \{ \mu = 6 \}$ (giảm số lần tập cũng không ảnh hưởng đến số kg giảm)
+  - **Other example**:
+    - "Hyperactivity is unrelated to eating sugar" (Tăng động không liên quan đến ăn đường) is an example of a null hypothesis.
+  - **Type I** = False Positive, **Type II** = False Negative. Check [my article](https://dinhanhthi.com/understand-confusion-matrix-and-f1-score) about Confusion matrix.
+    - Type I = **FP** = the null hypothesis is **rejected** even though it is true.
+    - Type II = **FN** = the null hypothesis is **accepted** even though it is false.
+- **P-Values**: A hypothesis test provides a numerical answer, called a p-value, that helps us decide how confident we can be in the result.
+  - a p-value is the probability that we yield the observed statistics under the assumption that the null hypothesis is true.
+  - **Example**: A p-value of 0.05 would mean that there is a 5% chance that there is no difference between the two population means.
+  - A **higher** p-value is more likely to give a FP so if we want to be very sure that the result is not due to just chance, we will select a very small p-value.
+
+
+
+
