@@ -5,7 +5,7 @@ categories: [other]
 tags: [education, technology]
 toc: 1
 snippet: 1
-date: 2018-11-05
+date: 2019-08-07
 ---
 
 My collection of good websites.
@@ -103,6 +103,9 @@ Let our Coding Score rate your coding skills!
 - [JAMstack](https://jamstack.org/) (Javascript API & Markup): Modern web development architecture based on client-side JavaScript, reusable APIs, and prebuilt Markup.
 - [netlify](https://www.netlify.com/): Build, deploy, and manage modern web projects
 - [Canva](https://www.canva.com): create beatiful covers with text.
+- Tutorials for **Affinity Designer**:
+  - [Frankentoon](https://www.frankentoon.com/toonlab)
+  - [Affinicasts](https://www.youtube.com/channel/UCEF-287t4yewsT4iEW0rdYQ/videos)
 
 ## Youtube channel
 
