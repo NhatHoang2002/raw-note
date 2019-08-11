@@ -32,6 +32,7 @@ There are some already-defined components on NoteTheme that you could use (If yo
 - **New** badge: `<new />`
 - **Update** bagge: `<update />`
 - **Keyboard**: `<kbd>Ctrl</kbd>`
+- **Font color**: using these classes: `.tblue`, `.tgreen`, `.tred`, `.torange`, `.tpink`.
 
 ## Codes
 
