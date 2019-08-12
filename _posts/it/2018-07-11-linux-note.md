@@ -361,14 +361,14 @@ source ~/.profile
 
 60. Download playlist audio youtube, using **youtube-dl** ([github](https://github.com/rg3/youtube-dl/blob/master/README.md#readme))
 
-~~~ bash
-sudo apt-get install curl -y (cài curl nếu chưa cài)
-sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
-sudo chmod a+rx /usr/local/bin/youtube-dl
-
-youtube-dl --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s" <link-playlist>
-~~~
+  ~~~ bash
+  sudo apt-get install curl -y (cài curl nếu chưa cài)
+  sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
+  sudo chmod a+rx /usr/local/bin/youtube-dl
+  
+  youtube-dl --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s" <link-playlist>
+  ~~~
 
 61. Copy files from ubuntu to iPhone iOS iPad
-	- Don't need to install any files if one needs to copy photos/videos from iphone to ubuntu, one can use gThumb to do this or just use file manager to copy.
-	- If one wants to copy files to iphone. Follow [this one](https://askubuntu.com/questions/799414/how-to-move-files-from-ubuntu-to-iphone)
+  - Don't need to install any files if one needs to copy photos/videos from iphone to ubuntu, one can use gThumb to do this or just use file manager to copy.
+  - If one wants to copy files to iphone. Follow [this one](https://askubuntu.com/questions/799414/how-to-move-files-from-ubuntu-to-iphone)
