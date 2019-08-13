@@ -13,6 +13,25 @@ This post is only for editors, please read other posts.
 
 {% include toc.html %}
 
+## Quick
+
+Next posts (other posts)
+
+~~~ {% raw %}
+{% include more.html content="[Go to this post](/link-to-this-post)." %}
+{% endraw %} ~~~
+
+Previous posts
+
+~~~ {% raw %}
+<div class="see-again">
+<i class="material-icons">settings_backup_restore</i>
+<span markdown="1">
+[Go back to Course 8 (week 1 to 3)](/ibm-data-professional-certificate-8).
+</span>
+</div>
+{% endraw %} ~~~
+
 ## Front Matter
 
 There are some already-defined components on NoteTheme that you could use (If you don't want to use something, **remember to REMOVE it**)
