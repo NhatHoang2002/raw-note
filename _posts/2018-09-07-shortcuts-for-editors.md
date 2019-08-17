@@ -72,7 +72,7 @@ There are some already-defined components on NoteTheme that you could use (If yo
 
 ## Figures / Tables / Videos
 
-- **Normal way**
+- **Normal way**: `w-500` (150, 200, 300, 400, 500, 600, 650, 700, 750, 800, 900, 1000)
 
   ~~~ {% raw %}
   ![](/link/to/figure/){:.w-500 .no-border}
