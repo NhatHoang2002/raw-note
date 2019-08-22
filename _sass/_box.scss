@@ -1,4 +1,4 @@
-// tip 
+// tip
 .thi-tip{
 	background-color: #dff0d8;
   border-color: #d6e9c6;
@@ -44,6 +44,9 @@ li >.thi-tip, li>.thi-warning{
   }
   .box-title p{
     margin: 0;
+    strong{
+      color: #fff!important;
+    }
   }
   .box-content{
     border: 1px #ddd solid;
