@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ML Coursera 1 - Neural Networks and Deep Learning - Week 1: Introduction to deep learning"
+title: "DL Coursera 1 - Neural Networks and Deep Learning - Week 1: Introduction to deep learning"
 categories: [ml]
 tags: [machine learning, deep-learning coursera, deep learning, coursera]
 math: 1
