@@ -2,7 +2,7 @@
 layout: post
 title: "ML Coursera 2 - Week 2: Linear Regression with Multiple Variables"
 categories: [ml]
-tags: [machine learning, ml coursera]
+tags: [machine learning, ml coursera, coursera]
 math: 1
 toc: 1
 date: 2018-09-01

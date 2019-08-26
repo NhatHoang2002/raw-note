@@ -2,7 +2,7 @@
 layout: post
 title: "ML Coursera 9 - Week 9: Anomaly Detection & Recommender Systems"
 categories: [ml]
-tags: [machine learning, ml coursera]
+tags: [machine learning, ml coursera, coursera]
 math: 1
 toc: 1
 comment: 1

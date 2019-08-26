@@ -2,7 +2,7 @@
 layout: post
 title: "ML Coursera 1 - Week 1: Introduction"
 categories: [ml]
-tags: [machine learning, ml coursera]
+tags: [machine learning, ml coursera, coursera]
 math: 1
 toc: 1
 date: 2018-10-12
