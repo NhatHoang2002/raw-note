@@ -8,6 +8,7 @@ toc: 1
 date: 2018-09-17
 datacamp: 1
 comment: 1
+snippet: 1
 ---
 
 This post is used for noting the fundamental syntax of python. For more specific uses, cf [these notes](/tags#python).

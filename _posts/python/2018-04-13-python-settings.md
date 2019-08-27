@@ -5,7 +5,7 @@ categories: [it, python]
 tags: [python]
 maths: 1
 toc: 1
-date: 2018-09-25
+date: 2019-08-27
 comment: 1
 snippet: 1
 ---
@@ -40,6 +40,7 @@ This post is only for installing and setting up python on computer. All document
 - **Others**:
 	- [Newsletter for python](https://www.pythonweekly.com/): docs, jobs, news,....
 	- [Insert Datacamp interative Python inside web/blog](https://github.com/datacamp/datacamp-light) (also for R)
+	- <new /> **[Time complexity](https://wiki.python.org/moin/TimeComplexity)** các hàm mặc định trong python.
 
 
 

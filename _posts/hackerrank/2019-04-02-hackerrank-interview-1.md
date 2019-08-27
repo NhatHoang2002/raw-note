@@ -318,3 +318,62 @@ def arrayManipulation(n, queries):
       maxval = x
   return maxval
 ~~~
+
+## Dictionaries and Hashmaps
+
+### Hash Tables: Ransom Note
+
+- [Problem](https://www.hackerrank.com/challenges/ctci-ransom-note/problem).
+- **Hiểu lại**: Cho 2 list chứa các cụm từ. Xem thử xem có thể tạo thành list `note` được từ các từ của list `magazine` hay không (case-sensitive). Nếu có thể thì print `Yes`, ngược lại print `No`.
+- Một vài trường hợp lưu ý
+
+  ~~~ python
+  # case-sensitive
+  note = ['dinh', 'Anh']
+  magazine = ['dinh', 'anh', 'thi']
+  # print 'No'
+  
+  # không đủ từ
+  note = ['dinh', 'Anh', 'dinh']
+  # print 'No'
+  ~~~
+
+- Nếu không xét tính hiệu quả: Cứ so sánh từng chữ của `note` xem nó có trong `magazine` hay không, nếu có thì mình xóa đi chữ đó trong `magazine` (xem như dùng rồi).
+
+  ~~~ python
+  def checkMagazine(magazine, note):
+    result = 'Yes'
+  
+    for item in note:
+      if not item in magazine:
+        result = 'No'
+        break
+      else:
+        magazine.remove(item)
+  
+    print(result)
+  ~~~
+
+- Ở trên sẽ gặp lỗi `# timeout error` ở vài trường hợp, sửa lại tối ưu (<mark>sort list trước khi thao tác giúp nhanh hơn</mark>):
+
+  ~~~ python
+  def checkMagazine(magazine, note):
+    magazine.sort() # điểm khác biệt!!!!
+    note.sort() # điểm khác biệt!!!!
+  
+    result = 'Yes'
+    if len(magazine) < len(note):
+      result = 'No'
+    else:
+      for item in note:
+        if not item in magazine:
+          result = 'No'
+          break
+        else:
+          magazine.remove(item)
+  ~~~
+
+### Two Strings
+
+- [Problem](https://www.hackerrank.com/challenges/two-strings/problem).
+- **Tóm tắt**: 
