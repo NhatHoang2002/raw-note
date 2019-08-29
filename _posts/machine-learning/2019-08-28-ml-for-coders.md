@@ -13,5 +13,43 @@ I take [this course](http://course18.fast.ai/ml.html) on [fast.ai](https://www.f
 
 {% include toc.html %}
 
-## INTRODUCTION TO RANDOM FORESTS
+## Documentation
+
+- [Course's repository](https://github.com/fastai/fastai) on Github.
+- [Lecture's notes](https://medium.com/@hiromi_suenaga/machine-learning-1-lesson-1-84a1dc2b5236)
+
+### Installation
+
+- **Install PyTorch**: lên [trang chủ](https://pytorch.org/), chọn thiết lập tương ứng, nó sẽ ra một dòng lệnh cài đặt, ví dụ (tự thêm `--user` vào nếu như không mở cmd/cmder bằng quyền admin)
+
+  ~~~ bash
+  pip install --user torch===1.2.0 torchvision===0.4.0 -f https://download.pytorch.org/whl/torch_stable.html
+  ~~~
+
+- Install `fastai` package.
+
+  ~~~ bash
+  pip install --user fastai
+  ~~~
+
+- Create an environment `fastai` (nó sẽ download hết mấy cái cần thiết về và tạo thành một môi trường riêng mang tên này để sau này mình sử dụng. Mặc định, anaconda nó có môi trường tên `base` hay `root` rồi!)
+
+  ~~~ bash
+  conda create -n fastai python=3.6 anaconda
+  conda env update
+  source activate fastai
+  ~~~
+
+## Introduction to Random Forest
+
+{% include youtube.html content="CzdWqFTmn0Y" size="5" %}
+
+- (perhaps) the <mark>most widely applicable</mark> machine learning model.
+- Solution to "[Blue Book for Bulldozers](https://www.kaggle.com/c/bluebook-for-bulldozers)" Kaggle competition. (to the top 25% of the leaderboard)
+- [How to use Jupyter Notebook](/python-settings#jupyter-notebook) on my note.
+- [Wiki](https://forums.fast.ai/t/wiki-thread-lesson-1/6825) for this lesson.
+- [Note](https://medium.com/@hiromi_suenaga/machine-learning-1-lesson-1-84a1dc2b5236) for this lesson by fast.ai
+- [jupyter notebooks](https://github.com/fastai/fastai/tree/master/courses/ml1)
+
+
 
