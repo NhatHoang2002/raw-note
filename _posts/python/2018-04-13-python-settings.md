@@ -87,25 +87,38 @@ Xem [note này]({{site.baseurl}}/python-exercism-1).
 ### Jupyter notebook
 
 - See [here](http://jupyter.org/install) for full tutorial.
-
 - **Windows**
-    - [Cái này](http://jupyter.org/index.html) có sẵn nếu đã cài Anaconda.
-    - Trên **Windows**, không thể chạy nó bằng dòng lệnh `jupyter notebook` như các [trang hướng dẫn](https://jupyter.readthedocs.io/en/latest/running.html) được!
-    - Mà phải chạy bằng `python -m notebook` (chỉ có tác dụng sau khi đã add python path vào PATH của hệ thống như ở trên hướng dẫn)
-    - Cũng có thể chạy file Jupyter Notebook có sẵn nhưng đường dẫn mặc định sau khi chạy xong (localhost:8888) không theo ý mình (ngoài /Home/), do đó, cần dùng [cmder](http://cmder.net/) (or command prompt) `cd` đến thư mục cần làm "host", sau đó chạy dòng lệnh `python -m notebook` như ở trên hướng dẫn.
+  - [Cái này](http://jupyter.org/index.html) có sẵn nếu đã cài Anaconda.
+  - <mark>Không thể chạy</mark> nó bằng dòng lệnh `jupyter notebook` như các [trang hướng dẫn](https://jupyter.readthedocs.io/en/latest/running.html) được!
+  - Mà phải chạy bằng `python -m notebook` (chỉ có tác dụng sau khi đã add python path vào PATH của hệ thống như ở trên hướng dẫn)
+  - Cũng có thể chạy file Jupyter Notebook có sẵn nhưng đường dẫn mặc định sau khi chạy xong (localhost:8888) không theo ý mình (ngoài /Home/), do đó, cần dùng [cmder](http://cmder.net/) (or command prompt) `cd` đến thư mục cần làm "host", sau đó chạy dòng lệnh `python -m notebook` như ở trên hướng dẫn.
+  - Nếu bị lỗi `ImportError: DLL load failed:`, hãy thử ([ref](https://stackoverflow.com/questions/46353215/import-error-dll-load-failed-in-jupyter-notebook-but-working-in-py-file))
+
+    ~~~ bash
+    activate base # will not work on PowerShell, need to use cmd
+    # then
+    jupyter notebook
+    ~~~
 
 - **Linux**
-    - Install via Anaconda or install via **python3** as below
-    - `python3 -m pip install --upgrade pip`
-    - `pip install --user jupyter`
-    - **Run**: `python3 -m notebook` (at where you wanna notebook run)
+  - Install via Anaconda or install via **python3** as below
+  - `python3 -m pip install --upgrade pip`
+  - `pip install --user jupyter`
+  - **Run**: `python3 -m notebook` (at where you wanna notebook run)
 
 
 ### Install package with `pip`
 
 - Trên Windows, thường nó sẽ hiện *'pip' is not recognized as an internal....*, lý do là bởi cmd chưa nhận ra *pip.exe* đang nằm ở đâu, hãy *add nó vào PATH của hệ thống* giống như hướng dẫn ở mục **Làm cho Windows "nhận"**
 - Nếu cài Anaconda, đường dẫn của pip là **C:\ProgramData\Anaconda3\Scripts**, nếu cài python riêng lẻ, đường dẫn của pip nằm ở trong thư mục **Scripts** nơi chứa python.exe.
-- **Update pip**: `python -m pip install --upgrade pip` (phải chạy cmd/cmder bằng quyền admin trước khi cài)
+- **Update pip**: 
+
+  ~~~ bash
+  python -m pip install --user --upgrade pip # nếu cmd/cmder không chạy bằng admin
+  #
+  python -m pip install --upgrade pip # phải chạy cmd/cmder bằng quyền admin trước khi cài
+  ~~~
+
 - **Error**
 	- *distributed 1.21.8 requires msgpack, which is not installed.*: `pip install msgpack`
 - Other, read [this](https://pip.pypa.io/en/stable/installing/) to install pip.
