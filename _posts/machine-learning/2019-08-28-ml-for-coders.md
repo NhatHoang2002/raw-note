@@ -18,7 +18,7 @@ I take [this course](http://course18.fast.ai/ml.html) on [fast.ai](https://www.f
 - [Course's repository](https://github.com/fastai/fastai) on Github.
 - [Lecture's notes](https://medium.com/@hiromi_suenaga/machine-learning-1-lesson-1-84a1dc2b5236)
 
-### Installation
+## Installation
 
 - **Install PyTorch**: lên [trang chủ](https://pytorch.org/), chọn thiết lập tương ứng, nó sẽ ra một dòng lệnh cài đặt, ví dụ (tự thêm `--user` vào nếu như không mở cmd/cmder bằng quyền admin)
 
@@ -32,12 +32,12 @@ I take [this course](http://course18.fast.ai/ml.html) on [fast.ai](https://www.f
   pip install --user fastai
   ~~~
 
-- Create an environment `fastai` (nó sẽ download hết mấy cái cần thiết về và tạo thành một môi trường riêng mang tên này để sau này mình sử dụng. Mặc định, anaconda nó có môi trường tên `base` hay `root` rồi!)
+- Create an environment `fastai` (nó sẽ download hết mấy cái cần thiết về và tạo thành một môi trường riêng mang tên này để sau này mình sử dụng. Mặc định, anaconda nó có môi trường tên `base` hay `root` rồi!). Xem thêm [ở đây](/python-settings#conda-environment) để biết chi tiết.
 
   ~~~ bash
-  conda create -n fastai python=3.6 anaconda
+  conda create -n fastai python=3.7 anaconda
   conda env update
-  source activate fastai
+  activate fastai # windows
   ~~~
 
 ## Introduction to Random Forest
