@@ -42,13 +42,12 @@ This post is only for installing and setting up python on computer. All document
 	- [Insert Datacamp interative Python inside web/blog](https://github.com/datacamp/datacamp-light) (also for R)
 	- <new /> **[Time complexity](https://wiki.python.org/moin/TimeComplexity)** các hàm mặc định trong python.
 
-
-
 ## Install
 
 - Có thể cài mọi thứ thông qua [Anaconda](https://anaconda.com), tuy nhiên trên Windows vẫn chưa tự nhận thông qua Command Prompt.
 - Trên Linux hay Mac thì python tự nhận trong terminal, windows thì cần làm thêm các bước bên dưới.
 - [Cài IDE Sublime Text 3](#sublime-text-3) : dùng để soạn thảo và chạy python. Thực ra cái [Spyder](#spyder) tiện hơn nhưng Spyder không chọn run theo phiên bản python được.
+
 
 ### Ubuntu, only use Anaconda
 
@@ -82,7 +81,69 @@ Xem [note này]({{site.baseurl}}/python-exercism-1).
 3. Lưu ý, lưu thư mục chứa mấy file python.exe chứ không có lưu cả file đó.
 4. Sau khi add vào PATH, cần phải restart lại [cmder](http://cmder.net/) (command prompt thì khỏi)
 
+## Conda
 
+- Update conda
+
+  ~~~ bash
+  conda update -n base -c defaults conda
+  ~~~
+
+- Nếu khi chạy lệnh `conda` mà gặp lỗi `TypeError: LoadLibrary() argument 1 must be str, not None` (ở cuối cùng) thì trước đó cần kích hoạt env `base` bằng `activate base` (trên Windows) trước. Sau đó hãy chạy lại lệnh gây lỗi.
+
+
+### Conda environment
+
+([ref](https://docs.conda.io/projects/conda/en/latest/user-guide/concepts/environments.html)) A conda environment is a directory that contains a specific collection of conda packages that you have installed. For example, you may have one environment with NumPy 1.7 and its dependencies, and another environment with NumPy 1.6 for legacy testing. If you change one environment, your other environments are not affected. You can easily activate or deactivate environments, which is how you switch between them. You can also share your environment with someone by giving them a copy of your environment.yaml file.
+
+- Trên **Windows**, thay vì `conda activate base`, ta dùng `activate base` thôi (bỏ `conda`). Sau khi cài và thiết lập xong thì env sẽ có đường dẫn: **C:\Users\dinha\.conda\envs\fastai**.
+- Trên **MacOS**, `source activate subscribe`
+
+~~~ bash
+activate base # kích hoạt env base
+
+# Tạo một env "fastai" (nó sẽ download hết mấy cái cần thiết về)
+conda create -n fastai python=3.7 anaconda
+
+# deactivate (trên windows thì bỏ "conda")
+conda deactivate
+
+# xóa một env
+conda env remove --name fastai
+~~~
+
+Liệt kê những env đang có
+
+~~~ bash
+conda info --envs
+# hoặc
+conda env list
+
+# base                     C:\ProgramData\Anaconda3
+# fastai                *  C:\Users\dinha\.conda\envs\fastai
+~~~
+
+### Kernel python 2 & 3 cho jupyter notebook
+
+Nếu muốn chỉnh nhiều kernel cho jupyter notebook ([ref](https://towardsdatascience.com/environment-management-with-conda-python-2-3-b9961a8a5097)):
+
+- Check xem có cài `nb_conda_kernels` chưa bằng lệnh `conda list` và dò bằng mắt.
+- Nếu chưa cài thì: `conda install nb_conda_kernels`
+- Nếu đang dùng **python 2** và muốn seperate **python 3** thì dùng
+
+  ~~~ bash
+  conda create -n py37 python=3.7 ipykernel
+  # "py37" là tên của env, có thể đặt gì cũng được
+  ~~~
+
+- Nếu đang dùng **python 3** và muốn seperate **python 2** thì dùng
+
+  ~~~ bash
+  conda create -n py27 python=2.7 ipykernel
+  ~~~
+
+- Đóng terminal, mở lại và gõ vào `jupyter notebook`
+- Click **New** và thấy trong danh sách kernel hiện ra sẽ có cái 3.7 và 2.7 cho chọn!
 
 ### Jupyter notebook
 
