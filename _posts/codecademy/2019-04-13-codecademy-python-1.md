@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Codecademy - Python 1"
+title: "Codecademy - Python"
 categories: [python]
-tags: [python, codecademy python, codecademy]
+tags: [python, codecademy]
 comment: 1
 date: 2019-05-09
 toc: 1
