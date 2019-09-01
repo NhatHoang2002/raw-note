@@ -1,11 +1,12 @@
 ---
 layout: post
-title: "DL Coursera 1 - Neural Networks and Deep Learning - Week 1: Introduction to deep learning"
+title: "DL Coursera 1 - NN & DL - W1: Intro 2 DL"
 categories: [ml]
 tags: [machine learning, deep-learning coursera, deep learning, coursera]
 math: 1
 toc: 1
 comment: 1
+date: 2019-08-31
 ---
 
 {% assign img-url = '/images/posts/deep-learning-coursera' %}
@@ -33,7 +34,7 @@ This note was taken when I started to follow [the specialization Deep Learning](
   - (4 weeks) **Foundation: NN and DL**
     - How to build a new network / dl network & train it on data
     - Build a system to recognize cat! <-- **cat recognizer**
-  - (3 weeks) **Improving Deep Neural Networks: **
+  - (3 weeks) **Improving Deep Neural Networks:**
     - Hyperparameters tuning
     - Regularization
     - Optimization: momentum armrest prop and the ad authorization algorithms.
@@ -53,10 +54,10 @@ This note was taken when I started to follow [the specialization Deep Learning](
 
 ### What is a neural network?
 
-- [Lecture notes]({{lecture-url}}/course-1/w1_What_is_Neural_Network.pdf) + [Lecture slides]({{lecture-url}}/course-1/w1_What_is_Neural_Network.pptx)
+- [Lecture notes]({{lecture-url}}/course-1/w1_What_is_Neural_Network_note.pdf) + [Lecture slides]({{lecture-url}}/course-1/w1_What_is_Neural_Network_ppt.pdf)
 - Depp Learning = training Neural Networks (sometimes very large NN)
 - Housing price prediction
-  - Very simple NN: ReLU function (Rectified Linear Units)
+  - Very simple NN: [ReLU function](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)) (Rectified Linear Units)
     - y = price, x = size of house
   - Multiple NN:
   
@@ -67,7 +68,8 @@ This note was taken when I started to follow [the specialization Deep Learning](
 
 ### Supervised Learning with Neural Networks
 
-- [Lecture notes]({{lecture-url}}/course-1/w1_Supervised_Learning_for_Neural_Network.pdf) + [Lecture slides]({{lecture-url}}/course-1/w1_Supervised_Learning_for_Neural_Network.pptx)
+- [Lecture notes]({{lecture-url}}/course-1/w1_Supervised_Learning_for_Neural_Network_note.pdf) + [Lecture slides]({{lecture-url}}/course-1/w1_Supervised_Learning_for_Neural_Network_ppt.pdf)
+- all the economic value created by neural networks has been through **supervised learning**.
 - 
 
 ### Why is Deep Learning taking off?
