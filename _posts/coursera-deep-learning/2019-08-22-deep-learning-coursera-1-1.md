@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "DL Coursera 1 - NN & DL - W1: Intro 2 DL"
+title: "DL Coursera 1 - NN & DL - W1: Intro to DL"
 categories: [ml]
 tags: [machine learning, deep-learning coursera, deep learning, coursera]
 math: 1
@@ -102,14 +102,13 @@ This note was taken when I started to follow [the specialization Deep Learning](
 
 ### About this course & Course Resources
 
-- Week 1: Introduction
-- W2: Basics of NN programming
-- W3: One hidden layer NN
-- W4: Deep NN
+- **Week 1**: Introduction
+- **W2**: Basics of NN programming
+- **W3**: One hidden layer NN
+- **W4**: Deep NN
 
 ### Geoffrey Hinton interview
 
 - [Geoffrey Hinton from wiki](https://en.wikipedia.org/wiki/Geoffrey_Hinton).
-- 
 
 
