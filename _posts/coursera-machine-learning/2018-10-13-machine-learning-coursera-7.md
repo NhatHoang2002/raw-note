@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ML Coursera 7 - Week 7: Support Vector Machines"
+title: "ML Coursera 7 - w7: SVM"
 categories: [ml]
 tags: [machine learning, ml coursera, coursera]
 math: 1

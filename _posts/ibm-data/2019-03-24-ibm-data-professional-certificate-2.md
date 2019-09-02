@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "IBM Data Course 3: Data Science Methodology"
+title: "IBM Data Course 3: DS Methodology"
 categories: [data]
 tags: [data, ibm data]
 toc: 1

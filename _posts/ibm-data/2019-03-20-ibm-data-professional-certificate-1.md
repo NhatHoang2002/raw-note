@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "IBM Data Course 1 & 2: What is Data Science & Open Source tools for Data Science"
+title: "IBM Data Course 1 & 2: What is DS & Open Source tools for DS"
 categories: [data]
 tags: [data, ibm data]
 math: 1

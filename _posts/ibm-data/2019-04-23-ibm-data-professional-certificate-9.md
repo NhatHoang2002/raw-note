@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "IBM Data Course 8: Machine Learning with Python (Week 4 to 6)"
+title: "IBM Data Course 8: ML with Python (w4 to w6)"
 categories: [data, python, ml]
 tags: [data, ibm data, python, machine learning]
 toc: 1

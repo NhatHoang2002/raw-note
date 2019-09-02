@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ML Coursera 1 - Week 1: Introduction"
+title: "ML Coursera 1 - w1: Introduction"
 categories: [ml]
 tags: [machine learning, ml coursera, coursera]
 math: 1

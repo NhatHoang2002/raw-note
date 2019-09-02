@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Links: Data Science & Machine Learning"
+title: "Links: DS & ML"
 categories: [ml, data]
 tags: [machine learning, data]
 toc: 1

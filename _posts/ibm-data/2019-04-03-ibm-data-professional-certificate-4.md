@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "IBM Data Course 5: Databases and SQL for Data Science (Week 1 & Week 2)"
+title: "IBM Data Course 5: Databases and SQL for DS (w1-w2)"
 categories: [data,python]
 tags: [data, ibm data, SQL]
 toc: 1

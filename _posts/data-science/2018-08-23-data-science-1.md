@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Data Science 1
+title: DS 1
 categories: [ml, data]
 tags: [machine learning, data]
 maths: 1

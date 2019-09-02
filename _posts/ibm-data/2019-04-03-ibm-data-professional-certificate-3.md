@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "IBM Data Course 4: Python for Data Science"
+title: "IBM Data Course 4: Python for DS"
 categories: [data]
 tags: [data, ibm data, python]
 toc: 1

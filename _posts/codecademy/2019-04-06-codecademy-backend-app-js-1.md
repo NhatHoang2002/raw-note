@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Codecademy - Back-End App with JavaScript 1"
+title: "Codecademy - Back-End App with JS 1"
 categories: [web]
 tags: [javascript, codecademy web, codecademy, codecademy js]
 toc: 1

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Introduction to Machine Learning for Coders 1
+title: "fast.ai: Intro to ML for Coders 1"
 categories: [ml]
 tags: [machine learning, ml for coders]
 maths: 1

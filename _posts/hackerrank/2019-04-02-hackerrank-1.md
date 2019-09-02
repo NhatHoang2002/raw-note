@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Hackerrank 1: 10 days of statistics"
+title: "Hackerrank 1: 10 days of stats"
 categories: [python,math]
 tags: [hackerrank, statistics, python]
 math: 1

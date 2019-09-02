@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ML Coursera 4 - Week 4: Neural Networks - Representation"
+title: "ML Coursera 4 - w4: NN - Representation"
 categories: [ml]
 tags: [machine learning, ml coursera, coursera]
 math: 1

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ML Coursera 3 - Week 3: Logistic Regression"
+title: "ML Coursera 3 - w3: Logistic Regression"
 categories: [ml]
 tags: [machine learning, ml coursera, coursera]
 math: 1

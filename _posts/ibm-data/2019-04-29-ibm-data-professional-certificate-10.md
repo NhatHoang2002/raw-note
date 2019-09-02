@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "IBM Data Course 9: Applied Data Science Capstone"
+title: "IBM Data Course 9: Applied DS Capstone"
 categories: [data, python, ml]
 tags: [data, ibm data, python, machine learning]
 toc: 1

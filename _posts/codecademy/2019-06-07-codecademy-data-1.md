@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Codecademy - Data Science 1"
+title: "Codecademy - DS 1"
 categories: [data]
 tags: [data, data codecademy, codecademy]
 comment: 1

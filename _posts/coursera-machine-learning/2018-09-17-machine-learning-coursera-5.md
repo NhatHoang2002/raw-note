@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ML Coursera 5 - Week 5: Neural Networks - Learning"
+title: "ML Coursera 5 - w5: NN - Learning"
 categories: [ml]
 tags: [machine learning, ml coursera, coursera]
 math: 1
