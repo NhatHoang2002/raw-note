@@ -47,7 +47,7 @@ This note is created when I started to learn the [Data Science](https://www.code
 
 ## SQL
 
-- J**[ust look up at this site](https://www.w3schools.com/sql/sql_delete.asp)**!
+- **[Just look up at this site](https://www.w3schools.com/sql/sql_delete.asp)**!
 - `ALTER TABLE` statement adds a new column to a table. 
 
   ~~~ sql

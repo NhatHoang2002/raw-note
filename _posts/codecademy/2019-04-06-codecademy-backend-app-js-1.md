@@ -7,6 +7,8 @@ toc: 1
 comment: 1
 ---
 
+{% assign img-url = '/images/posts/codecademy/backend-app-js' %}
+
 This note is created when I started to learn the [Create a Back-End App with JavaScript](https://www.codecademy.com/learn/paths/create-a-back-end-app-with-javascript).
 
 ## Tự động thay đổi khi file js thay đổi
@@ -62,3 +64,77 @@ This note is created when I started to learn the [Create a Back-End App with Jav
   ~~~
 
 - Check the type of some variable: `typeof <var>`
+
+### JavaScript Versions: ES6 and Before
+
+- JavaScript was introduced in **1995** by **Netscape Communications** as a scripting language for web designers and programmers to interact with web pages. 
+- 1996, Netscape submitted JavaScript to a standards developing organization called Ecma International to create **standards for a scripting language** (a type of programming language)
+- 1997, Ecma International released **ECMA-262** which sets standards for the first version of a scripting language called **ECMAScript**, shortened to **ES**.
+  - provided *rules for the architecture* of JavaScript features
+-  when you see **ES6** or **JavaScript ES6**, it means that that version of JavaScript is following the specifications in the <mark>sixth edition of ECMAScript</mark>!
+-  ES6 = ES2015
+
+![JS timeline]({{img-url}}/javascript_timeline.svg){:.no-border .w-700}
+
+- ES6 have a big update for ECMAScript
+  - new keywords like `let` and `const` to declare variables,
+  - new function syntax using Arrow functions,
+  - creation of Classes,
+  - parameters with default values,
+  - promises for asynchronous actions,
+  - and many more!
+
+- Compare:
+
+  ~~~ js
+  // pre-ES6
+  var greeting = function() {
+    console.log('Hello World!');  
+  };
+  
+  // ES6
+  const greeting = () => console.log('Hello World'); 
+  ~~~
+
+## JavaScript Conditionals and Functions
+
+### Conditional Statements
+
+~~~ js
+// only if
+if (true){
+  // commands
+}
+
+// if...else
+if (true){
+  // commands
+} else{
+  // commands
+}
+~~~
+
+- Comparison Operators: `<, ===, >, >=, <=, !==` 
+- Logical operators: `&&, ||, !`
+
+### Functions
+
+### Scope
+
+### Developing JavaScript Apps Locally
+
+## JavaScript Arrays, Loops, and Iterators
+
+
+## JavaScript Objects, Modules, and Browser Compatibility
+
+## Building Back-End Servers with Express.js
+
+## SQL for Back-End Development
+
+
+## Connecting JavaScript and SQL
+
+
+## Back-End Development Capstones
+
