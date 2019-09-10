@@ -5,6 +5,7 @@ categories: [web]
 tags: [javascript, codecademy web, codecademy, codecademy js]
 toc: 1
 comment: 1
+date: 2019-09-10
 ---
 
 {% assign img-url = '/images/posts/codecademy/backend-app-js' %}
@@ -109,15 +110,78 @@ if (true){
 // if...else
 if (true){
   // commands
+} else if (true){
+  // commands
 } else{
   // commands
+}
+
+// switch
+let var = 'papaya';
+switch (var) {
+  case 'val1':
+    // commands
+    break;
+  case 'val2':
+    // commands
+    break;
+  case 'val3':
+    // commands
+    break;
+  default:
+    // commands
+    break;
 }
 ~~~
 
 - Comparison Operators: `<, ===, >, >=, <=, !==` 
 - Logical operators: `&&, ||, !`
+- short-circuit evaluation: `let defaultName = username || 'Stranger';`
+- Ternary Operator: `isNightTime ? console.log('Yes!') : console.log('No!');`
 
 ### Functions
+
+~~~ js
+function <func>(<parameters>){
+  // commands
+  // return <var>;
+}
+
+// call the function
+<func>();
+
+// default parameters
+function greeting (name = 'stranger') {
+  console.log(`Hello, ${name}!`)
+}
+~~~
+
+Function Expressions:
+
+~~~ js
+const CalculateArea = function(width, height){
+  const area = width * height;
+  return area;
+};
+~~~
+
+Arrow Functions (no need to use `function`):
+
+~~~ js
+const rectangleArea = (width, height) => {
+  let area = width * height;
+  return area;
+};
+
+// if there is no parameter
+const <func> = () => {};
+
+// if there is only one parameter
+const <func> = <para> => {};
+
+// single line: no need "{}"
+const sumNumbers = number => number + number;
+~~~
 
 ### Scope
 

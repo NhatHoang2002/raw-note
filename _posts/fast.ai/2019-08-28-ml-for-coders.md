@@ -50,6 +50,7 @@ I take [this course](http://course18.fast.ai/ml.html) on [fast.ai](https://www.f
 - [Wiki](https://forums.fast.ai/t/wiki-thread-lesson-1/6825) for this lesson.
 - [Note](https://medium.com/@hiromi_suenaga/machine-learning-1-lesson-1-84a1dc2b5236) for this lesson by fast.ai
 - [jupyter notebooks](https://github.com/fastai/fastai/tree/master/courses/ml1)
+- 
 
 
 
