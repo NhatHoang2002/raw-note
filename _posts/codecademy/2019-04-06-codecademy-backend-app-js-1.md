@@ -183,22 +183,64 @@ const <func> = <para> => {};
 const sumNumbers = number => number + number;
 ~~~
 
-### Scope
+## Developing JavaScript Apps Locally
 
-### Developing JavaScript Apps Locally
+### NodeJS
 
-## JavaScript Arrays, Loops, and Iterators
+- [Download and install](https://nodejs.org/en/download/) NodeJS.
+- Check if node is installed and its version: `node --version`.
+- Open terminal, type `node`. Open **Console** giống trên browser!
+- <kbd>Ctrl</kbd> + <kbd>C</kbd> 2 times to exit!
 
+### Introduction to Testing with Mocha and Chai
 
-## JavaScript Objects, Modules, and Browser Compatibility
+- **What is Unit Testing?**
+  - Unit testing means testing the behavior of code in small, independent units.
+- **[Mocha](https://mochajs.org/)** and **[Chai](https://www.chaijs.com/)**, Test Suites and Test Cases
+  - Mocha and Chai are two JavaScript frameworks commonly used together for unit testing.
+- Regular use of keywords: `describe` and `it` in Mocha.
+- **Assertions**: 
+  - Assertions are tied to particular values (whereas test cases are descriptions of behavior) and they will *fail if the expected value does not match the actual value*.
+  - Every assertion in a test case **must be met in order** for the test case to pass.
+- **Chai** is an *assertion library* that is often used alongside Mocha, it provides *functions and methods* that help you **compare** the output of a certain test with its expected value. 
+  - Exp: `expect(exampleArray).to.have.lengthOf(3);`
+- An example test,
 
-## Building Back-End Servers with Express.js
+    ~~~ js
+    describe('setPlayerMoves() - Main Functionality', function() { // this is a `describe` block, everything within this callback function is one test suite
+      afterEach(clearMoves); // this is a `hook` that gets called between `it` blocks to reset the state
+    
+      it('a function called setPlayerMoves should exist', function() { // this is an `it` block, everything inside this function is a single test case
+        should.equal(typeof setPlayerMoves, 'function'); // tests often start by checking that the right things exist and are of the right type
+      });
+    
+      it('should set player one\'s moves with valid inputs', function() {
+        setPlayerMoves('Player One', 'rock', 11); // here we call a function from the code we are testing that sets play one's move to rock with a value of 11
+    
+        should.equal(playerOneMoveOneType, 'rock'); // this is an assertion that tests that after the `setPlayerMoves()` function above is called, playerOneMoveOneType should equal `rock`
+        should.equal(playerOneMoveOneValue, 11); // this assertion tests that setPlayerMoves can set the value of playerOneMoveOneValue
+      });
+    })
+    ~~~
 
-## SQL for Back-End Development
+- Running Tests and Interpreting Output with Mocha and Chai
+  - `cd` to project folder.
+  - Run `npm install` all necessary testing dependencies.
+  - Run `npm test`
+  - I’m overwhelmed by the output!: [[ref](https://mochajs.org/#mochaopts)] try appending `.only()` or `.skip()` to your `describe` or `it` blocks to only run certain tests or skip other certain tests.
 
+- **Projects** (see on Github): `project-0-content-creators`, `project-1-rock-paper-scissors-x99`.
 
-## Connecting JavaScript and SQL
+### HTTP Requests
 
+- **HTTP** is the command language that the devices on both sides of the connection must follow in order to communicate.
+- Type `codecademy.com`, commanding it to open a **TCP** channel to the server that responds to that URL.
+- Your computer is **client** (makes the request). The URL is the **server**.
+- Once the **TCP connection is established**, client sends `HTTP GET` to retrieve the webpage
+- After server has sent the response, it **closes the TCP connection**.
 
-## Back-End Development Capstones
+### REST
 
+- [REST](https://en.wikipedia.org/wiki/Representational_state_transfer), is an **architectural style** for providing **standards** between computer **systems on the web**, making it easier for systems to communicate with each other.
+- In the REST architectural style, the implementation of the client and the **implementation of the server can be done independently** without each knowing about the other.
+- **Statelessness** = server does not need to know anything about what state the client is in and vice versa.
