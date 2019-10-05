@@ -123,7 +123,7 @@ From this note, I see that [this note](/files/ML-coursera/note/) of [Alex Holeho
   \Vert x-l^{(i)}\Vert^2 = \sum_{j=1}^n (x_j-l_j^{(i)})
   $$
 
-  - There are many **kernels**, above def of similarity is** Gaussian kernel**.
+  - There are many **kernels**, above def of similarity is **Gaussian kernel**.
 
   ![Kernel and similarity]({{img-url}}/kernel-1.png){:.no-border .w-600}
 
@@ -173,7 +173,7 @@ From this note, I see that [this note](/files/ML-coursera/note/) of [Alex Holeho
     - No kernel ("linear kernel", use $X\Theta$)
     - Gaussian kernel (above): need to choose $\sigma^2$
 - <mark>Do perform feature scaling before using Gaussian kernel</mark>
-- Not all similarity functions you develop are valid kernels $\Rightarrow$ <mark>Must satisfy **Merecer's Theorem**</mark> to make sure SVM packages' optimizations run correctly, and do not diverge.
+- Not all similarity functions you develop are valid kernels $\Rightarrow$ <mark markdown="span">Must satisfy **Merecer's Theorem**</mark> to make sure SVM packages' optimizations run correctly, and do not diverge.
 - **Polynomial kernel**: 
   - use when $x$ and $l$ are both strictly non-negative
   - People not use this much.
@@ -186,7 +186,7 @@ From this note, I see that [this note](/files/ML-coursera/note/) of [Alex Holeho
 - Other kernels: string kernel (input data using texts, string,...), chi-square kernel, histogram intersection kernel,...
 - <mark>Remember: choose whatever kernel performs best on cross-validation data</mark>
 
-### Mul(Dclass*classifica(on
+### Multiclass classification
 
 - Many packages have built in multi-class classification packages
 - Otherwise use one-vs all method

@@ -256,8 +256,3 @@ There are some movies that some users haven't seen yet. Based on what they have 
 ![Mean normalization]({{img-url}}/mean-nomallization.png){:.w-700}
 
 - We don't scale the value because all movies have alreay been scale by rates.
-
-
-## Programming assignment
-
-{% include more.html content="[Go to Week 10](/machine-learning-coursera-10)." %}
