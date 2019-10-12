@@ -133,9 +133,9 @@ From this note, I see that [this note](/files/ML-coursera/note/) of [Alex Holeho
 
 - Where do we get the landmarks from?
 - For each example place a **landmark at exactly the same location**
-  - Given $m$ examples of $n$ features $(x^{(i)}, y^{(i)}$ for $i=1,m$.
+  - Given $m$ examples of $n$ features $(x^{(i)}, y^{(i)})$ for $i=1,m$.
   - Choose landmarks: $l^{(i)} = x^{(i)}$ where $i=1,m$.
-  - We will build $n$ landmark $f^{(i)}$, each of them is built from
+  - We will build $m$ landmark $f^{(i)}$, each of them is built from
 
   $$
   f_k^{(i)} = k(x^{(i)}, l^{(k)}), \text{ for } k=1,m.
