@@ -1,0 +1,126 @@
+---
+layout: post
+title: "French 3: Expressions"
+categories: french
+tags: [french]
+toc: 1
+date: 2019-10-15
+---
+
+- partir **à** = going somewhere / partir **de** = going from somewhere.
+- The word **naissance** means birth, but **cadeau de naissance** means baby gift!
+- And be careful! **Date de naissance** is the day you were born. It’s not the same as your **anniversaire**, or birthday!
+- **commencer à** = you are starting to do something
+- il faut + du, de la, des = you need something in general
+  - Il faut des œufs pour faire une omelette. = You need eggs to make an omelette.
+- **se** + V = V + **each other**.
+  - se voir = see each other
+- recevoir = nhận, tiếp đón
+- **en** + 1985 
+  - mais **au** + vingt et unième **ècle** (tk 21).
+  - **dans les années** + quarante = The 40s
+- **parler de + qqc** = to talk about s/t
+- **J'en ai marre!** = tôi ngán quá rồi
+  - Elle en a marre de conduire tout le temps.
+- **dans le nord** de la france = **in** the north of France.
+  - **Dans le nord** du Canada, il fait très froid. = **In northern** Canada, it is very cold.
+  - L’Espagne se trouve **au sud** de la France. = Spain is **south of** France.
+- **descendre de** = get off
+  - DF: **monter dans**
+  - Nous descendons du train. = We get off the train.
+- When we use **tout before adjectives** (other than seul), the meaning of tout is **very or so**.
+  - Cette table est **toute petite**. = This table is **very small**
+- Il est **tout seul** =  all alone, by yourself.
+  - Ils mangent **tout** seuls.
+  - Elles sont **toutes** seules à la maison.
+  - Il va **tout** seul au cinéma.
+- un taf = un boulot = un travail 
+  - tafer = travailler
+- J'ai **un** chien noir ---> J'ai **des** chiens noirs
+  - J'ai **un** beau chien ---> J'ai **de beaux** chiens
+- Elle nous a raconté **quelque chose de** drôle. = She told us **something** funny.
+  - quelque chose de + adj = something + adj
+- Il se passe quelque chose ici = Something's happening here.
+- **pendant** = during: pendant + N
+  - **pendant que** = while = trong khi: pendant que + phrase
+- Le médecin = nghề bác sĩ (tui cần đi bác sĩ)
+  - doctor = nhân xưng (docteur Thi; docteur, tui thấy đau ở đây)
+- J'ai froid/chaude **à** + nơi bị lạnh
+  - J'ai froid/chaude à la tête.
+- Je viens prendre de vos nouvelles = Tôi muốn cập nhật tình hình của bạn, đại loại vậy!
+- **servir à** + verbe = to be used for?
+  - **À** quoi **sert** cet objet? = Vật này được dùng làm gì?
+  - Cet apareil **sert à** prendre des photos.
+- **passer** un examen = **taking** a test
+  - **réussir** un examen = **passing** a test
+- s'entendre with + qqn = get along with + s/o = hòa đồng với ai
+- avoir l’air = to look, to seem
+- avoir envie de = to want, to be in the mood for
+- Ça me **donne envie de** voyager. = Nó **làm tôi muốn** đi du lịch!
+- avoir honte de qqn = be ashamed of so
+- **depuis** = since/for + điểm thời gian / khoảng thời gian đều được
+- **Il arrive à** travailler dans ce petit bureau ? = **He is able to** work...?
+- arriver à + V = réussir + V
+- On en a envie. = Nous en avons envie. = We want to.
+- They're **getting used to** their new factory. = Ils s'**habituent à** leur nouvelle usine.
+- **à la carte** menu = thực đơn gọi từng món
+  - menu **fixe** = thực đơn cố định.
+  - **en** entrée/dessert
+  - Quel **plat principal** avez-vous choisi?
+  - un **pourboire** = tiền tip
+  - les légumes crus = rau sống = raw vegetables
+  - la viande cuite à point = thịt đã chín
+  - Cette viande grillée est trop **saignante** pour moi = miếng thịt nướng này **quá tái** với tui.
+- mettre un **petit pouce en l'air** = cho một like!
+- travailler **main das la main** = làm việc chặt chẽ, cùng nhau.
+- c'est à dire = that means
+  - ca veut dire = it means
+  - je veux dire = I mean
+- se faire virer (familier) = perdre son travail
+- du coup = therefore
+  - = par conséquent
+- être à cheval sur qqc = nghiêm túc, khó tính về cái gì đó
+- hypocrite = đạo đức giả / kẻ đạo đức giả
+- La maison est **sens dessus dessous** = The house is upside-down (mớ hỗn độn)
+- **à toute vitesse** = fast
+  - réfléchir à toute vitesse = nghĩ nhanh
+- prendre son courage à deux mains = lấy can đảm = vaincre sa peur
+- se mettre à + V = commencer à faire qqc
+  - Thường dùng trong quá khứ: **se + être + mise à** + V
+- J'ai pas envie = I don't want!
+  - J'ai pas envie d'aller au travai ajd.
+- ne que = seulement!
+  - Il **n**'y a **que** des touristes dans ce resto = il y a **seulement** des touristes dans ce resto.
+- n'avoir qu'à = il suffit de -> thường dùng để khuyên!
+  - T**'as qu'à** arrêter de manger au McDonald! = đừng nên ăn 
+- Le problème est **réglé**. = được giải quyết!
+- On peut régler? = L'addition svp! = Tính tiền đi chủ quán ơi!
+- Fais comme chez toi! / Faites comme chez vous = cứ tự nhiên như ở nhà đi
+- Comment ca se fait? = Sao nó ra thế này? (tình huống)
+- Fiche-moi la paix! = Leave me alone!
+- You're boring! = T'es chiant! = T'es ennuyeux/ennuyeuse!
+  - You're bored? = Tu t'ennuies?
+- Je me tire! = I'm out of here!
+- Get out! = Dehors!
+  - Get out of here! = Fichez le camp d'ici!
+- à la con! = bullshit! = stupid!
+- Ta gueule! = Shut the fuck up!
+- J**'ai failli** tomber = I **almost** fell. = suýt, toan
+- éteindre/allumer la lumière = tắt/bật đèn
+- pour toujours = forever
+- **Au secours** = Help!
+- Elle s'est **brûlé** la main.
+  - BUT: Elle s’est **brûlée**
+  - Ils se sont **coupé** les cheveux.
+    - BUT: Ils se sont **coupés**.
+- Want to say someone is welcome in your house:
+  - Vous êtes toujours les bienvenus ici. = You are always welcome here.
+  - Elle est la bienvenue chez nous. = She is welcome in our home.
+- **vieux** + N (not start with vowels)
+  - **vieil** + N (start with vowels)
+  - **bel** + N (start with vowels)
+  - **beau** + N (not start with vowels)
+- visit a person = **rendre visit à + qqc**
+  - visit a place = **visit + qqp**
+- **avoir entendu parler de + qqc** = đã từng nghe nói về cái gì đó
+- Qu'est  ce qui cloche chez toi? = What's wrong with you?
