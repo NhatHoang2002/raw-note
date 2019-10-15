@@ -53,6 +53,25 @@ This note is created when I started to learn the [Create a Back-End App with Jav
 
 - **Create a variable**: `var <name> = <value>` hoặc dùng `let` thay cho `var` hoặc dùng `const` (thay cho từ *constant*, var định nghĩa bằng cái này **không thể re-assign** + phải có giá trị)
   - Có thể declare mà **không cần value** với `var` hoặc `let`. <-- output: `undefined`
+- Difference between `var` and `let`[[ref]](https://stackoverflow.com/questions/762011/whats-the-difference-between-using-let-and-var):
+  - `var`: function scope (có tác dụng trong toàn function)
+  - `let`: block scope (có tác dụng trong 1 block nào đó, trong `{}` nào đó)
+  - The reason why `let` keyword was introduced to the language was function scope is confusing and was one of the main source of bug in javascript.
+
+    ~~~ js
+    var a=1;
+    var a=2; // ok, a=2 now
+    a=5; // a=5 now
+    
+    let c=1;
+    let c=2; // error
+    c=3; // c=3 now
+    
+    const b=1;
+    const b=2; // error
+    b=2 // error
+    ~~~
+
 - **Mathematical Assignment Operators**: `a +=`, `-=`, `*=`, `/=`.
 - **The Increment and Decrement Operator**: `a++` (`a` lấy giá trị mới như `a+1`). `--`.
 - `"I'm" + "Thi"`
