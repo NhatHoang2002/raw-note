@@ -98,7 +98,7 @@ This note was first taken when I learnt the [IBM Data Professional Certificate c
 ### Hierarchical Clustering
 
 {:.thi-tip}
-[The lab of K-means]({{site.url}}{{site.baseurl}}/files/ibm/ML0101EN-Clus-Hierarchical-Cars-py-v1)
+[The lab of Hierarchical Clustering]({{site.url}}{{site.baseurl}}/files/ibm/ML0101EN-Clus-Hierarchical-Cars-py-v1)
 
 - Hierarchical clustering algorithms build a hierarchy of clusters where each node is a cluster consisting of the clusters of its daughter nodes. 
 - Strategies for hierarchical clustering generally fall into two types, 
@@ -119,7 +119,7 @@ This note was first taken when I learnt the [IBM Data Professional Certificate c
 ### Hierarchical Clustering (lab)
 
 {:.thi-tip}
-[The lab of K-means]({{site.url}}{{site.baseurl}}/files/ibm/ML0101EN-Clus-Hierarchical-Cars-py-v1)
+[The lab of Hierarchical Clustering]({{site.url}}{{site.baseurl}}/files/ibm/ML0101EN-Clus-Hierarchical-Cars-py-v1)
 
 Generating Random Data
 

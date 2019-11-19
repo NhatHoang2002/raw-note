@@ -7,6 +7,7 @@ toc: 1
 date: 2019-10-15
 ---
 
+- Il y avait trop de piment dans ce plat alors **j'ai la bouche en feu** !
 - partir **à** = going somewhere / partir **de** = going from somewhere.
 - The word **naissance** means birth, but **cadeau de naissance** means baby gift!
 - And be careful! **Date de naissance** is the day you were born. It’s not the same as your **anniversaire**, or birthday!
